@@ -1785,9 +1785,11 @@ pub struct xcb_xkb_set_map_values_t {
     pub types: *mut xcb_xkb_set_key_type_t,
     pub syms: *mut xcb_xkb_key_sym_map_t,
     pub actions_count: *mut u8,
+    pub pad0: *mut u8,
     pub actions: *mut xcb_xkb_action_t,
     pub behaviors: *mut xcb_xkb_set_behavior_t,
     pub vmods: *mut u8,
+    pub pad1: *mut u8,
     pub explicit: *mut xcb_xkb_set_explicit_t,
     pub modmap: *mut xcb_xkb_key_mod_map_t,
     pub vmodmap: *mut xcb_xkb_key_v_mod_map_t,
@@ -2059,7 +2061,7 @@ pub struct xcb_xkb_get_names_value_list_t {
     pub compat_name: xcb_atom_t,
     pub type_names: *mut xcb_atom_t,
     pub n_levels_per_type: *mut u8,
-    pub alignment_pad: *mut u8,
+    pub pad1: *mut u8,
     pub kt_level_names: *mut xcb_atom_t,
     pub indicator_names: *mut xcb_atom_t,
     pub virtual_mod_names: *mut xcb_atom_t,
@@ -2102,6 +2104,7 @@ pub struct xcb_xkb_set_names_values_t {
     pub compat_name: xcb_atom_t,
     pub type_names: *mut xcb_atom_t,
     pub n_levels_per_type: *mut u8,
+    pub pad1: *mut u8,
     pub kt_level_names: *mut xcb_atom_t,
     pub indicator_names: *mut xcb_atom_t,
     pub virtual_mod_names: *mut xcb_atom_t,
@@ -2284,11 +2287,11 @@ pub struct _xcb_xkb_get_kbd_by_name_replies__compat_map {
     pub compatmap_sequence: u16,
     pub compatmap_length: u32,
     pub groups_rtrn: u8,
-    pub pad3: u8,
+    pub pad7: u8,
     pub first_si_rtrn: u16,
     pub n_si_rtrn: u16,
     pub n_total_si: u16,
-    pub pad4: [u8; 16],
+    pub pad8: [u8; 16],
     pub si_rtrn: *mut xcb_xkb_sym_interpret_t,
     pub group_rtrn: *mut xcb_xkb_mod_def_t,
 }
@@ -2303,7 +2306,7 @@ pub struct _xcb_xkb_get_kbd_by_name_replies__indicator_maps {
     pub which: u32,
     pub real_indicators: u32,
     pub n_indicators: u8,
-    pub pad5: [u8; 15],
+    pub pad9: [u8; 15],
     pub maps: *mut xcb_xkb_indicator_map_t,
 }
 
@@ -2326,7 +2329,7 @@ pub struct _xcb_xkb_get_kbd_by_name_replies__key_names {
     pub n_radio_groups: u8,
     pub n_key_aliases: u8,
     pub n_kt_levels: u16,
-    pub pad6: [u8; 4],
+    pub pad10: [u8; 4],
     pub value_list: xcb_xkb_get_kbd_by_name_replies_key_names_value_list_t,
 }
 
@@ -2339,7 +2342,7 @@ pub struct _xcb_xkb_get_kbd_by_name_replies__geometry {
     pub geometry_length: u32,
     pub name: xcb_atom_t,
     pub geometry_found: u8,
-    pub pad7: u8,
+    pub pad12: u8,
     pub width_mm: u16,
     pub height_mm: u16,
     pub n_properties: u16,
@@ -2359,11 +2362,15 @@ pub struct xcb_xkb_get_kbd_by_name_replies_types_map_t {
     pub types_rtrn: *mut xcb_xkb_key_type_t,
     pub syms_rtrn: *mut xcb_xkb_key_sym_map_t,
     pub acts_rtrn_count: *mut u8,
+    pub pad3: *mut u8,
     pub acts_rtrn_acts: *mut xcb_xkb_action_t,
     pub behaviors_rtrn: *mut xcb_xkb_set_behavior_t,
     pub vmods_rtrn: *mut u8,
+    pub pad4: *mut u8,
     pub explicit_rtrn: *mut xcb_xkb_set_explicit_t,
+    pub pad5: *mut u8,
     pub modmap_rtrn: *mut xcb_xkb_key_mod_map_t,
+    pub pad6: *mut u8,
     pub vmodmap_rtrn: *mut xcb_xkb_key_v_mod_map_t,
 }
 
@@ -2378,6 +2385,7 @@ pub struct xcb_xkb_get_kbd_by_name_replies_key_names_value_list_t {
     pub compat_name: xcb_atom_t,
     pub type_names: *mut xcb_atom_t,
     pub n_levels_per_type: *mut u8,
+    pub pad11: *mut u8,
     pub kt_level_names: *mut xcb_atom_t,
     pub indicator_names: *mut xcb_atom_t,
     pub virtual_mod_names: *mut xcb_atom_t,
@@ -5380,32 +5388,6 @@ impl XcbXkb {
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
         sym!(self, xcb_xkb_get_names_value_list_n_levels_per_type_end)(R, S)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xkb_get_names_value_list_alignment_pad(
-        &self,
-        S: *const xcb_xkb_get_names_value_list_t,
-    ) -> *mut u8 {
-        sym!(self, xcb_xkb_get_names_value_list_alignment_pad)(S)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xkb_get_names_value_list_alignment_pad_length(
-        &self,
-        R: *const xcb_xkb_get_names_reply_t,
-        S: *const xcb_xkb_get_names_value_list_t,
-    ) -> c_int {
-        sym!(self, xcb_xkb_get_names_value_list_alignment_pad_length)(R, S)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xkb_get_names_value_list_alignment_pad_end(
-        &self,
-        R: *const xcb_xkb_get_names_reply_t,
-        S: *const xcb_xkb_get_names_value_list_t,
-    ) -> xcb_generic_iterator_t {
-        sym!(self, xcb_xkb_get_names_value_list_alignment_pad_end)(R, S)
     }
 
     #[inline]

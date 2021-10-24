@@ -95,6 +95,26 @@ pub struct xcb_screensaver_select_input_request_t {
     pub event_mask: u32,
 }
 
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_screensaver_set_attributes_value_list_t {
+    pub background_pixmap: xcb_pixmap_t,
+    pub background_pixel: u32,
+    pub border_pixmap: xcb_pixmap_t,
+    pub border_pixel: u32,
+    pub bit_gravity: u32,
+    pub win_gravity: u32,
+    pub backing_store: u32,
+    pub backing_planes: u32,
+    pub backing_pixel: u32,
+    pub override_redirect: xcb_bool32_t,
+    pub save_under: xcb_bool32_t,
+    pub event_mask: u32,
+    pub do_not_propogate_mask: u32,
+    pub colormap: xcb_colormap_t,
+    pub cursor: xcb_cursor_t,
+}
+
 pub const XCB_SCREENSAVER_SET_ATTRIBUTES: u8 = 3;
 
 #[derive(Copy, Clone, Debug)]
@@ -134,8 +154,7 @@ pub struct xcb_screensaver_suspend_request_t {
     pub major_opcode: u8,
     pub minor_opcode: u8,
     pub length: u16,
-    pub suspend: u8,
-    pub pad0: [u8; 3],
+    pub suspend: u32,
 }
 
 pub const XCB_SCREENSAVER_NOTIFY: u8 = 0;
@@ -256,7 +275,7 @@ impl XcbScreensaver {
         depth: u8,
         visual: xcb_visualid_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_screensaver_set_attributes_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_screensaver_set_attributes)(
             c,
@@ -288,7 +307,7 @@ impl XcbScreensaver {
         depth: u8,
         visual: xcb_visualid_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_screensaver_set_attributes_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_screensaver_set_attributes_checked)(
             c,
@@ -328,7 +347,7 @@ impl XcbScreensaver {
     pub unsafe fn xcb_screensaver_suspend(
         &self,
         c: *mut xcb_connection_t,
-        suspend: u8,
+        suspend: u32,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_screensaver_suspend)(c, suspend)
     }
@@ -337,7 +356,7 @@ impl XcbScreensaver {
     pub unsafe fn xcb_screensaver_suspend_checked(
         &self,
         c: *mut xcb_connection_t,
-        suspend: u8,
+        suspend: u32,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_screensaver_suspend_checked)(c, suspend)
     }

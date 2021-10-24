@@ -1977,6 +1977,34 @@ pub struct xcb_glx_get_tex_level_parameteriv_reply_t {
     pub pad2: [u8; 12],
 }
 
+pub const XCB_GLX_IS_ENABLED: u8 = 140;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_glx_is_enabled_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+    pub context_tag: xcb_glx_context_tag_t,
+    pub capability: u32,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_glx_is_enabled_cookie_t {
+    pub sequence: c_uint,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_glx_is_enabled_reply_t {
+    pub response_type: u8,
+    pub pad0: u8,
+    pub sequence: u16,
+    pub length: u32,
+    pub ret_val: xcb_glx_bool32_t,
+}
+
 pub const XCB_GLX_IS_LIST: u8 = 141;
 
 #[derive(Copy, Clone, Debug)]
@@ -5942,6 +5970,36 @@ impl XcbGlx {
             level,
             pname,
         )
+    }
+
+    #[inline]
+    pub unsafe fn xcb_glx_is_enabled_reply(
+        &self,
+        c: *mut xcb_connection_t,
+        cookie: xcb_glx_is_enabled_cookie_t,
+        error: *mut *mut xcb_generic_error_t,
+    ) -> *mut xcb_glx_is_enabled_reply_t {
+        sym!(self, xcb_glx_is_enabled_reply)(c, cookie, error)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_glx_is_enabled(
+        &self,
+        c: *mut xcb_connection_t,
+        context_tag: xcb_glx_context_tag_t,
+        capability: u32,
+    ) -> xcb_glx_is_enabled_cookie_t {
+        sym!(self, xcb_glx_is_enabled)(c, context_tag, capability)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_glx_is_enabled_unchecked(
+        &self,
+        c: *mut xcb_connection_t,
+        context_tag: xcb_glx_context_tag_t,
+        capability: u32,
+    ) -> xcb_glx_is_enabled_cookie_t {
+        sym!(self, xcb_glx_is_enabled_unchecked)(c, context_tag, capability)
     }
 
     #[inline]

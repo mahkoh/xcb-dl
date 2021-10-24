@@ -163,6 +163,8 @@ fn process_xcb_gen(
         deps
     };
 
+    let ext_name = info.1.as_ref().map(|e| &*e.name);
+
     let mut cg = CodeGen::new(xcb_mod, ffi, rs, deps, evcopies);
 
     cg.prologue(imports, &info.1)?;

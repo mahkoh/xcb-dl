@@ -107,6 +107,16 @@ pub struct xcb_fontable_iterator_t {
     pub index: c_int,
 }
 
+pub type xcb_bool32_t = u32;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_bool32_iterator_t {
+    pub data: *mut xcb_bool32_t,
+    pub rem: c_int,
+    pub index: c_int,
+}
+
 pub type xcb_visualid_t = u32;
 
 #[derive(Copy, Clone, Debug)]
@@ -143,6 +153,16 @@ pub type xcb_keycode_t = u8;
 #[repr(C)]
 pub struct xcb_keycode_iterator_t {
     pub data: *mut xcb_keycode_t,
+    pub rem: c_int,
+    pub index: c_int,
+}
+
+pub type xcb_keycode32_t = u32;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_keycode32_iterator_t {
+    pub data: *mut xcb_keycode32_t,
     pub rem: c_int,
     pub index: c_int,
 }
@@ -1412,6 +1432,26 @@ pub const XCB_GRAVITY_SOUTH: xcb_gravity_t = 0x08;
 pub const XCB_GRAVITY_SOUTH_EAST: xcb_gravity_t = 0x09;
 pub const XCB_GRAVITY_STATIC: xcb_gravity_t = 0x0a;
 
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_create_window_value_list_t {
+    pub background_pixmap: xcb_pixmap_t,
+    pub background_pixel: u32,
+    pub border_pixmap: xcb_pixmap_t,
+    pub border_pixel: u32,
+    pub bit_gravity: u32,
+    pub win_gravity: u32,
+    pub backing_store: u32,
+    pub backing_planes: u32,
+    pub backing_pixel: u32,
+    pub override_redirect: xcb_bool32_t,
+    pub save_under: xcb_bool32_t,
+    pub event_mask: u32,
+    pub do_not_propogate_mask: u32,
+    pub colormap: xcb_colormap_t,
+    pub cursor: xcb_cursor_t,
+}
+
 pub const XCB_CREATE_WINDOW: u8 = 1;
 
 /// Creates a window
@@ -1465,6 +1505,26 @@ pub struct xcb_create_window_request_t {
     /// `parent` window.
     pub visual: xcb_visualid_t,
     pub value_mask: u32,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_change_window_attributes_value_list_t {
+    pub background_pixmap: xcb_pixmap_t,
+    pub background_pixel: u32,
+    pub border_pixmap: xcb_pixmap_t,
+    pub border_pixel: u32,
+    pub bit_gravity: u32,
+    pub win_gravity: u32,
+    pub backing_store: u32,
+    pub backing_planes: u32,
+    pub backing_pixel: u32,
+    pub override_redirect: xcb_bool32_t,
+    pub save_under: xcb_bool32_t,
+    pub event_mask: u32,
+    pub do_not_propogate_mask: u32,
+    pub colormap: xcb_colormap_t,
+    pub cursor: xcb_cursor_t,
 }
 
 pub const XCB_CHANGE_WINDOW_ATTRIBUTES: u8 = 2;
@@ -1717,6 +1777,18 @@ pub const XCB_STACK_MODE_BELOW: xcb_stack_mode_t = 0x01;
 pub const XCB_STACK_MODE_TOP_IF: xcb_stack_mode_t = 0x02;
 pub const XCB_STACK_MODE_BOTTOM_IF: xcb_stack_mode_t = 0x03;
 pub const XCB_STACK_MODE_OPPOSITE: xcb_stack_mode_t = 0x04;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_configure_window_value_list_t {
+    pub x: i32,
+    pub y: i32,
+    pub width: u32,
+    pub height: u32,
+    pub border_width: u32,
+    pub sibling: xcb_window_t,
+    pub stack_mode: u32,
+}
 
 pub const XCB_CONFIGURE_WINDOW: u8 = 12;
 
@@ -2505,15 +2577,15 @@ pub const XCB_GRAB_KEY: u8 = 33;
 #[repr(C)]
 pub struct xcb_grab_key_request_t {
     pub major_opcode: u8,
-    /// If 1, the `grab_window` will still get the pointer events. If 0, events are not
+    /// If 1, the `grab_window` will still get the key events. If 0, events are not
     /// reported to the `grab_window`.
     pub owner_events: u8,
     pub length: u16,
-    /// Specifies the window on which the pointer should be grabbed.
+    /// Specifies the window on which the key should be grabbed.
     pub grab_window: xcb_window_t,
     /// The modifiers to grab.
     ///
-    /// Using the special value `XCB_MOD_MASK_ANY` means grab the pointer with all
+    /// Using the special value `XCB_MOD_MASK_ANY` means grab the key with all
     /// possible modifier combinations.
     pub modifiers: u16,
     /// The keycode of the key to grab.
@@ -3481,6 +3553,34 @@ pub type xcb_arc_mode_t = u32;
 pub const XCB_ARC_MODE_CHORD: xcb_arc_mode_t = 0x00;
 pub const XCB_ARC_MODE_PIE_SLICE: xcb_arc_mode_t = 0x01;
 
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_create_gc_value_list_t {
+    pub function: u32,
+    pub plane_mask: u32,
+    pub foreground: u32,
+    pub background: u32,
+    pub line_width: u32,
+    pub line_style: u32,
+    pub cap_style: u32,
+    pub join_style: u32,
+    pub fill_style: u32,
+    pub fill_rule: u32,
+    pub tile: xcb_pixmap_t,
+    pub stipple: xcb_pixmap_t,
+    pub tile_stipple_x_origin: i32,
+    pub tile_stipple_y_origin: i32,
+    pub font: xcb_font_t,
+    pub subwindow_mode: u32,
+    pub graphics_exposures: xcb_bool32_t,
+    pub clip_x_origin: i32,
+    pub clip_y_origin: i32,
+    pub clip_mask: xcb_pixmap_t,
+    pub dash_offset: u32,
+    pub dashes: u32,
+    pub arc_mode: u32,
+}
+
 pub const XCB_CREATE_GC: u8 = 55;
 
 /// Creates a graphics context
@@ -3499,6 +3599,34 @@ pub struct xcb_create_gc_request_t {
     /// Drawable to get the root/depth from.
     pub drawable: xcb_drawable_t,
     pub value_mask: u32,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_change_gc_value_list_t {
+    pub function: u32,
+    pub plane_mask: u32,
+    pub foreground: u32,
+    pub background: u32,
+    pub line_width: u32,
+    pub line_style: u32,
+    pub cap_style: u32,
+    pub join_style: u32,
+    pub fill_style: u32,
+    pub fill_rule: u32,
+    pub tile: xcb_pixmap_t,
+    pub stipple: xcb_pixmap_t,
+    pub tile_stipple_x_origin: i32,
+    pub tile_stipple_y_origin: i32,
+    pub font: xcb_font_t,
+    pub subwindow_mode: u32,
+    pub graphics_exposures: xcb_bool32_t,
+    pub clip_x_origin: i32,
+    pub clip_y_origin: i32,
+    pub clip_mask: xcb_pixmap_t,
+    pub dash_offset: u32,
+    pub dashes: u32,
+    pub arc_mode: u32,
 }
 
 pub const XCB_CHANGE_GC: u8 = 56;
@@ -4615,6 +4743,19 @@ pub const XCB_AUTO_REPEAT_MODE_OFF: xcb_auto_repeat_mode_t = 0x00;
 pub const XCB_AUTO_REPEAT_MODE_ON: xcb_auto_repeat_mode_t = 0x01;
 pub const XCB_AUTO_REPEAT_MODE_DEFAULT: xcb_auto_repeat_mode_t = 0x02;
 
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_change_keyboard_control_value_list_t {
+    pub key_click_percent: i32,
+    pub bell_percent: i32,
+    pub bell_pitch: i32,
+    pub bell_duration: i32,
+    pub led: u32,
+    pub led_mode: u32,
+    pub key: xcb_keycode32_t,
+    pub auto_repeat_mode: u32,
+}
+
 pub const XCB_CHANGE_KEYBOARD_CONTROL: u8 = 102;
 
 #[derive(Copy, Clone, Debug)]
@@ -5152,6 +5293,16 @@ impl Xcb {
     }
 
     #[inline]
+    pub unsafe fn xcb_bool32_next(&self, i: *mut xcb_bool32_iterator_t) {
+        sym!(self, xcb_bool32_next)(i);
+    }
+
+    #[inline]
+    pub unsafe fn xcb_bool32_end(&self, i: *mut xcb_bool32_iterator_t) -> xcb_generic_iterator_t {
+        sym!(self, xcb_bool32_end)(i)
+    }
+
+    #[inline]
     pub unsafe fn xcb_visualid_next(&self, i: *mut xcb_visualid_iterator_t) {
         sym!(self, xcb_visualid_next)(i);
     }
@@ -5195,6 +5346,19 @@ impl Xcb {
     #[inline]
     pub unsafe fn xcb_keycode_end(&self, i: *mut xcb_keycode_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_keycode_end)(i)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_keycode32_next(&self, i: *mut xcb_keycode32_iterator_t) {
+        sym!(self, xcb_keycode32_next)(i);
+    }
+
+    #[inline]
+    pub unsafe fn xcb_keycode32_end(
+        &self,
+        i: *mut xcb_keycode32_iterator_t,
+    ) -> xcb_generic_iterator_t {
+        sym!(self, xcb_keycode32_end)(i)
     }
 
     #[inline]
@@ -5540,7 +5704,7 @@ impl Xcb {
         class: u16,
         visual: xcb_visualid_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_create_window_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_create_window)(
             c,
@@ -5590,7 +5754,7 @@ impl Xcb {
         class: u16,
         visual: xcb_visualid_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_create_window_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_create_window_checked)(
             c,
@@ -5618,7 +5782,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_change_window_attributes_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_change_window_attributes)(c, window, value_mask, value_list)
     }
@@ -5632,7 +5796,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_change_window_attributes_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_change_window_attributes_checked)(c, window, value_mask, value_list)
     }
@@ -5932,7 +6096,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
         value_mask: u16,
-        value_list: *const u32,
+        value_list: *const xcb_configure_window_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_configure_window)(c, window, value_mask, value_list)
     }
@@ -5946,7 +6110,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
         value_mask: u16,
-        value_list: *const u32,
+        value_list: *const xcb_configure_window_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_configure_window_checked)(c, window, value_mask, value_list)
     }
@@ -7897,7 +8061,7 @@ impl Xcb {
         cid: xcb_gcontext_t,
         drawable: xcb_drawable_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_create_gc_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_create_gc)(c, cid, drawable, value_mask, value_list)
     }
@@ -7913,7 +8077,7 @@ impl Xcb {
         cid: xcb_gcontext_t,
         drawable: xcb_drawable_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_create_gc_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_create_gc_checked)(c, cid, drawable, value_mask, value_list)
     }
@@ -7927,7 +8091,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         gc: xcb_gcontext_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_change_gc_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_change_gc)(c, gc, value_mask, value_list)
     }
@@ -7941,7 +8105,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         gc: xcb_gcontext_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_change_gc_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_change_gc_checked)(c, gc, value_mask, value_list)
     }
@@ -9704,7 +9868,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_change_keyboard_control_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_change_keyboard_control)(c, value_mask, value_list)
     }
@@ -9714,7 +9878,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_change_keyboard_control_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_change_keyboard_control_checked)(c, value_mask, value_list)
     }

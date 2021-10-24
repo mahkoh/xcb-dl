@@ -3,7 +3,7 @@ use crate::*;
 use std::os::raw::*;
 
 pub const XCB_PRESENT_MAJOR_VERSION: u32 = 1;
-pub const XCB_PRESENT_MINOR_VERSION: u32 = 0;
+pub const XCB_PRESENT_MINOR_VERSION: u32 = 2;
 
 pub type xcb_present_event_enum_t = u32;
 pub const XCB_PRESENT_EVENT_CONFIGURE_NOTIFY: xcb_present_event_enum_t = 0x00;
@@ -23,6 +23,7 @@ pub const XCB_PRESENT_OPTION_NONE: xcb_present_option_t = 0x00;
 pub const XCB_PRESENT_OPTION_ASYNC: xcb_present_option_t = 0x01;
 pub const XCB_PRESENT_OPTION_COPY: xcb_present_option_t = 0x02;
 pub const XCB_PRESENT_OPTION_UST: xcb_present_option_t = 0x04;
+pub const XCB_PRESENT_OPTION_SUBOPTIMAL: xcb_present_option_t = 0x08;
 
 pub type xcb_present_capability_t = u32;
 pub const XCB_PRESENT_CAPABILITY_NONE: xcb_present_capability_t = 0x00;
@@ -38,6 +39,7 @@ pub type xcb_present_complete_mode_t = u32;
 pub const XCB_PRESENT_COMPLETE_MODE_COPY: xcb_present_complete_mode_t = 0x00;
 pub const XCB_PRESENT_COMPLETE_MODE_FLIP: xcb_present_complete_mode_t = 0x01;
 pub const XCB_PRESENT_COMPLETE_MODE_SKIP: xcb_present_complete_mode_t = 0x02;
+pub const XCB_PRESENT_COMPLETE_MODE_SUBOPTIMAL_COPY: xcb_present_complete_mode_t = 0x03;
 
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]

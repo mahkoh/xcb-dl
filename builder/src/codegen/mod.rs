@@ -83,6 +83,8 @@ impl CodeGen {
     ) -> CodeGen {
         let mp = if xcb_mod == "xproto" {
             String::new()
+        } else if xcb_mod == "xinput" {
+            format!("input_")
         } else {
             format!("{}_", &xcb_mod)
         };

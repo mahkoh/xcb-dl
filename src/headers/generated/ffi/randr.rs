@@ -3,7 +3,7 @@ use crate::*;
 use std::os::raw::*;
 
 pub const XCB_RANDR_MAJOR_VERSION: u32 = 1;
-pub const XCB_RANDR_MINOR_VERSION: u32 = 4;
+pub const XCB_RANDR_MINOR_VERSION: u32 = 6;
 
 pub type xcb_randr_mode_t = u32;
 
@@ -41,6 +41,16 @@ pub type xcb_randr_provider_t = u32;
 #[repr(C)]
 pub struct xcb_randr_provider_iterator_t {
     pub data: *mut xcb_randr_provider_t,
+    pub rem: c_int,
+    pub index: c_int,
+}
+
+pub type xcb_randr_lease_t = u32;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_lease_iterator_t {
+    pub data: *mut xcb_randr_lease_t,
     pub rem: c_int,
     pub index: c_int,
 }
@@ -205,6 +215,7 @@ pub const XCB_RANDR_NOTIFY_MASK_OUTPUT_PROPERTY: xcb_randr_notify_mask_t = 0x08;
 pub const XCB_RANDR_NOTIFY_MASK_PROVIDER_CHANGE: xcb_randr_notify_mask_t = 0x10;
 pub const XCB_RANDR_NOTIFY_MASK_PROVIDER_PROPERTY: xcb_randr_notify_mask_t = 0x20;
 pub const XCB_RANDR_NOTIFY_MASK_RESOURCE_CHANGE: xcb_randr_notify_mask_t = 0x40;
+pub const XCB_RANDR_NOTIFY_MASK_LEASE: xcb_randr_notify_mask_t = 0x80;
 
 pub const XCB_RANDR_SELECT_INPUT: u8 = 4;
 
@@ -1231,6 +1242,7 @@ pub const XCB_RANDR_NOTIFY_OUTPUT_PROPERTY: xcb_randr_notify_t = 0x02;
 pub const XCB_RANDR_NOTIFY_PROVIDER_CHANGE: xcb_randr_notify_t = 0x03;
 pub const XCB_RANDR_NOTIFY_PROVIDER_PROPERTY: xcb_randr_notify_t = 0x04;
 pub const XCB_RANDR_NOTIFY_RESOURCE_CHANGE: xcb_randr_notify_t = 0x05;
+pub const XCB_RANDR_NOTIFY_LEASE: xcb_randr_notify_t = 0x06;
 
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
@@ -1348,6 +1360,144 @@ pub struct xcb_randr_resource_change_iterator_t {
     pub index: c_int,
 }
 
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_monitor_info_t {
+    pub name: xcb_atom_t,
+    pub primary: u8,
+    pub automatic: u8,
+    pub n_output: u16,
+    pub x: i16,
+    pub y: i16,
+    pub width: u16,
+    pub height: u16,
+    pub width_in_millimeters: u32,
+    pub height_in_millimeters: u32,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_monitor_info_iterator_t {
+    pub data: *mut xcb_randr_monitor_info_t,
+    pub rem: c_int,
+    pub index: c_int,
+}
+
+pub const XCB_RANDR_GET_MONITORS: u8 = 42;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_get_monitors_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+    pub window: xcb_window_t,
+    pub get_active: u8,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_get_monitors_cookie_t {
+    pub sequence: c_uint,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_get_monitors_reply_t {
+    pub response_type: u8,
+    pub pad0: u8,
+    pub sequence: u16,
+    pub length: u32,
+    pub timestamp: xcb_timestamp_t,
+    pub n_monitors: u32,
+    pub n_outputs: u32,
+    pub pad1: [u8; 12],
+}
+
+pub const XCB_RANDR_SET_MONITOR: u8 = 43;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_set_monitor_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+    pub window: xcb_window_t,
+    pub monitorinfo: *mut xcb_randr_monitor_info_t,
+}
+
+pub const XCB_RANDR_DELETE_MONITOR: u8 = 44;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_delete_monitor_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+    pub window: xcb_window_t,
+    pub name: xcb_atom_t,
+}
+
+pub const XCB_RANDR_CREATE_LEASE: u8 = 45;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_create_lease_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+    pub window: xcb_window_t,
+    pub lid: xcb_randr_lease_t,
+    pub num_crtcs: u16,
+    pub num_outputs: u16,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_create_lease_cookie_t {
+    pub sequence: c_uint,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_create_lease_reply_t {
+    pub response_type: u8,
+    pub nfd: u8,
+    pub sequence: u16,
+    pub length: u32,
+    pub pad0: [u8; 24],
+}
+
+pub const XCB_RANDR_FREE_LEASE: u8 = 46;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_free_lease_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+    pub lid: xcb_randr_lease_t,
+    pub terminate: u8,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_lease_notify_t {
+    pub timestamp: xcb_timestamp_t,
+    pub window: xcb_window_t,
+    pub lease: xcb_randr_lease_t,
+    pub created: u8,
+    pub pad0: [u8; 15],
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_randr_lease_notify_iterator_t {
+    pub data: *mut xcb_randr_lease_notify_t,
+    pub rem: c_int,
+    pub index: c_int,
+}
+
 #[derive(Copy, Clone)]
 #[repr(C)]
 pub union xcb_randr_notify_data_t {
@@ -1357,6 +1507,7 @@ pub union xcb_randr_notify_data_t {
     pub pc: xcb_randr_provider_change_t,
     pub pp: xcb_randr_provider_property_t,
     pub rc: xcb_randr_resource_change_t,
+    pub lc: xcb_randr_lease_notify_t,
 }
 
 #[derive(Copy, Clone, Debug)]
@@ -1434,6 +1585,19 @@ impl XcbRandr {
         i: *mut xcb_randr_provider_iterator_t,
     ) -> xcb_generic_iterator_t {
         sym!(self, xcb_randr_provider_end)(i)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_lease_next(&self, i: *mut xcb_randr_lease_iterator_t) {
+        sym!(self, xcb_randr_lease_next)(i);
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_lease_end(
+        &self,
+        i: *mut xcb_randr_lease_iterator_t,
+    ) -> xcb_generic_iterator_t {
+        sym!(self, xcb_randr_lease_end)(i)
     }
 
     #[inline]
@@ -3733,6 +3897,217 @@ impl XcbRandr {
         i: *mut xcb_randr_resource_change_iterator_t,
     ) -> xcb_generic_iterator_t {
         sym!(self, xcb_randr_resource_change_end)(i)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_monitor_info_outputs(
+        &self,
+        R: *const xcb_randr_monitor_info_t,
+    ) -> *mut xcb_randr_output_t {
+        sym!(self, xcb_randr_monitor_info_outputs)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_monitor_info_outputs_length(
+        &self,
+        R: *const xcb_randr_monitor_info_t,
+    ) -> c_int {
+        sym!(self, xcb_randr_monitor_info_outputs_length)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_monitor_info_outputs_end(
+        &self,
+        R: *const xcb_randr_monitor_info_t,
+    ) -> xcb_generic_iterator_t {
+        sym!(self, xcb_randr_monitor_info_outputs_end)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_monitor_info_next(&self, i: *mut xcb_randr_monitor_info_iterator_t) {
+        sym!(self, xcb_randr_monitor_info_next)(i);
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_monitor_info_end(
+        &self,
+        i: *mut xcb_randr_monitor_info_iterator_t,
+    ) -> xcb_generic_iterator_t {
+        sym!(self, xcb_randr_monitor_info_end)(i)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_get_monitors_monitors_length(
+        &self,
+        R: *const xcb_randr_get_monitors_reply_t,
+    ) -> c_int {
+        sym!(self, xcb_randr_get_monitors_monitors_length)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_get_monitors_monitors_iterator(
+        &self,
+        R: *const xcb_randr_get_monitors_reply_t,
+    ) -> xcb_randr_monitor_info_iterator_t {
+        sym!(self, xcb_randr_get_monitors_monitors_iterator)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_get_monitors_reply(
+        &self,
+        c: *mut xcb_connection_t,
+        cookie: xcb_randr_get_monitors_cookie_t,
+        error: *mut *mut xcb_generic_error_t,
+    ) -> *mut xcb_randr_get_monitors_reply_t {
+        sym!(self, xcb_randr_get_monitors_reply)(c, cookie, error)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_get_monitors(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        get_active: u8,
+    ) -> xcb_randr_get_monitors_cookie_t {
+        sym!(self, xcb_randr_get_monitors)(c, window, get_active)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_get_monitors_unchecked(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        get_active: u8,
+    ) -> xcb_randr_get_monitors_cookie_t {
+        sym!(self, xcb_randr_get_monitors_unchecked)(c, window, get_active)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_set_monitor(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        monitorinfo: *mut xcb_randr_monitor_info_t,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_randr_set_monitor)(c, window, monitorinfo)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_set_monitor_checked(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        monitorinfo: *mut xcb_randr_monitor_info_t,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_randr_set_monitor_checked)(c, window, monitorinfo)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_delete_monitor(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        name: xcb_atom_t,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_randr_delete_monitor)(c, window, name)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_delete_monitor_checked(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        name: xcb_atom_t,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_randr_delete_monitor_checked)(c, window, name)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_create_lease_reply(
+        &self,
+        c: *mut xcb_connection_t,
+        cookie: xcb_randr_create_lease_cookie_t,
+        error: *mut *mut xcb_generic_error_t,
+    ) -> *mut xcb_randr_create_lease_reply_t {
+        sym!(self, xcb_randr_create_lease_reply)(c, cookie, error)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_create_lease_reply_fds(
+        &self,
+        c: *mut xcb_connection_t,
+        reply: *mut xcb_randr_create_lease_reply_t,
+    ) -> *mut c_int {
+        sym!(self, xcb_randr_create_lease_reply_fds)(c, reply)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_create_lease(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        lid: xcb_randr_lease_t,
+        num_crtcs: u16,
+        num_outputs: u16,
+        crtcs: *const xcb_randr_crtc_t,
+        outputs: *const xcb_randr_output_t,
+    ) -> xcb_randr_create_lease_cookie_t {
+        sym!(self, xcb_randr_create_lease)(c, window, lid, num_crtcs, num_outputs, crtcs, outputs)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_create_lease_unchecked(
+        &self,
+        c: *mut xcb_connection_t,
+        window: xcb_window_t,
+        lid: xcb_randr_lease_t,
+        num_crtcs: u16,
+        num_outputs: u16,
+        crtcs: *const xcb_randr_crtc_t,
+        outputs: *const xcb_randr_output_t,
+    ) -> xcb_randr_create_lease_cookie_t {
+        sym!(self, xcb_randr_create_lease_unchecked)(
+            c,
+            window,
+            lid,
+            num_crtcs,
+            num_outputs,
+            crtcs,
+            outputs,
+        )
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_free_lease(
+        &self,
+        c: *mut xcb_connection_t,
+        lid: xcb_randr_lease_t,
+        terminate: u8,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_randr_free_lease)(c, lid, terminate)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_free_lease_checked(
+        &self,
+        c: *mut xcb_connection_t,
+        lid: xcb_randr_lease_t,
+        terminate: u8,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_randr_free_lease_checked)(c, lid, terminate)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_lease_notify_next(&self, i: *mut xcb_randr_lease_notify_iterator_t) {
+        sym!(self, xcb_randr_lease_notify_next)(i);
+    }
+
+    #[inline]
+    pub unsafe fn xcb_randr_lease_notify_end(
+        &self,
+        i: *mut xcb_randr_lease_notify_iterator_t,
+    ) -> xcb_generic_iterator_t {
+        sym!(self, xcb_randr_lease_notify_end)(i)
     }
 
     #[inline]

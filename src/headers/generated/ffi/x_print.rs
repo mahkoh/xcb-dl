@@ -1007,9 +1007,7 @@ impl XcbXprint {
         len_fmt: u16,
         len_options: u16,
         data: *const u8,
-        doc_format_len: u32,
         doc_format: *const xcb_x_print_string8_t,
-        options_len: u32,
         options: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_x_print_print_put_document_data)(
@@ -1019,9 +1017,7 @@ impl XcbXprint {
             len_fmt,
             len_options,
             data,
-            doc_format_len,
             doc_format,
-            options_len,
             options,
         )
     }
@@ -1035,9 +1031,7 @@ impl XcbXprint {
         len_fmt: u16,
         len_options: u16,
         data: *const u8,
-        doc_format_len: u32,
         doc_format: *const xcb_x_print_string8_t,
-        options_len: u32,
         options: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_x_print_print_put_document_data_checked)(
@@ -1047,9 +1041,7 @@ impl XcbXprint {
             len_fmt,
             len_options,
             data,
-            doc_format_len,
             doc_format,
-            options_len,
             options,
         )
     }
@@ -1150,9 +1142,8 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
         event_mask: u32,
-        event_list: *const u32,
     ) -> xcb_void_cookie_t {
-        sym!(self, xcb_x_print_print_select_input)(c, context, event_mask, event_list)
+        sym!(self, xcb_x_print_print_select_input)(c, context, event_mask)
     }
 
     #[inline]
@@ -1161,60 +1152,8 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
         event_mask: u32,
-        event_list: *const u32,
     ) -> xcb_void_cookie_t {
-        sym!(self, xcb_x_print_print_select_input_checked)(c, context, event_mask, event_list)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_x_print_print_input_selected_event_list(
-        &self,
-        R: *const xcb_x_print_print_input_selected_reply_t,
-    ) -> *mut u32 {
-        sym!(self, xcb_x_print_print_input_selected_event_list)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_x_print_print_input_selected_event_list_length(
-        &self,
-        R: *const xcb_x_print_print_input_selected_reply_t,
-    ) -> c_int {
-        sym!(self, xcb_x_print_print_input_selected_event_list_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_x_print_print_input_selected_event_list_end(
-        &self,
-        R: *const xcb_x_print_print_input_selected_reply_t,
-    ) -> xcb_generic_iterator_t {
-        sym!(self, xcb_x_print_print_input_selected_event_list_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_x_print_print_input_selected_all_events_list(
-        &self,
-        R: *const xcb_x_print_print_input_selected_reply_t,
-    ) -> *mut u32 {
-        sym!(self, xcb_x_print_print_input_selected_all_events_list)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_x_print_print_input_selected_all_events_list_length(
-        &self,
-        R: *const xcb_x_print_print_input_selected_reply_t,
-    ) -> c_int {
-        sym!(
-            self,
-            xcb_x_print_print_input_selected_all_events_list_length
-        )(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_x_print_print_input_selected_all_events_list_end(
-        &self,
-        R: *const xcb_x_print_print_input_selected_reply_t,
-    ) -> xcb_generic_iterator_t {
-        sym!(self, xcb_x_print_print_input_selected_all_events_list_end)(R)
+        sym!(self, xcb_x_print_print_select_input_checked)(c, context, event_mask)
     }
 
     #[inline]

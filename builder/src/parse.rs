@@ -246,7 +246,7 @@ impl<B: BufRead> Parser<B> {
         })
     }
 
-    fn parse_expr_content<T>(&mut self, attrs: Attributes, tag: &[u8]) -> Result<Expr<T>>
+    fn parse_expr_content<T>(&mut self, attrs: Attributes, tag: &[u8], empty: bool) -> Result<Expr<T>>
     where
         T: FromStr,
         <T as FromStr>::Err: Display,
@@ -293,6 +293,9 @@ impl<B: BufRead> Parser<B> {
             }
             b"sumof" => {
                 let list_ref = expect_attribute(attrs, b"ref")?;
+                if !empty {
+                    self.xml.read_to_end(b"sumof", &mut self.buf)?;
+                }
                 Ok(Expr::SumOf(list_ref))
             }
             tag => Err(Error::Parse(format!(
@@ -309,9 +312,13 @@ impl<B: BufRead> Parser<B> {
         T: Clone,
     {
         match self.xml.read_event(&mut self.buf) {
-            Ok(XmlEv::Start(ref e) | XmlEv::Empty(ref e)) => {
+            Ok(XmlEv::Start(ref e)) => {
                 let e = e.to_owned();
-                Ok(Some(self.parse_expr_content(e.attributes(), e.name())?))
+                Ok(Some(self.parse_expr_content(e.attributes(), e.name(), false)?))
+            }
+            Ok(XmlEv::Empty(ref e)) => {
+                let e = e.to_owned();
+                Ok(Some(self.parse_expr_content(e.attributes(), e.name(), true)?))
             }
             Ok(XmlEv::Comment(_)) => self.parse_expr::<T>(empty_end_tag), // in case of comment, we just parse the next one
             Ok(XmlEv::End(e)) => {
@@ -444,7 +451,7 @@ impl<B: BufRead> Parser<B> {
         e: &BytesStart,
         mut padnum: &mut u32,
         empty_tag: bool,
-    ) -> Result<StructField> {
+    ) -> Result<Option<StructField>> {
         if empty_tag {
             match e.name() {
                 b"field" => {
@@ -454,7 +461,7 @@ impl<B: BufRead> Parser<B> {
                     let [typ, nam, enu] = vals;
 
                     if let (Some(typ), Some(name)) = (typ, nam) {
-                        Ok(StructField::Field { name, typ, enu })
+                        Ok(Some(StructField::Field { name, typ, enu }))
                     } else {
                         Err(Error::Parse("struct field without type and/or name".into()))
                     }
@@ -473,14 +480,14 @@ impl<B: BufRead> Parser<B> {
                         })?;
                         let name = format!("pad{}", padnum);
                         (*padnum) += 1;
-                        Ok(StructField::Pad(name, val))
+                        Ok(Some(StructField::Pad(name, val)))
                     } else if let Some(align) = align {
                         let val: usize = align.parse().map_err(|e| {
                             Error::Parse(format!("failed to parse pad bytes of struct: {}", e))
                         })?;
                         let name = format!("pad{}", padnum);
                         (*padnum) += 1;
-                        Ok(StructField::AlignPad(name, val))
+                        Ok(Some(StructField::AlignPad(name, val)))
                     } else {
                         Err(Error::Parse(
                             "<pad> with neither align and bytes attr".into(),
@@ -493,7 +500,7 @@ impl<B: BufRead> Parser<B> {
                     get_attributes(e.attributes(), &names, &mut vals)?;
                     let [typ, nam] = vals;
                     if let (Some(typ), Some(name)) = (typ, nam) {
-                        Ok(StructField::ListNoLen { name, typ })
+                        Ok(Some(StructField::ListNoLen { name, typ }))
                     } else {
                         Err(Error::Parse(
                             "<list> tag without type and/or name attribute".into(),
@@ -509,11 +516,11 @@ impl<B: BufRead> Parser<B> {
                     if let (Some(mask_typ), Some(mask_name), Some(list_name)) =
                         (mask_typ, mask_name, list_name)
                     {
-                        Ok(StructField::ValueParam {
+                        Ok(Some(StructField::ValueParam {
                             mask_typ,
                             mask_name,
                             list_name,
-                        })
+                        }))
                     } else {
                         Err(Error::Parse(
                                 "<valueparam> tag without value-mask-type, value-mask-name or value-list-name attribute".into(),
@@ -522,7 +529,10 @@ impl<B: BufRead> Parser<B> {
                 }
                 b"fd" => {
                     let name = expect_attribute(e.attributes(), b"name")?;
-                    Ok(StructField::Fd(name))
+                    Ok(Some(StructField::Fd(name)))
+                }
+                b"required_start_align" => {
+                    Ok(None)
                 }
                 tag => {
                     return Err(Error::Parse(format!(
@@ -540,14 +550,14 @@ impl<B: BufRead> Parser<B> {
                     let [typ, nam] = vals;
                     if let (Some(typ), Some(name)) = (typ, nam) {
                         let len_expr = self.parse_expr::<usize>(b"list")?;
-                        Ok(match len_expr {
+                        Ok(Some(match len_expr {
                             Some(len_expr) => StructField::List {
                                 name,
                                 typ,
                                 len_expr,
                             },
                             None => StructField::ListNoLen { name, typ },
-                        })
+                        }))
                     } else {
                         Err(Error::Parse(
                             "<list> tag without type and/or name attribute".into(),
@@ -562,7 +572,7 @@ impl<B: BufRead> Parser<B> {
                     if let (Some(typ), Some(name)) = (typ, nam) {
                         let expr = self.parse_expr::<usize>(b"")?.unwrap();
                         self.xml.read_to_end(b"exprfield", &mut self.buf)?;
-                        Ok(StructField::Expr { name, typ, expr })
+                        Ok(Some(StructField::Expr { name, typ, expr }))
                     } else {
                         Err(Error::Parse(
                             "<exprfield> tag without type and/or name attribute".into(),
@@ -572,7 +582,7 @@ impl<B: BufRead> Parser<B> {
                 b"switch" => {
                     let name = expect_attribute(e.attributes(), b"name")?;
                     let (expr, cases) = self.parse_switch(&mut padnum)?;
-                    Ok(StructField::Switch(name, expr, cases))
+                    Ok(Some(StructField::Switch(name, expr, cases)))
                 }
                 tag => {
                     return Err(Error::Parse(format!(
@@ -594,26 +604,31 @@ impl<B: BufRead> Parser<B> {
             match self.xml.read_event(&mut self.buf) {
                 Ok(XmlEv::Empty(ref e)) => {
                     let e = e.to_owned();
-                    fields.push(self.parse_field_content(&e, &mut padnum, true)?);
+                    fields.extend(self.parse_field_content(&e, &mut padnum, true)?);
                 }
-                Ok(XmlEv::Start(ref e)) => match e.name() {
-                    b"list" | b"exprfield" | b"switch" => {
-                        let e = e.to_owned();
-                        fields.push(self.parse_field_content(&e, &mut padnum, false)?);
-                    }
-                    b"doc" => {
-                        doc = Some(self.parse_doc()?);
-                    }
-                    b"reply" => {
-                        let StructContent { fields, doc, .. } =
-                            self.parse_struct_content(b"reply")?;
-                        reply = Some(Reply { fields, doc })
-                    }
-                    tag => {
-                        return Err(Error::Parse(format!(
-                            "Unexpected <{} /> in struct",
-                            str::from_utf8(tag)?
-                        )))
+                Ok(XmlEv::Start(ref e)) => {
+                    match e.name() {
+                        b"list" | b"exprfield" | b"switch" => {
+                            let e = e.to_owned();
+                            fields.extend(self.parse_field_content(&e, &mut padnum, false)?);
+                        }
+                        b"doc" => {
+                            doc = Some(self.parse_doc()?);
+                        }
+                        b"reply" => {
+                            let StructContent { fields, doc, .. } =
+                                self.parse_struct_content(b"reply")?;
+                            reply = Some(Reply { fields, doc })
+                        }
+                        b"length" => {
+                            self.xml.read_to_end(b"length", &mut self.buf);
+                        }
+                        tag => {
+                            return Err(Error::Parse(format!(
+                                "Unexpected <{} /> in struct",
+                                str::from_utf8(tag)?
+                            )))
+                        }
                     }
                 },
                 Ok(XmlEv::End(ref e)) => {
@@ -724,21 +739,21 @@ impl<B: BufRead> Parser<B> {
                 Ok(XmlEv::Start(ref e)) => {
                     let e = e.to_owned();
                     if is_expr_tag(e.name()) {
-                        let expr = self.parse_expr_content(e.attributes(), e.name())?;
+                        let expr = self.parse_expr_content(e.attributes(), e.name(), false)?;
                         exprs.push(expr);
                     } else {
                         let field = self.parse_field_content(&e, &mut padnum, false)?;
-                        fields.push(field);
+                        fields.extend(field);
                     }
                 }
                 Ok(XmlEv::Empty(ref e)) => {
                     let e = e.to_owned();
                     if is_expr_tag(e.name()) {
-                        let expr = self.parse_expr_content(e.attributes(), e.name())?;
+                        let expr = self.parse_expr_content(e.attributes(), e.name(), true)?;
                         exprs.push(expr);
                     } else {
                         let field = self.parse_field_content(&e, &mut padnum, true)?;
-                        fields.push(field);
+                        fields.extend(field);
                     }
                 }
                 Ok(XmlEv::Comment(_)) => {}

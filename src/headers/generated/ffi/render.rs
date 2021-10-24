@@ -497,6 +497,24 @@ pub struct xcb_render_query_pict_index_values_reply_t {
     pub pad1: [u8; 20],
 }
 
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_render_create_picture_value_list_t {
+    pub repeat: u32,
+    pub alphamap: xcb_render_picture_t,
+    pub alphaxorigin: i32,
+    pub alphayorigin: i32,
+    pub clipxorigin: i32,
+    pub clipyorigin: i32,
+    pub clipmask: xcb_pixmap_t,
+    pub graphicsexposure: u32,
+    pub subwindowmode: u32,
+    pub polyedge: u32,
+    pub polymode: u32,
+    pub dither: xcb_atom_t,
+    pub componentalpha: u32,
+}
+
 pub const XCB_RENDER_CREATE_PICTURE: u8 = 4;
 
 #[derive(Copy, Clone, Debug)]
@@ -509,6 +527,24 @@ pub struct xcb_render_create_picture_request_t {
     pub drawable: xcb_drawable_t,
     pub format: xcb_render_pictformat_t,
     pub value_mask: u32,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_render_change_picture_value_list_t {
+    pub repeat: u32,
+    pub alphamap: xcb_render_picture_t,
+    pub alphaxorigin: i32,
+    pub alphayorigin: i32,
+    pub clipxorigin: i32,
+    pub clipyorigin: i32,
+    pub clipmask: xcb_pixmap_t,
+    pub graphicsexposure: u32,
+    pub subwindowmode: u32,
+    pub polyedge: u32,
+    pub polymode: u32,
+    pub dither: xcb_atom_t,
+    pub componentalpha: u32,
 }
 
 pub const XCB_RENDER_CHANGE_PICTURE: u8 = 5;
@@ -1431,7 +1467,7 @@ impl XcbRender {
         drawable: xcb_drawable_t,
         format: xcb_render_pictformat_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_render_create_picture_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_render_create_picture)(c, pid, drawable, format, value_mask, value_list)
     }
@@ -1444,7 +1480,7 @@ impl XcbRender {
         drawable: xcb_drawable_t,
         format: xcb_render_pictformat_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_render_create_picture_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_render_create_picture_checked)(
             c, pid, drawable, format, value_mask, value_list,
@@ -1457,7 +1493,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         picture: xcb_render_picture_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_render_change_picture_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_render_change_picture)(c, picture, value_mask, value_list)
     }
@@ -1468,7 +1504,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         picture: xcb_render_picture_t,
         value_mask: u32,
-        value_list: *const u32,
+        value_list: *const xcb_render_change_picture_value_list_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_render_change_picture_checked)(c, picture, value_mask, value_list)
     }

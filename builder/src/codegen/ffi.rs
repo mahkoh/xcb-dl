@@ -144,6 +144,7 @@ impl CodeGen {
                 }
             }
             StructField::ListNoLen { .. } => None,
+            StructField::Switch(..) => None,
             f => unimplemented!("{:?}", f),
         }
     }

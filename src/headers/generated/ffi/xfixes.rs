@@ -2,7 +2,7 @@ use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
-pub const XCB_XFIXES_MAJOR_VERSION: u32 = 5;
+pub const XCB_XFIXES_MAJOR_VERSION: u32 = 6;
 pub const XCB_XFIXES_MINOR_VERSION: u32 = 0;
 
 pub const XCB_XFIXES_QUERY_VERSION: u8 = 0;
@@ -621,6 +621,48 @@ pub struct xcb_xfixes_delete_pointer_barrier_request_t {
     pub minor_opcode: u8,
     pub length: u16,
     pub barrier: xcb_xfixes_barrier_t,
+}
+
+pub type xcb_xfixes_client_disconnect_flags_t = u32;
+pub const XCB_XFIXES_CLIENT_DISCONNECT_FLAGS_DEFAULT: xcb_xfixes_client_disconnect_flags_t = 0x00;
+pub const XCB_XFIXES_CLIENT_DISCONNECT_FLAGS_TERMINATE: xcb_xfixes_client_disconnect_flags_t = 0x01;
+
+pub const XCB_XFIXES_SET_CLIENT_DISCONNECT_MODE: u8 = 33;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_xfixes_set_client_disconnect_mode_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+    pub disconnect_mode: u32,
+}
+
+pub const XCB_XFIXES_GET_CLIENT_DISCONNECT_MODE: u8 = 34;
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_xfixes_get_client_disconnect_mode_request_t {
+    pub major_opcode: u8,
+    pub minor_opcode: u8,
+    pub length: u16,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_xfixes_get_client_disconnect_mode_cookie_t {
+    pub sequence: c_uint,
+}
+
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_xfixes_get_client_disconnect_mode_reply_t {
+    pub response_type: u8,
+    pub pad0: u8,
+    pub sequence: u16,
+    pub length: u32,
+    pub disconnect_mode: u32,
+    pub pad1: [u8; 20],
 }
 
 impl XcbXfixes {
@@ -1293,30 +1335,6 @@ impl XcbXfixes {
     }
 
     #[inline]
-    pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name(
-        &self,
-        R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
-    ) -> *mut c_char {
-        sym!(self, xcb_xfixes_get_cursor_image_and_name_name)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name_length(
-        &self,
-        R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
-    ) -> c_int {
-        sym!(self, xcb_xfixes_get_cursor_image_and_name_name_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name_end(
-        &self,
-        R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
-    ) -> xcb_generic_iterator_t {
-        sym!(self, xcb_xfixes_get_cursor_image_and_name_name_end)(R)
-    }
-
-    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_cursor_image(
         &self,
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
@@ -1341,6 +1359,30 @@ impl XcbXfixes {
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
     ) -> xcb_generic_iterator_t {
         sym!(self, xcb_xfixes_get_cursor_image_and_name_cursor_image_end)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name(
+        &self,
+        R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
+    ) -> *mut c_char {
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_name)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name_length(
+        &self,
+        R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
+    ) -> c_int {
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_name_length)(R)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name_end(
+        &self,
+        R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
+    ) -> xcb_generic_iterator_t {
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_name_end)(R)
     }
 
     #[inline]
@@ -1568,5 +1610,49 @@ impl XcbXfixes {
         barrier: xcb_xfixes_barrier_t,
     ) -> xcb_void_cookie_t {
         sym!(self, xcb_xfixes_delete_pointer_barrier_checked)(c, barrier)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_set_client_disconnect_mode(
+        &self,
+        c: *mut xcb_connection_t,
+        disconnect_mode: u32,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_xfixes_set_client_disconnect_mode)(c, disconnect_mode)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_set_client_disconnect_mode_checked(
+        &self,
+        c: *mut xcb_connection_t,
+        disconnect_mode: u32,
+    ) -> xcb_void_cookie_t {
+        sym!(self, xcb_xfixes_set_client_disconnect_mode_checked)(c, disconnect_mode)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_get_client_disconnect_mode_reply(
+        &self,
+        c: *mut xcb_connection_t,
+        cookie: xcb_xfixes_get_client_disconnect_mode_cookie_t,
+        error: *mut *mut xcb_generic_error_t,
+    ) -> *mut xcb_xfixes_get_client_disconnect_mode_reply_t {
+        sym!(self, xcb_xfixes_get_client_disconnect_mode_reply)(c, cookie, error)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_get_client_disconnect_mode(
+        &self,
+        c: *mut xcb_connection_t,
+    ) -> xcb_xfixes_get_client_disconnect_mode_cookie_t {
+        sym!(self, xcb_xfixes_get_client_disconnect_mode)(c)
+    }
+
+    #[inline]
+    pub unsafe fn xcb_xfixes_get_client_disconnect_mode_unchecked(
+        &self,
+        c: *mut xcb_connection_t,
+    ) -> xcb_xfixes_get_client_disconnect_mode_cookie_t {
+        sym!(self, xcb_xfixes_get_client_disconnect_mode_unchecked)(c)
     }
 }
