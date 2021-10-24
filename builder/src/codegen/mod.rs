@@ -40,6 +40,7 @@ pub struct CodeGen {
     // additional output buffers that make a second group of declaration/functions
     // they are appended to the output at the end
     ffi_buf: Cursor<Vec<u8>>,
+    ffi_struct_buf: Cursor<Vec<u8>>,
     rs_buf: Cursor<Vec<u8>>,
 
     typ_with_lifetime: HashSet<String>,
@@ -94,12 +95,16 @@ impl CodeGen {
             })
             .unwrap_or(PTR_WIDTH);
 
+        let mut ffi_struct_buf = Cursor::new(Vec::new());
+        writeln!(ffi_struct_buf, "pub(crate) lib: NamedLibrary,");
+
         CodeGen {
             xcb_mod: xcb_mod.to_owned(),
             xcb_mod_prefix: mp,
             ffi,
             rs,
             ffi_buf: Cursor::new(Vec::new()),
+            ffi_struct_buf,
             rs_buf: Cursor::new(Vec::new()),
             imports: Vec::new(),
             typ_with_lifetime: HashSet::new(),
@@ -144,13 +149,8 @@ impl CodeGen {
         }
 
         let out = &mut self.ffi;
-        writeln!(out, "use ffi::base::*;")?;
-        writeln!(out, "use ffi::ext::*;")?;
-        for imp in imports.iter() {
-            writeln!(out, "use ffi::{}::*;", imp)?;
-        }
-        writeln!(out, "use libc::{{c_char, c_int, c_uint, c_void}};")?;
-        writeln!(out, "use std;")?;
+        writeln!(out, "use crate::*;")?;
+        writeln!(out, "use std::os::raw::*;")?;
 
         if let Some(ext_info) = ext_info {
             let maj_name = ffi::opcode_name(&self.xcb_mod_prefix, "MajorVersion");
@@ -168,12 +168,14 @@ impl CodeGen {
                 &min_name, ext_info.minor_version
             )?;
 
+            writeln!(self.ffi_struct_buf, "pub(crate) xcb_{}_id: LazySymbol<*mut xcb_extension_t>,", self.xcb_mod);
             let out = &mut self.ffi_buf;
             writeln!(out)?;
+            writeln!(out, "    #[inline]");
             writeln!(
                 out,
-                "    pub static mut xcb_{}_id: xcb_extension_t;",
-                &self.xcb_mod
+                "    pub fn xcb_{}_id(&self) -> *mut xcb_extension_t {{ call!(self, xcb_{}_id) }}",
+                &self.xcb_mod, &self.xcb_mod,
             )?;
         }
 
@@ -217,15 +219,16 @@ impl CodeGen {
     }
 
     pub fn epilogue(&mut self) -> io::Result<()> {
-        let linklib = match self.xcb_mod.as_str() {
-            "xproto" | "big_requests" | "xc_misc" => "xcb".to_owned(),
-            "genericevent" => "xcb-ge".to_owned(),
-            "x_print" => "xcb-xprint".to_owned(),
-            "test" => "xcb-xtest".to_owned(),
-            "selinux" => "xcb-xselinux".to_owned(),
+        let type_name = match self.xcb_mod.as_str() {
+            "xproto" | "big_requests" | "xc_misc" => "Xcb".to_owned(),
+            "genericevent" => "XcbGe".to_owned(),
+            "x_print" => "XcbXprint".to_owned(),
+            "test" => "XcbXtest".to_owned(),
+            "selinux" => "XcbXselinux".to_owned(),
             m => {
-                let mut l = "xcb-".to_owned();
-                l.push_str(m);
+                let mut l = "Xcb".to_owned();
+                l.push_str(&m[0..1].to_ascii_uppercase());
+                l.push_str(&m[1..]);
                 l
             }
         };
@@ -233,13 +236,17 @@ impl CodeGen {
         let out = &mut self.ffi;
         // write out all the external functions
         writeln!(out)?;
-        writeln!(out, "#[link(name = \"{}\")]", linklib)?;
-        writeln!(out, "extern {{")?;
+        writeln!(out, "impl {} {{", type_name)?;
 
         out.write_all(self.ffi_buf.get_ref())?;
 
         writeln!(out)?;
-        writeln!(out, "}} // extern")?;
+        writeln!(out, "}}")?;
+
+        writeln!(out)?;
+        writeln!(out, "pub struct {} {{", type_name)?;
+        out.write_all(self.ffi_struct_buf.get_ref())?;
+        writeln!(out, "}}")?;
 
         let out = &mut self.rs;
         out.write_all(self.rs_buf.get_ref())?;
@@ -257,7 +264,7 @@ impl CodeGen {
                         fields: stru.fields.clone(),
                         doc: stru.doc.clone(),
                     };
-                    self.emit_struct(newstruct)?;
+                    self.emit_struct(newstruct, false)?;
                 } else {
                     // classic typedef with `type new = old;`
                     self.notify_typ(newname.clone());
@@ -266,7 +273,7 @@ impl CodeGen {
                     let ffi_new_typ = self.ffi_decl_type_name(&newname);
 
                     emit_type_alias(&mut self.ffi, &ffi_new_typ, &ffi_old_typ)?;
-                    self.emit_ffi_iterator(&newname, &ffi_new_typ, false)?;
+                    self.emit_ffi_iterator(&newname, &ffi_new_typ)?;
 
                     let rs_new_typ = rs::type_name(&newname);
                     emit_type_alias(&mut self.rs, &rs_new_typ, &ffi_new_typ)?;
@@ -303,22 +310,10 @@ impl CodeGen {
                     }),
                     &en.doc,
                 )?;
-
-                let rs_typ = self.rs_enum_type_name(&en.name);
-                emit_enum(
-                    &mut self.rs,
-                    &rs_typ,
-                    en.items.iter().map(|it| EnumItem {
-                        id: it.id.clone(),
-                        name: rs::enum_item_name(&en.name, &it.name),
-                        value: it.value,
-                    }),
-                    &en.doc,
-                )?;
-                self.reg_type(en.name, ffi_typ, rs_typ, Some(4), false, true, true);
+                self.reg_type(en.name, ffi_typ, String::new(), Some(4), false, true, true);
             }
-            Event::Struct(stru) => self.emit_struct(stru)?,
-            Event::Union(stru) => self.emit_union(stru)?,
+            Event::Struct(stru) => self.emit_struct(stru, false)?,
+            Event::Union(stru) => self.emit_struct(stru, true)?,
             Event::Error(number, stru) => self.emit_error(number, stru)?,
             Event::ErrorCopy { name, number, ref_ } => {
                 self.emit_error_copy(&name, number, &ref_)?
@@ -448,67 +443,11 @@ impl CodeGen {
         true
     }
 
-    fn fields_need_lifetime(&self, fields: &[StructField]) -> bool {
-        for f in fields.iter() {
-            match f {
-                StructField::Field { typ, .. } => {
-                    if self.typ_unions.contains(typ) {
-                        return true;
-                    }
-                    if self.type_has_lifetime(typ) {
-                        return true;
-                    }
-                }
-                StructField::List { .. } => {
-                    return true;
-                }
-                _ => {}
-            }
-        }
-        false
-    }
-
-    fn type_has_lifetime(&self, typ: &str) -> bool {
-        if self.typ_with_lifetime.contains(typ) {
-            true
-        } else {
-            for di in &self.dep_info {
-                if di.typ_with_lifetime.contains(typ) {
-                    return true;
-                }
-            }
-            false
-        }
-    }
-
-    fn eligible_to_copy(&self, stru: &Struct) -> bool {
-        for f in stru.fields.iter() {
-            match f {
-                StructField::List { len_expr, .. } => {
-                    if expr_fixed_length(len_expr).is_none() {
-                        return false;
-                    }
-                }
-                StructField::ValueParam { .. } => {
-                    return false;
-                }
-                StructField::Switch(..) => {
-                    return false;
-                }
-                StructField::ListNoLen { .. } => {
-                    return false;
-                }
-                _ => {}
-            }
-        }
-        true
-    }
-
     fn emit_xid(&mut self, name: String) -> io::Result<()> {
         self.notify_typ(name.clone());
         let ffi_typ = self.ffi_decl_type_name(&name);
         emit_type_alias(&mut self.ffi, &ffi_typ, "u32")?;
-        self.emit_ffi_iterator(&name, &ffi_typ, false)?;
+        self.emit_ffi_iterator(&name, &ffi_typ)?;
 
         let rs_typ = rs::type_name(&name);
         emit_type_alias(&mut self.rs, &rs_typ, &ffi_typ)?;
@@ -517,74 +456,25 @@ impl CodeGen {
         Ok(())
     }
 
-    fn emit_struct(&mut self, stru: Struct) -> io::Result<()> {
+    fn emit_struct(&mut self, stru: Struct, union_: bool) -> io::Result<()> {
         self.notify_typ(stru.name.clone());
 
-        let has_lifetime = self.fields_need_lifetime(&stru.fields);
-        if has_lifetime {
-            self.typ_with_lifetime.insert(stru.name.clone());
-        }
-        let ffi_typ = self.emit_ffi_struct(&stru, None, false, false, false)?;
+        let ffi_typ = self.emit_ffi_struct(&stru, None, false, false, false, union_)?;
         self.emit_ffi_field_list_accessors(&ffi_typ, &stru.name, &stru.fields, None, false)?;
-        let ffi_it_typ = self.emit_ffi_iterator(&stru.name, &ffi_typ, has_lifetime)?;
-
-        let rs_typ = self.emit_rs_struct(&ffi_typ, &stru, has_lifetime)?;
-        self.emit_rs_iterator(&stru.name, &rs_typ, &ffi_it_typ, has_lifetime, false)?;
+        self.emit_ffi_iterator(&stru.name, &ffi_typ)?;
 
         let stru_sz = self.compute_ffi_struct_size(&stru);
         self.reg_type(
             stru.name.clone(),
             ffi_typ,
-            rs_typ,
+            String::new(),
             stru_sz,
-            false,
+            union_,
             false,
             self.fields_are_pod(&stru.fields),
         );
 
         self.structs.push(stru);
-
-        Ok(())
-    }
-
-    fn emit_union(&mut self, stru: Struct) -> io::Result<()> {
-        self.notify_typ(stru.name.clone());
-
-        let ffi_sz = self.compute_ffi_union_size(&stru);
-        let ffi_typ = self.ffi_decl_type_name(&stru.name);
-
-        {
-            let out = &mut self.ffi;
-            writeln!(out)?;
-            emit_doc_text(out, &stru.doc)?;
-            writeln!(out, "// union")?;
-            writeln!(out, "#[repr(C)]")?;
-            writeln!(out, "#[derive(Debug)]")?;
-            writeln!(out, "pub struct {} {{", &ffi_typ)?;
-            writeln!(out, "    pub data: [u8; {}],", ffi_sz)?;
-            writeln!(out, "}}")?;
-            emit_copy_clone(out, &ffi_typ)?;
-        }
-
-        self.emit_ffi_iterator(&stru.name, &ffi_typ, false)?;
-
-        let rs_typ = rs::type_name(&stru.name);
-
-        {
-            let out = &mut self.rs_buf;
-
-            writeln!(out)?;
-            emit_doc_text(out, &stru.doc)?;
-            emit_type_alias(out, &rs_typ, &ffi_typ)?;
-        }
-
-        self.emit_rs_union_impl(&rs_typ, ffi_sz, &stru)?;
-
-        let ffi_it_typ = self.ffi_iterator_name(&stru.name);
-
-        self.emit_rs_iterator(&stru.name, &rs_typ, &ffi_it_typ, false, true)?;
-
-        self.reg_type(stru.name, ffi_typ, rs_typ, Some(ffi_sz), true, false, false);
 
         Ok(())
     }
@@ -625,7 +515,7 @@ impl CodeGen {
             doc: stru.doc,
         };
 
-        let ffi_typ = self.emit_ffi_struct(&stru, None, false, false, false)?;
+        let ffi_typ = self.emit_ffi_struct(&stru, None, false, false, false, false)?;
 
         let rs_typ = rs::type_name(&stru.name);
 
@@ -757,7 +647,7 @@ impl CodeGen {
             doc,
         };
 
-        let ffi_typ = self.emit_ffi_struct(&stru, None, must_pack, false, false)?;
+        let ffi_typ = self.emit_ffi_struct(&stru, None, must_pack, false, false, false)?;
         self.emit_ffi_field_list_accessors(&ffi_typ, &orig_name, &stru.fields, None, false)?;
         let ffi_sz = self.compute_ffi_struct_size(&stru);
 
@@ -771,12 +661,10 @@ impl CodeGen {
             emit_type_alias(&mut self.ffi, &new_ffi_typ, &old_ffi_typ)?;
         }
 
-        let rs_typ = self.emit_rs_event(&orig_name, number, &stru, &ffi_typ, &opcopies, xge)?;
-
         self.reg_type(
             stru.name,
             ffi_typ,
-            rs_typ,
+            String::new(),
             ffi_sz,
             false,
             false,
@@ -827,7 +715,6 @@ impl CodeGen {
                 let toplevel = req.name.to_string() + "Request";
                 self.notify_typ(toplevel.clone());
                 self.emit_ffi_switch_struct(&req.name, name, expr, cases, &toplevel, None)?;
-                self.emit_rs_switch_typedef(&req.name, name, cases, &toplevel, None)?;
             }
         }
 
@@ -838,46 +725,28 @@ impl CodeGen {
             fields,
             doc: req.doc.clone(),
         };
-        self.emit_ffi_struct(&stru, None, false, false, false)?;
+        self.emit_ffi_struct(&stru, None, false, false, false, false)?;
 
         let void = req.reply.is_none();
-        let (ffi_cookie, check_name, checked) = if void {
-            ("VoidCookie".to_string(), req.name.clone() + "Checked", true)
+        let (ffi_cookie, check_name) = if void {
+            ("VoidCookie".to_string(), req.name.clone() + "Checked")
         } else {
             (
                 req.name.clone() + "Cookie",
                 req.name.clone() + "Unchecked",
-                false,
             )
-        };
-
-        let rs_cookie = if ffi_cookie == "VoidCookie" {
-            String::from("base::VoidCookie")
-        } else {
-            rs::type_name(&ffi_cookie)
         };
 
         rs::emit_opcode(&mut self.rs_buf, &req.name, req.opcode)?;
 
         if let Some(reply) = req.reply.take() {
-            let (ffi_cookie, ffi_reply_fn, ffi_reply_typ) =
-                self.emit_ffi_reply(&req.name, reply.clone())?;
-            self.emit_rs_reply(
-                &req.name,
-                &ffi_cookie,
-                &ffi_reply_fn,
-                &ffi_reply_typ,
-                &rs_cookie,
-                reply,
-            )?;
+            self.emit_ffi_reply(&req.name, reply.clone())?;
             self.notify_typ(req.name.clone() + "Reply");
             self.notify_typ(req.name.clone() + "Cookie");
         }
 
         let ffi_fn_name = ffi::request_fn_name(&self.xcb_mod_prefix, &req.name);
         let ffi_check_fn_name = ffi::request_fn_name(&self.xcb_mod_prefix, &check_name);
-        let rs_fn_name = rs::request_fn_name(&req.name);
-        let rs_check_fn_name = rs::request_fn_name(&check_name);
 
         self.emit_ffi_req_fn(&req.name, &ffi_fn_name, &ffi_cookie, &req.params, &stru.doc)?;
         self.emit_ffi_req_fn(
@@ -886,24 +755,6 @@ impl CodeGen {
             &ffi_cookie,
             &req.params,
             &stru.doc,
-        )?;
-        self.emit_rs_req_fn(
-            &req.name,
-            &rs_fn_name,
-            &ffi_fn_name,
-            &rs_cookie,
-            &req.params,
-            &stru.doc,
-            !checked,
-        )?;
-        self.emit_rs_req_fn(
-            &req.name,
-            &rs_check_fn_name,
-            &ffi_check_fn_name,
-            &rs_cookie,
-            &req.params,
-            &stru.doc,
-            checked,
         )?;
 
         Ok(())
@@ -1080,17 +931,6 @@ fn extract_module(typ: &str) -> (Option<&str>, &str) {
     }
 }
 
-fn qualified_name(xcb_mod: &str, module: &Option<&str>, name: &str) -> String {
-    if let Some(module) = module {
-        if module != &xcb_mod {
-            format!("{}::{}", module, &name)
-        } else {
-            name.into()
-        }
-    } else {
-        name.into()
-    }
-}
 fn emit_type_alias<Out: Write>(out: &mut Out, new_typ: &str, old_typ: &str) -> io::Result<()> {
     writeln!(out)?;
     writeln!(out, "pub type {} = {};", new_typ, old_typ)?;
@@ -1145,30 +985,6 @@ fn emit_doc_field<Out: Write>(out: &mut Out, doc: &Option<Doc>, field: &str) -> 
     }
 }
 
-fn emit_doc_field_indent<Out: Write>(
-    out: &mut Out,
-    doc: &Option<Doc>,
-    field: &str,
-    indent: &str,
-) -> io::Result<()> {
-    if let Some(doc) = doc {
-        if let Some(f) = doc.fields.iter().find(|f| f.name == field) {
-            emit_doc_str(out, &f.text, indent)?;
-        }
-    }
-    Ok(())
-}
-
-fn emit_copy_clone<Out: Write>(out: &mut Out, typ: &str) -> io::Result<()> {
-    writeln!(out)?;
-    writeln!(out, "impl Copy for {} {{}}", &typ)?;
-    writeln!(out, "impl Clone for {} {{", &typ)?;
-    writeln!(out, "    fn clone(&self) -> {} {{ *self }}", &typ)?;
-    writeln!(out, "}}")?;
-
-    Ok(())
-}
-
 fn emit_enum<Out, Items>(
     out: &mut Out,
     typ: &str,
@@ -1188,88 +1004,6 @@ where
         writeln!(out, "pub const {}: {} = {};", item.name, typ, val)?;
     }
     Ok(())
-}
-
-struct ListField {
-    name: String,
-    typ: String,
-    lenfield: String,
-    // lenfield_typ: String,
-}
-
-impl ListField {
-    fn fetch_from(fields: &[StructField]) -> Vec<ListField> {
-        let mut res = Vec::new();
-        for f in fields {
-            match f {
-                StructField::List {
-                    name,
-                    typ,
-                    len_expr,
-                } => {
-                    let lenfield = expr_lenfield(len_expr);
-                    if let Some(lenfield) = lenfield {
-                        let name = name.clone();
-                        let typ = typ.clone();
-                        let lenfield = lenfield.to_string();
-                        // let lenfield_typ = fields
-                        //     .iter()
-                        //     .find_map(|f| match f {
-                        //         StructField::Field { name, typ, .. } => {
-                        //             if name == &lenfield {
-                        //                 Some(typ.clone())
-                        //             } else {
-                        //                 None
-                        //             }
-                        //         }
-                        //         _ => None,
-                        //     })
-                        //     .expect("can't find lenfield type");
-                        res.push(ListField {
-                            name,
-                            typ,
-                            lenfield,
-                            // lenfield_typ,
-                        });
-                    }
-                }
-                StructField::ListNoLen { name, typ } => {
-                    let name = name.clone();
-                    let typ = typ.clone();
-                    let lenfield = name.clone() + "_len";
-                    res.push(ListField {
-                        name,
-                        typ,
-                        lenfield,
-                        // lenfield_typ: "CARD32".to_string(),
-                    });
-                }
-                _ => {}
-            }
-        }
-        res
-    }
-}
-
-fn expr_lenfield(expr: &Expr<usize>) -> Option<&str> {
-    match expr {
-        Expr::FieldRef(name) => Some(name),
-        Expr::Op(_, lhs, rhs) => expr_lenfield(lhs).or_else(|| expr_lenfield(rhs)),
-        Expr::Unop(_, rhs) => expr_lenfield(rhs),
-        Expr::Popcount(e) => expr_lenfield(e),
-        _ => None,
-    }
-}
-
-fn request_has_template(params: &[StructField]) -> bool {
-    for f in params.iter() {
-        if let StructField::List { typ, .. } = f {
-            if typ == "void" {
-                return true;
-            }
-        }
-    }
-    false
 }
 
 fn enum_suffix_exception(xcb_mod: &str, enum_typ: &str) -> bool {

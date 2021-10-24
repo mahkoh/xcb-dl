@@ -43,10 +43,6 @@ fn main() {
     let mut dep_info = Vec::new();
 
     for xml_file in iter_xml(&xml_dir) {
-        if xml_file.file_stem().unwrap().to_str().unwrap() == "xinput" {
-            continue;
-        }
-
         process_xcb_gen(&xml_file, out_dir, &rustfmt, gen_all, &mut dep_info).unwrap_or_else(
             |err| {
                 panic!(

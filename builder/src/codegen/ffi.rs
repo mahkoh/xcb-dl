@@ -1,4 +1,5 @@
 use std::io::{self, Write};
+use std::fmt::Write as FmtWrite;
 
 use super::{
     capitalize, emit_doc_field, emit_doc_text, enum_suffix_exception, expr_fixed_length,
@@ -182,52 +183,10 @@ impl CodeGen {
         stru_sz
     }
 
-    pub fn compute_ffi_union_size(&self, stru: &Struct) -> usize {
-        let mut biggest = 1;
-        let mut alignment = 1;
-
-        for f in stru.fields.iter() {
-            let mut fs = self.ptr_width;
-            let mut fa = self.ptr_width;
-            match f {
-                StructField::AlignPad(_, _) => panic!("Unexpected align pad in union"),
-                StructField::Pad(_, _) => panic!("Unexpected pad in union"),
-                StructField::Field { typ, .. } => {
-                    if let Some(sz) = self.ffi_type_sizeof(typ) {
-                        fs = sz;
-                        fa = sz;
-                    }
-                }
-                StructField::List { typ, len_expr, .. } => {
-                    if let Some(sz) = self.ffi_type_sizeof(typ) {
-                        fs = sz;
-                        fa = sz;
-                    }
-                    if let Some(len) = expr_fixed_length(len_expr) {
-                        fs = len * fa;
-                    }
-                }
-                StructField::ListNoLen { .. } => panic!("Unexpected list without length in union"),
-
-                f => unimplemented!("{:?}", f),
-            }
-
-            biggest = biggest.max(fs);
-            alignment = alignment.max(fa);
-        }
-
-        let mut num_aligned = biggest / alignment;
-        if biggest % alignment > 0 {
-            num_aligned += 1;
-        }
-        num_aligned * alignment
-    }
-
     pub fn emit_ffi_iterator(
         &mut self,
         name: &str,
         typ: &str,
-        has_lifetime: bool,
     ) -> io::Result<String> {
         let it_typ = self.ffi_iterator_name(name);
         let it_next = iterator_next_fn_name(&self.xcb_mod_prefix, name);
@@ -235,28 +194,27 @@ impl CodeGen {
 
         let out = &mut self.ffi;
 
-        let lifetime = if has_lifetime { "<'a>" } else { "" };
-
         writeln!(out)?;
+        writeln!(out, "#[derive(Copy, Clone, Debug)]")?;
         writeln!(out, "#[repr(C)]")?;
-        writeln!(out, "#[derive(Debug)]")?;
-        writeln!(out, "pub struct {}{} {{", &it_typ, lifetime)?;
-        writeln!(out, "    pub data:  *mut {},", &typ)?;
-        writeln!(out, "    pub rem:   c_int,")?;
+        writeln!(out, "pub struct {} {{", &it_typ)?;
+        writeln!(out, "    pub data: *mut {},", &typ)?;
+        writeln!(out, "    pub rem: c_int,")?;
         writeln!(out, "    pub index: c_int,")?;
-        if has_lifetime {
-            writeln!(out, "    _phantom: std::marker::PhantomData<&'a {}>,", &typ)?;
-        }
         writeln!(out, "}}")?;
 
+        writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn(i: *mut {})>,", it_next, it_typ);
+        writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn(i: *mut {}) -> xcb_generic_iterator_t>,", it_end, it_typ);
         let out = &mut self.ffi_buf;
         writeln!(out).unwrap();
-        writeln!(out, "pub fn {}(i: *mut {});", &it_next, &it_typ).unwrap();
+        writeln!(out, "#[inline]");
+        writeln!(out, "pub unsafe fn {}(&self, i: *mut {}) {{ call!(self, {})(i); }}", &it_next, &it_typ, it_next).unwrap();
         writeln!(out).unwrap();
+        writeln!(out, "#[inline]");
         writeln!(
             out,
-            "pub fn {}(i: *mut {}) -> xcb_generic_iterator_t;",
-            &it_end, &it_typ
+            "pub unsafe fn {}(&self, i: *mut {}) -> xcb_generic_iterator_t {{ call!(self, {})(i) }}",
+            &it_end, &it_typ, it_end
         )
         .unwrap();
         Ok(it_typ)
@@ -278,16 +236,14 @@ impl CodeGen {
         let end_needed = is_simple;
         let iterator_needed = !is_simple;
 
-        let has_lifetime = self.type_has_lifetime(ftyp);
-
-        let args = if let Some(toplevel_typ) = toplevel_typ {
-            format!(
+        let (params, args) = if let Some(toplevel_typ) = toplevel_typ {
+            (format!(
                 "R: *const {}, S: *const {}",
                 self.ffi_use_type_name(toplevel_typ),
                 ffi_typ
-            )
+            ), "R, S")
         } else {
-            format!("R: *const {}", ffi_typ)
+            (format!("R: *const {}", ffi_typ), "R")
         };
 
         if accessor_needed {
@@ -295,43 +251,50 @@ impl CodeGen {
             let acc_fn = field_list_iterator_acc_fn_name(&self.xcb_mod_prefix, xcb_name, fname);
             // the following only for diff equality with Python code
             let param = if toplevel_typ.is_some() { "S" } else { "R" };
+            writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn({}: *const {}) -> *mut {}>,", acc_fn, param, ffi_typ, ftyp);
             let out = &mut self.ffi_buf;
             writeln!(out)?;
+            writeln!(out, "#[inline]");
             writeln!(
                 out,
-                "pub fn {}({}: *const {}) -> *mut {};",
-                &acc_fn, param, &ffi_typ, &ftyp
+                "pub unsafe fn {}(&self, {}: *const {}) -> *mut {} {{ call!(self, {})({}) }}",
+                &acc_fn, param, &ffi_typ, &ftyp, acc_fn, param
             )?;
         }
 
         if length_needed {
             let len_fn = field_list_iterator_len_fn_name(&self.xcb_mod_prefix, xcb_name, fname);
+            writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn({}) -> c_int>,", len_fn, params);
             let out = &mut self.ffi_buf;
             writeln!(out)?;
-            writeln!(out, "pub fn {}({}) -> c_int;", &len_fn, &args)?;
+            writeln!(out, "#[inline]");
+            writeln!(out, "pub unsafe fn {}(&self, {}) -> c_int {{ call!(self, {})({}) }}", &len_fn, &params, len_fn, args)?;
         }
 
         if end_needed {
             let end_fn = field_list_iterator_end_fn_name(&self.xcb_mod_prefix, xcb_name, fname);
+            writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn({}) -> xcb_generic_iterator_t>,", end_fn, params);
             let out = &mut self.ffi_buf;
             writeln!(out)?;
+            writeln!(out, "#[inline]");
             writeln!(
                 out,
-                "pub fn {}({}) -> xcb_generic_iterator_t;",
-                &end_fn, &args
+                "pub unsafe fn {}(&self, {}) -> xcb_generic_iterator_t {{ call!(self, {})({}) }}",
+                &end_fn, &params, end_fn, args,
             )?;
         }
 
         if iterator_needed {
-            let lifetime = if has_lifetime { "<'a>" } else { "" };
             let it_fn = field_list_iterator_it_fn_name(&self.xcb_mod_prefix, xcb_name, fname);
             let it_typ = self.ffi_iterator_name(ftyp);
+            writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn({}) -> {}>,", it_fn, params, it_typ);
             let out = &mut self.ffi_buf;
             writeln!(out)?;
+            writeln!(out, "#[inline]");
             writeln!(
                 out,
-                "pub fn {}{}({}) -> {}{};",
-                &it_fn, &lifetime, &args, &it_typ, &lifetime
+                "pub unsafe fn {}(&self, {}) -> {} {{ call!(self, {})({}) }}",
+                &it_fn, &params, &it_typ, it_fn, args
             )?;
         }
         Ok(())
@@ -392,11 +355,13 @@ impl CodeGen {
                     if is_switch && !self.typ_is_pod(typ) {
                         let fn_name = switch_accessor_fn(&self.xcb_mod_prefix, xcb_name, name);
                         let ret = self.ffi_use_type_name(typ);
+                        writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn(R: *const {}) -> *mut {}>,", fn_name, ffi_typ, ret);
                         let out = &mut self.ffi_buf;
+                        writeln!(out, "#[inline]");
                         writeln!(
                             out,
-                            "pub fn {}(R: *const {}) -> *mut {};",
-                            &fn_name, ffi_typ, ret,
+                            "pub unsafe fn {}(&self, R: *const {}) -> *mut {} {{ call!(self, {})(R) }}",
+                            &fn_name, ffi_typ, ret, fn_name,
                         )?;
                     }
                 }
@@ -410,12 +375,14 @@ impl CodeGen {
                         "c_void".to_string()
                     };
 
+                    writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn(R: *const {}) -> *mut {}>,", fn_name, ffi_typ, ret);
                     let out = &mut self.ffi_buf;
 
+                    writeln!(out, "#[inline]");
                     writeln!(
                         out,
-                        "pub fn {}(R: *const {}) -> *mut {};",
-                        &fn_name, ffi_typ, ret,
+                        "pub unsafe fn {}(&self, R: *const {}) -> *mut {} {{ call!(self, {})(R) }}",
+                        &fn_name, ffi_typ, ret, fn_name,
                     )?;
                 }
                 _ => {}
@@ -429,8 +396,9 @@ impl CodeGen {
         stru: &Struct,
         case_req_name: Option<&str>,
         must_pack: bool,
-        no_copy: bool,
+        _no_copy: bool,
         is_switch: bool,
+        union_: bool,
     ) -> io::Result<String> {
         let Struct { name, fields, doc } = &stru;
 
@@ -440,9 +408,9 @@ impl CodeGen {
             self.ffi_decl_type_name(name)
         };
 
-        let impl_copy_clone = must_pack || self.eligible_to_copy(stru) && !no_copy;
+        let tag = if union_ { "union" } else { "struct" };
 
-        let copyclone = if impl_copy_clone { "Copy, Clone, " } else { "" };
+        let debug = if union_ { "" } else { ", Debug" };
 
         {
             let must_pack = if must_pack { ", packed" } else { "" };
@@ -450,9 +418,9 @@ impl CodeGen {
             let out = &mut self.ffi;
             writeln!(out)?;
             emit_doc_text(out, doc)?;
-            writeln!(out, "#[derive({}Debug)]", copyclone)?;
+            writeln!(out, "#[derive(Copy, Clone{})]", debug)?;
             writeln!(out, "#[repr(C{})]", must_pack)?;
-            writeln!(out, "pub struct {} {{", &ffi_typ)?;
+            writeln!(out, "pub {} {} {{", tag, &ffi_typ)?;
         }
 
         // cases of ValueParam were the mask is declared as a field in the struct
@@ -571,7 +539,7 @@ impl CodeGen {
             fields,
             doc: None,
         };
-        let ffi_typ = self.emit_ffi_struct(&stru, None, false, true, true)?;
+        let ffi_typ = self.emit_ffi_struct(&stru, None, false, true, true, false)?;
 
         let ffi_typ = parent_switch.unwrap_or(&ffi_typ);
 
@@ -592,7 +560,7 @@ impl CodeGen {
                     doc: None,
                 };
                 let case_req_name = stru_name.clone() + &capitalize(name);
-                self.emit_ffi_struct(&stru, Some(&case_req_name), false, true, true)?;
+                self.emit_ffi_struct(&stru, Some(&case_req_name), false, true, true, false)?;
 
                 self.emit_ffi_field_list_accessors(
                     ffi_typ,
@@ -638,9 +606,12 @@ impl CodeGen {
             let out = &mut self.ffi_buf;
             writeln!(out)?;
             emit_doc_text(out, doc)?;
-            writeln!(out, "    pub fn {} (", &fn_name)?;
-            writeln!(out, "        c: *mut xcb_connection_t,")?;
+            writeln!(out, "#[inline]");
+            writeln!(out, "    pub unsafe fn {} (", &fn_name)?;
+            writeln!(out, "        &self,")?;
         }
+        let mut args = format!("c");
+        let mut params = format!("c: *mut xcb_connection_t,\n");
         let mut written_fields = Vec::new();
         for f in fields.iter() {
             match f {
@@ -651,14 +622,16 @@ impl CodeGen {
                     let is_simple = self.typ_is_simple(typ);
                     let typ = self.ffi_use_type_name(typ);
                     if is_simple || is_pod {
-                        writeln!(&mut self.ffi_buf, "        {}: {},", &name, &typ)?;
+                        writeln!(params, "        {}: {},", &name, &typ);
                     } else {
-                        writeln!(&mut self.ffi_buf, "        {}: *mut {},", &name, &typ)?;
+                        writeln!(params, "        {}: *mut {},", &name, &typ);
                     }
+                    write!(args, ", {}", name);
                 }
                 StructField::Fd(name) => {
                     let name = field_name(name);
-                    writeln!(&mut self.ffi_buf, "        {}: i32,", &name)?;
+                    writeln!(params, "        {}: i32,", &name);
+                    write!(args, ", {}", name);
                 }
                 StructField::ValueParam {
                     mask_typ,
@@ -668,38 +641,43 @@ impl CodeGen {
                     let mask_typ = self.ffi_use_type_name(mask_typ);
                     let list_name = field_name(list_name);
 
-                    let out = &mut self.ffi_buf;
                     if !written_fields.contains(&mask_name) {
                         let mask_name = field_name(mask_name);
-                        writeln!(out, "        {}: {},", &mask_name, &mask_typ)?;
+                        writeln!(params, "        {}: {},", &mask_name, &mask_typ);
+                        write!(args, ", {}", mask_name);
                     }
-                    writeln!(out, "        {}: *const u32,", &list_name)?;
+                    writeln!(params, "        {}: *const u32,", &list_name);
+                    write!(args, ", {}", list_name);
                 }
                 StructField::List { name, typ, .. } => {
                     let name = field_name(name);
                     let typ = self.ffi_use_type_name(typ);
-                    let out = &mut self.ffi_buf;
-                    writeln!(out, "        {}: *const {},", &name, &typ)?;
+                    writeln!(params, "        {}: *const {},", &name, &typ);
+                    write!(args, ", {}", name);
                 }
                 StructField::ListNoLen { name, typ } => {
                     let len_name = name.clone() + "_len";
                     let name = field_name(name);
                     let typ = self.ffi_use_type_name(typ);
-                    let out = &mut self.ffi_buf;
-                    writeln!(out, "        {}: u32,", &len_name)?;
-                    writeln!(out, "        {}: *const {},", &name, &typ)?;
+                    writeln!(params, "        {}: u32,", &len_name);
+                    writeln!(params, "        {}: *const {},", &name, &typ);
+                    write!(args, ", {}", len_name);
+                    write!(args, ", {}", name);
                 }
                 StructField::Switch(name, ..) => {
                     let name = field_name(name);
                     let typ = switch_struct_name(&self.xcb_mod_prefix, req_name, &name);
-                    writeln!(&mut self.ffi_buf, "        {}: *const {},", &name, &typ)?;
+                    writeln!(params, "        {}: *const {},", &name, &typ);
+                    write!(args, ", {}", name);
                 }
                 _ => {}
             }
         }
 
         let out = &mut self.ffi_buf;
-        writeln!(out, "    ) -> {};", &cookie_typ)?;
+        writeln!(out, "{}    ) -> {} {{ call!(self, {})({}) }}", params, &cookie_typ, fn_name, args)?;
+
+        writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn({}) -> {}>,", fn_name, params, cookie_typ);
 
         Ok(())
     }
@@ -718,7 +696,7 @@ impl CodeGen {
             writeln!(out, "#[derive(Copy, Clone, Debug)]")?;
             writeln!(out, "#[repr(C)]")?;
             writeln!(out, "pub struct {} {{", &cookie_ffi_typ)?;
-            writeln!(out, "    pub(crate) sequence: c_uint,")?;
+            writeln!(out, "    pub sequence: c_uint,")?;
             writeln!(out, "}}")?;
         }
 
@@ -750,33 +728,35 @@ impl CodeGen {
             doc: reply.doc,
         };
 
-        let ffi_reply_typ = self.emit_ffi_struct(&reply, None, false, false, false)?;
+        let ffi_reply_typ = self.emit_ffi_struct(&reply, None, false, false, false, false)?;
 
         self.emit_ffi_field_list_accessors(&ffi_reply_typ, req_name, &reply.fields, None, false)?;
 
         let ffi_reply_fn = reply_fn_name(&self.xcb_mod_prefix, req_name);
         {
+            writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn(c: *mut xcb_connection_t, cookie: {}, error: *mut *mut xcb_generic_error_t,) -> *mut {}>,", ffi_reply_fn, cookie_ffi_typ, ffi_reply_typ);
             let out = &mut self.ffi_buf;
             writeln!(out)?;
-            writeln!(
-                out,
-                "    /// the returned value must be freed by the caller using libc::free()."
-            )?;
-            writeln!(out, "    pub fn {} (", &ffi_reply_fn)?;
+            writeln!(out, "    #[inline]");
+            writeln!(out, "    pub unsafe fn {} (", &ffi_reply_fn)?;
+            writeln!(out, "        &self,")?;
             writeln!(out, "        c: *mut xcb_connection_t,")?;
             writeln!(out, "        cookie: {},", &cookie_ffi_typ)?;
             writeln!(out, "        error: *mut *mut xcb_generic_error_t,")?;
-            writeln!(out, "    ) -> *mut {};", &ffi_reply_typ)?;
+            writeln!(out, "    ) -> *mut {} {{ call!(self, {})(c, cookie, error) }}", &ffi_reply_typ, ffi_reply_fn)?;
         }
 
         if has_fd(&reply.fields) {
             let fds_fn = reply_fds_fn_name(&self.xcb_mod_prefix, req_name);
+            writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn(c: *mut xcb_connection_t, reply: *mut {}) -> *mut c_int>,", fds_fn, ffi_reply_typ);
             let out = &mut self.ffi_buf;
             writeln!(out)?;
-            writeln!(out, "    pub fn {}(", &fds_fn)?;
+            writeln!(out, "    #[inline]");
+            writeln!(out, "    pub unsafe fn {}(", &fds_fn)?;
+            writeln!(out, "        &self,")?;
             writeln!(out, "        c: *mut xcb_connection_t,")?;
             writeln!(out, "        reply: *mut {},", &ffi_reply_typ)?;
-            writeln!(out, "    ) -> *mut c_int;")?;
+            writeln!(out, "    ) -> *mut c_int {{ call!(self, {})(c, reply) }}", fds_fn)?;
         }
 
         Ok((cookie_ffi_typ, ffi_reply_fn, ffi_reply_typ))
