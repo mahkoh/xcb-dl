@@ -34,7 +34,7 @@ fn has_feature(name: &str) -> bool {
 }
 
 fn main() {
-    let xml_dir = Path::new("../../rust-xcb/xml");
+    let xml_dir = Path::new("../../../c/xcbproto/src");
     let out_dir = Path::new("../src/headers/generated");
 
     let rustfmt = None;

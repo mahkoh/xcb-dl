@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -533,13 +534,13 @@ pub struct xcb_sync_alarm_notify_event_t {
 
 impl XcbSync {
     #[inline]
-    pub fn xcb_sync_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_sync_id)
+    pub unsafe fn xcb_sync_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_sync_id)
     }
 
     #[inline]
     pub unsafe fn xcb_sync_alarm_next(&self, i: *mut xcb_sync_alarm_iterator_t) {
-        call!(self, xcb_sync_alarm_next)(i);
+        sym!(self, xcb_sync_alarm_next)(i);
     }
 
     #[inline]
@@ -547,12 +548,12 @@ impl XcbSync {
         &self,
         i: *mut xcb_sync_alarm_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_alarm_end)(i)
+        sym!(self, xcb_sync_alarm_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_sync_counter_next(&self, i: *mut xcb_sync_counter_iterator_t) {
-        call!(self, xcb_sync_counter_next)(i);
+        sym!(self, xcb_sync_counter_next)(i);
     }
 
     #[inline]
@@ -560,12 +561,12 @@ impl XcbSync {
         &self,
         i: *mut xcb_sync_counter_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_counter_end)(i)
+        sym!(self, xcb_sync_counter_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_sync_fence_next(&self, i: *mut xcb_sync_fence_iterator_t) {
-        call!(self, xcb_sync_fence_next)(i);
+        sym!(self, xcb_sync_fence_next)(i);
     }
 
     #[inline]
@@ -573,12 +574,12 @@ impl XcbSync {
         &self,
         i: *mut xcb_sync_fence_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_fence_end)(i)
+        sym!(self, xcb_sync_fence_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_sync_int64_next(&self, i: *mut xcb_sync_int64_iterator_t) {
-        call!(self, xcb_sync_int64_next)(i);
+        sym!(self, xcb_sync_int64_next)(i);
     }
 
     #[inline]
@@ -586,7 +587,7 @@ impl XcbSync {
         &self,
         i: *mut xcb_sync_int64_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_int64_end)(i)
+        sym!(self, xcb_sync_int64_end)(i)
     }
 
     #[inline]
@@ -594,7 +595,7 @@ impl XcbSync {
         &self,
         R: *const xcb_sync_systemcounter_t,
     ) -> *mut c_char {
-        call!(self, xcb_sync_systemcounter_name)(R)
+        sym!(self, xcb_sync_systemcounter_name)(R)
     }
 
     #[inline]
@@ -602,7 +603,7 @@ impl XcbSync {
         &self,
         R: *const xcb_sync_systemcounter_t,
     ) -> c_int {
-        call!(self, xcb_sync_systemcounter_name_length)(R)
+        sym!(self, xcb_sync_systemcounter_name_length)(R)
     }
 
     #[inline]
@@ -610,12 +611,12 @@ impl XcbSync {
         &self,
         R: *const xcb_sync_systemcounter_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_systemcounter_name_end)(R)
+        sym!(self, xcb_sync_systemcounter_name_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_sync_systemcounter_next(&self, i: *mut xcb_sync_systemcounter_iterator_t) {
-        call!(self, xcb_sync_systemcounter_next)(i);
+        sym!(self, xcb_sync_systemcounter_next)(i);
     }
 
     #[inline]
@@ -623,12 +624,12 @@ impl XcbSync {
         &self,
         i: *mut xcb_sync_systemcounter_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_systemcounter_end)(i)
+        sym!(self, xcb_sync_systemcounter_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_sync_trigger_next(&self, i: *mut xcb_sync_trigger_iterator_t) {
-        call!(self, xcb_sync_trigger_next)(i);
+        sym!(self, xcb_sync_trigger_next)(i);
     }
 
     #[inline]
@@ -636,12 +637,12 @@ impl XcbSync {
         &self,
         i: *mut xcb_sync_trigger_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_trigger_end)(i)
+        sym!(self, xcb_sync_trigger_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_sync_waitcondition_next(&self, i: *mut xcb_sync_waitcondition_iterator_t) {
-        call!(self, xcb_sync_waitcondition_next)(i);
+        sym!(self, xcb_sync_waitcondition_next)(i);
     }
 
     #[inline]
@@ -649,7 +650,7 @@ impl XcbSync {
         &self,
         i: *mut xcb_sync_waitcondition_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_sync_waitcondition_end)(i)
+        sym!(self, xcb_sync_waitcondition_end)(i)
     }
 
     #[inline]
@@ -659,7 +660,7 @@ impl XcbSync {
         cookie: xcb_sync_initialize_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_sync_initialize_reply_t {
-        call!(self, xcb_sync_initialize_reply)(c, cookie, error)
+        sym!(self, xcb_sync_initialize_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -669,7 +670,7 @@ impl XcbSync {
         desired_major_version: u8,
         desired_minor_version: u8,
     ) -> xcb_sync_initialize_cookie_t {
-        call!(self, xcb_sync_initialize)(c, desired_major_version, desired_minor_version)
+        sym!(self, xcb_sync_initialize)(c, desired_major_version, desired_minor_version)
     }
 
     #[inline]
@@ -679,7 +680,7 @@ impl XcbSync {
         desired_major_version: u8,
         desired_minor_version: u8,
     ) -> xcb_sync_initialize_cookie_t {
-        call!(self, xcb_sync_initialize_unchecked)(c, desired_major_version, desired_minor_version)
+        sym!(self, xcb_sync_initialize_unchecked)(c, desired_major_version, desired_minor_version)
     }
 
     #[inline]
@@ -687,7 +688,7 @@ impl XcbSync {
         &self,
         R: *const xcb_sync_list_system_counters_reply_t,
     ) -> c_int {
-        call!(self, xcb_sync_list_system_counters_counters_length)(R)
+        sym!(self, xcb_sync_list_system_counters_counters_length)(R)
     }
 
     #[inline]
@@ -695,7 +696,7 @@ impl XcbSync {
         &self,
         R: *const xcb_sync_list_system_counters_reply_t,
     ) -> xcb_sync_systemcounter_iterator_t {
-        call!(self, xcb_sync_list_system_counters_counters_iterator)(R)
+        sym!(self, xcb_sync_list_system_counters_counters_iterator)(R)
     }
 
     #[inline]
@@ -705,7 +706,7 @@ impl XcbSync {
         cookie: xcb_sync_list_system_counters_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_sync_list_system_counters_reply_t {
-        call!(self, xcb_sync_list_system_counters_reply)(c, cookie, error)
+        sym!(self, xcb_sync_list_system_counters_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -713,7 +714,7 @@ impl XcbSync {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_sync_list_system_counters_cookie_t {
-        call!(self, xcb_sync_list_system_counters)(c)
+        sym!(self, xcb_sync_list_system_counters)(c)
     }
 
     #[inline]
@@ -721,7 +722,7 @@ impl XcbSync {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_sync_list_system_counters_cookie_t {
-        call!(self, xcb_sync_list_system_counters_unchecked)(c)
+        sym!(self, xcb_sync_list_system_counters_unchecked)(c)
     }
 
     #[inline]
@@ -731,7 +732,7 @@ impl XcbSync {
         id: xcb_sync_counter_t,
         initial_value: xcb_sync_int64_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_create_counter)(c, id, initial_value)
+        sym!(self, xcb_sync_create_counter)(c, id, initial_value)
     }
 
     #[inline]
@@ -741,7 +742,7 @@ impl XcbSync {
         id: xcb_sync_counter_t,
         initial_value: xcb_sync_int64_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_create_counter_checked)(c, id, initial_value)
+        sym!(self, xcb_sync_create_counter_checked)(c, id, initial_value)
     }
 
     #[inline]
@@ -750,7 +751,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         counter: xcb_sync_counter_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_destroy_counter)(c, counter)
+        sym!(self, xcb_sync_destroy_counter)(c, counter)
     }
 
     #[inline]
@@ -759,7 +760,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         counter: xcb_sync_counter_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_destroy_counter_checked)(c, counter)
+        sym!(self, xcb_sync_destroy_counter_checked)(c, counter)
     }
 
     #[inline]
@@ -769,7 +770,7 @@ impl XcbSync {
         cookie: xcb_sync_query_counter_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_sync_query_counter_reply_t {
-        call!(self, xcb_sync_query_counter_reply)(c, cookie, error)
+        sym!(self, xcb_sync_query_counter_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -778,7 +779,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         counter: xcb_sync_counter_t,
     ) -> xcb_sync_query_counter_cookie_t {
-        call!(self, xcb_sync_query_counter)(c, counter)
+        sym!(self, xcb_sync_query_counter)(c, counter)
     }
 
     #[inline]
@@ -787,7 +788,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         counter: xcb_sync_counter_t,
     ) -> xcb_sync_query_counter_cookie_t {
-        call!(self, xcb_sync_query_counter_unchecked)(c, counter)
+        sym!(self, xcb_sync_query_counter_unchecked)(c, counter)
     }
 
     #[inline]
@@ -797,7 +798,7 @@ impl XcbSync {
         wait_list_len: u32,
         wait_list: *const xcb_sync_waitcondition_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_await)(c, wait_list_len, wait_list)
+        sym!(self, xcb_sync_await)(c, wait_list_len, wait_list)
     }
 
     #[inline]
@@ -807,7 +808,7 @@ impl XcbSync {
         wait_list_len: u32,
         wait_list: *const xcb_sync_waitcondition_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_await_checked)(c, wait_list_len, wait_list)
+        sym!(self, xcb_sync_await_checked)(c, wait_list_len, wait_list)
     }
 
     #[inline]
@@ -817,7 +818,7 @@ impl XcbSync {
         counter: xcb_sync_counter_t,
         amount: xcb_sync_int64_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_change_counter)(c, counter, amount)
+        sym!(self, xcb_sync_change_counter)(c, counter, amount)
     }
 
     #[inline]
@@ -827,7 +828,7 @@ impl XcbSync {
         counter: xcb_sync_counter_t,
         amount: xcb_sync_int64_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_change_counter_checked)(c, counter, amount)
+        sym!(self, xcb_sync_change_counter_checked)(c, counter, amount)
     }
 
     #[inline]
@@ -837,7 +838,7 @@ impl XcbSync {
         counter: xcb_sync_counter_t,
         value: xcb_sync_int64_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_set_counter)(c, counter, value)
+        sym!(self, xcb_sync_set_counter)(c, counter, value)
     }
 
     #[inline]
@@ -847,7 +848,7 @@ impl XcbSync {
         counter: xcb_sync_counter_t,
         value: xcb_sync_int64_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_set_counter_checked)(c, counter, value)
+        sym!(self, xcb_sync_set_counter_checked)(c, counter, value)
     }
 
     #[inline]
@@ -858,7 +859,7 @@ impl XcbSync {
         value_mask: u32,
         value_list: *const xcb_sync_create_alarm_value_list_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_create_alarm)(c, id, value_mask, value_list)
+        sym!(self, xcb_sync_create_alarm)(c, id, value_mask, value_list)
     }
 
     #[inline]
@@ -869,7 +870,7 @@ impl XcbSync {
         value_mask: u32,
         value_list: *const xcb_sync_create_alarm_value_list_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_create_alarm_checked)(c, id, value_mask, value_list)
+        sym!(self, xcb_sync_create_alarm_checked)(c, id, value_mask, value_list)
     }
 
     #[inline]
@@ -880,7 +881,7 @@ impl XcbSync {
         value_mask: u32,
         value_list: *const xcb_sync_change_alarm_value_list_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_change_alarm)(c, id, value_mask, value_list)
+        sym!(self, xcb_sync_change_alarm)(c, id, value_mask, value_list)
     }
 
     #[inline]
@@ -891,7 +892,7 @@ impl XcbSync {
         value_mask: u32,
         value_list: *const xcb_sync_change_alarm_value_list_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_change_alarm_checked)(c, id, value_mask, value_list)
+        sym!(self, xcb_sync_change_alarm_checked)(c, id, value_mask, value_list)
     }
 
     #[inline]
@@ -900,7 +901,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         alarm: xcb_sync_alarm_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_destroy_alarm)(c, alarm)
+        sym!(self, xcb_sync_destroy_alarm)(c, alarm)
     }
 
     #[inline]
@@ -909,7 +910,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         alarm: xcb_sync_alarm_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_destroy_alarm_checked)(c, alarm)
+        sym!(self, xcb_sync_destroy_alarm_checked)(c, alarm)
     }
 
     #[inline]
@@ -919,7 +920,7 @@ impl XcbSync {
         cookie: xcb_sync_query_alarm_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_sync_query_alarm_reply_t {
-        call!(self, xcb_sync_query_alarm_reply)(c, cookie, error)
+        sym!(self, xcb_sync_query_alarm_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -928,7 +929,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         alarm: xcb_sync_alarm_t,
     ) -> xcb_sync_query_alarm_cookie_t {
-        call!(self, xcb_sync_query_alarm)(c, alarm)
+        sym!(self, xcb_sync_query_alarm)(c, alarm)
     }
 
     #[inline]
@@ -937,7 +938,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         alarm: xcb_sync_alarm_t,
     ) -> xcb_sync_query_alarm_cookie_t {
-        call!(self, xcb_sync_query_alarm_unchecked)(c, alarm)
+        sym!(self, xcb_sync_query_alarm_unchecked)(c, alarm)
     }
 
     #[inline]
@@ -947,7 +948,7 @@ impl XcbSync {
         id: u32,
         priority: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_set_priority)(c, id, priority)
+        sym!(self, xcb_sync_set_priority)(c, id, priority)
     }
 
     #[inline]
@@ -957,7 +958,7 @@ impl XcbSync {
         id: u32,
         priority: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_set_priority_checked)(c, id, priority)
+        sym!(self, xcb_sync_set_priority_checked)(c, id, priority)
     }
 
     #[inline]
@@ -967,7 +968,7 @@ impl XcbSync {
         cookie: xcb_sync_get_priority_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_sync_get_priority_reply_t {
-        call!(self, xcb_sync_get_priority_reply)(c, cookie, error)
+        sym!(self, xcb_sync_get_priority_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -976,7 +977,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         id: u32,
     ) -> xcb_sync_get_priority_cookie_t {
-        call!(self, xcb_sync_get_priority)(c, id)
+        sym!(self, xcb_sync_get_priority)(c, id)
     }
 
     #[inline]
@@ -985,7 +986,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         id: u32,
     ) -> xcb_sync_get_priority_cookie_t {
-        call!(self, xcb_sync_get_priority_unchecked)(c, id)
+        sym!(self, xcb_sync_get_priority_unchecked)(c, id)
     }
 
     #[inline]
@@ -996,7 +997,7 @@ impl XcbSync {
         fence: xcb_sync_fence_t,
         initially_triggered: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_create_fence)(c, drawable, fence, initially_triggered)
+        sym!(self, xcb_sync_create_fence)(c, drawable, fence, initially_triggered)
     }
 
     #[inline]
@@ -1007,7 +1008,7 @@ impl XcbSync {
         fence: xcb_sync_fence_t,
         initially_triggered: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_create_fence_checked)(c, drawable, fence, initially_triggered)
+        sym!(self, xcb_sync_create_fence_checked)(c, drawable, fence, initially_triggered)
     }
 
     #[inline]
@@ -1016,7 +1017,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_trigger_fence)(c, fence)
+        sym!(self, xcb_sync_trigger_fence)(c, fence)
     }
 
     #[inline]
@@ -1025,7 +1026,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_trigger_fence_checked)(c, fence)
+        sym!(self, xcb_sync_trigger_fence_checked)(c, fence)
     }
 
     #[inline]
@@ -1034,7 +1035,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_reset_fence)(c, fence)
+        sym!(self, xcb_sync_reset_fence)(c, fence)
     }
 
     #[inline]
@@ -1043,7 +1044,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_reset_fence_checked)(c, fence)
+        sym!(self, xcb_sync_reset_fence_checked)(c, fence)
     }
 
     #[inline]
@@ -1052,7 +1053,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_destroy_fence)(c, fence)
+        sym!(self, xcb_sync_destroy_fence)(c, fence)
     }
 
     #[inline]
@@ -1061,7 +1062,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_destroy_fence_checked)(c, fence)
+        sym!(self, xcb_sync_destroy_fence_checked)(c, fence)
     }
 
     #[inline]
@@ -1071,7 +1072,7 @@ impl XcbSync {
         cookie: xcb_sync_query_fence_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_sync_query_fence_reply_t {
-        call!(self, xcb_sync_query_fence_reply)(c, cookie, error)
+        sym!(self, xcb_sync_query_fence_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1080,7 +1081,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_sync_query_fence_cookie_t {
-        call!(self, xcb_sync_query_fence)(c, fence)
+        sym!(self, xcb_sync_query_fence)(c, fence)
     }
 
     #[inline]
@@ -1089,7 +1090,7 @@ impl XcbSync {
         c: *mut xcb_connection_t,
         fence: xcb_sync_fence_t,
     ) -> xcb_sync_query_fence_cookie_t {
-        call!(self, xcb_sync_query_fence_unchecked)(c, fence)
+        sym!(self, xcb_sync_query_fence_unchecked)(c, fence)
     }
 
     #[inline]
@@ -1099,7 +1100,7 @@ impl XcbSync {
         fence_list_len: u32,
         fence_list: *const xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_await_fence)(c, fence_list_len, fence_list)
+        sym!(self, xcb_sync_await_fence)(c, fence_list_len, fence_list)
     }
 
     #[inline]
@@ -1109,301 +1110,6 @@ impl XcbSync {
         fence_list_len: u32,
         fence_list: *const xcb_sync_fence_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_sync_await_fence_checked)(c, fence_list_len, fence_list)
+        sym!(self, xcb_sync_await_fence_checked)(c, fence_list_len, fence_list)
     }
-}
-
-pub struct XcbSync {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_sync_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_sync_alarm_next: LazySymbol<unsafe fn(i: *mut xcb_sync_alarm_iterator_t)>,
-    pub(crate) xcb_sync_alarm_end:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_alarm_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_counter_next: LazySymbol<unsafe fn(i: *mut xcb_sync_counter_iterator_t)>,
-    pub(crate) xcb_sync_counter_end:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_counter_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_fence_next: LazySymbol<unsafe fn(i: *mut xcb_sync_fence_iterator_t)>,
-    pub(crate) xcb_sync_fence_end:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_fence_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_int64_next: LazySymbol<unsafe fn(i: *mut xcb_sync_int64_iterator_t)>,
-    pub(crate) xcb_sync_int64_end:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_int64_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_systemcounter_name:
-        LazySymbol<unsafe fn(R: *const xcb_sync_systemcounter_t) -> *mut c_char>,
-    pub(crate) xcb_sync_systemcounter_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_sync_systemcounter_t) -> c_int>,
-    pub(crate) xcb_sync_systemcounter_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_sync_systemcounter_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_systemcounter_next:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_systemcounter_iterator_t)>,
-    pub(crate) xcb_sync_systemcounter_end:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_systemcounter_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_trigger_next: LazySymbol<unsafe fn(i: *mut xcb_sync_trigger_iterator_t)>,
-    pub(crate) xcb_sync_trigger_end:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_trigger_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_waitcondition_next:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_waitcondition_iterator_t)>,
-    pub(crate) xcb_sync_waitcondition_end:
-        LazySymbol<unsafe fn(i: *mut xcb_sync_waitcondition_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_sync_initialize_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_sync_initialize_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_sync_initialize_reply_t,
-    >,
-    pub(crate) xcb_sync_initialize: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            desired_major_version: u8,
-            desired_minor_version: u8,
-        ) -> xcb_sync_initialize_cookie_t,
-    >,
-    pub(crate) xcb_sync_initialize_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            desired_major_version: u8,
-            desired_minor_version: u8,
-        ) -> xcb_sync_initialize_cookie_t,
-    >,
-    pub(crate) xcb_sync_list_system_counters_counters_length:
-        LazySymbol<unsafe fn(R: *const xcb_sync_list_system_counters_reply_t) -> c_int>,
-    pub(crate) xcb_sync_list_system_counters_counters_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_sync_list_system_counters_reply_t,
-        ) -> xcb_sync_systemcounter_iterator_t,
-    >,
-    pub(crate) xcb_sync_list_system_counters_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_sync_list_system_counters_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_sync_list_system_counters_reply_t,
-    >,
-    pub(crate) xcb_sync_list_system_counters:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_sync_list_system_counters_cookie_t>,
-    pub(crate) xcb_sync_list_system_counters_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_sync_list_system_counters_cookie_t>,
-    pub(crate) xcb_sync_create_counter: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            id: xcb_sync_counter_t,
-            initial_value: xcb_sync_int64_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_create_counter_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            id: xcb_sync_counter_t,
-            initial_value: xcb_sync_int64_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_destroy_counter: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, counter: xcb_sync_counter_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_destroy_counter_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, counter: xcb_sync_counter_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_query_counter_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_sync_query_counter_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_sync_query_counter_reply_t,
-    >,
-    pub(crate) xcb_sync_query_counter: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            counter: xcb_sync_counter_t,
-        ) -> xcb_sync_query_counter_cookie_t,
-    >,
-    pub(crate) xcb_sync_query_counter_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            counter: xcb_sync_counter_t,
-        ) -> xcb_sync_query_counter_cookie_t,
-    >,
-    pub(crate) xcb_sync_await: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            wait_list_len: u32,
-            wait_list: *const xcb_sync_waitcondition_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_await_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            wait_list_len: u32,
-            wait_list: *const xcb_sync_waitcondition_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_change_counter: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            counter: xcb_sync_counter_t,
-            amount: xcb_sync_int64_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_change_counter_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            counter: xcb_sync_counter_t,
-            amount: xcb_sync_int64_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_set_counter: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            counter: xcb_sync_counter_t,
-            value: xcb_sync_int64_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_set_counter_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            counter: xcb_sync_counter_t,
-            value: xcb_sync_int64_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_create_alarm: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            id: xcb_sync_alarm_t,
-            value_mask: u32,
-            value_list: *const xcb_sync_create_alarm_value_list_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_create_alarm_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            id: xcb_sync_alarm_t,
-            value_mask: u32,
-            value_list: *const xcb_sync_create_alarm_value_list_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_change_alarm: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            id: xcb_sync_alarm_t,
-            value_mask: u32,
-            value_list: *const xcb_sync_change_alarm_value_list_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_change_alarm_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            id: xcb_sync_alarm_t,
-            value_mask: u32,
-            value_list: *const xcb_sync_change_alarm_value_list_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_destroy_alarm: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, alarm: xcb_sync_alarm_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_destroy_alarm_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, alarm: xcb_sync_alarm_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_query_alarm_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_sync_query_alarm_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_sync_query_alarm_reply_t,
-    >,
-    pub(crate) xcb_sync_query_alarm: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            alarm: xcb_sync_alarm_t,
-        ) -> xcb_sync_query_alarm_cookie_t,
-    >,
-    pub(crate) xcb_sync_query_alarm_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            alarm: xcb_sync_alarm_t,
-        ) -> xcb_sync_query_alarm_cookie_t,
-    >,
-    pub(crate) xcb_sync_set_priority: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, id: u32, priority: i32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_set_priority_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, id: u32, priority: i32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_get_priority_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_sync_get_priority_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_sync_get_priority_reply_t,
-    >,
-    pub(crate) xcb_sync_get_priority:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, id: u32) -> xcb_sync_get_priority_cookie_t>,
-    pub(crate) xcb_sync_get_priority_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, id: u32) -> xcb_sync_get_priority_cookie_t>,
-    pub(crate) xcb_sync_create_fence: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            fence: xcb_sync_fence_t,
-            initially_triggered: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_create_fence_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            fence: xcb_sync_fence_t,
-            initially_triggered: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_trigger_fence: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, fence: xcb_sync_fence_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_trigger_fence_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, fence: xcb_sync_fence_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_reset_fence: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, fence: xcb_sync_fence_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_reset_fence_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, fence: xcb_sync_fence_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_destroy_fence: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, fence: xcb_sync_fence_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_destroy_fence_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, fence: xcb_sync_fence_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_query_fence_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_sync_query_fence_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_sync_query_fence_reply_t,
-    >,
-    pub(crate) xcb_sync_query_fence: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            fence: xcb_sync_fence_t,
-        ) -> xcb_sync_query_fence_cookie_t,
-    >,
-    pub(crate) xcb_sync_query_fence_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            fence: xcb_sync_fence_t,
-        ) -> xcb_sync_query_fence_cookie_t,
-    >,
-    pub(crate) xcb_sync_await_fence: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            fence_list_len: u32,
-            fence_list: *const xcb_sync_fence_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_sync_await_fence_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            fence_list_len: u32,
-            fence_list: *const xcb_sync_fence_t,
-        ) -> xcb_void_cookie_t,
-    >,
 }

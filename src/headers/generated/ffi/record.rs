@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -295,13 +296,13 @@ pub struct xcb_record_free_context_request_t {
 
 impl XcbRecord {
     #[inline]
-    pub fn xcb_record_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_record_id)
+    pub unsafe fn xcb_record_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_record_id)
     }
 
     #[inline]
     pub unsafe fn xcb_record_context_next(&self, i: *mut xcb_record_context_iterator_t) {
-        call!(self, xcb_record_context_next)(i);
+        sym!(self, xcb_record_context_next)(i);
     }
 
     #[inline]
@@ -309,12 +310,12 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_context_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_context_end)(i)
+        sym!(self, xcb_record_context_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_record_range_8_next(&self, i: *mut xcb_record_range_8_iterator_t) {
-        call!(self, xcb_record_range_8_next)(i);
+        sym!(self, xcb_record_range_8_next)(i);
     }
 
     #[inline]
@@ -322,12 +323,12 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_range_8_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_range_8_end)(i)
+        sym!(self, xcb_record_range_8_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_record_range_16_next(&self, i: *mut xcb_record_range_16_iterator_t) {
-        call!(self, xcb_record_range_16_next)(i);
+        sym!(self, xcb_record_range_16_next)(i);
     }
 
     #[inline]
@@ -335,12 +336,12 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_range_16_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_range_16_end)(i)
+        sym!(self, xcb_record_range_16_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_record_ext_range_next(&self, i: *mut xcb_record_ext_range_iterator_t) {
-        call!(self, xcb_record_ext_range_next)(i);
+        sym!(self, xcb_record_ext_range_next)(i);
     }
 
     #[inline]
@@ -348,12 +349,12 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_ext_range_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_ext_range_end)(i)
+        sym!(self, xcb_record_ext_range_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_record_range_next(&self, i: *mut xcb_record_range_iterator_t) {
-        call!(self, xcb_record_range_next)(i);
+        sym!(self, xcb_record_range_next)(i);
     }
 
     #[inline]
@@ -361,7 +362,7 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_range_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_range_end)(i)
+        sym!(self, xcb_record_range_end)(i)
     }
 
     #[inline]
@@ -369,7 +370,7 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_element_header_iterator_t,
     ) {
-        call!(self, xcb_record_element_header_next)(i);
+        sym!(self, xcb_record_element_header_next)(i);
     }
 
     #[inline]
@@ -377,12 +378,12 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_element_header_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_element_header_end)(i)
+        sym!(self, xcb_record_element_header_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_record_client_spec_next(&self, i: *mut xcb_record_client_spec_iterator_t) {
-        call!(self, xcb_record_client_spec_next)(i);
+        sym!(self, xcb_record_client_spec_next)(i);
     }
 
     #[inline]
@@ -390,7 +391,7 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_client_spec_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_client_spec_end)(i)
+        sym!(self, xcb_record_client_spec_end)(i)
     }
 
     #[inline]
@@ -398,7 +399,7 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_client_info_t,
     ) -> *mut xcb_record_range_t {
-        call!(self, xcb_record_client_info_ranges)(R)
+        sym!(self, xcb_record_client_info_ranges)(R)
     }
 
     #[inline]
@@ -406,7 +407,7 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_client_info_t,
     ) -> c_int {
-        call!(self, xcb_record_client_info_ranges_length)(R)
+        sym!(self, xcb_record_client_info_ranges_length)(R)
     }
 
     #[inline]
@@ -414,12 +415,12 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_client_info_t,
     ) -> xcb_record_range_iterator_t {
-        call!(self, xcb_record_client_info_ranges_iterator)(R)
+        sym!(self, xcb_record_client_info_ranges_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_record_client_info_next(&self, i: *mut xcb_record_client_info_iterator_t) {
-        call!(self, xcb_record_client_info_next)(i);
+        sym!(self, xcb_record_client_info_next)(i);
     }
 
     #[inline]
@@ -427,7 +428,7 @@ impl XcbRecord {
         &self,
         i: *mut xcb_record_client_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_client_info_end)(i)
+        sym!(self, xcb_record_client_info_end)(i)
     }
 
     #[inline]
@@ -437,7 +438,7 @@ impl XcbRecord {
         cookie: xcb_record_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_record_query_version_reply_t {
-        call!(self, xcb_record_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_record_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -447,7 +448,7 @@ impl XcbRecord {
         major_version: u16,
         minor_version: u16,
     ) -> xcb_record_query_version_cookie_t {
-        call!(self, xcb_record_query_version)(c, major_version, minor_version)
+        sym!(self, xcb_record_query_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -457,7 +458,7 @@ impl XcbRecord {
         major_version: u16,
         minor_version: u16,
     ) -> xcb_record_query_version_cookie_t {
-        call!(self, xcb_record_query_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_record_query_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -471,7 +472,7 @@ impl XcbRecord {
         client_specs: *const xcb_record_client_spec_t,
         ranges: *const xcb_record_range_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_create_context)(
+        sym!(self, xcb_record_create_context)(
             c,
             context,
             element_header,
@@ -493,7 +494,7 @@ impl XcbRecord {
         client_specs: *const xcb_record_client_spec_t,
         ranges: *const xcb_record_range_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_create_context_checked)(
+        sym!(self, xcb_record_create_context_checked)(
             c,
             context,
             element_header,
@@ -515,7 +516,7 @@ impl XcbRecord {
         client_specs: *const xcb_record_client_spec_t,
         ranges: *const xcb_record_range_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_register_clients)(
+        sym!(self, xcb_record_register_clients)(
             c,
             context,
             element_header,
@@ -537,7 +538,7 @@ impl XcbRecord {
         client_specs: *const xcb_record_client_spec_t,
         ranges: *const xcb_record_range_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_register_clients_checked)(
+        sym!(self, xcb_record_register_clients_checked)(
             c,
             context,
             element_header,
@@ -556,7 +557,7 @@ impl XcbRecord {
         num_client_specs: u32,
         client_specs: *const xcb_record_client_spec_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_unregister_clients)(c, context, num_client_specs, client_specs)
+        sym!(self, xcb_record_unregister_clients)(c, context, num_client_specs, client_specs)
     }
 
     #[inline]
@@ -567,7 +568,7 @@ impl XcbRecord {
         num_client_specs: u32,
         client_specs: *const xcb_record_client_spec_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_unregister_clients_checked)(
+        sym!(self, xcb_record_unregister_clients_checked)(
             c,
             context,
             num_client_specs,
@@ -580,7 +581,7 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_get_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_record_get_context_intercepted_clients_length)(R)
+        sym!(self, xcb_record_get_context_intercepted_clients_length)(R)
     }
 
     #[inline]
@@ -588,7 +589,7 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_get_context_reply_t,
     ) -> xcb_record_client_info_iterator_t {
-        call!(self, xcb_record_get_context_intercepted_clients_iterator)(R)
+        sym!(self, xcb_record_get_context_intercepted_clients_iterator)(R)
     }
 
     #[inline]
@@ -598,7 +599,7 @@ impl XcbRecord {
         cookie: xcb_record_get_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_record_get_context_reply_t {
-        call!(self, xcb_record_get_context_reply)(c, cookie, error)
+        sym!(self, xcb_record_get_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -607,7 +608,7 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_record_get_context_cookie_t {
-        call!(self, xcb_record_get_context)(c, context)
+        sym!(self, xcb_record_get_context)(c, context)
     }
 
     #[inline]
@@ -616,7 +617,7 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_record_get_context_cookie_t {
-        call!(self, xcb_record_get_context_unchecked)(c, context)
+        sym!(self, xcb_record_get_context_unchecked)(c, context)
     }
 
     #[inline]
@@ -624,7 +625,7 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_enable_context_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_record_enable_context_data)(R)
+        sym!(self, xcb_record_enable_context_data)(R)
     }
 
     #[inline]
@@ -632,7 +633,7 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_enable_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_record_enable_context_data_length)(R)
+        sym!(self, xcb_record_enable_context_data_length)(R)
     }
 
     #[inline]
@@ -640,7 +641,7 @@ impl XcbRecord {
         &self,
         R: *const xcb_record_enable_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_record_enable_context_data_end)(R)
+        sym!(self, xcb_record_enable_context_data_end)(R)
     }
 
     #[inline]
@@ -650,7 +651,7 @@ impl XcbRecord {
         cookie: xcb_record_enable_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_record_enable_context_reply_t {
-        call!(self, xcb_record_enable_context_reply)(c, cookie, error)
+        sym!(self, xcb_record_enable_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -659,7 +660,7 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_record_enable_context_cookie_t {
-        call!(self, xcb_record_enable_context)(c, context)
+        sym!(self, xcb_record_enable_context)(c, context)
     }
 
     #[inline]
@@ -668,7 +669,7 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_record_enable_context_cookie_t {
-        call!(self, xcb_record_enable_context_unchecked)(c, context)
+        sym!(self, xcb_record_enable_context_unchecked)(c, context)
     }
 
     #[inline]
@@ -677,7 +678,7 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_disable_context)(c, context)
+        sym!(self, xcb_record_disable_context)(c, context)
     }
 
     #[inline]
@@ -686,7 +687,7 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_disable_context_checked)(c, context)
+        sym!(self, xcb_record_disable_context_checked)(c, context)
     }
 
     #[inline]
@@ -695,7 +696,7 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_free_context)(c, context)
+        sym!(self, xcb_record_free_context)(c, context)
     }
 
     #[inline]
@@ -704,192 +705,6 @@ impl XcbRecord {
         c: *mut xcb_connection_t,
         context: xcb_record_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_record_free_context_checked)(c, context)
+        sym!(self, xcb_record_free_context_checked)(c, context)
     }
-}
-
-pub struct XcbRecord {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_record_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_record_context_next:
-        LazySymbol<unsafe fn(i: *mut xcb_record_context_iterator_t)>,
-    pub(crate) xcb_record_context_end:
-        LazySymbol<unsafe fn(i: *mut xcb_record_context_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_range_8_next:
-        LazySymbol<unsafe fn(i: *mut xcb_record_range_8_iterator_t)>,
-    pub(crate) xcb_record_range_8_end:
-        LazySymbol<unsafe fn(i: *mut xcb_record_range_8_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_range_16_next:
-        LazySymbol<unsafe fn(i: *mut xcb_record_range_16_iterator_t)>,
-    pub(crate) xcb_record_range_16_end:
-        LazySymbol<unsafe fn(i: *mut xcb_record_range_16_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_ext_range_next:
-        LazySymbol<unsafe fn(i: *mut xcb_record_ext_range_iterator_t)>,
-    pub(crate) xcb_record_ext_range_end:
-        LazySymbol<unsafe fn(i: *mut xcb_record_ext_range_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_range_next: LazySymbol<unsafe fn(i: *mut xcb_record_range_iterator_t)>,
-    pub(crate) xcb_record_range_end:
-        LazySymbol<unsafe fn(i: *mut xcb_record_range_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_element_header_next:
-        LazySymbol<unsafe fn(i: *mut xcb_record_element_header_iterator_t)>,
-    pub(crate) xcb_record_element_header_end: LazySymbol<
-        unsafe fn(i: *mut xcb_record_element_header_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_record_client_spec_next:
-        LazySymbol<unsafe fn(i: *mut xcb_record_client_spec_iterator_t)>,
-    pub(crate) xcb_record_client_spec_end:
-        LazySymbol<unsafe fn(i: *mut xcb_record_client_spec_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_client_info_ranges:
-        LazySymbol<unsafe fn(R: *const xcb_record_client_info_t) -> *mut xcb_record_range_t>,
-    pub(crate) xcb_record_client_info_ranges_length:
-        LazySymbol<unsafe fn(R: *const xcb_record_client_info_t) -> c_int>,
-    pub(crate) xcb_record_client_info_ranges_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_record_client_info_t) -> xcb_record_range_iterator_t>,
-    pub(crate) xcb_record_client_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_record_client_info_iterator_t)>,
-    pub(crate) xcb_record_client_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_record_client_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_record_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_record_query_version_reply_t,
-    >,
-    pub(crate) xcb_record_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u16,
-            minor_version: u16,
-        ) -> xcb_record_query_version_cookie_t,
-    >,
-    pub(crate) xcb_record_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u16,
-            minor_version: u16,
-        ) -> xcb_record_query_version_cookie_t,
-    >,
-    pub(crate) xcb_record_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-            element_header: xcb_record_element_header_t,
-            num_client_specs: u32,
-            num_ranges: u32,
-            client_specs: *const xcb_record_client_spec_t,
-            ranges: *const xcb_record_range_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_create_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-            element_header: xcb_record_element_header_t,
-            num_client_specs: u32,
-            num_ranges: u32,
-            client_specs: *const xcb_record_client_spec_t,
-            ranges: *const xcb_record_range_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_register_clients: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-            element_header: xcb_record_element_header_t,
-            num_client_specs: u32,
-            num_ranges: u32,
-            client_specs: *const xcb_record_client_spec_t,
-            ranges: *const xcb_record_range_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_register_clients_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-            element_header: xcb_record_element_header_t,
-            num_client_specs: u32,
-            num_ranges: u32,
-            client_specs: *const xcb_record_client_spec_t,
-            ranges: *const xcb_record_range_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_unregister_clients: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-            num_client_specs: u32,
-            client_specs: *const xcb_record_client_spec_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_unregister_clients_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-            num_client_specs: u32,
-            client_specs: *const xcb_record_client_spec_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_get_context_intercepted_clients_length:
-        LazySymbol<unsafe fn(R: *const xcb_record_get_context_reply_t) -> c_int>,
-    pub(crate) xcb_record_get_context_intercepted_clients_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_record_get_context_reply_t) -> xcb_record_client_info_iterator_t,
-    >,
-    pub(crate) xcb_record_get_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_record_get_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_record_get_context_reply_t,
-    >,
-    pub(crate) xcb_record_get_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-        ) -> xcb_record_get_context_cookie_t,
-    >,
-    pub(crate) xcb_record_get_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-        ) -> xcb_record_get_context_cookie_t,
-    >,
-    pub(crate) xcb_record_enable_context_data:
-        LazySymbol<unsafe fn(R: *const xcb_record_enable_context_reply_t) -> *mut u8>,
-    pub(crate) xcb_record_enable_context_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_record_enable_context_reply_t) -> c_int>,
-    pub(crate) xcb_record_enable_context_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_record_enable_context_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_record_enable_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_record_enable_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_record_enable_context_reply_t,
-    >,
-    pub(crate) xcb_record_enable_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-        ) -> xcb_record_enable_context_cookie_t,
-    >,
-    pub(crate) xcb_record_enable_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_record_context_t,
-        ) -> xcb_record_enable_context_cookie_t,
-    >,
-    pub(crate) xcb_record_disable_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_disable_context_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_free_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_record_free_context_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t,
-    >,
 }

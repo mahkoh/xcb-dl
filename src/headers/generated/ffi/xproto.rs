@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -5040,57 +5041,57 @@ pub struct xcb_no_operation_request_t {
 impl Xcb {
     #[inline]
     pub unsafe fn xcb_char2b_next(&self, i: *mut xcb_char2b_iterator_t) {
-        call!(self, xcb_char2b_next)(i);
+        sym!(self, xcb_char2b_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_char2b_end(&self, i: *mut xcb_char2b_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_char2b_end)(i)
+        sym!(self, xcb_char2b_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_window_next(&self, i: *mut xcb_window_iterator_t) {
-        call!(self, xcb_window_next)(i);
+        sym!(self, xcb_window_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_window_end(&self, i: *mut xcb_window_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_window_end)(i)
+        sym!(self, xcb_window_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_pixmap_next(&self, i: *mut xcb_pixmap_iterator_t) {
-        call!(self, xcb_pixmap_next)(i);
+        sym!(self, xcb_pixmap_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_pixmap_end(&self, i: *mut xcb_pixmap_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_pixmap_end)(i)
+        sym!(self, xcb_pixmap_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_cursor_next(&self, i: *mut xcb_cursor_iterator_t) {
-        call!(self, xcb_cursor_next)(i);
+        sym!(self, xcb_cursor_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_cursor_end(&self, i: *mut xcb_cursor_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_cursor_end)(i)
+        sym!(self, xcb_cursor_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_font_next(&self, i: *mut xcb_font_iterator_t) {
-        call!(self, xcb_font_next)(i);
+        sym!(self, xcb_font_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_font_end(&self, i: *mut xcb_font_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_font_end)(i)
+        sym!(self, xcb_font_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_gcontext_next(&self, i: *mut xcb_gcontext_iterator_t) {
-        call!(self, xcb_gcontext_next)(i);
+        sym!(self, xcb_gcontext_next)(i);
     }
 
     #[inline]
@@ -5098,12 +5099,12 @@ impl Xcb {
         &self,
         i: *mut xcb_gcontext_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_gcontext_end)(i)
+        sym!(self, xcb_gcontext_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_colormap_next(&self, i: *mut xcb_colormap_iterator_t) {
-        call!(self, xcb_colormap_next)(i);
+        sym!(self, xcb_colormap_next)(i);
     }
 
     #[inline]
@@ -5111,22 +5112,22 @@ impl Xcb {
         &self,
         i: *mut xcb_colormap_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_colormap_end)(i)
+        sym!(self, xcb_colormap_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_atom_next(&self, i: *mut xcb_atom_iterator_t) {
-        call!(self, xcb_atom_next)(i);
+        sym!(self, xcb_atom_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_atom_end(&self, i: *mut xcb_atom_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_atom_end)(i)
+        sym!(self, xcb_atom_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_drawable_next(&self, i: *mut xcb_drawable_iterator_t) {
-        call!(self, xcb_drawable_next)(i);
+        sym!(self, xcb_drawable_next)(i);
     }
 
     #[inline]
@@ -5134,12 +5135,12 @@ impl Xcb {
         &self,
         i: *mut xcb_drawable_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_drawable_end)(i)
+        sym!(self, xcb_drawable_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_fontable_next(&self, i: *mut xcb_fontable_iterator_t) {
-        call!(self, xcb_fontable_next)(i);
+        sym!(self, xcb_fontable_next)(i);
     }
 
     #[inline]
@@ -5147,12 +5148,12 @@ impl Xcb {
         &self,
         i: *mut xcb_fontable_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_fontable_end)(i)
+        sym!(self, xcb_fontable_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_visualid_next(&self, i: *mut xcb_visualid_iterator_t) {
-        call!(self, xcb_visualid_next)(i);
+        sym!(self, xcb_visualid_next)(i);
     }
 
     #[inline]
@@ -5160,12 +5161,12 @@ impl Xcb {
         &self,
         i: *mut xcb_visualid_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_visualid_end)(i)
+        sym!(self, xcb_visualid_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_timestamp_next(&self, i: *mut xcb_timestamp_iterator_t) {
-        call!(self, xcb_timestamp_next)(i);
+        sym!(self, xcb_timestamp_next)(i);
     }
 
     #[inline]
@@ -5173,52 +5174,52 @@ impl Xcb {
         &self,
         i: *mut xcb_timestamp_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_timestamp_end)(i)
+        sym!(self, xcb_timestamp_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_keysym_next(&self, i: *mut xcb_keysym_iterator_t) {
-        call!(self, xcb_keysym_next)(i);
+        sym!(self, xcb_keysym_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_keysym_end(&self, i: *mut xcb_keysym_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_keysym_end)(i)
+        sym!(self, xcb_keysym_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_keycode_next(&self, i: *mut xcb_keycode_iterator_t) {
-        call!(self, xcb_keycode_next)(i);
+        sym!(self, xcb_keycode_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_keycode_end(&self, i: *mut xcb_keycode_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_keycode_end)(i)
+        sym!(self, xcb_keycode_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_button_next(&self, i: *mut xcb_button_iterator_t) {
-        call!(self, xcb_button_next)(i);
+        sym!(self, xcb_button_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_button_end(&self, i: *mut xcb_button_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_button_end)(i)
+        sym!(self, xcb_button_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_point_next(&self, i: *mut xcb_point_iterator_t) {
-        call!(self, xcb_point_next)(i);
+        sym!(self, xcb_point_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_point_end(&self, i: *mut xcb_point_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_point_end)(i)
+        sym!(self, xcb_point_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_rectangle_next(&self, i: *mut xcb_rectangle_iterator_t) {
-        call!(self, xcb_rectangle_next)(i);
+        sym!(self, xcb_rectangle_next)(i);
     }
 
     #[inline]
@@ -5226,32 +5227,32 @@ impl Xcb {
         &self,
         i: *mut xcb_rectangle_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_rectangle_end)(i)
+        sym!(self, xcb_rectangle_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_arc_next(&self, i: *mut xcb_arc_iterator_t) {
-        call!(self, xcb_arc_next)(i);
+        sym!(self, xcb_arc_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_arc_end(&self, i: *mut xcb_arc_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_arc_end)(i)
+        sym!(self, xcb_arc_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_format_next(&self, i: *mut xcb_format_iterator_t) {
-        call!(self, xcb_format_next)(i);
+        sym!(self, xcb_format_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_format_end(&self, i: *mut xcb_format_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_format_end)(i)
+        sym!(self, xcb_format_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_visualtype_next(&self, i: *mut xcb_visualtype_iterator_t) {
-        call!(self, xcb_visualtype_next)(i);
+        sym!(self, xcb_visualtype_next)(i);
     }
 
     #[inline]
@@ -5259,17 +5260,17 @@ impl Xcb {
         &self,
         i: *mut xcb_visualtype_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_visualtype_end)(i)
+        sym!(self, xcb_visualtype_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_depth_visuals(&self, R: *const xcb_depth_t) -> *mut xcb_visualtype_t {
-        call!(self, xcb_depth_visuals)(R)
+        sym!(self, xcb_depth_visuals)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_depth_visuals_length(&self, R: *const xcb_depth_t) -> c_int {
-        call!(self, xcb_depth_visuals_length)(R)
+        sym!(self, xcb_depth_visuals_length)(R)
     }
 
     #[inline]
@@ -5277,22 +5278,22 @@ impl Xcb {
         &self,
         R: *const xcb_depth_t,
     ) -> xcb_visualtype_iterator_t {
-        call!(self, xcb_depth_visuals_iterator)(R)
+        sym!(self, xcb_depth_visuals_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_depth_next(&self, i: *mut xcb_depth_iterator_t) {
-        call!(self, xcb_depth_next)(i);
+        sym!(self, xcb_depth_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_depth_end(&self, i: *mut xcb_depth_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_depth_end)(i)
+        sym!(self, xcb_depth_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_screen_allowed_depths_length(&self, R: *const xcb_screen_t) -> c_int {
-        call!(self, xcb_screen_allowed_depths_length)(R)
+        sym!(self, xcb_screen_allowed_depths_length)(R)
     }
 
     #[inline]
@@ -5300,17 +5301,17 @@ impl Xcb {
         &self,
         R: *const xcb_screen_t,
     ) -> xcb_depth_iterator_t {
-        call!(self, xcb_screen_allowed_depths_iterator)(R)
+        sym!(self, xcb_screen_allowed_depths_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_screen_next(&self, i: *mut xcb_screen_iterator_t) {
-        call!(self, xcb_screen_next)(i);
+        sym!(self, xcb_screen_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_screen_end(&self, i: *mut xcb_screen_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_screen_end)(i)
+        sym!(self, xcb_screen_end)(i)
     }
 
     #[inline]
@@ -5318,7 +5319,7 @@ impl Xcb {
         &self,
         R: *const xcb_setup_request_t,
     ) -> *mut c_char {
-        call!(self, xcb_setup_request_authorization_protocol_name)(R)
+        sym!(self, xcb_setup_request_authorization_protocol_name)(R)
     }
 
     #[inline]
@@ -5326,7 +5327,7 @@ impl Xcb {
         &self,
         R: *const xcb_setup_request_t,
     ) -> c_int {
-        call!(self, xcb_setup_request_authorization_protocol_name_length)(R)
+        sym!(self, xcb_setup_request_authorization_protocol_name_length)(R)
     }
 
     #[inline]
@@ -5334,7 +5335,7 @@ impl Xcb {
         &self,
         R: *const xcb_setup_request_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_request_authorization_protocol_name_end)(R)
+        sym!(self, xcb_setup_request_authorization_protocol_name_end)(R)
     }
 
     #[inline]
@@ -5342,7 +5343,7 @@ impl Xcb {
         &self,
         R: *const xcb_setup_request_t,
     ) -> *mut c_char {
-        call!(self, xcb_setup_request_authorization_protocol_data)(R)
+        sym!(self, xcb_setup_request_authorization_protocol_data)(R)
     }
 
     #[inline]
@@ -5350,7 +5351,7 @@ impl Xcb {
         &self,
         R: *const xcb_setup_request_t,
     ) -> c_int {
-        call!(self, xcb_setup_request_authorization_protocol_data_length)(R)
+        sym!(self, xcb_setup_request_authorization_protocol_data_length)(R)
     }
 
     #[inline]
@@ -5358,12 +5359,12 @@ impl Xcb {
         &self,
         R: *const xcb_setup_request_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_request_authorization_protocol_data_end)(R)
+        sym!(self, xcb_setup_request_authorization_protocol_data_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_request_next(&self, i: *mut xcb_setup_request_iterator_t) {
-        call!(self, xcb_setup_request_next)(i);
+        sym!(self, xcb_setup_request_next)(i);
     }
 
     #[inline]
@@ -5371,17 +5372,17 @@ impl Xcb {
         &self,
         i: *mut xcb_setup_request_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_request_end)(i)
+        sym!(self, xcb_setup_request_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_failed_reason(&self, R: *const xcb_setup_failed_t) -> *mut c_char {
-        call!(self, xcb_setup_failed_reason)(R)
+        sym!(self, xcb_setup_failed_reason)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_failed_reason_length(&self, R: *const xcb_setup_failed_t) -> c_int {
-        call!(self, xcb_setup_failed_reason_length)(R)
+        sym!(self, xcb_setup_failed_reason_length)(R)
     }
 
     #[inline]
@@ -5389,12 +5390,12 @@ impl Xcb {
         &self,
         R: *const xcb_setup_failed_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_failed_reason_end)(R)
+        sym!(self, xcb_setup_failed_reason_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_failed_next(&self, i: *mut xcb_setup_failed_iterator_t) {
-        call!(self, xcb_setup_failed_next)(i);
+        sym!(self, xcb_setup_failed_next)(i);
     }
 
     #[inline]
@@ -5402,7 +5403,7 @@ impl Xcb {
         &self,
         i: *mut xcb_setup_failed_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_failed_end)(i)
+        sym!(self, xcb_setup_failed_end)(i)
     }
 
     #[inline]
@@ -5410,7 +5411,7 @@ impl Xcb {
         &self,
         R: *const xcb_setup_authenticate_t,
     ) -> *mut c_char {
-        call!(self, xcb_setup_authenticate_reason)(R)
+        sym!(self, xcb_setup_authenticate_reason)(R)
     }
 
     #[inline]
@@ -5418,7 +5419,7 @@ impl Xcb {
         &self,
         R: *const xcb_setup_authenticate_t,
     ) -> c_int {
-        call!(self, xcb_setup_authenticate_reason_length)(R)
+        sym!(self, xcb_setup_authenticate_reason_length)(R)
     }
 
     #[inline]
@@ -5426,12 +5427,12 @@ impl Xcb {
         &self,
         R: *const xcb_setup_authenticate_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_authenticate_reason_end)(R)
+        sym!(self, xcb_setup_authenticate_reason_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_authenticate_next(&self, i: *mut xcb_setup_authenticate_iterator_t) {
-        call!(self, xcb_setup_authenticate_next)(i);
+        sym!(self, xcb_setup_authenticate_next)(i);
     }
 
     #[inline]
@@ -5439,32 +5440,32 @@ impl Xcb {
         &self,
         i: *mut xcb_setup_authenticate_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_authenticate_end)(i)
+        sym!(self, xcb_setup_authenticate_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_vendor(&self, R: *const xcb_setup_t) -> *mut c_char {
-        call!(self, xcb_setup_vendor)(R)
+        sym!(self, xcb_setup_vendor)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_vendor_length(&self, R: *const xcb_setup_t) -> c_int {
-        call!(self, xcb_setup_vendor_length)(R)
+        sym!(self, xcb_setup_vendor_length)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_vendor_end(&self, R: *const xcb_setup_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_vendor_end)(R)
+        sym!(self, xcb_setup_vendor_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_pixmap_formats(&self, R: *const xcb_setup_t) -> *mut xcb_format_t {
-        call!(self, xcb_setup_pixmap_formats)(R)
+        sym!(self, xcb_setup_pixmap_formats)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_pixmap_formats_length(&self, R: *const xcb_setup_t) -> c_int {
-        call!(self, xcb_setup_pixmap_formats_length)(R)
+        sym!(self, xcb_setup_pixmap_formats_length)(R)
     }
 
     #[inline]
@@ -5472,32 +5473,32 @@ impl Xcb {
         &self,
         R: *const xcb_setup_t,
     ) -> xcb_format_iterator_t {
-        call!(self, xcb_setup_pixmap_formats_iterator)(R)
+        sym!(self, xcb_setup_pixmap_formats_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_roots_length(&self, R: *const xcb_setup_t) -> c_int {
-        call!(self, xcb_setup_roots_length)(R)
+        sym!(self, xcb_setup_roots_length)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_roots_iterator(&self, R: *const xcb_setup_t) -> xcb_screen_iterator_t {
-        call!(self, xcb_setup_roots_iterator)(R)
+        sym!(self, xcb_setup_roots_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_setup_next(&self, i: *mut xcb_setup_iterator_t) {
-        call!(self, xcb_setup_next)(i);
+        sym!(self, xcb_setup_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_setup_end(&self, i: *mut xcb_setup_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_setup_end)(i)
+        sym!(self, xcb_setup_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_client_message_data_next(&self, i: *mut xcb_client_message_data_iterator_t) {
-        call!(self, xcb_client_message_data_next)(i);
+        sym!(self, xcb_client_message_data_next)(i);
     }
 
     #[inline]
@@ -5505,7 +5506,7 @@ impl Xcb {
         &self,
         i: *mut xcb_client_message_data_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_client_message_data_end)(i)
+        sym!(self, xcb_client_message_data_end)(i)
     }
 
     /// Creates a window
@@ -5541,7 +5542,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_window)(
+        sym!(self, xcb_create_window)(
             c,
             depth,
             wid,
@@ -5591,7 +5592,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_window_checked)(
+        sym!(self, xcb_create_window_checked)(
             c,
             depth,
             wid,
@@ -5619,7 +5620,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_window_attributes)(c, window, value_mask, value_list)
+        sym!(self, xcb_change_window_attributes)(c, window, value_mask, value_list)
     }
 
     /// change window attributes
@@ -5633,7 +5634,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_window_attributes_checked)(c, window, value_mask, value_list)
+        sym!(self, xcb_change_window_attributes_checked)(c, window, value_mask, value_list)
     }
 
     #[inline]
@@ -5643,7 +5644,7 @@ impl Xcb {
         cookie: xcb_get_window_attributes_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_window_attributes_reply_t {
-        call!(self, xcb_get_window_attributes_reply)(c, cookie, error)
+        sym!(self, xcb_get_window_attributes_reply)(c, cookie, error)
     }
 
     /// Gets window attributes
@@ -5655,7 +5656,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_get_window_attributes_cookie_t {
-        call!(self, xcb_get_window_attributes)(c, window)
+        sym!(self, xcb_get_window_attributes)(c, window)
     }
 
     /// Gets window attributes
@@ -5667,7 +5668,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_get_window_attributes_cookie_t {
-        call!(self, xcb_get_window_attributes_unchecked)(c, window)
+        sym!(self, xcb_get_window_attributes_unchecked)(c, window)
     }
 
     /// Destroys a window
@@ -5684,7 +5685,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_destroy_window)(c, window)
+        sym!(self, xcb_destroy_window)(c, window)
     }
 
     /// Destroys a window
@@ -5701,7 +5702,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_destroy_window_checked)(c, window)
+        sym!(self, xcb_destroy_window_checked)(c, window)
     }
 
     #[inline]
@@ -5710,7 +5711,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_destroy_subwindows)(c, window)
+        sym!(self, xcb_destroy_subwindows)(c, window)
     }
 
     #[inline]
@@ -5719,7 +5720,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_destroy_subwindows_checked)(c, window)
+        sym!(self, xcb_destroy_subwindows_checked)(c, window)
     }
 
     /// Changes a client's save set
@@ -5735,7 +5736,7 @@ impl Xcb {
         mode: u8,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_save_set)(c, mode, window)
+        sym!(self, xcb_change_save_set)(c, mode, window)
     }
 
     /// Changes a client's save set
@@ -5751,7 +5752,7 @@ impl Xcb {
         mode: u8,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_save_set_checked)(c, mode, window)
+        sym!(self, xcb_change_save_set_checked)(c, mode, window)
     }
 
     /// Reparents a window
@@ -5771,7 +5772,7 @@ impl Xcb {
         x: i16,
         y: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_reparent_window)(c, window, parent, x, y)
+        sym!(self, xcb_reparent_window)(c, window, parent, x, y)
     }
 
     /// Reparents a window
@@ -5791,7 +5792,7 @@ impl Xcb {
         x: i16,
         y: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_reparent_window_checked)(c, window, parent, x, y)
+        sym!(self, xcb_reparent_window_checked)(c, window, parent, x, y)
     }
 
     /// Makes a window visible
@@ -5821,7 +5822,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_map_window)(c, window)
+        sym!(self, xcb_map_window)(c, window)
     }
 
     /// Makes a window visible
@@ -5851,7 +5852,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_map_window_checked)(c, window)
+        sym!(self, xcb_map_window_checked)(c, window)
     }
 
     #[inline]
@@ -5860,7 +5861,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_map_subwindows)(c, window)
+        sym!(self, xcb_map_subwindows)(c, window)
     }
 
     #[inline]
@@ -5869,7 +5870,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_map_subwindows_checked)(c, window)
+        sym!(self, xcb_map_subwindows_checked)(c, window)
     }
 
     /// Makes a window invisible
@@ -5885,7 +5886,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_unmap_window)(c, window)
+        sym!(self, xcb_unmap_window)(c, window)
     }
 
     /// Makes a window invisible
@@ -5901,7 +5902,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_unmap_window_checked)(c, window)
+        sym!(self, xcb_unmap_window_checked)(c, window)
     }
 
     #[inline]
@@ -5910,7 +5911,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_unmap_subwindows)(c, window)
+        sym!(self, xcb_unmap_subwindows)(c, window)
     }
 
     #[inline]
@@ -5919,7 +5920,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_unmap_subwindows_checked)(c, window)
+        sym!(self, xcb_unmap_subwindows_checked)(c, window)
     }
 
     /// Configures window attributes
@@ -5933,7 +5934,7 @@ impl Xcb {
         value_mask: u16,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_configure_window)(c, window, value_mask, value_list)
+        sym!(self, xcb_configure_window)(c, window, value_mask, value_list)
     }
 
     /// Configures window attributes
@@ -5947,7 +5948,7 @@ impl Xcb {
         value_mask: u16,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_configure_window_checked)(c, window, value_mask, value_list)
+        sym!(self, xcb_configure_window_checked)(c, window, value_mask, value_list)
     }
 
     /// Change window stacking order
@@ -5964,7 +5965,7 @@ impl Xcb {
         direction: u8,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_circulate_window)(c, direction, window)
+        sym!(self, xcb_circulate_window)(c, direction, window)
     }
 
     /// Change window stacking order
@@ -5981,7 +5982,7 @@ impl Xcb {
         direction: u8,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_circulate_window_checked)(c, direction, window)
+        sym!(self, xcb_circulate_window_checked)(c, direction, window)
     }
 
     #[inline]
@@ -5991,7 +5992,7 @@ impl Xcb {
         cookie: xcb_get_geometry_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_geometry_reply_t {
-        call!(self, xcb_get_geometry_reply)(c, cookie, error)
+        sym!(self, xcb_get_geometry_reply)(c, cookie, error)
     }
 
     /// Get current window geometry
@@ -6003,7 +6004,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_get_geometry_cookie_t {
-        call!(self, xcb_get_geometry)(c, drawable)
+        sym!(self, xcb_get_geometry)(c, drawable)
     }
 
     /// Get current window geometry
@@ -6015,7 +6016,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_get_geometry_cookie_t {
-        call!(self, xcb_get_geometry_unchecked)(c, drawable)
+        sym!(self, xcb_get_geometry_unchecked)(c, drawable)
     }
 
     #[inline]
@@ -6023,12 +6024,12 @@ impl Xcb {
         &self,
         R: *const xcb_query_tree_reply_t,
     ) -> *mut xcb_window_t {
-        call!(self, xcb_query_tree_children)(R)
+        sym!(self, xcb_query_tree_children)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_query_tree_children_length(&self, R: *const xcb_query_tree_reply_t) -> c_int {
-        call!(self, xcb_query_tree_children_length)(R)
+        sym!(self, xcb_query_tree_children_length)(R)
     }
 
     #[inline]
@@ -6036,7 +6037,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_tree_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_query_tree_children_end)(R)
+        sym!(self, xcb_query_tree_children_end)(R)
     }
 
     #[inline]
@@ -6046,7 +6047,7 @@ impl Xcb {
         cookie: xcb_query_tree_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_tree_reply_t {
-        call!(self, xcb_query_tree_reply)(c, cookie, error)
+        sym!(self, xcb_query_tree_reply)(c, cookie, error)
     }
 
     /// query the window tree
@@ -6059,7 +6060,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_query_tree_cookie_t {
-        call!(self, xcb_query_tree)(c, window)
+        sym!(self, xcb_query_tree)(c, window)
     }
 
     /// query the window tree
@@ -6072,7 +6073,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_query_tree_cookie_t {
-        call!(self, xcb_query_tree_unchecked)(c, window)
+        sym!(self, xcb_query_tree_unchecked)(c, window)
     }
 
     #[inline]
@@ -6082,7 +6083,7 @@ impl Xcb {
         cookie: xcb_intern_atom_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_intern_atom_reply_t {
-        call!(self, xcb_intern_atom_reply)(c, cookie, error)
+        sym!(self, xcb_intern_atom_reply)(c, cookie, error)
     }
 
     /// Get atom identifier by name
@@ -6102,7 +6103,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_intern_atom_cookie_t {
-        call!(self, xcb_intern_atom)(c, only_if_exists, name_len, name)
+        sym!(self, xcb_intern_atom)(c, only_if_exists, name_len, name)
     }
 
     /// Get atom identifier by name
@@ -6122,7 +6123,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_intern_atom_cookie_t {
-        call!(self, xcb_intern_atom_unchecked)(c, only_if_exists, name_len, name)
+        sym!(self, xcb_intern_atom_unchecked)(c, only_if_exists, name_len, name)
     }
 
     #[inline]
@@ -6130,7 +6131,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_atom_name_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_get_atom_name_name)(R)
+        sym!(self, xcb_get_atom_name_name)(R)
     }
 
     #[inline]
@@ -6138,7 +6139,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_atom_name_reply_t,
     ) -> c_int {
-        call!(self, xcb_get_atom_name_name_length)(R)
+        sym!(self, xcb_get_atom_name_name_length)(R)
     }
 
     #[inline]
@@ -6146,7 +6147,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_atom_name_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_get_atom_name_name_end)(R)
+        sym!(self, xcb_get_atom_name_name_end)(R)
     }
 
     #[inline]
@@ -6156,7 +6157,7 @@ impl Xcb {
         cookie: xcb_get_atom_name_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_atom_name_reply_t {
-        call!(self, xcb_get_atom_name_reply)(c, cookie, error)
+        sym!(self, xcb_get_atom_name_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6165,7 +6166,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         atom: xcb_atom_t,
     ) -> xcb_get_atom_name_cookie_t {
-        call!(self, xcb_get_atom_name)(c, atom)
+        sym!(self, xcb_get_atom_name)(c, atom)
     }
 
     #[inline]
@@ -6174,7 +6175,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         atom: xcb_atom_t,
     ) -> xcb_get_atom_name_cookie_t {
-        call!(self, xcb_get_atom_name_unchecked)(c, atom)
+        sym!(self, xcb_get_atom_name_unchecked)(c, atom)
     }
 
     /// Changes a window property
@@ -6195,7 +6196,7 @@ impl Xcb {
         data_len: u32,
         data: *const c_void,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_property)(c, mode, window, property, type_, format, data_len, data)
+        sym!(self, xcb_change_property)(c, mode, window, property, type_, format, data_len, data)
     }
 
     /// Changes a window property
@@ -6216,7 +6217,7 @@ impl Xcb {
         data_len: u32,
         data: *const c_void,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_property_checked)(
+        sym!(self, xcb_change_property_checked)(
             c, mode, window, property, type_, format, data_len, data,
         )
     }
@@ -6228,7 +6229,7 @@ impl Xcb {
         window: xcb_window_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_delete_property)(c, window, property)
+        sym!(self, xcb_delete_property)(c, window, property)
     }
 
     #[inline]
@@ -6238,12 +6239,12 @@ impl Xcb {
         window: xcb_window_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_delete_property_checked)(c, window, property)
+        sym!(self, xcb_delete_property_checked)(c, window, property)
     }
 
     #[inline]
     pub unsafe fn xcb_get_property_value(&self, R: *const xcb_get_property_reply_t) -> *mut c_void {
-        call!(self, xcb_get_property_value)(R)
+        sym!(self, xcb_get_property_value)(R)
     }
 
     #[inline]
@@ -6251,7 +6252,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_property_reply_t,
     ) -> c_int {
-        call!(self, xcb_get_property_value_length)(R)
+        sym!(self, xcb_get_property_value_length)(R)
     }
 
     #[inline]
@@ -6259,7 +6260,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_property_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_get_property_value_end)(R)
+        sym!(self, xcb_get_property_value_end)(R)
     }
 
     #[inline]
@@ -6269,7 +6270,7 @@ impl Xcb {
         cookie: xcb_get_property_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_property_reply_t {
-        call!(self, xcb_get_property_reply)(c, cookie, error)
+        sym!(self, xcb_get_property_reply)(c, cookie, error)
     }
 
     /// Gets a window property
@@ -6295,7 +6296,7 @@ impl Xcb {
         long_offset: u32,
         long_length: u32,
     ) -> xcb_get_property_cookie_t {
-        call!(self, xcb_get_property)(c, delete, window, property, type_, long_offset, long_length)
+        sym!(self, xcb_get_property)(c, delete, window, property, type_, long_offset, long_length)
     }
 
     /// Gets a window property
@@ -6321,7 +6322,7 @@ impl Xcb {
         long_offset: u32,
         long_length: u32,
     ) -> xcb_get_property_cookie_t {
-        call!(self, xcb_get_property_unchecked)(
+        sym!(self, xcb_get_property_unchecked)(
             c,
             delete,
             window,
@@ -6337,7 +6338,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_properties_reply_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_list_properties_atoms)(R)
+        sym!(self, xcb_list_properties_atoms)(R)
     }
 
     #[inline]
@@ -6345,7 +6346,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_properties_reply_t,
     ) -> c_int {
-        call!(self, xcb_list_properties_atoms_length)(R)
+        sym!(self, xcb_list_properties_atoms_length)(R)
     }
 
     #[inline]
@@ -6353,7 +6354,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_properties_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_list_properties_atoms_end)(R)
+        sym!(self, xcb_list_properties_atoms_end)(R)
     }
 
     #[inline]
@@ -6363,7 +6364,7 @@ impl Xcb {
         cookie: xcb_list_properties_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_list_properties_reply_t {
-        call!(self, xcb_list_properties_reply)(c, cookie, error)
+        sym!(self, xcb_list_properties_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6372,7 +6373,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_list_properties_cookie_t {
-        call!(self, xcb_list_properties)(c, window)
+        sym!(self, xcb_list_properties)(c, window)
     }
 
     #[inline]
@@ -6381,7 +6382,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_list_properties_cookie_t {
-        call!(self, xcb_list_properties_unchecked)(c, window)
+        sym!(self, xcb_list_properties_unchecked)(c, window)
     }
 
     /// Sets the owner of a selection
@@ -6398,7 +6399,7 @@ impl Xcb {
         selection: xcb_atom_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_selection_owner)(c, owner, selection, time)
+        sym!(self, xcb_set_selection_owner)(c, owner, selection, time)
     }
 
     /// Sets the owner of a selection
@@ -6415,7 +6416,7 @@ impl Xcb {
         selection: xcb_atom_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_selection_owner_checked)(c, owner, selection, time)
+        sym!(self, xcb_set_selection_owner_checked)(c, owner, selection, time)
     }
 
     #[inline]
@@ -6425,7 +6426,7 @@ impl Xcb {
         cookie: xcb_get_selection_owner_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_selection_owner_reply_t {
-        call!(self, xcb_get_selection_owner_reply)(c, cookie, error)
+        sym!(self, xcb_get_selection_owner_reply)(c, cookie, error)
     }
 
     /// Gets the owner of a selection
@@ -6439,7 +6440,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         selection: xcb_atom_t,
     ) -> xcb_get_selection_owner_cookie_t {
-        call!(self, xcb_get_selection_owner)(c, selection)
+        sym!(self, xcb_get_selection_owner)(c, selection)
     }
 
     /// Gets the owner of a selection
@@ -6453,7 +6454,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         selection: xcb_atom_t,
     ) -> xcb_get_selection_owner_cookie_t {
-        call!(self, xcb_get_selection_owner_unchecked)(c, selection)
+        sym!(self, xcb_get_selection_owner_unchecked)(c, selection)
     }
 
     #[inline]
@@ -6466,7 +6467,7 @@ impl Xcb {
         property: xcb_atom_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_convert_selection)(c, requestor, selection, target, property, time)
+        sym!(self, xcb_convert_selection)(c, requestor, selection, target, property, time)
     }
 
     #[inline]
@@ -6479,7 +6480,7 @@ impl Xcb {
         property: xcb_atom_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_convert_selection_checked)(c, requestor, selection, target, property, time)
+        sym!(self, xcb_convert_selection_checked)(c, requestor, selection, target, property, time)
     }
 
     /// send an event
@@ -6500,7 +6501,7 @@ impl Xcb {
         event_mask: u32,
         event: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_send_event)(c, propagate, destination, event_mask, event)
+        sym!(self, xcb_send_event)(c, propagate, destination, event_mask, event)
     }
 
     /// send an event
@@ -6521,7 +6522,7 @@ impl Xcb {
         event_mask: u32,
         event: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_send_event_checked)(c, propagate, destination, event_mask, event)
+        sym!(self, xcb_send_event_checked)(c, propagate, destination, event_mask, event)
     }
 
     #[inline]
@@ -6531,7 +6532,7 @@ impl Xcb {
         cookie: xcb_grab_pointer_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_grab_pointer_reply_t {
-        call!(self, xcb_grab_pointer_reply)(c, cookie, error)
+        sym!(self, xcb_grab_pointer_reply)(c, cookie, error)
     }
 
     /// Grab the pointer
@@ -6550,7 +6551,7 @@ impl Xcb {
         cursor: xcb_cursor_t,
         time: xcb_timestamp_t,
     ) -> xcb_grab_pointer_cookie_t {
-        call!(self, xcb_grab_pointer)(
+        sym!(self, xcb_grab_pointer)(
             c,
             owner_events,
             grab_window,
@@ -6579,7 +6580,7 @@ impl Xcb {
         cursor: xcb_cursor_t,
         time: xcb_timestamp_t,
     ) -> xcb_grab_pointer_cookie_t {
-        call!(self, xcb_grab_pointer_unchecked)(
+        sym!(self, xcb_grab_pointer_unchecked)(
             c,
             owner_events,
             grab_window,
@@ -6605,7 +6606,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_pointer)(c, time)
+        sym!(self, xcb_ungrab_pointer)(c, time)
     }
 
     /// release the pointer
@@ -6621,7 +6622,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_pointer_checked)(c, time)
+        sym!(self, xcb_ungrab_pointer_checked)(c, time)
     }
 
     /// Grab pointer button(s)
@@ -6675,7 +6676,7 @@ impl Xcb {
         button: u8,
         modifiers: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_grab_button)(
+        sym!(self, xcb_grab_button)(
             c,
             owner_events,
             grab_window,
@@ -6740,7 +6741,7 @@ impl Xcb {
         button: u8,
         modifiers: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_grab_button_checked)(
+        sym!(self, xcb_grab_button_checked)(
             c,
             owner_events,
             grab_window,
@@ -6762,7 +6763,7 @@ impl Xcb {
         grab_window: xcb_window_t,
         modifiers: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_button)(c, button, grab_window, modifiers)
+        sym!(self, xcb_ungrab_button)(c, button, grab_window, modifiers)
     }
 
     #[inline]
@@ -6773,7 +6774,7 @@ impl Xcb {
         grab_window: xcb_window_t,
         modifiers: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_button_checked)(c, button, grab_window, modifiers)
+        sym!(self, xcb_ungrab_button_checked)(c, button, grab_window, modifiers)
     }
 
     #[inline]
@@ -6784,7 +6785,7 @@ impl Xcb {
         time: xcb_timestamp_t,
         event_mask: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_active_pointer_grab)(c, cursor, time, event_mask)
+        sym!(self, xcb_change_active_pointer_grab)(c, cursor, time, event_mask)
     }
 
     #[inline]
@@ -6795,7 +6796,7 @@ impl Xcb {
         time: xcb_timestamp_t,
         event_mask: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_active_pointer_grab_checked)(c, cursor, time, event_mask)
+        sym!(self, xcb_change_active_pointer_grab_checked)(c, cursor, time, event_mask)
     }
 
     #[inline]
@@ -6805,7 +6806,7 @@ impl Xcb {
         cookie: xcb_grab_keyboard_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_grab_keyboard_reply_t {
-        call!(self, xcb_grab_keyboard_reply)(c, cookie, error)
+        sym!(self, xcb_grab_keyboard_reply)(c, cookie, error)
     }
 
     /// Grab the keyboard
@@ -6830,7 +6831,7 @@ impl Xcb {
         pointer_mode: u8,
         keyboard_mode: u8,
     ) -> xcb_grab_keyboard_cookie_t {
-        call!(self, xcb_grab_keyboard)(
+        sym!(self, xcb_grab_keyboard)(
             c,
             owner_events,
             grab_window,
@@ -6862,7 +6863,7 @@ impl Xcb {
         pointer_mode: u8,
         keyboard_mode: u8,
     ) -> xcb_grab_keyboard_cookie_t {
-        call!(self, xcb_grab_keyboard_unchecked)(
+        sym!(self, xcb_grab_keyboard_unchecked)(
             c,
             owner_events,
             grab_window,
@@ -6878,7 +6879,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_keyboard)(c, time)
+        sym!(self, xcb_ungrab_keyboard)(c, time)
     }
 
     #[inline]
@@ -6887,7 +6888,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_keyboard_checked)(c, time)
+        sym!(self, xcb_ungrab_keyboard_checked)(c, time)
     }
 
     /// Grab keyboard key(s)
@@ -6933,7 +6934,7 @@ impl Xcb {
         pointer_mode: u8,
         keyboard_mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_grab_key)(
+        sym!(self, xcb_grab_key)(
             c,
             owner_events,
             grab_window,
@@ -6987,7 +6988,7 @@ impl Xcb {
         pointer_mode: u8,
         keyboard_mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_grab_key_checked)(
+        sym!(self, xcb_grab_key_checked)(
             c,
             owner_events,
             grab_window,
@@ -7010,7 +7011,7 @@ impl Xcb {
         grab_window: xcb_window_t,
         modifiers: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_key)(c, key, grab_window, modifiers)
+        sym!(self, xcb_ungrab_key)(c, key, grab_window, modifiers)
     }
 
     /// release a key combination
@@ -7025,7 +7026,7 @@ impl Xcb {
         grab_window: xcb_window_t,
         modifiers: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_key_checked)(c, key, grab_window, modifiers)
+        sym!(self, xcb_ungrab_key_checked)(c, key, grab_window, modifiers)
     }
 
     /// release queued events
@@ -7041,7 +7042,7 @@ impl Xcb {
         mode: u8,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_allow_events)(c, mode, time)
+        sym!(self, xcb_allow_events)(c, mode, time)
     }
 
     /// release queued events
@@ -7057,27 +7058,27 @@ impl Xcb {
         mode: u8,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_allow_events_checked)(c, mode, time)
+        sym!(self, xcb_allow_events_checked)(c, mode, time)
     }
 
     #[inline]
     pub unsafe fn xcb_grab_server(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_grab_server)(c)
+        sym!(self, xcb_grab_server)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_grab_server_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_grab_server_checked)(c)
+        sym!(self, xcb_grab_server_checked)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_ungrab_server(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_server)(c)
+        sym!(self, xcb_ungrab_server)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_ungrab_server_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_ungrab_server_checked)(c)
+        sym!(self, xcb_ungrab_server_checked)(c)
     }
 
     #[inline]
@@ -7087,7 +7088,7 @@ impl Xcb {
         cookie: xcb_query_pointer_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_pointer_reply_t {
-        call!(self, xcb_query_pointer_reply)(c, cookie, error)
+        sym!(self, xcb_query_pointer_reply)(c, cookie, error)
     }
 
     /// get pointer coordinates
@@ -7100,7 +7101,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_query_pointer_cookie_t {
-        call!(self, xcb_query_pointer)(c, window)
+        sym!(self, xcb_query_pointer)(c, window)
     }
 
     /// get pointer coordinates
@@ -7113,12 +7114,12 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_query_pointer_cookie_t {
-        call!(self, xcb_query_pointer_unchecked)(c, window)
+        sym!(self, xcb_query_pointer_unchecked)(c, window)
     }
 
     #[inline]
     pub unsafe fn xcb_timecoord_next(&self, i: *mut xcb_timecoord_iterator_t) {
-        call!(self, xcb_timecoord_next)(i);
+        sym!(self, xcb_timecoord_next)(i);
     }
 
     #[inline]
@@ -7126,7 +7127,7 @@ impl Xcb {
         &self,
         i: *mut xcb_timecoord_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_timecoord_end)(i)
+        sym!(self, xcb_timecoord_end)(i)
     }
 
     #[inline]
@@ -7134,7 +7135,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_motion_events_reply_t,
     ) -> *mut xcb_timecoord_t {
-        call!(self, xcb_get_motion_events_events)(R)
+        sym!(self, xcb_get_motion_events_events)(R)
     }
 
     #[inline]
@@ -7142,7 +7143,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_motion_events_reply_t,
     ) -> c_int {
-        call!(self, xcb_get_motion_events_events_length)(R)
+        sym!(self, xcb_get_motion_events_events_length)(R)
     }
 
     #[inline]
@@ -7150,7 +7151,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_motion_events_reply_t,
     ) -> xcb_timecoord_iterator_t {
-        call!(self, xcb_get_motion_events_events_iterator)(R)
+        sym!(self, xcb_get_motion_events_events_iterator)(R)
     }
 
     #[inline]
@@ -7160,7 +7161,7 @@ impl Xcb {
         cookie: xcb_get_motion_events_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_motion_events_reply_t {
-        call!(self, xcb_get_motion_events_reply)(c, cookie, error)
+        sym!(self, xcb_get_motion_events_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7171,7 +7172,7 @@ impl Xcb {
         start: xcb_timestamp_t,
         stop: xcb_timestamp_t,
     ) -> xcb_get_motion_events_cookie_t {
-        call!(self, xcb_get_motion_events)(c, window, start, stop)
+        sym!(self, xcb_get_motion_events)(c, window, start, stop)
     }
 
     #[inline]
@@ -7182,7 +7183,7 @@ impl Xcb {
         start: xcb_timestamp_t,
         stop: xcb_timestamp_t,
     ) -> xcb_get_motion_events_cookie_t {
-        call!(self, xcb_get_motion_events_unchecked)(c, window, start, stop)
+        sym!(self, xcb_get_motion_events_unchecked)(c, window, start, stop)
     }
 
     #[inline]
@@ -7192,7 +7193,7 @@ impl Xcb {
         cookie: xcb_translate_coordinates_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_translate_coordinates_reply_t {
-        call!(self, xcb_translate_coordinates_reply)(c, cookie, error)
+        sym!(self, xcb_translate_coordinates_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7204,7 +7205,7 @@ impl Xcb {
         src_x: i16,
         src_y: i16,
     ) -> xcb_translate_coordinates_cookie_t {
-        call!(self, xcb_translate_coordinates)(c, src_window, dst_window, src_x, src_y)
+        sym!(self, xcb_translate_coordinates)(c, src_window, dst_window, src_x, src_y)
     }
 
     #[inline]
@@ -7216,7 +7217,7 @@ impl Xcb {
         src_x: i16,
         src_y: i16,
     ) -> xcb_translate_coordinates_cookie_t {
-        call!(self, xcb_translate_coordinates_unchecked)(c, src_window, dst_window, src_x, src_y)
+        sym!(self, xcb_translate_coordinates_unchecked)(c, src_window, dst_window, src_x, src_y)
     }
 
     /// move mouse pointer
@@ -7245,7 +7246,7 @@ impl Xcb {
         dst_x: i16,
         dst_y: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_warp_pointer)(
+        sym!(self, xcb_warp_pointer)(
             c, src_window, dst_window, src_x, src_y, src_width, src_height, dst_x, dst_y,
         )
     }
@@ -7276,7 +7277,7 @@ impl Xcb {
         dst_x: i16,
         dst_y: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_warp_pointer_checked)(
+        sym!(self, xcb_warp_pointer_checked)(
             c, src_window, dst_window, src_x, src_y, src_width, src_height, dst_x, dst_y,
         )
     }
@@ -7296,7 +7297,7 @@ impl Xcb {
         focus: xcb_window_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_input_focus)(c, revert_to, focus, time)
+        sym!(self, xcb_set_input_focus)(c, revert_to, focus, time)
     }
 
     /// Sets input focus
@@ -7314,7 +7315,7 @@ impl Xcb {
         focus: xcb_window_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_input_focus_checked)(c, revert_to, focus, time)
+        sym!(self, xcb_set_input_focus_checked)(c, revert_to, focus, time)
     }
 
     #[inline]
@@ -7324,7 +7325,7 @@ impl Xcb {
         cookie: xcb_get_input_focus_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_input_focus_reply_t {
-        call!(self, xcb_get_input_focus_reply)(c, cookie, error)
+        sym!(self, xcb_get_input_focus_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7332,7 +7333,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_input_focus_cookie_t {
-        call!(self, xcb_get_input_focus)(c)
+        sym!(self, xcb_get_input_focus)(c)
     }
 
     #[inline]
@@ -7340,7 +7341,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_input_focus_cookie_t {
-        call!(self, xcb_get_input_focus_unchecked)(c)
+        sym!(self, xcb_get_input_focus_unchecked)(c)
     }
 
     #[inline]
@@ -7350,12 +7351,12 @@ impl Xcb {
         cookie: xcb_query_keymap_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_keymap_reply_t {
-        call!(self, xcb_query_keymap_reply)(c, cookie, error)
+        sym!(self, xcb_query_keymap_reply)(c, cookie, error)
     }
 
     #[inline]
     pub unsafe fn xcb_query_keymap(&self, c: *mut xcb_connection_t) -> xcb_query_keymap_cookie_t {
-        call!(self, xcb_query_keymap)(c)
+        sym!(self, xcb_query_keymap)(c)
     }
 
     #[inline]
@@ -7363,7 +7364,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_query_keymap_cookie_t {
-        call!(self, xcb_query_keymap_unchecked)(c)
+        sym!(self, xcb_query_keymap_unchecked)(c)
     }
 
     /// opens a font
@@ -7380,7 +7381,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_open_font)(c, fid, name_len, name)
+        sym!(self, xcb_open_font)(c, fid, name_len, name)
     }
 
     /// opens a font
@@ -7397,7 +7398,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_open_font_checked)(c, fid, name_len, name)
+        sym!(self, xcb_open_font_checked)(c, fid, name_len, name)
     }
 
     #[inline]
@@ -7406,7 +7407,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         font: xcb_font_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_close_font)(c, font)
+        sym!(self, xcb_close_font)(c, font)
     }
 
     #[inline]
@@ -7415,12 +7416,12 @@ impl Xcb {
         c: *mut xcb_connection_t,
         font: xcb_font_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_close_font_checked)(c, font)
+        sym!(self, xcb_close_font_checked)(c, font)
     }
 
     #[inline]
     pub unsafe fn xcb_fontprop_next(&self, i: *mut xcb_fontprop_iterator_t) {
-        call!(self, xcb_fontprop_next)(i);
+        sym!(self, xcb_fontprop_next)(i);
     }
 
     #[inline]
@@ -7428,12 +7429,12 @@ impl Xcb {
         &self,
         i: *mut xcb_fontprop_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_fontprop_end)(i)
+        sym!(self, xcb_fontprop_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_charinfo_next(&self, i: *mut xcb_charinfo_iterator_t) {
-        call!(self, xcb_charinfo_next)(i);
+        sym!(self, xcb_charinfo_next)(i);
     }
 
     #[inline]
@@ -7441,7 +7442,7 @@ impl Xcb {
         &self,
         i: *mut xcb_charinfo_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_charinfo_end)(i)
+        sym!(self, xcb_charinfo_end)(i)
     }
 
     #[inline]
@@ -7449,7 +7450,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_font_reply_t,
     ) -> *mut xcb_fontprop_t {
-        call!(self, xcb_query_font_properties)(R)
+        sym!(self, xcb_query_font_properties)(R)
     }
 
     #[inline]
@@ -7457,7 +7458,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_font_reply_t,
     ) -> c_int {
-        call!(self, xcb_query_font_properties_length)(R)
+        sym!(self, xcb_query_font_properties_length)(R)
     }
 
     #[inline]
@@ -7465,7 +7466,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_font_reply_t,
     ) -> xcb_fontprop_iterator_t {
-        call!(self, xcb_query_font_properties_iterator)(R)
+        sym!(self, xcb_query_font_properties_iterator)(R)
     }
 
     #[inline]
@@ -7473,7 +7474,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_font_reply_t,
     ) -> *mut xcb_charinfo_t {
-        call!(self, xcb_query_font_char_infos)(R)
+        sym!(self, xcb_query_font_char_infos)(R)
     }
 
     #[inline]
@@ -7481,7 +7482,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_font_reply_t,
     ) -> c_int {
-        call!(self, xcb_query_font_char_infos_length)(R)
+        sym!(self, xcb_query_font_char_infos_length)(R)
     }
 
     #[inline]
@@ -7489,7 +7490,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_font_reply_t,
     ) -> xcb_charinfo_iterator_t {
-        call!(self, xcb_query_font_char_infos_iterator)(R)
+        sym!(self, xcb_query_font_char_infos_iterator)(R)
     }
 
     #[inline]
@@ -7499,7 +7500,7 @@ impl Xcb {
         cookie: xcb_query_font_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_font_reply_t {
-        call!(self, xcb_query_font_reply)(c, cookie, error)
+        sym!(self, xcb_query_font_reply)(c, cookie, error)
     }
 
     /// query font metrics
@@ -7511,7 +7512,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         font: xcb_fontable_t,
     ) -> xcb_query_font_cookie_t {
-        call!(self, xcb_query_font)(c, font)
+        sym!(self, xcb_query_font)(c, font)
     }
 
     /// query font metrics
@@ -7523,7 +7524,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         font: xcb_fontable_t,
     ) -> xcb_query_font_cookie_t {
-        call!(self, xcb_query_font_unchecked)(c, font)
+        sym!(self, xcb_query_font_unchecked)(c, font)
     }
 
     #[inline]
@@ -7533,7 +7534,7 @@ impl Xcb {
         cookie: xcb_query_text_extents_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_text_extents_reply_t {
-        call!(self, xcb_query_text_extents_reply)(c, cookie, error)
+        sym!(self, xcb_query_text_extents_reply)(c, cookie, error)
     }
 
     /// get text extents
@@ -7567,7 +7568,7 @@ impl Xcb {
         string_len: u32,
         string: *const xcb_char2b_t,
     ) -> xcb_query_text_extents_cookie_t {
-        call!(self, xcb_query_text_extents)(c, font, string_len, string)
+        sym!(self, xcb_query_text_extents)(c, font, string_len, string)
     }
 
     /// get text extents
@@ -7601,37 +7602,37 @@ impl Xcb {
         string_len: u32,
         string: *const xcb_char2b_t,
     ) -> xcb_query_text_extents_cookie_t {
-        call!(self, xcb_query_text_extents_unchecked)(c, font, string_len, string)
+        sym!(self, xcb_query_text_extents_unchecked)(c, font, string_len, string)
     }
 
     #[inline]
     pub unsafe fn xcb_str_name(&self, R: *const xcb_str_t) -> *mut c_char {
-        call!(self, xcb_str_name)(R)
+        sym!(self, xcb_str_name)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_str_name_length(&self, R: *const xcb_str_t) -> c_int {
-        call!(self, xcb_str_name_length)(R)
+        sym!(self, xcb_str_name_length)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_str_name_end(&self, R: *const xcb_str_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_str_name_end)(R)
+        sym!(self, xcb_str_name_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_str_next(&self, i: *mut xcb_str_iterator_t) {
-        call!(self, xcb_str_next)(i);
+        sym!(self, xcb_str_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_str_end(&self, i: *mut xcb_str_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_str_end)(i)
+        sym!(self, xcb_str_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_list_fonts_names_length(&self, R: *const xcb_list_fonts_reply_t) -> c_int {
-        call!(self, xcb_list_fonts_names_length)(R)
+        sym!(self, xcb_list_fonts_names_length)(R)
     }
 
     #[inline]
@@ -7639,7 +7640,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_fonts_reply_t,
     ) -> xcb_str_iterator_t {
-        call!(self, xcb_list_fonts_names_iterator)(R)
+        sym!(self, xcb_list_fonts_names_iterator)(R)
     }
 
     #[inline]
@@ -7649,7 +7650,7 @@ impl Xcb {
         cookie: xcb_list_fonts_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_list_fonts_reply_t {
-        call!(self, xcb_list_fonts_reply)(c, cookie, error)
+        sym!(self, xcb_list_fonts_reply)(c, cookie, error)
     }
 
     /// get matching font names
@@ -7663,7 +7664,7 @@ impl Xcb {
         pattern_len: u16,
         pattern: *const c_char,
     ) -> xcb_list_fonts_cookie_t {
-        call!(self, xcb_list_fonts)(c, max_names, pattern_len, pattern)
+        sym!(self, xcb_list_fonts)(c, max_names, pattern_len, pattern)
     }
 
     /// get matching font names
@@ -7677,7 +7678,7 @@ impl Xcb {
         pattern_len: u16,
         pattern: *const c_char,
     ) -> xcb_list_fonts_cookie_t {
-        call!(self, xcb_list_fonts_unchecked)(c, max_names, pattern_len, pattern)
+        sym!(self, xcb_list_fonts_unchecked)(c, max_names, pattern_len, pattern)
     }
 
     #[inline]
@@ -7685,7 +7686,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_fonts_with_info_reply_t,
     ) -> *mut xcb_fontprop_t {
-        call!(self, xcb_list_fonts_with_info_properties)(R)
+        sym!(self, xcb_list_fonts_with_info_properties)(R)
     }
 
     #[inline]
@@ -7693,7 +7694,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_fonts_with_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_list_fonts_with_info_properties_length)(R)
+        sym!(self, xcb_list_fonts_with_info_properties_length)(R)
     }
 
     #[inline]
@@ -7701,7 +7702,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_fonts_with_info_reply_t,
     ) -> xcb_fontprop_iterator_t {
-        call!(self, xcb_list_fonts_with_info_properties_iterator)(R)
+        sym!(self, xcb_list_fonts_with_info_properties_iterator)(R)
     }
 
     #[inline]
@@ -7709,7 +7710,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_fonts_with_info_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_list_fonts_with_info_name)(R)
+        sym!(self, xcb_list_fonts_with_info_name)(R)
     }
 
     #[inline]
@@ -7717,7 +7718,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_fonts_with_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_list_fonts_with_info_name_length)(R)
+        sym!(self, xcb_list_fonts_with_info_name_length)(R)
     }
 
     #[inline]
@@ -7725,7 +7726,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_fonts_with_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_list_fonts_with_info_name_end)(R)
+        sym!(self, xcb_list_fonts_with_info_name_end)(R)
     }
 
     #[inline]
@@ -7735,7 +7736,7 @@ impl Xcb {
         cookie: xcb_list_fonts_with_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_list_fonts_with_info_reply_t {
-        call!(self, xcb_list_fonts_with_info_reply)(c, cookie, error)
+        sym!(self, xcb_list_fonts_with_info_reply)(c, cookie, error)
     }
 
     /// get matching font names and information
@@ -7749,7 +7750,7 @@ impl Xcb {
         pattern_len: u16,
         pattern: *const c_char,
     ) -> xcb_list_fonts_with_info_cookie_t {
-        call!(self, xcb_list_fonts_with_info)(c, max_names, pattern_len, pattern)
+        sym!(self, xcb_list_fonts_with_info)(c, max_names, pattern_len, pattern)
     }
 
     /// get matching font names and information
@@ -7763,7 +7764,7 @@ impl Xcb {
         pattern_len: u16,
         pattern: *const c_char,
     ) -> xcb_list_fonts_with_info_cookie_t {
-        call!(self, xcb_list_fonts_with_info_unchecked)(c, max_names, pattern_len, pattern)
+        sym!(self, xcb_list_fonts_with_info_unchecked)(c, max_names, pattern_len, pattern)
     }
 
     #[inline]
@@ -7773,7 +7774,7 @@ impl Xcb {
         font_qty: u16,
         font: *const xcb_str_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_font_path)(c, font_qty, font)
+        sym!(self, xcb_set_font_path)(c, font_qty, font)
     }
 
     #[inline]
@@ -7783,7 +7784,7 @@ impl Xcb {
         font_qty: u16,
         font: *const xcb_str_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_font_path_checked)(c, font_qty, font)
+        sym!(self, xcb_set_font_path_checked)(c, font_qty, font)
     }
 
     #[inline]
@@ -7791,7 +7792,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_font_path_reply_t,
     ) -> c_int {
-        call!(self, xcb_get_font_path_path_length)(R)
+        sym!(self, xcb_get_font_path_path_length)(R)
     }
 
     #[inline]
@@ -7799,7 +7800,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_font_path_reply_t,
     ) -> xcb_str_iterator_t {
-        call!(self, xcb_get_font_path_path_iterator)(R)
+        sym!(self, xcb_get_font_path_path_iterator)(R)
     }
 
     #[inline]
@@ -7809,12 +7810,12 @@ impl Xcb {
         cookie: xcb_get_font_path_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_font_path_reply_t {
-        call!(self, xcb_get_font_path_reply)(c, cookie, error)
+        sym!(self, xcb_get_font_path_reply)(c, cookie, error)
     }
 
     #[inline]
     pub unsafe fn xcb_get_font_path(&self, c: *mut xcb_connection_t) -> xcb_get_font_path_cookie_t {
-        call!(self, xcb_get_font_path)(c)
+        sym!(self, xcb_get_font_path)(c)
     }
 
     #[inline]
@@ -7822,7 +7823,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_font_path_cookie_t {
-        call!(self, xcb_get_font_path_unchecked)(c)
+        sym!(self, xcb_get_font_path_unchecked)(c)
     }
 
     /// Creates a pixmap
@@ -7839,7 +7840,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_pixmap)(c, depth, pid, drawable, width, height)
+        sym!(self, xcb_create_pixmap)(c, depth, pid, drawable, width, height)
     }
 
     /// Creates a pixmap
@@ -7856,7 +7857,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_pixmap_checked)(c, depth, pid, drawable, width, height)
+        sym!(self, xcb_create_pixmap_checked)(c, depth, pid, drawable, width, height)
     }
 
     /// Destroys a pixmap
@@ -7869,7 +7870,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         pixmap: xcb_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_pixmap)(c, pixmap)
+        sym!(self, xcb_free_pixmap)(c, pixmap)
     }
 
     /// Destroys a pixmap
@@ -7882,7 +7883,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         pixmap: xcb_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_pixmap_checked)(c, pixmap)
+        sym!(self, xcb_free_pixmap_checked)(c, pixmap)
     }
 
     /// Creates a graphics context
@@ -7898,7 +7899,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_gc)(c, cid, drawable, value_mask, value_list)
+        sym!(self, xcb_create_gc)(c, cid, drawable, value_mask, value_list)
     }
 
     /// Creates a graphics context
@@ -7914,7 +7915,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_gc_checked)(c, cid, drawable, value_mask, value_list)
+        sym!(self, xcb_create_gc_checked)(c, cid, drawable, value_mask, value_list)
     }
 
     /// change graphics context components
@@ -7928,7 +7929,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_gc)(c, gc, value_mask, value_list)
+        sym!(self, xcb_change_gc)(c, gc, value_mask, value_list)
     }
 
     /// change graphics context components
@@ -7942,7 +7943,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_gc_checked)(c, gc, value_mask, value_list)
+        sym!(self, xcb_change_gc_checked)(c, gc, value_mask, value_list)
     }
 
     #[inline]
@@ -7953,7 +7954,7 @@ impl Xcb {
         dst_gc: xcb_gcontext_t,
         value_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_gc)(c, src_gc, dst_gc, value_mask)
+        sym!(self, xcb_copy_gc)(c, src_gc, dst_gc, value_mask)
     }
 
     #[inline]
@@ -7964,7 +7965,7 @@ impl Xcb {
         dst_gc: xcb_gcontext_t,
         value_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_gc_checked)(c, src_gc, dst_gc, value_mask)
+        sym!(self, xcb_copy_gc_checked)(c, src_gc, dst_gc, value_mask)
     }
 
     #[inline]
@@ -7976,7 +7977,7 @@ impl Xcb {
         dashes_len: u16,
         dashes: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_dashes)(c, gc, dash_offset, dashes_len, dashes)
+        sym!(self, xcb_set_dashes)(c, gc, dash_offset, dashes_len, dashes)
     }
 
     #[inline]
@@ -7988,7 +7989,7 @@ impl Xcb {
         dashes_len: u16,
         dashes: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_dashes_checked)(c, gc, dash_offset, dashes_len, dashes)
+        sym!(self, xcb_set_dashes_checked)(c, gc, dash_offset, dashes_len, dashes)
     }
 
     #[inline]
@@ -8002,7 +8003,7 @@ impl Xcb {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_clip_rectangles)(
+        sym!(self, xcb_set_clip_rectangles)(
             c,
             ordering,
             gc,
@@ -8024,7 +8025,7 @@ impl Xcb {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_clip_rectangles_checked)(
+        sym!(self, xcb_set_clip_rectangles_checked)(
             c,
             ordering,
             gc,
@@ -8044,7 +8045,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         gc: xcb_gcontext_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_gc)(c, gc)
+        sym!(self, xcb_free_gc)(c, gc)
     }
 
     /// Destroys a graphics context
@@ -8056,7 +8057,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         gc: xcb_gcontext_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_gc_checked)(c, gc)
+        sym!(self, xcb_free_gc_checked)(c, gc)
     }
 
     #[inline]
@@ -8070,7 +8071,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_clear_area)(c, exposures, window, x, y, width, height)
+        sym!(self, xcb_clear_area)(c, exposures, window, x, y, width, height)
     }
 
     #[inline]
@@ -8084,7 +8085,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_clear_area_checked)(c, exposures, window, x, y, width, height)
+        sym!(self, xcb_clear_area_checked)(c, exposures, window, x, y, width, height)
     }
 
     /// copy areas
@@ -8104,7 +8105,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_area)(
+        sym!(self, xcb_copy_area)(
             c,
             src_drawable,
             dst_drawable,
@@ -8135,7 +8136,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_area_checked)(
+        sym!(self, xcb_copy_area_checked)(
             c,
             src_drawable,
             dst_drawable,
@@ -8164,7 +8165,7 @@ impl Xcb {
         height: u16,
         bit_plane: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_plane)(
+        sym!(self, xcb_copy_plane)(
             c,
             src_drawable,
             dst_drawable,
@@ -8194,7 +8195,7 @@ impl Xcb {
         height: u16,
         bit_plane: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_plane_checked)(
+        sym!(self, xcb_copy_plane_checked)(
             c,
             src_drawable,
             dst_drawable,
@@ -8219,7 +8220,7 @@ impl Xcb {
         points_len: u32,
         points: *const xcb_point_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_point)(c, coordinate_mode, drawable, gc, points_len, points)
+        sym!(self, xcb_poly_point)(c, coordinate_mode, drawable, gc, points_len, points)
     }
 
     #[inline]
@@ -8232,7 +8233,7 @@ impl Xcb {
         points_len: u32,
         points: *const xcb_point_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_point_checked)(c, coordinate_mode, drawable, gc, points_len, points)
+        sym!(self, xcb_poly_point_checked)(c, coordinate_mode, drawable, gc, points_len, points)
     }
 
     /// draw lines
@@ -8255,7 +8256,7 @@ impl Xcb {
         points_len: u32,
         points: *const xcb_point_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_line)(c, coordinate_mode, drawable, gc, points_len, points)
+        sym!(self, xcb_poly_line)(c, coordinate_mode, drawable, gc, points_len, points)
     }
 
     /// draw lines
@@ -8278,17 +8279,17 @@ impl Xcb {
         points_len: u32,
         points: *const xcb_point_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_line_checked)(c, coordinate_mode, drawable, gc, points_len, points)
+        sym!(self, xcb_poly_line_checked)(c, coordinate_mode, drawable, gc, points_len, points)
     }
 
     #[inline]
     pub unsafe fn xcb_segment_next(&self, i: *mut xcb_segment_iterator_t) {
-        call!(self, xcb_segment_next)(i);
+        sym!(self, xcb_segment_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_segment_end(&self, i: *mut xcb_segment_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_segment_end)(i)
+        sym!(self, xcb_segment_end)(i)
     }
 
     /// draw lines
@@ -8311,7 +8312,7 @@ impl Xcb {
         segments_len: u32,
         segments: *const xcb_segment_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_segment)(c, drawable, gc, segments_len, segments)
+        sym!(self, xcb_poly_segment)(c, drawable, gc, segments_len, segments)
     }
 
     /// draw lines
@@ -8334,7 +8335,7 @@ impl Xcb {
         segments_len: u32,
         segments: *const xcb_segment_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_segment_checked)(c, drawable, gc, segments_len, segments)
+        sym!(self, xcb_poly_segment_checked)(c, drawable, gc, segments_len, segments)
     }
 
     #[inline]
@@ -8346,7 +8347,7 @@ impl Xcb {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_rectangle)(c, drawable, gc, rectangles_len, rectangles)
+        sym!(self, xcb_poly_rectangle)(c, drawable, gc, rectangles_len, rectangles)
     }
 
     #[inline]
@@ -8358,7 +8359,7 @@ impl Xcb {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_rectangle_checked)(c, drawable, gc, rectangles_len, rectangles)
+        sym!(self, xcb_poly_rectangle_checked)(c, drawable, gc, rectangles_len, rectangles)
     }
 
     #[inline]
@@ -8370,7 +8371,7 @@ impl Xcb {
         arcs_len: u32,
         arcs: *const xcb_arc_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_arc)(c, drawable, gc, arcs_len, arcs)
+        sym!(self, xcb_poly_arc)(c, drawable, gc, arcs_len, arcs)
     }
 
     #[inline]
@@ -8382,7 +8383,7 @@ impl Xcb {
         arcs_len: u32,
         arcs: *const xcb_arc_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_arc_checked)(c, drawable, gc, arcs_len, arcs)
+        sym!(self, xcb_poly_arc_checked)(c, drawable, gc, arcs_len, arcs)
     }
 
     #[inline]
@@ -8396,7 +8397,7 @@ impl Xcb {
         points_len: u32,
         points: *const xcb_point_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_fill_poly)(c, drawable, gc, shape, coordinate_mode, points_len, points)
+        sym!(self, xcb_fill_poly)(c, drawable, gc, shape, coordinate_mode, points_len, points)
     }
 
     #[inline]
@@ -8410,7 +8411,7 @@ impl Xcb {
         points_len: u32,
         points: *const xcb_point_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_fill_poly_checked)(
+        sym!(self, xcb_fill_poly_checked)(
             c,
             drawable,
             gc,
@@ -8435,7 +8436,7 @@ impl Xcb {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_fill_rectangle)(c, drawable, gc, rectangles_len, rectangles)
+        sym!(self, xcb_poly_fill_rectangle)(c, drawable, gc, rectangles_len, rectangles)
     }
 
     /// Fills rectangles
@@ -8452,7 +8453,7 @@ impl Xcb {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_fill_rectangle_checked)(c, drawable, gc, rectangles_len, rectangles)
+        sym!(self, xcb_poly_fill_rectangle_checked)(c, drawable, gc, rectangles_len, rectangles)
     }
 
     #[inline]
@@ -8464,7 +8465,7 @@ impl Xcb {
         arcs_len: u32,
         arcs: *const xcb_arc_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_fill_arc)(c, drawable, gc, arcs_len, arcs)
+        sym!(self, xcb_poly_fill_arc)(c, drawable, gc, arcs_len, arcs)
     }
 
     #[inline]
@@ -8476,7 +8477,7 @@ impl Xcb {
         arcs_len: u32,
         arcs: *const xcb_arc_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_fill_arc_checked)(c, drawable, gc, arcs_len, arcs)
+        sym!(self, xcb_poly_fill_arc_checked)(c, drawable, gc, arcs_len, arcs)
     }
 
     #[inline]
@@ -8495,7 +8496,7 @@ impl Xcb {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_put_image)(
+        sym!(self, xcb_put_image)(
             c, format, drawable, gc, width, height, dst_x, dst_y, left_pad, depth, data_len, data,
         )
     }
@@ -8516,19 +8517,19 @@ impl Xcb {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_put_image_checked)(
+        sym!(self, xcb_put_image_checked)(
             c, format, drawable, gc, width, height, dst_x, dst_y, left_pad, depth, data_len, data,
         )
     }
 
     #[inline]
     pub unsafe fn xcb_get_image_data(&self, R: *const xcb_get_image_reply_t) -> *mut u8 {
-        call!(self, xcb_get_image_data)(R)
+        sym!(self, xcb_get_image_data)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_get_image_data_length(&self, R: *const xcb_get_image_reply_t) -> c_int {
-        call!(self, xcb_get_image_data_length)(R)
+        sym!(self, xcb_get_image_data_length)(R)
     }
 
     #[inline]
@@ -8536,7 +8537,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_image_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_get_image_data_end)(R)
+        sym!(self, xcb_get_image_data_end)(R)
     }
 
     #[inline]
@@ -8546,7 +8547,7 @@ impl Xcb {
         cookie: xcb_get_image_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_image_reply_t {
-        call!(self, xcb_get_image_reply)(c, cookie, error)
+        sym!(self, xcb_get_image_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -8561,7 +8562,7 @@ impl Xcb {
         height: u16,
         plane_mask: u32,
     ) -> xcb_get_image_cookie_t {
-        call!(self, xcb_get_image)(c, format, drawable, x, y, width, height, plane_mask)
+        sym!(self, xcb_get_image)(c, format, drawable, x, y, width, height, plane_mask)
     }
 
     #[inline]
@@ -8576,7 +8577,7 @@ impl Xcb {
         height: u16,
         plane_mask: u32,
     ) -> xcb_get_image_cookie_t {
-        call!(self, xcb_get_image_unchecked)(c, format, drawable, x, y, width, height, plane_mask)
+        sym!(self, xcb_get_image_unchecked)(c, format, drawable, x, y, width, height, plane_mask)
     }
 
     #[inline]
@@ -8590,7 +8591,7 @@ impl Xcb {
         items_len: u32,
         items: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_text_8)(c, drawable, gc, x, y, items_len, items)
+        sym!(self, xcb_poly_text_8)(c, drawable, gc, x, y, items_len, items)
     }
 
     #[inline]
@@ -8604,7 +8605,7 @@ impl Xcb {
         items_len: u32,
         items: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_text_8_checked)(c, drawable, gc, x, y, items_len, items)
+        sym!(self, xcb_poly_text_8_checked)(c, drawable, gc, x, y, items_len, items)
     }
 
     #[inline]
@@ -8618,7 +8619,7 @@ impl Xcb {
         items_len: u32,
         items: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_text_16)(c, drawable, gc, x, y, items_len, items)
+        sym!(self, xcb_poly_text_16)(c, drawable, gc, x, y, items_len, items)
     }
 
     #[inline]
@@ -8632,7 +8633,7 @@ impl Xcb {
         items_len: u32,
         items: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_poly_text_16_checked)(c, drawable, gc, x, y, items_len, items)
+        sym!(self, xcb_poly_text_16_checked)(c, drawable, gc, x, y, items_len, items)
     }
 
     /// Draws text
@@ -8656,7 +8657,7 @@ impl Xcb {
         y: i16,
         string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_image_text_8)(c, string_len, drawable, gc, x, y, string)
+        sym!(self, xcb_image_text_8)(c, string_len, drawable, gc, x, y, string)
     }
 
     /// Draws text
@@ -8680,7 +8681,7 @@ impl Xcb {
         y: i16,
         string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_image_text_8_checked)(c, string_len, drawable, gc, x, y, string)
+        sym!(self, xcb_image_text_8_checked)(c, string_len, drawable, gc, x, y, string)
     }
 
     /// Draws text
@@ -8704,7 +8705,7 @@ impl Xcb {
         y: i16,
         string: *const xcb_char2b_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_image_text_16)(c, string_len, drawable, gc, x, y, string)
+        sym!(self, xcb_image_text_16)(c, string_len, drawable, gc, x, y, string)
     }
 
     /// Draws text
@@ -8728,7 +8729,7 @@ impl Xcb {
         y: i16,
         string: *const xcb_char2b_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_image_text_16_checked)(c, string_len, drawable, gc, x, y, string)
+        sym!(self, xcb_image_text_16_checked)(c, string_len, drawable, gc, x, y, string)
     }
 
     #[inline]
@@ -8740,7 +8741,7 @@ impl Xcb {
         window: xcb_window_t,
         visual: xcb_visualid_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_colormap)(c, alloc, mid, window, visual)
+        sym!(self, xcb_create_colormap)(c, alloc, mid, window, visual)
     }
 
     #[inline]
@@ -8752,7 +8753,7 @@ impl Xcb {
         window: xcb_window_t,
         visual: xcb_visualid_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_colormap_checked)(c, alloc, mid, window, visual)
+        sym!(self, xcb_create_colormap_checked)(c, alloc, mid, window, visual)
     }
 
     #[inline]
@@ -8761,7 +8762,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_colormap)(c, cmap)
+        sym!(self, xcb_free_colormap)(c, cmap)
     }
 
     #[inline]
@@ -8770,7 +8771,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_colormap_checked)(c, cmap)
+        sym!(self, xcb_free_colormap_checked)(c, cmap)
     }
 
     #[inline]
@@ -8780,7 +8781,7 @@ impl Xcb {
         mid: xcb_colormap_t,
         src_cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_colormap_and_free)(c, mid, src_cmap)
+        sym!(self, xcb_copy_colormap_and_free)(c, mid, src_cmap)
     }
 
     #[inline]
@@ -8790,7 +8791,7 @@ impl Xcb {
         mid: xcb_colormap_t,
         src_cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_copy_colormap_and_free_checked)(c, mid, src_cmap)
+        sym!(self, xcb_copy_colormap_and_free_checked)(c, mid, src_cmap)
     }
 
     #[inline]
@@ -8799,7 +8800,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_install_colormap)(c, cmap)
+        sym!(self, xcb_install_colormap)(c, cmap)
     }
 
     #[inline]
@@ -8808,7 +8809,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_install_colormap_checked)(c, cmap)
+        sym!(self, xcb_install_colormap_checked)(c, cmap)
     }
 
     #[inline]
@@ -8817,7 +8818,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_uninstall_colormap)(c, cmap)
+        sym!(self, xcb_uninstall_colormap)(c, cmap)
     }
 
     #[inline]
@@ -8826,7 +8827,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cmap: xcb_colormap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_uninstall_colormap_checked)(c, cmap)
+        sym!(self, xcb_uninstall_colormap_checked)(c, cmap)
     }
 
     #[inline]
@@ -8834,7 +8835,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_installed_colormaps_reply_t,
     ) -> *mut xcb_colormap_t {
-        call!(self, xcb_list_installed_colormaps_cmaps)(R)
+        sym!(self, xcb_list_installed_colormaps_cmaps)(R)
     }
 
     #[inline]
@@ -8842,7 +8843,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_installed_colormaps_reply_t,
     ) -> c_int {
-        call!(self, xcb_list_installed_colormaps_cmaps_length)(R)
+        sym!(self, xcb_list_installed_colormaps_cmaps_length)(R)
     }
 
     #[inline]
@@ -8850,7 +8851,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_installed_colormaps_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_list_installed_colormaps_cmaps_end)(R)
+        sym!(self, xcb_list_installed_colormaps_cmaps_end)(R)
     }
 
     #[inline]
@@ -8860,7 +8861,7 @@ impl Xcb {
         cookie: xcb_list_installed_colormaps_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_list_installed_colormaps_reply_t {
-        call!(self, xcb_list_installed_colormaps_reply)(c, cookie, error)
+        sym!(self, xcb_list_installed_colormaps_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -8869,7 +8870,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_list_installed_colormaps_cookie_t {
-        call!(self, xcb_list_installed_colormaps)(c, window)
+        sym!(self, xcb_list_installed_colormaps)(c, window)
     }
 
     #[inline]
@@ -8878,7 +8879,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_list_installed_colormaps_cookie_t {
-        call!(self, xcb_list_installed_colormaps_unchecked)(c, window)
+        sym!(self, xcb_list_installed_colormaps_unchecked)(c, window)
     }
 
     #[inline]
@@ -8888,7 +8889,7 @@ impl Xcb {
         cookie: xcb_alloc_color_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_alloc_color_reply_t {
-        call!(self, xcb_alloc_color_reply)(c, cookie, error)
+        sym!(self, xcb_alloc_color_reply)(c, cookie, error)
     }
 
     /// Allocate a color
@@ -8907,7 +8908,7 @@ impl Xcb {
         green: u16,
         blue: u16,
     ) -> xcb_alloc_color_cookie_t {
-        call!(self, xcb_alloc_color)(c, cmap, red, green, blue)
+        sym!(self, xcb_alloc_color)(c, cmap, red, green, blue)
     }
 
     /// Allocate a color
@@ -8926,7 +8927,7 @@ impl Xcb {
         green: u16,
         blue: u16,
     ) -> xcb_alloc_color_cookie_t {
-        call!(self, xcb_alloc_color_unchecked)(c, cmap, red, green, blue)
+        sym!(self, xcb_alloc_color_unchecked)(c, cmap, red, green, blue)
     }
 
     #[inline]
@@ -8936,7 +8937,7 @@ impl Xcb {
         cookie: xcb_alloc_named_color_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_alloc_named_color_reply_t {
-        call!(self, xcb_alloc_named_color_reply)(c, cookie, error)
+        sym!(self, xcb_alloc_named_color_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -8947,7 +8948,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_alloc_named_color_cookie_t {
-        call!(self, xcb_alloc_named_color)(c, cmap, name_len, name)
+        sym!(self, xcb_alloc_named_color)(c, cmap, name_len, name)
     }
 
     #[inline]
@@ -8958,7 +8959,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_alloc_named_color_cookie_t {
-        call!(self, xcb_alloc_named_color_unchecked)(c, cmap, name_len, name)
+        sym!(self, xcb_alloc_named_color_unchecked)(c, cmap, name_len, name)
     }
 
     #[inline]
@@ -8966,7 +8967,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_cells_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_alloc_color_cells_pixels)(R)
+        sym!(self, xcb_alloc_color_cells_pixels)(R)
     }
 
     #[inline]
@@ -8974,7 +8975,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_cells_reply_t,
     ) -> c_int {
-        call!(self, xcb_alloc_color_cells_pixels_length)(R)
+        sym!(self, xcb_alloc_color_cells_pixels_length)(R)
     }
 
     #[inline]
@@ -8982,7 +8983,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_cells_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_alloc_color_cells_pixels_end)(R)
+        sym!(self, xcb_alloc_color_cells_pixels_end)(R)
     }
 
     #[inline]
@@ -8990,7 +8991,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_cells_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_alloc_color_cells_masks)(R)
+        sym!(self, xcb_alloc_color_cells_masks)(R)
     }
 
     #[inline]
@@ -8998,7 +8999,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_cells_reply_t,
     ) -> c_int {
-        call!(self, xcb_alloc_color_cells_masks_length)(R)
+        sym!(self, xcb_alloc_color_cells_masks_length)(R)
     }
 
     #[inline]
@@ -9006,7 +9007,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_cells_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_alloc_color_cells_masks_end)(R)
+        sym!(self, xcb_alloc_color_cells_masks_end)(R)
     }
 
     #[inline]
@@ -9016,7 +9017,7 @@ impl Xcb {
         cookie: xcb_alloc_color_cells_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_alloc_color_cells_reply_t {
-        call!(self, xcb_alloc_color_cells_reply)(c, cookie, error)
+        sym!(self, xcb_alloc_color_cells_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9028,7 +9029,7 @@ impl Xcb {
         colors: u16,
         planes: u16,
     ) -> xcb_alloc_color_cells_cookie_t {
-        call!(self, xcb_alloc_color_cells)(c, contiguous, cmap, colors, planes)
+        sym!(self, xcb_alloc_color_cells)(c, contiguous, cmap, colors, planes)
     }
 
     #[inline]
@@ -9040,7 +9041,7 @@ impl Xcb {
         colors: u16,
         planes: u16,
     ) -> xcb_alloc_color_cells_cookie_t {
-        call!(self, xcb_alloc_color_cells_unchecked)(c, contiguous, cmap, colors, planes)
+        sym!(self, xcb_alloc_color_cells_unchecked)(c, contiguous, cmap, colors, planes)
     }
 
     #[inline]
@@ -9048,7 +9049,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_planes_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_alloc_color_planes_pixels)(R)
+        sym!(self, xcb_alloc_color_planes_pixels)(R)
     }
 
     #[inline]
@@ -9056,7 +9057,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_planes_reply_t,
     ) -> c_int {
-        call!(self, xcb_alloc_color_planes_pixels_length)(R)
+        sym!(self, xcb_alloc_color_planes_pixels_length)(R)
     }
 
     #[inline]
@@ -9064,7 +9065,7 @@ impl Xcb {
         &self,
         R: *const xcb_alloc_color_planes_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_alloc_color_planes_pixels_end)(R)
+        sym!(self, xcb_alloc_color_planes_pixels_end)(R)
     }
 
     #[inline]
@@ -9074,7 +9075,7 @@ impl Xcb {
         cookie: xcb_alloc_color_planes_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_alloc_color_planes_reply_t {
-        call!(self, xcb_alloc_color_planes_reply)(c, cookie, error)
+        sym!(self, xcb_alloc_color_planes_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9088,7 +9089,7 @@ impl Xcb {
         greens: u16,
         blues: u16,
     ) -> xcb_alloc_color_planes_cookie_t {
-        call!(self, xcb_alloc_color_planes)(c, contiguous, cmap, colors, reds, greens, blues)
+        sym!(self, xcb_alloc_color_planes)(c, contiguous, cmap, colors, reds, greens, blues)
     }
 
     #[inline]
@@ -9102,7 +9103,7 @@ impl Xcb {
         greens: u16,
         blues: u16,
     ) -> xcb_alloc_color_planes_cookie_t {
-        call!(self, xcb_alloc_color_planes_unchecked)(
+        sym!(self, xcb_alloc_color_planes_unchecked)(
             c, contiguous, cmap, colors, reds, greens, blues,
         )
     }
@@ -9116,7 +9117,7 @@ impl Xcb {
         pixels_len: u32,
         pixels: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_colors)(c, cmap, plane_mask, pixels_len, pixels)
+        sym!(self, xcb_free_colors)(c, cmap, plane_mask, pixels_len, pixels)
     }
 
     #[inline]
@@ -9128,12 +9129,12 @@ impl Xcb {
         pixels_len: u32,
         pixels: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_colors_checked)(c, cmap, plane_mask, pixels_len, pixels)
+        sym!(self, xcb_free_colors_checked)(c, cmap, plane_mask, pixels_len, pixels)
     }
 
     #[inline]
     pub unsafe fn xcb_coloritem_next(&self, i: *mut xcb_coloritem_iterator_t) {
-        call!(self, xcb_coloritem_next)(i);
+        sym!(self, xcb_coloritem_next)(i);
     }
 
     #[inline]
@@ -9141,7 +9142,7 @@ impl Xcb {
         &self,
         i: *mut xcb_coloritem_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_coloritem_end)(i)
+        sym!(self, xcb_coloritem_end)(i)
     }
 
     #[inline]
@@ -9152,7 +9153,7 @@ impl Xcb {
         items_len: u32,
         items: *const xcb_coloritem_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_store_colors)(c, cmap, items_len, items)
+        sym!(self, xcb_store_colors)(c, cmap, items_len, items)
     }
 
     #[inline]
@@ -9163,7 +9164,7 @@ impl Xcb {
         items_len: u32,
         items: *const xcb_coloritem_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_store_colors_checked)(c, cmap, items_len, items)
+        sym!(self, xcb_store_colors_checked)(c, cmap, items_len, items)
     }
 
     #[inline]
@@ -9176,7 +9177,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_store_named_color)(c, flags, cmap, pixel, name_len, name)
+        sym!(self, xcb_store_named_color)(c, flags, cmap, pixel, name_len, name)
     }
 
     #[inline]
@@ -9189,17 +9190,17 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_store_named_color_checked)(c, flags, cmap, pixel, name_len, name)
+        sym!(self, xcb_store_named_color_checked)(c, flags, cmap, pixel, name_len, name)
     }
 
     #[inline]
     pub unsafe fn xcb_rgb_next(&self, i: *mut xcb_rgb_iterator_t) {
-        call!(self, xcb_rgb_next)(i);
+        sym!(self, xcb_rgb_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_rgb_end(&self, i: *mut xcb_rgb_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_rgb_end)(i)
+        sym!(self, xcb_rgb_end)(i)
     }
 
     #[inline]
@@ -9207,7 +9208,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_colors_reply_t,
     ) -> *mut xcb_rgb_t {
-        call!(self, xcb_query_colors_colors)(R)
+        sym!(self, xcb_query_colors_colors)(R)
     }
 
     #[inline]
@@ -9215,7 +9216,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_colors_reply_t,
     ) -> c_int {
-        call!(self, xcb_query_colors_colors_length)(R)
+        sym!(self, xcb_query_colors_colors_length)(R)
     }
 
     #[inline]
@@ -9223,7 +9224,7 @@ impl Xcb {
         &self,
         R: *const xcb_query_colors_reply_t,
     ) -> xcb_rgb_iterator_t {
-        call!(self, xcb_query_colors_colors_iterator)(R)
+        sym!(self, xcb_query_colors_colors_iterator)(R)
     }
 
     #[inline]
@@ -9233,7 +9234,7 @@ impl Xcb {
         cookie: xcb_query_colors_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_colors_reply_t {
-        call!(self, xcb_query_colors_reply)(c, cookie, error)
+        sym!(self, xcb_query_colors_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9244,7 +9245,7 @@ impl Xcb {
         pixels_len: u32,
         pixels: *const u32,
     ) -> xcb_query_colors_cookie_t {
-        call!(self, xcb_query_colors)(c, cmap, pixels_len, pixels)
+        sym!(self, xcb_query_colors)(c, cmap, pixels_len, pixels)
     }
 
     #[inline]
@@ -9255,7 +9256,7 @@ impl Xcb {
         pixels_len: u32,
         pixels: *const u32,
     ) -> xcb_query_colors_cookie_t {
-        call!(self, xcb_query_colors_unchecked)(c, cmap, pixels_len, pixels)
+        sym!(self, xcb_query_colors_unchecked)(c, cmap, pixels_len, pixels)
     }
 
     #[inline]
@@ -9265,7 +9266,7 @@ impl Xcb {
         cookie: xcb_lookup_color_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_lookup_color_reply_t {
-        call!(self, xcb_lookup_color_reply)(c, cookie, error)
+        sym!(self, xcb_lookup_color_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9276,7 +9277,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_lookup_color_cookie_t {
-        call!(self, xcb_lookup_color)(c, cmap, name_len, name)
+        sym!(self, xcb_lookup_color)(c, cmap, name_len, name)
     }
 
     #[inline]
@@ -9287,7 +9288,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_lookup_color_cookie_t {
-        call!(self, xcb_lookup_color_unchecked)(c, cmap, name_len, name)
+        sym!(self, xcb_lookup_color_unchecked)(c, cmap, name_len, name)
     }
 
     #[inline]
@@ -9306,7 +9307,7 @@ impl Xcb {
         x: u16,
         y: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_cursor)(
+        sym!(self, xcb_create_cursor)(
             c, cid, source, mask, fore_red, fore_green, fore_blue, back_red, back_green, back_blue,
             x, y,
         )
@@ -9328,7 +9329,7 @@ impl Xcb {
         x: u16,
         y: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_cursor_checked)(
+        sym!(self, xcb_create_cursor_checked)(
             c, cid, source, mask, fore_red, fore_green, fore_blue, back_red, back_green, back_blue,
             x, y,
         )
@@ -9361,7 +9362,7 @@ impl Xcb {
         back_green: u16,
         back_blue: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_glyph_cursor)(
+        sym!(self, xcb_create_glyph_cursor)(
             c,
             cid,
             source_font,
@@ -9404,7 +9405,7 @@ impl Xcb {
         back_green: u16,
         back_blue: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_create_glyph_cursor_checked)(
+        sym!(self, xcb_create_glyph_cursor_checked)(
             c,
             cid,
             source_font,
@@ -9430,7 +9431,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cursor: xcb_cursor_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_cursor)(c, cursor)
+        sym!(self, xcb_free_cursor)(c, cursor)
     }
 
     /// Deletes a cursor
@@ -9443,7 +9444,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cursor: xcb_cursor_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_free_cursor_checked)(c, cursor)
+        sym!(self, xcb_free_cursor_checked)(c, cursor)
     }
 
     #[inline]
@@ -9458,7 +9459,7 @@ impl Xcb {
         back_green: u16,
         back_blue: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_recolor_cursor)(
+        sym!(self, xcb_recolor_cursor)(
             c, cursor, fore_red, fore_green, fore_blue, back_red, back_green, back_blue,
         )
     }
@@ -9475,7 +9476,7 @@ impl Xcb {
         back_green: u16,
         back_blue: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_recolor_cursor_checked)(
+        sym!(self, xcb_recolor_cursor_checked)(
             c, cursor, fore_red, fore_green, fore_blue, back_red, back_green, back_blue,
         )
     }
@@ -9487,7 +9488,7 @@ impl Xcb {
         cookie: xcb_query_best_size_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_best_size_reply_t {
-        call!(self, xcb_query_best_size_reply)(c, cookie, error)
+        sym!(self, xcb_query_best_size_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9499,7 +9500,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_query_best_size_cookie_t {
-        call!(self, xcb_query_best_size)(c, class, drawable, width, height)
+        sym!(self, xcb_query_best_size)(c, class, drawable, width, height)
     }
 
     #[inline]
@@ -9511,7 +9512,7 @@ impl Xcb {
         width: u16,
         height: u16,
     ) -> xcb_query_best_size_cookie_t {
-        call!(self, xcb_query_best_size_unchecked)(c, class, drawable, width, height)
+        sym!(self, xcb_query_best_size_unchecked)(c, class, drawable, width, height)
     }
 
     #[inline]
@@ -9521,7 +9522,7 @@ impl Xcb {
         cookie: xcb_query_extension_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_query_extension_reply_t {
-        call!(self, xcb_query_extension_reply)(c, cookie, error)
+        sym!(self, xcb_query_extension_reply)(c, cookie, error)
     }
 
     /// check if extension is present
@@ -9542,7 +9543,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_query_extension_cookie_t {
-        call!(self, xcb_query_extension)(c, name_len, name)
+        sym!(self, xcb_query_extension)(c, name_len, name)
     }
 
     /// check if extension is present
@@ -9563,7 +9564,7 @@ impl Xcb {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_query_extension_cookie_t {
-        call!(self, xcb_query_extension_unchecked)(c, name_len, name)
+        sym!(self, xcb_query_extension_unchecked)(c, name_len, name)
     }
 
     #[inline]
@@ -9571,7 +9572,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_extensions_reply_t,
     ) -> c_int {
-        call!(self, xcb_list_extensions_names_length)(R)
+        sym!(self, xcb_list_extensions_names_length)(R)
     }
 
     #[inline]
@@ -9579,7 +9580,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_extensions_reply_t,
     ) -> xcb_str_iterator_t {
-        call!(self, xcb_list_extensions_names_iterator)(R)
+        sym!(self, xcb_list_extensions_names_iterator)(R)
     }
 
     #[inline]
@@ -9589,7 +9590,7 @@ impl Xcb {
         cookie: xcb_list_extensions_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_list_extensions_reply_t {
-        call!(self, xcb_list_extensions_reply)(c, cookie, error)
+        sym!(self, xcb_list_extensions_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9597,7 +9598,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_list_extensions_cookie_t {
-        call!(self, xcb_list_extensions)(c)
+        sym!(self, xcb_list_extensions)(c)
     }
 
     #[inline]
@@ -9605,7 +9606,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_list_extensions_cookie_t {
-        call!(self, xcb_list_extensions_unchecked)(c)
+        sym!(self, xcb_list_extensions_unchecked)(c)
     }
 
     #[inline]
@@ -9617,7 +9618,7 @@ impl Xcb {
         keysyms_per_keycode: u8,
         keysyms: *const xcb_keysym_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_keyboard_mapping)(
+        sym!(self, xcb_change_keyboard_mapping)(
             c,
             keycode_count,
             first_keycode,
@@ -9635,7 +9636,7 @@ impl Xcb {
         keysyms_per_keycode: u8,
         keysyms: *const xcb_keysym_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_keyboard_mapping_checked)(
+        sym!(self, xcb_change_keyboard_mapping_checked)(
             c,
             keycode_count,
             first_keycode,
@@ -9649,7 +9650,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_keyboard_mapping_reply_t,
     ) -> *mut xcb_keysym_t {
-        call!(self, xcb_get_keyboard_mapping_keysyms)(R)
+        sym!(self, xcb_get_keyboard_mapping_keysyms)(R)
     }
 
     #[inline]
@@ -9657,7 +9658,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_keyboard_mapping_reply_t,
     ) -> c_int {
-        call!(self, xcb_get_keyboard_mapping_keysyms_length)(R)
+        sym!(self, xcb_get_keyboard_mapping_keysyms_length)(R)
     }
 
     #[inline]
@@ -9665,7 +9666,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_keyboard_mapping_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_get_keyboard_mapping_keysyms_end)(R)
+        sym!(self, xcb_get_keyboard_mapping_keysyms_end)(R)
     }
 
     #[inline]
@@ -9675,7 +9676,7 @@ impl Xcb {
         cookie: xcb_get_keyboard_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_keyboard_mapping_reply_t {
-        call!(self, xcb_get_keyboard_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_get_keyboard_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9685,7 +9686,7 @@ impl Xcb {
         first_keycode: xcb_keycode_t,
         count: u8,
     ) -> xcb_get_keyboard_mapping_cookie_t {
-        call!(self, xcb_get_keyboard_mapping)(c, first_keycode, count)
+        sym!(self, xcb_get_keyboard_mapping)(c, first_keycode, count)
     }
 
     #[inline]
@@ -9695,7 +9696,7 @@ impl Xcb {
         first_keycode: xcb_keycode_t,
         count: u8,
     ) -> xcb_get_keyboard_mapping_cookie_t {
-        call!(self, xcb_get_keyboard_mapping_unchecked)(c, first_keycode, count)
+        sym!(self, xcb_get_keyboard_mapping_unchecked)(c, first_keycode, count)
     }
 
     #[inline]
@@ -9705,7 +9706,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_keyboard_control)(c, value_mask, value_list)
+        sym!(self, xcb_change_keyboard_control)(c, value_mask, value_list)
     }
 
     #[inline]
@@ -9715,7 +9716,7 @@ impl Xcb {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_keyboard_control_checked)(c, value_mask, value_list)
+        sym!(self, xcb_change_keyboard_control_checked)(c, value_mask, value_list)
     }
 
     #[inline]
@@ -9725,7 +9726,7 @@ impl Xcb {
         cookie: xcb_get_keyboard_control_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_keyboard_control_reply_t {
-        call!(self, xcb_get_keyboard_control_reply)(c, cookie, error)
+        sym!(self, xcb_get_keyboard_control_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9733,7 +9734,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_keyboard_control_cookie_t {
-        call!(self, xcb_get_keyboard_control)(c)
+        sym!(self, xcb_get_keyboard_control)(c)
     }
 
     #[inline]
@@ -9741,12 +9742,12 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_keyboard_control_cookie_t {
-        call!(self, xcb_get_keyboard_control_unchecked)(c)
+        sym!(self, xcb_get_keyboard_control_unchecked)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_bell(&self, c: *mut xcb_connection_t, percent: i8) -> xcb_void_cookie_t {
-        call!(self, xcb_bell)(c, percent)
+        sym!(self, xcb_bell)(c, percent)
     }
 
     #[inline]
@@ -9755,7 +9756,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         percent: i8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_bell_checked)(c, percent)
+        sym!(self, xcb_bell_checked)(c, percent)
     }
 
     #[inline]
@@ -9768,7 +9769,7 @@ impl Xcb {
         do_acceleration: u8,
         do_threshold: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_pointer_control)(
+        sym!(self, xcb_change_pointer_control)(
             c,
             acceleration_numerator,
             acceleration_denominator,
@@ -9788,7 +9789,7 @@ impl Xcb {
         do_acceleration: u8,
         do_threshold: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_pointer_control_checked)(
+        sym!(self, xcb_change_pointer_control_checked)(
             c,
             acceleration_numerator,
             acceleration_denominator,
@@ -9805,7 +9806,7 @@ impl Xcb {
         cookie: xcb_get_pointer_control_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_pointer_control_reply_t {
-        call!(self, xcb_get_pointer_control_reply)(c, cookie, error)
+        sym!(self, xcb_get_pointer_control_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9813,7 +9814,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_pointer_control_cookie_t {
-        call!(self, xcb_get_pointer_control)(c)
+        sym!(self, xcb_get_pointer_control)(c)
     }
 
     #[inline]
@@ -9821,7 +9822,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_pointer_control_cookie_t {
-        call!(self, xcb_get_pointer_control_unchecked)(c)
+        sym!(self, xcb_get_pointer_control_unchecked)(c)
     }
 
     #[inline]
@@ -9833,7 +9834,7 @@ impl Xcb {
         prefer_blanking: u8,
         allow_exposures: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_screen_saver)(c, timeout, interval, prefer_blanking, allow_exposures)
+        sym!(self, xcb_set_screen_saver)(c, timeout, interval, prefer_blanking, allow_exposures)
     }
 
     #[inline]
@@ -9845,7 +9846,7 @@ impl Xcb {
         prefer_blanking: u8,
         allow_exposures: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_screen_saver_checked)(
+        sym!(self, xcb_set_screen_saver_checked)(
             c,
             timeout,
             interval,
@@ -9861,7 +9862,7 @@ impl Xcb {
         cookie: xcb_get_screen_saver_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_screen_saver_reply_t {
-        call!(self, xcb_get_screen_saver_reply)(c, cookie, error)
+        sym!(self, xcb_get_screen_saver_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -9869,7 +9870,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_screen_saver_cookie_t {
-        call!(self, xcb_get_screen_saver)(c)
+        sym!(self, xcb_get_screen_saver)(c)
     }
 
     #[inline]
@@ -9877,7 +9878,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_screen_saver_cookie_t {
-        call!(self, xcb_get_screen_saver_unchecked)(c)
+        sym!(self, xcb_get_screen_saver_unchecked)(c)
     }
 
     #[inline]
@@ -9889,7 +9890,7 @@ impl Xcb {
         address_len: u16,
         address: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_hosts)(c, mode, family, address_len, address)
+        sym!(self, xcb_change_hosts)(c, mode, family, address_len, address)
     }
 
     #[inline]
@@ -9901,37 +9902,37 @@ impl Xcb {
         address_len: u16,
         address: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_change_hosts_checked)(c, mode, family, address_len, address)
+        sym!(self, xcb_change_hosts_checked)(c, mode, family, address_len, address)
     }
 
     #[inline]
     pub unsafe fn xcb_host_address(&self, R: *const xcb_host_t) -> *mut u8 {
-        call!(self, xcb_host_address)(R)
+        sym!(self, xcb_host_address)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_host_address_length(&self, R: *const xcb_host_t) -> c_int {
-        call!(self, xcb_host_address_length)(R)
+        sym!(self, xcb_host_address_length)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_host_address_end(&self, R: *const xcb_host_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_host_address_end)(R)
+        sym!(self, xcb_host_address_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_host_next(&self, i: *mut xcb_host_iterator_t) {
-        call!(self, xcb_host_next)(i);
+        sym!(self, xcb_host_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_host_end(&self, i: *mut xcb_host_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_host_end)(i)
+        sym!(self, xcb_host_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_list_hosts_hosts_length(&self, R: *const xcb_list_hosts_reply_t) -> c_int {
-        call!(self, xcb_list_hosts_hosts_length)(R)
+        sym!(self, xcb_list_hosts_hosts_length)(R)
     }
 
     #[inline]
@@ -9939,7 +9940,7 @@ impl Xcb {
         &self,
         R: *const xcb_list_hosts_reply_t,
     ) -> xcb_host_iterator_t {
-        call!(self, xcb_list_hosts_hosts_iterator)(R)
+        sym!(self, xcb_list_hosts_hosts_iterator)(R)
     }
 
     #[inline]
@@ -9949,12 +9950,12 @@ impl Xcb {
         cookie: xcb_list_hosts_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_list_hosts_reply_t {
-        call!(self, xcb_list_hosts_reply)(c, cookie, error)
+        sym!(self, xcb_list_hosts_reply)(c, cookie, error)
     }
 
     #[inline]
     pub unsafe fn xcb_list_hosts(&self, c: *mut xcb_connection_t) -> xcb_list_hosts_cookie_t {
-        call!(self, xcb_list_hosts)(c)
+        sym!(self, xcb_list_hosts)(c)
     }
 
     #[inline]
@@ -9962,7 +9963,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_list_hosts_cookie_t {
-        call!(self, xcb_list_hosts_unchecked)(c)
+        sym!(self, xcb_list_hosts_unchecked)(c)
     }
 
     #[inline]
@@ -9971,7 +9972,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_access_control)(c, mode)
+        sym!(self, xcb_set_access_control)(c, mode)
     }
 
     #[inline]
@@ -9980,7 +9981,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_access_control_checked)(c, mode)
+        sym!(self, xcb_set_access_control_checked)(c, mode)
     }
 
     #[inline]
@@ -9989,7 +9990,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_close_down_mode)(c, mode)
+        sym!(self, xcb_set_close_down_mode)(c, mode)
     }
 
     #[inline]
@@ -9998,7 +9999,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_set_close_down_mode_checked)(c, mode)
+        sym!(self, xcb_set_close_down_mode_checked)(c, mode)
     }
 
     /// kills a client
@@ -10010,7 +10011,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         resource: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_kill_client)(c, resource)
+        sym!(self, xcb_kill_client)(c, resource)
     }
 
     /// kills a client
@@ -10022,7 +10023,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         resource: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_kill_client_checked)(c, resource)
+        sym!(self, xcb_kill_client_checked)(c, resource)
     }
 
     #[inline]
@@ -10034,7 +10035,7 @@ impl Xcb {
         delta: i16,
         atoms: *const xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_rotate_properties)(c, window, atoms_len, delta, atoms)
+        sym!(self, xcb_rotate_properties)(c, window, atoms_len, delta, atoms)
     }
 
     #[inline]
@@ -10046,7 +10047,7 @@ impl Xcb {
         delta: i16,
         atoms: *const xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_rotate_properties_checked)(c, window, atoms_len, delta, atoms)
+        sym!(self, xcb_rotate_properties_checked)(c, window, atoms_len, delta, atoms)
     }
 
     #[inline]
@@ -10055,7 +10056,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_force_screen_saver)(c, mode)
+        sym!(self, xcb_force_screen_saver)(c, mode)
     }
 
     #[inline]
@@ -10064,7 +10065,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_force_screen_saver_checked)(c, mode)
+        sym!(self, xcb_force_screen_saver_checked)(c, mode)
     }
 
     #[inline]
@@ -10074,7 +10075,7 @@ impl Xcb {
         cookie: xcb_set_pointer_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_set_pointer_mapping_reply_t {
-        call!(self, xcb_set_pointer_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_set_pointer_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -10084,7 +10085,7 @@ impl Xcb {
         map_len: u8,
         map: *const u8,
     ) -> xcb_set_pointer_mapping_cookie_t {
-        call!(self, xcb_set_pointer_mapping)(c, map_len, map)
+        sym!(self, xcb_set_pointer_mapping)(c, map_len, map)
     }
 
     #[inline]
@@ -10094,7 +10095,7 @@ impl Xcb {
         map_len: u8,
         map: *const u8,
     ) -> xcb_set_pointer_mapping_cookie_t {
-        call!(self, xcb_set_pointer_mapping_unchecked)(c, map_len, map)
+        sym!(self, xcb_set_pointer_mapping_unchecked)(c, map_len, map)
     }
 
     #[inline]
@@ -10102,7 +10103,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_pointer_mapping_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_get_pointer_mapping_map)(R)
+        sym!(self, xcb_get_pointer_mapping_map)(R)
     }
 
     #[inline]
@@ -10110,7 +10111,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_pointer_mapping_reply_t,
     ) -> c_int {
-        call!(self, xcb_get_pointer_mapping_map_length)(R)
+        sym!(self, xcb_get_pointer_mapping_map_length)(R)
     }
 
     #[inline]
@@ -10118,7 +10119,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_pointer_mapping_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_get_pointer_mapping_map_end)(R)
+        sym!(self, xcb_get_pointer_mapping_map_end)(R)
     }
 
     #[inline]
@@ -10128,7 +10129,7 @@ impl Xcb {
         cookie: xcb_get_pointer_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_pointer_mapping_reply_t {
-        call!(self, xcb_get_pointer_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_get_pointer_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -10136,7 +10137,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_pointer_mapping_cookie_t {
-        call!(self, xcb_get_pointer_mapping)(c)
+        sym!(self, xcb_get_pointer_mapping)(c)
     }
 
     #[inline]
@@ -10144,7 +10145,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_pointer_mapping_cookie_t {
-        call!(self, xcb_get_pointer_mapping_unchecked)(c)
+        sym!(self, xcb_get_pointer_mapping_unchecked)(c)
     }
 
     #[inline]
@@ -10154,7 +10155,7 @@ impl Xcb {
         cookie: xcb_set_modifier_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_set_modifier_mapping_reply_t {
-        call!(self, xcb_set_modifier_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_set_modifier_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -10164,7 +10165,7 @@ impl Xcb {
         keycodes_per_modifier: u8,
         keycodes: *const xcb_keycode_t,
     ) -> xcb_set_modifier_mapping_cookie_t {
-        call!(self, xcb_set_modifier_mapping)(c, keycodes_per_modifier, keycodes)
+        sym!(self, xcb_set_modifier_mapping)(c, keycodes_per_modifier, keycodes)
     }
 
     #[inline]
@@ -10174,7 +10175,7 @@ impl Xcb {
         keycodes_per_modifier: u8,
         keycodes: *const xcb_keycode_t,
     ) -> xcb_set_modifier_mapping_cookie_t {
-        call!(self, xcb_set_modifier_mapping_unchecked)(c, keycodes_per_modifier, keycodes)
+        sym!(self, xcb_set_modifier_mapping_unchecked)(c, keycodes_per_modifier, keycodes)
     }
 
     #[inline]
@@ -10182,7 +10183,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_modifier_mapping_reply_t,
     ) -> *mut xcb_keycode_t {
-        call!(self, xcb_get_modifier_mapping_keycodes)(R)
+        sym!(self, xcb_get_modifier_mapping_keycodes)(R)
     }
 
     #[inline]
@@ -10190,7 +10191,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_modifier_mapping_reply_t,
     ) -> c_int {
-        call!(self, xcb_get_modifier_mapping_keycodes_length)(R)
+        sym!(self, xcb_get_modifier_mapping_keycodes_length)(R)
     }
 
     #[inline]
@@ -10198,7 +10199,7 @@ impl Xcb {
         &self,
         R: *const xcb_get_modifier_mapping_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_get_modifier_mapping_keycodes_end)(R)
+        sym!(self, xcb_get_modifier_mapping_keycodes_end)(R)
     }
 
     #[inline]
@@ -10208,7 +10209,7 @@ impl Xcb {
         cookie: xcb_get_modifier_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_get_modifier_mapping_reply_t {
-        call!(self, xcb_get_modifier_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_get_modifier_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -10216,7 +10217,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_modifier_mapping_cookie_t {
-        call!(self, xcb_get_modifier_mapping)(c)
+        sym!(self, xcb_get_modifier_mapping)(c)
     }
 
     #[inline]
@@ -10224,2276 +10225,16 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_get_modifier_mapping_cookie_t {
-        call!(self, xcb_get_modifier_mapping_unchecked)(c)
+        sym!(self, xcb_get_modifier_mapping_unchecked)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_no_operation(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_no_operation)(c)
+        sym!(self, xcb_no_operation)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_no_operation_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_no_operation_checked)(c)
+        sym!(self, xcb_no_operation_checked)(c)
     }
-}
-
-pub struct Xcb {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_char2b_next: LazySymbol<unsafe fn(i: *mut xcb_char2b_iterator_t)>,
-    pub(crate) xcb_char2b_end:
-        LazySymbol<unsafe fn(i: *mut xcb_char2b_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_window_next: LazySymbol<unsafe fn(i: *mut xcb_window_iterator_t)>,
-    pub(crate) xcb_window_end:
-        LazySymbol<unsafe fn(i: *mut xcb_window_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_pixmap_next: LazySymbol<unsafe fn(i: *mut xcb_pixmap_iterator_t)>,
-    pub(crate) xcb_pixmap_end:
-        LazySymbol<unsafe fn(i: *mut xcb_pixmap_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_cursor_next: LazySymbol<unsafe fn(i: *mut xcb_cursor_iterator_t)>,
-    pub(crate) xcb_cursor_end:
-        LazySymbol<unsafe fn(i: *mut xcb_cursor_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_font_next: LazySymbol<unsafe fn(i: *mut xcb_font_iterator_t)>,
-    pub(crate) xcb_font_end:
-        LazySymbol<unsafe fn(i: *mut xcb_font_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_gcontext_next: LazySymbol<unsafe fn(i: *mut xcb_gcontext_iterator_t)>,
-    pub(crate) xcb_gcontext_end:
-        LazySymbol<unsafe fn(i: *mut xcb_gcontext_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_colormap_next: LazySymbol<unsafe fn(i: *mut xcb_colormap_iterator_t)>,
-    pub(crate) xcb_colormap_end:
-        LazySymbol<unsafe fn(i: *mut xcb_colormap_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_atom_next: LazySymbol<unsafe fn(i: *mut xcb_atom_iterator_t)>,
-    pub(crate) xcb_atom_end:
-        LazySymbol<unsafe fn(i: *mut xcb_atom_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_drawable_next: LazySymbol<unsafe fn(i: *mut xcb_drawable_iterator_t)>,
-    pub(crate) xcb_drawable_end:
-        LazySymbol<unsafe fn(i: *mut xcb_drawable_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_fontable_next: LazySymbol<unsafe fn(i: *mut xcb_fontable_iterator_t)>,
-    pub(crate) xcb_fontable_end:
-        LazySymbol<unsafe fn(i: *mut xcb_fontable_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_visualid_next: LazySymbol<unsafe fn(i: *mut xcb_visualid_iterator_t)>,
-    pub(crate) xcb_visualid_end:
-        LazySymbol<unsafe fn(i: *mut xcb_visualid_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_timestamp_next: LazySymbol<unsafe fn(i: *mut xcb_timestamp_iterator_t)>,
-    pub(crate) xcb_timestamp_end:
-        LazySymbol<unsafe fn(i: *mut xcb_timestamp_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_keysym_next: LazySymbol<unsafe fn(i: *mut xcb_keysym_iterator_t)>,
-    pub(crate) xcb_keysym_end:
-        LazySymbol<unsafe fn(i: *mut xcb_keysym_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_keycode_next: LazySymbol<unsafe fn(i: *mut xcb_keycode_iterator_t)>,
-    pub(crate) xcb_keycode_end:
-        LazySymbol<unsafe fn(i: *mut xcb_keycode_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_button_next: LazySymbol<unsafe fn(i: *mut xcb_button_iterator_t)>,
-    pub(crate) xcb_button_end:
-        LazySymbol<unsafe fn(i: *mut xcb_button_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_point_next: LazySymbol<unsafe fn(i: *mut xcb_point_iterator_t)>,
-    pub(crate) xcb_point_end:
-        LazySymbol<unsafe fn(i: *mut xcb_point_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_rectangle_next: LazySymbol<unsafe fn(i: *mut xcb_rectangle_iterator_t)>,
-    pub(crate) xcb_rectangle_end:
-        LazySymbol<unsafe fn(i: *mut xcb_rectangle_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_arc_next: LazySymbol<unsafe fn(i: *mut xcb_arc_iterator_t)>,
-    pub(crate) xcb_arc_end:
-        LazySymbol<unsafe fn(i: *mut xcb_arc_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_format_next: LazySymbol<unsafe fn(i: *mut xcb_format_iterator_t)>,
-    pub(crate) xcb_format_end:
-        LazySymbol<unsafe fn(i: *mut xcb_format_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_visualtype_next: LazySymbol<unsafe fn(i: *mut xcb_visualtype_iterator_t)>,
-    pub(crate) xcb_visualtype_end:
-        LazySymbol<unsafe fn(i: *mut xcb_visualtype_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_depth_visuals:
-        LazySymbol<unsafe fn(R: *const xcb_depth_t) -> *mut xcb_visualtype_t>,
-    pub(crate) xcb_depth_visuals_length: LazySymbol<unsafe fn(R: *const xcb_depth_t) -> c_int>,
-    pub(crate) xcb_depth_visuals_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_depth_t) -> xcb_visualtype_iterator_t>,
-    pub(crate) xcb_depth_next: LazySymbol<unsafe fn(i: *mut xcb_depth_iterator_t)>,
-    pub(crate) xcb_depth_end:
-        LazySymbol<unsafe fn(i: *mut xcb_depth_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_screen_allowed_depths_length:
-        LazySymbol<unsafe fn(R: *const xcb_screen_t) -> c_int>,
-    pub(crate) xcb_screen_allowed_depths_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_screen_t) -> xcb_depth_iterator_t>,
-    pub(crate) xcb_screen_next: LazySymbol<unsafe fn(i: *mut xcb_screen_iterator_t)>,
-    pub(crate) xcb_screen_end:
-        LazySymbol<unsafe fn(i: *mut xcb_screen_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_request_authorization_protocol_name:
-        LazySymbol<unsafe fn(R: *const xcb_setup_request_t) -> *mut c_char>,
-    pub(crate) xcb_setup_request_authorization_protocol_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_setup_request_t) -> c_int>,
-    pub(crate) xcb_setup_request_authorization_protocol_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_setup_request_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_request_authorization_protocol_data:
-        LazySymbol<unsafe fn(R: *const xcb_setup_request_t) -> *mut c_char>,
-    pub(crate) xcb_setup_request_authorization_protocol_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_setup_request_t) -> c_int>,
-    pub(crate) xcb_setup_request_authorization_protocol_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_setup_request_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_request_next: LazySymbol<unsafe fn(i: *mut xcb_setup_request_iterator_t)>,
-    pub(crate) xcb_setup_request_end:
-        LazySymbol<unsafe fn(i: *mut xcb_setup_request_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_failed_reason:
-        LazySymbol<unsafe fn(R: *const xcb_setup_failed_t) -> *mut c_char>,
-    pub(crate) xcb_setup_failed_reason_length:
-        LazySymbol<unsafe fn(R: *const xcb_setup_failed_t) -> c_int>,
-    pub(crate) xcb_setup_failed_reason_end:
-        LazySymbol<unsafe fn(R: *const xcb_setup_failed_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_failed_next: LazySymbol<unsafe fn(i: *mut xcb_setup_failed_iterator_t)>,
-    pub(crate) xcb_setup_failed_end:
-        LazySymbol<unsafe fn(i: *mut xcb_setup_failed_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_authenticate_reason:
-        LazySymbol<unsafe fn(R: *const xcb_setup_authenticate_t) -> *mut c_char>,
-    pub(crate) xcb_setup_authenticate_reason_length:
-        LazySymbol<unsafe fn(R: *const xcb_setup_authenticate_t) -> c_int>,
-    pub(crate) xcb_setup_authenticate_reason_end:
-        LazySymbol<unsafe fn(R: *const xcb_setup_authenticate_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_authenticate_next:
-        LazySymbol<unsafe fn(i: *mut xcb_setup_authenticate_iterator_t)>,
-    pub(crate) xcb_setup_authenticate_end:
-        LazySymbol<unsafe fn(i: *mut xcb_setup_authenticate_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_vendor: LazySymbol<unsafe fn(R: *const xcb_setup_t) -> *mut c_char>,
-    pub(crate) xcb_setup_vendor_length: LazySymbol<unsafe fn(R: *const xcb_setup_t) -> c_int>,
-    pub(crate) xcb_setup_vendor_end:
-        LazySymbol<unsafe fn(R: *const xcb_setup_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_setup_pixmap_formats:
-        LazySymbol<unsafe fn(R: *const xcb_setup_t) -> *mut xcb_format_t>,
-    pub(crate) xcb_setup_pixmap_formats_length:
-        LazySymbol<unsafe fn(R: *const xcb_setup_t) -> c_int>,
-    pub(crate) xcb_setup_pixmap_formats_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_setup_t) -> xcb_format_iterator_t>,
-    pub(crate) xcb_setup_roots_length: LazySymbol<unsafe fn(R: *const xcb_setup_t) -> c_int>,
-    pub(crate) xcb_setup_roots_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_setup_t) -> xcb_screen_iterator_t>,
-    pub(crate) xcb_setup_next: LazySymbol<unsafe fn(i: *mut xcb_setup_iterator_t)>,
-    pub(crate) xcb_setup_end:
-        LazySymbol<unsafe fn(i: *mut xcb_setup_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_client_message_data_next:
-        LazySymbol<unsafe fn(i: *mut xcb_client_message_data_iterator_t)>,
-    pub(crate) xcb_client_message_data_end:
-        LazySymbol<unsafe fn(i: *mut xcb_client_message_data_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_create_window: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            depth: u8,
-            wid: xcb_window_t,
-            parent: xcb_window_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-            border_width: u16,
-            class: u16,
-            visual: xcb_visualid_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_window_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            depth: u8,
-            wid: xcb_window_t,
-            parent: xcb_window_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-            border_width: u16,
-            class: u16,
-            visual: xcb_visualid_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_window_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_window_attributes_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_window_attributes_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_window_attributes_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_window_attributes_reply_t,
-    >,
-    pub(crate) xcb_get_window_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_get_window_attributes_cookie_t,
-    >,
-    pub(crate) xcb_get_window_attributes_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_get_window_attributes_cookie_t,
-    >,
-    pub(crate) xcb_destroy_window:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_destroy_window_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_destroy_subwindows:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_destroy_subwindows_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_change_save_set: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, mode: u8, window: xcb_window_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_save_set_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, mode: u8, window: xcb_window_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_reparent_window: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            parent: xcb_window_t,
-            x: i16,
-            y: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_reparent_window_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            parent: xcb_window_t,
-            x: i16,
-            y: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_map_window:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_map_window_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_map_subwindows:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_map_subwindows_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_unmap_window:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_unmap_window_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_unmap_subwindows:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_unmap_subwindows_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_configure_window: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            value_mask: u16,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_configure_window_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            value_mask: u16,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_circulate_window: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            direction: u8,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_circulate_window_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            direction: u8,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_geometry_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_geometry_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_geometry_reply_t,
-    >,
-    pub(crate) xcb_get_geometry: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_get_geometry_cookie_t,
-    >,
-    pub(crate) xcb_get_geometry_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_get_geometry_cookie_t,
-    >,
-    pub(crate) xcb_query_tree_children:
-        LazySymbol<unsafe fn(R: *const xcb_query_tree_reply_t) -> *mut xcb_window_t>,
-    pub(crate) xcb_query_tree_children_length:
-        LazySymbol<unsafe fn(R: *const xcb_query_tree_reply_t) -> c_int>,
-    pub(crate) xcb_query_tree_children_end:
-        LazySymbol<unsafe fn(R: *const xcb_query_tree_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_query_tree_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_tree_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_tree_reply_t,
-    >,
-    pub(crate) xcb_query_tree: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_query_tree_cookie_t,
-    >,
-    pub(crate) xcb_query_tree_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_query_tree_cookie_t,
-    >,
-    pub(crate) xcb_intern_atom_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_intern_atom_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_intern_atom_reply_t,
-    >,
-    pub(crate) xcb_intern_atom: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            only_if_exists: u8,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_intern_atom_cookie_t,
-    >,
-    pub(crate) xcb_intern_atom_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            only_if_exists: u8,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_intern_atom_cookie_t,
-    >,
-    pub(crate) xcb_get_atom_name_name:
-        LazySymbol<unsafe fn(R: *const xcb_get_atom_name_reply_t) -> *mut c_char>,
-    pub(crate) xcb_get_atom_name_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_atom_name_reply_t) -> c_int>,
-    pub(crate) xcb_get_atom_name_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_get_atom_name_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_get_atom_name_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_atom_name_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_atom_name_reply_t,
-    >,
-    pub(crate) xcb_get_atom_name: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, atom: xcb_atom_t) -> xcb_get_atom_name_cookie_t,
-    >,
-    pub(crate) xcb_get_atom_name_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, atom: xcb_atom_t) -> xcb_get_atom_name_cookie_t,
-    >,
-    pub(crate) xcb_change_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mode: u8,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            format: u8,
-            data_len: u32,
-            data: *const c_void,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mode: u8,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            format: u8,
-            data_len: u32,
-            data: *const c_void,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_delete_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_delete_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_property_value:
-        LazySymbol<unsafe fn(R: *const xcb_get_property_reply_t) -> *mut c_void>,
-    pub(crate) xcb_get_property_value_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_property_reply_t) -> c_int>,
-    pub(crate) xcb_get_property_value_end:
-        LazySymbol<unsafe fn(R: *const xcb_get_property_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_get_property_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_property_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_property_reply_t,
-    >,
-    pub(crate) xcb_get_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            delete: u8,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            long_offset: u32,
-            long_length: u32,
-        ) -> xcb_get_property_cookie_t,
-    >,
-    pub(crate) xcb_get_property_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            delete: u8,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            long_offset: u32,
-            long_length: u32,
-        ) -> xcb_get_property_cookie_t,
-    >,
-    pub(crate) xcb_list_properties_atoms:
-        LazySymbol<unsafe fn(R: *const xcb_list_properties_reply_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_list_properties_atoms_length:
-        LazySymbol<unsafe fn(R: *const xcb_list_properties_reply_t) -> c_int>,
-    pub(crate) xcb_list_properties_atoms_end:
-        LazySymbol<unsafe fn(R: *const xcb_list_properties_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_list_properties_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_list_properties_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_list_properties_reply_t,
-    >,
-    pub(crate) xcb_list_properties: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_list_properties_cookie_t,
-    >,
-    pub(crate) xcb_list_properties_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_list_properties_cookie_t,
-    >,
-    pub(crate) xcb_set_selection_owner: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner: xcb_window_t,
-            selection: xcb_atom_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_selection_owner_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner: xcb_window_t,
-            selection: xcb_atom_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_selection_owner_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_selection_owner_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_selection_owner_reply_t,
-    >,
-    pub(crate) xcb_get_selection_owner: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            selection: xcb_atom_t,
-        ) -> xcb_get_selection_owner_cookie_t,
-    >,
-    pub(crate) xcb_get_selection_owner_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            selection: xcb_atom_t,
-        ) -> xcb_get_selection_owner_cookie_t,
-    >,
-    pub(crate) xcb_convert_selection: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            requestor: xcb_window_t,
-            selection: xcb_atom_t,
-            target: xcb_atom_t,
-            property: xcb_atom_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_convert_selection_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            requestor: xcb_window_t,
-            selection: xcb_atom_t,
-            target: xcb_atom_t,
-            property: xcb_atom_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_send_event: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            propagate: u8,
-            destination: xcb_window_t,
-            event_mask: u32,
-            event: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_send_event_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            propagate: u8,
-            destination: xcb_window_t,
-            event_mask: u32,
-            event: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_grab_pointer_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_grab_pointer_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_grab_pointer_reply_t,
-    >,
-    pub(crate) xcb_grab_pointer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            event_mask: u16,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-            confine_to: xcb_window_t,
-            cursor: xcb_cursor_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_grab_pointer_cookie_t,
-    >,
-    pub(crate) xcb_grab_pointer_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            event_mask: u16,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-            confine_to: xcb_window_t,
-            cursor: xcb_cursor_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_grab_pointer_cookie_t,
-    >,
-    pub(crate) xcb_ungrab_pointer:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, time: xcb_timestamp_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_ungrab_pointer_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, time: xcb_timestamp_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_grab_button: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            event_mask: u16,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-            confine_to: xcb_window_t,
-            cursor: xcb_cursor_t,
-            button: u8,
-            modifiers: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_grab_button_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            event_mask: u16,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-            confine_to: xcb_window_t,
-            cursor: xcb_cursor_t,
-            button: u8,
-            modifiers: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_ungrab_button: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            button: u8,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_ungrab_button_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            button: u8,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_active_pointer_grab: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-            time: xcb_timestamp_t,
-            event_mask: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_active_pointer_grab_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-            time: xcb_timestamp_t,
-            event_mask: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_grab_keyboard_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_grab_keyboard_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_grab_keyboard_reply_t,
-    >,
-    pub(crate) xcb_grab_keyboard: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            time: xcb_timestamp_t,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-        ) -> xcb_grab_keyboard_cookie_t,
-    >,
-    pub(crate) xcb_grab_keyboard_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            time: xcb_timestamp_t,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-        ) -> xcb_grab_keyboard_cookie_t,
-    >,
-    pub(crate) xcb_ungrab_keyboard:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, time: xcb_timestamp_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_ungrab_keyboard_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, time: xcb_timestamp_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_grab_key: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-            key: xcb_keycode_t,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_grab_key_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            owner_events: u8,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-            key: xcb_keycode_t,
-            pointer_mode: u8,
-            keyboard_mode: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_ungrab_key: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            key: xcb_keycode_t,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_ungrab_key_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            key: xcb_keycode_t,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_allow_events: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, mode: u8, time: xcb_timestamp_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_allow_events_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, mode: u8, time: xcb_timestamp_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_grab_server:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_grab_server_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_ungrab_server:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_ungrab_server_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_query_pointer_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_pointer_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_pointer_reply_t,
-    >,
-    pub(crate) xcb_query_pointer: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_query_pointer_cookie_t,
-    >,
-    pub(crate) xcb_query_pointer_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_query_pointer_cookie_t,
-    >,
-    pub(crate) xcb_timecoord_next: LazySymbol<unsafe fn(i: *mut xcb_timecoord_iterator_t)>,
-    pub(crate) xcb_timecoord_end:
-        LazySymbol<unsafe fn(i: *mut xcb_timecoord_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_get_motion_events_events:
-        LazySymbol<unsafe fn(R: *const xcb_get_motion_events_reply_t) -> *mut xcb_timecoord_t>,
-    pub(crate) xcb_get_motion_events_events_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_motion_events_reply_t) -> c_int>,
-    pub(crate) xcb_get_motion_events_events_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_get_motion_events_reply_t) -> xcb_timecoord_iterator_t>,
-    pub(crate) xcb_get_motion_events_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_motion_events_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_motion_events_reply_t,
-    >,
-    pub(crate) xcb_get_motion_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            start: xcb_timestamp_t,
-            stop: xcb_timestamp_t,
-        ) -> xcb_get_motion_events_cookie_t,
-    >,
-    pub(crate) xcb_get_motion_events_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            start: xcb_timestamp_t,
-            stop: xcb_timestamp_t,
-        ) -> xcb_get_motion_events_cookie_t,
-    >,
-    pub(crate) xcb_translate_coordinates_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_translate_coordinates_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_translate_coordinates_reply_t,
-    >,
-    pub(crate) xcb_translate_coordinates: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_window: xcb_window_t,
-            dst_window: xcb_window_t,
-            src_x: i16,
-            src_y: i16,
-        ) -> xcb_translate_coordinates_cookie_t,
-    >,
-    pub(crate) xcb_translate_coordinates_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_window: xcb_window_t,
-            dst_window: xcb_window_t,
-            src_x: i16,
-            src_y: i16,
-        ) -> xcb_translate_coordinates_cookie_t,
-    >,
-    pub(crate) xcb_warp_pointer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_window: xcb_window_t,
-            dst_window: xcb_window_t,
-            src_x: i16,
-            src_y: i16,
-            src_width: u16,
-            src_height: u16,
-            dst_x: i16,
-            dst_y: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_warp_pointer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_window: xcb_window_t,
-            dst_window: xcb_window_t,
-            src_x: i16,
-            src_y: i16,
-            src_width: u16,
-            src_height: u16,
-            dst_x: i16,
-            dst_y: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_input_focus: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            revert_to: u8,
-            focus: xcb_window_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_input_focus_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            revert_to: u8,
-            focus: xcb_window_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_input_focus_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_input_focus_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_input_focus_reply_t,
-    >,
-    pub(crate) xcb_get_input_focus:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_input_focus_cookie_t>,
-    pub(crate) xcb_get_input_focus_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_input_focus_cookie_t>,
-    pub(crate) xcb_query_keymap_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_keymap_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_keymap_reply_t,
-    >,
-    pub(crate) xcb_query_keymap:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_query_keymap_cookie_t>,
-    pub(crate) xcb_query_keymap_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_query_keymap_cookie_t>,
-    pub(crate) xcb_open_font: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            fid: xcb_font_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_open_font_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            fid: xcb_font_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_close_font:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, font: xcb_font_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_close_font_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, font: xcb_font_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_fontprop_next: LazySymbol<unsafe fn(i: *mut xcb_fontprop_iterator_t)>,
-    pub(crate) xcb_fontprop_end:
-        LazySymbol<unsafe fn(i: *mut xcb_fontprop_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_charinfo_next: LazySymbol<unsafe fn(i: *mut xcb_charinfo_iterator_t)>,
-    pub(crate) xcb_charinfo_end:
-        LazySymbol<unsafe fn(i: *mut xcb_charinfo_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_query_font_properties:
-        LazySymbol<unsafe fn(R: *const xcb_query_font_reply_t) -> *mut xcb_fontprop_t>,
-    pub(crate) xcb_query_font_properties_length:
-        LazySymbol<unsafe fn(R: *const xcb_query_font_reply_t) -> c_int>,
-    pub(crate) xcb_query_font_properties_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_query_font_reply_t) -> xcb_fontprop_iterator_t>,
-    pub(crate) xcb_query_font_char_infos:
-        LazySymbol<unsafe fn(R: *const xcb_query_font_reply_t) -> *mut xcb_charinfo_t>,
-    pub(crate) xcb_query_font_char_infos_length:
-        LazySymbol<unsafe fn(R: *const xcb_query_font_reply_t) -> c_int>,
-    pub(crate) xcb_query_font_char_infos_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_query_font_reply_t) -> xcb_charinfo_iterator_t>,
-    pub(crate) xcb_query_font_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_font_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_font_reply_t,
-    >,
-    pub(crate) xcb_query_font: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, font: xcb_fontable_t) -> xcb_query_font_cookie_t,
-    >,
-    pub(crate) xcb_query_font_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, font: xcb_fontable_t) -> xcb_query_font_cookie_t,
-    >,
-    pub(crate) xcb_query_text_extents_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_text_extents_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_text_extents_reply_t,
-    >,
-    pub(crate) xcb_query_text_extents: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            font: xcb_fontable_t,
-            string_len: u32,
-            string: *const xcb_char2b_t,
-        ) -> xcb_query_text_extents_cookie_t,
-    >,
-    pub(crate) xcb_query_text_extents_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            font: xcb_fontable_t,
-            string_len: u32,
-            string: *const xcb_char2b_t,
-        ) -> xcb_query_text_extents_cookie_t,
-    >,
-    pub(crate) xcb_str_name: LazySymbol<unsafe fn(R: *const xcb_str_t) -> *mut c_char>,
-    pub(crate) xcb_str_name_length: LazySymbol<unsafe fn(R: *const xcb_str_t) -> c_int>,
-    pub(crate) xcb_str_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_str_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_str_next: LazySymbol<unsafe fn(i: *mut xcb_str_iterator_t)>,
-    pub(crate) xcb_str_end:
-        LazySymbol<unsafe fn(i: *mut xcb_str_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_list_fonts_names_length:
-        LazySymbol<unsafe fn(R: *const xcb_list_fonts_reply_t) -> c_int>,
-    pub(crate) xcb_list_fonts_names_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_list_fonts_reply_t) -> xcb_str_iterator_t>,
-    pub(crate) xcb_list_fonts_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_list_fonts_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_list_fonts_reply_t,
-    >,
-    pub(crate) xcb_list_fonts: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            max_names: u16,
-            pattern_len: u16,
-            pattern: *const c_char,
-        ) -> xcb_list_fonts_cookie_t,
-    >,
-    pub(crate) xcb_list_fonts_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            max_names: u16,
-            pattern_len: u16,
-            pattern: *const c_char,
-        ) -> xcb_list_fonts_cookie_t,
-    >,
-    pub(crate) xcb_list_fonts_with_info_properties:
-        LazySymbol<unsafe fn(R: *const xcb_list_fonts_with_info_reply_t) -> *mut xcb_fontprop_t>,
-    pub(crate) xcb_list_fonts_with_info_properties_length:
-        LazySymbol<unsafe fn(R: *const xcb_list_fonts_with_info_reply_t) -> c_int>,
-    pub(crate) xcb_list_fonts_with_info_properties_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_list_fonts_with_info_reply_t) -> xcb_fontprop_iterator_t,
-    >,
-    pub(crate) xcb_list_fonts_with_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_list_fonts_with_info_reply_t) -> *mut c_char>,
-    pub(crate) xcb_list_fonts_with_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_list_fonts_with_info_reply_t) -> c_int>,
-    pub(crate) xcb_list_fonts_with_info_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_list_fonts_with_info_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_list_fonts_with_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_list_fonts_with_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_list_fonts_with_info_reply_t,
-    >,
-    pub(crate) xcb_list_fonts_with_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            max_names: u16,
-            pattern_len: u16,
-            pattern: *const c_char,
-        ) -> xcb_list_fonts_with_info_cookie_t,
-    >,
-    pub(crate) xcb_list_fonts_with_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            max_names: u16,
-            pattern_len: u16,
-            pattern: *const c_char,
-        ) -> xcb_list_fonts_with_info_cookie_t,
-    >,
-    pub(crate) xcb_set_font_path: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            font_qty: u16,
-            font: *const xcb_str_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_font_path_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            font_qty: u16,
-            font: *const xcb_str_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_font_path_path_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_font_path_reply_t) -> c_int>,
-    pub(crate) xcb_get_font_path_path_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_get_font_path_reply_t) -> xcb_str_iterator_t>,
-    pub(crate) xcb_get_font_path_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_font_path_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_font_path_reply_t,
-    >,
-    pub(crate) xcb_get_font_path:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_font_path_cookie_t>,
-    pub(crate) xcb_get_font_path_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_font_path_cookie_t>,
-    pub(crate) xcb_create_pixmap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            depth: u8,
-            pid: xcb_pixmap_t,
-            drawable: xcb_drawable_t,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_pixmap_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            depth: u8,
-            pid: xcb_pixmap_t,
-            drawable: xcb_drawable_t,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_free_pixmap:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, pixmap: xcb_pixmap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_free_pixmap_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, pixmap: xcb_pixmap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_create_gc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_gcontext_t,
-            drawable: xcb_drawable_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_gc_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_gcontext_t,
-            drawable: xcb_drawable_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_gc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gc: xcb_gcontext_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_gc_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gc: xcb_gcontext_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_copy_gc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_gc: xcb_gcontext_t,
-            dst_gc: xcb_gcontext_t,
-            value_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_copy_gc_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_gc: xcb_gcontext_t,
-            dst_gc: xcb_gcontext_t,
-            value_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_dashes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gc: xcb_gcontext_t,
-            dash_offset: u16,
-            dashes_len: u16,
-            dashes: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_dashes_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gc: xcb_gcontext_t,
-            dash_offset: u16,
-            dashes_len: u16,
-            dashes: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_clip_rectangles: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            ordering: u8,
-            gc: xcb_gcontext_t,
-            clip_x_origin: i16,
-            clip_y_origin: i16,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_clip_rectangles_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            ordering: u8,
-            gc: xcb_gcontext_t,
-            clip_x_origin: i16,
-            clip_y_origin: i16,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_free_gc:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, gc: xcb_gcontext_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_free_gc_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, gc: xcb_gcontext_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_clear_area: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            exposures: u8,
-            window: xcb_window_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_clear_area_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            exposures: u8,
-            window: xcb_window_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_copy_area: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_drawable: xcb_drawable_t,
-            dst_drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            src_x: i16,
-            src_y: i16,
-            dst_x: i16,
-            dst_y: i16,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_copy_area_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_drawable: xcb_drawable_t,
-            dst_drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            src_x: i16,
-            src_y: i16,
-            dst_x: i16,
-            dst_y: i16,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_copy_plane: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_drawable: xcb_drawable_t,
-            dst_drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            src_x: i16,
-            src_y: i16,
-            dst_x: i16,
-            dst_y: i16,
-            width: u16,
-            height: u16,
-            bit_plane: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_copy_plane_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_drawable: xcb_drawable_t,
-            dst_drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            src_x: i16,
-            src_y: i16,
-            dst_x: i16,
-            dst_y: i16,
-            width: u16,
-            height: u16,
-            bit_plane: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_point: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            coordinate_mode: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            points_len: u32,
-            points: *const xcb_point_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_point_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            coordinate_mode: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            points_len: u32,
-            points: *const xcb_point_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_line: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            coordinate_mode: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            points_len: u32,
-            points: *const xcb_point_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_line_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            coordinate_mode: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            points_len: u32,
-            points: *const xcb_point_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_segment_next: LazySymbol<unsafe fn(i: *mut xcb_segment_iterator_t)>,
-    pub(crate) xcb_segment_end:
-        LazySymbol<unsafe fn(i: *mut xcb_segment_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_poly_segment: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            segments_len: u32,
-            segments: *const xcb_segment_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_segment_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            segments_len: u32,
-            segments: *const xcb_segment_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_rectangle: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_rectangle_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_arc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            arcs_len: u32,
-            arcs: *const xcb_arc_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_arc_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            arcs_len: u32,
-            arcs: *const xcb_arc_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_fill_poly: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            shape: u8,
-            coordinate_mode: u8,
-            points_len: u32,
-            points: *const xcb_point_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_fill_poly_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            shape: u8,
-            coordinate_mode: u8,
-            points_len: u32,
-            points: *const xcb_point_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_fill_rectangle: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_fill_rectangle_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_fill_arc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            arcs_len: u32,
-            arcs: *const xcb_arc_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_fill_arc_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            arcs_len: u32,
-            arcs: *const xcb_arc_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_put_image: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            format: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            width: u16,
-            height: u16,
-            dst_x: i16,
-            dst_y: i16,
-            left_pad: u8,
-            depth: u8,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_put_image_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            format: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            width: u16,
-            height: u16,
-            dst_x: i16,
-            dst_y: i16,
-            left_pad: u8,
-            depth: u8,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_image_data:
-        LazySymbol<unsafe fn(R: *const xcb_get_image_reply_t) -> *mut u8>,
-    pub(crate) xcb_get_image_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_image_reply_t) -> c_int>,
-    pub(crate) xcb_get_image_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_get_image_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_get_image_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_image_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_image_reply_t,
-    >,
-    pub(crate) xcb_get_image: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            format: u8,
-            drawable: xcb_drawable_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-            plane_mask: u32,
-        ) -> xcb_get_image_cookie_t,
-    >,
-    pub(crate) xcb_get_image_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            format: u8,
-            drawable: xcb_drawable_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-            plane_mask: u32,
-        ) -> xcb_get_image_cookie_t,
-    >,
-    pub(crate) xcb_poly_text_8: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            items_len: u32,
-            items: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_text_8_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            items_len: u32,
-            items: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_text_16: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            items_len: u32,
-            items: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_poly_text_16_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            items_len: u32,
-            items: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_image_text_8: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            string_len: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_image_text_8_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            string_len: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_image_text_16: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            string_len: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            string: *const xcb_char2b_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_image_text_16_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            string_len: u8,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            x: i16,
-            y: i16,
-            string: *const xcb_char2b_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_colormap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            alloc: u8,
-            mid: xcb_colormap_t,
-            window: xcb_window_t,
-            visual: xcb_visualid_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_colormap_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            alloc: u8,
-            mid: xcb_colormap_t,
-            window: xcb_window_t,
-            visual: xcb_visualid_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_free_colormap:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: xcb_colormap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_free_colormap_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: xcb_colormap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_copy_colormap_and_free: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mid: xcb_colormap_t,
-            src_cmap: xcb_colormap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_copy_colormap_and_free_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mid: xcb_colormap_t,
-            src_cmap: xcb_colormap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_install_colormap:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: xcb_colormap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_install_colormap_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: xcb_colormap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_uninstall_colormap:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: xcb_colormap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_uninstall_colormap_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: xcb_colormap_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_list_installed_colormaps_cmaps: LazySymbol<
-        unsafe fn(R: *const xcb_list_installed_colormaps_reply_t) -> *mut xcb_colormap_t,
-    >,
-    pub(crate) xcb_list_installed_colormaps_cmaps_length:
-        LazySymbol<unsafe fn(R: *const xcb_list_installed_colormaps_reply_t) -> c_int>,
-    pub(crate) xcb_list_installed_colormaps_cmaps_end: LazySymbol<
-        unsafe fn(R: *const xcb_list_installed_colormaps_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_list_installed_colormaps_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_list_installed_colormaps_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_list_installed_colormaps_reply_t,
-    >,
-    pub(crate) xcb_list_installed_colormaps: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_list_installed_colormaps_cookie_t,
-    >,
-    pub(crate) xcb_list_installed_colormaps_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_list_installed_colormaps_cookie_t,
-    >,
-    pub(crate) xcb_alloc_color_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_alloc_color_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_alloc_color_reply_t,
-    >,
-    pub(crate) xcb_alloc_color: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            red: u16,
-            green: u16,
-            blue: u16,
-        ) -> xcb_alloc_color_cookie_t,
-    >,
-    pub(crate) xcb_alloc_color_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            red: u16,
-            green: u16,
-            blue: u16,
-        ) -> xcb_alloc_color_cookie_t,
-    >,
-    pub(crate) xcb_alloc_named_color_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_alloc_named_color_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_alloc_named_color_reply_t,
-    >,
-    pub(crate) xcb_alloc_named_color: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_alloc_named_color_cookie_t,
-    >,
-    pub(crate) xcb_alloc_named_color_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_alloc_named_color_cookie_t,
-    >,
-    pub(crate) xcb_alloc_color_cells_pixels:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_cells_reply_t) -> *mut u32>,
-    pub(crate) xcb_alloc_color_cells_pixels_length:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_cells_reply_t) -> c_int>,
-    pub(crate) xcb_alloc_color_cells_pixels_end:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_cells_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_alloc_color_cells_masks:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_cells_reply_t) -> *mut u32>,
-    pub(crate) xcb_alloc_color_cells_masks_length:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_cells_reply_t) -> c_int>,
-    pub(crate) xcb_alloc_color_cells_masks_end:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_cells_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_alloc_color_cells_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_alloc_color_cells_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_alloc_color_cells_reply_t,
-    >,
-    pub(crate) xcb_alloc_color_cells: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            contiguous: u8,
-            cmap: xcb_colormap_t,
-            colors: u16,
-            planes: u16,
-        ) -> xcb_alloc_color_cells_cookie_t,
-    >,
-    pub(crate) xcb_alloc_color_cells_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            contiguous: u8,
-            cmap: xcb_colormap_t,
-            colors: u16,
-            planes: u16,
-        ) -> xcb_alloc_color_cells_cookie_t,
-    >,
-    pub(crate) xcb_alloc_color_planes_pixels:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_planes_reply_t) -> *mut u32>,
-    pub(crate) xcb_alloc_color_planes_pixels_length:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_planes_reply_t) -> c_int>,
-    pub(crate) xcb_alloc_color_planes_pixels_end:
-        LazySymbol<unsafe fn(R: *const xcb_alloc_color_planes_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_alloc_color_planes_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_alloc_color_planes_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_alloc_color_planes_reply_t,
-    >,
-    pub(crate) xcb_alloc_color_planes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            contiguous: u8,
-            cmap: xcb_colormap_t,
-            colors: u16,
-            reds: u16,
-            greens: u16,
-            blues: u16,
-        ) -> xcb_alloc_color_planes_cookie_t,
-    >,
-    pub(crate) xcb_alloc_color_planes_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            contiguous: u8,
-            cmap: xcb_colormap_t,
-            colors: u16,
-            reds: u16,
-            greens: u16,
-            blues: u16,
-        ) -> xcb_alloc_color_planes_cookie_t,
-    >,
-    pub(crate) xcb_free_colors: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            plane_mask: u32,
-            pixels_len: u32,
-            pixels: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_free_colors_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            plane_mask: u32,
-            pixels_len: u32,
-            pixels: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_coloritem_next: LazySymbol<unsafe fn(i: *mut xcb_coloritem_iterator_t)>,
-    pub(crate) xcb_coloritem_end:
-        LazySymbol<unsafe fn(i: *mut xcb_coloritem_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_store_colors: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            items_len: u32,
-            items: *const xcb_coloritem_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_store_colors_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            items_len: u32,
-            items: *const xcb_coloritem_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_store_named_color: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            flags: u8,
-            cmap: xcb_colormap_t,
-            pixel: u32,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_store_named_color_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            flags: u8,
-            cmap: xcb_colormap_t,
-            pixel: u32,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_rgb_next: LazySymbol<unsafe fn(i: *mut xcb_rgb_iterator_t)>,
-    pub(crate) xcb_rgb_end:
-        LazySymbol<unsafe fn(i: *mut xcb_rgb_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_query_colors_colors:
-        LazySymbol<unsafe fn(R: *const xcb_query_colors_reply_t) -> *mut xcb_rgb_t>,
-    pub(crate) xcb_query_colors_colors_length:
-        LazySymbol<unsafe fn(R: *const xcb_query_colors_reply_t) -> c_int>,
-    pub(crate) xcb_query_colors_colors_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_query_colors_reply_t) -> xcb_rgb_iterator_t>,
-    pub(crate) xcb_query_colors_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_colors_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_colors_reply_t,
-    >,
-    pub(crate) xcb_query_colors: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            pixels_len: u32,
-            pixels: *const u32,
-        ) -> xcb_query_colors_cookie_t,
-    >,
-    pub(crate) xcb_query_colors_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            pixels_len: u32,
-            pixels: *const u32,
-        ) -> xcb_query_colors_cookie_t,
-    >,
-    pub(crate) xcb_lookup_color_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_lookup_color_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_lookup_color_reply_t,
-    >,
-    pub(crate) xcb_lookup_color: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_lookup_color_cookie_t,
-    >,
-    pub(crate) xcb_lookup_color_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cmap: xcb_colormap_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_lookup_color_cookie_t,
-    >,
-    pub(crate) xcb_create_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            source: xcb_pixmap_t,
-            mask: xcb_pixmap_t,
-            fore_red: u16,
-            fore_green: u16,
-            fore_blue: u16,
-            back_red: u16,
-            back_green: u16,
-            back_blue: u16,
-            x: u16,
-            y: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_cursor_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            source: xcb_pixmap_t,
-            mask: xcb_pixmap_t,
-            fore_red: u16,
-            fore_green: u16,
-            fore_blue: u16,
-            back_red: u16,
-            back_green: u16,
-            back_blue: u16,
-            x: u16,
-            y: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_glyph_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            source_font: xcb_font_t,
-            mask_font: xcb_font_t,
-            source_char: u16,
-            mask_char: u16,
-            fore_red: u16,
-            fore_green: u16,
-            fore_blue: u16,
-            back_red: u16,
-            back_green: u16,
-            back_blue: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_create_glyph_cursor_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            source_font: xcb_font_t,
-            mask_font: xcb_font_t,
-            source_char: u16,
-            mask_char: u16,
-            fore_red: u16,
-            fore_green: u16,
-            fore_blue: u16,
-            back_red: u16,
-            back_green: u16,
-            back_blue: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_free_cursor:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cursor: xcb_cursor_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_free_cursor_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cursor: xcb_cursor_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_recolor_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-            fore_red: u16,
-            fore_green: u16,
-            fore_blue: u16,
-            back_red: u16,
-            back_green: u16,
-            back_blue: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_recolor_cursor_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-            fore_red: u16,
-            fore_green: u16,
-            fore_blue: u16,
-            back_red: u16,
-            back_green: u16,
-            back_blue: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_query_best_size_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_best_size_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_best_size_reply_t,
-    >,
-    pub(crate) xcb_query_best_size: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            class: u8,
-            drawable: xcb_drawable_t,
-            width: u16,
-            height: u16,
-        ) -> xcb_query_best_size_cookie_t,
-    >,
-    pub(crate) xcb_query_best_size_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            class: u8,
-            drawable: xcb_drawable_t,
-            width: u16,
-            height: u16,
-        ) -> xcb_query_best_size_cookie_t,
-    >,
-    pub(crate) xcb_query_extension_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_query_extension_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_query_extension_reply_t,
-    >,
-    pub(crate) xcb_query_extension: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_query_extension_cookie_t,
-    >,
-    pub(crate) xcb_query_extension_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_query_extension_cookie_t,
-    >,
-    pub(crate) xcb_list_extensions_names_length:
-        LazySymbol<unsafe fn(R: *const xcb_list_extensions_reply_t) -> c_int>,
-    pub(crate) xcb_list_extensions_names_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_list_extensions_reply_t) -> xcb_str_iterator_t>,
-    pub(crate) xcb_list_extensions_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_list_extensions_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_list_extensions_reply_t,
-    >,
-    pub(crate) xcb_list_extensions:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_list_extensions_cookie_t>,
-    pub(crate) xcb_list_extensions_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_list_extensions_cookie_t>,
-    pub(crate) xcb_change_keyboard_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            keycode_count: u8,
-            first_keycode: xcb_keycode_t,
-            keysyms_per_keycode: u8,
-            keysyms: *const xcb_keysym_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_keyboard_mapping_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            keycode_count: u8,
-            first_keycode: xcb_keycode_t,
-            keysyms_per_keycode: u8,
-            keysyms: *const xcb_keysym_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_keyboard_mapping_keysyms:
-        LazySymbol<unsafe fn(R: *const xcb_get_keyboard_mapping_reply_t) -> *mut xcb_keysym_t>,
-    pub(crate) xcb_get_keyboard_mapping_keysyms_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_keyboard_mapping_reply_t) -> c_int>,
-    pub(crate) xcb_get_keyboard_mapping_keysyms_end:
-        LazySymbol<unsafe fn(R: *const xcb_get_keyboard_mapping_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_get_keyboard_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_keyboard_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_keyboard_mapping_reply_t,
-    >,
-    pub(crate) xcb_get_keyboard_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            first_keycode: xcb_keycode_t,
-            count: u8,
-        ) -> xcb_get_keyboard_mapping_cookie_t,
-    >,
-    pub(crate) xcb_get_keyboard_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            first_keycode: xcb_keycode_t,
-            count: u8,
-        ) -> xcb_get_keyboard_mapping_cookie_t,
-    >,
-    pub(crate) xcb_change_keyboard_control: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_keyboard_control_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_keyboard_control_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_keyboard_control_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_keyboard_control_reply_t,
-    >,
-    pub(crate) xcb_get_keyboard_control:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_keyboard_control_cookie_t>,
-    pub(crate) xcb_get_keyboard_control_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_keyboard_control_cookie_t>,
-    pub(crate) xcb_bell:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, percent: i8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_bell_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, percent: i8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_change_pointer_control: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            acceleration_numerator: i16,
-            acceleration_denominator: i16,
-            threshold: i16,
-            do_acceleration: u8,
-            do_threshold: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_pointer_control_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            acceleration_numerator: i16,
-            acceleration_denominator: i16,
-            threshold: i16,
-            do_acceleration: u8,
-            do_threshold: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_pointer_control_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_pointer_control_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_pointer_control_reply_t,
-    >,
-    pub(crate) xcb_get_pointer_control:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_pointer_control_cookie_t>,
-    pub(crate) xcb_get_pointer_control_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_pointer_control_cookie_t>,
-    pub(crate) xcb_set_screen_saver: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            timeout: i16,
-            interval: i16,
-            prefer_blanking: u8,
-            allow_exposures: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_set_screen_saver_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            timeout: i16,
-            interval: i16,
-            prefer_blanking: u8,
-            allow_exposures: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_get_screen_saver_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_screen_saver_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_screen_saver_reply_t,
-    >,
-    pub(crate) xcb_get_screen_saver:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_screen_saver_cookie_t>,
-    pub(crate) xcb_get_screen_saver_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_screen_saver_cookie_t>,
-    pub(crate) xcb_change_hosts: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mode: u8,
-            family: u8,
-            address_len: u16,
-            address: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_change_hosts_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mode: u8,
-            family: u8,
-            address_len: u16,
-            address: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_host_address: LazySymbol<unsafe fn(R: *const xcb_host_t) -> *mut u8>,
-    pub(crate) xcb_host_address_length: LazySymbol<unsafe fn(R: *const xcb_host_t) -> c_int>,
-    pub(crate) xcb_host_address_end:
-        LazySymbol<unsafe fn(R: *const xcb_host_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_host_next: LazySymbol<unsafe fn(i: *mut xcb_host_iterator_t)>,
-    pub(crate) xcb_host_end:
-        LazySymbol<unsafe fn(i: *mut xcb_host_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_list_hosts_hosts_length:
-        LazySymbol<unsafe fn(R: *const xcb_list_hosts_reply_t) -> c_int>,
-    pub(crate) xcb_list_hosts_hosts_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_list_hosts_reply_t) -> xcb_host_iterator_t>,
-    pub(crate) xcb_list_hosts_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_list_hosts_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_list_hosts_reply_t,
-    >,
-    pub(crate) xcb_list_hosts:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_list_hosts_cookie_t>,
-    pub(crate) xcb_list_hosts_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_list_hosts_cookie_t>,
-    pub(crate) xcb_set_access_control:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_set_access_control_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_set_close_down_mode:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_set_close_down_mode_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_kill_client:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, resource: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_kill_client_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, resource: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_rotate_properties: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            atoms_len: u16,
-            delta: i16,
-            atoms: *const xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_rotate_properties_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            atoms_len: u16,
-            delta: i16,
-            atoms: *const xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_force_screen_saver:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_force_screen_saver_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_set_pointer_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_set_pointer_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_set_pointer_mapping_reply_t,
-    >,
-    pub(crate) xcb_set_pointer_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            map_len: u8,
-            map: *const u8,
-        ) -> xcb_set_pointer_mapping_cookie_t,
-    >,
-    pub(crate) xcb_set_pointer_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            map_len: u8,
-            map: *const u8,
-        ) -> xcb_set_pointer_mapping_cookie_t,
-    >,
-    pub(crate) xcb_get_pointer_mapping_map:
-        LazySymbol<unsafe fn(R: *const xcb_get_pointer_mapping_reply_t) -> *mut u8>,
-    pub(crate) xcb_get_pointer_mapping_map_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_pointer_mapping_reply_t) -> c_int>,
-    pub(crate) xcb_get_pointer_mapping_map_end:
-        LazySymbol<unsafe fn(R: *const xcb_get_pointer_mapping_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_get_pointer_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_pointer_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_pointer_mapping_reply_t,
-    >,
-    pub(crate) xcb_get_pointer_mapping:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_pointer_mapping_cookie_t>,
-    pub(crate) xcb_get_pointer_mapping_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_pointer_mapping_cookie_t>,
-    pub(crate) xcb_set_modifier_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_set_modifier_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_set_modifier_mapping_reply_t,
-    >,
-    pub(crate) xcb_set_modifier_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            keycodes_per_modifier: u8,
-            keycodes: *const xcb_keycode_t,
-        ) -> xcb_set_modifier_mapping_cookie_t,
-    >,
-    pub(crate) xcb_set_modifier_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            keycodes_per_modifier: u8,
-            keycodes: *const xcb_keycode_t,
-        ) -> xcb_set_modifier_mapping_cookie_t,
-    >,
-    pub(crate) xcb_get_modifier_mapping_keycodes:
-        LazySymbol<unsafe fn(R: *const xcb_get_modifier_mapping_reply_t) -> *mut xcb_keycode_t>,
-    pub(crate) xcb_get_modifier_mapping_keycodes_length:
-        LazySymbol<unsafe fn(R: *const xcb_get_modifier_mapping_reply_t) -> c_int>,
-    pub(crate) xcb_get_modifier_mapping_keycodes_end:
-        LazySymbol<unsafe fn(R: *const xcb_get_modifier_mapping_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_get_modifier_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_get_modifier_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_get_modifier_mapping_reply_t,
-    >,
-    pub(crate) xcb_get_modifier_mapping:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_modifier_mapping_cookie_t>,
-    pub(crate) xcb_get_modifier_mapping_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_get_modifier_mapping_cookie_t>,
-    pub(crate) xcb_no_operation:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_no_operation_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
 }

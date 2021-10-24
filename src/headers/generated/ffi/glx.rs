@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -2732,13 +2733,13 @@ pub struct xcb_glx_get_query_objectuiv_arb_reply_t {
 
 impl XcbGlx {
     #[inline]
-    pub fn xcb_glx_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_glx_id)
+    pub unsafe fn xcb_glx_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_glx_id)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_pixmap_next(&self, i: *mut xcb_glx_pixmap_iterator_t) {
-        call!(self, xcb_glx_pixmap_next)(i);
+        sym!(self, xcb_glx_pixmap_next)(i);
     }
 
     #[inline]
@@ -2746,12 +2747,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_pixmap_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_pixmap_end)(i)
+        sym!(self, xcb_glx_pixmap_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_context_next(&self, i: *mut xcb_glx_context_iterator_t) {
-        call!(self, xcb_glx_context_next)(i);
+        sym!(self, xcb_glx_context_next)(i);
     }
 
     #[inline]
@@ -2759,12 +2760,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_context_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_context_end)(i)
+        sym!(self, xcb_glx_context_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_pbuffer_next(&self, i: *mut xcb_glx_pbuffer_iterator_t) {
-        call!(self, xcb_glx_pbuffer_next)(i);
+        sym!(self, xcb_glx_pbuffer_next)(i);
     }
 
     #[inline]
@@ -2772,12 +2773,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_pbuffer_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_pbuffer_end)(i)
+        sym!(self, xcb_glx_pbuffer_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_window_next(&self, i: *mut xcb_glx_window_iterator_t) {
-        call!(self, xcb_glx_window_next)(i);
+        sym!(self, xcb_glx_window_next)(i);
     }
 
     #[inline]
@@ -2785,12 +2786,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_window_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_window_end)(i)
+        sym!(self, xcb_glx_window_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_fbconfig_next(&self, i: *mut xcb_glx_fbconfig_iterator_t) {
-        call!(self, xcb_glx_fbconfig_next)(i);
+        sym!(self, xcb_glx_fbconfig_next)(i);
     }
 
     #[inline]
@@ -2798,12 +2799,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_fbconfig_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_fbconfig_end)(i)
+        sym!(self, xcb_glx_fbconfig_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_drawable_next(&self, i: *mut xcb_glx_drawable_iterator_t) {
-        call!(self, xcb_glx_drawable_next)(i);
+        sym!(self, xcb_glx_drawable_next)(i);
     }
 
     #[inline]
@@ -2811,12 +2812,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_drawable_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_drawable_end)(i)
+        sym!(self, xcb_glx_drawable_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_float32_next(&self, i: *mut xcb_glx_float32_iterator_t) {
-        call!(self, xcb_glx_float32_next)(i);
+        sym!(self, xcb_glx_float32_next)(i);
     }
 
     #[inline]
@@ -2824,12 +2825,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_float32_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_float32_end)(i)
+        sym!(self, xcb_glx_float32_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_float64_next(&self, i: *mut xcb_glx_float64_iterator_t) {
-        call!(self, xcb_glx_float64_next)(i);
+        sym!(self, xcb_glx_float64_next)(i);
     }
 
     #[inline]
@@ -2837,12 +2838,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_float64_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_float64_end)(i)
+        sym!(self, xcb_glx_float64_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_bool32_next(&self, i: *mut xcb_glx_bool32_iterator_t) {
-        call!(self, xcb_glx_bool32_next)(i);
+        sym!(self, xcb_glx_bool32_next)(i);
     }
 
     #[inline]
@@ -2850,12 +2851,12 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_bool32_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_bool32_end)(i)
+        sym!(self, xcb_glx_bool32_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_context_tag_next(&self, i: *mut xcb_glx_context_tag_iterator_t) {
-        call!(self, xcb_glx_context_tag_next)(i);
+        sym!(self, xcb_glx_context_tag_next)(i);
     }
 
     #[inline]
@@ -2863,7 +2864,7 @@ impl XcbGlx {
         &self,
         i: *mut xcb_glx_context_tag_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_context_tag_end)(i)
+        sym!(self, xcb_glx_context_tag_end)(i)
     }
 
     #[inline]
@@ -2874,7 +2875,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_render)(c, context_tag, data_len, data)
+        sym!(self, xcb_glx_render)(c, context_tag, data_len, data)
     }
 
     #[inline]
@@ -2885,7 +2886,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_render_checked)(c, context_tag, data_len, data)
+        sym!(self, xcb_glx_render_checked)(c, context_tag, data_len, data)
     }
 
     #[inline]
@@ -2898,14 +2899,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_render_large)(
-            c,
-            context_tag,
-            request_num,
-            request_total,
-            data_len,
-            data,
-        )
+        sym!(self, xcb_glx_render_large)(c, context_tag, request_num, request_total, data_len, data)
     }
 
     #[inline]
@@ -2918,7 +2912,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_render_large_checked)(
+        sym!(self, xcb_glx_render_large_checked)(
             c,
             context_tag,
             request_num,
@@ -2938,7 +2932,7 @@ impl XcbGlx {
         share_list: xcb_glx_context_t,
         is_direct: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_context)(c, context, visual, screen, share_list, is_direct)
+        sym!(self, xcb_glx_create_context)(c, context, visual, screen, share_list, is_direct)
     }
 
     #[inline]
@@ -2951,7 +2945,7 @@ impl XcbGlx {
         share_list: xcb_glx_context_t,
         is_direct: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_context_checked)(
+        sym!(self, xcb_glx_create_context_checked)(
             c, context, visual, screen, share_list, is_direct,
         )
     }
@@ -2962,7 +2956,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context: xcb_glx_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_context)(c, context)
+        sym!(self, xcb_glx_destroy_context)(c, context)
     }
 
     #[inline]
@@ -2971,7 +2965,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context: xcb_glx_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_context_checked)(c, context)
+        sym!(self, xcb_glx_destroy_context_checked)(c, context)
     }
 
     #[inline]
@@ -2981,7 +2975,7 @@ impl XcbGlx {
         cookie: xcb_glx_make_current_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_make_current_reply_t {
-        call!(self, xcb_glx_make_current_reply)(c, cookie, error)
+        sym!(self, xcb_glx_make_current_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2992,7 +2986,7 @@ impl XcbGlx {
         context: xcb_glx_context_t,
         old_context_tag: xcb_glx_context_tag_t,
     ) -> xcb_glx_make_current_cookie_t {
-        call!(self, xcb_glx_make_current)(c, drawable, context, old_context_tag)
+        sym!(self, xcb_glx_make_current)(c, drawable, context, old_context_tag)
     }
 
     #[inline]
@@ -3003,7 +2997,7 @@ impl XcbGlx {
         context: xcb_glx_context_t,
         old_context_tag: xcb_glx_context_tag_t,
     ) -> xcb_glx_make_current_cookie_t {
-        call!(self, xcb_glx_make_current_unchecked)(c, drawable, context, old_context_tag)
+        sym!(self, xcb_glx_make_current_unchecked)(c, drawable, context, old_context_tag)
     }
 
     #[inline]
@@ -3013,7 +3007,7 @@ impl XcbGlx {
         cookie: xcb_glx_is_direct_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_is_direct_reply_t {
-        call!(self, xcb_glx_is_direct_reply)(c, cookie, error)
+        sym!(self, xcb_glx_is_direct_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3022,7 +3016,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context: xcb_glx_context_t,
     ) -> xcb_glx_is_direct_cookie_t {
-        call!(self, xcb_glx_is_direct)(c, context)
+        sym!(self, xcb_glx_is_direct)(c, context)
     }
 
     #[inline]
@@ -3031,7 +3025,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context: xcb_glx_context_t,
     ) -> xcb_glx_is_direct_cookie_t {
-        call!(self, xcb_glx_is_direct_unchecked)(c, context)
+        sym!(self, xcb_glx_is_direct_unchecked)(c, context)
     }
 
     #[inline]
@@ -3041,7 +3035,7 @@ impl XcbGlx {
         cookie: xcb_glx_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_query_version_reply_t {
-        call!(self, xcb_glx_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_glx_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3051,7 +3045,7 @@ impl XcbGlx {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_glx_query_version_cookie_t {
-        call!(self, xcb_glx_query_version)(c, major_version, minor_version)
+        sym!(self, xcb_glx_query_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -3061,7 +3055,7 @@ impl XcbGlx {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_glx_query_version_cookie_t {
-        call!(self, xcb_glx_query_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_glx_query_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -3070,7 +3064,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_wait_gl)(c, context_tag)
+        sym!(self, xcb_glx_wait_gl)(c, context_tag)
     }
 
     #[inline]
@@ -3079,7 +3073,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_wait_gl_checked)(c, context_tag)
+        sym!(self, xcb_glx_wait_gl_checked)(c, context_tag)
     }
 
     #[inline]
@@ -3088,7 +3082,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_wait_x)(c, context_tag)
+        sym!(self, xcb_glx_wait_x)(c, context_tag)
     }
 
     #[inline]
@@ -3097,7 +3091,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_wait_x_checked)(c, context_tag)
+        sym!(self, xcb_glx_wait_x_checked)(c, context_tag)
     }
 
     #[inline]
@@ -3109,7 +3103,7 @@ impl XcbGlx {
         mask: u32,
         src_context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_copy_context)(c, src, dest, mask, src_context_tag)
+        sym!(self, xcb_glx_copy_context)(c, src, dest, mask, src_context_tag)
     }
 
     #[inline]
@@ -3121,7 +3115,7 @@ impl XcbGlx {
         mask: u32,
         src_context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_copy_context_checked)(c, src, dest, mask, src_context_tag)
+        sym!(self, xcb_glx_copy_context_checked)(c, src, dest, mask, src_context_tag)
     }
 
     #[inline]
@@ -3131,7 +3125,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         drawable: xcb_glx_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_swap_buffers)(c, context_tag, drawable)
+        sym!(self, xcb_glx_swap_buffers)(c, context_tag, drawable)
     }
 
     #[inline]
@@ -3141,7 +3135,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         drawable: xcb_glx_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_swap_buffers_checked)(c, context_tag, drawable)
+        sym!(self, xcb_glx_swap_buffers_checked)(c, context_tag, drawable)
     }
 
     #[inline]
@@ -3154,7 +3148,7 @@ impl XcbGlx {
         count: u32,
         list_base: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_use_x_font)(c, context_tag, font, first, count, list_base)
+        sym!(self, xcb_glx_use_x_font)(c, context_tag, font, first, count, list_base)
     }
 
     #[inline]
@@ -3167,7 +3161,7 @@ impl XcbGlx {
         count: u32,
         list_base: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_use_x_font_checked)(c, context_tag, font, first, count, list_base)
+        sym!(self, xcb_glx_use_x_font_checked)(c, context_tag, font, first, count, list_base)
     }
 
     #[inline]
@@ -3179,7 +3173,7 @@ impl XcbGlx {
         pixmap: xcb_pixmap_t,
         glx_pixmap: xcb_glx_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_glx_pixmap)(c, screen, visual, pixmap, glx_pixmap)
+        sym!(self, xcb_glx_create_glx_pixmap)(c, screen, visual, pixmap, glx_pixmap)
     }
 
     #[inline]
@@ -3191,7 +3185,7 @@ impl XcbGlx {
         pixmap: xcb_pixmap_t,
         glx_pixmap: xcb_glx_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_glx_pixmap_checked)(c, screen, visual, pixmap, glx_pixmap)
+        sym!(self, xcb_glx_create_glx_pixmap_checked)(c, screen, visual, pixmap, glx_pixmap)
     }
 
     #[inline]
@@ -3199,7 +3193,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_visual_configs_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_get_visual_configs_property_list)(R)
+        sym!(self, xcb_glx_get_visual_configs_property_list)(R)
     }
 
     #[inline]
@@ -3207,7 +3201,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_visual_configs_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_visual_configs_property_list_length)(R)
+        sym!(self, xcb_glx_get_visual_configs_property_list_length)(R)
     }
 
     #[inline]
@@ -3215,7 +3209,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_visual_configs_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_visual_configs_property_list_end)(R)
+        sym!(self, xcb_glx_get_visual_configs_property_list_end)(R)
     }
 
     #[inline]
@@ -3225,7 +3219,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_visual_configs_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_visual_configs_reply_t {
-        call!(self, xcb_glx_get_visual_configs_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_visual_configs_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3234,7 +3228,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_glx_get_visual_configs_cookie_t {
-        call!(self, xcb_glx_get_visual_configs)(c, screen)
+        sym!(self, xcb_glx_get_visual_configs)(c, screen)
     }
 
     #[inline]
@@ -3243,7 +3237,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_glx_get_visual_configs_cookie_t {
-        call!(self, xcb_glx_get_visual_configs_unchecked)(c, screen)
+        sym!(self, xcb_glx_get_visual_configs_unchecked)(c, screen)
     }
 
     #[inline]
@@ -3252,7 +3246,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         glx_pixmap: xcb_glx_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_glx_pixmap)(c, glx_pixmap)
+        sym!(self, xcb_glx_destroy_glx_pixmap)(c, glx_pixmap)
     }
 
     #[inline]
@@ -3261,7 +3255,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         glx_pixmap: xcb_glx_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_glx_pixmap_checked)(c, glx_pixmap)
+        sym!(self, xcb_glx_destroy_glx_pixmap_checked)(c, glx_pixmap)
     }
 
     #[inline]
@@ -3273,7 +3267,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_vendor_private)(c, vendor_code, context_tag, data_len, data)
+        sym!(self, xcb_glx_vendor_private)(c, vendor_code, context_tag, data_len, data)
     }
 
     #[inline]
@@ -3285,7 +3279,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_vendor_private_checked)(c, vendor_code, context_tag, data_len, data)
+        sym!(self, xcb_glx_vendor_private_checked)(c, vendor_code, context_tag, data_len, data)
     }
 
     #[inline]
@@ -3293,7 +3287,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_vendor_private_with_reply_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_vendor_private_with_reply_data_2)(R)
+        sym!(self, xcb_glx_vendor_private_with_reply_data_2)(R)
     }
 
     #[inline]
@@ -3301,7 +3295,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_vendor_private_with_reply_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_vendor_private_with_reply_data_2_length)(R)
+        sym!(self, xcb_glx_vendor_private_with_reply_data_2_length)(R)
     }
 
     #[inline]
@@ -3309,7 +3303,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_vendor_private_with_reply_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_vendor_private_with_reply_data_2_end)(R)
+        sym!(self, xcb_glx_vendor_private_with_reply_data_2_end)(R)
     }
 
     #[inline]
@@ -3319,7 +3313,7 @@ impl XcbGlx {
         cookie: xcb_glx_vendor_private_with_reply_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_vendor_private_with_reply_reply_t {
-        call!(self, xcb_glx_vendor_private_with_reply_reply)(c, cookie, error)
+        sym!(self, xcb_glx_vendor_private_with_reply_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3331,7 +3325,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_glx_vendor_private_with_reply_cookie_t {
-        call!(self, xcb_glx_vendor_private_with_reply)(c, vendor_code, context_tag, data_len, data)
+        sym!(self, xcb_glx_vendor_private_with_reply)(c, vendor_code, context_tag, data_len, data)
     }
 
     #[inline]
@@ -3343,7 +3337,7 @@ impl XcbGlx {
         data_len: u32,
         data: *const u8,
     ) -> xcb_glx_vendor_private_with_reply_cookie_t {
-        call!(self, xcb_glx_vendor_private_with_reply_unchecked)(
+        sym!(self, xcb_glx_vendor_private_with_reply_unchecked)(
             c,
             vendor_code,
             context_tag,
@@ -3359,7 +3353,7 @@ impl XcbGlx {
         cookie: xcb_glx_query_extensions_string_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_query_extensions_string_reply_t {
-        call!(self, xcb_glx_query_extensions_string_reply)(c, cookie, error)
+        sym!(self, xcb_glx_query_extensions_string_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3368,7 +3362,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_glx_query_extensions_string_cookie_t {
-        call!(self, xcb_glx_query_extensions_string)(c, screen)
+        sym!(self, xcb_glx_query_extensions_string)(c, screen)
     }
 
     #[inline]
@@ -3377,7 +3371,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_glx_query_extensions_string_cookie_t {
-        call!(self, xcb_glx_query_extensions_string_unchecked)(c, screen)
+        sym!(self, xcb_glx_query_extensions_string_unchecked)(c, screen)
     }
 
     #[inline]
@@ -3385,7 +3379,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_query_server_string_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_glx_query_server_string_string)(R)
+        sym!(self, xcb_glx_query_server_string_string)(R)
     }
 
     #[inline]
@@ -3393,7 +3387,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_query_server_string_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_query_server_string_string_length)(R)
+        sym!(self, xcb_glx_query_server_string_string_length)(R)
     }
 
     #[inline]
@@ -3401,7 +3395,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_query_server_string_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_query_server_string_string_end)(R)
+        sym!(self, xcb_glx_query_server_string_string_end)(R)
     }
 
     #[inline]
@@ -3411,7 +3405,7 @@ impl XcbGlx {
         cookie: xcb_glx_query_server_string_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_query_server_string_reply_t {
-        call!(self, xcb_glx_query_server_string_reply)(c, cookie, error)
+        sym!(self, xcb_glx_query_server_string_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3421,7 +3415,7 @@ impl XcbGlx {
         screen: u32,
         name: u32,
     ) -> xcb_glx_query_server_string_cookie_t {
-        call!(self, xcb_glx_query_server_string)(c, screen, name)
+        sym!(self, xcb_glx_query_server_string)(c, screen, name)
     }
 
     #[inline]
@@ -3431,7 +3425,7 @@ impl XcbGlx {
         screen: u32,
         name: u32,
     ) -> xcb_glx_query_server_string_cookie_t {
-        call!(self, xcb_glx_query_server_string_unchecked)(c, screen, name)
+        sym!(self, xcb_glx_query_server_string_unchecked)(c, screen, name)
     }
 
     #[inline]
@@ -3443,7 +3437,7 @@ impl XcbGlx {
         str_len: u32,
         string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_client_info)(c, major_version, minor_version, str_len, string)
+        sym!(self, xcb_glx_client_info)(c, major_version, minor_version, str_len, string)
     }
 
     #[inline]
@@ -3455,7 +3449,7 @@ impl XcbGlx {
         str_len: u32,
         string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_client_info_checked)(c, major_version, minor_version, str_len, string)
+        sym!(self, xcb_glx_client_info_checked)(c, major_version, minor_version, str_len, string)
     }
 
     #[inline]
@@ -3463,7 +3457,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_fb_configs_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_get_fb_configs_property_list)(R)
+        sym!(self, xcb_glx_get_fb_configs_property_list)(R)
     }
 
     #[inline]
@@ -3471,7 +3465,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_fb_configs_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_fb_configs_property_list_length)(R)
+        sym!(self, xcb_glx_get_fb_configs_property_list_length)(R)
     }
 
     #[inline]
@@ -3479,7 +3473,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_fb_configs_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_fb_configs_property_list_end)(R)
+        sym!(self, xcb_glx_get_fb_configs_property_list_end)(R)
     }
 
     #[inline]
@@ -3489,7 +3483,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_fb_configs_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_fb_configs_reply_t {
-        call!(self, xcb_glx_get_fb_configs_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_fb_configs_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3498,7 +3492,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_glx_get_fb_configs_cookie_t {
-        call!(self, xcb_glx_get_fb_configs)(c, screen)
+        sym!(self, xcb_glx_get_fb_configs)(c, screen)
     }
 
     #[inline]
@@ -3507,7 +3501,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_glx_get_fb_configs_cookie_t {
-        call!(self, xcb_glx_get_fb_configs_unchecked)(c, screen)
+        sym!(self, xcb_glx_get_fb_configs_unchecked)(c, screen)
     }
 
     #[inline]
@@ -3521,7 +3515,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_pixmap)(
+        sym!(self, xcb_glx_create_pixmap)(
             c,
             screen,
             fbconfig,
@@ -3543,7 +3537,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_pixmap_checked)(
+        sym!(self, xcb_glx_create_pixmap_checked)(
             c,
             screen,
             fbconfig,
@@ -3560,7 +3554,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         glx_pixmap: xcb_glx_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_pixmap)(c, glx_pixmap)
+        sym!(self, xcb_glx_destroy_pixmap)(c, glx_pixmap)
     }
 
     #[inline]
@@ -3569,7 +3563,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         glx_pixmap: xcb_glx_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_pixmap_checked)(c, glx_pixmap)
+        sym!(self, xcb_glx_destroy_pixmap_checked)(c, glx_pixmap)
     }
 
     #[inline]
@@ -3583,7 +3577,7 @@ impl XcbGlx {
         share_list: xcb_glx_context_t,
         is_direct: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_new_context)(
+        sym!(self, xcb_glx_create_new_context)(
             c,
             context,
             fbconfig,
@@ -3605,7 +3599,7 @@ impl XcbGlx {
         share_list: xcb_glx_context_t,
         is_direct: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_new_context_checked)(
+        sym!(self, xcb_glx_create_new_context_checked)(
             c,
             context,
             fbconfig,
@@ -3621,7 +3615,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_query_context_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_query_context_attribs)(R)
+        sym!(self, xcb_glx_query_context_attribs)(R)
     }
 
     #[inline]
@@ -3629,7 +3623,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_query_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_query_context_attribs_length)(R)
+        sym!(self, xcb_glx_query_context_attribs_length)(R)
     }
 
     #[inline]
@@ -3637,7 +3631,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_query_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_query_context_attribs_end)(R)
+        sym!(self, xcb_glx_query_context_attribs_end)(R)
     }
 
     #[inline]
@@ -3647,7 +3641,7 @@ impl XcbGlx {
         cookie: xcb_glx_query_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_query_context_reply_t {
-        call!(self, xcb_glx_query_context_reply)(c, cookie, error)
+        sym!(self, xcb_glx_query_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3656,7 +3650,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context: xcb_glx_context_t,
     ) -> xcb_glx_query_context_cookie_t {
-        call!(self, xcb_glx_query_context)(c, context)
+        sym!(self, xcb_glx_query_context)(c, context)
     }
 
     #[inline]
@@ -3665,7 +3659,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context: xcb_glx_context_t,
     ) -> xcb_glx_query_context_cookie_t {
-        call!(self, xcb_glx_query_context_unchecked)(c, context)
+        sym!(self, xcb_glx_query_context_unchecked)(c, context)
     }
 
     #[inline]
@@ -3675,7 +3669,7 @@ impl XcbGlx {
         cookie: xcb_glx_make_context_current_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_make_context_current_reply_t {
-        call!(self, xcb_glx_make_context_current_reply)(c, cookie, error)
+        sym!(self, xcb_glx_make_context_current_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3687,7 +3681,7 @@ impl XcbGlx {
         read_drawable: xcb_glx_drawable_t,
         context: xcb_glx_context_t,
     ) -> xcb_glx_make_context_current_cookie_t {
-        call!(self, xcb_glx_make_context_current)(
+        sym!(self, xcb_glx_make_context_current)(
             c,
             old_context_tag,
             drawable,
@@ -3705,7 +3699,7 @@ impl XcbGlx {
         read_drawable: xcb_glx_drawable_t,
         context: xcb_glx_context_t,
     ) -> xcb_glx_make_context_current_cookie_t {
-        call!(self, xcb_glx_make_context_current_unchecked)(
+        sym!(self, xcb_glx_make_context_current_unchecked)(
             c,
             old_context_tag,
             drawable,
@@ -3724,7 +3718,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_pbuffer)(c, screen, fbconfig, pbuffer, num_attribs, attribs)
+        sym!(self, xcb_glx_create_pbuffer)(c, screen, fbconfig, pbuffer, num_attribs, attribs)
     }
 
     #[inline]
@@ -3737,7 +3731,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_pbuffer_checked)(
+        sym!(self, xcb_glx_create_pbuffer_checked)(
             c,
             screen,
             fbconfig,
@@ -3753,7 +3747,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         pbuffer: xcb_glx_pbuffer_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_pbuffer)(c, pbuffer)
+        sym!(self, xcb_glx_destroy_pbuffer)(c, pbuffer)
     }
 
     #[inline]
@@ -3762,7 +3756,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         pbuffer: xcb_glx_pbuffer_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_destroy_pbuffer_checked)(c, pbuffer)
+        sym!(self, xcb_glx_destroy_pbuffer_checked)(c, pbuffer)
     }
 
     #[inline]
@@ -3770,7 +3764,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_drawable_attributes_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_get_drawable_attributes_attribs)(R)
+        sym!(self, xcb_glx_get_drawable_attributes_attribs)(R)
     }
 
     #[inline]
@@ -3778,7 +3772,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_drawable_attributes_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_drawable_attributes_attribs_length)(R)
+        sym!(self, xcb_glx_get_drawable_attributes_attribs_length)(R)
     }
 
     #[inline]
@@ -3786,7 +3780,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_drawable_attributes_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_drawable_attributes_attribs_end)(R)
+        sym!(self, xcb_glx_get_drawable_attributes_attribs_end)(R)
     }
 
     #[inline]
@@ -3796,7 +3790,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_drawable_attributes_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_drawable_attributes_reply_t {
-        call!(self, xcb_glx_get_drawable_attributes_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_drawable_attributes_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3805,7 +3799,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         drawable: xcb_glx_drawable_t,
     ) -> xcb_glx_get_drawable_attributes_cookie_t {
-        call!(self, xcb_glx_get_drawable_attributes)(c, drawable)
+        sym!(self, xcb_glx_get_drawable_attributes)(c, drawable)
     }
 
     #[inline]
@@ -3814,7 +3808,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         drawable: xcb_glx_drawable_t,
     ) -> xcb_glx_get_drawable_attributes_cookie_t {
-        call!(self, xcb_glx_get_drawable_attributes_unchecked)(c, drawable)
+        sym!(self, xcb_glx_get_drawable_attributes_unchecked)(c, drawable)
     }
 
     #[inline]
@@ -3825,7 +3819,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_change_drawable_attributes)(c, drawable, num_attribs, attribs)
+        sym!(self, xcb_glx_change_drawable_attributes)(c, drawable, num_attribs, attribs)
     }
 
     #[inline]
@@ -3836,7 +3830,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_change_drawable_attributes_checked)(c, drawable, num_attribs, attribs)
+        sym!(self, xcb_glx_change_drawable_attributes_checked)(c, drawable, num_attribs, attribs)
     }
 
     #[inline]
@@ -3850,7 +3844,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_window)(
+        sym!(self, xcb_glx_create_window)(
             c,
             screen,
             fbconfig,
@@ -3872,7 +3866,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_window_checked)(
+        sym!(self, xcb_glx_create_window_checked)(
             c,
             screen,
             fbconfig,
@@ -3889,7 +3883,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         glxwindow: xcb_glx_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_window)(c, glxwindow)
+        sym!(self, xcb_glx_delete_window)(c, glxwindow)
     }
 
     #[inline]
@@ -3898,7 +3892,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         glxwindow: xcb_glx_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_window_checked)(c, glxwindow)
+        sym!(self, xcb_glx_delete_window_checked)(c, glxwindow)
     }
 
     #[inline]
@@ -3914,7 +3908,7 @@ impl XcbGlx {
         gl_extension_string: *const c_char,
         glx_extension_string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_set_client_info_arb)(
+        sym!(self, xcb_glx_set_client_info_arb)(
             c,
             major_version,
             minor_version,
@@ -3940,7 +3934,7 @@ impl XcbGlx {
         gl_extension_string: *const c_char,
         glx_extension_string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_set_client_info_arb_checked)(
+        sym!(self, xcb_glx_set_client_info_arb_checked)(
             c,
             major_version,
             minor_version,
@@ -3965,7 +3959,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_context_attribs_arb)(
+        sym!(self, xcb_glx_create_context_attribs_arb)(
             c,
             context,
             fbconfig,
@@ -3989,7 +3983,7 @@ impl XcbGlx {
         num_attribs: u32,
         attribs: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_create_context_attribs_arb_checked)(
+        sym!(self, xcb_glx_create_context_attribs_arb_checked)(
             c,
             context,
             fbconfig,
@@ -4014,7 +4008,7 @@ impl XcbGlx {
         gl_extension_string: *const c_char,
         glx_extension_string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_set_client_info_2arb)(
+        sym!(self, xcb_glx_set_client_info_2arb)(
             c,
             major_version,
             minor_version,
@@ -4040,7 +4034,7 @@ impl XcbGlx {
         gl_extension_string: *const c_char,
         glx_extension_string: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_set_client_info_2arb_checked)(
+        sym!(self, xcb_glx_set_client_info_2arb_checked)(
             c,
             major_version,
             minor_version,
@@ -4061,7 +4055,7 @@ impl XcbGlx {
         list: u32,
         mode: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_new_list)(c, context_tag, list, mode)
+        sym!(self, xcb_glx_new_list)(c, context_tag, list, mode)
     }
 
     #[inline]
@@ -4072,7 +4066,7 @@ impl XcbGlx {
         list: u32,
         mode: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_new_list_checked)(c, context_tag, list, mode)
+        sym!(self, xcb_glx_new_list_checked)(c, context_tag, list, mode)
     }
 
     #[inline]
@@ -4081,7 +4075,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_end_list)(c, context_tag)
+        sym!(self, xcb_glx_end_list)(c, context_tag)
     }
 
     #[inline]
@@ -4090,7 +4084,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_end_list_checked)(c, context_tag)
+        sym!(self, xcb_glx_end_list_checked)(c, context_tag)
     }
 
     #[inline]
@@ -4101,7 +4095,7 @@ impl XcbGlx {
         list: u32,
         range: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_lists)(c, context_tag, list, range)
+        sym!(self, xcb_glx_delete_lists)(c, context_tag, list, range)
     }
 
     #[inline]
@@ -4112,7 +4106,7 @@ impl XcbGlx {
         list: u32,
         range: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_lists_checked)(c, context_tag, list, range)
+        sym!(self, xcb_glx_delete_lists_checked)(c, context_tag, list, range)
     }
 
     #[inline]
@@ -4122,7 +4116,7 @@ impl XcbGlx {
         cookie: xcb_glx_gen_lists_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_gen_lists_reply_t {
-        call!(self, xcb_glx_gen_lists_reply)(c, cookie, error)
+        sym!(self, xcb_glx_gen_lists_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4132,7 +4126,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         range: i32,
     ) -> xcb_glx_gen_lists_cookie_t {
-        call!(self, xcb_glx_gen_lists)(c, context_tag, range)
+        sym!(self, xcb_glx_gen_lists)(c, context_tag, range)
     }
 
     #[inline]
@@ -4142,7 +4136,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         range: i32,
     ) -> xcb_glx_gen_lists_cookie_t {
-        call!(self, xcb_glx_gen_lists_unchecked)(c, context_tag, range)
+        sym!(self, xcb_glx_gen_lists_unchecked)(c, context_tag, range)
     }
 
     #[inline]
@@ -4153,7 +4147,7 @@ impl XcbGlx {
         size: i32,
         type_: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_feedback_buffer)(c, context_tag, size, type_)
+        sym!(self, xcb_glx_feedback_buffer)(c, context_tag, size, type_)
     }
 
     #[inline]
@@ -4164,7 +4158,7 @@ impl XcbGlx {
         size: i32,
         type_: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_feedback_buffer_checked)(c, context_tag, size, type_)
+        sym!(self, xcb_glx_feedback_buffer_checked)(c, context_tag, size, type_)
     }
 
     #[inline]
@@ -4174,7 +4168,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         size: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_select_buffer)(c, context_tag, size)
+        sym!(self, xcb_glx_select_buffer)(c, context_tag, size)
     }
 
     #[inline]
@@ -4184,7 +4178,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         size: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_select_buffer_checked)(c, context_tag, size)
+        sym!(self, xcb_glx_select_buffer_checked)(c, context_tag, size)
     }
 
     #[inline]
@@ -4192,7 +4186,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_render_mode_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_render_mode_data)(R)
+        sym!(self, xcb_glx_render_mode_data)(R)
     }
 
     #[inline]
@@ -4200,7 +4194,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_render_mode_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_render_mode_data_length)(R)
+        sym!(self, xcb_glx_render_mode_data_length)(R)
     }
 
     #[inline]
@@ -4208,7 +4202,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_render_mode_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_render_mode_data_end)(R)
+        sym!(self, xcb_glx_render_mode_data_end)(R)
     }
 
     #[inline]
@@ -4218,7 +4212,7 @@ impl XcbGlx {
         cookie: xcb_glx_render_mode_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_render_mode_reply_t {
-        call!(self, xcb_glx_render_mode_reply)(c, cookie, error)
+        sym!(self, xcb_glx_render_mode_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4228,7 +4222,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         mode: u32,
     ) -> xcb_glx_render_mode_cookie_t {
-        call!(self, xcb_glx_render_mode)(c, context_tag, mode)
+        sym!(self, xcb_glx_render_mode)(c, context_tag, mode)
     }
 
     #[inline]
@@ -4238,7 +4232,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         mode: u32,
     ) -> xcb_glx_render_mode_cookie_t {
-        call!(self, xcb_glx_render_mode_unchecked)(c, context_tag, mode)
+        sym!(self, xcb_glx_render_mode_unchecked)(c, context_tag, mode)
     }
 
     #[inline]
@@ -4248,7 +4242,7 @@ impl XcbGlx {
         cookie: xcb_glx_finish_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_finish_reply_t {
-        call!(self, xcb_glx_finish_reply)(c, cookie, error)
+        sym!(self, xcb_glx_finish_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4257,7 +4251,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_glx_finish_cookie_t {
-        call!(self, xcb_glx_finish)(c, context_tag)
+        sym!(self, xcb_glx_finish)(c, context_tag)
     }
 
     #[inline]
@@ -4266,7 +4260,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_glx_finish_cookie_t {
-        call!(self, xcb_glx_finish_unchecked)(c, context_tag)
+        sym!(self, xcb_glx_finish_unchecked)(c, context_tag)
     }
 
     #[inline]
@@ -4277,7 +4271,7 @@ impl XcbGlx {
         pname: u32,
         datum: xcb_glx_float32_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_pixel_storef)(c, context_tag, pname, datum)
+        sym!(self, xcb_glx_pixel_storef)(c, context_tag, pname, datum)
     }
 
     #[inline]
@@ -4288,7 +4282,7 @@ impl XcbGlx {
         pname: u32,
         datum: xcb_glx_float32_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_pixel_storef_checked)(c, context_tag, pname, datum)
+        sym!(self, xcb_glx_pixel_storef_checked)(c, context_tag, pname, datum)
     }
 
     #[inline]
@@ -4299,7 +4293,7 @@ impl XcbGlx {
         pname: u32,
         datum: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_pixel_storei)(c, context_tag, pname, datum)
+        sym!(self, xcb_glx_pixel_storei)(c, context_tag, pname, datum)
     }
 
     #[inline]
@@ -4310,7 +4304,7 @@ impl XcbGlx {
         pname: u32,
         datum: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_pixel_storei_checked)(c, context_tag, pname, datum)
+        sym!(self, xcb_glx_pixel_storei_checked)(c, context_tag, pname, datum)
     }
 
     #[inline]
@@ -4318,7 +4312,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_read_pixels_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_read_pixels_data)(R)
+        sym!(self, xcb_glx_read_pixels_data)(R)
     }
 
     #[inline]
@@ -4326,7 +4320,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_read_pixels_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_read_pixels_data_length)(R)
+        sym!(self, xcb_glx_read_pixels_data_length)(R)
     }
 
     #[inline]
@@ -4334,7 +4328,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_read_pixels_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_read_pixels_data_end)(R)
+        sym!(self, xcb_glx_read_pixels_data_end)(R)
     }
 
     #[inline]
@@ -4344,7 +4338,7 @@ impl XcbGlx {
         cookie: xcb_glx_read_pixels_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_read_pixels_reply_t {
-        call!(self, xcb_glx_read_pixels_reply)(c, cookie, error)
+        sym!(self, xcb_glx_read_pixels_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4361,7 +4355,7 @@ impl XcbGlx {
         swap_bytes: u8,
         lsb_first: u8,
     ) -> xcb_glx_read_pixels_cookie_t {
-        call!(self, xcb_glx_read_pixels)(
+        sym!(self, xcb_glx_read_pixels)(
             c,
             context_tag,
             x,
@@ -4389,7 +4383,7 @@ impl XcbGlx {
         swap_bytes: u8,
         lsb_first: u8,
     ) -> xcb_glx_read_pixels_cookie_t {
-        call!(self, xcb_glx_read_pixels_unchecked)(
+        sym!(self, xcb_glx_read_pixels_unchecked)(
             c,
             context_tag,
             x,
@@ -4408,7 +4402,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_booleanv_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_booleanv_data)(R)
+        sym!(self, xcb_glx_get_booleanv_data)(R)
     }
 
     #[inline]
@@ -4416,7 +4410,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_booleanv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_booleanv_data_length)(R)
+        sym!(self, xcb_glx_get_booleanv_data_length)(R)
     }
 
     #[inline]
@@ -4424,7 +4418,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_booleanv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_booleanv_data_end)(R)
+        sym!(self, xcb_glx_get_booleanv_data_end)(R)
     }
 
     #[inline]
@@ -4434,7 +4428,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_booleanv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_booleanv_reply_t {
-        call!(self, xcb_glx_get_booleanv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_booleanv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4444,7 +4438,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: i32,
     ) -> xcb_glx_get_booleanv_cookie_t {
-        call!(self, xcb_glx_get_booleanv)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_booleanv)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4454,7 +4448,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: i32,
     ) -> xcb_glx_get_booleanv_cookie_t {
-        call!(self, xcb_glx_get_booleanv_unchecked)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_booleanv_unchecked)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4462,7 +4456,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_clip_plane_reply_t,
     ) -> *mut xcb_glx_float64_t {
-        call!(self, xcb_glx_get_clip_plane_data)(R)
+        sym!(self, xcb_glx_get_clip_plane_data)(R)
     }
 
     #[inline]
@@ -4470,7 +4464,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_clip_plane_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_clip_plane_data_length)(R)
+        sym!(self, xcb_glx_get_clip_plane_data_length)(R)
     }
 
     #[inline]
@@ -4478,7 +4472,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_clip_plane_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_clip_plane_data_end)(R)
+        sym!(self, xcb_glx_get_clip_plane_data_end)(R)
     }
 
     #[inline]
@@ -4488,7 +4482,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_clip_plane_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_clip_plane_reply_t {
-        call!(self, xcb_glx_get_clip_plane_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_clip_plane_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4498,7 +4492,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         plane: i32,
     ) -> xcb_glx_get_clip_plane_cookie_t {
-        call!(self, xcb_glx_get_clip_plane)(c, context_tag, plane)
+        sym!(self, xcb_glx_get_clip_plane)(c, context_tag, plane)
     }
 
     #[inline]
@@ -4508,7 +4502,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         plane: i32,
     ) -> xcb_glx_get_clip_plane_cookie_t {
-        call!(self, xcb_glx_get_clip_plane_unchecked)(c, context_tag, plane)
+        sym!(self, xcb_glx_get_clip_plane_unchecked)(c, context_tag, plane)
     }
 
     #[inline]
@@ -4516,7 +4510,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_doublev_reply_t,
     ) -> *mut xcb_glx_float64_t {
-        call!(self, xcb_glx_get_doublev_data)(R)
+        sym!(self, xcb_glx_get_doublev_data)(R)
     }
 
     #[inline]
@@ -4524,7 +4518,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_doublev_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_doublev_data_length)(R)
+        sym!(self, xcb_glx_get_doublev_data_length)(R)
     }
 
     #[inline]
@@ -4532,7 +4526,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_doublev_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_doublev_data_end)(R)
+        sym!(self, xcb_glx_get_doublev_data_end)(R)
     }
 
     #[inline]
@@ -4542,7 +4536,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_doublev_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_doublev_reply_t {
-        call!(self, xcb_glx_get_doublev_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_doublev_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4552,7 +4546,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: u32,
     ) -> xcb_glx_get_doublev_cookie_t {
-        call!(self, xcb_glx_get_doublev)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_doublev)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4562,7 +4556,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: u32,
     ) -> xcb_glx_get_doublev_cookie_t {
-        call!(self, xcb_glx_get_doublev_unchecked)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_doublev_unchecked)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4572,7 +4566,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_error_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_error_reply_t {
-        call!(self, xcb_glx_get_error_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_error_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4581,7 +4575,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_glx_get_error_cookie_t {
-        call!(self, xcb_glx_get_error)(c, context_tag)
+        sym!(self, xcb_glx_get_error)(c, context_tag)
     }
 
     #[inline]
@@ -4590,7 +4584,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_glx_get_error_cookie_t {
-        call!(self, xcb_glx_get_error_unchecked)(c, context_tag)
+        sym!(self, xcb_glx_get_error_unchecked)(c, context_tag)
     }
 
     #[inline]
@@ -4598,7 +4592,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_floatv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_floatv_data)(R)
+        sym!(self, xcb_glx_get_floatv_data)(R)
     }
 
     #[inline]
@@ -4606,7 +4600,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_floatv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_floatv_data_length)(R)
+        sym!(self, xcb_glx_get_floatv_data_length)(R)
     }
 
     #[inline]
@@ -4614,7 +4608,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_floatv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_floatv_data_end)(R)
+        sym!(self, xcb_glx_get_floatv_data_end)(R)
     }
 
     #[inline]
@@ -4624,7 +4618,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_floatv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_floatv_reply_t {
-        call!(self, xcb_glx_get_floatv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_floatv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4634,7 +4628,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: u32,
     ) -> xcb_glx_get_floatv_cookie_t {
-        call!(self, xcb_glx_get_floatv)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_floatv)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4644,7 +4638,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: u32,
     ) -> xcb_glx_get_floatv_cookie_t {
-        call!(self, xcb_glx_get_floatv_unchecked)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_floatv_unchecked)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4652,7 +4646,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_integerv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_integerv_data)(R)
+        sym!(self, xcb_glx_get_integerv_data)(R)
     }
 
     #[inline]
@@ -4660,7 +4654,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_integerv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_integerv_data_length)(R)
+        sym!(self, xcb_glx_get_integerv_data_length)(R)
     }
 
     #[inline]
@@ -4668,7 +4662,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_integerv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_integerv_data_end)(R)
+        sym!(self, xcb_glx_get_integerv_data_end)(R)
     }
 
     #[inline]
@@ -4678,7 +4672,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_integerv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_integerv_reply_t {
-        call!(self, xcb_glx_get_integerv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_integerv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4688,7 +4682,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: u32,
     ) -> xcb_glx_get_integerv_cookie_t {
-        call!(self, xcb_glx_get_integerv)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_integerv)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4698,7 +4692,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         pname: u32,
     ) -> xcb_glx_get_integerv_cookie_t {
-        call!(self, xcb_glx_get_integerv_unchecked)(c, context_tag, pname)
+        sym!(self, xcb_glx_get_integerv_unchecked)(c, context_tag, pname)
     }
 
     #[inline]
@@ -4706,7 +4700,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_lightfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_lightfv_data)(R)
+        sym!(self, xcb_glx_get_lightfv_data)(R)
     }
 
     #[inline]
@@ -4714,7 +4708,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_lightfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_lightfv_data_length)(R)
+        sym!(self, xcb_glx_get_lightfv_data_length)(R)
     }
 
     #[inline]
@@ -4722,7 +4716,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_lightfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_lightfv_data_end)(R)
+        sym!(self, xcb_glx_get_lightfv_data_end)(R)
     }
 
     #[inline]
@@ -4732,7 +4726,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_lightfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_lightfv_reply_t {
-        call!(self, xcb_glx_get_lightfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_lightfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4743,7 +4737,7 @@ impl XcbGlx {
         light: u32,
         pname: u32,
     ) -> xcb_glx_get_lightfv_cookie_t {
-        call!(self, xcb_glx_get_lightfv)(c, context_tag, light, pname)
+        sym!(self, xcb_glx_get_lightfv)(c, context_tag, light, pname)
     }
 
     #[inline]
@@ -4754,7 +4748,7 @@ impl XcbGlx {
         light: u32,
         pname: u32,
     ) -> xcb_glx_get_lightfv_cookie_t {
-        call!(self, xcb_glx_get_lightfv_unchecked)(c, context_tag, light, pname)
+        sym!(self, xcb_glx_get_lightfv_unchecked)(c, context_tag, light, pname)
     }
 
     #[inline]
@@ -4762,7 +4756,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_lightiv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_lightiv_data)(R)
+        sym!(self, xcb_glx_get_lightiv_data)(R)
     }
 
     #[inline]
@@ -4770,7 +4764,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_lightiv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_lightiv_data_length)(R)
+        sym!(self, xcb_glx_get_lightiv_data_length)(R)
     }
 
     #[inline]
@@ -4778,7 +4772,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_lightiv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_lightiv_data_end)(R)
+        sym!(self, xcb_glx_get_lightiv_data_end)(R)
     }
 
     #[inline]
@@ -4788,7 +4782,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_lightiv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_lightiv_reply_t {
-        call!(self, xcb_glx_get_lightiv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_lightiv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4799,7 +4793,7 @@ impl XcbGlx {
         light: u32,
         pname: u32,
     ) -> xcb_glx_get_lightiv_cookie_t {
-        call!(self, xcb_glx_get_lightiv)(c, context_tag, light, pname)
+        sym!(self, xcb_glx_get_lightiv)(c, context_tag, light, pname)
     }
 
     #[inline]
@@ -4810,7 +4804,7 @@ impl XcbGlx {
         light: u32,
         pname: u32,
     ) -> xcb_glx_get_lightiv_cookie_t {
-        call!(self, xcb_glx_get_lightiv_unchecked)(c, context_tag, light, pname)
+        sym!(self, xcb_glx_get_lightiv_unchecked)(c, context_tag, light, pname)
     }
 
     #[inline]
@@ -4818,7 +4812,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapdv_reply_t,
     ) -> *mut xcb_glx_float64_t {
-        call!(self, xcb_glx_get_mapdv_data)(R)
+        sym!(self, xcb_glx_get_mapdv_data)(R)
     }
 
     #[inline]
@@ -4826,7 +4820,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapdv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_mapdv_data_length)(R)
+        sym!(self, xcb_glx_get_mapdv_data_length)(R)
     }
 
     #[inline]
@@ -4834,7 +4828,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapdv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_mapdv_data_end)(R)
+        sym!(self, xcb_glx_get_mapdv_data_end)(R)
     }
 
     #[inline]
@@ -4844,7 +4838,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_mapdv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_mapdv_reply_t {
-        call!(self, xcb_glx_get_mapdv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_mapdv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4855,7 +4849,7 @@ impl XcbGlx {
         target: u32,
         query: u32,
     ) -> xcb_glx_get_mapdv_cookie_t {
-        call!(self, xcb_glx_get_mapdv)(c, context_tag, target, query)
+        sym!(self, xcb_glx_get_mapdv)(c, context_tag, target, query)
     }
 
     #[inline]
@@ -4866,7 +4860,7 @@ impl XcbGlx {
         target: u32,
         query: u32,
     ) -> xcb_glx_get_mapdv_cookie_t {
-        call!(self, xcb_glx_get_mapdv_unchecked)(c, context_tag, target, query)
+        sym!(self, xcb_glx_get_mapdv_unchecked)(c, context_tag, target, query)
     }
 
     #[inline]
@@ -4874,7 +4868,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_mapfv_data)(R)
+        sym!(self, xcb_glx_get_mapfv_data)(R)
     }
 
     #[inline]
@@ -4882,7 +4876,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_mapfv_data_length)(R)
+        sym!(self, xcb_glx_get_mapfv_data_length)(R)
     }
 
     #[inline]
@@ -4890,7 +4884,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_mapfv_data_end)(R)
+        sym!(self, xcb_glx_get_mapfv_data_end)(R)
     }
 
     #[inline]
@@ -4900,7 +4894,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_mapfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_mapfv_reply_t {
-        call!(self, xcb_glx_get_mapfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_mapfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4911,7 +4905,7 @@ impl XcbGlx {
         target: u32,
         query: u32,
     ) -> xcb_glx_get_mapfv_cookie_t {
-        call!(self, xcb_glx_get_mapfv)(c, context_tag, target, query)
+        sym!(self, xcb_glx_get_mapfv)(c, context_tag, target, query)
     }
 
     #[inline]
@@ -4922,12 +4916,12 @@ impl XcbGlx {
         target: u32,
         query: u32,
     ) -> xcb_glx_get_mapfv_cookie_t {
-        call!(self, xcb_glx_get_mapfv_unchecked)(c, context_tag, target, query)
+        sym!(self, xcb_glx_get_mapfv_unchecked)(c, context_tag, target, query)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_get_mapiv_data(&self, R: *const xcb_glx_get_mapiv_reply_t) -> *mut i32 {
-        call!(self, xcb_glx_get_mapiv_data)(R)
+        sym!(self, xcb_glx_get_mapiv_data)(R)
     }
 
     #[inline]
@@ -4935,7 +4929,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapiv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_mapiv_data_length)(R)
+        sym!(self, xcb_glx_get_mapiv_data_length)(R)
     }
 
     #[inline]
@@ -4943,7 +4937,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_mapiv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_mapiv_data_end)(R)
+        sym!(self, xcb_glx_get_mapiv_data_end)(R)
     }
 
     #[inline]
@@ -4953,7 +4947,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_mapiv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_mapiv_reply_t {
-        call!(self, xcb_glx_get_mapiv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_mapiv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4964,7 +4958,7 @@ impl XcbGlx {
         target: u32,
         query: u32,
     ) -> xcb_glx_get_mapiv_cookie_t {
-        call!(self, xcb_glx_get_mapiv)(c, context_tag, target, query)
+        sym!(self, xcb_glx_get_mapiv)(c, context_tag, target, query)
     }
 
     #[inline]
@@ -4975,7 +4969,7 @@ impl XcbGlx {
         target: u32,
         query: u32,
     ) -> xcb_glx_get_mapiv_cookie_t {
-        call!(self, xcb_glx_get_mapiv_unchecked)(c, context_tag, target, query)
+        sym!(self, xcb_glx_get_mapiv_unchecked)(c, context_tag, target, query)
     }
 
     #[inline]
@@ -4983,7 +4977,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_materialfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_materialfv_data)(R)
+        sym!(self, xcb_glx_get_materialfv_data)(R)
     }
 
     #[inline]
@@ -4991,7 +4985,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_materialfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_materialfv_data_length)(R)
+        sym!(self, xcb_glx_get_materialfv_data_length)(R)
     }
 
     #[inline]
@@ -4999,7 +4993,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_materialfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_materialfv_data_end)(R)
+        sym!(self, xcb_glx_get_materialfv_data_end)(R)
     }
 
     #[inline]
@@ -5009,7 +5003,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_materialfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_materialfv_reply_t {
-        call!(self, xcb_glx_get_materialfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_materialfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5020,7 +5014,7 @@ impl XcbGlx {
         face: u32,
         pname: u32,
     ) -> xcb_glx_get_materialfv_cookie_t {
-        call!(self, xcb_glx_get_materialfv)(c, context_tag, face, pname)
+        sym!(self, xcb_glx_get_materialfv)(c, context_tag, face, pname)
     }
 
     #[inline]
@@ -5031,7 +5025,7 @@ impl XcbGlx {
         face: u32,
         pname: u32,
     ) -> xcb_glx_get_materialfv_cookie_t {
-        call!(self, xcb_glx_get_materialfv_unchecked)(c, context_tag, face, pname)
+        sym!(self, xcb_glx_get_materialfv_unchecked)(c, context_tag, face, pname)
     }
 
     #[inline]
@@ -5039,7 +5033,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_materialiv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_materialiv_data)(R)
+        sym!(self, xcb_glx_get_materialiv_data)(R)
     }
 
     #[inline]
@@ -5047,7 +5041,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_materialiv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_materialiv_data_length)(R)
+        sym!(self, xcb_glx_get_materialiv_data_length)(R)
     }
 
     #[inline]
@@ -5055,7 +5049,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_materialiv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_materialiv_data_end)(R)
+        sym!(self, xcb_glx_get_materialiv_data_end)(R)
     }
 
     #[inline]
@@ -5065,7 +5059,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_materialiv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_materialiv_reply_t {
-        call!(self, xcb_glx_get_materialiv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_materialiv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5076,7 +5070,7 @@ impl XcbGlx {
         face: u32,
         pname: u32,
     ) -> xcb_glx_get_materialiv_cookie_t {
-        call!(self, xcb_glx_get_materialiv)(c, context_tag, face, pname)
+        sym!(self, xcb_glx_get_materialiv)(c, context_tag, face, pname)
     }
 
     #[inline]
@@ -5087,7 +5081,7 @@ impl XcbGlx {
         face: u32,
         pname: u32,
     ) -> xcb_glx_get_materialiv_cookie_t {
-        call!(self, xcb_glx_get_materialiv_unchecked)(c, context_tag, face, pname)
+        sym!(self, xcb_glx_get_materialiv_unchecked)(c, context_tag, face, pname)
     }
 
     #[inline]
@@ -5095,7 +5089,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_pixel_mapfv_data)(R)
+        sym!(self, xcb_glx_get_pixel_mapfv_data)(R)
     }
 
     #[inline]
@@ -5103,7 +5097,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_pixel_mapfv_data_length)(R)
+        sym!(self, xcb_glx_get_pixel_mapfv_data_length)(R)
     }
 
     #[inline]
@@ -5111,7 +5105,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_pixel_mapfv_data_end)(R)
+        sym!(self, xcb_glx_get_pixel_mapfv_data_end)(R)
     }
 
     #[inline]
@@ -5121,7 +5115,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_pixel_mapfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_pixel_mapfv_reply_t {
-        call!(self, xcb_glx_get_pixel_mapfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_pixel_mapfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5131,7 +5125,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         map: u32,
     ) -> xcb_glx_get_pixel_mapfv_cookie_t {
-        call!(self, xcb_glx_get_pixel_mapfv)(c, context_tag, map)
+        sym!(self, xcb_glx_get_pixel_mapfv)(c, context_tag, map)
     }
 
     #[inline]
@@ -5141,7 +5135,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         map: u32,
     ) -> xcb_glx_get_pixel_mapfv_cookie_t {
-        call!(self, xcb_glx_get_pixel_mapfv_unchecked)(c, context_tag, map)
+        sym!(self, xcb_glx_get_pixel_mapfv_unchecked)(c, context_tag, map)
     }
 
     #[inline]
@@ -5149,7 +5143,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapuiv_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_get_pixel_mapuiv_data)(R)
+        sym!(self, xcb_glx_get_pixel_mapuiv_data)(R)
     }
 
     #[inline]
@@ -5157,7 +5151,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapuiv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_pixel_mapuiv_data_length)(R)
+        sym!(self, xcb_glx_get_pixel_mapuiv_data_length)(R)
     }
 
     #[inline]
@@ -5165,7 +5159,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapuiv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_pixel_mapuiv_data_end)(R)
+        sym!(self, xcb_glx_get_pixel_mapuiv_data_end)(R)
     }
 
     #[inline]
@@ -5175,7 +5169,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_pixel_mapuiv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_pixel_mapuiv_reply_t {
-        call!(self, xcb_glx_get_pixel_mapuiv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_pixel_mapuiv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5185,7 +5179,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         map: u32,
     ) -> xcb_glx_get_pixel_mapuiv_cookie_t {
-        call!(self, xcb_glx_get_pixel_mapuiv)(c, context_tag, map)
+        sym!(self, xcb_glx_get_pixel_mapuiv)(c, context_tag, map)
     }
 
     #[inline]
@@ -5195,7 +5189,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         map: u32,
     ) -> xcb_glx_get_pixel_mapuiv_cookie_t {
-        call!(self, xcb_glx_get_pixel_mapuiv_unchecked)(c, context_tag, map)
+        sym!(self, xcb_glx_get_pixel_mapuiv_unchecked)(c, context_tag, map)
     }
 
     #[inline]
@@ -5203,7 +5197,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapusv_reply_t,
     ) -> *mut u16 {
-        call!(self, xcb_glx_get_pixel_mapusv_data)(R)
+        sym!(self, xcb_glx_get_pixel_mapusv_data)(R)
     }
 
     #[inline]
@@ -5211,7 +5205,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapusv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_pixel_mapusv_data_length)(R)
+        sym!(self, xcb_glx_get_pixel_mapusv_data_length)(R)
     }
 
     #[inline]
@@ -5219,7 +5213,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_pixel_mapusv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_pixel_mapusv_data_end)(R)
+        sym!(self, xcb_glx_get_pixel_mapusv_data_end)(R)
     }
 
     #[inline]
@@ -5229,7 +5223,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_pixel_mapusv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_pixel_mapusv_reply_t {
-        call!(self, xcb_glx_get_pixel_mapusv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_pixel_mapusv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5239,7 +5233,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         map: u32,
     ) -> xcb_glx_get_pixel_mapusv_cookie_t {
-        call!(self, xcb_glx_get_pixel_mapusv)(c, context_tag, map)
+        sym!(self, xcb_glx_get_pixel_mapusv)(c, context_tag, map)
     }
 
     #[inline]
@@ -5249,7 +5243,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         map: u32,
     ) -> xcb_glx_get_pixel_mapusv_cookie_t {
-        call!(self, xcb_glx_get_pixel_mapusv_unchecked)(c, context_tag, map)
+        sym!(self, xcb_glx_get_pixel_mapusv_unchecked)(c, context_tag, map)
     }
 
     #[inline]
@@ -5257,7 +5251,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_polygon_stipple_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_polygon_stipple_data)(R)
+        sym!(self, xcb_glx_get_polygon_stipple_data)(R)
     }
 
     #[inline]
@@ -5265,7 +5259,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_polygon_stipple_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_polygon_stipple_data_length)(R)
+        sym!(self, xcb_glx_get_polygon_stipple_data_length)(R)
     }
 
     #[inline]
@@ -5273,7 +5267,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_polygon_stipple_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_polygon_stipple_data_end)(R)
+        sym!(self, xcb_glx_get_polygon_stipple_data_end)(R)
     }
 
     #[inline]
@@ -5283,7 +5277,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_polygon_stipple_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_polygon_stipple_reply_t {
-        call!(self, xcb_glx_get_polygon_stipple_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_polygon_stipple_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5293,7 +5287,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         lsb_first: u8,
     ) -> xcb_glx_get_polygon_stipple_cookie_t {
-        call!(self, xcb_glx_get_polygon_stipple)(c, context_tag, lsb_first)
+        sym!(self, xcb_glx_get_polygon_stipple)(c, context_tag, lsb_first)
     }
 
     #[inline]
@@ -5303,7 +5297,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         lsb_first: u8,
     ) -> xcb_glx_get_polygon_stipple_cookie_t {
-        call!(self, xcb_glx_get_polygon_stipple_unchecked)(c, context_tag, lsb_first)
+        sym!(self, xcb_glx_get_polygon_stipple_unchecked)(c, context_tag, lsb_first)
     }
 
     #[inline]
@@ -5311,7 +5305,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_string_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_glx_get_string_string)(R)
+        sym!(self, xcb_glx_get_string_string)(R)
     }
 
     #[inline]
@@ -5319,7 +5313,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_string_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_string_string_length)(R)
+        sym!(self, xcb_glx_get_string_string_length)(R)
     }
 
     #[inline]
@@ -5327,7 +5321,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_string_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_string_string_end)(R)
+        sym!(self, xcb_glx_get_string_string_end)(R)
     }
 
     #[inline]
@@ -5337,7 +5331,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_string_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_string_reply_t {
-        call!(self, xcb_glx_get_string_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_string_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5347,7 +5341,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         name: u32,
     ) -> xcb_glx_get_string_cookie_t {
-        call!(self, xcb_glx_get_string)(c, context_tag, name)
+        sym!(self, xcb_glx_get_string)(c, context_tag, name)
     }
 
     #[inline]
@@ -5357,7 +5351,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         name: u32,
     ) -> xcb_glx_get_string_cookie_t {
-        call!(self, xcb_glx_get_string_unchecked)(c, context_tag, name)
+        sym!(self, xcb_glx_get_string_unchecked)(c, context_tag, name)
     }
 
     #[inline]
@@ -5365,7 +5359,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_envfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_tex_envfv_data)(R)
+        sym!(self, xcb_glx_get_tex_envfv_data)(R)
     }
 
     #[inline]
@@ -5373,7 +5367,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_envfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_envfv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_envfv_data_length)(R)
     }
 
     #[inline]
@@ -5381,7 +5375,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_envfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_envfv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_envfv_data_end)(R)
     }
 
     #[inline]
@@ -5391,7 +5385,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_envfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_envfv_reply_t {
-        call!(self, xcb_glx_get_tex_envfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_envfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5402,7 +5396,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_envfv_cookie_t {
-        call!(self, xcb_glx_get_tex_envfv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_envfv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5413,7 +5407,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_envfv_cookie_t {
-        call!(self, xcb_glx_get_tex_envfv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_envfv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5421,7 +5415,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_enviv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_tex_enviv_data)(R)
+        sym!(self, xcb_glx_get_tex_enviv_data)(R)
     }
 
     #[inline]
@@ -5429,7 +5423,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_enviv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_enviv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_enviv_data_length)(R)
     }
 
     #[inline]
@@ -5437,7 +5431,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_enviv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_enviv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_enviv_data_end)(R)
     }
 
     #[inline]
@@ -5447,7 +5441,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_enviv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_enviv_reply_t {
-        call!(self, xcb_glx_get_tex_enviv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_enviv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5458,7 +5452,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_enviv_cookie_t {
-        call!(self, xcb_glx_get_tex_enviv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_enviv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5469,7 +5463,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_enviv_cookie_t {
-        call!(self, xcb_glx_get_tex_enviv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_enviv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5477,7 +5471,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_gendv_reply_t,
     ) -> *mut xcb_glx_float64_t {
-        call!(self, xcb_glx_get_tex_gendv_data)(R)
+        sym!(self, xcb_glx_get_tex_gendv_data)(R)
     }
 
     #[inline]
@@ -5485,7 +5479,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_gendv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_gendv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_gendv_data_length)(R)
     }
 
     #[inline]
@@ -5493,7 +5487,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_gendv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_gendv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_gendv_data_end)(R)
     }
 
     #[inline]
@@ -5503,7 +5497,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_gendv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_gendv_reply_t {
-        call!(self, xcb_glx_get_tex_gendv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_gendv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5514,7 +5508,7 @@ impl XcbGlx {
         coord: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_gendv_cookie_t {
-        call!(self, xcb_glx_get_tex_gendv)(c, context_tag, coord, pname)
+        sym!(self, xcb_glx_get_tex_gendv)(c, context_tag, coord, pname)
     }
 
     #[inline]
@@ -5525,7 +5519,7 @@ impl XcbGlx {
         coord: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_gendv_cookie_t {
-        call!(self, xcb_glx_get_tex_gendv_unchecked)(c, context_tag, coord, pname)
+        sym!(self, xcb_glx_get_tex_gendv_unchecked)(c, context_tag, coord, pname)
     }
 
     #[inline]
@@ -5533,7 +5527,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_genfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_tex_genfv_data)(R)
+        sym!(self, xcb_glx_get_tex_genfv_data)(R)
     }
 
     #[inline]
@@ -5541,7 +5535,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_genfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_genfv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_genfv_data_length)(R)
     }
 
     #[inline]
@@ -5549,7 +5543,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_genfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_genfv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_genfv_data_end)(R)
     }
 
     #[inline]
@@ -5559,7 +5553,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_genfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_genfv_reply_t {
-        call!(self, xcb_glx_get_tex_genfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_genfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5570,7 +5564,7 @@ impl XcbGlx {
         coord: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_genfv_cookie_t {
-        call!(self, xcb_glx_get_tex_genfv)(c, context_tag, coord, pname)
+        sym!(self, xcb_glx_get_tex_genfv)(c, context_tag, coord, pname)
     }
 
     #[inline]
@@ -5581,7 +5575,7 @@ impl XcbGlx {
         coord: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_genfv_cookie_t {
-        call!(self, xcb_glx_get_tex_genfv_unchecked)(c, context_tag, coord, pname)
+        sym!(self, xcb_glx_get_tex_genfv_unchecked)(c, context_tag, coord, pname)
     }
 
     #[inline]
@@ -5589,7 +5583,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_geniv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_tex_geniv_data)(R)
+        sym!(self, xcb_glx_get_tex_geniv_data)(R)
     }
 
     #[inline]
@@ -5597,7 +5591,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_geniv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_geniv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_geniv_data_length)(R)
     }
 
     #[inline]
@@ -5605,7 +5599,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_geniv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_geniv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_geniv_data_end)(R)
     }
 
     #[inline]
@@ -5615,7 +5609,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_geniv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_geniv_reply_t {
-        call!(self, xcb_glx_get_tex_geniv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_geniv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5626,7 +5620,7 @@ impl XcbGlx {
         coord: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_geniv_cookie_t {
-        call!(self, xcb_glx_get_tex_geniv)(c, context_tag, coord, pname)
+        sym!(self, xcb_glx_get_tex_geniv)(c, context_tag, coord, pname)
     }
 
     #[inline]
@@ -5637,7 +5631,7 @@ impl XcbGlx {
         coord: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_geniv_cookie_t {
-        call!(self, xcb_glx_get_tex_geniv_unchecked)(c, context_tag, coord, pname)
+        sym!(self, xcb_glx_get_tex_geniv_unchecked)(c, context_tag, coord, pname)
     }
 
     #[inline]
@@ -5645,7 +5639,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_image_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_tex_image_data)(R)
+        sym!(self, xcb_glx_get_tex_image_data)(R)
     }
 
     #[inline]
@@ -5653,7 +5647,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_image_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_image_data_length)(R)
+        sym!(self, xcb_glx_get_tex_image_data_length)(R)
     }
 
     #[inline]
@@ -5661,7 +5655,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_image_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_image_data_end)(R)
+        sym!(self, xcb_glx_get_tex_image_data_end)(R)
     }
 
     #[inline]
@@ -5671,7 +5665,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_image_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_image_reply_t {
-        call!(self, xcb_glx_get_tex_image_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_image_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5685,7 +5679,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_tex_image_cookie_t {
-        call!(self, xcb_glx_get_tex_image)(c, context_tag, target, level, format, type_, swap_bytes)
+        sym!(self, xcb_glx_get_tex_image)(c, context_tag, target, level, format, type_, swap_bytes)
     }
 
     #[inline]
@@ -5699,7 +5693,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_tex_image_cookie_t {
-        call!(self, xcb_glx_get_tex_image_unchecked)(
+        sym!(self, xcb_glx_get_tex_image_unchecked)(
             c,
             context_tag,
             target,
@@ -5715,7 +5709,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_parameterfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_tex_parameterfv_data)(R)
+        sym!(self, xcb_glx_get_tex_parameterfv_data)(R)
     }
 
     #[inline]
@@ -5723,7 +5717,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_parameterfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_parameterfv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_parameterfv_data_length)(R)
     }
 
     #[inline]
@@ -5731,7 +5725,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_parameterfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_parameterfv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_parameterfv_data_end)(R)
     }
 
     #[inline]
@@ -5741,7 +5735,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_parameterfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_parameterfv_reply_t {
-        call!(self, xcb_glx_get_tex_parameterfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_parameterfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5752,7 +5746,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_tex_parameterfv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_parameterfv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5763,7 +5757,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_tex_parameterfv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_parameterfv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5771,7 +5765,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_parameteriv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_tex_parameteriv_data)(R)
+        sym!(self, xcb_glx_get_tex_parameteriv_data)(R)
     }
 
     #[inline]
@@ -5779,7 +5773,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_parameteriv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_parameteriv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_parameteriv_data_length)(R)
     }
 
     #[inline]
@@ -5787,7 +5781,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_parameteriv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_parameteriv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_parameteriv_data_end)(R)
     }
 
     #[inline]
@@ -5797,7 +5791,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_parameteriv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_parameteriv_reply_t {
-        call!(self, xcb_glx_get_tex_parameteriv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_parameteriv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5808,7 +5802,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_tex_parameteriv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_parameteriv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5819,7 +5813,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_tex_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_tex_parameteriv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_tex_parameteriv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -5827,7 +5821,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_level_parameterfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_tex_level_parameterfv_data)(R)
+        sym!(self, xcb_glx_get_tex_level_parameterfv_data)(R)
     }
 
     #[inline]
@@ -5835,7 +5829,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_level_parameterfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_level_parameterfv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_level_parameterfv_data_length)(R)
     }
 
     #[inline]
@@ -5843,7 +5837,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_level_parameterfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_level_parameterfv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_level_parameterfv_data_end)(R)
     }
 
     #[inline]
@@ -5853,7 +5847,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_level_parameterfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_level_parameterfv_reply_t {
-        call!(self, xcb_glx_get_tex_level_parameterfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_level_parameterfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5865,7 +5859,7 @@ impl XcbGlx {
         level: i32,
         pname: u32,
     ) -> xcb_glx_get_tex_level_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_tex_level_parameterfv)(c, context_tag, target, level, pname)
+        sym!(self, xcb_glx_get_tex_level_parameterfv)(c, context_tag, target, level, pname)
     }
 
     #[inline]
@@ -5877,7 +5871,7 @@ impl XcbGlx {
         level: i32,
         pname: u32,
     ) -> xcb_glx_get_tex_level_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_tex_level_parameterfv_unchecked)(
+        sym!(self, xcb_glx_get_tex_level_parameterfv_unchecked)(
             c,
             context_tag,
             target,
@@ -5891,7 +5885,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_level_parameteriv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_tex_level_parameteriv_data)(R)
+        sym!(self, xcb_glx_get_tex_level_parameteriv_data)(R)
     }
 
     #[inline]
@@ -5899,7 +5893,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_level_parameteriv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_tex_level_parameteriv_data_length)(R)
+        sym!(self, xcb_glx_get_tex_level_parameteriv_data_length)(R)
     }
 
     #[inline]
@@ -5907,7 +5901,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_tex_level_parameteriv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_tex_level_parameteriv_data_end)(R)
+        sym!(self, xcb_glx_get_tex_level_parameteriv_data_end)(R)
     }
 
     #[inline]
@@ -5917,7 +5911,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_tex_level_parameteriv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_tex_level_parameteriv_reply_t {
-        call!(self, xcb_glx_get_tex_level_parameteriv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_tex_level_parameteriv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5929,7 +5923,7 @@ impl XcbGlx {
         level: i32,
         pname: u32,
     ) -> xcb_glx_get_tex_level_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_tex_level_parameteriv)(c, context_tag, target, level, pname)
+        sym!(self, xcb_glx_get_tex_level_parameteriv)(c, context_tag, target, level, pname)
     }
 
     #[inline]
@@ -5941,7 +5935,7 @@ impl XcbGlx {
         level: i32,
         pname: u32,
     ) -> xcb_glx_get_tex_level_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_tex_level_parameteriv_unchecked)(
+        sym!(self, xcb_glx_get_tex_level_parameteriv_unchecked)(
             c,
             context_tag,
             target,
@@ -5957,7 +5951,7 @@ impl XcbGlx {
         cookie: xcb_glx_is_list_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_is_list_reply_t {
-        call!(self, xcb_glx_is_list_reply)(c, cookie, error)
+        sym!(self, xcb_glx_is_list_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5967,7 +5961,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         list: u32,
     ) -> xcb_glx_is_list_cookie_t {
-        call!(self, xcb_glx_is_list)(c, context_tag, list)
+        sym!(self, xcb_glx_is_list)(c, context_tag, list)
     }
 
     #[inline]
@@ -5977,7 +5971,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         list: u32,
     ) -> xcb_glx_is_list_cookie_t {
-        call!(self, xcb_glx_is_list_unchecked)(c, context_tag, list)
+        sym!(self, xcb_glx_is_list_unchecked)(c, context_tag, list)
     }
 
     #[inline]
@@ -5986,7 +5980,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_flush)(c, context_tag)
+        sym!(self, xcb_glx_flush)(c, context_tag)
     }
 
     #[inline]
@@ -5995,7 +5989,7 @@ impl XcbGlx {
         c: *mut xcb_connection_t,
         context_tag: xcb_glx_context_tag_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_flush_checked)(c, context_tag)
+        sym!(self, xcb_glx_flush_checked)(c, context_tag)
     }
 
     #[inline]
@@ -6003,7 +5997,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_are_textures_resident_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_are_textures_resident_data)(R)
+        sym!(self, xcb_glx_are_textures_resident_data)(R)
     }
 
     #[inline]
@@ -6011,7 +6005,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_are_textures_resident_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_are_textures_resident_data_length)(R)
+        sym!(self, xcb_glx_are_textures_resident_data_length)(R)
     }
 
     #[inline]
@@ -6019,7 +6013,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_are_textures_resident_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_are_textures_resident_data_end)(R)
+        sym!(self, xcb_glx_are_textures_resident_data_end)(R)
     }
 
     #[inline]
@@ -6029,7 +6023,7 @@ impl XcbGlx {
         cookie: xcb_glx_are_textures_resident_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_are_textures_resident_reply_t {
-        call!(self, xcb_glx_are_textures_resident_reply)(c, cookie, error)
+        sym!(self, xcb_glx_are_textures_resident_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6040,7 +6034,7 @@ impl XcbGlx {
         n: i32,
         textures: *const u32,
     ) -> xcb_glx_are_textures_resident_cookie_t {
-        call!(self, xcb_glx_are_textures_resident)(c, context_tag, n, textures)
+        sym!(self, xcb_glx_are_textures_resident)(c, context_tag, n, textures)
     }
 
     #[inline]
@@ -6051,7 +6045,7 @@ impl XcbGlx {
         n: i32,
         textures: *const u32,
     ) -> xcb_glx_are_textures_resident_cookie_t {
-        call!(self, xcb_glx_are_textures_resident_unchecked)(c, context_tag, n, textures)
+        sym!(self, xcb_glx_are_textures_resident_unchecked)(c, context_tag, n, textures)
     }
 
     #[inline]
@@ -6062,7 +6056,7 @@ impl XcbGlx {
         n: i32,
         textures: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_textures)(c, context_tag, n, textures)
+        sym!(self, xcb_glx_delete_textures)(c, context_tag, n, textures)
     }
 
     #[inline]
@@ -6073,7 +6067,7 @@ impl XcbGlx {
         n: i32,
         textures: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_textures_checked)(c, context_tag, n, textures)
+        sym!(self, xcb_glx_delete_textures_checked)(c, context_tag, n, textures)
     }
 
     #[inline]
@@ -6081,7 +6075,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_gen_textures_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_gen_textures_data)(R)
+        sym!(self, xcb_glx_gen_textures_data)(R)
     }
 
     #[inline]
@@ -6089,7 +6083,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_gen_textures_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_gen_textures_data_length)(R)
+        sym!(self, xcb_glx_gen_textures_data_length)(R)
     }
 
     #[inline]
@@ -6097,7 +6091,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_gen_textures_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_gen_textures_data_end)(R)
+        sym!(self, xcb_glx_gen_textures_data_end)(R)
     }
 
     #[inline]
@@ -6107,7 +6101,7 @@ impl XcbGlx {
         cookie: xcb_glx_gen_textures_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_gen_textures_reply_t {
-        call!(self, xcb_glx_gen_textures_reply)(c, cookie, error)
+        sym!(self, xcb_glx_gen_textures_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6117,7 +6111,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         n: i32,
     ) -> xcb_glx_gen_textures_cookie_t {
-        call!(self, xcb_glx_gen_textures)(c, context_tag, n)
+        sym!(self, xcb_glx_gen_textures)(c, context_tag, n)
     }
 
     #[inline]
@@ -6127,7 +6121,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         n: i32,
     ) -> xcb_glx_gen_textures_cookie_t {
-        call!(self, xcb_glx_gen_textures_unchecked)(c, context_tag, n)
+        sym!(self, xcb_glx_gen_textures_unchecked)(c, context_tag, n)
     }
 
     #[inline]
@@ -6137,7 +6131,7 @@ impl XcbGlx {
         cookie: xcb_glx_is_texture_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_is_texture_reply_t {
-        call!(self, xcb_glx_is_texture_reply)(c, cookie, error)
+        sym!(self, xcb_glx_is_texture_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6147,7 +6141,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         texture: u32,
     ) -> xcb_glx_is_texture_cookie_t {
-        call!(self, xcb_glx_is_texture)(c, context_tag, texture)
+        sym!(self, xcb_glx_is_texture)(c, context_tag, texture)
     }
 
     #[inline]
@@ -6157,7 +6151,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         texture: u32,
     ) -> xcb_glx_is_texture_cookie_t {
-        call!(self, xcb_glx_is_texture_unchecked)(c, context_tag, texture)
+        sym!(self, xcb_glx_is_texture_unchecked)(c, context_tag, texture)
     }
 
     #[inline]
@@ -6165,7 +6159,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_color_table_data)(R)
+        sym!(self, xcb_glx_get_color_table_data)(R)
     }
 
     #[inline]
@@ -6173,7 +6167,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_color_table_data_length)(R)
+        sym!(self, xcb_glx_get_color_table_data_length)(R)
     }
 
     #[inline]
@@ -6181,7 +6175,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_color_table_data_end)(R)
+        sym!(self, xcb_glx_get_color_table_data_end)(R)
     }
 
     #[inline]
@@ -6191,7 +6185,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_color_table_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_color_table_reply_t {
-        call!(self, xcb_glx_get_color_table_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_color_table_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6204,7 +6198,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_color_table_cookie_t {
-        call!(self, xcb_glx_get_color_table)(c, context_tag, target, format, type_, swap_bytes)
+        sym!(self, xcb_glx_get_color_table)(c, context_tag, target, format, type_, swap_bytes)
     }
 
     #[inline]
@@ -6217,7 +6211,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_color_table_cookie_t {
-        call!(self, xcb_glx_get_color_table_unchecked)(
+        sym!(self, xcb_glx_get_color_table_unchecked)(
             c,
             context_tag,
             target,
@@ -6232,7 +6226,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_parameterfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_color_table_parameterfv_data)(R)
+        sym!(self, xcb_glx_get_color_table_parameterfv_data)(R)
     }
 
     #[inline]
@@ -6240,7 +6234,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_parameterfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_color_table_parameterfv_data_length)(R)
+        sym!(self, xcb_glx_get_color_table_parameterfv_data_length)(R)
     }
 
     #[inline]
@@ -6248,7 +6242,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_parameterfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_color_table_parameterfv_data_end)(R)
+        sym!(self, xcb_glx_get_color_table_parameterfv_data_end)(R)
     }
 
     #[inline]
@@ -6258,7 +6252,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_color_table_parameterfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_color_table_parameterfv_reply_t {
-        call!(self, xcb_glx_get_color_table_parameterfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_color_table_parameterfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6269,7 +6263,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_color_table_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_color_table_parameterfv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_color_table_parameterfv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6280,7 +6274,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_color_table_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_color_table_parameterfv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_color_table_parameterfv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6288,7 +6282,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_parameteriv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_color_table_parameteriv_data)(R)
+        sym!(self, xcb_glx_get_color_table_parameteriv_data)(R)
     }
 
     #[inline]
@@ -6296,7 +6290,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_parameteriv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_color_table_parameteriv_data_length)(R)
+        sym!(self, xcb_glx_get_color_table_parameteriv_data_length)(R)
     }
 
     #[inline]
@@ -6304,7 +6298,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_color_table_parameteriv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_color_table_parameteriv_data_end)(R)
+        sym!(self, xcb_glx_get_color_table_parameteriv_data_end)(R)
     }
 
     #[inline]
@@ -6314,7 +6308,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_color_table_parameteriv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_color_table_parameteriv_reply_t {
-        call!(self, xcb_glx_get_color_table_parameteriv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_color_table_parameteriv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6325,7 +6319,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_color_table_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_color_table_parameteriv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_color_table_parameteriv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6336,7 +6330,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_color_table_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_color_table_parameteriv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_color_table_parameteriv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6344,7 +6338,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_filter_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_convolution_filter_data)(R)
+        sym!(self, xcb_glx_get_convolution_filter_data)(R)
     }
 
     #[inline]
@@ -6352,7 +6346,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_filter_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_convolution_filter_data_length)(R)
+        sym!(self, xcb_glx_get_convolution_filter_data_length)(R)
     }
 
     #[inline]
@@ -6360,7 +6354,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_filter_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_convolution_filter_data_end)(R)
+        sym!(self, xcb_glx_get_convolution_filter_data_end)(R)
     }
 
     #[inline]
@@ -6370,7 +6364,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_convolution_filter_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_convolution_filter_reply_t {
-        call!(self, xcb_glx_get_convolution_filter_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_convolution_filter_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6383,7 +6377,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_convolution_filter_cookie_t {
-        call!(self, xcb_glx_get_convolution_filter)(
+        sym!(self, xcb_glx_get_convolution_filter)(
             c,
             context_tag,
             target,
@@ -6403,7 +6397,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_convolution_filter_cookie_t {
-        call!(self, xcb_glx_get_convolution_filter_unchecked)(
+        sym!(self, xcb_glx_get_convolution_filter_unchecked)(
             c,
             context_tag,
             target,
@@ -6418,7 +6412,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_parameterfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_convolution_parameterfv_data)(R)
+        sym!(self, xcb_glx_get_convolution_parameterfv_data)(R)
     }
 
     #[inline]
@@ -6426,7 +6420,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_parameterfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_convolution_parameterfv_data_length)(R)
+        sym!(self, xcb_glx_get_convolution_parameterfv_data_length)(R)
     }
 
     #[inline]
@@ -6434,7 +6428,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_parameterfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_convolution_parameterfv_data_end)(R)
+        sym!(self, xcb_glx_get_convolution_parameterfv_data_end)(R)
     }
 
     #[inline]
@@ -6444,7 +6438,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_convolution_parameterfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_convolution_parameterfv_reply_t {
-        call!(self, xcb_glx_get_convolution_parameterfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_convolution_parameterfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6455,7 +6449,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_convolution_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_convolution_parameterfv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_convolution_parameterfv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6466,7 +6460,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_convolution_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_convolution_parameterfv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_convolution_parameterfv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6474,7 +6468,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_parameteriv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_convolution_parameteriv_data)(R)
+        sym!(self, xcb_glx_get_convolution_parameteriv_data)(R)
     }
 
     #[inline]
@@ -6482,7 +6476,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_parameteriv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_convolution_parameteriv_data_length)(R)
+        sym!(self, xcb_glx_get_convolution_parameteriv_data_length)(R)
     }
 
     #[inline]
@@ -6490,7 +6484,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_convolution_parameteriv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_convolution_parameteriv_data_end)(R)
+        sym!(self, xcb_glx_get_convolution_parameteriv_data_end)(R)
     }
 
     #[inline]
@@ -6500,7 +6494,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_convolution_parameteriv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_convolution_parameteriv_reply_t {
-        call!(self, xcb_glx_get_convolution_parameteriv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_convolution_parameteriv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6511,7 +6505,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_convolution_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_convolution_parameteriv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_convolution_parameteriv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6522,7 +6516,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_convolution_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_convolution_parameteriv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_convolution_parameteriv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6530,7 +6524,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_separable_filter_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_separable_filter_rows_and_cols)(R)
+        sym!(self, xcb_glx_get_separable_filter_rows_and_cols)(R)
     }
 
     #[inline]
@@ -6538,7 +6532,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_separable_filter_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_separable_filter_rows_and_cols_length)(R)
+        sym!(self, xcb_glx_get_separable_filter_rows_and_cols_length)(R)
     }
 
     #[inline]
@@ -6546,7 +6540,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_separable_filter_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_separable_filter_rows_and_cols_end)(R)
+        sym!(self, xcb_glx_get_separable_filter_rows_and_cols_end)(R)
     }
 
     #[inline]
@@ -6556,7 +6550,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_separable_filter_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_separable_filter_reply_t {
-        call!(self, xcb_glx_get_separable_filter_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_separable_filter_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6569,7 +6563,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_separable_filter_cookie_t {
-        call!(self, xcb_glx_get_separable_filter)(c, context_tag, target, format, type_, swap_bytes)
+        sym!(self, xcb_glx_get_separable_filter)(c, context_tag, target, format, type_, swap_bytes)
     }
 
     #[inline]
@@ -6582,7 +6576,7 @@ impl XcbGlx {
         type_: u32,
         swap_bytes: u8,
     ) -> xcb_glx_get_separable_filter_cookie_t {
-        call!(self, xcb_glx_get_separable_filter_unchecked)(
+        sym!(self, xcb_glx_get_separable_filter_unchecked)(
             c,
             context_tag,
             target,
@@ -6597,7 +6591,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_histogram_data)(R)
+        sym!(self, xcb_glx_get_histogram_data)(R)
     }
 
     #[inline]
@@ -6605,7 +6599,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_histogram_data_length)(R)
+        sym!(self, xcb_glx_get_histogram_data_length)(R)
     }
 
     #[inline]
@@ -6613,7 +6607,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_histogram_data_end)(R)
+        sym!(self, xcb_glx_get_histogram_data_end)(R)
     }
 
     #[inline]
@@ -6623,7 +6617,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_histogram_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_histogram_reply_t {
-        call!(self, xcb_glx_get_histogram_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_histogram_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6637,7 +6631,7 @@ impl XcbGlx {
         swap_bytes: u8,
         reset: u8,
     ) -> xcb_glx_get_histogram_cookie_t {
-        call!(self, xcb_glx_get_histogram)(c, context_tag, target, format, type_, swap_bytes, reset)
+        sym!(self, xcb_glx_get_histogram)(c, context_tag, target, format, type_, swap_bytes, reset)
     }
 
     #[inline]
@@ -6651,7 +6645,7 @@ impl XcbGlx {
         swap_bytes: u8,
         reset: u8,
     ) -> xcb_glx_get_histogram_cookie_t {
-        call!(self, xcb_glx_get_histogram_unchecked)(
+        sym!(self, xcb_glx_get_histogram_unchecked)(
             c,
             context_tag,
             target,
@@ -6667,7 +6661,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_parameterfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_histogram_parameterfv_data)(R)
+        sym!(self, xcb_glx_get_histogram_parameterfv_data)(R)
     }
 
     #[inline]
@@ -6675,7 +6669,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_parameterfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_histogram_parameterfv_data_length)(R)
+        sym!(self, xcb_glx_get_histogram_parameterfv_data_length)(R)
     }
 
     #[inline]
@@ -6683,7 +6677,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_parameterfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_histogram_parameterfv_data_end)(R)
+        sym!(self, xcb_glx_get_histogram_parameterfv_data_end)(R)
     }
 
     #[inline]
@@ -6693,7 +6687,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_histogram_parameterfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_histogram_parameterfv_reply_t {
-        call!(self, xcb_glx_get_histogram_parameterfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_histogram_parameterfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6704,7 +6698,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_histogram_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_histogram_parameterfv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_histogram_parameterfv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6715,7 +6709,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_histogram_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_histogram_parameterfv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_histogram_parameterfv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6723,7 +6717,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_parameteriv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_histogram_parameteriv_data)(R)
+        sym!(self, xcb_glx_get_histogram_parameteriv_data)(R)
     }
 
     #[inline]
@@ -6731,7 +6725,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_parameteriv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_histogram_parameteriv_data_length)(R)
+        sym!(self, xcb_glx_get_histogram_parameteriv_data_length)(R)
     }
 
     #[inline]
@@ -6739,7 +6733,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_histogram_parameteriv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_histogram_parameteriv_data_end)(R)
+        sym!(self, xcb_glx_get_histogram_parameteriv_data_end)(R)
     }
 
     #[inline]
@@ -6749,7 +6743,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_histogram_parameteriv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_histogram_parameteriv_reply_t {
-        call!(self, xcb_glx_get_histogram_parameteriv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_histogram_parameteriv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6760,7 +6754,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_histogram_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_histogram_parameteriv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_histogram_parameteriv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6771,12 +6765,12 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_histogram_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_histogram_parameteriv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_histogram_parameteriv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
     pub unsafe fn xcb_glx_get_minmax_data(&self, R: *const xcb_glx_get_minmax_reply_t) -> *mut u8 {
-        call!(self, xcb_glx_get_minmax_data)(R)
+        sym!(self, xcb_glx_get_minmax_data)(R)
     }
 
     #[inline]
@@ -6784,7 +6778,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_minmax_data_length)(R)
+        sym!(self, xcb_glx_get_minmax_data_length)(R)
     }
 
     #[inline]
@@ -6792,7 +6786,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_minmax_data_end)(R)
+        sym!(self, xcb_glx_get_minmax_data_end)(R)
     }
 
     #[inline]
@@ -6802,7 +6796,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_minmax_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_minmax_reply_t {
-        call!(self, xcb_glx_get_minmax_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_minmax_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6816,7 +6810,7 @@ impl XcbGlx {
         swap_bytes: u8,
         reset: u8,
     ) -> xcb_glx_get_minmax_cookie_t {
-        call!(self, xcb_glx_get_minmax)(c, context_tag, target, format, type_, swap_bytes, reset)
+        sym!(self, xcb_glx_get_minmax)(c, context_tag, target, format, type_, swap_bytes, reset)
     }
 
     #[inline]
@@ -6830,7 +6824,7 @@ impl XcbGlx {
         swap_bytes: u8,
         reset: u8,
     ) -> xcb_glx_get_minmax_cookie_t {
-        call!(self, xcb_glx_get_minmax_unchecked)(
+        sym!(self, xcb_glx_get_minmax_unchecked)(
             c,
             context_tag,
             target,
@@ -6846,7 +6840,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_parameterfv_reply_t,
     ) -> *mut xcb_glx_float32_t {
-        call!(self, xcb_glx_get_minmax_parameterfv_data)(R)
+        sym!(self, xcb_glx_get_minmax_parameterfv_data)(R)
     }
 
     #[inline]
@@ -6854,7 +6848,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_parameterfv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_minmax_parameterfv_data_length)(R)
+        sym!(self, xcb_glx_get_minmax_parameterfv_data_length)(R)
     }
 
     #[inline]
@@ -6862,7 +6856,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_parameterfv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_minmax_parameterfv_data_end)(R)
+        sym!(self, xcb_glx_get_minmax_parameterfv_data_end)(R)
     }
 
     #[inline]
@@ -6872,7 +6866,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_minmax_parameterfv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_minmax_parameterfv_reply_t {
-        call!(self, xcb_glx_get_minmax_parameterfv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_minmax_parameterfv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6883,7 +6877,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_minmax_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_minmax_parameterfv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_minmax_parameterfv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6894,7 +6888,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_minmax_parameterfv_cookie_t {
-        call!(self, xcb_glx_get_minmax_parameterfv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_minmax_parameterfv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6902,7 +6896,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_parameteriv_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_minmax_parameteriv_data)(R)
+        sym!(self, xcb_glx_get_minmax_parameteriv_data)(R)
     }
 
     #[inline]
@@ -6910,7 +6904,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_parameteriv_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_minmax_parameteriv_data_length)(R)
+        sym!(self, xcb_glx_get_minmax_parameteriv_data_length)(R)
     }
 
     #[inline]
@@ -6918,7 +6912,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_minmax_parameteriv_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_minmax_parameteriv_data_end)(R)
+        sym!(self, xcb_glx_get_minmax_parameteriv_data_end)(R)
     }
 
     #[inline]
@@ -6928,7 +6922,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_minmax_parameteriv_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_minmax_parameteriv_reply_t {
-        call!(self, xcb_glx_get_minmax_parameteriv_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_minmax_parameteriv_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6939,7 +6933,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_minmax_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_minmax_parameteriv)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_minmax_parameteriv)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6950,7 +6944,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_minmax_parameteriv_cookie_t {
-        call!(self, xcb_glx_get_minmax_parameteriv_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_minmax_parameteriv_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -6958,7 +6952,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_compressed_tex_image_arb_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_glx_get_compressed_tex_image_arb_data)(R)
+        sym!(self, xcb_glx_get_compressed_tex_image_arb_data)(R)
     }
 
     #[inline]
@@ -6966,7 +6960,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_compressed_tex_image_arb_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_compressed_tex_image_arb_data_length)(R)
+        sym!(self, xcb_glx_get_compressed_tex_image_arb_data_length)(R)
     }
 
     #[inline]
@@ -6974,7 +6968,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_compressed_tex_image_arb_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_compressed_tex_image_arb_data_end)(R)
+        sym!(self, xcb_glx_get_compressed_tex_image_arb_data_end)(R)
     }
 
     #[inline]
@@ -6984,7 +6978,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_compressed_tex_image_arb_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_compressed_tex_image_arb_reply_t {
-        call!(self, xcb_glx_get_compressed_tex_image_arb_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_compressed_tex_image_arb_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6995,7 +6989,7 @@ impl XcbGlx {
         target: u32,
         level: i32,
     ) -> xcb_glx_get_compressed_tex_image_arb_cookie_t {
-        call!(self, xcb_glx_get_compressed_tex_image_arb)(c, context_tag, target, level)
+        sym!(self, xcb_glx_get_compressed_tex_image_arb)(c, context_tag, target, level)
     }
 
     #[inline]
@@ -7006,7 +7000,7 @@ impl XcbGlx {
         target: u32,
         level: i32,
     ) -> xcb_glx_get_compressed_tex_image_arb_cookie_t {
-        call!(self, xcb_glx_get_compressed_tex_image_arb_unchecked)(c, context_tag, target, level)
+        sym!(self, xcb_glx_get_compressed_tex_image_arb_unchecked)(c, context_tag, target, level)
     }
 
     #[inline]
@@ -7017,7 +7011,7 @@ impl XcbGlx {
         n: i32,
         ids: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_queries_arb)(c, context_tag, n, ids)
+        sym!(self, xcb_glx_delete_queries_arb)(c, context_tag, n, ids)
     }
 
     #[inline]
@@ -7028,7 +7022,7 @@ impl XcbGlx {
         n: i32,
         ids: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_glx_delete_queries_arb_checked)(c, context_tag, n, ids)
+        sym!(self, xcb_glx_delete_queries_arb_checked)(c, context_tag, n, ids)
     }
 
     #[inline]
@@ -7036,7 +7030,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_gen_queries_arb_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_gen_queries_arb_data)(R)
+        sym!(self, xcb_glx_gen_queries_arb_data)(R)
     }
 
     #[inline]
@@ -7044,7 +7038,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_gen_queries_arb_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_gen_queries_arb_data_length)(R)
+        sym!(self, xcb_glx_gen_queries_arb_data_length)(R)
     }
 
     #[inline]
@@ -7052,7 +7046,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_gen_queries_arb_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_gen_queries_arb_data_end)(R)
+        sym!(self, xcb_glx_gen_queries_arb_data_end)(R)
     }
 
     #[inline]
@@ -7062,7 +7056,7 @@ impl XcbGlx {
         cookie: xcb_glx_gen_queries_arb_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_gen_queries_arb_reply_t {
-        call!(self, xcb_glx_gen_queries_arb_reply)(c, cookie, error)
+        sym!(self, xcb_glx_gen_queries_arb_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7072,7 +7066,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         n: i32,
     ) -> xcb_glx_gen_queries_arb_cookie_t {
-        call!(self, xcb_glx_gen_queries_arb)(c, context_tag, n)
+        sym!(self, xcb_glx_gen_queries_arb)(c, context_tag, n)
     }
 
     #[inline]
@@ -7082,7 +7076,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         n: i32,
     ) -> xcb_glx_gen_queries_arb_cookie_t {
-        call!(self, xcb_glx_gen_queries_arb_unchecked)(c, context_tag, n)
+        sym!(self, xcb_glx_gen_queries_arb_unchecked)(c, context_tag, n)
     }
 
     #[inline]
@@ -7092,7 +7086,7 @@ impl XcbGlx {
         cookie: xcb_glx_is_query_arb_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_is_query_arb_reply_t {
-        call!(self, xcb_glx_is_query_arb_reply)(c, cookie, error)
+        sym!(self, xcb_glx_is_query_arb_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7102,7 +7096,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         id: u32,
     ) -> xcb_glx_is_query_arb_cookie_t {
-        call!(self, xcb_glx_is_query_arb)(c, context_tag, id)
+        sym!(self, xcb_glx_is_query_arb)(c, context_tag, id)
     }
 
     #[inline]
@@ -7112,7 +7106,7 @@ impl XcbGlx {
         context_tag: xcb_glx_context_tag_t,
         id: u32,
     ) -> xcb_glx_is_query_arb_cookie_t {
-        call!(self, xcb_glx_is_query_arb_unchecked)(c, context_tag, id)
+        sym!(self, xcb_glx_is_query_arb_unchecked)(c, context_tag, id)
     }
 
     #[inline]
@@ -7120,7 +7114,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_queryiv_arb_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_queryiv_arb_data)(R)
+        sym!(self, xcb_glx_get_queryiv_arb_data)(R)
     }
 
     #[inline]
@@ -7128,7 +7122,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_queryiv_arb_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_queryiv_arb_data_length)(R)
+        sym!(self, xcb_glx_get_queryiv_arb_data_length)(R)
     }
 
     #[inline]
@@ -7136,7 +7130,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_queryiv_arb_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_queryiv_arb_data_end)(R)
+        sym!(self, xcb_glx_get_queryiv_arb_data_end)(R)
     }
 
     #[inline]
@@ -7146,7 +7140,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_queryiv_arb_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_queryiv_arb_reply_t {
-        call!(self, xcb_glx_get_queryiv_arb_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_queryiv_arb_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7157,7 +7151,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_queryiv_arb_cookie_t {
-        call!(self, xcb_glx_get_queryiv_arb)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_queryiv_arb)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -7168,7 +7162,7 @@ impl XcbGlx {
         target: u32,
         pname: u32,
     ) -> xcb_glx_get_queryiv_arb_cookie_t {
-        call!(self, xcb_glx_get_queryiv_arb_unchecked)(c, context_tag, target, pname)
+        sym!(self, xcb_glx_get_queryiv_arb_unchecked)(c, context_tag, target, pname)
     }
 
     #[inline]
@@ -7176,7 +7170,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_query_objectiv_arb_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_glx_get_query_objectiv_arb_data)(R)
+        sym!(self, xcb_glx_get_query_objectiv_arb_data)(R)
     }
 
     #[inline]
@@ -7184,7 +7178,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_query_objectiv_arb_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_query_objectiv_arb_data_length)(R)
+        sym!(self, xcb_glx_get_query_objectiv_arb_data_length)(R)
     }
 
     #[inline]
@@ -7192,7 +7186,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_query_objectiv_arb_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_query_objectiv_arb_data_end)(R)
+        sym!(self, xcb_glx_get_query_objectiv_arb_data_end)(R)
     }
 
     #[inline]
@@ -7202,7 +7196,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_query_objectiv_arb_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_query_objectiv_arb_reply_t {
-        call!(self, xcb_glx_get_query_objectiv_arb_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_query_objectiv_arb_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7213,7 +7207,7 @@ impl XcbGlx {
         id: u32,
         pname: u32,
     ) -> xcb_glx_get_query_objectiv_arb_cookie_t {
-        call!(self, xcb_glx_get_query_objectiv_arb)(c, context_tag, id, pname)
+        sym!(self, xcb_glx_get_query_objectiv_arb)(c, context_tag, id, pname)
     }
 
     #[inline]
@@ -7224,7 +7218,7 @@ impl XcbGlx {
         id: u32,
         pname: u32,
     ) -> xcb_glx_get_query_objectiv_arb_cookie_t {
-        call!(self, xcb_glx_get_query_objectiv_arb_unchecked)(c, context_tag, id, pname)
+        sym!(self, xcb_glx_get_query_objectiv_arb_unchecked)(c, context_tag, id, pname)
     }
 
     #[inline]
@@ -7232,7 +7226,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_query_objectuiv_arb_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_glx_get_query_objectuiv_arb_data)(R)
+        sym!(self, xcb_glx_get_query_objectuiv_arb_data)(R)
     }
 
     #[inline]
@@ -7240,7 +7234,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_query_objectuiv_arb_reply_t,
     ) -> c_int {
-        call!(self, xcb_glx_get_query_objectuiv_arb_data_length)(R)
+        sym!(self, xcb_glx_get_query_objectuiv_arb_data_length)(R)
     }
 
     #[inline]
@@ -7248,7 +7242,7 @@ impl XcbGlx {
         &self,
         R: *const xcb_glx_get_query_objectuiv_arb_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_glx_get_query_objectuiv_arb_data_end)(R)
+        sym!(self, xcb_glx_get_query_objectuiv_arb_data_end)(R)
     }
 
     #[inline]
@@ -7258,7 +7252,7 @@ impl XcbGlx {
         cookie: xcb_glx_get_query_objectuiv_arb_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_glx_get_query_objectuiv_arb_reply_t {
-        call!(self, xcb_glx_get_query_objectuiv_arb_reply)(c, cookie, error)
+        sym!(self, xcb_glx_get_query_objectuiv_arb_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7269,7 +7263,7 @@ impl XcbGlx {
         id: u32,
         pname: u32,
     ) -> xcb_glx_get_query_objectuiv_arb_cookie_t {
-        call!(self, xcb_glx_get_query_objectuiv_arb)(c, context_tag, id, pname)
+        sym!(self, xcb_glx_get_query_objectuiv_arb)(c, context_tag, id, pname)
     }
 
     #[inline]
@@ -7280,2431 +7274,6 @@ impl XcbGlx {
         id: u32,
         pname: u32,
     ) -> xcb_glx_get_query_objectuiv_arb_cookie_t {
-        call!(self, xcb_glx_get_query_objectuiv_arb_unchecked)(c, context_tag, id, pname)
+        sym!(self, xcb_glx_get_query_objectuiv_arb_unchecked)(c, context_tag, id, pname)
     }
-}
-
-pub struct XcbGlx {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_glx_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_glx_pixmap_next: LazySymbol<unsafe fn(i: *mut xcb_glx_pixmap_iterator_t)>,
-    pub(crate) xcb_glx_pixmap_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_pixmap_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_context_next: LazySymbol<unsafe fn(i: *mut xcb_glx_context_iterator_t)>,
-    pub(crate) xcb_glx_context_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_context_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_pbuffer_next: LazySymbol<unsafe fn(i: *mut xcb_glx_pbuffer_iterator_t)>,
-    pub(crate) xcb_glx_pbuffer_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_pbuffer_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_window_next: LazySymbol<unsafe fn(i: *mut xcb_glx_window_iterator_t)>,
-    pub(crate) xcb_glx_window_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_window_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_fbconfig_next: LazySymbol<unsafe fn(i: *mut xcb_glx_fbconfig_iterator_t)>,
-    pub(crate) xcb_glx_fbconfig_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_fbconfig_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_drawable_next: LazySymbol<unsafe fn(i: *mut xcb_glx_drawable_iterator_t)>,
-    pub(crate) xcb_glx_drawable_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_drawable_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_float32_next: LazySymbol<unsafe fn(i: *mut xcb_glx_float32_iterator_t)>,
-    pub(crate) xcb_glx_float32_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_float32_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_float64_next: LazySymbol<unsafe fn(i: *mut xcb_glx_float64_iterator_t)>,
-    pub(crate) xcb_glx_float64_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_float64_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_bool32_next: LazySymbol<unsafe fn(i: *mut xcb_glx_bool32_iterator_t)>,
-    pub(crate) xcb_glx_bool32_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_bool32_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_context_tag_next:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_context_tag_iterator_t)>,
-    pub(crate) xcb_glx_context_tag_end:
-        LazySymbol<unsafe fn(i: *mut xcb_glx_context_tag_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_render: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_render_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_render_large: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            request_num: u16,
-            request_total: u16,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_render_large_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            request_num: u16,
-            request_total: u16,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-            visual: xcb_visualid_t,
-            screen: u32,
-            share_list: xcb_glx_context_t,
-            is_direct: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-            visual: xcb_visualid_t,
-            screen: u32,
-            share_list: xcb_glx_context_t,
-            is_direct: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context: xcb_glx_context_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_context_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context: xcb_glx_context_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_make_current_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_make_current_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_make_current_reply_t,
-    >,
-    pub(crate) xcb_glx_make_current: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_glx_drawable_t,
-            context: xcb_glx_context_t,
-            old_context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_glx_make_current_cookie_t,
-    >,
-    pub(crate) xcb_glx_make_current_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_glx_drawable_t,
-            context: xcb_glx_context_t,
-            old_context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_glx_make_current_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_direct_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_is_direct_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_is_direct_reply_t,
-    >,
-    pub(crate) xcb_glx_is_direct: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-        ) -> xcb_glx_is_direct_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_direct_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-        ) -> xcb_glx_is_direct_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_query_version_reply_t,
-    >,
-    pub(crate) xcb_glx_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_glx_query_version_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_glx_query_version_cookie_t,
-    >,
-    pub(crate) xcb_glx_wait_gl: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_wait_gl_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_wait_x: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_wait_x_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_copy_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src: xcb_glx_context_t,
-            dest: xcb_glx_context_t,
-            mask: u32,
-            src_context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_copy_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src: xcb_glx_context_t,
-            dest: xcb_glx_context_t,
-            mask: u32,
-            src_context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_swap_buffers: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            drawable: xcb_glx_drawable_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_swap_buffers_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            drawable: xcb_glx_drawable_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_use_x_font: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            font: xcb_font_t,
-            first: u32,
-            count: u32,
-            list_base: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_use_x_font_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            font: xcb_font_t,
-            first: u32,
-            count: u32,
-            list_base: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_glx_pixmap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            visual: xcb_visualid_t,
-            pixmap: xcb_pixmap_t,
-            glx_pixmap: xcb_glx_pixmap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_glx_pixmap_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            visual: xcb_visualid_t,
-            pixmap: xcb_pixmap_t,
-            glx_pixmap: xcb_glx_pixmap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_visual_configs_property_list:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_visual_configs_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_get_visual_configs_property_list_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_visual_configs_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_visual_configs_property_list_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_visual_configs_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_visual_configs_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_visual_configs_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_visual_configs_reply_t,
-    >,
-    pub(crate) xcb_glx_get_visual_configs: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_glx_get_visual_configs_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_visual_configs_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_glx_get_visual_configs_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_glx_pixmap: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glx_pixmap: xcb_glx_pixmap_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_glx_pixmap_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glx_pixmap: xcb_glx_pixmap_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_vendor_private: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            vendor_code: u32,
-            context_tag: xcb_glx_context_tag_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_vendor_private_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            vendor_code: u32,
-            context_tag: xcb_glx_context_tag_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_vendor_private_with_reply_data_2:
-        LazySymbol<unsafe fn(R: *const xcb_glx_vendor_private_with_reply_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_vendor_private_with_reply_data_2_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_vendor_private_with_reply_reply_t) -> c_int>,
-    pub(crate) xcb_glx_vendor_private_with_reply_data_2_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_vendor_private_with_reply_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_vendor_private_with_reply_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_vendor_private_with_reply_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_vendor_private_with_reply_reply_t,
-    >,
-    pub(crate) xcb_glx_vendor_private_with_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            vendor_code: u32,
-            context_tag: xcb_glx_context_tag_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_glx_vendor_private_with_reply_cookie_t,
-    >,
-    pub(crate) xcb_glx_vendor_private_with_reply_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            vendor_code: u32,
-            context_tag: xcb_glx_context_tag_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_glx_vendor_private_with_reply_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_extensions_string_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_query_extensions_string_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_query_extensions_string_reply_t,
-    >,
-    pub(crate) xcb_glx_query_extensions_string: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-        ) -> xcb_glx_query_extensions_string_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_extensions_string_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-        ) -> xcb_glx_query_extensions_string_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_server_string_string:
-        LazySymbol<unsafe fn(R: *const xcb_glx_query_server_string_reply_t) -> *mut c_char>,
-    pub(crate) xcb_glx_query_server_string_string_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_query_server_string_reply_t) -> c_int>,
-    pub(crate) xcb_glx_query_server_string_string_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_query_server_string_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_query_server_string_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_query_server_string_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_query_server_string_reply_t,
-    >,
-    pub(crate) xcb_glx_query_server_string: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            name: u32,
-        ) -> xcb_glx_query_server_string_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_server_string_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            name: u32,
-        ) -> xcb_glx_query_server_string_cookie_t,
-    >,
-    pub(crate) xcb_glx_client_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-            str_len: u32,
-            string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_client_info_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-            str_len: u32,
-            string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_fb_configs_property_list:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_fb_configs_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_get_fb_configs_property_list_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_fb_configs_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_fb_configs_property_list_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_fb_configs_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_fb_configs_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_fb_configs_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_fb_configs_reply_t,
-    >,
-    pub(crate) xcb_glx_get_fb_configs: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_glx_get_fb_configs_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_fb_configs_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_glx_get_fb_configs_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_pixmap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            fbconfig: xcb_glx_fbconfig_t,
-            pixmap: xcb_pixmap_t,
-            glx_pixmap: xcb_glx_pixmap_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_pixmap_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            fbconfig: xcb_glx_fbconfig_t,
-            pixmap: xcb_pixmap_t,
-            glx_pixmap: xcb_glx_pixmap_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_pixmap: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glx_pixmap: xcb_glx_pixmap_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_pixmap_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glx_pixmap: xcb_glx_pixmap_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_new_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-            fbconfig: xcb_glx_fbconfig_t,
-            screen: u32,
-            render_type: u32,
-            share_list: xcb_glx_context_t,
-            is_direct: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_new_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-            fbconfig: xcb_glx_fbconfig_t,
-            screen: u32,
-            render_type: u32,
-            share_list: xcb_glx_context_t,
-            is_direct: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_context_attribs:
-        LazySymbol<unsafe fn(R: *const xcb_glx_query_context_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_query_context_attribs_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_query_context_reply_t) -> c_int>,
-    pub(crate) xcb_glx_query_context_attribs_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_query_context_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_query_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_query_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_query_context_reply_t,
-    >,
-    pub(crate) xcb_glx_query_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-        ) -> xcb_glx_query_context_cookie_t,
-    >,
-    pub(crate) xcb_glx_query_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-        ) -> xcb_glx_query_context_cookie_t,
-    >,
-    pub(crate) xcb_glx_make_context_current_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_make_context_current_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_make_context_current_reply_t,
-    >,
-    pub(crate) xcb_glx_make_context_current: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            old_context_tag: xcb_glx_context_tag_t,
-            drawable: xcb_glx_drawable_t,
-            read_drawable: xcb_glx_drawable_t,
-            context: xcb_glx_context_t,
-        ) -> xcb_glx_make_context_current_cookie_t,
-    >,
-    pub(crate) xcb_glx_make_context_current_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            old_context_tag: xcb_glx_context_tag_t,
-            drawable: xcb_glx_drawable_t,
-            read_drawable: xcb_glx_drawable_t,
-            context: xcb_glx_context_t,
-        ) -> xcb_glx_make_context_current_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_pbuffer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            fbconfig: xcb_glx_fbconfig_t,
-            pbuffer: xcb_glx_pbuffer_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_pbuffer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            fbconfig: xcb_glx_fbconfig_t,
-            pbuffer: xcb_glx_pbuffer_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_pbuffer: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, pbuffer: xcb_glx_pbuffer_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_destroy_pbuffer_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, pbuffer: xcb_glx_pbuffer_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_drawable_attributes_attribs:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_drawable_attributes_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_get_drawable_attributes_attribs_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_drawable_attributes_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_drawable_attributes_attribs_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_drawable_attributes_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_drawable_attributes_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_drawable_attributes_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_drawable_attributes_reply_t,
-    >,
-    pub(crate) xcb_glx_get_drawable_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_glx_drawable_t,
-        ) -> xcb_glx_get_drawable_attributes_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_drawable_attributes_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_glx_drawable_t,
-        ) -> xcb_glx_get_drawable_attributes_cookie_t,
-    >,
-    pub(crate) xcb_glx_change_drawable_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_glx_drawable_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_change_drawable_attributes_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_glx_drawable_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_window: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            fbconfig: xcb_glx_fbconfig_t,
-            window: xcb_window_t,
-            glx_window: xcb_glx_window_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_window_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            fbconfig: xcb_glx_fbconfig_t,
-            window: xcb_window_t,
-            glx_window: xcb_glx_window_t,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_window: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glxwindow: xcb_glx_window_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_window_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glxwindow: xcb_glx_window_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_set_client_info_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-            num_versions: u32,
-            gl_str_len: u32,
-            glx_str_len: u32,
-            gl_versions: *const u32,
-            gl_extension_string: *const c_char,
-            glx_extension_string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_set_client_info_arb_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-            num_versions: u32,
-            gl_str_len: u32,
-            glx_str_len: u32,
-            gl_versions: *const u32,
-            gl_extension_string: *const c_char,
-            glx_extension_string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_context_attribs_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-            fbconfig: xcb_glx_fbconfig_t,
-            screen: u32,
-            share_list: xcb_glx_context_t,
-            is_direct: u8,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_create_context_attribs_arb_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_glx_context_t,
-            fbconfig: xcb_glx_fbconfig_t,
-            screen: u32,
-            share_list: xcb_glx_context_t,
-            is_direct: u8,
-            num_attribs: u32,
-            attribs: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_set_client_info_2arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-            num_versions: u32,
-            gl_str_len: u32,
-            glx_str_len: u32,
-            gl_versions: *const u32,
-            gl_extension_string: *const c_char,
-            glx_extension_string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_set_client_info_2arb_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-            num_versions: u32,
-            gl_str_len: u32,
-            glx_str_len: u32,
-            gl_versions: *const u32,
-            gl_extension_string: *const c_char,
-            glx_extension_string: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_new_list: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            list: u32,
-            mode: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_new_list_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            list: u32,
-            mode: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_end_list: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_end_list_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_lists: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            list: u32,
-            range: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_lists_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            list: u32,
-            range: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_gen_lists_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_gen_lists_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_gen_lists_reply_t,
-    >,
-    pub(crate) xcb_glx_gen_lists: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            range: i32,
-        ) -> xcb_glx_gen_lists_cookie_t,
-    >,
-    pub(crate) xcb_glx_gen_lists_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            range: i32,
-        ) -> xcb_glx_gen_lists_cookie_t,
-    >,
-    pub(crate) xcb_glx_feedback_buffer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            size: i32,
-            type_: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_feedback_buffer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            size: i32,
-            type_: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_select_buffer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            size: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_select_buffer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            size: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_render_mode_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_render_mode_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_render_mode_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_render_mode_reply_t) -> c_int>,
-    pub(crate) xcb_glx_render_mode_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_render_mode_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_render_mode_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_render_mode_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_render_mode_reply_t,
-    >,
-    pub(crate) xcb_glx_render_mode: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            mode: u32,
-        ) -> xcb_glx_render_mode_cookie_t,
-    >,
-    pub(crate) xcb_glx_render_mode_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            mode: u32,
-        ) -> xcb_glx_render_mode_cookie_t,
-    >,
-    pub(crate) xcb_glx_finish_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_finish_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_finish_reply_t,
-    >,
-    pub(crate) xcb_glx_finish: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_glx_finish_cookie_t,
-    >,
-    pub(crate) xcb_glx_finish_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_glx_finish_cookie_t,
-    >,
-    pub(crate) xcb_glx_pixel_storef: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-            datum: xcb_glx_float32_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_pixel_storef_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-            datum: xcb_glx_float32_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_pixel_storei: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-            datum: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_pixel_storei_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-            datum: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_read_pixels_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_read_pixels_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_read_pixels_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_read_pixels_reply_t) -> c_int>,
-    pub(crate) xcb_glx_read_pixels_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_read_pixels_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_read_pixels_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_read_pixels_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_read_pixels_reply_t,
-    >,
-    pub(crate) xcb_glx_read_pixels: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            x: i32,
-            y: i32,
-            width: i32,
-            height: i32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-            lsb_first: u8,
-        ) -> xcb_glx_read_pixels_cookie_t,
-    >,
-    pub(crate) xcb_glx_read_pixels_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            x: i32,
-            y: i32,
-            width: i32,
-            height: i32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-            lsb_first: u8,
-        ) -> xcb_glx_read_pixels_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_booleanv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_booleanv_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_booleanv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_booleanv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_booleanv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_booleanv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_booleanv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_booleanv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_booleanv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_booleanv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: i32,
-        ) -> xcb_glx_get_booleanv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_booleanv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: i32,
-        ) -> xcb_glx_get_booleanv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_clip_plane_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_clip_plane_reply_t) -> *mut xcb_glx_float64_t>,
-    pub(crate) xcb_glx_get_clip_plane_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_clip_plane_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_clip_plane_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_clip_plane_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_clip_plane_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_clip_plane_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_clip_plane_reply_t,
-    >,
-    pub(crate) xcb_glx_get_clip_plane: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            plane: i32,
-        ) -> xcb_glx_get_clip_plane_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_clip_plane_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            plane: i32,
-        ) -> xcb_glx_get_clip_plane_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_doublev_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_doublev_reply_t) -> *mut xcb_glx_float64_t>,
-    pub(crate) xcb_glx_get_doublev_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_doublev_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_doublev_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_doublev_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_doublev_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_doublev_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_doublev_reply_t,
-    >,
-    pub(crate) xcb_glx_get_doublev: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-        ) -> xcb_glx_get_doublev_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_doublev_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-        ) -> xcb_glx_get_doublev_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_error_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_error_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_error_reply_t,
-    >,
-    pub(crate) xcb_glx_get_error: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_glx_get_error_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_error_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_glx_get_error_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_floatv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_floatv_reply_t) -> *mut xcb_glx_float32_t>,
-    pub(crate) xcb_glx_get_floatv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_floatv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_floatv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_floatv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_floatv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_floatv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_floatv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_floatv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-        ) -> xcb_glx_get_floatv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_floatv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-        ) -> xcb_glx_get_floatv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_integerv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_integerv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_integerv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_integerv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_integerv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_integerv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_integerv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_integerv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_integerv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_integerv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-        ) -> xcb_glx_get_integerv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_integerv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            pname: u32,
-        ) -> xcb_glx_get_integerv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_lightfv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_lightfv_reply_t) -> *mut xcb_glx_float32_t>,
-    pub(crate) xcb_glx_get_lightfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_lightfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_lightfv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_lightfv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_lightfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_lightfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_lightfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_lightfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            light: u32,
-            pname: u32,
-        ) -> xcb_glx_get_lightfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_lightfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            light: u32,
-            pname: u32,
-        ) -> xcb_glx_get_lightfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_lightiv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_lightiv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_lightiv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_lightiv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_lightiv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_lightiv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_lightiv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_lightiv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_lightiv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_lightiv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            light: u32,
-            pname: u32,
-        ) -> xcb_glx_get_lightiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_lightiv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            light: u32,
-            pname: u32,
-        ) -> xcb_glx_get_lightiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_mapdv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapdv_reply_t) -> *mut xcb_glx_float64_t>,
-    pub(crate) xcb_glx_get_mapdv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapdv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_mapdv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapdv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_mapdv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_mapdv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_mapdv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_mapdv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            query: u32,
-        ) -> xcb_glx_get_mapdv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_mapdv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            query: u32,
-        ) -> xcb_glx_get_mapdv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_mapfv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapfv_reply_t) -> *mut xcb_glx_float32_t>,
-    pub(crate) xcb_glx_get_mapfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_mapfv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapfv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_mapfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_mapfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_mapfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_mapfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            query: u32,
-        ) -> xcb_glx_get_mapfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_mapfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            query: u32,
-        ) -> xcb_glx_get_mapfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_mapiv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapiv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_mapiv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapiv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_mapiv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_mapiv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_mapiv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_mapiv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_mapiv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_mapiv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            query: u32,
-        ) -> xcb_glx_get_mapiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_mapiv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            query: u32,
-        ) -> xcb_glx_get_mapiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_materialfv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_materialfv_reply_t) -> *mut xcb_glx_float32_t>,
-    pub(crate) xcb_glx_get_materialfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_materialfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_materialfv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_materialfv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_materialfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_materialfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_materialfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_materialfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            face: u32,
-            pname: u32,
-        ) -> xcb_glx_get_materialfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_materialfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            face: u32,
-            pname: u32,
-        ) -> xcb_glx_get_materialfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_materialiv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_materialiv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_materialiv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_materialiv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_materialiv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_materialiv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_materialiv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_materialiv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_materialiv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_materialiv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            face: u32,
-            pname: u32,
-        ) -> xcb_glx_get_materialiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_materialiv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            face: u32,
-            pname: u32,
-        ) -> xcb_glx_get_materialiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapfv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapfv_reply_t) -> *mut xcb_glx_float32_t>,
-    pub(crate) xcb_glx_get_pixel_mapfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_pixel_mapfv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapfv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_pixel_mapfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_pixel_mapfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_pixel_mapfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            map: u32,
-        ) -> xcb_glx_get_pixel_mapfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            map: u32,
-        ) -> xcb_glx_get_pixel_mapfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapuiv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapuiv_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_get_pixel_mapuiv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapuiv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_pixel_mapuiv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapuiv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_pixel_mapuiv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_pixel_mapuiv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_pixel_mapuiv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapuiv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            map: u32,
-        ) -> xcb_glx_get_pixel_mapuiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapuiv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            map: u32,
-        ) -> xcb_glx_get_pixel_mapuiv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapusv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapusv_reply_t) -> *mut u16>,
-    pub(crate) xcb_glx_get_pixel_mapusv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapusv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_pixel_mapusv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_pixel_mapusv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_pixel_mapusv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_pixel_mapusv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_pixel_mapusv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapusv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            map: u32,
-        ) -> xcb_glx_get_pixel_mapusv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_pixel_mapusv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            map: u32,
-        ) -> xcb_glx_get_pixel_mapusv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_polygon_stipple_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_polygon_stipple_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_polygon_stipple_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_polygon_stipple_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_polygon_stipple_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_polygon_stipple_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_polygon_stipple_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_polygon_stipple_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_polygon_stipple_reply_t,
-    >,
-    pub(crate) xcb_glx_get_polygon_stipple: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            lsb_first: u8,
-        ) -> xcb_glx_get_polygon_stipple_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_polygon_stipple_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            lsb_first: u8,
-        ) -> xcb_glx_get_polygon_stipple_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_string_string:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_string_reply_t) -> *mut c_char>,
-    pub(crate) xcb_glx_get_string_string_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_string_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_string_string_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_string_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_string_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_string_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_string_reply_t,
-    >,
-    pub(crate) xcb_glx_get_string: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            name: u32,
-        ) -> xcb_glx_get_string_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_string_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            name: u32,
-        ) -> xcb_glx_get_string_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_envfv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_envfv_reply_t) -> *mut xcb_glx_float32_t>,
-    pub(crate) xcb_glx_get_tex_envfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_envfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_envfv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_envfv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_tex_envfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_envfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_envfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_envfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_envfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_envfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_envfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_enviv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_enviv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_tex_enviv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_enviv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_enviv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_enviv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_tex_enviv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_enviv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_enviv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_enviv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_enviv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_enviv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_enviv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_gendv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_gendv_reply_t) -> *mut xcb_glx_float64_t>,
-    pub(crate) xcb_glx_get_tex_gendv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_gendv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_gendv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_gendv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_tex_gendv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_gendv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_gendv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_gendv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            coord: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_gendv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_gendv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            coord: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_gendv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_genfv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_genfv_reply_t) -> *mut xcb_glx_float32_t>,
-    pub(crate) xcb_glx_get_tex_genfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_genfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_genfv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_genfv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_tex_genfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_genfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_genfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_genfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            coord: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_genfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_genfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            coord: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_genfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_geniv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_geniv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_tex_geniv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_geniv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_geniv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_geniv_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_tex_geniv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_geniv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_geniv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_geniv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            coord: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_geniv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_geniv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            coord: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_geniv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_image_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_image_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_tex_image_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_image_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_image_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_image_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_tex_image_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_image_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_image_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_image: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_tex_image_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_image_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_tex_image_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameterfv_data: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_tex_parameterfv_reply_t) -> *mut xcb_glx_float32_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameterfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_parameterfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_parameterfv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_tex_parameterfv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameterfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_parameterfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_parameterfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameterfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameterfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameteriv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_parameteriv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_tex_parameteriv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_parameteriv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_parameteriv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_tex_parameteriv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameteriv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_parameteriv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_parameteriv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameteriv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_parameteriv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameterfv_data: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_tex_level_parameterfv_reply_t) -> *mut xcb_glx_float32_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameterfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_level_parameterfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_level_parameterfv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_tex_level_parameterfv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameterfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_level_parameterfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_level_parameterfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameterfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_level_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameterfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_level_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameteriv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_level_parameteriv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_tex_level_parameteriv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_tex_level_parameteriv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_tex_level_parameteriv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_tex_level_parameteriv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameteriv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_tex_level_parameteriv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_tex_level_parameteriv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameteriv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_level_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_tex_level_parameteriv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-            pname: u32,
-        ) -> xcb_glx_get_tex_level_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_list_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_is_list_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_is_list_reply_t,
-    >,
-    pub(crate) xcb_glx_is_list: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            list: u32,
-        ) -> xcb_glx_is_list_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_list_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            list: u32,
-        ) -> xcb_glx_is_list_cookie_t,
-    >,
-    pub(crate) xcb_glx_flush: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_flush_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_are_textures_resident_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_are_textures_resident_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_are_textures_resident_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_are_textures_resident_reply_t) -> c_int>,
-    pub(crate) xcb_glx_are_textures_resident_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_are_textures_resident_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_are_textures_resident_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_are_textures_resident_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_are_textures_resident_reply_t,
-    >,
-    pub(crate) xcb_glx_are_textures_resident: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-            textures: *const u32,
-        ) -> xcb_glx_are_textures_resident_cookie_t,
-    >,
-    pub(crate) xcb_glx_are_textures_resident_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-            textures: *const u32,
-        ) -> xcb_glx_are_textures_resident_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_textures: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-            textures: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_textures_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-            textures: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_gen_textures_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_gen_textures_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_gen_textures_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_gen_textures_reply_t) -> c_int>,
-    pub(crate) xcb_glx_gen_textures_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_gen_textures_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_gen_textures_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_gen_textures_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_gen_textures_reply_t,
-    >,
-    pub(crate) xcb_glx_gen_textures: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-        ) -> xcb_glx_gen_textures_cookie_t,
-    >,
-    pub(crate) xcb_glx_gen_textures_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-        ) -> xcb_glx_gen_textures_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_texture_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_is_texture_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_is_texture_reply_t,
-    >,
-    pub(crate) xcb_glx_is_texture: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            texture: u32,
-        ) -> xcb_glx_is_texture_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_texture_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            texture: u32,
-        ) -> xcb_glx_is_texture_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_color_table_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_color_table_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_color_table_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_color_table_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_color_table_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_color_table_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_color_table_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_color_table_reply_t,
-    >,
-    pub(crate) xcb_glx_get_color_table: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_color_table_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_color_table_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameterfv_data: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_color_table_parameterfv_reply_t) -> *mut xcb_glx_float32_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameterfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_color_table_parameterfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_color_table_parameterfv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_color_table_parameterfv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameterfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_color_table_parameterfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_color_table_parameterfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameterfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_color_table_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameterfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_color_table_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameteriv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_color_table_parameteriv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_color_table_parameteriv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_color_table_parameteriv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_color_table_parameteriv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_color_table_parameteriv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameteriv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_color_table_parameteriv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_color_table_parameteriv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameteriv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_color_table_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_color_table_parameteriv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_color_table_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_filter_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_convolution_filter_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_convolution_filter_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_convolution_filter_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_convolution_filter_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_convolution_filter_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_filter_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_convolution_filter_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_convolution_filter_reply_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_filter: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_convolution_filter_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_filter_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_convolution_filter_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameterfv_data: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_convolution_parameterfv_reply_t) -> *mut xcb_glx_float32_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameterfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_convolution_parameterfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_convolution_parameterfv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_convolution_parameterfv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameterfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_convolution_parameterfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_convolution_parameterfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameterfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_convolution_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameterfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_convolution_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameteriv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_convolution_parameteriv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_convolution_parameteriv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_convolution_parameteriv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_convolution_parameteriv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_convolution_parameteriv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameteriv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_convolution_parameteriv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_convolution_parameteriv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameteriv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_convolution_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_convolution_parameteriv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_convolution_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_separable_filter_rows_and_cols:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_separable_filter_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_separable_filter_rows_and_cols_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_separable_filter_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_separable_filter_rows_and_cols_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_separable_filter_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_separable_filter_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_separable_filter_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_separable_filter_reply_t,
-    >,
-    pub(crate) xcb_glx_get_separable_filter: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_separable_filter_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_separable_filter_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-        ) -> xcb_glx_get_separable_filter_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_histogram_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_histogram_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_histogram_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_histogram_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_histogram_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_histogram_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_histogram_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_histogram_reply_t,
-    >,
-    pub(crate) xcb_glx_get_histogram: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-            reset: u8,
-        ) -> xcb_glx_get_histogram_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-            reset: u8,
-        ) -> xcb_glx_get_histogram_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameterfv_data: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_histogram_parameterfv_reply_t) -> *mut xcb_glx_float32_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameterfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_histogram_parameterfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_histogram_parameterfv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_histogram_parameterfv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameterfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_histogram_parameterfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_histogram_parameterfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameterfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_histogram_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameterfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_histogram_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameteriv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_histogram_parameteriv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_histogram_parameteriv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_histogram_parameteriv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_histogram_parameteriv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_histogram_parameteriv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameteriv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_histogram_parameteriv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_histogram_parameteriv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameteriv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_histogram_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_histogram_parameteriv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_histogram_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_minmax_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_minmax_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_minmax_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_minmax_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_minmax_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_minmax_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_minmax_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_minmax_reply_t,
-    >,
-    pub(crate) xcb_glx_get_minmax: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-            reset: u8,
-        ) -> xcb_glx_get_minmax_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            format: u32,
-            type_: u32,
-            swap_bytes: u8,
-            reset: u8,
-        ) -> xcb_glx_get_minmax_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameterfv_data: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_minmax_parameterfv_reply_t) -> *mut xcb_glx_float32_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameterfv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_minmax_parameterfv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_minmax_parameterfv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_minmax_parameterfv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameterfv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_minmax_parameterfv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_minmax_parameterfv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameterfv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_minmax_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameterfv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_minmax_parameterfv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameteriv_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_minmax_parameteriv_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_minmax_parameteriv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_minmax_parameteriv_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_minmax_parameteriv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_minmax_parameteriv_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameteriv_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_minmax_parameteriv_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_minmax_parameteriv_reply_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameteriv: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_minmax_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_minmax_parameteriv_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_minmax_parameteriv_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_compressed_tex_image_arb_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_compressed_tex_image_arb_reply_t) -> *mut u8>,
-    pub(crate) xcb_glx_get_compressed_tex_image_arb_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_compressed_tex_image_arb_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_compressed_tex_image_arb_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_compressed_tex_image_arb_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_compressed_tex_image_arb_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_compressed_tex_image_arb_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_compressed_tex_image_arb_reply_t,
-    >,
-    pub(crate) xcb_glx_get_compressed_tex_image_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-        ) -> xcb_glx_get_compressed_tex_image_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_compressed_tex_image_arb_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            level: i32,
-        ) -> xcb_glx_get_compressed_tex_image_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_queries_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-            ids: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_delete_queries_arb_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-            ids: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_glx_gen_queries_arb_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_gen_queries_arb_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_gen_queries_arb_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_gen_queries_arb_reply_t) -> c_int>,
-    pub(crate) xcb_glx_gen_queries_arb_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_gen_queries_arb_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_gen_queries_arb_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_gen_queries_arb_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_gen_queries_arb_reply_t,
-    >,
-    pub(crate) xcb_glx_gen_queries_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-        ) -> xcb_glx_gen_queries_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_gen_queries_arb_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            n: i32,
-        ) -> xcb_glx_gen_queries_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_query_arb_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_is_query_arb_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_is_query_arb_reply_t,
-    >,
-    pub(crate) xcb_glx_is_query_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            id: u32,
-        ) -> xcb_glx_is_query_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_is_query_arb_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            id: u32,
-        ) -> xcb_glx_is_query_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_queryiv_arb_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_queryiv_arb_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_queryiv_arb_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_queryiv_arb_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_queryiv_arb_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_queryiv_arb_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_glx_get_queryiv_arb_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_queryiv_arb_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_queryiv_arb_reply_t,
-    >,
-    pub(crate) xcb_glx_get_queryiv_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_queryiv_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_queryiv_arb_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            target: u32,
-            pname: u32,
-        ) -> xcb_glx_get_queryiv_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectiv_arb_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_query_objectiv_arb_reply_t) -> *mut i32>,
-    pub(crate) xcb_glx_get_query_objectiv_arb_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_query_objectiv_arb_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_query_objectiv_arb_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_query_objectiv_arb_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectiv_arb_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_query_objectiv_arb_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_query_objectiv_arb_reply_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectiv_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            id: u32,
-            pname: u32,
-        ) -> xcb_glx_get_query_objectiv_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectiv_arb_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            id: u32,
-            pname: u32,
-        ) -> xcb_glx_get_query_objectiv_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectuiv_arb_data:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_query_objectuiv_arb_reply_t) -> *mut u32>,
-    pub(crate) xcb_glx_get_query_objectuiv_arb_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_glx_get_query_objectuiv_arb_reply_t) -> c_int>,
-    pub(crate) xcb_glx_get_query_objectuiv_arb_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_glx_get_query_objectuiv_arb_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectuiv_arb_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_glx_get_query_objectuiv_arb_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_glx_get_query_objectuiv_arb_reply_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectuiv_arb: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            id: u32,
-            pname: u32,
-        ) -> xcb_glx_get_query_objectuiv_arb_cookie_t,
-    >,
-    pub(crate) xcb_glx_get_query_objectuiv_arb_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_tag: xcb_glx_context_tag_t,
-            id: u32,
-            pname: u32,
-        ) -> xcb_glx_get_query_objectuiv_arb_cookie_t,
-    >,
 }

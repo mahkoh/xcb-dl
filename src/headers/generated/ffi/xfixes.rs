@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -624,8 +625,8 @@ pub struct xcb_xfixes_delete_pointer_barrier_request_t {
 
 impl XcbXfixes {
     #[inline]
-    pub fn xcb_xfixes_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xfixes_id)
+    pub unsafe fn xcb_xfixes_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xfixes_id)
     }
 
     #[inline]
@@ -635,7 +636,7 @@ impl XcbXfixes {
         cookie: xcb_xfixes_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xfixes_query_version_reply_t {
-        call!(self, xcb_xfixes_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_xfixes_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -645,7 +646,7 @@ impl XcbXfixes {
         client_major_version: u32,
         client_minor_version: u32,
     ) -> xcb_xfixes_query_version_cookie_t {
-        call!(self, xcb_xfixes_query_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_xfixes_query_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -655,7 +656,7 @@ impl XcbXfixes {
         client_major_version: u32,
         client_minor_version: u32,
     ) -> xcb_xfixes_query_version_cookie_t {
-        call!(self, xcb_xfixes_query_version_unchecked)(
+        sym!(self, xcb_xfixes_query_version_unchecked)(
             c,
             client_major_version,
             client_minor_version,
@@ -671,7 +672,7 @@ impl XcbXfixes {
         map: u8,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_change_save_set)(c, mode, target, map, window)
+        sym!(self, xcb_xfixes_change_save_set)(c, mode, target, map, window)
     }
 
     #[inline]
@@ -683,7 +684,7 @@ impl XcbXfixes {
         map: u8,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_change_save_set_checked)(c, mode, target, map, window)
+        sym!(self, xcb_xfixes_change_save_set_checked)(c, mode, target, map, window)
     }
 
     #[inline]
@@ -694,7 +695,7 @@ impl XcbXfixes {
         selection: xcb_atom_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_select_selection_input)(c, window, selection, event_mask)
+        sym!(self, xcb_xfixes_select_selection_input)(c, window, selection, event_mask)
     }
 
     #[inline]
@@ -705,7 +706,7 @@ impl XcbXfixes {
         selection: xcb_atom_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_select_selection_input_checked)(c, window, selection, event_mask)
+        sym!(self, xcb_xfixes_select_selection_input_checked)(c, window, selection, event_mask)
     }
 
     #[inline]
@@ -715,7 +716,7 @@ impl XcbXfixes {
         window: xcb_window_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_select_cursor_input)(c, window, event_mask)
+        sym!(self, xcb_xfixes_select_cursor_input)(c, window, event_mask)
     }
 
     #[inline]
@@ -725,7 +726,7 @@ impl XcbXfixes {
         window: xcb_window_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_select_cursor_input_checked)(c, window, event_mask)
+        sym!(self, xcb_xfixes_select_cursor_input_checked)(c, window, event_mask)
     }
 
     #[inline]
@@ -733,7 +734,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xfixes_get_cursor_image_cursor_image)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_cursor_image)(R)
     }
 
     #[inline]
@@ -741,7 +742,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_reply_t,
     ) -> c_int {
-        call!(self, xcb_xfixes_get_cursor_image_cursor_image_length)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_cursor_image_length)(R)
     }
 
     #[inline]
@@ -749,7 +750,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xfixes_get_cursor_image_cursor_image_end)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_cursor_image_end)(R)
     }
 
     #[inline]
@@ -759,7 +760,7 @@ impl XcbXfixes {
         cookie: xcb_xfixes_get_cursor_image_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xfixes_get_cursor_image_reply_t {
-        call!(self, xcb_xfixes_get_cursor_image_reply)(c, cookie, error)
+        sym!(self, xcb_xfixes_get_cursor_image_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -767,7 +768,7 @@ impl XcbXfixes {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xfixes_get_cursor_image_cookie_t {
-        call!(self, xcb_xfixes_get_cursor_image)(c)
+        sym!(self, xcb_xfixes_get_cursor_image)(c)
     }
 
     #[inline]
@@ -775,12 +776,12 @@ impl XcbXfixes {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xfixes_get_cursor_image_cookie_t {
-        call!(self, xcb_xfixes_get_cursor_image_unchecked)(c)
+        sym!(self, xcb_xfixes_get_cursor_image_unchecked)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_xfixes_region_next(&self, i: *mut xcb_xfixes_region_iterator_t) {
-        call!(self, xcb_xfixes_region_next)(i);
+        sym!(self, xcb_xfixes_region_next)(i);
     }
 
     #[inline]
@@ -788,7 +789,7 @@ impl XcbXfixes {
         &self,
         i: *mut xcb_xfixes_region_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xfixes_region_end)(i)
+        sym!(self, xcb_xfixes_region_end)(i)
     }
 
     #[inline]
@@ -799,7 +800,7 @@ impl XcbXfixes {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region)(c, region, rectangles_len, rectangles)
+        sym!(self, xcb_xfixes_create_region)(c, region, rectangles_len, rectangles)
     }
 
     #[inline]
@@ -810,7 +811,7 @@ impl XcbXfixes {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_checked)(c, region, rectangles_len, rectangles)
+        sym!(self, xcb_xfixes_create_region_checked)(c, region, rectangles_len, rectangles)
     }
 
     #[inline]
@@ -820,7 +821,7 @@ impl XcbXfixes {
         region: xcb_xfixes_region_t,
         bitmap: xcb_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_bitmap)(c, region, bitmap)
+        sym!(self, xcb_xfixes_create_region_from_bitmap)(c, region, bitmap)
     }
 
     #[inline]
@@ -830,7 +831,7 @@ impl XcbXfixes {
         region: xcb_xfixes_region_t,
         bitmap: xcb_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_bitmap_checked)(c, region, bitmap)
+        sym!(self, xcb_xfixes_create_region_from_bitmap_checked)(c, region, bitmap)
     }
 
     #[inline]
@@ -841,7 +842,7 @@ impl XcbXfixes {
         window: xcb_window_t,
         kind: xcb_shape_kind_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_window)(c, region, window, kind)
+        sym!(self, xcb_xfixes_create_region_from_window)(c, region, window, kind)
     }
 
     #[inline]
@@ -852,7 +853,7 @@ impl XcbXfixes {
         window: xcb_window_t,
         kind: xcb_shape_kind_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_window_checked)(c, region, window, kind)
+        sym!(self, xcb_xfixes_create_region_from_window_checked)(c, region, window, kind)
     }
 
     #[inline]
@@ -862,7 +863,7 @@ impl XcbXfixes {
         region: xcb_xfixes_region_t,
         gc: xcb_gcontext_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_gc)(c, region, gc)
+        sym!(self, xcb_xfixes_create_region_from_gc)(c, region, gc)
     }
 
     #[inline]
@@ -872,7 +873,7 @@ impl XcbXfixes {
         region: xcb_xfixes_region_t,
         gc: xcb_gcontext_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_gc_checked)(c, region, gc)
+        sym!(self, xcb_xfixes_create_region_from_gc_checked)(c, region, gc)
     }
 
     #[inline]
@@ -882,7 +883,7 @@ impl XcbXfixes {
         region: xcb_xfixes_region_t,
         picture: xcb_render_picture_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_picture)(c, region, picture)
+        sym!(self, xcb_xfixes_create_region_from_picture)(c, region, picture)
     }
 
     #[inline]
@@ -892,7 +893,7 @@ impl XcbXfixes {
         region: xcb_xfixes_region_t,
         picture: xcb_render_picture_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_region_from_picture_checked)(c, region, picture)
+        sym!(self, xcb_xfixes_create_region_from_picture_checked)(c, region, picture)
     }
 
     #[inline]
@@ -901,7 +902,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         region: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_destroy_region)(c, region)
+        sym!(self, xcb_xfixes_destroy_region)(c, region)
     }
 
     #[inline]
@@ -910,7 +911,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         region: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_destroy_region_checked)(c, region)
+        sym!(self, xcb_xfixes_destroy_region_checked)(c, region)
     }
 
     #[inline]
@@ -921,7 +922,7 @@ impl XcbXfixes {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_region)(c, region, rectangles_len, rectangles)
+        sym!(self, xcb_xfixes_set_region)(c, region, rectangles_len, rectangles)
     }
 
     #[inline]
@@ -932,7 +933,7 @@ impl XcbXfixes {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_region_checked)(c, region, rectangles_len, rectangles)
+        sym!(self, xcb_xfixes_set_region_checked)(c, region, rectangles_len, rectangles)
     }
 
     #[inline]
@@ -942,7 +943,7 @@ impl XcbXfixes {
         source: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_copy_region)(c, source, destination)
+        sym!(self, xcb_xfixes_copy_region)(c, source, destination)
     }
 
     #[inline]
@@ -952,7 +953,7 @@ impl XcbXfixes {
         source: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_copy_region_checked)(c, source, destination)
+        sym!(self, xcb_xfixes_copy_region_checked)(c, source, destination)
     }
 
     #[inline]
@@ -963,7 +964,7 @@ impl XcbXfixes {
         source2: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_union_region)(c, source1, source2, destination)
+        sym!(self, xcb_xfixes_union_region)(c, source1, source2, destination)
     }
 
     #[inline]
@@ -974,7 +975,7 @@ impl XcbXfixes {
         source2: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_union_region_checked)(c, source1, source2, destination)
+        sym!(self, xcb_xfixes_union_region_checked)(c, source1, source2, destination)
     }
 
     #[inline]
@@ -985,7 +986,7 @@ impl XcbXfixes {
         source2: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_intersect_region)(c, source1, source2, destination)
+        sym!(self, xcb_xfixes_intersect_region)(c, source1, source2, destination)
     }
 
     #[inline]
@@ -996,7 +997,7 @@ impl XcbXfixes {
         source2: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_intersect_region_checked)(c, source1, source2, destination)
+        sym!(self, xcb_xfixes_intersect_region_checked)(c, source1, source2, destination)
     }
 
     #[inline]
@@ -1007,7 +1008,7 @@ impl XcbXfixes {
         source2: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_subtract_region)(c, source1, source2, destination)
+        sym!(self, xcb_xfixes_subtract_region)(c, source1, source2, destination)
     }
 
     #[inline]
@@ -1018,7 +1019,7 @@ impl XcbXfixes {
         source2: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_subtract_region_checked)(c, source1, source2, destination)
+        sym!(self, xcb_xfixes_subtract_region_checked)(c, source1, source2, destination)
     }
 
     #[inline]
@@ -1029,7 +1030,7 @@ impl XcbXfixes {
         bounds: xcb_rectangle_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_invert_region)(c, source, bounds, destination)
+        sym!(self, xcb_xfixes_invert_region)(c, source, bounds, destination)
     }
 
     #[inline]
@@ -1040,7 +1041,7 @@ impl XcbXfixes {
         bounds: xcb_rectangle_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_invert_region_checked)(c, source, bounds, destination)
+        sym!(self, xcb_xfixes_invert_region_checked)(c, source, bounds, destination)
     }
 
     #[inline]
@@ -1051,7 +1052,7 @@ impl XcbXfixes {
         dx: i16,
         dy: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_translate_region)(c, region, dx, dy)
+        sym!(self, xcb_xfixes_translate_region)(c, region, dx, dy)
     }
 
     #[inline]
@@ -1062,7 +1063,7 @@ impl XcbXfixes {
         dx: i16,
         dy: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_translate_region_checked)(c, region, dx, dy)
+        sym!(self, xcb_xfixes_translate_region_checked)(c, region, dx, dy)
     }
 
     #[inline]
@@ -1072,7 +1073,7 @@ impl XcbXfixes {
         source: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_region_extents)(c, source, destination)
+        sym!(self, xcb_xfixes_region_extents)(c, source, destination)
     }
 
     #[inline]
@@ -1082,7 +1083,7 @@ impl XcbXfixes {
         source: xcb_xfixes_region_t,
         destination: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_region_extents_checked)(c, source, destination)
+        sym!(self, xcb_xfixes_region_extents_checked)(c, source, destination)
     }
 
     #[inline]
@@ -1090,7 +1091,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_fetch_region_reply_t,
     ) -> *mut xcb_rectangle_t {
-        call!(self, xcb_xfixes_fetch_region_rectangles)(R)
+        sym!(self, xcb_xfixes_fetch_region_rectangles)(R)
     }
 
     #[inline]
@@ -1098,7 +1099,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_fetch_region_reply_t,
     ) -> c_int {
-        call!(self, xcb_xfixes_fetch_region_rectangles_length)(R)
+        sym!(self, xcb_xfixes_fetch_region_rectangles_length)(R)
     }
 
     #[inline]
@@ -1106,7 +1107,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_fetch_region_reply_t,
     ) -> xcb_rectangle_iterator_t {
-        call!(self, xcb_xfixes_fetch_region_rectangles_iterator)(R)
+        sym!(self, xcb_xfixes_fetch_region_rectangles_iterator)(R)
     }
 
     #[inline]
@@ -1116,7 +1117,7 @@ impl XcbXfixes {
         cookie: xcb_xfixes_fetch_region_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xfixes_fetch_region_reply_t {
-        call!(self, xcb_xfixes_fetch_region_reply)(c, cookie, error)
+        sym!(self, xcb_xfixes_fetch_region_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1125,7 +1126,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         region: xcb_xfixes_region_t,
     ) -> xcb_xfixes_fetch_region_cookie_t {
-        call!(self, xcb_xfixes_fetch_region)(c, region)
+        sym!(self, xcb_xfixes_fetch_region)(c, region)
     }
 
     #[inline]
@@ -1134,7 +1135,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         region: xcb_xfixes_region_t,
     ) -> xcb_xfixes_fetch_region_cookie_t {
-        call!(self, xcb_xfixes_fetch_region_unchecked)(c, region)
+        sym!(self, xcb_xfixes_fetch_region_unchecked)(c, region)
     }
 
     #[inline]
@@ -1146,7 +1147,7 @@ impl XcbXfixes {
         x_origin: i16,
         y_origin: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_gc_clip_region)(c, gc, region, x_origin, y_origin)
+        sym!(self, xcb_xfixes_set_gc_clip_region)(c, gc, region, x_origin, y_origin)
     }
 
     #[inline]
@@ -1158,7 +1159,7 @@ impl XcbXfixes {
         x_origin: i16,
         y_origin: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_gc_clip_region_checked)(c, gc, region, x_origin, y_origin)
+        sym!(self, xcb_xfixes_set_gc_clip_region_checked)(c, gc, region, x_origin, y_origin)
     }
 
     #[inline]
@@ -1171,7 +1172,7 @@ impl XcbXfixes {
         y_offset: i16,
         region: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_window_shape_region)(
+        sym!(self, xcb_xfixes_set_window_shape_region)(
             c, dest, dest_kind, x_offset, y_offset, region,
         )
     }
@@ -1186,7 +1187,7 @@ impl XcbXfixes {
         y_offset: i16,
         region: xcb_xfixes_region_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_window_shape_region_checked)(
+        sym!(self, xcb_xfixes_set_window_shape_region_checked)(
             c, dest, dest_kind, x_offset, y_offset, region,
         )
     }
@@ -1200,7 +1201,7 @@ impl XcbXfixes {
         x_origin: i16,
         y_origin: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_picture_clip_region)(c, picture, region, x_origin, y_origin)
+        sym!(self, xcb_xfixes_set_picture_clip_region)(c, picture, region, x_origin, y_origin)
     }
 
     #[inline]
@@ -1212,7 +1213,7 @@ impl XcbXfixes {
         x_origin: i16,
         y_origin: i16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_picture_clip_region_checked)(
+        sym!(self, xcb_xfixes_set_picture_clip_region_checked)(
             c, picture, region, x_origin, y_origin,
         )
     }
@@ -1225,7 +1226,7 @@ impl XcbXfixes {
         nbytes: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_cursor_name)(c, cursor, nbytes, name)
+        sym!(self, xcb_xfixes_set_cursor_name)(c, cursor, nbytes, name)
     }
 
     #[inline]
@@ -1236,7 +1237,7 @@ impl XcbXfixes {
         nbytes: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_set_cursor_name_checked)(c, cursor, nbytes, name)
+        sym!(self, xcb_xfixes_set_cursor_name_checked)(c, cursor, nbytes, name)
     }
 
     #[inline]
@@ -1244,7 +1245,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_name_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_xfixes_get_cursor_name_name)(R)
+        sym!(self, xcb_xfixes_get_cursor_name_name)(R)
     }
 
     #[inline]
@@ -1252,7 +1253,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_name_reply_t,
     ) -> c_int {
-        call!(self, xcb_xfixes_get_cursor_name_name_length)(R)
+        sym!(self, xcb_xfixes_get_cursor_name_name_length)(R)
     }
 
     #[inline]
@@ -1260,7 +1261,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_name_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xfixes_get_cursor_name_name_end)(R)
+        sym!(self, xcb_xfixes_get_cursor_name_name_end)(R)
     }
 
     #[inline]
@@ -1270,7 +1271,7 @@ impl XcbXfixes {
         cookie: xcb_xfixes_get_cursor_name_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xfixes_get_cursor_name_reply_t {
-        call!(self, xcb_xfixes_get_cursor_name_reply)(c, cookie, error)
+        sym!(self, xcb_xfixes_get_cursor_name_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1279,7 +1280,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         cursor: xcb_cursor_t,
     ) -> xcb_xfixes_get_cursor_name_cookie_t {
-        call!(self, xcb_xfixes_get_cursor_name)(c, cursor)
+        sym!(self, xcb_xfixes_get_cursor_name)(c, cursor)
     }
 
     #[inline]
@@ -1288,7 +1289,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         cursor: xcb_cursor_t,
     ) -> xcb_xfixes_get_cursor_name_cookie_t {
-        call!(self, xcb_xfixes_get_cursor_name_unchecked)(c, cursor)
+        sym!(self, xcb_xfixes_get_cursor_name_unchecked)(c, cursor)
     }
 
     #[inline]
@@ -1296,7 +1297,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_xfixes_get_cursor_image_and_name_name)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_name)(R)
     }
 
     #[inline]
@@ -1304,7 +1305,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
     ) -> c_int {
-        call!(self, xcb_xfixes_get_cursor_image_and_name_name_length)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_name_length)(R)
     }
 
     #[inline]
@@ -1312,7 +1313,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xfixes_get_cursor_image_and_name_name_end)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_name_end)(R)
     }
 
     #[inline]
@@ -1320,7 +1321,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xfixes_get_cursor_image_and_name_cursor_image)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_cursor_image)(R)
     }
 
     #[inline]
@@ -1328,7 +1329,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xfixes_get_cursor_image_and_name_cursor_image_length
         )(R)
@@ -1339,7 +1340,7 @@ impl XcbXfixes {
         &self,
         R: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xfixes_get_cursor_image_and_name_cursor_image_end)(R)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_cursor_image_end)(R)
     }
 
     #[inline]
@@ -1349,7 +1350,7 @@ impl XcbXfixes {
         cookie: xcb_xfixes_get_cursor_image_and_name_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xfixes_get_cursor_image_and_name_reply_t {
-        call!(self, xcb_xfixes_get_cursor_image_and_name_reply)(c, cookie, error)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1357,7 +1358,7 @@ impl XcbXfixes {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xfixes_get_cursor_image_and_name_cookie_t {
-        call!(self, xcb_xfixes_get_cursor_image_and_name)(c)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name)(c)
     }
 
     #[inline]
@@ -1365,7 +1366,7 @@ impl XcbXfixes {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xfixes_get_cursor_image_and_name_cookie_t {
-        call!(self, xcb_xfixes_get_cursor_image_and_name_unchecked)(c)
+        sym!(self, xcb_xfixes_get_cursor_image_and_name_unchecked)(c)
     }
 
     #[inline]
@@ -1375,7 +1376,7 @@ impl XcbXfixes {
         source: xcb_cursor_t,
         destination: xcb_cursor_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_change_cursor)(c, source, destination)
+        sym!(self, xcb_xfixes_change_cursor)(c, source, destination)
     }
 
     #[inline]
@@ -1385,7 +1386,7 @@ impl XcbXfixes {
         source: xcb_cursor_t,
         destination: xcb_cursor_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_change_cursor_checked)(c, source, destination)
+        sym!(self, xcb_xfixes_change_cursor_checked)(c, source, destination)
     }
 
     #[inline]
@@ -1396,7 +1397,7 @@ impl XcbXfixes {
         nbytes: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_change_cursor_by_name)(c, src, nbytes, name)
+        sym!(self, xcb_xfixes_change_cursor_by_name)(c, src, nbytes, name)
     }
 
     #[inline]
@@ -1407,7 +1408,7 @@ impl XcbXfixes {
         nbytes: u16,
         name: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_change_cursor_by_name_checked)(c, src, nbytes, name)
+        sym!(self, xcb_xfixes_change_cursor_by_name_checked)(c, src, nbytes, name)
     }
 
     #[inline]
@@ -1421,7 +1422,7 @@ impl XcbXfixes {
         top: u16,
         bottom: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_expand_region)(c, source, destination, left, right, top, bottom)
+        sym!(self, xcb_xfixes_expand_region)(c, source, destination, left, right, top, bottom)
     }
 
     #[inline]
@@ -1435,7 +1436,7 @@ impl XcbXfixes {
         top: u16,
         bottom: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_expand_region_checked)(
+        sym!(self, xcb_xfixes_expand_region_checked)(
             c,
             source,
             destination,
@@ -1452,7 +1453,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_hide_cursor)(c, window)
+        sym!(self, xcb_xfixes_hide_cursor)(c, window)
     }
 
     #[inline]
@@ -1461,7 +1462,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_hide_cursor_checked)(c, window)
+        sym!(self, xcb_xfixes_hide_cursor_checked)(c, window)
     }
 
     #[inline]
@@ -1470,7 +1471,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_show_cursor)(c, window)
+        sym!(self, xcb_xfixes_show_cursor)(c, window)
     }
 
     #[inline]
@@ -1479,12 +1480,12 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_show_cursor_checked)(c, window)
+        sym!(self, xcb_xfixes_show_cursor_checked)(c, window)
     }
 
     #[inline]
     pub unsafe fn xcb_xfixes_barrier_next(&self, i: *mut xcb_xfixes_barrier_iterator_t) {
-        call!(self, xcb_xfixes_barrier_next)(i);
+        sym!(self, xcb_xfixes_barrier_next)(i);
     }
 
     #[inline]
@@ -1492,7 +1493,7 @@ impl XcbXfixes {
         &self,
         i: *mut xcb_xfixes_barrier_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xfixes_barrier_end)(i)
+        sym!(self, xcb_xfixes_barrier_end)(i)
     }
 
     #[inline]
@@ -1509,7 +1510,7 @@ impl XcbXfixes {
         num_devices: u16,
         devices: *const u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_pointer_barrier)(
+        sym!(self, xcb_xfixes_create_pointer_barrier)(
             c,
             barrier,
             window,
@@ -1537,7 +1538,7 @@ impl XcbXfixes {
         num_devices: u16,
         devices: *const u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_create_pointer_barrier_checked)(
+        sym!(self, xcb_xfixes_create_pointer_barrier_checked)(
             c,
             barrier,
             window,
@@ -1557,7 +1558,7 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         barrier: xcb_xfixes_barrier_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_delete_pointer_barrier)(c, barrier)
+        sym!(self, xcb_xfixes_delete_pointer_barrier)(c, barrier)
     }
 
     #[inline]
@@ -1566,555 +1567,6 @@ impl XcbXfixes {
         c: *mut xcb_connection_t,
         barrier: xcb_xfixes_barrier_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xfixes_delete_pointer_barrier_checked)(c, barrier)
+        sym!(self, xcb_xfixes_delete_pointer_barrier_checked)(c, barrier)
     }
-}
-
-pub struct XcbXfixes {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xfixes_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xfixes_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xfixes_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xfixes_query_version_reply_t,
-    >,
-    pub(crate) xcb_xfixes_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u32,
-            client_minor_version: u32,
-        ) -> xcb_xfixes_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u32,
-            client_minor_version: u32,
-        ) -> xcb_xfixes_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_change_save_set: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mode: u8,
-            target: u8,
-            map: u8,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_change_save_set_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mode: u8,
-            target: u8,
-            map: u8,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_select_selection_input: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            selection: xcb_atom_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_select_selection_input_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            selection: xcb_atom_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_select_cursor_input: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_select_cursor_input_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_cursor_image:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_get_cursor_image_reply_t) -> *mut u32>,
-    pub(crate) xcb_xfixes_get_cursor_image_cursor_image_length:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_get_cursor_image_reply_t) -> c_int>,
-    pub(crate) xcb_xfixes_get_cursor_image_cursor_image_end: LazySymbol<
-        unsafe fn(R: *const xcb_xfixes_get_cursor_image_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xfixes_get_cursor_image_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xfixes_get_cursor_image_reply_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xfixes_get_cursor_image_cookie_t>,
-    pub(crate) xcb_xfixes_get_cursor_image_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xfixes_get_cursor_image_cookie_t>,
-    pub(crate) xcb_xfixes_region_next: LazySymbol<unsafe fn(i: *mut xcb_xfixes_region_iterator_t)>,
-    pub(crate) xcb_xfixes_region_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xfixes_region_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xfixes_create_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_bitmap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            bitmap: xcb_pixmap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_bitmap_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            bitmap: xcb_pixmap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_window: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            window: xcb_window_t,
-            kind: xcb_shape_kind_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_window_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            window: xcb_window_t,
-            kind: xcb_shape_kind_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_gc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            gc: xcb_gcontext_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_gc_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            gc: xcb_gcontext_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_picture: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            picture: xcb_render_picture_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_region_from_picture_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            picture: xcb_render_picture_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_destroy_region: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, region: xcb_xfixes_region_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_destroy_region_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, region: xcb_xfixes_region_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_copy_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_copy_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_union_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source1: xcb_xfixes_region_t,
-            source2: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_union_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source1: xcb_xfixes_region_t,
-            source2: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_intersect_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source1: xcb_xfixes_region_t,
-            source2: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_intersect_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source1: xcb_xfixes_region_t,
-            source2: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_subtract_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source1: xcb_xfixes_region_t,
-            source2: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_subtract_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source1: xcb_xfixes_region_t,
-            source2: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_invert_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            bounds: xcb_rectangle_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_invert_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            bounds: xcb_rectangle_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_translate_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            dx: i16,
-            dy: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_translate_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            dx: i16,
-            dy: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_region_extents: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_region_extents_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_fetch_region_rectangles:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_fetch_region_reply_t) -> *mut xcb_rectangle_t>,
-    pub(crate) xcb_xfixes_fetch_region_rectangles_length:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_fetch_region_reply_t) -> c_int>,
-    pub(crate) xcb_xfixes_fetch_region_rectangles_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xfixes_fetch_region_reply_t) -> xcb_rectangle_iterator_t,
-    >,
-    pub(crate) xcb_xfixes_fetch_region_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xfixes_fetch_region_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xfixes_fetch_region_reply_t,
-    >,
-    pub(crate) xcb_xfixes_fetch_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-        ) -> xcb_xfixes_fetch_region_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_fetch_region_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-        ) -> xcb_xfixes_fetch_region_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_gc_clip_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gc: xcb_gcontext_t,
-            region: xcb_xfixes_region_t,
-            x_origin: i16,
-            y_origin: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_gc_clip_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gc: xcb_gcontext_t,
-            region: xcb_xfixes_region_t,
-            x_origin: i16,
-            y_origin: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_window_shape_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            dest: xcb_window_t,
-            dest_kind: xcb_shape_kind_t,
-            x_offset: i16,
-            y_offset: i16,
-            region: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_window_shape_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            dest: xcb_window_t,
-            dest_kind: xcb_shape_kind_t,
-            x_offset: i16,
-            y_offset: i16,
-            region: xcb_xfixes_region_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_picture_clip_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            region: xcb_xfixes_region_t,
-            x_origin: i16,
-            y_origin: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_picture_clip_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            region: xcb_xfixes_region_t,
-            x_origin: i16,
-            y_origin: i16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_cursor_name: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-            nbytes: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_set_cursor_name_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-            nbytes: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_name_name:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_get_cursor_name_reply_t) -> *mut c_char>,
-    pub(crate) xcb_xfixes_get_cursor_name_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_get_cursor_name_reply_t) -> c_int>,
-    pub(crate) xcb_xfixes_get_cursor_name_name_end: LazySymbol<
-        unsafe fn(R: *const xcb_xfixes_get_cursor_name_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_name_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xfixes_get_cursor_name_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xfixes_get_cursor_name_reply_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_name: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-        ) -> xcb_xfixes_get_cursor_name_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_name_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cursor: xcb_cursor_t,
-        ) -> xcb_xfixes_get_cursor_name_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_name: LazySymbol<
-        unsafe fn(R: *const xcb_xfixes_get_cursor_image_and_name_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_get_cursor_image_and_name_reply_t) -> c_int>,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_name_end: LazySymbol<
-        unsafe fn(R: *const xcb_xfixes_get_cursor_image_and_name_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_cursor_image:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_get_cursor_image_and_name_reply_t) -> *mut u32>,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_cursor_image_length:
-        LazySymbol<unsafe fn(R: *const xcb_xfixes_get_cursor_image_and_name_reply_t) -> c_int>,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_cursor_image_end: LazySymbol<
-        unsafe fn(R: *const xcb_xfixes_get_cursor_image_and_name_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xfixes_get_cursor_image_and_name_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xfixes_get_cursor_image_and_name_reply_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_xfixes_get_cursor_image_and_name_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_get_cursor_image_and_name_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_xfixes_get_cursor_image_and_name_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_change_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_cursor_t,
-            destination: xcb_cursor_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_change_cursor_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_cursor_t,
-            destination: xcb_cursor_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_change_cursor_by_name: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src: xcb_cursor_t,
-            nbytes: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_change_cursor_by_name_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src: xcb_cursor_t,
-            nbytes: u16,
-            name: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_expand_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-            left: u16,
-            right: u16,
-            top: u16,
-            bottom: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_expand_region_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            source: xcb_xfixes_region_t,
-            destination: xcb_xfixes_region_t,
-            left: u16,
-            right: u16,
-            top: u16,
-            bottom: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_hide_cursor:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xfixes_hide_cursor_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xfixes_show_cursor:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xfixes_show_cursor_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xfixes_barrier_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xfixes_barrier_iterator_t)>,
-    pub(crate) xcb_xfixes_barrier_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xfixes_barrier_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xfixes_create_pointer_barrier: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            barrier: xcb_xfixes_barrier_t,
-            window: xcb_window_t,
-            x1: u16,
-            y1: u16,
-            x2: u16,
-            y2: u16,
-            directions: u32,
-            num_devices: u16,
-            devices: *const u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_create_pointer_barrier_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            barrier: xcb_xfixes_barrier_t,
-            window: xcb_window_t,
-            x1: u16,
-            y1: u16,
-            x2: u16,
-            y2: u16,
-            directions: u32,
-            num_devices: u16,
-            devices: *const u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_delete_pointer_barrier: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, barrier: xcb_xfixes_barrier_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xfixes_delete_pointer_barrier_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, barrier: xcb_xfixes_barrier_t) -> xcb_void_cookie_t,
-    >,
 }

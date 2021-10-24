@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -727,23 +728,23 @@ pub struct xcb_xv_shm_put_image_request_t {
 
 impl XcbXv {
     #[inline]
-    pub fn xcb_xv_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xv_id)
+    pub unsafe fn xcb_xv_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xv_id)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_port_next(&self, i: *mut xcb_xv_port_iterator_t) {
-        call!(self, xcb_xv_port_next)(i);
+        sym!(self, xcb_xv_port_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_xv_port_end(&self, i: *mut xcb_xv_port_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_port_end)(i)
+        sym!(self, xcb_xv_port_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_encoding_next(&self, i: *mut xcb_xv_encoding_iterator_t) {
-        call!(self, xcb_xv_encoding_next)(i);
+        sym!(self, xcb_xv_encoding_next)(i);
     }
 
     #[inline]
@@ -751,12 +752,12 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_encoding_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_encoding_end)(i)
+        sym!(self, xcb_xv_encoding_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_rational_next(&self, i: *mut xcb_xv_rational_iterator_t) {
-        call!(self, xcb_xv_rational_next)(i);
+        sym!(self, xcb_xv_rational_next)(i);
     }
 
     #[inline]
@@ -764,12 +765,12 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_rational_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_rational_end)(i)
+        sym!(self, xcb_xv_rational_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_format_next(&self, i: *mut xcb_xv_format_iterator_t) {
-        call!(self, xcb_xv_format_next)(i);
+        sym!(self, xcb_xv_format_next)(i);
     }
 
     #[inline]
@@ -777,17 +778,17 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_format_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_format_end)(i)
+        sym!(self, xcb_xv_format_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_adaptor_info_name(&self, R: *const xcb_xv_adaptor_info_t) -> *mut c_char {
-        call!(self, xcb_xv_adaptor_info_name)(R)
+        sym!(self, xcb_xv_adaptor_info_name)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_adaptor_info_name_length(&self, R: *const xcb_xv_adaptor_info_t) -> c_int {
-        call!(self, xcb_xv_adaptor_info_name_length)(R)
+        sym!(self, xcb_xv_adaptor_info_name_length)(R)
     }
 
     #[inline]
@@ -795,7 +796,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_adaptor_info_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_adaptor_info_name_end)(R)
+        sym!(self, xcb_xv_adaptor_info_name_end)(R)
     }
 
     #[inline]
@@ -803,7 +804,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_adaptor_info_t,
     ) -> *mut xcb_xv_format_t {
-        call!(self, xcb_xv_adaptor_info_formats)(R)
+        sym!(self, xcb_xv_adaptor_info_formats)(R)
     }
 
     #[inline]
@@ -811,7 +812,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_adaptor_info_t,
     ) -> c_int {
-        call!(self, xcb_xv_adaptor_info_formats_length)(R)
+        sym!(self, xcb_xv_adaptor_info_formats_length)(R)
     }
 
     #[inline]
@@ -819,12 +820,12 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_adaptor_info_t,
     ) -> xcb_xv_format_iterator_t {
-        call!(self, xcb_xv_adaptor_info_formats_iterator)(R)
+        sym!(self, xcb_xv_adaptor_info_formats_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_adaptor_info_next(&self, i: *mut xcb_xv_adaptor_info_iterator_t) {
-        call!(self, xcb_xv_adaptor_info_next)(i);
+        sym!(self, xcb_xv_adaptor_info_next)(i);
     }
 
     #[inline]
@@ -832,7 +833,7 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_adaptor_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_adaptor_info_end)(i)
+        sym!(self, xcb_xv_adaptor_info_end)(i)
     }
 
     #[inline]
@@ -840,7 +841,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_encoding_info_t,
     ) -> *mut c_char {
-        call!(self, xcb_xv_encoding_info_name)(R)
+        sym!(self, xcb_xv_encoding_info_name)(R)
     }
 
     #[inline]
@@ -848,7 +849,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_encoding_info_t,
     ) -> c_int {
-        call!(self, xcb_xv_encoding_info_name_length)(R)
+        sym!(self, xcb_xv_encoding_info_name_length)(R)
     }
 
     #[inline]
@@ -856,12 +857,12 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_encoding_info_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_encoding_info_name_end)(R)
+        sym!(self, xcb_xv_encoding_info_name_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_encoding_info_next(&self, i: *mut xcb_xv_encoding_info_iterator_t) {
-        call!(self, xcb_xv_encoding_info_next)(i);
+        sym!(self, xcb_xv_encoding_info_next)(i);
     }
 
     #[inline]
@@ -869,17 +870,17 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_encoding_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_encoding_info_end)(i)
+        sym!(self, xcb_xv_encoding_info_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_pitches(&self, R: *const xcb_xv_image_t) -> *mut u32 {
-        call!(self, xcb_xv_image_pitches)(R)
+        sym!(self, xcb_xv_image_pitches)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_pitches_length(&self, R: *const xcb_xv_image_t) -> c_int {
-        call!(self, xcb_xv_image_pitches_length)(R)
+        sym!(self, xcb_xv_image_pitches_length)(R)
     }
 
     #[inline]
@@ -887,17 +888,17 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_image_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_image_pitches_end)(R)
+        sym!(self, xcb_xv_image_pitches_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_offsets(&self, R: *const xcb_xv_image_t) -> *mut u32 {
-        call!(self, xcb_xv_image_offsets)(R)
+        sym!(self, xcb_xv_image_offsets)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_offsets_length(&self, R: *const xcb_xv_image_t) -> c_int {
-        call!(self, xcb_xv_image_offsets_length)(R)
+        sym!(self, xcb_xv_image_offsets_length)(R)
     }
 
     #[inline]
@@ -905,27 +906,27 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_image_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_image_offsets_end)(R)
+        sym!(self, xcb_xv_image_offsets_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_data(&self, R: *const xcb_xv_image_t) -> *mut u8 {
-        call!(self, xcb_xv_image_data)(R)
+        sym!(self, xcb_xv_image_data)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_data_length(&self, R: *const xcb_xv_image_t) -> c_int {
-        call!(self, xcb_xv_image_data_length)(R)
+        sym!(self, xcb_xv_image_data_length)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_data_end(&self, R: *const xcb_xv_image_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_image_data_end)(R)
+        sym!(self, xcb_xv_image_data_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_image_next(&self, i: *mut xcb_xv_image_iterator_t) {
-        call!(self, xcb_xv_image_next)(i);
+        sym!(self, xcb_xv_image_next)(i);
     }
 
     #[inline]
@@ -933,7 +934,7 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_image_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_image_end)(i)
+        sym!(self, xcb_xv_image_end)(i)
     }
 
     #[inline]
@@ -941,7 +942,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_attribute_info_t,
     ) -> *mut c_char {
-        call!(self, xcb_xv_attribute_info_name)(R)
+        sym!(self, xcb_xv_attribute_info_name)(R)
     }
 
     #[inline]
@@ -949,7 +950,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_attribute_info_t,
     ) -> c_int {
-        call!(self, xcb_xv_attribute_info_name_length)(R)
+        sym!(self, xcb_xv_attribute_info_name_length)(R)
     }
 
     #[inline]
@@ -957,12 +958,12 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_attribute_info_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_attribute_info_name_end)(R)
+        sym!(self, xcb_xv_attribute_info_name_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xv_attribute_info_next(&self, i: *mut xcb_xv_attribute_info_iterator_t) {
-        call!(self, xcb_xv_attribute_info_next)(i);
+        sym!(self, xcb_xv_attribute_info_next)(i);
     }
 
     #[inline]
@@ -970,7 +971,7 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_attribute_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_attribute_info_end)(i)
+        sym!(self, xcb_xv_attribute_info_end)(i)
     }
 
     #[inline]
@@ -978,7 +979,7 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_image_format_info_iterator_t,
     ) {
-        call!(self, xcb_xv_image_format_info_next)(i);
+        sym!(self, xcb_xv_image_format_info_next)(i);
     }
 
     #[inline]
@@ -986,7 +987,7 @@ impl XcbXv {
         &self,
         i: *mut xcb_xv_image_format_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_image_format_info_end)(i)
+        sym!(self, xcb_xv_image_format_info_end)(i)
     }
 
     #[inline]
@@ -996,7 +997,7 @@ impl XcbXv {
         cookie: xcb_xv_query_extension_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_query_extension_reply_t {
-        call!(self, xcb_xv_query_extension_reply)(c, cookie, error)
+        sym!(self, xcb_xv_query_extension_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1004,7 +1005,7 @@ impl XcbXv {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xv_query_extension_cookie_t {
-        call!(self, xcb_xv_query_extension)(c)
+        sym!(self, xcb_xv_query_extension)(c)
     }
 
     #[inline]
@@ -1012,7 +1013,7 @@ impl XcbXv {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xv_query_extension_cookie_t {
-        call!(self, xcb_xv_query_extension_unchecked)(c)
+        sym!(self, xcb_xv_query_extension_unchecked)(c)
     }
 
     #[inline]
@@ -1020,7 +1021,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_adaptors_reply_t,
     ) -> c_int {
-        call!(self, xcb_xv_query_adaptors_info_length)(R)
+        sym!(self, xcb_xv_query_adaptors_info_length)(R)
     }
 
     #[inline]
@@ -1028,7 +1029,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_adaptors_reply_t,
     ) -> xcb_xv_adaptor_info_iterator_t {
-        call!(self, xcb_xv_query_adaptors_info_iterator)(R)
+        sym!(self, xcb_xv_query_adaptors_info_iterator)(R)
     }
 
     #[inline]
@@ -1038,7 +1039,7 @@ impl XcbXv {
         cookie: xcb_xv_query_adaptors_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_query_adaptors_reply_t {
-        call!(self, xcb_xv_query_adaptors_reply)(c, cookie, error)
+        sym!(self, xcb_xv_query_adaptors_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1047,7 +1048,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xv_query_adaptors_cookie_t {
-        call!(self, xcb_xv_query_adaptors)(c, window)
+        sym!(self, xcb_xv_query_adaptors)(c, window)
     }
 
     #[inline]
@@ -1056,7 +1057,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xv_query_adaptors_cookie_t {
-        call!(self, xcb_xv_query_adaptors_unchecked)(c, window)
+        sym!(self, xcb_xv_query_adaptors_unchecked)(c, window)
     }
 
     #[inline]
@@ -1064,7 +1065,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_encodings_reply_t,
     ) -> c_int {
-        call!(self, xcb_xv_query_encodings_info_length)(R)
+        sym!(self, xcb_xv_query_encodings_info_length)(R)
     }
 
     #[inline]
@@ -1072,7 +1073,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_encodings_reply_t,
     ) -> xcb_xv_encoding_info_iterator_t {
-        call!(self, xcb_xv_query_encodings_info_iterator)(R)
+        sym!(self, xcb_xv_query_encodings_info_iterator)(R)
     }
 
     #[inline]
@@ -1082,7 +1083,7 @@ impl XcbXv {
         cookie: xcb_xv_query_encodings_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_query_encodings_reply_t {
-        call!(self, xcb_xv_query_encodings_reply)(c, cookie, error)
+        sym!(self, xcb_xv_query_encodings_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1091,7 +1092,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         port: xcb_xv_port_t,
     ) -> xcb_xv_query_encodings_cookie_t {
-        call!(self, xcb_xv_query_encodings)(c, port)
+        sym!(self, xcb_xv_query_encodings)(c, port)
     }
 
     #[inline]
@@ -1100,7 +1101,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         port: xcb_xv_port_t,
     ) -> xcb_xv_query_encodings_cookie_t {
-        call!(self, xcb_xv_query_encodings_unchecked)(c, port)
+        sym!(self, xcb_xv_query_encodings_unchecked)(c, port)
     }
 
     #[inline]
@@ -1110,7 +1111,7 @@ impl XcbXv {
         cookie: xcb_xv_grab_port_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_grab_port_reply_t {
-        call!(self, xcb_xv_grab_port_reply)(c, cookie, error)
+        sym!(self, xcb_xv_grab_port_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1120,7 +1121,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         time: xcb_timestamp_t,
     ) -> xcb_xv_grab_port_cookie_t {
-        call!(self, xcb_xv_grab_port)(c, port, time)
+        sym!(self, xcb_xv_grab_port)(c, port, time)
     }
 
     #[inline]
@@ -1130,7 +1131,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         time: xcb_timestamp_t,
     ) -> xcb_xv_grab_port_cookie_t {
-        call!(self, xcb_xv_grab_port_unchecked)(c, port, time)
+        sym!(self, xcb_xv_grab_port_unchecked)(c, port, time)
     }
 
     #[inline]
@@ -1140,7 +1141,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_ungrab_port)(c, port, time)
+        sym!(self, xcb_xv_ungrab_port)(c, port, time)
     }
 
     #[inline]
@@ -1150,7 +1151,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         time: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_ungrab_port_checked)(c, port, time)
+        sym!(self, xcb_xv_ungrab_port_checked)(c, port, time)
     }
 
     #[inline]
@@ -1169,7 +1170,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_put_video)(
+        sym!(self, xcb_xv_put_video)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1190,7 +1191,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_put_video_checked)(
+        sym!(self, xcb_xv_put_video_checked)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1211,7 +1212,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_put_still)(
+        sym!(self, xcb_xv_put_still)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1232,7 +1233,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_put_still_checked)(
+        sym!(self, xcb_xv_put_still_checked)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1253,7 +1254,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_get_video)(
+        sym!(self, xcb_xv_get_video)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1274,7 +1275,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_get_video_checked)(
+        sym!(self, xcb_xv_get_video_checked)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1295,7 +1296,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_get_still)(
+        sym!(self, xcb_xv_get_still)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1316,7 +1317,7 @@ impl XcbXv {
         drw_w: u16,
         drw_h: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_get_still_checked)(
+        sym!(self, xcb_xv_get_still_checked)(
             c, port, drawable, gc, vid_x, vid_y, vid_w, vid_h, drw_x, drw_y, drw_w, drw_h,
         )
     }
@@ -1328,7 +1329,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_stop_video)(c, port, drawable)
+        sym!(self, xcb_xv_stop_video)(c, port, drawable)
     }
 
     #[inline]
@@ -1338,7 +1339,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_stop_video_checked)(c, port, drawable)
+        sym!(self, xcb_xv_stop_video_checked)(c, port, drawable)
     }
 
     #[inline]
@@ -1348,7 +1349,7 @@ impl XcbXv {
         drawable: xcb_drawable_t,
         onoff: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_select_video_notify)(c, drawable, onoff)
+        sym!(self, xcb_xv_select_video_notify)(c, drawable, onoff)
     }
 
     #[inline]
@@ -1358,7 +1359,7 @@ impl XcbXv {
         drawable: xcb_drawable_t,
         onoff: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_select_video_notify_checked)(c, drawable, onoff)
+        sym!(self, xcb_xv_select_video_notify_checked)(c, drawable, onoff)
     }
 
     #[inline]
@@ -1368,7 +1369,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         onoff: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_select_port_notify)(c, port, onoff)
+        sym!(self, xcb_xv_select_port_notify)(c, port, onoff)
     }
 
     #[inline]
@@ -1378,7 +1379,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         onoff: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_select_port_notify_checked)(c, port, onoff)
+        sym!(self, xcb_xv_select_port_notify_checked)(c, port, onoff)
     }
 
     #[inline]
@@ -1388,7 +1389,7 @@ impl XcbXv {
         cookie: xcb_xv_query_best_size_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_query_best_size_reply_t {
-        call!(self, xcb_xv_query_best_size_reply)(c, cookie, error)
+        sym!(self, xcb_xv_query_best_size_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1402,7 +1403,7 @@ impl XcbXv {
         drw_h: u16,
         motion: u8,
     ) -> xcb_xv_query_best_size_cookie_t {
-        call!(self, xcb_xv_query_best_size)(c, port, vid_w, vid_h, drw_w, drw_h, motion)
+        sym!(self, xcb_xv_query_best_size)(c, port, vid_w, vid_h, drw_w, drw_h, motion)
     }
 
     #[inline]
@@ -1416,7 +1417,7 @@ impl XcbXv {
         drw_h: u16,
         motion: u8,
     ) -> xcb_xv_query_best_size_cookie_t {
-        call!(self, xcb_xv_query_best_size_unchecked)(c, port, vid_w, vid_h, drw_w, drw_h, motion)
+        sym!(self, xcb_xv_query_best_size_unchecked)(c, port, vid_w, vid_h, drw_w, drw_h, motion)
     }
 
     #[inline]
@@ -1427,7 +1428,7 @@ impl XcbXv {
         attribute: xcb_atom_t,
         value: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_set_port_attribute)(c, port, attribute, value)
+        sym!(self, xcb_xv_set_port_attribute)(c, port, attribute, value)
     }
 
     #[inline]
@@ -1438,7 +1439,7 @@ impl XcbXv {
         attribute: xcb_atom_t,
         value: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_set_port_attribute_checked)(c, port, attribute, value)
+        sym!(self, xcb_xv_set_port_attribute_checked)(c, port, attribute, value)
     }
 
     #[inline]
@@ -1448,7 +1449,7 @@ impl XcbXv {
         cookie: xcb_xv_get_port_attribute_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_get_port_attribute_reply_t {
-        call!(self, xcb_xv_get_port_attribute_reply)(c, cookie, error)
+        sym!(self, xcb_xv_get_port_attribute_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1458,7 +1459,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         attribute: xcb_atom_t,
     ) -> xcb_xv_get_port_attribute_cookie_t {
-        call!(self, xcb_xv_get_port_attribute)(c, port, attribute)
+        sym!(self, xcb_xv_get_port_attribute)(c, port, attribute)
     }
 
     #[inline]
@@ -1468,7 +1469,7 @@ impl XcbXv {
         port: xcb_xv_port_t,
         attribute: xcb_atom_t,
     ) -> xcb_xv_get_port_attribute_cookie_t {
-        call!(self, xcb_xv_get_port_attribute_unchecked)(c, port, attribute)
+        sym!(self, xcb_xv_get_port_attribute_unchecked)(c, port, attribute)
     }
 
     #[inline]
@@ -1476,7 +1477,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_port_attributes_reply_t,
     ) -> c_int {
-        call!(self, xcb_xv_query_port_attributes_attributes_length)(R)
+        sym!(self, xcb_xv_query_port_attributes_attributes_length)(R)
     }
 
     #[inline]
@@ -1484,7 +1485,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_port_attributes_reply_t,
     ) -> xcb_xv_attribute_info_iterator_t {
-        call!(self, xcb_xv_query_port_attributes_attributes_iterator)(R)
+        sym!(self, xcb_xv_query_port_attributes_attributes_iterator)(R)
     }
 
     #[inline]
@@ -1494,7 +1495,7 @@ impl XcbXv {
         cookie: xcb_xv_query_port_attributes_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_query_port_attributes_reply_t {
-        call!(self, xcb_xv_query_port_attributes_reply)(c, cookie, error)
+        sym!(self, xcb_xv_query_port_attributes_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1503,7 +1504,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         port: xcb_xv_port_t,
     ) -> xcb_xv_query_port_attributes_cookie_t {
-        call!(self, xcb_xv_query_port_attributes)(c, port)
+        sym!(self, xcb_xv_query_port_attributes)(c, port)
     }
 
     #[inline]
@@ -1512,7 +1513,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         port: xcb_xv_port_t,
     ) -> xcb_xv_query_port_attributes_cookie_t {
-        call!(self, xcb_xv_query_port_attributes_unchecked)(c, port)
+        sym!(self, xcb_xv_query_port_attributes_unchecked)(c, port)
     }
 
     #[inline]
@@ -1520,7 +1521,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_list_image_formats_reply_t,
     ) -> *mut xcb_xv_image_format_info_t {
-        call!(self, xcb_xv_list_image_formats_format)(R)
+        sym!(self, xcb_xv_list_image_formats_format)(R)
     }
 
     #[inline]
@@ -1528,7 +1529,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_list_image_formats_reply_t,
     ) -> c_int {
-        call!(self, xcb_xv_list_image_formats_format_length)(R)
+        sym!(self, xcb_xv_list_image_formats_format_length)(R)
     }
 
     #[inline]
@@ -1536,7 +1537,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_list_image_formats_reply_t,
     ) -> xcb_xv_image_format_info_iterator_t {
-        call!(self, xcb_xv_list_image_formats_format_iterator)(R)
+        sym!(self, xcb_xv_list_image_formats_format_iterator)(R)
     }
 
     #[inline]
@@ -1546,7 +1547,7 @@ impl XcbXv {
         cookie: xcb_xv_list_image_formats_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_list_image_formats_reply_t {
-        call!(self, xcb_xv_list_image_formats_reply)(c, cookie, error)
+        sym!(self, xcb_xv_list_image_formats_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1555,7 +1556,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         port: xcb_xv_port_t,
     ) -> xcb_xv_list_image_formats_cookie_t {
-        call!(self, xcb_xv_list_image_formats)(c, port)
+        sym!(self, xcb_xv_list_image_formats)(c, port)
     }
 
     #[inline]
@@ -1564,7 +1565,7 @@ impl XcbXv {
         c: *mut xcb_connection_t,
         port: xcb_xv_port_t,
     ) -> xcb_xv_list_image_formats_cookie_t {
-        call!(self, xcb_xv_list_image_formats_unchecked)(c, port)
+        sym!(self, xcb_xv_list_image_formats_unchecked)(c, port)
     }
 
     #[inline]
@@ -1572,7 +1573,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_image_attributes_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xv_query_image_attributes_pitches)(R)
+        sym!(self, xcb_xv_query_image_attributes_pitches)(R)
     }
 
     #[inline]
@@ -1580,7 +1581,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_image_attributes_reply_t,
     ) -> c_int {
-        call!(self, xcb_xv_query_image_attributes_pitches_length)(R)
+        sym!(self, xcb_xv_query_image_attributes_pitches_length)(R)
     }
 
     #[inline]
@@ -1588,7 +1589,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_image_attributes_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_query_image_attributes_pitches_end)(R)
+        sym!(self, xcb_xv_query_image_attributes_pitches_end)(R)
     }
 
     #[inline]
@@ -1596,7 +1597,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_image_attributes_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xv_query_image_attributes_offsets)(R)
+        sym!(self, xcb_xv_query_image_attributes_offsets)(R)
     }
 
     #[inline]
@@ -1604,7 +1605,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_image_attributes_reply_t,
     ) -> c_int {
-        call!(self, xcb_xv_query_image_attributes_offsets_length)(R)
+        sym!(self, xcb_xv_query_image_attributes_offsets_length)(R)
     }
 
     #[inline]
@@ -1612,7 +1613,7 @@ impl XcbXv {
         &self,
         R: *const xcb_xv_query_image_attributes_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xv_query_image_attributes_offsets_end)(R)
+        sym!(self, xcb_xv_query_image_attributes_offsets_end)(R)
     }
 
     #[inline]
@@ -1622,7 +1623,7 @@ impl XcbXv {
         cookie: xcb_xv_query_image_attributes_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xv_query_image_attributes_reply_t {
-        call!(self, xcb_xv_query_image_attributes_reply)(c, cookie, error)
+        sym!(self, xcb_xv_query_image_attributes_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1634,7 +1635,7 @@ impl XcbXv {
         width: u16,
         height: u16,
     ) -> xcb_xv_query_image_attributes_cookie_t {
-        call!(self, xcb_xv_query_image_attributes)(c, port, id, width, height)
+        sym!(self, xcb_xv_query_image_attributes)(c, port, id, width, height)
     }
 
     #[inline]
@@ -1646,7 +1647,7 @@ impl XcbXv {
         width: u16,
         height: u16,
     ) -> xcb_xv_query_image_attributes_cookie_t {
-        call!(self, xcb_xv_query_image_attributes_unchecked)(c, port, id, width, height)
+        sym!(self, xcb_xv_query_image_attributes_unchecked)(c, port, id, width, height)
     }
 
     #[inline]
@@ -1670,7 +1671,7 @@ impl XcbXv {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_put_image)(
+        sym!(self, xcb_xv_put_image)(
             c, port, drawable, gc, id, src_x, src_y, src_w, src_h, drw_x, drw_y, drw_w, drw_h,
             width, height, data_len, data,
         )
@@ -1697,7 +1698,7 @@ impl XcbXv {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_put_image_checked)(
+        sym!(self, xcb_xv_put_image_checked)(
             c, port, drawable, gc, id, src_x, src_y, src_w, src_h, drw_x, drw_y, drw_w, drw_h,
             width, height, data_len, data,
         )
@@ -1725,7 +1726,7 @@ impl XcbXv {
         height: u16,
         send_event: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_shm_put_image)(
+        sym!(self, xcb_xv_shm_put_image)(
             c, port, drawable, gc, shmseg, id, offset, src_x, src_y, src_w, src_h, drw_x, drw_y,
             drw_w, drw_h, width, height, send_event,
         )
@@ -1753,574 +1754,9 @@ impl XcbXv {
         height: u16,
         send_event: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xv_shm_put_image_checked)(
+        sym!(self, xcb_xv_shm_put_image_checked)(
             c, port, drawable, gc, shmseg, id, offset, src_x, src_y, src_w, src_h, drw_x, drw_y,
             drw_w, drw_h, width, height, send_event,
         )
     }
-}
-
-pub struct XcbXv {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xv_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xv_port_next: LazySymbol<unsafe fn(i: *mut xcb_xv_port_iterator_t)>,
-    pub(crate) xcb_xv_port_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_port_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_encoding_next: LazySymbol<unsafe fn(i: *mut xcb_xv_encoding_iterator_t)>,
-    pub(crate) xcb_xv_encoding_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_encoding_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_rational_next: LazySymbol<unsafe fn(i: *mut xcb_xv_rational_iterator_t)>,
-    pub(crate) xcb_xv_rational_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_rational_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_format_next: LazySymbol<unsafe fn(i: *mut xcb_xv_format_iterator_t)>,
-    pub(crate) xcb_xv_format_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_format_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_adaptor_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_xv_adaptor_info_t) -> *mut c_char>,
-    pub(crate) xcb_xv_adaptor_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_adaptor_info_t) -> c_int>,
-    pub(crate) xcb_xv_adaptor_info_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_xv_adaptor_info_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_adaptor_info_formats:
-        LazySymbol<unsafe fn(R: *const xcb_xv_adaptor_info_t) -> *mut xcb_xv_format_t>,
-    pub(crate) xcb_xv_adaptor_info_formats_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_adaptor_info_t) -> c_int>,
-    pub(crate) xcb_xv_adaptor_info_formats_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xv_adaptor_info_t) -> xcb_xv_format_iterator_t>,
-    pub(crate) xcb_xv_adaptor_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_adaptor_info_iterator_t)>,
-    pub(crate) xcb_xv_adaptor_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_adaptor_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_encoding_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_xv_encoding_info_t) -> *mut c_char>,
-    pub(crate) xcb_xv_encoding_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_encoding_info_t) -> c_int>,
-    pub(crate) xcb_xv_encoding_info_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_xv_encoding_info_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_encoding_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_encoding_info_iterator_t)>,
-    pub(crate) xcb_xv_encoding_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_encoding_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_image_pitches: LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> *mut u32>,
-    pub(crate) xcb_xv_image_pitches_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> c_int>,
-    pub(crate) xcb_xv_image_pitches_end:
-        LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_image_offsets: LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> *mut u32>,
-    pub(crate) xcb_xv_image_offsets_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> c_int>,
-    pub(crate) xcb_xv_image_offsets_end:
-        LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_image_data: LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> *mut u8>,
-    pub(crate) xcb_xv_image_data_length: LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> c_int>,
-    pub(crate) xcb_xv_image_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xv_image_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_image_next: LazySymbol<unsafe fn(i: *mut xcb_xv_image_iterator_t)>,
-    pub(crate) xcb_xv_image_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_image_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_attribute_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_xv_attribute_info_t) -> *mut c_char>,
-    pub(crate) xcb_xv_attribute_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_attribute_info_t) -> c_int>,
-    pub(crate) xcb_xv_attribute_info_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_xv_attribute_info_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_attribute_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_attribute_info_iterator_t)>,
-    pub(crate) xcb_xv_attribute_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_attribute_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xv_image_format_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xv_image_format_info_iterator_t)>,
-    pub(crate) xcb_xv_image_format_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xv_image_format_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xv_query_extension_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_query_extension_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_query_extension_reply_t,
-    >,
-    pub(crate) xcb_xv_query_extension:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xv_query_extension_cookie_t>,
-    pub(crate) xcb_xv_query_extension_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xv_query_extension_cookie_t>,
-    pub(crate) xcb_xv_query_adaptors_info_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_query_adaptors_reply_t) -> c_int>,
-    pub(crate) xcb_xv_query_adaptors_info_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xv_query_adaptors_reply_t) -> xcb_xv_adaptor_info_iterator_t,
-    >,
-    pub(crate) xcb_xv_query_adaptors_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_query_adaptors_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_query_adaptors_reply_t,
-    >,
-    pub(crate) xcb_xv_query_adaptors: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_xv_query_adaptors_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_adaptors_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_xv_query_adaptors_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_encodings_info_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_query_encodings_reply_t) -> c_int>,
-    pub(crate) xcb_xv_query_encodings_info_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xv_query_encodings_reply_t) -> xcb_xv_encoding_info_iterator_t,
-    >,
-    pub(crate) xcb_xv_query_encodings_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_query_encodings_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_query_encodings_reply_t,
-    >,
-    pub(crate) xcb_xv_query_encodings: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, port: xcb_xv_port_t) -> xcb_xv_query_encodings_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_encodings_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, port: xcb_xv_port_t) -> xcb_xv_query_encodings_cookie_t,
-    >,
-    pub(crate) xcb_xv_grab_port_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_grab_port_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_grab_port_reply_t,
-    >,
-    pub(crate) xcb_xv_grab_port: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_xv_grab_port_cookie_t,
-    >,
-    pub(crate) xcb_xv_grab_port_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_xv_grab_port_cookie_t,
-    >,
-    pub(crate) xcb_xv_ungrab_port: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_ungrab_port_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            time: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_put_video: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_put_video_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_put_still: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_put_still_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_get_video: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_get_video_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_get_still: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_get_still_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            vid_x: i16,
-            vid_y: i16,
-            vid_w: u16,
-            vid_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_stop_video: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_stop_video_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_select_video_notify: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            onoff: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_select_video_notify_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            onoff: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_select_port_notify: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, port: xcb_xv_port_t, onoff: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_select_port_notify_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, port: xcb_xv_port_t, onoff: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_best_size_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_query_best_size_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_query_best_size_reply_t,
-    >,
-    pub(crate) xcb_xv_query_best_size: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            vid_w: u16,
-            vid_h: u16,
-            drw_w: u16,
-            drw_h: u16,
-            motion: u8,
-        ) -> xcb_xv_query_best_size_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_best_size_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            vid_w: u16,
-            vid_h: u16,
-            drw_w: u16,
-            drw_h: u16,
-            motion: u8,
-        ) -> xcb_xv_query_best_size_cookie_t,
-    >,
-    pub(crate) xcb_xv_set_port_attribute: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            attribute: xcb_atom_t,
-            value: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_set_port_attribute_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            attribute: xcb_atom_t,
-            value: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_get_port_attribute_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_get_port_attribute_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_get_port_attribute_reply_t,
-    >,
-    pub(crate) xcb_xv_get_port_attribute: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            attribute: xcb_atom_t,
-        ) -> xcb_xv_get_port_attribute_cookie_t,
-    >,
-    pub(crate) xcb_xv_get_port_attribute_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            attribute: xcb_atom_t,
-        ) -> xcb_xv_get_port_attribute_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_port_attributes_attributes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_query_port_attributes_reply_t) -> c_int>,
-    pub(crate) xcb_xv_query_port_attributes_attributes_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xv_query_port_attributes_reply_t,
-        ) -> xcb_xv_attribute_info_iterator_t,
-    >,
-    pub(crate) xcb_xv_query_port_attributes_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_query_port_attributes_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_query_port_attributes_reply_t,
-    >,
-    pub(crate) xcb_xv_query_port_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-        ) -> xcb_xv_query_port_attributes_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_port_attributes_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-        ) -> xcb_xv_query_port_attributes_cookie_t,
-    >,
-    pub(crate) xcb_xv_list_image_formats_format: LazySymbol<
-        unsafe fn(R: *const xcb_xv_list_image_formats_reply_t) -> *mut xcb_xv_image_format_info_t,
-    >,
-    pub(crate) xcb_xv_list_image_formats_format_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_list_image_formats_reply_t) -> c_int>,
-    pub(crate) xcb_xv_list_image_formats_format_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xv_list_image_formats_reply_t,
-        ) -> xcb_xv_image_format_info_iterator_t,
-    >,
-    pub(crate) xcb_xv_list_image_formats_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_list_image_formats_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_list_image_formats_reply_t,
-    >,
-    pub(crate) xcb_xv_list_image_formats: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-        ) -> xcb_xv_list_image_formats_cookie_t,
-    >,
-    pub(crate) xcb_xv_list_image_formats_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-        ) -> xcb_xv_list_image_formats_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_image_attributes_pitches:
-        LazySymbol<unsafe fn(R: *const xcb_xv_query_image_attributes_reply_t) -> *mut u32>,
-    pub(crate) xcb_xv_query_image_attributes_pitches_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_query_image_attributes_reply_t) -> c_int>,
-    pub(crate) xcb_xv_query_image_attributes_pitches_end: LazySymbol<
-        unsafe fn(R: *const xcb_xv_query_image_attributes_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xv_query_image_attributes_offsets:
-        LazySymbol<unsafe fn(R: *const xcb_xv_query_image_attributes_reply_t) -> *mut u32>,
-    pub(crate) xcb_xv_query_image_attributes_offsets_length:
-        LazySymbol<unsafe fn(R: *const xcb_xv_query_image_attributes_reply_t) -> c_int>,
-    pub(crate) xcb_xv_query_image_attributes_offsets_end: LazySymbol<
-        unsafe fn(R: *const xcb_xv_query_image_attributes_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xv_query_image_attributes_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xv_query_image_attributes_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xv_query_image_attributes_reply_t,
-    >,
-    pub(crate) xcb_xv_query_image_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            id: u32,
-            width: u16,
-            height: u16,
-        ) -> xcb_xv_query_image_attributes_cookie_t,
-    >,
-    pub(crate) xcb_xv_query_image_attributes_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            id: u32,
-            width: u16,
-            height: u16,
-        ) -> xcb_xv_query_image_attributes_cookie_t,
-    >,
-    pub(crate) xcb_xv_put_image: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            id: u32,
-            src_x: i16,
-            src_y: i16,
-            src_w: u16,
-            src_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-            width: u16,
-            height: u16,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_put_image_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            id: u32,
-            src_x: i16,
-            src_y: i16,
-            src_w: u16,
-            src_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-            width: u16,
-            height: u16,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_shm_put_image: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            shmseg: xcb_shm_seg_t,
-            id: u32,
-            offset: u32,
-            src_x: i16,
-            src_y: i16,
-            src_w: u16,
-            src_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-            width: u16,
-            height: u16,
-            send_event: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xv_shm_put_image_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port: xcb_xv_port_t,
-            drawable: xcb_drawable_t,
-            gc: xcb_gcontext_t,
-            shmseg: xcb_shm_seg_t,
-            id: u32,
-            offset: u32,
-            src_x: i16,
-            src_y: i16,
-            src_w: u16,
-            src_h: u16,
-            drw_x: i16,
-            drw_y: i16,
-            drw_w: u16,
-            drw_h: u16,
-            width: u16,
-            height: u16,
-            send_event: u8,
-        ) -> xcb_void_cookie_t,
-    >,
 }

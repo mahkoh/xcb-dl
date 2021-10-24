@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -328,8 +329,8 @@ pub struct xcb_xf86dri_auth_connection_reply_t {
 
 impl XcbXf86dri {
     #[inline]
-    pub fn xcb_xf86dri_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xf86dri_id)
+    pub unsafe fn xcb_xf86dri_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xf86dri_id)
     }
 
     #[inline]
@@ -337,7 +338,7 @@ impl XcbXf86dri {
         &self,
         i: *mut xcb_xf86dri_drm_clip_rect_iterator_t,
     ) {
-        call!(self, xcb_xf86dri_drm_clip_rect_next)(i);
+        sym!(self, xcb_xf86dri_drm_clip_rect_next)(i);
     }
 
     #[inline]
@@ -345,7 +346,7 @@ impl XcbXf86dri {
         &self,
         i: *mut xcb_xf86dri_drm_clip_rect_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86dri_drm_clip_rect_end)(i)
+        sym!(self, xcb_xf86dri_drm_clip_rect_end)(i)
     }
 
     #[inline]
@@ -355,7 +356,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_query_version_reply_t {
-        call!(self, xcb_xf86dri_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -363,7 +364,7 @@ impl XcbXf86dri {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xf86dri_query_version_cookie_t {
-        call!(self, xcb_xf86dri_query_version)(c)
+        sym!(self, xcb_xf86dri_query_version)(c)
     }
 
     #[inline]
@@ -371,7 +372,7 @@ impl XcbXf86dri {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xf86dri_query_version_cookie_t {
-        call!(self, xcb_xf86dri_query_version_unchecked)(c)
+        sym!(self, xcb_xf86dri_query_version_unchecked)(c)
     }
 
     #[inline]
@@ -381,7 +382,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_query_direct_rendering_capable_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_query_direct_rendering_capable_reply_t {
-        call!(self, xcb_xf86dri_query_direct_rendering_capable_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_query_direct_rendering_capable_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -390,7 +391,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_query_direct_rendering_capable_cookie_t {
-        call!(self, xcb_xf86dri_query_direct_rendering_capable)(c, screen)
+        sym!(self, xcb_xf86dri_query_direct_rendering_capable)(c, screen)
     }
 
     #[inline]
@@ -399,7 +400,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_query_direct_rendering_capable_cookie_t {
-        call!(self, xcb_xf86dri_query_direct_rendering_capable_unchecked)(c, screen)
+        sym!(self, xcb_xf86dri_query_direct_rendering_capable_unchecked)(c, screen)
     }
 
     #[inline]
@@ -407,7 +408,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_open_connection_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_xf86dri_open_connection_bus_id)(R)
+        sym!(self, xcb_xf86dri_open_connection_bus_id)(R)
     }
 
     #[inline]
@@ -415,7 +416,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_open_connection_reply_t,
     ) -> c_int {
-        call!(self, xcb_xf86dri_open_connection_bus_id_length)(R)
+        sym!(self, xcb_xf86dri_open_connection_bus_id_length)(R)
     }
 
     #[inline]
@@ -423,7 +424,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_open_connection_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86dri_open_connection_bus_id_end)(R)
+        sym!(self, xcb_xf86dri_open_connection_bus_id_end)(R)
     }
 
     #[inline]
@@ -433,7 +434,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_open_connection_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_open_connection_reply_t {
-        call!(self, xcb_xf86dri_open_connection_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_open_connection_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -442,7 +443,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_open_connection_cookie_t {
-        call!(self, xcb_xf86dri_open_connection)(c, screen)
+        sym!(self, xcb_xf86dri_open_connection)(c, screen)
     }
 
     #[inline]
@@ -451,7 +452,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_open_connection_cookie_t {
-        call!(self, xcb_xf86dri_open_connection_unchecked)(c, screen)
+        sym!(self, xcb_xf86dri_open_connection_unchecked)(c, screen)
     }
 
     #[inline]
@@ -460,7 +461,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86dri_close_connection)(c, screen)
+        sym!(self, xcb_xf86dri_close_connection)(c, screen)
     }
 
     #[inline]
@@ -469,7 +470,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86dri_close_connection_checked)(c, screen)
+        sym!(self, xcb_xf86dri_close_connection_checked)(c, screen)
     }
 
     #[inline]
@@ -477,7 +478,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_client_driver_name_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_xf86dri_get_client_driver_name_client_driver_name)(R)
+        sym!(self, xcb_xf86dri_get_client_driver_name_client_driver_name)(R)
     }
 
     #[inline]
@@ -485,7 +486,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_client_driver_name_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xf86dri_get_client_driver_name_client_driver_name_length
         )(R)
@@ -496,7 +497,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_client_driver_name_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xf86dri_get_client_driver_name_client_driver_name_end
         )(R)
@@ -509,7 +510,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_get_client_driver_name_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_get_client_driver_name_reply_t {
-        call!(self, xcb_xf86dri_get_client_driver_name_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_get_client_driver_name_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -518,7 +519,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_get_client_driver_name_cookie_t {
-        call!(self, xcb_xf86dri_get_client_driver_name)(c, screen)
+        sym!(self, xcb_xf86dri_get_client_driver_name)(c, screen)
     }
 
     #[inline]
@@ -527,7 +528,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_get_client_driver_name_cookie_t {
-        call!(self, xcb_xf86dri_get_client_driver_name_unchecked)(c, screen)
+        sym!(self, xcb_xf86dri_get_client_driver_name_unchecked)(c, screen)
     }
 
     #[inline]
@@ -537,7 +538,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_create_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_create_context_reply_t {
-        call!(self, xcb_xf86dri_create_context_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_create_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -548,7 +549,7 @@ impl XcbXf86dri {
         visual: u32,
         context: u32,
     ) -> xcb_xf86dri_create_context_cookie_t {
-        call!(self, xcb_xf86dri_create_context)(c, screen, visual, context)
+        sym!(self, xcb_xf86dri_create_context)(c, screen, visual, context)
     }
 
     #[inline]
@@ -559,7 +560,7 @@ impl XcbXf86dri {
         visual: u32,
         context: u32,
     ) -> xcb_xf86dri_create_context_cookie_t {
-        call!(self, xcb_xf86dri_create_context_unchecked)(c, screen, visual, context)
+        sym!(self, xcb_xf86dri_create_context_unchecked)(c, screen, visual, context)
     }
 
     #[inline]
@@ -569,7 +570,7 @@ impl XcbXf86dri {
         screen: u32,
         context: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86dri_destroy_context)(c, screen, context)
+        sym!(self, xcb_xf86dri_destroy_context)(c, screen, context)
     }
 
     #[inline]
@@ -579,7 +580,7 @@ impl XcbXf86dri {
         screen: u32,
         context: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86dri_destroy_context_checked)(c, screen, context)
+        sym!(self, xcb_xf86dri_destroy_context_checked)(c, screen, context)
     }
 
     #[inline]
@@ -589,7 +590,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_create_drawable_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_create_drawable_reply_t {
-        call!(self, xcb_xf86dri_create_drawable_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_create_drawable_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -599,7 +600,7 @@ impl XcbXf86dri {
         screen: u32,
         drawable: u32,
     ) -> xcb_xf86dri_create_drawable_cookie_t {
-        call!(self, xcb_xf86dri_create_drawable)(c, screen, drawable)
+        sym!(self, xcb_xf86dri_create_drawable)(c, screen, drawable)
     }
 
     #[inline]
@@ -609,7 +610,7 @@ impl XcbXf86dri {
         screen: u32,
         drawable: u32,
     ) -> xcb_xf86dri_create_drawable_cookie_t {
-        call!(self, xcb_xf86dri_create_drawable_unchecked)(c, screen, drawable)
+        sym!(self, xcb_xf86dri_create_drawable_unchecked)(c, screen, drawable)
     }
 
     #[inline]
@@ -619,7 +620,7 @@ impl XcbXf86dri {
         screen: u32,
         drawable: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86dri_destroy_drawable)(c, screen, drawable)
+        sym!(self, xcb_xf86dri_destroy_drawable)(c, screen, drawable)
     }
 
     #[inline]
@@ -629,7 +630,7 @@ impl XcbXf86dri {
         screen: u32,
         drawable: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86dri_destroy_drawable_checked)(c, screen, drawable)
+        sym!(self, xcb_xf86dri_destroy_drawable_checked)(c, screen, drawable)
     }
 
     #[inline]
@@ -637,7 +638,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_drawable_info_reply_t,
     ) -> *mut xcb_xf86dri_drm_clip_rect_t {
-        call!(self, xcb_xf86dri_get_drawable_info_clip_rects)(R)
+        sym!(self, xcb_xf86dri_get_drawable_info_clip_rects)(R)
     }
 
     #[inline]
@@ -645,7 +646,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_drawable_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_xf86dri_get_drawable_info_clip_rects_length)(R)
+        sym!(self, xcb_xf86dri_get_drawable_info_clip_rects_length)(R)
     }
 
     #[inline]
@@ -653,7 +654,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_drawable_info_reply_t,
     ) -> xcb_xf86dri_drm_clip_rect_iterator_t {
-        call!(self, xcb_xf86dri_get_drawable_info_clip_rects_iterator)(R)
+        sym!(self, xcb_xf86dri_get_drawable_info_clip_rects_iterator)(R)
     }
 
     #[inline]
@@ -661,7 +662,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_drawable_info_reply_t,
     ) -> *mut xcb_xf86dri_drm_clip_rect_t {
-        call!(self, xcb_xf86dri_get_drawable_info_back_clip_rects)(R)
+        sym!(self, xcb_xf86dri_get_drawable_info_back_clip_rects)(R)
     }
 
     #[inline]
@@ -669,7 +670,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_drawable_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_xf86dri_get_drawable_info_back_clip_rects_length)(R)
+        sym!(self, xcb_xf86dri_get_drawable_info_back_clip_rects_length)(R)
     }
 
     #[inline]
@@ -677,7 +678,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_drawable_info_reply_t,
     ) -> xcb_xf86dri_drm_clip_rect_iterator_t {
-        call!(self, xcb_xf86dri_get_drawable_info_back_clip_rects_iterator)(R)
+        sym!(self, xcb_xf86dri_get_drawable_info_back_clip_rects_iterator)(R)
     }
 
     #[inline]
@@ -687,7 +688,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_get_drawable_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_get_drawable_info_reply_t {
-        call!(self, xcb_xf86dri_get_drawable_info_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_get_drawable_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -697,7 +698,7 @@ impl XcbXf86dri {
         screen: u32,
         drawable: u32,
     ) -> xcb_xf86dri_get_drawable_info_cookie_t {
-        call!(self, xcb_xf86dri_get_drawable_info)(c, screen, drawable)
+        sym!(self, xcb_xf86dri_get_drawable_info)(c, screen, drawable)
     }
 
     #[inline]
@@ -707,7 +708,7 @@ impl XcbXf86dri {
         screen: u32,
         drawable: u32,
     ) -> xcb_xf86dri_get_drawable_info_cookie_t {
-        call!(self, xcb_xf86dri_get_drawable_info_unchecked)(c, screen, drawable)
+        sym!(self, xcb_xf86dri_get_drawable_info_unchecked)(c, screen, drawable)
     }
 
     #[inline]
@@ -715,7 +716,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_device_info_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xf86dri_get_device_info_device_private)(R)
+        sym!(self, xcb_xf86dri_get_device_info_device_private)(R)
     }
 
     #[inline]
@@ -723,7 +724,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_device_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_xf86dri_get_device_info_device_private_length)(R)
+        sym!(self, xcb_xf86dri_get_device_info_device_private_length)(R)
     }
 
     #[inline]
@@ -731,7 +732,7 @@ impl XcbXf86dri {
         &self,
         R: *const xcb_xf86dri_get_device_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86dri_get_device_info_device_private_end)(R)
+        sym!(self, xcb_xf86dri_get_device_info_device_private_end)(R)
     }
 
     #[inline]
@@ -741,7 +742,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_get_device_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_get_device_info_reply_t {
-        call!(self, xcb_xf86dri_get_device_info_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_get_device_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -750,7 +751,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_get_device_info_cookie_t {
-        call!(self, xcb_xf86dri_get_device_info)(c, screen)
+        sym!(self, xcb_xf86dri_get_device_info)(c, screen)
     }
 
     #[inline]
@@ -759,7 +760,7 @@ impl XcbXf86dri {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xf86dri_get_device_info_cookie_t {
-        call!(self, xcb_xf86dri_get_device_info_unchecked)(c, screen)
+        sym!(self, xcb_xf86dri_get_device_info_unchecked)(c, screen)
     }
 
     #[inline]
@@ -769,7 +770,7 @@ impl XcbXf86dri {
         cookie: xcb_xf86dri_auth_connection_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xf86dri_auth_connection_reply_t {
-        call!(self, xcb_xf86dri_auth_connection_reply)(c, cookie, error)
+        sym!(self, xcb_xf86dri_auth_connection_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -779,7 +780,7 @@ impl XcbXf86dri {
         screen: u32,
         magic: u32,
     ) -> xcb_xf86dri_auth_connection_cookie_t {
-        call!(self, xcb_xf86dri_auth_connection)(c, screen, magic)
+        sym!(self, xcb_xf86dri_auth_connection)(c, screen, magic)
     }
 
     #[inline]
@@ -789,238 +790,6 @@ impl XcbXf86dri {
         screen: u32,
         magic: u32,
     ) -> xcb_xf86dri_auth_connection_cookie_t {
-        call!(self, xcb_xf86dri_auth_connection_unchecked)(c, screen, magic)
+        sym!(self, xcb_xf86dri_auth_connection_unchecked)(c, screen, magic)
     }
-}
-
-pub struct XcbXf86dri {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xf86dri_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xf86dri_drm_clip_rect_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xf86dri_drm_clip_rect_iterator_t)>,
-    pub(crate) xcb_xf86dri_drm_clip_rect_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xf86dri_drm_clip_rect_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86dri_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_query_version_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_query_version:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xf86dri_query_version_cookie_t>,
-    pub(crate) xcb_xf86dri_query_version_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xf86dri_query_version_cookie_t>,
-    pub(crate) xcb_xf86dri_query_direct_rendering_capable_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_query_direct_rendering_capable_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_query_direct_rendering_capable_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_query_direct_rendering_capable: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-        ) -> xcb_xf86dri_query_direct_rendering_capable_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_query_direct_rendering_capable_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-        ) -> xcb_xf86dri_query_direct_rendering_capable_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_open_connection_bus_id:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_open_connection_reply_t) -> *mut c_char>,
-    pub(crate) xcb_xf86dri_open_connection_bus_id_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_open_connection_reply_t) -> c_int>,
-    pub(crate) xcb_xf86dri_open_connection_bus_id_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86dri_open_connection_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86dri_open_connection_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_open_connection_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_open_connection_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_open_connection: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_xf86dri_open_connection_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_open_connection_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_xf86dri_open_connection_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_close_connection:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xf86dri_close_connection_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xf86dri_get_client_driver_name_client_driver_name:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_get_client_driver_name_reply_t) -> *mut c_char>,
-    pub(crate) xcb_xf86dri_get_client_driver_name_client_driver_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_get_client_driver_name_reply_t) -> c_int>,
-    pub(crate) xcb_xf86dri_get_client_driver_name_client_driver_name_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86dri_get_client_driver_name_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86dri_get_client_driver_name_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_get_client_driver_name_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_get_client_driver_name_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_get_client_driver_name: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-        ) -> xcb_xf86dri_get_client_driver_name_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_get_client_driver_name_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-        ) -> xcb_xf86dri_get_client_driver_name_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_create_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_create_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_create_context_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            visual: u32,
-            context: u32,
-        ) -> xcb_xf86dri_create_context_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_create_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            visual: u32,
-            context: u32,
-        ) -> xcb_xf86dri_create_context_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_destroy_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32, context: u32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_destroy_context_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32, context: u32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_create_drawable_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_create_drawable_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_create_drawable_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_create_drawable: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            drawable: u32,
-        ) -> xcb_xf86dri_create_drawable_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_create_drawable_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            drawable: u32,
-        ) -> xcb_xf86dri_create_drawable_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_destroy_drawable: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32, drawable: u32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_destroy_drawable_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32, drawable: u32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_get_drawable_info_clip_rects: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86dri_get_drawable_info_reply_t,
-        ) -> *mut xcb_xf86dri_drm_clip_rect_t,
-    >,
-    pub(crate) xcb_xf86dri_get_drawable_info_clip_rects_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_get_drawable_info_reply_t) -> c_int>,
-    pub(crate) xcb_xf86dri_get_drawable_info_clip_rects_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86dri_get_drawable_info_reply_t,
-        ) -> xcb_xf86dri_drm_clip_rect_iterator_t,
-    >,
-    pub(crate) xcb_xf86dri_get_drawable_info_back_clip_rects: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86dri_get_drawable_info_reply_t,
-        ) -> *mut xcb_xf86dri_drm_clip_rect_t,
-    >,
-    pub(crate) xcb_xf86dri_get_drawable_info_back_clip_rects_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_get_drawable_info_reply_t) -> c_int>,
-    pub(crate) xcb_xf86dri_get_drawable_info_back_clip_rects_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86dri_get_drawable_info_reply_t,
-        ) -> xcb_xf86dri_drm_clip_rect_iterator_t,
-    >,
-    pub(crate) xcb_xf86dri_get_drawable_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_get_drawable_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_get_drawable_info_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_get_drawable_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            drawable: u32,
-        ) -> xcb_xf86dri_get_drawable_info_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_get_drawable_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            drawable: u32,
-        ) -> xcb_xf86dri_get_drawable_info_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_get_device_info_device_private:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_get_device_info_reply_t) -> *mut u32>,
-    pub(crate) xcb_xf86dri_get_device_info_device_private_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86dri_get_device_info_reply_t) -> c_int>,
-    pub(crate) xcb_xf86dri_get_device_info_device_private_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86dri_get_device_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86dri_get_device_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_get_device_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_get_device_info_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_get_device_info: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_xf86dri_get_device_info_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_get_device_info_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_xf86dri_get_device_info_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_auth_connection_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86dri_auth_connection_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86dri_auth_connection_reply_t,
-    >,
-    pub(crate) xcb_xf86dri_auth_connection: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            magic: u32,
-        ) -> xcb_xf86dri_auth_connection_cookie_t,
-    >,
-    pub(crate) xcb_xf86dri_auth_connection_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            magic: u32,
-        ) -> xcb_xf86dri_auth_connection_cookie_t,
-    >,
 }

@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -156,8 +157,8 @@ pub struct xcb_dri3_fd_from_fence_reply_t {
 
 impl XcbDri3 {
     #[inline]
-    pub fn xcb_dri3_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_dri3_id)
+    pub unsafe fn xcb_dri3_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_dri3_id)
     }
 
     #[inline]
@@ -167,7 +168,7 @@ impl XcbDri3 {
         cookie: xcb_dri3_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri3_query_version_reply_t {
-        call!(self, xcb_dri3_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_dri3_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -177,7 +178,7 @@ impl XcbDri3 {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_dri3_query_version_cookie_t {
-        call!(self, xcb_dri3_query_version)(c, major_version, minor_version)
+        sym!(self, xcb_dri3_query_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -187,7 +188,7 @@ impl XcbDri3 {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_dri3_query_version_cookie_t {
-        call!(self, xcb_dri3_query_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_dri3_query_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -197,7 +198,7 @@ impl XcbDri3 {
         cookie: xcb_dri3_open_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri3_open_reply_t {
-        call!(self, xcb_dri3_open_reply)(c, cookie, error)
+        sym!(self, xcb_dri3_open_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -206,7 +207,7 @@ impl XcbDri3 {
         c: *mut xcb_connection_t,
         reply: *mut xcb_dri3_open_reply_t,
     ) -> *mut c_int {
-        call!(self, xcb_dri3_open_reply_fds)(c, reply)
+        sym!(self, xcb_dri3_open_reply_fds)(c, reply)
     }
 
     #[inline]
@@ -216,7 +217,7 @@ impl XcbDri3 {
         drawable: xcb_drawable_t,
         provider: u32,
     ) -> xcb_dri3_open_cookie_t {
-        call!(self, xcb_dri3_open)(c, drawable, provider)
+        sym!(self, xcb_dri3_open)(c, drawable, provider)
     }
 
     #[inline]
@@ -226,7 +227,7 @@ impl XcbDri3 {
         drawable: xcb_drawable_t,
         provider: u32,
     ) -> xcb_dri3_open_cookie_t {
-        call!(self, xcb_dri3_open_unchecked)(c, drawable, provider)
+        sym!(self, xcb_dri3_open_unchecked)(c, drawable, provider)
     }
 
     #[inline]
@@ -243,7 +244,7 @@ impl XcbDri3 {
         bpp: u8,
         pixmap_fd: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri3_pixmap_from_buffer)(
+        sym!(self, xcb_dri3_pixmap_from_buffer)(
             c, pixmap, drawable, size, width, height, stride, depth, bpp, pixmap_fd,
         )
     }
@@ -262,7 +263,7 @@ impl XcbDri3 {
         bpp: u8,
         pixmap_fd: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri3_pixmap_from_buffer_checked)(
+        sym!(self, xcb_dri3_pixmap_from_buffer_checked)(
             c, pixmap, drawable, size, width, height, stride, depth, bpp, pixmap_fd,
         )
     }
@@ -274,7 +275,7 @@ impl XcbDri3 {
         cookie: xcb_dri3_buffer_from_pixmap_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri3_buffer_from_pixmap_reply_t {
-        call!(self, xcb_dri3_buffer_from_pixmap_reply)(c, cookie, error)
+        sym!(self, xcb_dri3_buffer_from_pixmap_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -283,7 +284,7 @@ impl XcbDri3 {
         c: *mut xcb_connection_t,
         reply: *mut xcb_dri3_buffer_from_pixmap_reply_t,
     ) -> *mut c_int {
-        call!(self, xcb_dri3_buffer_from_pixmap_reply_fds)(c, reply)
+        sym!(self, xcb_dri3_buffer_from_pixmap_reply_fds)(c, reply)
     }
 
     #[inline]
@@ -292,7 +293,7 @@ impl XcbDri3 {
         c: *mut xcb_connection_t,
         pixmap: xcb_pixmap_t,
     ) -> xcb_dri3_buffer_from_pixmap_cookie_t {
-        call!(self, xcb_dri3_buffer_from_pixmap)(c, pixmap)
+        sym!(self, xcb_dri3_buffer_from_pixmap)(c, pixmap)
     }
 
     #[inline]
@@ -301,7 +302,7 @@ impl XcbDri3 {
         c: *mut xcb_connection_t,
         pixmap: xcb_pixmap_t,
     ) -> xcb_dri3_buffer_from_pixmap_cookie_t {
-        call!(self, xcb_dri3_buffer_from_pixmap_unchecked)(c, pixmap)
+        sym!(self, xcb_dri3_buffer_from_pixmap_unchecked)(c, pixmap)
     }
 
     #[inline]
@@ -313,7 +314,7 @@ impl XcbDri3 {
         initially_triggered: u8,
         fence_fd: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri3_fence_from_fd)(c, drawable, fence, initially_triggered, fence_fd)
+        sym!(self, xcb_dri3_fence_from_fd)(c, drawable, fence, initially_triggered, fence_fd)
     }
 
     #[inline]
@@ -325,7 +326,7 @@ impl XcbDri3 {
         initially_triggered: u8,
         fence_fd: i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri3_fence_from_fd_checked)(
+        sym!(self, xcb_dri3_fence_from_fd_checked)(
             c,
             drawable,
             fence,
@@ -341,7 +342,7 @@ impl XcbDri3 {
         cookie: xcb_dri3_fd_from_fence_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri3_fd_from_fence_reply_t {
-        call!(self, xcb_dri3_fd_from_fence_reply)(c, cookie, error)
+        sym!(self, xcb_dri3_fd_from_fence_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -350,7 +351,7 @@ impl XcbDri3 {
         c: *mut xcb_connection_t,
         reply: *mut xcb_dri3_fd_from_fence_reply_t,
     ) -> *mut c_int {
-        call!(self, xcb_dri3_fd_from_fence_reply_fds)(c, reply)
+        sym!(self, xcb_dri3_fd_from_fence_reply_fds)(c, reply)
     }
 
     #[inline]
@@ -360,7 +361,7 @@ impl XcbDri3 {
         drawable: xcb_drawable_t,
         fence: u32,
     ) -> xcb_dri3_fd_from_fence_cookie_t {
-        call!(self, xcb_dri3_fd_from_fence)(c, drawable, fence)
+        sym!(self, xcb_dri3_fd_from_fence)(c, drawable, fence)
     }
 
     #[inline]
@@ -370,154 +371,6 @@ impl XcbDri3 {
         drawable: xcb_drawable_t,
         fence: u32,
     ) -> xcb_dri3_fd_from_fence_cookie_t {
-        call!(self, xcb_dri3_fd_from_fence_unchecked)(c, drawable, fence)
+        sym!(self, xcb_dri3_fd_from_fence_unchecked)(c, drawable, fence)
     }
-}
-
-pub struct XcbDri3 {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_dri3_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_dri3_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri3_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri3_query_version_reply_t,
-    >,
-    pub(crate) xcb_dri3_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_dri3_query_version_cookie_t,
-    >,
-    pub(crate) xcb_dri3_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_dri3_query_version_cookie_t,
-    >,
-    pub(crate) xcb_dri3_open_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri3_open_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri3_open_reply_t,
-    >,
-    pub(crate) xcb_dri3_open_reply_fds: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, reply: *mut xcb_dri3_open_reply_t) -> *mut c_int,
-    >,
-    pub(crate) xcb_dri3_open: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            provider: u32,
-        ) -> xcb_dri3_open_cookie_t,
-    >,
-    pub(crate) xcb_dri3_open_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            provider: u32,
-        ) -> xcb_dri3_open_cookie_t,
-    >,
-    pub(crate) xcb_dri3_pixmap_from_buffer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            pixmap: xcb_pixmap_t,
-            drawable: xcb_drawable_t,
-            size: u32,
-            width: u16,
-            height: u16,
-            stride: u16,
-            depth: u8,
-            bpp: u8,
-            pixmap_fd: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri3_pixmap_from_buffer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            pixmap: xcb_pixmap_t,
-            drawable: xcb_drawable_t,
-            size: u32,
-            width: u16,
-            height: u16,
-            stride: u16,
-            depth: u8,
-            bpp: u8,
-            pixmap_fd: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri3_buffer_from_pixmap_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri3_buffer_from_pixmap_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri3_buffer_from_pixmap_reply_t,
-    >,
-    pub(crate) xcb_dri3_buffer_from_pixmap_reply_fds: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            reply: *mut xcb_dri3_buffer_from_pixmap_reply_t,
-        ) -> *mut c_int,
-    >,
-    pub(crate) xcb_dri3_buffer_from_pixmap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            pixmap: xcb_pixmap_t,
-        ) -> xcb_dri3_buffer_from_pixmap_cookie_t,
-    >,
-    pub(crate) xcb_dri3_buffer_from_pixmap_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            pixmap: xcb_pixmap_t,
-        ) -> xcb_dri3_buffer_from_pixmap_cookie_t,
-    >,
-    pub(crate) xcb_dri3_fence_from_fd: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            fence: u32,
-            initially_triggered: u8,
-            fence_fd: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri3_fence_from_fd_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            fence: u32,
-            initially_triggered: u8,
-            fence_fd: i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri3_fd_from_fence_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri3_fd_from_fence_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri3_fd_from_fence_reply_t,
-    >,
-    pub(crate) xcb_dri3_fd_from_fence_reply_fds: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            reply: *mut xcb_dri3_fd_from_fence_reply_t,
-        ) -> *mut c_int,
-    >,
-    pub(crate) xcb_dri3_fd_from_fence: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            fence: u32,
-        ) -> xcb_dri3_fd_from_fence_cookie_t,
-    >,
-    pub(crate) xcb_dri3_fd_from_fence_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            fence: u32,
-        ) -> xcb_dri3_fd_from_fence_cookie_t,
-    >,
 }

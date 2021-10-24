@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -469,13 +470,13 @@ pub struct xcb_dri2_invalidate_buffers_event_t {
 
 impl XcbDri2 {
     #[inline]
-    pub fn xcb_dri2_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_dri2_id)
+    pub unsafe fn xcb_dri2_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_dri2_id)
     }
 
     #[inline]
     pub unsafe fn xcb_dri2_dri2_buffer_next(&self, i: *mut xcb_dri2_dri2_buffer_iterator_t) {
-        call!(self, xcb_dri2_dri2_buffer_next)(i);
+        sym!(self, xcb_dri2_dri2_buffer_next)(i);
     }
 
     #[inline]
@@ -483,12 +484,12 @@ impl XcbDri2 {
         &self,
         i: *mut xcb_dri2_dri2_buffer_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_dri2_dri2_buffer_end)(i)
+        sym!(self, xcb_dri2_dri2_buffer_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_dri2_attach_format_next(&self, i: *mut xcb_dri2_attach_format_iterator_t) {
-        call!(self, xcb_dri2_attach_format_next)(i);
+        sym!(self, xcb_dri2_attach_format_next)(i);
     }
 
     #[inline]
@@ -496,7 +497,7 @@ impl XcbDri2 {
         &self,
         i: *mut xcb_dri2_attach_format_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_dri2_attach_format_end)(i)
+        sym!(self, xcb_dri2_attach_format_end)(i)
     }
 
     #[inline]
@@ -506,7 +507,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_query_version_reply_t {
-        call!(self, xcb_dri2_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -516,7 +517,7 @@ impl XcbDri2 {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_dri2_query_version_cookie_t {
-        call!(self, xcb_dri2_query_version)(c, major_version, minor_version)
+        sym!(self, xcb_dri2_query_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -526,7 +527,7 @@ impl XcbDri2 {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_dri2_query_version_cookie_t {
-        call!(self, xcb_dri2_query_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_dri2_query_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -534,7 +535,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_dri2_connect_driver_name)(R)
+        sym!(self, xcb_dri2_connect_driver_name)(R)
     }
 
     #[inline]
@@ -542,7 +543,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> c_int {
-        call!(self, xcb_dri2_connect_driver_name_length)(R)
+        sym!(self, xcb_dri2_connect_driver_name_length)(R)
     }
 
     #[inline]
@@ -550,7 +551,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_dri2_connect_driver_name_end)(R)
+        sym!(self, xcb_dri2_connect_driver_name_end)(R)
     }
 
     #[inline]
@@ -558,7 +559,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> *mut c_void {
-        call!(self, xcb_dri2_connect_alignment_pad)(R)
+        sym!(self, xcb_dri2_connect_alignment_pad)(R)
     }
 
     #[inline]
@@ -566,7 +567,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> c_int {
-        call!(self, xcb_dri2_connect_alignment_pad_length)(R)
+        sym!(self, xcb_dri2_connect_alignment_pad_length)(R)
     }
 
     #[inline]
@@ -574,7 +575,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_dri2_connect_alignment_pad_end)(R)
+        sym!(self, xcb_dri2_connect_alignment_pad_end)(R)
     }
 
     #[inline]
@@ -582,7 +583,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_dri2_connect_device_name)(R)
+        sym!(self, xcb_dri2_connect_device_name)(R)
     }
 
     #[inline]
@@ -590,7 +591,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> c_int {
-        call!(self, xcb_dri2_connect_device_name_length)(R)
+        sym!(self, xcb_dri2_connect_device_name_length)(R)
     }
 
     #[inline]
@@ -598,7 +599,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_connect_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_dri2_connect_device_name_end)(R)
+        sym!(self, xcb_dri2_connect_device_name_end)(R)
     }
 
     #[inline]
@@ -608,7 +609,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_connect_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_connect_reply_t {
-        call!(self, xcb_dri2_connect_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_connect_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -618,7 +619,7 @@ impl XcbDri2 {
         window: xcb_window_t,
         driver_type: u32,
     ) -> xcb_dri2_connect_cookie_t {
-        call!(self, xcb_dri2_connect)(c, window, driver_type)
+        sym!(self, xcb_dri2_connect)(c, window, driver_type)
     }
 
     #[inline]
@@ -628,7 +629,7 @@ impl XcbDri2 {
         window: xcb_window_t,
         driver_type: u32,
     ) -> xcb_dri2_connect_cookie_t {
-        call!(self, xcb_dri2_connect_unchecked)(c, window, driver_type)
+        sym!(self, xcb_dri2_connect_unchecked)(c, window, driver_type)
     }
 
     #[inline]
@@ -638,7 +639,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_authenticate_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_authenticate_reply_t {
-        call!(self, xcb_dri2_authenticate_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_authenticate_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -648,7 +649,7 @@ impl XcbDri2 {
         window: xcb_window_t,
         magic: u32,
     ) -> xcb_dri2_authenticate_cookie_t {
-        call!(self, xcb_dri2_authenticate)(c, window, magic)
+        sym!(self, xcb_dri2_authenticate)(c, window, magic)
     }
 
     #[inline]
@@ -658,7 +659,7 @@ impl XcbDri2 {
         window: xcb_window_t,
         magic: u32,
     ) -> xcb_dri2_authenticate_cookie_t {
-        call!(self, xcb_dri2_authenticate_unchecked)(c, window, magic)
+        sym!(self, xcb_dri2_authenticate_unchecked)(c, window, magic)
     }
 
     #[inline]
@@ -667,7 +668,7 @@ impl XcbDri2 {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri2_create_drawable)(c, drawable)
+        sym!(self, xcb_dri2_create_drawable)(c, drawable)
     }
 
     #[inline]
@@ -676,7 +677,7 @@ impl XcbDri2 {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri2_create_drawable_checked)(c, drawable)
+        sym!(self, xcb_dri2_create_drawable_checked)(c, drawable)
     }
 
     #[inline]
@@ -685,7 +686,7 @@ impl XcbDri2 {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri2_destroy_drawable)(c, drawable)
+        sym!(self, xcb_dri2_destroy_drawable)(c, drawable)
     }
 
     #[inline]
@@ -694,7 +695,7 @@ impl XcbDri2 {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri2_destroy_drawable_checked)(c, drawable)
+        sym!(self, xcb_dri2_destroy_drawable_checked)(c, drawable)
     }
 
     #[inline]
@@ -702,7 +703,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_get_buffers_reply_t,
     ) -> *mut xcb_dri2_dri2_buffer_t {
-        call!(self, xcb_dri2_get_buffers_buffers)(R)
+        sym!(self, xcb_dri2_get_buffers_buffers)(R)
     }
 
     #[inline]
@@ -710,7 +711,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_get_buffers_reply_t,
     ) -> c_int {
-        call!(self, xcb_dri2_get_buffers_buffers_length)(R)
+        sym!(self, xcb_dri2_get_buffers_buffers_length)(R)
     }
 
     #[inline]
@@ -718,7 +719,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_get_buffers_reply_t,
     ) -> xcb_dri2_dri2_buffer_iterator_t {
-        call!(self, xcb_dri2_get_buffers_buffers_iterator)(R)
+        sym!(self, xcb_dri2_get_buffers_buffers_iterator)(R)
     }
 
     #[inline]
@@ -728,7 +729,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_get_buffers_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_get_buffers_reply_t {
-        call!(self, xcb_dri2_get_buffers_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_get_buffers_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -740,7 +741,7 @@ impl XcbDri2 {
         attachments_len: u32,
         attachments: *const u32,
     ) -> xcb_dri2_get_buffers_cookie_t {
-        call!(self, xcb_dri2_get_buffers)(c, drawable, count, attachments_len, attachments)
+        sym!(self, xcb_dri2_get_buffers)(c, drawable, count, attachments_len, attachments)
     }
 
     #[inline]
@@ -752,13 +753,7 @@ impl XcbDri2 {
         attachments_len: u32,
         attachments: *const u32,
     ) -> xcb_dri2_get_buffers_cookie_t {
-        call!(self, xcb_dri2_get_buffers_unchecked)(
-            c,
-            drawable,
-            count,
-            attachments_len,
-            attachments,
-        )
+        sym!(self, xcb_dri2_get_buffers_unchecked)(c, drawable, count, attachments_len, attachments)
     }
 
     #[inline]
@@ -768,7 +763,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_copy_region_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_copy_region_reply_t {
-        call!(self, xcb_dri2_copy_region_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_copy_region_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -780,7 +775,7 @@ impl XcbDri2 {
         dest: u32,
         src: u32,
     ) -> xcb_dri2_copy_region_cookie_t {
-        call!(self, xcb_dri2_copy_region)(c, drawable, region, dest, src)
+        sym!(self, xcb_dri2_copy_region)(c, drawable, region, dest, src)
     }
 
     #[inline]
@@ -792,7 +787,7 @@ impl XcbDri2 {
         dest: u32,
         src: u32,
     ) -> xcb_dri2_copy_region_cookie_t {
-        call!(self, xcb_dri2_copy_region_unchecked)(c, drawable, region, dest, src)
+        sym!(self, xcb_dri2_copy_region_unchecked)(c, drawable, region, dest, src)
     }
 
     #[inline]
@@ -800,7 +795,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_get_buffers_with_format_reply_t,
     ) -> *mut xcb_dri2_dri2_buffer_t {
-        call!(self, xcb_dri2_get_buffers_with_format_buffers)(R)
+        sym!(self, xcb_dri2_get_buffers_with_format_buffers)(R)
     }
 
     #[inline]
@@ -808,7 +803,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_get_buffers_with_format_reply_t,
     ) -> c_int {
-        call!(self, xcb_dri2_get_buffers_with_format_buffers_length)(R)
+        sym!(self, xcb_dri2_get_buffers_with_format_buffers_length)(R)
     }
 
     #[inline]
@@ -816,7 +811,7 @@ impl XcbDri2 {
         &self,
         R: *const xcb_dri2_get_buffers_with_format_reply_t,
     ) -> xcb_dri2_dri2_buffer_iterator_t {
-        call!(self, xcb_dri2_get_buffers_with_format_buffers_iterator)(R)
+        sym!(self, xcb_dri2_get_buffers_with_format_buffers_iterator)(R)
     }
 
     #[inline]
@@ -826,7 +821,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_get_buffers_with_format_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_get_buffers_with_format_reply_t {
-        call!(self, xcb_dri2_get_buffers_with_format_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_get_buffers_with_format_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -838,7 +833,7 @@ impl XcbDri2 {
         attachments_len: u32,
         attachments: *const xcb_dri2_attach_format_t,
     ) -> xcb_dri2_get_buffers_with_format_cookie_t {
-        call!(self, xcb_dri2_get_buffers_with_format)(
+        sym!(self, xcb_dri2_get_buffers_with_format)(
             c,
             drawable,
             count,
@@ -856,7 +851,7 @@ impl XcbDri2 {
         attachments_len: u32,
         attachments: *const xcb_dri2_attach_format_t,
     ) -> xcb_dri2_get_buffers_with_format_cookie_t {
-        call!(self, xcb_dri2_get_buffers_with_format_unchecked)(
+        sym!(self, xcb_dri2_get_buffers_with_format_unchecked)(
             c,
             drawable,
             count,
@@ -872,7 +867,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_swap_buffers_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_swap_buffers_reply_t {
-        call!(self, xcb_dri2_swap_buffers_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_swap_buffers_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -887,7 +882,7 @@ impl XcbDri2 {
         remainder_hi: u32,
         remainder_lo: u32,
     ) -> xcb_dri2_swap_buffers_cookie_t {
-        call!(self, xcb_dri2_swap_buffers)(
+        sym!(self, xcb_dri2_swap_buffers)(
             c,
             drawable,
             target_msc_hi,
@@ -911,7 +906,7 @@ impl XcbDri2 {
         remainder_hi: u32,
         remainder_lo: u32,
     ) -> xcb_dri2_swap_buffers_cookie_t {
-        call!(self, xcb_dri2_swap_buffers_unchecked)(
+        sym!(self, xcb_dri2_swap_buffers_unchecked)(
             c,
             drawable,
             target_msc_hi,
@@ -930,7 +925,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_get_msc_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_get_msc_reply_t {
-        call!(self, xcb_dri2_get_msc_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_get_msc_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -939,7 +934,7 @@ impl XcbDri2 {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_dri2_get_msc_cookie_t {
-        call!(self, xcb_dri2_get_msc)(c, drawable)
+        sym!(self, xcb_dri2_get_msc)(c, drawable)
     }
 
     #[inline]
@@ -948,7 +943,7 @@ impl XcbDri2 {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_dri2_get_msc_cookie_t {
-        call!(self, xcb_dri2_get_msc_unchecked)(c, drawable)
+        sym!(self, xcb_dri2_get_msc_unchecked)(c, drawable)
     }
 
     #[inline]
@@ -958,7 +953,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_wait_msc_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_wait_msc_reply_t {
-        call!(self, xcb_dri2_wait_msc_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_wait_msc_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -973,7 +968,7 @@ impl XcbDri2 {
         remainder_hi: u32,
         remainder_lo: u32,
     ) -> xcb_dri2_wait_msc_cookie_t {
-        call!(self, xcb_dri2_wait_msc)(
+        sym!(self, xcb_dri2_wait_msc)(
             c,
             drawable,
             target_msc_hi,
@@ -997,7 +992,7 @@ impl XcbDri2 {
         remainder_hi: u32,
         remainder_lo: u32,
     ) -> xcb_dri2_wait_msc_cookie_t {
-        call!(self, xcb_dri2_wait_msc_unchecked)(
+        sym!(self, xcb_dri2_wait_msc_unchecked)(
             c,
             drawable,
             target_msc_hi,
@@ -1016,7 +1011,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_wait_sbc_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_wait_sbc_reply_t {
-        call!(self, xcb_dri2_wait_sbc_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_wait_sbc_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1027,7 +1022,7 @@ impl XcbDri2 {
         target_sbc_hi: u32,
         target_sbc_lo: u32,
     ) -> xcb_dri2_wait_sbc_cookie_t {
-        call!(self, xcb_dri2_wait_sbc)(c, drawable, target_sbc_hi, target_sbc_lo)
+        sym!(self, xcb_dri2_wait_sbc)(c, drawable, target_sbc_hi, target_sbc_lo)
     }
 
     #[inline]
@@ -1038,7 +1033,7 @@ impl XcbDri2 {
         target_sbc_hi: u32,
         target_sbc_lo: u32,
     ) -> xcb_dri2_wait_sbc_cookie_t {
-        call!(self, xcb_dri2_wait_sbc_unchecked)(c, drawable, target_sbc_hi, target_sbc_lo)
+        sym!(self, xcb_dri2_wait_sbc_unchecked)(c, drawable, target_sbc_hi, target_sbc_lo)
     }
 
     #[inline]
@@ -1048,7 +1043,7 @@ impl XcbDri2 {
         drawable: xcb_drawable_t,
         interval: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri2_swap_interval)(c, drawable, interval)
+        sym!(self, xcb_dri2_swap_interval)(c, drawable, interval)
     }
 
     #[inline]
@@ -1058,7 +1053,7 @@ impl XcbDri2 {
         drawable: xcb_drawable_t,
         interval: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dri2_swap_interval_checked)(c, drawable, interval)
+        sym!(self, xcb_dri2_swap_interval_checked)(c, drawable, interval)
     }
 
     #[inline]
@@ -1068,7 +1063,7 @@ impl XcbDri2 {
         cookie: xcb_dri2_get_param_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dri2_get_param_reply_t {
-        call!(self, xcb_dri2_get_param_reply)(c, cookie, error)
+        sym!(self, xcb_dri2_get_param_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1078,7 +1073,7 @@ impl XcbDri2 {
         drawable: xcb_drawable_t,
         param: u32,
     ) -> xcb_dri2_get_param_cookie_t {
-        call!(self, xcb_dri2_get_param)(c, drawable, param)
+        sym!(self, xcb_dri2_get_param)(c, drawable, param)
     }
 
     #[inline]
@@ -1088,340 +1083,6 @@ impl XcbDri2 {
         drawable: xcb_drawable_t,
         param: u32,
     ) -> xcb_dri2_get_param_cookie_t {
-        call!(self, xcb_dri2_get_param_unchecked)(c, drawable, param)
+        sym!(self, xcb_dri2_get_param_unchecked)(c, drawable, param)
     }
-}
-
-pub struct XcbDri2 {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_dri2_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_dri2_dri2_buffer_next:
-        LazySymbol<unsafe fn(i: *mut xcb_dri2_dri2_buffer_iterator_t)>,
-    pub(crate) xcb_dri2_dri2_buffer_end:
-        LazySymbol<unsafe fn(i: *mut xcb_dri2_dri2_buffer_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_dri2_attach_format_next:
-        LazySymbol<unsafe fn(i: *mut xcb_dri2_attach_format_iterator_t)>,
-    pub(crate) xcb_dri2_attach_format_end:
-        LazySymbol<unsafe fn(i: *mut xcb_dri2_attach_format_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_dri2_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_query_version_reply_t,
-    >,
-    pub(crate) xcb_dri2_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_dri2_query_version_cookie_t,
-    >,
-    pub(crate) xcb_dri2_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_dri2_query_version_cookie_t,
-    >,
-    pub(crate) xcb_dri2_connect_driver_name:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> *mut c_char>,
-    pub(crate) xcb_dri2_connect_driver_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> c_int>,
-    pub(crate) xcb_dri2_connect_driver_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_dri2_connect_alignment_pad:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> *mut c_void>,
-    pub(crate) xcb_dri2_connect_alignment_pad_length:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> c_int>,
-    pub(crate) xcb_dri2_connect_alignment_pad_end:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_dri2_connect_device_name:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> *mut c_char>,
-    pub(crate) xcb_dri2_connect_device_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> c_int>,
-    pub(crate) xcb_dri2_connect_device_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_connect_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_dri2_connect_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_connect_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_connect_reply_t,
-    >,
-    pub(crate) xcb_dri2_connect: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            driver_type: u32,
-        ) -> xcb_dri2_connect_cookie_t,
-    >,
-    pub(crate) xcb_dri2_connect_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            driver_type: u32,
-        ) -> xcb_dri2_connect_cookie_t,
-    >,
-    pub(crate) xcb_dri2_authenticate_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_authenticate_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_authenticate_reply_t,
-    >,
-    pub(crate) xcb_dri2_authenticate: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            magic: u32,
-        ) -> xcb_dri2_authenticate_cookie_t,
-    >,
-    pub(crate) xcb_dri2_authenticate_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            magic: u32,
-        ) -> xcb_dri2_authenticate_cookie_t,
-    >,
-    pub(crate) xcb_dri2_create_drawable: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri2_create_drawable_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri2_destroy_drawable: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri2_destroy_drawable_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_buffers: LazySymbol<
-        unsafe fn(R: *const xcb_dri2_get_buffers_reply_t) -> *mut xcb_dri2_dri2_buffer_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_buffers_length:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_get_buffers_reply_t) -> c_int>,
-    pub(crate) xcb_dri2_get_buffers_buffers_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_dri2_get_buffers_reply_t) -> xcb_dri2_dri2_buffer_iterator_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_get_buffers_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_get_buffers_reply_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            count: u32,
-            attachments_len: u32,
-            attachments: *const u32,
-        ) -> xcb_dri2_get_buffers_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            count: u32,
-            attachments_len: u32,
-            attachments: *const u32,
-        ) -> xcb_dri2_get_buffers_cookie_t,
-    >,
-    pub(crate) xcb_dri2_copy_region_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_copy_region_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_copy_region_reply_t,
-    >,
-    pub(crate) xcb_dri2_copy_region: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            region: u32,
-            dest: u32,
-            src: u32,
-        ) -> xcb_dri2_copy_region_cookie_t,
-    >,
-    pub(crate) xcb_dri2_copy_region_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            region: u32,
-            dest: u32,
-            src: u32,
-        ) -> xcb_dri2_copy_region_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_with_format_buffers: LazySymbol<
-        unsafe fn(
-            R: *const xcb_dri2_get_buffers_with_format_reply_t,
-        ) -> *mut xcb_dri2_dri2_buffer_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_with_format_buffers_length:
-        LazySymbol<unsafe fn(R: *const xcb_dri2_get_buffers_with_format_reply_t) -> c_int>,
-    pub(crate) xcb_dri2_get_buffers_with_format_buffers_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_dri2_get_buffers_with_format_reply_t,
-        ) -> xcb_dri2_dri2_buffer_iterator_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_with_format_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_get_buffers_with_format_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_get_buffers_with_format_reply_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_with_format: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            count: u32,
-            attachments_len: u32,
-            attachments: *const xcb_dri2_attach_format_t,
-        ) -> xcb_dri2_get_buffers_with_format_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_buffers_with_format_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            count: u32,
-            attachments_len: u32,
-            attachments: *const xcb_dri2_attach_format_t,
-        ) -> xcb_dri2_get_buffers_with_format_cookie_t,
-    >,
-    pub(crate) xcb_dri2_swap_buffers_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_swap_buffers_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_swap_buffers_reply_t,
-    >,
-    pub(crate) xcb_dri2_swap_buffers: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            target_msc_hi: u32,
-            target_msc_lo: u32,
-            divisor_hi: u32,
-            divisor_lo: u32,
-            remainder_hi: u32,
-            remainder_lo: u32,
-        ) -> xcb_dri2_swap_buffers_cookie_t,
-    >,
-    pub(crate) xcb_dri2_swap_buffers_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            target_msc_hi: u32,
-            target_msc_lo: u32,
-            divisor_hi: u32,
-            divisor_lo: u32,
-            remainder_hi: u32,
-            remainder_lo: u32,
-        ) -> xcb_dri2_swap_buffers_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_msc_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_get_msc_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_get_msc_reply_t,
-    >,
-    pub(crate) xcb_dri2_get_msc: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_dri2_get_msc_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_msc_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_dri2_get_msc_cookie_t,
-    >,
-    pub(crate) xcb_dri2_wait_msc_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_wait_msc_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_wait_msc_reply_t,
-    >,
-    pub(crate) xcb_dri2_wait_msc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            target_msc_hi: u32,
-            target_msc_lo: u32,
-            divisor_hi: u32,
-            divisor_lo: u32,
-            remainder_hi: u32,
-            remainder_lo: u32,
-        ) -> xcb_dri2_wait_msc_cookie_t,
-    >,
-    pub(crate) xcb_dri2_wait_msc_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            target_msc_hi: u32,
-            target_msc_lo: u32,
-            divisor_hi: u32,
-            divisor_lo: u32,
-            remainder_hi: u32,
-            remainder_lo: u32,
-        ) -> xcb_dri2_wait_msc_cookie_t,
-    >,
-    pub(crate) xcb_dri2_wait_sbc_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_wait_sbc_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_wait_sbc_reply_t,
-    >,
-    pub(crate) xcb_dri2_wait_sbc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            target_sbc_hi: u32,
-            target_sbc_lo: u32,
-        ) -> xcb_dri2_wait_sbc_cookie_t,
-    >,
-    pub(crate) xcb_dri2_wait_sbc_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            target_sbc_hi: u32,
-            target_sbc_lo: u32,
-        ) -> xcb_dri2_wait_sbc_cookie_t,
-    >,
-    pub(crate) xcb_dri2_swap_interval: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            interval: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri2_swap_interval_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            interval: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_param_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dri2_get_param_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dri2_get_param_reply_t,
-    >,
-    pub(crate) xcb_dri2_get_param: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            param: u32,
-        ) -> xcb_dri2_get_param_cookie_t,
-    >,
-    pub(crate) xcb_dri2_get_param_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            param: u32,
-        ) -> xcb_dri2_get_param_cookie_t,
-    >,
 }

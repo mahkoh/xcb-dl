@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -155,8 +156,8 @@ pub struct xcb_screensaver_notify_event_t {
 
 impl XcbScreensaver {
     #[inline]
-    pub fn xcb_screensaver_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_screensaver_id)
+    pub unsafe fn xcb_screensaver_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_screensaver_id)
     }
 
     #[inline]
@@ -166,7 +167,7 @@ impl XcbScreensaver {
         cookie: xcb_screensaver_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_screensaver_query_version_reply_t {
-        call!(self, xcb_screensaver_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_screensaver_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -176,7 +177,7 @@ impl XcbScreensaver {
         client_major_version: u8,
         client_minor_version: u8,
     ) -> xcb_screensaver_query_version_cookie_t {
-        call!(self, xcb_screensaver_query_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_screensaver_query_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -186,7 +187,7 @@ impl XcbScreensaver {
         client_major_version: u8,
         client_minor_version: u8,
     ) -> xcb_screensaver_query_version_cookie_t {
-        call!(self, xcb_screensaver_query_version_unchecked)(
+        sym!(self, xcb_screensaver_query_version_unchecked)(
             c,
             client_major_version,
             client_minor_version,
@@ -200,7 +201,7 @@ impl XcbScreensaver {
         cookie: xcb_screensaver_query_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_screensaver_query_info_reply_t {
-        call!(self, xcb_screensaver_query_info_reply)(c, cookie, error)
+        sym!(self, xcb_screensaver_query_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -209,7 +210,7 @@ impl XcbScreensaver {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_screensaver_query_info_cookie_t {
-        call!(self, xcb_screensaver_query_info)(c, drawable)
+        sym!(self, xcb_screensaver_query_info)(c, drawable)
     }
 
     #[inline]
@@ -218,7 +219,7 @@ impl XcbScreensaver {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_screensaver_query_info_cookie_t {
-        call!(self, xcb_screensaver_query_info_unchecked)(c, drawable)
+        sym!(self, xcb_screensaver_query_info_unchecked)(c, drawable)
     }
 
     #[inline]
@@ -228,7 +229,7 @@ impl XcbScreensaver {
         drawable: xcb_drawable_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_select_input)(c, drawable, event_mask)
+        sym!(self, xcb_screensaver_select_input)(c, drawable, event_mask)
     }
 
     #[inline]
@@ -238,7 +239,7 @@ impl XcbScreensaver {
         drawable: xcb_drawable_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_select_input_checked)(c, drawable, event_mask)
+        sym!(self, xcb_screensaver_select_input_checked)(c, drawable, event_mask)
     }
 
     #[inline]
@@ -257,7 +258,7 @@ impl XcbScreensaver {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_set_attributes)(
+        sym!(self, xcb_screensaver_set_attributes)(
             c,
             drawable,
             x,
@@ -289,7 +290,7 @@ impl XcbScreensaver {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_set_attributes_checked)(
+        sym!(self, xcb_screensaver_set_attributes_checked)(
             c,
             drawable,
             x,
@@ -311,7 +312,7 @@ impl XcbScreensaver {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_unset_attributes)(c, drawable)
+        sym!(self, xcb_screensaver_unset_attributes)(c, drawable)
     }
 
     #[inline]
@@ -320,7 +321,7 @@ impl XcbScreensaver {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_unset_attributes_checked)(c, drawable)
+        sym!(self, xcb_screensaver_unset_attributes_checked)(c, drawable)
     }
 
     #[inline]
@@ -329,7 +330,7 @@ impl XcbScreensaver {
         c: *mut xcb_connection_t,
         suspend: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_suspend)(c, suspend)
+        sym!(self, xcb_screensaver_suspend)(c, suspend)
     }
 
     #[inline]
@@ -338,107 +339,6 @@ impl XcbScreensaver {
         c: *mut xcb_connection_t,
         suspend: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_screensaver_suspend_checked)(c, suspend)
+        sym!(self, xcb_screensaver_suspend_checked)(c, suspend)
     }
-}
-
-pub struct XcbScreensaver {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_screensaver_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_screensaver_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_screensaver_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_screensaver_query_version_reply_t,
-    >,
-    pub(crate) xcb_screensaver_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u8,
-            client_minor_version: u8,
-        ) -> xcb_screensaver_query_version_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u8,
-            client_minor_version: u8,
-        ) -> xcb_screensaver_query_version_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_query_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_screensaver_query_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_screensaver_query_info_reply_t,
-    >,
-    pub(crate) xcb_screensaver_query_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-        ) -> xcb_screensaver_query_info_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_query_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-        ) -> xcb_screensaver_query_info_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_select_input: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_select_input_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_set_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-            border_width: u16,
-            class: u8,
-            depth: u8,
-            visual: xcb_visualid_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_set_attributes_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            x: i16,
-            y: i16,
-            width: u16,
-            height: u16,
-            border_width: u16,
-            class: u8,
-            depth: u8,
-            visual: xcb_visualid_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_unset_attributes: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_unset_attributes_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, drawable: xcb_drawable_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_screensaver_suspend:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, suspend: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_screensaver_suspend_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, suspend: u8) -> xcb_void_cookie_t>,
 }

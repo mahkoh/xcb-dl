@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -981,13 +982,13 @@ pub struct xcb_render_create_conical_gradient_request_t {
 
 impl XcbRender {
     #[inline]
-    pub fn xcb_render_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_render_id)
+    pub unsafe fn xcb_render_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_render_id)
     }
 
     #[inline]
     pub unsafe fn xcb_render_glyph_next(&self, i: *mut xcb_render_glyph_iterator_t) {
-        call!(self, xcb_render_glyph_next)(i);
+        sym!(self, xcb_render_glyph_next)(i);
     }
 
     #[inline]
@@ -995,12 +996,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_glyph_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_glyph_end)(i)
+        sym!(self, xcb_render_glyph_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_glyphset_next(&self, i: *mut xcb_render_glyphset_iterator_t) {
-        call!(self, xcb_render_glyphset_next)(i);
+        sym!(self, xcb_render_glyphset_next)(i);
     }
 
     #[inline]
@@ -1008,12 +1009,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_glyphset_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_glyphset_end)(i)
+        sym!(self, xcb_render_glyphset_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_picture_next(&self, i: *mut xcb_render_picture_iterator_t) {
-        call!(self, xcb_render_picture_next)(i);
+        sym!(self, xcb_render_picture_next)(i);
     }
 
     #[inline]
@@ -1021,12 +1022,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_picture_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_picture_end)(i)
+        sym!(self, xcb_render_picture_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_pictformat_next(&self, i: *mut xcb_render_pictformat_iterator_t) {
-        call!(self, xcb_render_pictformat_next)(i);
+        sym!(self, xcb_render_pictformat_next)(i);
     }
 
     #[inline]
@@ -1034,12 +1035,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_pictformat_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_pictformat_end)(i)
+        sym!(self, xcb_render_pictformat_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_fixed_next(&self, i: *mut xcb_render_fixed_iterator_t) {
-        call!(self, xcb_render_fixed_next)(i);
+        sym!(self, xcb_render_fixed_next)(i);
     }
 
     #[inline]
@@ -1047,12 +1048,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_fixed_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_fixed_end)(i)
+        sym!(self, xcb_render_fixed_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_directformat_next(&self, i: *mut xcb_render_directformat_iterator_t) {
-        call!(self, xcb_render_directformat_next)(i);
+        sym!(self, xcb_render_directformat_next)(i);
     }
 
     #[inline]
@@ -1060,12 +1061,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_directformat_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_directformat_end)(i)
+        sym!(self, xcb_render_directformat_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_pictforminfo_next(&self, i: *mut xcb_render_pictforminfo_iterator_t) {
-        call!(self, xcb_render_pictforminfo_next)(i);
+        sym!(self, xcb_render_pictforminfo_next)(i);
     }
 
     #[inline]
@@ -1073,12 +1074,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_pictforminfo_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_pictforminfo_end)(i)
+        sym!(self, xcb_render_pictforminfo_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_pictvisual_next(&self, i: *mut xcb_render_pictvisual_iterator_t) {
-        call!(self, xcb_render_pictvisual_next)(i);
+        sym!(self, xcb_render_pictvisual_next)(i);
     }
 
     #[inline]
@@ -1086,7 +1087,7 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_pictvisual_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_pictvisual_end)(i)
+        sym!(self, xcb_render_pictvisual_end)(i)
     }
 
     #[inline]
@@ -1094,7 +1095,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_pictdepth_t,
     ) -> *mut xcb_render_pictvisual_t {
-        call!(self, xcb_render_pictdepth_visuals)(R)
+        sym!(self, xcb_render_pictdepth_visuals)(R)
     }
 
     #[inline]
@@ -1102,7 +1103,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_pictdepth_t,
     ) -> c_int {
-        call!(self, xcb_render_pictdepth_visuals_length)(R)
+        sym!(self, xcb_render_pictdepth_visuals_length)(R)
     }
 
     #[inline]
@@ -1110,12 +1111,12 @@ impl XcbRender {
         &self,
         R: *const xcb_render_pictdepth_t,
     ) -> xcb_render_pictvisual_iterator_t {
-        call!(self, xcb_render_pictdepth_visuals_iterator)(R)
+        sym!(self, xcb_render_pictdepth_visuals_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_render_pictdepth_next(&self, i: *mut xcb_render_pictdepth_iterator_t) {
-        call!(self, xcb_render_pictdepth_next)(i);
+        sym!(self, xcb_render_pictdepth_next)(i);
     }
 
     #[inline]
@@ -1123,7 +1124,7 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_pictdepth_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_pictdepth_end)(i)
+        sym!(self, xcb_render_pictdepth_end)(i)
     }
 
     #[inline]
@@ -1131,7 +1132,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_pictscreen_t,
     ) -> c_int {
-        call!(self, xcb_render_pictscreen_depths_length)(R)
+        sym!(self, xcb_render_pictscreen_depths_length)(R)
     }
 
     #[inline]
@@ -1139,12 +1140,12 @@ impl XcbRender {
         &self,
         R: *const xcb_render_pictscreen_t,
     ) -> xcb_render_pictdepth_iterator_t {
-        call!(self, xcb_render_pictscreen_depths_iterator)(R)
+        sym!(self, xcb_render_pictscreen_depths_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_render_pictscreen_next(&self, i: *mut xcb_render_pictscreen_iterator_t) {
-        call!(self, xcb_render_pictscreen_next)(i);
+        sym!(self, xcb_render_pictscreen_next)(i);
     }
 
     #[inline]
@@ -1152,12 +1153,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_pictscreen_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_pictscreen_end)(i)
+        sym!(self, xcb_render_pictscreen_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_indexvalue_next(&self, i: *mut xcb_render_indexvalue_iterator_t) {
-        call!(self, xcb_render_indexvalue_next)(i);
+        sym!(self, xcb_render_indexvalue_next)(i);
     }
 
     #[inline]
@@ -1165,12 +1166,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_indexvalue_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_indexvalue_end)(i)
+        sym!(self, xcb_render_indexvalue_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_color_next(&self, i: *mut xcb_render_color_iterator_t) {
-        call!(self, xcb_render_color_next)(i);
+        sym!(self, xcb_render_color_next)(i);
     }
 
     #[inline]
@@ -1178,12 +1179,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_color_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_color_end)(i)
+        sym!(self, xcb_render_color_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_pointfix_next(&self, i: *mut xcb_render_pointfix_iterator_t) {
-        call!(self, xcb_render_pointfix_next)(i);
+        sym!(self, xcb_render_pointfix_next)(i);
     }
 
     #[inline]
@@ -1191,12 +1192,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_pointfix_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_pointfix_end)(i)
+        sym!(self, xcb_render_pointfix_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_linefix_next(&self, i: *mut xcb_render_linefix_iterator_t) {
-        call!(self, xcb_render_linefix_next)(i);
+        sym!(self, xcb_render_linefix_next)(i);
     }
 
     #[inline]
@@ -1204,12 +1205,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_linefix_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_linefix_end)(i)
+        sym!(self, xcb_render_linefix_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_triangle_next(&self, i: *mut xcb_render_triangle_iterator_t) {
-        call!(self, xcb_render_triangle_next)(i);
+        sym!(self, xcb_render_triangle_next)(i);
     }
 
     #[inline]
@@ -1217,12 +1218,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_triangle_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_triangle_end)(i)
+        sym!(self, xcb_render_triangle_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_trapezoid_next(&self, i: *mut xcb_render_trapezoid_iterator_t) {
-        call!(self, xcb_render_trapezoid_next)(i);
+        sym!(self, xcb_render_trapezoid_next)(i);
     }
 
     #[inline]
@@ -1230,12 +1231,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_trapezoid_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_trapezoid_end)(i)
+        sym!(self, xcb_render_trapezoid_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_glyphinfo_next(&self, i: *mut xcb_render_glyphinfo_iterator_t) {
-        call!(self, xcb_render_glyphinfo_next)(i);
+        sym!(self, xcb_render_glyphinfo_next)(i);
     }
 
     #[inline]
@@ -1243,7 +1244,7 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_glyphinfo_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_glyphinfo_end)(i)
+        sym!(self, xcb_render_glyphinfo_end)(i)
     }
 
     #[inline]
@@ -1253,7 +1254,7 @@ impl XcbRender {
         cookie: xcb_render_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_render_query_version_reply_t {
-        call!(self, xcb_render_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_render_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1263,7 +1264,7 @@ impl XcbRender {
         client_major_version: u32,
         client_minor_version: u32,
     ) -> xcb_render_query_version_cookie_t {
-        call!(self, xcb_render_query_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_render_query_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -1273,7 +1274,7 @@ impl XcbRender {
         client_major_version: u32,
         client_minor_version: u32,
     ) -> xcb_render_query_version_cookie_t {
-        call!(self, xcb_render_query_version_unchecked)(
+        sym!(self, xcb_render_query_version_unchecked)(
             c,
             client_major_version,
             client_minor_version,
@@ -1285,7 +1286,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> *mut xcb_render_pictforminfo_t {
-        call!(self, xcb_render_query_pict_formats_formats)(R)
+        sym!(self, xcb_render_query_pict_formats_formats)(R)
     }
 
     #[inline]
@@ -1293,7 +1294,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> c_int {
-        call!(self, xcb_render_query_pict_formats_formats_length)(R)
+        sym!(self, xcb_render_query_pict_formats_formats_length)(R)
     }
 
     #[inline]
@@ -1301,7 +1302,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> xcb_render_pictforminfo_iterator_t {
-        call!(self, xcb_render_query_pict_formats_formats_iterator)(R)
+        sym!(self, xcb_render_query_pict_formats_formats_iterator)(R)
     }
 
     #[inline]
@@ -1309,7 +1310,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> c_int {
-        call!(self, xcb_render_query_pict_formats_screens_length)(R)
+        sym!(self, xcb_render_query_pict_formats_screens_length)(R)
     }
 
     #[inline]
@@ -1317,7 +1318,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> xcb_render_pictscreen_iterator_t {
-        call!(self, xcb_render_query_pict_formats_screens_iterator)(R)
+        sym!(self, xcb_render_query_pict_formats_screens_iterator)(R)
     }
 
     #[inline]
@@ -1325,7 +1326,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_render_query_pict_formats_subpixels)(R)
+        sym!(self, xcb_render_query_pict_formats_subpixels)(R)
     }
 
     #[inline]
@@ -1333,7 +1334,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> c_int {
-        call!(self, xcb_render_query_pict_formats_subpixels_length)(R)
+        sym!(self, xcb_render_query_pict_formats_subpixels_length)(R)
     }
 
     #[inline]
@@ -1341,7 +1342,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_formats_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_query_pict_formats_subpixels_end)(R)
+        sym!(self, xcb_render_query_pict_formats_subpixels_end)(R)
     }
 
     #[inline]
@@ -1351,7 +1352,7 @@ impl XcbRender {
         cookie: xcb_render_query_pict_formats_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_render_query_pict_formats_reply_t {
-        call!(self, xcb_render_query_pict_formats_reply)(c, cookie, error)
+        sym!(self, xcb_render_query_pict_formats_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1359,7 +1360,7 @@ impl XcbRender {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_render_query_pict_formats_cookie_t {
-        call!(self, xcb_render_query_pict_formats)(c)
+        sym!(self, xcb_render_query_pict_formats)(c)
     }
 
     #[inline]
@@ -1367,7 +1368,7 @@ impl XcbRender {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_render_query_pict_formats_cookie_t {
-        call!(self, xcb_render_query_pict_formats_unchecked)(c)
+        sym!(self, xcb_render_query_pict_formats_unchecked)(c)
     }
 
     #[inline]
@@ -1375,7 +1376,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_index_values_reply_t,
     ) -> *mut xcb_render_indexvalue_t {
-        call!(self, xcb_render_query_pict_index_values_values)(R)
+        sym!(self, xcb_render_query_pict_index_values_values)(R)
     }
 
     #[inline]
@@ -1383,7 +1384,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_index_values_reply_t,
     ) -> c_int {
-        call!(self, xcb_render_query_pict_index_values_values_length)(R)
+        sym!(self, xcb_render_query_pict_index_values_values_length)(R)
     }
 
     #[inline]
@@ -1391,7 +1392,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_pict_index_values_reply_t,
     ) -> xcb_render_indexvalue_iterator_t {
-        call!(self, xcb_render_query_pict_index_values_values_iterator)(R)
+        sym!(self, xcb_render_query_pict_index_values_values_iterator)(R)
     }
 
     #[inline]
@@ -1401,7 +1402,7 @@ impl XcbRender {
         cookie: xcb_render_query_pict_index_values_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_render_query_pict_index_values_reply_t {
-        call!(self, xcb_render_query_pict_index_values_reply)(c, cookie, error)
+        sym!(self, xcb_render_query_pict_index_values_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1410,7 +1411,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         format: xcb_render_pictformat_t,
     ) -> xcb_render_query_pict_index_values_cookie_t {
-        call!(self, xcb_render_query_pict_index_values)(c, format)
+        sym!(self, xcb_render_query_pict_index_values)(c, format)
     }
 
     #[inline]
@@ -1419,7 +1420,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         format: xcb_render_pictformat_t,
     ) -> xcb_render_query_pict_index_values_cookie_t {
-        call!(self, xcb_render_query_pict_index_values_unchecked)(c, format)
+        sym!(self, xcb_render_query_pict_index_values_unchecked)(c, format)
     }
 
     #[inline]
@@ -1432,7 +1433,7 @@ impl XcbRender {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_picture)(c, pid, drawable, format, value_mask, value_list)
+        sym!(self, xcb_render_create_picture)(c, pid, drawable, format, value_mask, value_list)
     }
 
     #[inline]
@@ -1445,7 +1446,7 @@ impl XcbRender {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_picture_checked)(
+        sym!(self, xcb_render_create_picture_checked)(
             c, pid, drawable, format, value_mask, value_list,
         )
     }
@@ -1458,7 +1459,7 @@ impl XcbRender {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_change_picture)(c, picture, value_mask, value_list)
+        sym!(self, xcb_render_change_picture)(c, picture, value_mask, value_list)
     }
 
     #[inline]
@@ -1469,7 +1470,7 @@ impl XcbRender {
         value_mask: u32,
         value_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_change_picture_checked)(c, picture, value_mask, value_list)
+        sym!(self, xcb_render_change_picture_checked)(c, picture, value_mask, value_list)
     }
 
     #[inline]
@@ -1482,7 +1483,7 @@ impl XcbRender {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_set_picture_clip_rectangles)(
+        sym!(self, xcb_render_set_picture_clip_rectangles)(
             c,
             picture,
             clip_x_origin,
@@ -1502,7 +1503,7 @@ impl XcbRender {
         rectangles_len: u32,
         rectangles: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_set_picture_clip_rectangles_checked)(
+        sym!(self, xcb_render_set_picture_clip_rectangles_checked)(
             c,
             picture,
             clip_x_origin,
@@ -1518,7 +1519,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         picture: xcb_render_picture_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_free_picture)(c, picture)
+        sym!(self, xcb_render_free_picture)(c, picture)
     }
 
     #[inline]
@@ -1527,7 +1528,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         picture: xcb_render_picture_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_free_picture_checked)(c, picture)
+        sym!(self, xcb_render_free_picture_checked)(c, picture)
     }
 
     #[inline]
@@ -1547,7 +1548,7 @@ impl XcbRender {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite)(
+        sym!(self, xcb_render_composite)(
             c, op, src, mask, dst, src_x, src_y, mask_x, mask_y, dst_x, dst_y, width, height,
         )
     }
@@ -1569,7 +1570,7 @@ impl XcbRender {
         width: u16,
         height: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite_checked)(
+        sym!(self, xcb_render_composite_checked)(
             c, op, src, mask, dst, src_x, src_y, mask_x, mask_y, dst_x, dst_y, width, height,
         )
     }
@@ -1587,7 +1588,7 @@ impl XcbRender {
         traps_len: u32,
         traps: *const xcb_render_trapezoid_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_trapezoids)(
+        sym!(self, xcb_render_trapezoids)(
             c,
             op,
             src,
@@ -1613,7 +1614,7 @@ impl XcbRender {
         traps_len: u32,
         traps: *const xcb_render_trapezoid_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_trapezoids_checked)(
+        sym!(self, xcb_render_trapezoids_checked)(
             c,
             op,
             src,
@@ -1639,7 +1640,7 @@ impl XcbRender {
         triangles_len: u32,
         triangles: *const xcb_render_triangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_triangles)(
+        sym!(self, xcb_render_triangles)(
             c,
             op,
             src,
@@ -1665,7 +1666,7 @@ impl XcbRender {
         triangles_len: u32,
         triangles: *const xcb_render_triangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_triangles_checked)(
+        sym!(self, xcb_render_triangles_checked)(
             c,
             op,
             src,
@@ -1691,7 +1692,7 @@ impl XcbRender {
         points_len: u32,
         points: *const xcb_render_pointfix_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_tri_strip)(
+        sym!(self, xcb_render_tri_strip)(
             c,
             op,
             src,
@@ -1717,7 +1718,7 @@ impl XcbRender {
         points_len: u32,
         points: *const xcb_render_pointfix_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_tri_strip_checked)(
+        sym!(self, xcb_render_tri_strip_checked)(
             c,
             op,
             src,
@@ -1743,7 +1744,7 @@ impl XcbRender {
         points_len: u32,
         points: *const xcb_render_pointfix_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_tri_fan)(
+        sym!(self, xcb_render_tri_fan)(
             c,
             op,
             src,
@@ -1769,7 +1770,7 @@ impl XcbRender {
         points_len: u32,
         points: *const xcb_render_pointfix_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_tri_fan_checked)(
+        sym!(self, xcb_render_tri_fan_checked)(
             c,
             op,
             src,
@@ -1789,7 +1790,7 @@ impl XcbRender {
         gsid: xcb_render_glyphset_t,
         format: xcb_render_pictformat_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_glyph_set)(c, gsid, format)
+        sym!(self, xcb_render_create_glyph_set)(c, gsid, format)
     }
 
     #[inline]
@@ -1799,7 +1800,7 @@ impl XcbRender {
         gsid: xcb_render_glyphset_t,
         format: xcb_render_pictformat_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_glyph_set_checked)(c, gsid, format)
+        sym!(self, xcb_render_create_glyph_set_checked)(c, gsid, format)
     }
 
     #[inline]
@@ -1809,7 +1810,7 @@ impl XcbRender {
         gsid: xcb_render_glyphset_t,
         existing: xcb_render_glyphset_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_reference_glyph_set)(c, gsid, existing)
+        sym!(self, xcb_render_reference_glyph_set)(c, gsid, existing)
     }
 
     #[inline]
@@ -1819,7 +1820,7 @@ impl XcbRender {
         gsid: xcb_render_glyphset_t,
         existing: xcb_render_glyphset_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_reference_glyph_set_checked)(c, gsid, existing)
+        sym!(self, xcb_render_reference_glyph_set_checked)(c, gsid, existing)
     }
 
     #[inline]
@@ -1828,7 +1829,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         glyphset: xcb_render_glyphset_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_free_glyph_set)(c, glyphset)
+        sym!(self, xcb_render_free_glyph_set)(c, glyphset)
     }
 
     #[inline]
@@ -1837,7 +1838,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         glyphset: xcb_render_glyphset_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_free_glyph_set_checked)(c, glyphset)
+        sym!(self, xcb_render_free_glyph_set_checked)(c, glyphset)
     }
 
     #[inline]
@@ -1851,9 +1852,7 @@ impl XcbRender {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_add_glyphs)(
-            c, glyphset, glyphs_len, glyphids, glyphs, data_len, data,
-        )
+        sym!(self, xcb_render_add_glyphs)(c, glyphset, glyphs_len, glyphids, glyphs, data_len, data)
     }
 
     #[inline]
@@ -1867,7 +1866,7 @@ impl XcbRender {
         data_len: u32,
         data: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_add_glyphs_checked)(
+        sym!(self, xcb_render_add_glyphs_checked)(
             c, glyphset, glyphs_len, glyphids, glyphs, data_len, data,
         )
     }
@@ -1880,7 +1879,7 @@ impl XcbRender {
         glyphs_len: u32,
         glyphs: *const xcb_render_glyph_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_free_glyphs)(c, glyphset, glyphs_len, glyphs)
+        sym!(self, xcb_render_free_glyphs)(c, glyphset, glyphs_len, glyphs)
     }
 
     #[inline]
@@ -1891,7 +1890,7 @@ impl XcbRender {
         glyphs_len: u32,
         glyphs: *const xcb_render_glyph_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_free_glyphs_checked)(c, glyphset, glyphs_len, glyphs)
+        sym!(self, xcb_render_free_glyphs_checked)(c, glyphset, glyphs_len, glyphs)
     }
 
     #[inline]
@@ -1908,7 +1907,7 @@ impl XcbRender {
         glyphcmds_len: u32,
         glyphcmds: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite_glyphs_8)(
+        sym!(self, xcb_render_composite_glyphs_8)(
             c,
             op,
             src,
@@ -1936,7 +1935,7 @@ impl XcbRender {
         glyphcmds_len: u32,
         glyphcmds: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite_glyphs_8_checked)(
+        sym!(self, xcb_render_composite_glyphs_8_checked)(
             c,
             op,
             src,
@@ -1964,7 +1963,7 @@ impl XcbRender {
         glyphcmds_len: u32,
         glyphcmds: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite_glyphs_16)(
+        sym!(self, xcb_render_composite_glyphs_16)(
             c,
             op,
             src,
@@ -1992,7 +1991,7 @@ impl XcbRender {
         glyphcmds_len: u32,
         glyphcmds: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite_glyphs_16_checked)(
+        sym!(self, xcb_render_composite_glyphs_16_checked)(
             c,
             op,
             src,
@@ -2020,7 +2019,7 @@ impl XcbRender {
         glyphcmds_len: u32,
         glyphcmds: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite_glyphs_32)(
+        sym!(self, xcb_render_composite_glyphs_32)(
             c,
             op,
             src,
@@ -2048,7 +2047,7 @@ impl XcbRender {
         glyphcmds_len: u32,
         glyphcmds: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_composite_glyphs_32_checked)(
+        sym!(self, xcb_render_composite_glyphs_32_checked)(
             c,
             op,
             src,
@@ -2072,7 +2071,7 @@ impl XcbRender {
         rects_len: u32,
         rects: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_fill_rectangles)(c, op, dst, color, rects_len, rects)
+        sym!(self, xcb_render_fill_rectangles)(c, op, dst, color, rects_len, rects)
     }
 
     #[inline]
@@ -2085,7 +2084,7 @@ impl XcbRender {
         rects_len: u32,
         rects: *const xcb_rectangle_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_fill_rectangles_checked)(c, op, dst, color, rects_len, rects)
+        sym!(self, xcb_render_fill_rectangles_checked)(c, op, dst, color, rects_len, rects)
     }
 
     #[inline]
@@ -2097,7 +2096,7 @@ impl XcbRender {
         x: u16,
         y: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_cursor)(c, cid, source, x, y)
+        sym!(self, xcb_render_create_cursor)(c, cid, source, x, y)
     }
 
     #[inline]
@@ -2109,12 +2108,12 @@ impl XcbRender {
         x: u16,
         y: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_cursor_checked)(c, cid, source, x, y)
+        sym!(self, xcb_render_create_cursor_checked)(c, cid, source, x, y)
     }
 
     #[inline]
     pub unsafe fn xcb_render_transform_next(&self, i: *mut xcb_render_transform_iterator_t) {
-        call!(self, xcb_render_transform_next)(i);
+        sym!(self, xcb_render_transform_next)(i);
     }
 
     #[inline]
@@ -2122,7 +2121,7 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_transform_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_transform_end)(i)
+        sym!(self, xcb_render_transform_end)(i)
     }
 
     #[inline]
@@ -2132,7 +2131,7 @@ impl XcbRender {
         picture: xcb_render_picture_t,
         transform: xcb_render_transform_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_set_picture_transform)(c, picture, transform)
+        sym!(self, xcb_render_set_picture_transform)(c, picture, transform)
     }
 
     #[inline]
@@ -2142,7 +2141,7 @@ impl XcbRender {
         picture: xcb_render_picture_t,
         transform: xcb_render_transform_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_set_picture_transform_checked)(c, picture, transform)
+        sym!(self, xcb_render_set_picture_transform_checked)(c, picture, transform)
     }
 
     #[inline]
@@ -2150,7 +2149,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_filters_reply_t,
     ) -> *mut u16 {
-        call!(self, xcb_render_query_filters_aliases)(R)
+        sym!(self, xcb_render_query_filters_aliases)(R)
     }
 
     #[inline]
@@ -2158,7 +2157,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_filters_reply_t,
     ) -> c_int {
-        call!(self, xcb_render_query_filters_aliases_length)(R)
+        sym!(self, xcb_render_query_filters_aliases_length)(R)
     }
 
     #[inline]
@@ -2166,7 +2165,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_filters_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_query_filters_aliases_end)(R)
+        sym!(self, xcb_render_query_filters_aliases_end)(R)
     }
 
     #[inline]
@@ -2174,7 +2173,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_filters_reply_t,
     ) -> c_int {
-        call!(self, xcb_render_query_filters_filters_length)(R)
+        sym!(self, xcb_render_query_filters_filters_length)(R)
     }
 
     #[inline]
@@ -2182,7 +2181,7 @@ impl XcbRender {
         &self,
         R: *const xcb_render_query_filters_reply_t,
     ) -> xcb_str_iterator_t {
-        call!(self, xcb_render_query_filters_filters_iterator)(R)
+        sym!(self, xcb_render_query_filters_filters_iterator)(R)
     }
 
     #[inline]
@@ -2192,7 +2191,7 @@ impl XcbRender {
         cookie: xcb_render_query_filters_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_render_query_filters_reply_t {
-        call!(self, xcb_render_query_filters_reply)(c, cookie, error)
+        sym!(self, xcb_render_query_filters_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2201,7 +2200,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_render_query_filters_cookie_t {
-        call!(self, xcb_render_query_filters)(c, drawable)
+        sym!(self, xcb_render_query_filters)(c, drawable)
     }
 
     #[inline]
@@ -2210,7 +2209,7 @@ impl XcbRender {
         c: *mut xcb_connection_t,
         drawable: xcb_drawable_t,
     ) -> xcb_render_query_filters_cookie_t {
-        call!(self, xcb_render_query_filters_unchecked)(c, drawable)
+        sym!(self, xcb_render_query_filters_unchecked)(c, drawable)
     }
 
     #[inline]
@@ -2223,7 +2222,7 @@ impl XcbRender {
         values_len: u32,
         values: *const xcb_render_fixed_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_set_picture_filter)(
+        sym!(self, xcb_render_set_picture_filter)(
             c, picture, filter_len, filter, values_len, values,
         )
     }
@@ -2238,7 +2237,7 @@ impl XcbRender {
         values_len: u32,
         values: *const xcb_render_fixed_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_set_picture_filter_checked)(
+        sym!(self, xcb_render_set_picture_filter_checked)(
             c, picture, filter_len, filter, values_len, values,
         )
     }
@@ -2248,7 +2247,7 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_animcursorelt_iterator_t,
     ) {
-        call!(self, xcb_render_animcursorelt_next)(i);
+        sym!(self, xcb_render_animcursorelt_next)(i);
     }
 
     #[inline]
@@ -2256,7 +2255,7 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_animcursorelt_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_animcursorelt_end)(i)
+        sym!(self, xcb_render_animcursorelt_end)(i)
     }
 
     #[inline]
@@ -2267,7 +2266,7 @@ impl XcbRender {
         cursors_len: u32,
         cursors: *const xcb_render_animcursorelt_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_anim_cursor)(c, cid, cursors_len, cursors)
+        sym!(self, xcb_render_create_anim_cursor)(c, cid, cursors_len, cursors)
     }
 
     #[inline]
@@ -2278,12 +2277,12 @@ impl XcbRender {
         cursors_len: u32,
         cursors: *const xcb_render_animcursorelt_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_anim_cursor_checked)(c, cid, cursors_len, cursors)
+        sym!(self, xcb_render_create_anim_cursor_checked)(c, cid, cursors_len, cursors)
     }
 
     #[inline]
     pub unsafe fn xcb_render_spanfix_next(&self, i: *mut xcb_render_spanfix_iterator_t) {
-        call!(self, xcb_render_spanfix_next)(i);
+        sym!(self, xcb_render_spanfix_next)(i);
     }
 
     #[inline]
@@ -2291,12 +2290,12 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_spanfix_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_spanfix_end)(i)
+        sym!(self, xcb_render_spanfix_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_render_trap_next(&self, i: *mut xcb_render_trap_iterator_t) {
-        call!(self, xcb_render_trap_next)(i);
+        sym!(self, xcb_render_trap_next)(i);
     }
 
     #[inline]
@@ -2304,7 +2303,7 @@ impl XcbRender {
         &self,
         i: *mut xcb_render_trap_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_render_trap_end)(i)
+        sym!(self, xcb_render_trap_end)(i)
     }
 
     #[inline]
@@ -2317,7 +2316,7 @@ impl XcbRender {
         traps_len: u32,
         traps: *const xcb_render_trap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_add_traps)(c, picture, x_off, y_off, traps_len, traps)
+        sym!(self, xcb_render_add_traps)(c, picture, x_off, y_off, traps_len, traps)
     }
 
     #[inline]
@@ -2330,7 +2329,7 @@ impl XcbRender {
         traps_len: u32,
         traps: *const xcb_render_trap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_add_traps_checked)(c, picture, x_off, y_off, traps_len, traps)
+        sym!(self, xcb_render_add_traps_checked)(c, picture, x_off, y_off, traps_len, traps)
     }
 
     #[inline]
@@ -2340,7 +2339,7 @@ impl XcbRender {
         picture: xcb_render_picture_t,
         color: xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_solid_fill)(c, picture, color)
+        sym!(self, xcb_render_create_solid_fill)(c, picture, color)
     }
 
     #[inline]
@@ -2350,7 +2349,7 @@ impl XcbRender {
         picture: xcb_render_picture_t,
         color: xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_solid_fill_checked)(c, picture, color)
+        sym!(self, xcb_render_create_solid_fill_checked)(c, picture, color)
     }
 
     #[inline]
@@ -2364,7 +2363,7 @@ impl XcbRender {
         stops: *const xcb_render_fixed_t,
         colors: *const xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_linear_gradient)(c, picture, p1, p2, num_stops, stops, colors)
+        sym!(self, xcb_render_create_linear_gradient)(c, picture, p1, p2, num_stops, stops, colors)
     }
 
     #[inline]
@@ -2378,7 +2377,7 @@ impl XcbRender {
         stops: *const xcb_render_fixed_t,
         colors: *const xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_linear_gradient_checked)(
+        sym!(self, xcb_render_create_linear_gradient_checked)(
             c, picture, p1, p2, num_stops, stops, colors,
         )
     }
@@ -2396,7 +2395,7 @@ impl XcbRender {
         stops: *const xcb_render_fixed_t,
         colors: *const xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_radial_gradient)(
+        sym!(self, xcb_render_create_radial_gradient)(
             c,
             picture,
             inner,
@@ -2422,7 +2421,7 @@ impl XcbRender {
         stops: *const xcb_render_fixed_t,
         colors: *const xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_radial_gradient_checked)(
+        sym!(self, xcb_render_create_radial_gradient_checked)(
             c,
             picture,
             inner,
@@ -2446,7 +2445,7 @@ impl XcbRender {
         stops: *const xcb_render_fixed_t,
         colors: *const xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_conical_gradient)(
+        sym!(self, xcb_render_create_conical_gradient)(
             c, picture, center, angle, num_stops, stops, colors,
         )
     }
@@ -2462,770 +2461,8 @@ impl XcbRender {
         stops: *const xcb_render_fixed_t,
         colors: *const xcb_render_color_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_render_create_conical_gradient_checked)(
+        sym!(self, xcb_render_create_conical_gradient_checked)(
             c, picture, center, angle, num_stops, stops, colors,
         )
     }
-}
-
-pub struct XcbRender {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_render_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_render_glyph_next: LazySymbol<unsafe fn(i: *mut xcb_render_glyph_iterator_t)>,
-    pub(crate) xcb_render_glyph_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_glyph_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_glyphset_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_glyphset_iterator_t)>,
-    pub(crate) xcb_render_glyphset_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_glyphset_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_picture_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_picture_iterator_t)>,
-    pub(crate) xcb_render_picture_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_picture_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_pictformat_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictformat_iterator_t)>,
-    pub(crate) xcb_render_pictformat_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictformat_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_fixed_next: LazySymbol<unsafe fn(i: *mut xcb_render_fixed_iterator_t)>,
-    pub(crate) xcb_render_fixed_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_fixed_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_directformat_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_directformat_iterator_t)>,
-    pub(crate) xcb_render_directformat_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_directformat_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_pictforminfo_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictforminfo_iterator_t)>,
-    pub(crate) xcb_render_pictforminfo_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictforminfo_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_pictvisual_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictvisual_iterator_t)>,
-    pub(crate) xcb_render_pictvisual_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictvisual_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_pictdepth_visuals:
-        LazySymbol<unsafe fn(R: *const xcb_render_pictdepth_t) -> *mut xcb_render_pictvisual_t>,
-    pub(crate) xcb_render_pictdepth_visuals_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_pictdepth_t) -> c_int>,
-    pub(crate) xcb_render_pictdepth_visuals_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_render_pictdepth_t) -> xcb_render_pictvisual_iterator_t>,
-    pub(crate) xcb_render_pictdepth_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictdepth_iterator_t)>,
-    pub(crate) xcb_render_pictdepth_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictdepth_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_pictscreen_depths_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_pictscreen_t) -> c_int>,
-    pub(crate) xcb_render_pictscreen_depths_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_render_pictscreen_t) -> xcb_render_pictdepth_iterator_t>,
-    pub(crate) xcb_render_pictscreen_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictscreen_iterator_t)>,
-    pub(crate) xcb_render_pictscreen_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pictscreen_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_indexvalue_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_indexvalue_iterator_t)>,
-    pub(crate) xcb_render_indexvalue_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_indexvalue_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_color_next: LazySymbol<unsafe fn(i: *mut xcb_render_color_iterator_t)>,
-    pub(crate) xcb_render_color_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_color_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_pointfix_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pointfix_iterator_t)>,
-    pub(crate) xcb_render_pointfix_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_pointfix_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_linefix_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_linefix_iterator_t)>,
-    pub(crate) xcb_render_linefix_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_linefix_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_triangle_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_triangle_iterator_t)>,
-    pub(crate) xcb_render_triangle_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_triangle_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_trapezoid_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_trapezoid_iterator_t)>,
-    pub(crate) xcb_render_trapezoid_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_trapezoid_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_glyphinfo_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_glyphinfo_iterator_t)>,
-    pub(crate) xcb_render_glyphinfo_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_glyphinfo_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_render_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_render_query_version_reply_t,
-    >,
-    pub(crate) xcb_render_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u32,
-            client_minor_version: u32,
-        ) -> xcb_render_query_version_cookie_t,
-    >,
-    pub(crate) xcb_render_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u32,
-            client_minor_version: u32,
-        ) -> xcb_render_query_version_cookie_t,
-    >,
-    pub(crate) xcb_render_query_pict_formats_formats: LazySymbol<
-        unsafe fn(
-            R: *const xcb_render_query_pict_formats_reply_t,
-        ) -> *mut xcb_render_pictforminfo_t,
-    >,
-    pub(crate) xcb_render_query_pict_formats_formats_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_pict_formats_reply_t) -> c_int>,
-    pub(crate) xcb_render_query_pict_formats_formats_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_render_query_pict_formats_reply_t,
-        ) -> xcb_render_pictforminfo_iterator_t,
-    >,
-    pub(crate) xcb_render_query_pict_formats_screens_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_pict_formats_reply_t) -> c_int>,
-    pub(crate) xcb_render_query_pict_formats_screens_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_render_query_pict_formats_reply_t,
-        ) -> xcb_render_pictscreen_iterator_t,
-    >,
-    pub(crate) xcb_render_query_pict_formats_subpixels:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_pict_formats_reply_t) -> *mut u32>,
-    pub(crate) xcb_render_query_pict_formats_subpixels_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_pict_formats_reply_t) -> c_int>,
-    pub(crate) xcb_render_query_pict_formats_subpixels_end: LazySymbol<
-        unsafe fn(R: *const xcb_render_query_pict_formats_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_render_query_pict_formats_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_render_query_pict_formats_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_render_query_pict_formats_reply_t,
-    >,
-    pub(crate) xcb_render_query_pict_formats:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_render_query_pict_formats_cookie_t>,
-    pub(crate) xcb_render_query_pict_formats_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_render_query_pict_formats_cookie_t>,
-    pub(crate) xcb_render_query_pict_index_values_values: LazySymbol<
-        unsafe fn(
-            R: *const xcb_render_query_pict_index_values_reply_t,
-        ) -> *mut xcb_render_indexvalue_t,
-    >,
-    pub(crate) xcb_render_query_pict_index_values_values_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_pict_index_values_reply_t) -> c_int>,
-    pub(crate) xcb_render_query_pict_index_values_values_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_render_query_pict_index_values_reply_t,
-        ) -> xcb_render_indexvalue_iterator_t,
-    >,
-    pub(crate) xcb_render_query_pict_index_values_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_render_query_pict_index_values_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_render_query_pict_index_values_reply_t,
-    >,
-    pub(crate) xcb_render_query_pict_index_values: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            format: xcb_render_pictformat_t,
-        ) -> xcb_render_query_pict_index_values_cookie_t,
-    >,
-    pub(crate) xcb_render_query_pict_index_values_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            format: xcb_render_pictformat_t,
-        ) -> xcb_render_query_pict_index_values_cookie_t,
-    >,
-    pub(crate) xcb_render_create_picture: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            pid: xcb_render_picture_t,
-            drawable: xcb_drawable_t,
-            format: xcb_render_pictformat_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_picture_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            pid: xcb_render_picture_t,
-            drawable: xcb_drawable_t,
-            format: xcb_render_pictformat_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_change_picture: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_change_picture_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            value_mask: u32,
-            value_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_set_picture_clip_rectangles: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            clip_x_origin: i16,
-            clip_y_origin: i16,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_set_picture_clip_rectangles_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            clip_x_origin: i16,
-            clip_y_origin: i16,
-            rectangles_len: u32,
-            rectangles: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_free_picture: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, picture: xcb_render_picture_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_free_picture_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, picture: xcb_render_picture_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            mask: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            src_x: i16,
-            src_y: i16,
-            mask_x: i16,
-            mask_y: i16,
-            dst_x: i16,
-            dst_y: i16,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            mask: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            src_x: i16,
-            src_y: i16,
-            mask_x: i16,
-            mask_y: i16,
-            dst_x: i16,
-            dst_y: i16,
-            width: u16,
-            height: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_trapezoids: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            traps_len: u32,
-            traps: *const xcb_render_trapezoid_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_trapezoids_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            traps_len: u32,
-            traps: *const xcb_render_trapezoid_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_triangles: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            triangles_len: u32,
-            triangles: *const xcb_render_triangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_triangles_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            triangles_len: u32,
-            triangles: *const xcb_render_triangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_tri_strip: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            points_len: u32,
-            points: *const xcb_render_pointfix_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_tri_strip_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            points_len: u32,
-            points: *const xcb_render_pointfix_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_tri_fan: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            points_len: u32,
-            points: *const xcb_render_pointfix_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_tri_fan_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            src_x: i16,
-            src_y: i16,
-            points_len: u32,
-            points: *const xcb_render_pointfix_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_glyph_set: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gsid: xcb_render_glyphset_t,
-            format: xcb_render_pictformat_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_glyph_set_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gsid: xcb_render_glyphset_t,
-            format: xcb_render_pictformat_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_reference_glyph_set: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gsid: xcb_render_glyphset_t,
-            existing: xcb_render_glyphset_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_reference_glyph_set_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            gsid: xcb_render_glyphset_t,
-            existing: xcb_render_glyphset_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_free_glyph_set: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glyphset: xcb_render_glyphset_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_free_glyph_set_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, glyphset: xcb_render_glyphset_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_add_glyphs: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            glyphset: xcb_render_glyphset_t,
-            glyphs_len: u32,
-            glyphids: *const u32,
-            glyphs: *const xcb_render_glyphinfo_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_add_glyphs_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            glyphset: xcb_render_glyphset_t,
-            glyphs_len: u32,
-            glyphids: *const u32,
-            glyphs: *const xcb_render_glyphinfo_t,
-            data_len: u32,
-            data: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_free_glyphs: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            glyphset: xcb_render_glyphset_t,
-            glyphs_len: u32,
-            glyphs: *const xcb_render_glyph_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_free_glyphs_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            glyphset: xcb_render_glyphset_t,
-            glyphs_len: u32,
-            glyphs: *const xcb_render_glyph_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite_glyphs_8: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            glyphset: xcb_render_glyphset_t,
-            src_x: i16,
-            src_y: i16,
-            glyphcmds_len: u32,
-            glyphcmds: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite_glyphs_8_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            glyphset: xcb_render_glyphset_t,
-            src_x: i16,
-            src_y: i16,
-            glyphcmds_len: u32,
-            glyphcmds: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite_glyphs_16: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            glyphset: xcb_render_glyphset_t,
-            src_x: i16,
-            src_y: i16,
-            glyphcmds_len: u32,
-            glyphcmds: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite_glyphs_16_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            glyphset: xcb_render_glyphset_t,
-            src_x: i16,
-            src_y: i16,
-            glyphcmds_len: u32,
-            glyphcmds: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite_glyphs_32: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            glyphset: xcb_render_glyphset_t,
-            src_x: i16,
-            src_y: i16,
-            glyphcmds_len: u32,
-            glyphcmds: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_composite_glyphs_32_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            src: xcb_render_picture_t,
-            dst: xcb_render_picture_t,
-            mask_format: xcb_render_pictformat_t,
-            glyphset: xcb_render_glyphset_t,
-            src_x: i16,
-            src_y: i16,
-            glyphcmds_len: u32,
-            glyphcmds: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_fill_rectangles: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            dst: xcb_render_picture_t,
-            color: xcb_render_color_t,
-            rects_len: u32,
-            rects: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_fill_rectangles_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            op: u8,
-            dst: xcb_render_picture_t,
-            color: xcb_render_color_t,
-            rects_len: u32,
-            rects: *const xcb_rectangle_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            source: xcb_render_picture_t,
-            x: u16,
-            y: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_cursor_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            source: xcb_render_picture_t,
-            x: u16,
-            y: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_transform_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_transform_iterator_t)>,
-    pub(crate) xcb_render_transform_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_transform_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_set_picture_transform: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            transform: xcb_render_transform_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_set_picture_transform_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            transform: xcb_render_transform_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_query_filters_aliases:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_filters_reply_t) -> *mut u16>,
-    pub(crate) xcb_render_query_filters_aliases_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_filters_reply_t) -> c_int>,
-    pub(crate) xcb_render_query_filters_aliases_end:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_filters_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_query_filters_filters_length:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_filters_reply_t) -> c_int>,
-    pub(crate) xcb_render_query_filters_filters_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_render_query_filters_reply_t) -> xcb_str_iterator_t>,
-    pub(crate) xcb_render_query_filters_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_render_query_filters_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_render_query_filters_reply_t,
-    >,
-    pub(crate) xcb_render_query_filters: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-        ) -> xcb_render_query_filters_cookie_t,
-    >,
-    pub(crate) xcb_render_query_filters_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-        ) -> xcb_render_query_filters_cookie_t,
-    >,
-    pub(crate) xcb_render_set_picture_filter: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            filter_len: u16,
-            filter: *const c_char,
-            values_len: u32,
-            values: *const xcb_render_fixed_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_set_picture_filter_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            filter_len: u16,
-            filter: *const c_char,
-            values_len: u32,
-            values: *const xcb_render_fixed_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_animcursorelt_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_animcursorelt_iterator_t)>,
-    pub(crate) xcb_render_animcursorelt_end: LazySymbol<
-        unsafe fn(i: *mut xcb_render_animcursorelt_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_render_create_anim_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            cursors_len: u32,
-            cursors: *const xcb_render_animcursorelt_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_anim_cursor_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cid: xcb_cursor_t,
-            cursors_len: u32,
-            cursors: *const xcb_render_animcursorelt_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_spanfix_next:
-        LazySymbol<unsafe fn(i: *mut xcb_render_spanfix_iterator_t)>,
-    pub(crate) xcb_render_spanfix_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_spanfix_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_trap_next: LazySymbol<unsafe fn(i: *mut xcb_render_trap_iterator_t)>,
-    pub(crate) xcb_render_trap_end:
-        LazySymbol<unsafe fn(i: *mut xcb_render_trap_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_render_add_traps: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            x_off: i16,
-            y_off: i16,
-            traps_len: u32,
-            traps: *const xcb_render_trap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_add_traps_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            x_off: i16,
-            y_off: i16,
-            traps_len: u32,
-            traps: *const xcb_render_trap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_solid_fill: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            color: xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_solid_fill_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            color: xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_linear_gradient: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            p1: xcb_render_pointfix_t,
-            p2: xcb_render_pointfix_t,
-            num_stops: u32,
-            stops: *const xcb_render_fixed_t,
-            colors: *const xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_linear_gradient_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            p1: xcb_render_pointfix_t,
-            p2: xcb_render_pointfix_t,
-            num_stops: u32,
-            stops: *const xcb_render_fixed_t,
-            colors: *const xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_radial_gradient: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            inner: xcb_render_pointfix_t,
-            outer: xcb_render_pointfix_t,
-            inner_radius: xcb_render_fixed_t,
-            outer_radius: xcb_render_fixed_t,
-            num_stops: u32,
-            stops: *const xcb_render_fixed_t,
-            colors: *const xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_radial_gradient_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            inner: xcb_render_pointfix_t,
-            outer: xcb_render_pointfix_t,
-            inner_radius: xcb_render_fixed_t,
-            outer_radius: xcb_render_fixed_t,
-            num_stops: u32,
-            stops: *const xcb_render_fixed_t,
-            colors: *const xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_conical_gradient: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            center: xcb_render_pointfix_t,
-            angle: xcb_render_fixed_t,
-            num_stops: u32,
-            stops: *const xcb_render_fixed_t,
-            colors: *const xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_render_create_conical_gradient_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            picture: xcb_render_picture_t,
-            center: xcb_render_pointfix_t,
-            angle: xcb_render_fixed_t,
-            num_stops: u32,
-            stops: *const xcb_render_fixed_t,
-            colors: *const xcb_render_color_t,
-        ) -> xcb_void_cookie_t,
-    >,
 }

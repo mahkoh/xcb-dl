@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -36,8 +37,8 @@ pub struct xcb_genericevent_query_version_reply_t {
 
 impl XcbGe {
     #[inline]
-    pub fn xcb_genericevent_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_genericevent_id)
+    pub unsafe fn xcb_genericevent_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_genericevent_id)
     }
 
     #[inline]
@@ -47,7 +48,7 @@ impl XcbGe {
         cookie: xcb_genericevent_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_genericevent_query_version_reply_t {
-        call!(self, xcb_genericevent_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_genericevent_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -57,7 +58,7 @@ impl XcbGe {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_genericevent_query_version_cookie_t {
-        call!(self, xcb_genericevent_query_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_genericevent_query_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -67,36 +68,10 @@ impl XcbGe {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_genericevent_query_version_cookie_t {
-        call!(self, xcb_genericevent_query_version_unchecked)(
+        sym!(self, xcb_genericevent_query_version_unchecked)(
             c,
             client_major_version,
             client_minor_version,
         )
     }
-}
-
-pub struct XcbGe {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_genericevent_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_genericevent_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_genericevent_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_genericevent_query_version_reply_t,
-    >,
-    pub(crate) xcb_genericevent_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_genericevent_query_version_cookie_t,
-    >,
-    pub(crate) xcb_genericevent_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_genericevent_query_version_cookie_t,
-    >,
 }

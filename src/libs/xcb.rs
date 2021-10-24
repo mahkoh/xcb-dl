@@ -1,9 +1,7 @@
+use crate::ffi::*;
 use crate::lazy::*;
-use crate::*;
 use libloading::{Error, Library};
-use std::mem::MaybeUninit;
 use std::os::raw::*;
-use std::ptr;
 
 #[rustfmt::skip]
 pub struct Xcb {

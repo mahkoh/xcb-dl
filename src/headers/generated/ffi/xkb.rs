@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -2765,13 +2766,13 @@ pub struct xcb_xkb_extension_device_notify_event_t {
 
 impl XcbXkb {
     #[inline]
-    pub fn xcb_xkb_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xkb_id)
+    pub unsafe fn xcb_xkb_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xkb_id)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_device_spec_next(&self, i: *mut xcb_xkb_device_spec_iterator_t) {
-        call!(self, xcb_xkb_device_spec_next)(i);
+        sym!(self, xcb_xkb_device_spec_next)(i);
     }
 
     #[inline]
@@ -2779,12 +2780,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_device_spec_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_device_spec_end)(i)
+        sym!(self, xcb_xkb_device_spec_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_led_class_spec_next(&self, i: *mut xcb_xkb_led_class_spec_iterator_t) {
-        call!(self, xcb_xkb_led_class_spec_next)(i);
+        sym!(self, xcb_xkb_led_class_spec_next)(i);
     }
 
     #[inline]
@@ -2792,12 +2793,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_led_class_spec_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_led_class_spec_end)(i)
+        sym!(self, xcb_xkb_led_class_spec_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_bell_class_spec_next(&self, i: *mut xcb_xkb_bell_class_spec_iterator_t) {
-        call!(self, xcb_xkb_bell_class_spec_next)(i);
+        sym!(self, xcb_xkb_bell_class_spec_next)(i);
     }
 
     #[inline]
@@ -2805,12 +2806,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_bell_class_spec_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_bell_class_spec_end)(i)
+        sym!(self, xcb_xkb_bell_class_spec_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_id_spec_next(&self, i: *mut xcb_xkb_id_spec_iterator_t) {
-        call!(self, xcb_xkb_id_spec_next)(i);
+        sym!(self, xcb_xkb_id_spec_next)(i);
     }
 
     #[inline]
@@ -2818,12 +2819,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_id_spec_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_id_spec_end)(i)
+        sym!(self, xcb_xkb_id_spec_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_indicator_map_next(&self, i: *mut xcb_xkb_indicator_map_iterator_t) {
-        call!(self, xcb_xkb_indicator_map_next)(i);
+        sym!(self, xcb_xkb_indicator_map_next)(i);
     }
 
     #[inline]
@@ -2831,12 +2832,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_indicator_map_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_indicator_map_end)(i)
+        sym!(self, xcb_xkb_indicator_map_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_mod_def_next(&self, i: *mut xcb_xkb_mod_def_iterator_t) {
-        call!(self, xcb_xkb_mod_def_next)(i);
+        sym!(self, xcb_xkb_mod_def_next)(i);
     }
 
     #[inline]
@@ -2844,12 +2845,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_mod_def_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_mod_def_end)(i)
+        sym!(self, xcb_xkb_mod_def_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_name_next(&self, i: *mut xcb_xkb_key_name_iterator_t) {
-        call!(self, xcb_xkb_key_name_next)(i);
+        sym!(self, xcb_xkb_key_name_next)(i);
     }
 
     #[inline]
@@ -2857,12 +2858,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_key_name_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_name_end)(i)
+        sym!(self, xcb_xkb_key_name_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_alias_next(&self, i: *mut xcb_xkb_key_alias_iterator_t) {
-        call!(self, xcb_xkb_key_alias_next)(i);
+        sym!(self, xcb_xkb_key_alias_next)(i);
     }
 
     #[inline]
@@ -2870,7 +2871,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_key_alias_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_alias_end)(i)
+        sym!(self, xcb_xkb_key_alias_end)(i)
     }
 
     #[inline]
@@ -2878,7 +2879,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_counted_string_16_t,
     ) -> *mut c_char {
-        call!(self, xcb_xkb_counted_string_16_string)(R)
+        sym!(self, xcb_xkb_counted_string_16_string)(R)
     }
 
     #[inline]
@@ -2886,7 +2887,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_counted_string_16_t,
     ) -> c_int {
-        call!(self, xcb_xkb_counted_string_16_string_length)(R)
+        sym!(self, xcb_xkb_counted_string_16_string_length)(R)
     }
 
     #[inline]
@@ -2894,7 +2895,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_counted_string_16_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_counted_string_16_string_end)(R)
+        sym!(self, xcb_xkb_counted_string_16_string_end)(R)
     }
 
     #[inline]
@@ -2902,7 +2903,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_counted_string_16_t,
     ) -> *mut c_void {
-        call!(self, xcb_xkb_counted_string_16_alignment_pad)(R)
+        sym!(self, xcb_xkb_counted_string_16_alignment_pad)(R)
     }
 
     #[inline]
@@ -2910,7 +2911,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_counted_string_16_t,
     ) -> c_int {
-        call!(self, xcb_xkb_counted_string_16_alignment_pad_length)(R)
+        sym!(self, xcb_xkb_counted_string_16_alignment_pad_length)(R)
     }
 
     #[inline]
@@ -2918,7 +2919,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_counted_string_16_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_counted_string_16_alignment_pad_end)(R)
+        sym!(self, xcb_xkb_counted_string_16_alignment_pad_end)(R)
     }
 
     #[inline]
@@ -2926,7 +2927,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_counted_string_16_iterator_t,
     ) {
-        call!(self, xcb_xkb_counted_string_16_next)(i);
+        sym!(self, xcb_xkb_counted_string_16_next)(i);
     }
 
     #[inline]
@@ -2934,12 +2935,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_counted_string_16_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_counted_string_16_end)(i)
+        sym!(self, xcb_xkb_counted_string_16_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_kt_map_entry_next(&self, i: *mut xcb_xkb_kt_map_entry_iterator_t) {
-        call!(self, xcb_xkb_kt_map_entry_next)(i);
+        sym!(self, xcb_xkb_kt_map_entry_next)(i);
     }
 
     #[inline]
@@ -2947,7 +2948,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_kt_map_entry_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_kt_map_entry_end)(i)
+        sym!(self, xcb_xkb_kt_map_entry_end)(i)
     }
 
     #[inline]
@@ -2955,12 +2956,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_key_type_t,
     ) -> *mut xcb_xkb_kt_map_entry_t {
-        call!(self, xcb_xkb_key_type_map)(R)
+        sym!(self, xcb_xkb_key_type_map)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_type_map_length(&self, R: *const xcb_xkb_key_type_t) -> c_int {
-        call!(self, xcb_xkb_key_type_map_length)(R)
+        sym!(self, xcb_xkb_key_type_map_length)(R)
     }
 
     #[inline]
@@ -2968,7 +2969,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_key_type_t,
     ) -> xcb_xkb_kt_map_entry_iterator_t {
-        call!(self, xcb_xkb_key_type_map_iterator)(R)
+        sym!(self, xcb_xkb_key_type_map_iterator)(R)
     }
 
     #[inline]
@@ -2976,12 +2977,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_key_type_t,
     ) -> *mut xcb_xkb_mod_def_t {
-        call!(self, xcb_xkb_key_type_preserve)(R)
+        sym!(self, xcb_xkb_key_type_preserve)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_type_preserve_length(&self, R: *const xcb_xkb_key_type_t) -> c_int {
-        call!(self, xcb_xkb_key_type_preserve_length)(R)
+        sym!(self, xcb_xkb_key_type_preserve_length)(R)
     }
 
     #[inline]
@@ -2989,12 +2990,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_key_type_t,
     ) -> xcb_xkb_mod_def_iterator_t {
-        call!(self, xcb_xkb_key_type_preserve_iterator)(R)
+        sym!(self, xcb_xkb_key_type_preserve_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_type_next(&self, i: *mut xcb_xkb_key_type_iterator_t) {
-        call!(self, xcb_xkb_key_type_next)(i);
+        sym!(self, xcb_xkb_key_type_next)(i);
     }
 
     #[inline]
@@ -3002,7 +3003,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_key_type_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_type_end)(i)
+        sym!(self, xcb_xkb_key_type_end)(i)
     }
 
     #[inline]
@@ -3010,12 +3011,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_key_sym_map_t,
     ) -> *mut xcb_keysym_t {
-        call!(self, xcb_xkb_key_sym_map_syms)(R)
+        sym!(self, xcb_xkb_key_sym_map_syms)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_sym_map_syms_length(&self, R: *const xcb_xkb_key_sym_map_t) -> c_int {
-        call!(self, xcb_xkb_key_sym_map_syms_length)(R)
+        sym!(self, xcb_xkb_key_sym_map_syms_length)(R)
     }
 
     #[inline]
@@ -3023,12 +3024,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_key_sym_map_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_sym_map_syms_end)(R)
+        sym!(self, xcb_xkb_key_sym_map_syms_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_sym_map_next(&self, i: *mut xcb_xkb_key_sym_map_iterator_t) {
-        call!(self, xcb_xkb_key_sym_map_next)(i);
+        sym!(self, xcb_xkb_key_sym_map_next)(i);
     }
 
     #[inline]
@@ -3036,12 +3037,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_key_sym_map_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_sym_map_end)(i)
+        sym!(self, xcb_xkb_key_sym_map_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_common_behavior_next(&self, i: *mut xcb_xkb_common_behavior_iterator_t) {
-        call!(self, xcb_xkb_common_behavior_next)(i);
+        sym!(self, xcb_xkb_common_behavior_next)(i);
     }
 
     #[inline]
@@ -3049,7 +3050,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_common_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_common_behavior_end)(i)
+        sym!(self, xcb_xkb_common_behavior_end)(i)
     }
 
     #[inline]
@@ -3057,7 +3058,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_default_behavior_iterator_t,
     ) {
-        call!(self, xcb_xkb_default_behavior_next)(i);
+        sym!(self, xcb_xkb_default_behavior_next)(i);
     }
 
     #[inline]
@@ -3065,12 +3066,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_default_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_default_behavior_end)(i)
+        sym!(self, xcb_xkb_default_behavior_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_lock_behavior_next(&self, i: *mut xcb_xkb_lock_behavior_iterator_t) {
-        call!(self, xcb_xkb_lock_behavior_next)(i);
+        sym!(self, xcb_xkb_lock_behavior_next)(i);
     }
 
     #[inline]
@@ -3078,7 +3079,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_lock_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_lock_behavior_end)(i)
+        sym!(self, xcb_xkb_lock_behavior_end)(i)
     }
 
     #[inline]
@@ -3086,7 +3087,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_radio_group_behavior_iterator_t,
     ) {
-        call!(self, xcb_xkb_radio_group_behavior_next)(i);
+        sym!(self, xcb_xkb_radio_group_behavior_next)(i);
     }
 
     #[inline]
@@ -3094,7 +3095,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_radio_group_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_radio_group_behavior_end)(i)
+        sym!(self, xcb_xkb_radio_group_behavior_end)(i)
     }
 
     #[inline]
@@ -3102,7 +3103,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_overlay_behavior_iterator_t,
     ) {
-        call!(self, xcb_xkb_overlay_behavior_next)(i);
+        sym!(self, xcb_xkb_overlay_behavior_next)(i);
     }
 
     #[inline]
@@ -3110,7 +3111,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_overlay_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_overlay_behavior_end)(i)
+        sym!(self, xcb_xkb_overlay_behavior_end)(i)
     }
 
     #[inline]
@@ -3118,7 +3119,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_permament_lock_behavior_iterator_t,
     ) {
-        call!(self, xcb_xkb_permament_lock_behavior_next)(i);
+        sym!(self, xcb_xkb_permament_lock_behavior_next)(i);
     }
 
     #[inline]
@@ -3126,7 +3127,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_permament_lock_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_permament_lock_behavior_end)(i)
+        sym!(self, xcb_xkb_permament_lock_behavior_end)(i)
     }
 
     #[inline]
@@ -3134,7 +3135,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_permament_radio_group_behavior_iterator_t,
     ) {
-        call!(self, xcb_xkb_permament_radio_group_behavior_next)(i);
+        sym!(self, xcb_xkb_permament_radio_group_behavior_next)(i);
     }
 
     #[inline]
@@ -3142,7 +3143,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_permament_radio_group_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_permament_radio_group_behavior_end)(i)
+        sym!(self, xcb_xkb_permament_radio_group_behavior_end)(i)
     }
 
     #[inline]
@@ -3150,7 +3151,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_permament_overlay_behavior_iterator_t,
     ) {
-        call!(self, xcb_xkb_permament_overlay_behavior_next)(i);
+        sym!(self, xcb_xkb_permament_overlay_behavior_next)(i);
     }
 
     #[inline]
@@ -3158,12 +3159,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_permament_overlay_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_permament_overlay_behavior_end)(i)
+        sym!(self, xcb_xkb_permament_overlay_behavior_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_behavior_next(&self, i: *mut xcb_xkb_behavior_iterator_t) {
-        call!(self, xcb_xkb_behavior_next)(i);
+        sym!(self, xcb_xkb_behavior_next)(i);
     }
 
     #[inline]
@@ -3171,12 +3172,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_behavior_end)(i)
+        sym!(self, xcb_xkb_behavior_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_set_behavior_next(&self, i: *mut xcb_xkb_set_behavior_iterator_t) {
-        call!(self, xcb_xkb_set_behavior_next)(i);
+        sym!(self, xcb_xkb_set_behavior_next)(i);
     }
 
     #[inline]
@@ -3184,12 +3185,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_set_behavior_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_behavior_end)(i)
+        sym!(self, xcb_xkb_set_behavior_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_set_explicit_next(&self, i: *mut xcb_xkb_set_explicit_iterator_t) {
-        call!(self, xcb_xkb_set_explicit_next)(i);
+        sym!(self, xcb_xkb_set_explicit_next)(i);
     }
 
     #[inline]
@@ -3197,12 +3198,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_set_explicit_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_explicit_end)(i)
+        sym!(self, xcb_xkb_set_explicit_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_mod_map_next(&self, i: *mut xcb_xkb_key_mod_map_iterator_t) {
-        call!(self, xcb_xkb_key_mod_map_next)(i);
+        sym!(self, xcb_xkb_key_mod_map_next)(i);
     }
 
     #[inline]
@@ -3210,12 +3211,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_key_mod_map_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_mod_map_end)(i)
+        sym!(self, xcb_xkb_key_mod_map_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_v_mod_map_next(&self, i: *mut xcb_xkb_key_v_mod_map_iterator_t) {
-        call!(self, xcb_xkb_key_v_mod_map_next)(i);
+        sym!(self, xcb_xkb_key_v_mod_map_next)(i);
     }
 
     #[inline]
@@ -3223,7 +3224,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_key_v_mod_map_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_v_mod_map_end)(i)
+        sym!(self, xcb_xkb_key_v_mod_map_end)(i)
     }
 
     #[inline]
@@ -3231,7 +3232,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_kt_set_map_entry_iterator_t,
     ) {
-        call!(self, xcb_xkb_kt_set_map_entry_next)(i);
+        sym!(self, xcb_xkb_kt_set_map_entry_next)(i);
     }
 
     #[inline]
@@ -3239,7 +3240,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_kt_set_map_entry_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_kt_set_map_entry_end)(i)
+        sym!(self, xcb_xkb_kt_set_map_entry_end)(i)
     }
 
     #[inline]
@@ -3247,7 +3248,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_set_key_type_t,
     ) -> *mut xcb_xkb_kt_set_map_entry_t {
-        call!(self, xcb_xkb_set_key_type_entries)(R)
+        sym!(self, xcb_xkb_set_key_type_entries)(R)
     }
 
     #[inline]
@@ -3255,7 +3256,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_set_key_type_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_key_type_entries_length)(R)
+        sym!(self, xcb_xkb_set_key_type_entries_length)(R)
     }
 
     #[inline]
@@ -3263,7 +3264,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_set_key_type_t,
     ) -> xcb_xkb_kt_set_map_entry_iterator_t {
-        call!(self, xcb_xkb_set_key_type_entries_iterator)(R)
+        sym!(self, xcb_xkb_set_key_type_entries_iterator)(R)
     }
 
     #[inline]
@@ -3271,7 +3272,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_set_key_type_t,
     ) -> *mut xcb_xkb_kt_set_map_entry_t {
-        call!(self, xcb_xkb_set_key_type_preserve_entries)(R)
+        sym!(self, xcb_xkb_set_key_type_preserve_entries)(R)
     }
 
     #[inline]
@@ -3279,7 +3280,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_set_key_type_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_key_type_preserve_entries_length)(R)
+        sym!(self, xcb_xkb_set_key_type_preserve_entries_length)(R)
     }
 
     #[inline]
@@ -3287,12 +3288,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_set_key_type_t,
     ) -> xcb_xkb_kt_set_map_entry_iterator_t {
-        call!(self, xcb_xkb_set_key_type_preserve_entries_iterator)(R)
+        sym!(self, xcb_xkb_set_key_type_preserve_entries_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_set_key_type_next(&self, i: *mut xcb_xkb_set_key_type_iterator_t) {
-        call!(self, xcb_xkb_set_key_type_next)(i);
+        sym!(self, xcb_xkb_set_key_type_next)(i);
     }
 
     #[inline]
@@ -3300,12 +3301,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_set_key_type_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_key_type_end)(i)
+        sym!(self, xcb_xkb_set_key_type_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_string8_next(&self, i: *mut xcb_xkb_string8_iterator_t) {
-        call!(self, xcb_xkb_string8_next)(i);
+        sym!(self, xcb_xkb_string8_next)(i);
     }
 
     #[inline]
@@ -3313,17 +3314,17 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_string8_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_string8_end)(i)
+        sym!(self, xcb_xkb_string8_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_outline_points(&self, R: *const xcb_xkb_outline_t) -> *mut xcb_point_t {
-        call!(self, xcb_xkb_outline_points)(R)
+        sym!(self, xcb_xkb_outline_points)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_outline_points_length(&self, R: *const xcb_xkb_outline_t) -> c_int {
-        call!(self, xcb_xkb_outline_points_length)(R)
+        sym!(self, xcb_xkb_outline_points_length)(R)
     }
 
     #[inline]
@@ -3331,12 +3332,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_outline_t,
     ) -> xcb_point_iterator_t {
-        call!(self, xcb_xkb_outline_points_iterator)(R)
+        sym!(self, xcb_xkb_outline_points_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_outline_next(&self, i: *mut xcb_xkb_outline_iterator_t) {
-        call!(self, xcb_xkb_outline_next)(i);
+        sym!(self, xcb_xkb_outline_next)(i);
     }
 
     #[inline]
@@ -3344,12 +3345,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_outline_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_outline_end)(i)
+        sym!(self, xcb_xkb_outline_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_shape_outlines_length(&self, R: *const xcb_xkb_shape_t) -> c_int {
-        call!(self, xcb_xkb_shape_outlines_length)(R)
+        sym!(self, xcb_xkb_shape_outlines_length)(R)
     }
 
     #[inline]
@@ -3357,12 +3358,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_shape_t,
     ) -> xcb_xkb_outline_iterator_t {
-        call!(self, xcb_xkb_shape_outlines_iterator)(R)
+        sym!(self, xcb_xkb_shape_outlines_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_shape_next(&self, i: *mut xcb_xkb_shape_iterator_t) {
-        call!(self, xcb_xkb_shape_next)(i);
+        sym!(self, xcb_xkb_shape_next)(i);
     }
 
     #[inline]
@@ -3370,22 +3371,22 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_shape_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_shape_end)(i)
+        sym!(self, xcb_xkb_shape_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_next(&self, i: *mut xcb_xkb_key_iterator_t) {
-        call!(self, xcb_xkb_key_next)(i);
+        sym!(self, xcb_xkb_key_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_key_end(&self, i: *mut xcb_xkb_key_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_key_end)(i)
+        sym!(self, xcb_xkb_key_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_overlay_key_next(&self, i: *mut xcb_xkb_overlay_key_iterator_t) {
-        call!(self, xcb_xkb_overlay_key_next)(i);
+        sym!(self, xcb_xkb_overlay_key_next)(i);
     }
 
     #[inline]
@@ -3393,7 +3394,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_overlay_key_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_overlay_key_end)(i)
+        sym!(self, xcb_xkb_overlay_key_end)(i)
     }
 
     #[inline]
@@ -3401,12 +3402,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_overlay_row_t,
     ) -> *mut xcb_xkb_overlay_key_t {
-        call!(self, xcb_xkb_overlay_row_keys)(R)
+        sym!(self, xcb_xkb_overlay_row_keys)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_overlay_row_keys_length(&self, R: *const xcb_xkb_overlay_row_t) -> c_int {
-        call!(self, xcb_xkb_overlay_row_keys_length)(R)
+        sym!(self, xcb_xkb_overlay_row_keys_length)(R)
     }
 
     #[inline]
@@ -3414,12 +3415,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_overlay_row_t,
     ) -> xcb_xkb_overlay_key_iterator_t {
-        call!(self, xcb_xkb_overlay_row_keys_iterator)(R)
+        sym!(self, xcb_xkb_overlay_row_keys_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_overlay_row_next(&self, i: *mut xcb_xkb_overlay_row_iterator_t) {
-        call!(self, xcb_xkb_overlay_row_next)(i);
+        sym!(self, xcb_xkb_overlay_row_next)(i);
     }
 
     #[inline]
@@ -3427,12 +3428,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_overlay_row_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_overlay_row_end)(i)
+        sym!(self, xcb_xkb_overlay_row_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_overlay_rows_length(&self, R: *const xcb_xkb_overlay_t) -> c_int {
-        call!(self, xcb_xkb_overlay_rows_length)(R)
+        sym!(self, xcb_xkb_overlay_rows_length)(R)
     }
 
     #[inline]
@@ -3440,12 +3441,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_overlay_t,
     ) -> xcb_xkb_overlay_row_iterator_t {
-        call!(self, xcb_xkb_overlay_rows_iterator)(R)
+        sym!(self, xcb_xkb_overlay_rows_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_overlay_next(&self, i: *mut xcb_xkb_overlay_iterator_t) {
-        call!(self, xcb_xkb_overlay_next)(i);
+        sym!(self, xcb_xkb_overlay_next)(i);
     }
 
     #[inline]
@@ -3453,17 +3454,17 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_overlay_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_overlay_end)(i)
+        sym!(self, xcb_xkb_overlay_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_row_keys(&self, R: *const xcb_xkb_row_t) -> *mut xcb_xkb_key_t {
-        call!(self, xcb_xkb_row_keys)(R)
+        sym!(self, xcb_xkb_row_keys)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_row_keys_length(&self, R: *const xcb_xkb_row_t) -> c_int {
-        call!(self, xcb_xkb_row_keys_length)(R)
+        sym!(self, xcb_xkb_row_keys_length)(R)
     }
 
     #[inline]
@@ -3471,17 +3472,17 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_row_t,
     ) -> xcb_xkb_key_iterator_t {
-        call!(self, xcb_xkb_row_keys_iterator)(R)
+        sym!(self, xcb_xkb_row_keys_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_row_next(&self, i: *mut xcb_xkb_row_iterator_t) {
-        call!(self, xcb_xkb_row_next)(i);
+        sym!(self, xcb_xkb_row_next)(i);
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_row_end(&self, i: *mut xcb_xkb_row_iterator_t) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_row_end)(i)
+        sym!(self, xcb_xkb_row_end)(i)
     }
 
     #[inline]
@@ -3489,12 +3490,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_listing_t,
     ) -> *mut xcb_xkb_string8_t {
-        call!(self, xcb_xkb_listing_string)(R)
+        sym!(self, xcb_xkb_listing_string)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_listing_string_length(&self, R: *const xcb_xkb_listing_t) -> c_int {
-        call!(self, xcb_xkb_listing_string_length)(R)
+        sym!(self, xcb_xkb_listing_string_length)(R)
     }
 
     #[inline]
@@ -3502,12 +3503,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_listing_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_listing_string_end)(R)
+        sym!(self, xcb_xkb_listing_string_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_listing_next(&self, i: *mut xcb_xkb_listing_iterator_t) {
-        call!(self, xcb_xkb_listing_next)(i);
+        sym!(self, xcb_xkb_listing_next)(i);
     }
 
     #[inline]
@@ -3515,7 +3516,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_listing_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_listing_end)(i)
+        sym!(self, xcb_xkb_listing_end)(i)
     }
 
     #[inline]
@@ -3523,7 +3524,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_device_led_info_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_device_led_info_names)(R)
+        sym!(self, xcb_xkb_device_led_info_names)(R)
     }
 
     #[inline]
@@ -3531,7 +3532,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_device_led_info_t,
     ) -> c_int {
-        call!(self, xcb_xkb_device_led_info_names_length)(R)
+        sym!(self, xcb_xkb_device_led_info_names_length)(R)
     }
 
     #[inline]
@@ -3539,7 +3540,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_device_led_info_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_device_led_info_names_end)(R)
+        sym!(self, xcb_xkb_device_led_info_names_end)(R)
     }
 
     #[inline]
@@ -3547,7 +3548,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_device_led_info_t,
     ) -> *mut xcb_xkb_indicator_map_t {
-        call!(self, xcb_xkb_device_led_info_maps)(R)
+        sym!(self, xcb_xkb_device_led_info_maps)(R)
     }
 
     #[inline]
@@ -3555,7 +3556,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_device_led_info_t,
     ) -> c_int {
-        call!(self, xcb_xkb_device_led_info_maps_length)(R)
+        sym!(self, xcb_xkb_device_led_info_maps_length)(R)
     }
 
     #[inline]
@@ -3563,12 +3564,12 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_device_led_info_t,
     ) -> xcb_xkb_indicator_map_iterator_t {
-        call!(self, xcb_xkb_device_led_info_maps_iterator)(R)
+        sym!(self, xcb_xkb_device_led_info_maps_iterator)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_device_led_info_next(&self, i: *mut xcb_xkb_device_led_info_iterator_t) {
-        call!(self, xcb_xkb_device_led_info_next)(i);
+        sym!(self, xcb_xkb_device_led_info_next)(i);
     }
 
     #[inline]
@@ -3576,12 +3577,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_device_led_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_device_led_info_end)(i)
+        sym!(self, xcb_xkb_device_led_info_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_no_action_next(&self, i: *mut xcb_xkb_sa_no_action_iterator_t) {
-        call!(self, xcb_xkb_sa_no_action_next)(i);
+        sym!(self, xcb_xkb_sa_no_action_next)(i);
     }
 
     #[inline]
@@ -3589,12 +3590,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_no_action_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_no_action_end)(i)
+        sym!(self, xcb_xkb_sa_no_action_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_set_mods_next(&self, i: *mut xcb_xkb_sa_set_mods_iterator_t) {
-        call!(self, xcb_xkb_sa_set_mods_next)(i);
+        sym!(self, xcb_xkb_sa_set_mods_next)(i);
     }
 
     #[inline]
@@ -3602,12 +3603,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_set_mods_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_set_mods_end)(i)
+        sym!(self, xcb_xkb_sa_set_mods_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_latch_mods_next(&self, i: *mut xcb_xkb_sa_latch_mods_iterator_t) {
-        call!(self, xcb_xkb_sa_latch_mods_next)(i);
+        sym!(self, xcb_xkb_sa_latch_mods_next)(i);
     }
 
     #[inline]
@@ -3615,12 +3616,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_latch_mods_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_latch_mods_end)(i)
+        sym!(self, xcb_xkb_sa_latch_mods_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_lock_mods_next(&self, i: *mut xcb_xkb_sa_lock_mods_iterator_t) {
-        call!(self, xcb_xkb_sa_lock_mods_next)(i);
+        sym!(self, xcb_xkb_sa_lock_mods_next)(i);
     }
 
     #[inline]
@@ -3628,12 +3629,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_lock_mods_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_lock_mods_end)(i)
+        sym!(self, xcb_xkb_sa_lock_mods_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_set_group_next(&self, i: *mut xcb_xkb_sa_set_group_iterator_t) {
-        call!(self, xcb_xkb_sa_set_group_next)(i);
+        sym!(self, xcb_xkb_sa_set_group_next)(i);
     }
 
     #[inline]
@@ -3641,12 +3642,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_set_group_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_set_group_end)(i)
+        sym!(self, xcb_xkb_sa_set_group_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_latch_group_next(&self, i: *mut xcb_xkb_sa_latch_group_iterator_t) {
-        call!(self, xcb_xkb_sa_latch_group_next)(i);
+        sym!(self, xcb_xkb_sa_latch_group_next)(i);
     }
 
     #[inline]
@@ -3654,12 +3655,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_latch_group_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_latch_group_end)(i)
+        sym!(self, xcb_xkb_sa_latch_group_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_lock_group_next(&self, i: *mut xcb_xkb_sa_lock_group_iterator_t) {
-        call!(self, xcb_xkb_sa_lock_group_next)(i);
+        sym!(self, xcb_xkb_sa_lock_group_next)(i);
     }
 
     #[inline]
@@ -3667,12 +3668,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_lock_group_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_lock_group_end)(i)
+        sym!(self, xcb_xkb_sa_lock_group_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_move_ptr_next(&self, i: *mut xcb_xkb_sa_move_ptr_iterator_t) {
-        call!(self, xcb_xkb_sa_move_ptr_next)(i);
+        sym!(self, xcb_xkb_sa_move_ptr_next)(i);
     }
 
     #[inline]
@@ -3680,12 +3681,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_move_ptr_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_move_ptr_end)(i)
+        sym!(self, xcb_xkb_sa_move_ptr_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_ptr_btn_next(&self, i: *mut xcb_xkb_sa_ptr_btn_iterator_t) {
-        call!(self, xcb_xkb_sa_ptr_btn_next)(i);
+        sym!(self, xcb_xkb_sa_ptr_btn_next)(i);
     }
 
     #[inline]
@@ -3693,12 +3694,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_ptr_btn_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_ptr_btn_end)(i)
+        sym!(self, xcb_xkb_sa_ptr_btn_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_lock_ptr_btn_next(&self, i: *mut xcb_xkb_sa_lock_ptr_btn_iterator_t) {
-        call!(self, xcb_xkb_sa_lock_ptr_btn_next)(i);
+        sym!(self, xcb_xkb_sa_lock_ptr_btn_next)(i);
     }
 
     #[inline]
@@ -3706,12 +3707,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_lock_ptr_btn_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_lock_ptr_btn_end)(i)
+        sym!(self, xcb_xkb_sa_lock_ptr_btn_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_set_ptr_dflt_next(&self, i: *mut xcb_xkb_sa_set_ptr_dflt_iterator_t) {
-        call!(self, xcb_xkb_sa_set_ptr_dflt_next)(i);
+        sym!(self, xcb_xkb_sa_set_ptr_dflt_next)(i);
     }
 
     #[inline]
@@ -3719,12 +3720,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_set_ptr_dflt_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_set_ptr_dflt_end)(i)
+        sym!(self, xcb_xkb_sa_set_ptr_dflt_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_iso_lock_next(&self, i: *mut xcb_xkb_sa_iso_lock_iterator_t) {
-        call!(self, xcb_xkb_sa_iso_lock_next)(i);
+        sym!(self, xcb_xkb_sa_iso_lock_next)(i);
     }
 
     #[inline]
@@ -3732,12 +3733,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_iso_lock_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_iso_lock_end)(i)
+        sym!(self, xcb_xkb_sa_iso_lock_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_terminate_next(&self, i: *mut xcb_xkb_sa_terminate_iterator_t) {
-        call!(self, xcb_xkb_sa_terminate_next)(i);
+        sym!(self, xcb_xkb_sa_terminate_next)(i);
     }
 
     #[inline]
@@ -3745,7 +3746,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_terminate_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_terminate_end)(i)
+        sym!(self, xcb_xkb_sa_terminate_end)(i)
     }
 
     #[inline]
@@ -3753,7 +3754,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_switch_screen_iterator_t,
     ) {
-        call!(self, xcb_xkb_sa_switch_screen_next)(i);
+        sym!(self, xcb_xkb_sa_switch_screen_next)(i);
     }
 
     #[inline]
@@ -3761,12 +3762,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_switch_screen_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_switch_screen_end)(i)
+        sym!(self, xcb_xkb_sa_switch_screen_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_set_controls_next(&self, i: *mut xcb_xkb_sa_set_controls_iterator_t) {
-        call!(self, xcb_xkb_sa_set_controls_next)(i);
+        sym!(self, xcb_xkb_sa_set_controls_next)(i);
     }
 
     #[inline]
@@ -3774,7 +3775,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_set_controls_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_set_controls_end)(i)
+        sym!(self, xcb_xkb_sa_set_controls_end)(i)
     }
 
     #[inline]
@@ -3782,7 +3783,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_lock_controls_iterator_t,
     ) {
-        call!(self, xcb_xkb_sa_lock_controls_next)(i);
+        sym!(self, xcb_xkb_sa_lock_controls_next)(i);
     }
 
     #[inline]
@@ -3790,7 +3791,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_lock_controls_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_lock_controls_end)(i)
+        sym!(self, xcb_xkb_sa_lock_controls_end)(i)
     }
 
     #[inline]
@@ -3798,7 +3799,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_action_message_iterator_t,
     ) {
-        call!(self, xcb_xkb_sa_action_message_next)(i);
+        sym!(self, xcb_xkb_sa_action_message_next)(i);
     }
 
     #[inline]
@@ -3806,12 +3807,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_action_message_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_action_message_end)(i)
+        sym!(self, xcb_xkb_sa_action_message_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_redirect_key_next(&self, i: *mut xcb_xkb_sa_redirect_key_iterator_t) {
-        call!(self, xcb_xkb_sa_redirect_key_next)(i);
+        sym!(self, xcb_xkb_sa_redirect_key_next)(i);
     }
 
     #[inline]
@@ -3819,12 +3820,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_redirect_key_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_redirect_key_end)(i)
+        sym!(self, xcb_xkb_sa_redirect_key_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sa_device_btn_next(&self, i: *mut xcb_xkb_sa_device_btn_iterator_t) {
-        call!(self, xcb_xkb_sa_device_btn_next)(i);
+        sym!(self, xcb_xkb_sa_device_btn_next)(i);
     }
 
     #[inline]
@@ -3832,7 +3833,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_device_btn_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_device_btn_end)(i)
+        sym!(self, xcb_xkb_sa_device_btn_end)(i)
     }
 
     #[inline]
@@ -3840,7 +3841,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_lock_device_btn_iterator_t,
     ) {
-        call!(self, xcb_xkb_sa_lock_device_btn_next)(i);
+        sym!(self, xcb_xkb_sa_lock_device_btn_next)(i);
     }
 
     #[inline]
@@ -3848,7 +3849,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_lock_device_btn_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_lock_device_btn_end)(i)
+        sym!(self, xcb_xkb_sa_lock_device_btn_end)(i)
     }
 
     #[inline]
@@ -3856,7 +3857,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_device_valuator_iterator_t,
     ) {
-        call!(self, xcb_xkb_sa_device_valuator_next)(i);
+        sym!(self, xcb_xkb_sa_device_valuator_next)(i);
     }
 
     #[inline]
@@ -3864,12 +3865,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sa_device_valuator_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sa_device_valuator_end)(i)
+        sym!(self, xcb_xkb_sa_device_valuator_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_si_action_next(&self, i: *mut xcb_xkb_si_action_iterator_t) {
-        call!(self, xcb_xkb_si_action_next)(i);
+        sym!(self, xcb_xkb_si_action_next)(i);
     }
 
     #[inline]
@@ -3877,12 +3878,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_si_action_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_si_action_end)(i)
+        sym!(self, xcb_xkb_si_action_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_sym_interpret_next(&self, i: *mut xcb_xkb_sym_interpret_iterator_t) {
-        call!(self, xcb_xkb_sym_interpret_next)(i);
+        sym!(self, xcb_xkb_sym_interpret_next)(i);
     }
 
     #[inline]
@@ -3890,12 +3891,12 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_sym_interpret_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_sym_interpret_end)(i)
+        sym!(self, xcb_xkb_sym_interpret_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xkb_action_next(&self, i: *mut xcb_xkb_action_iterator_t) {
-        call!(self, xcb_xkb_action_next)(i);
+        sym!(self, xcb_xkb_action_next)(i);
     }
 
     #[inline]
@@ -3903,7 +3904,7 @@ impl XcbXkb {
         &self,
         i: *mut xcb_xkb_action_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_action_end)(i)
+        sym!(self, xcb_xkb_action_end)(i)
     }
 
     #[inline]
@@ -3913,7 +3914,7 @@ impl XcbXkb {
         cookie: xcb_xkb_use_extension_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_use_extension_reply_t {
-        call!(self, xcb_xkb_use_extension_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_use_extension_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3923,7 +3924,7 @@ impl XcbXkb {
         wanted_major: u16,
         wanted_minor: u16,
     ) -> xcb_xkb_use_extension_cookie_t {
-        call!(self, xcb_xkb_use_extension)(c, wanted_major, wanted_minor)
+        sym!(self, xcb_xkb_use_extension)(c, wanted_major, wanted_minor)
     }
 
     #[inline]
@@ -3933,7 +3934,7 @@ impl XcbXkb {
         wanted_major: u16,
         wanted_minor: u16,
     ) -> xcb_xkb_use_extension_cookie_t {
-        call!(self, xcb_xkb_use_extension_unchecked)(c, wanted_major, wanted_minor)
+        sym!(self, xcb_xkb_use_extension_unchecked)(c, wanted_major, wanted_minor)
     }
 
     #[inline]
@@ -3948,7 +3949,7 @@ impl XcbXkb {
         map: u16,
         details: *const xcb_xkb_select_events_details_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_select_events)(
+        sym!(self, xcb_xkb_select_events)(
             c,
             device_spec,
             affect_which,
@@ -3972,7 +3973,7 @@ impl XcbXkb {
         map: u16,
         details: *const xcb_xkb_select_events_details_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_select_events_checked)(
+        sym!(self, xcb_xkb_select_events_checked)(
             c,
             device_spec,
             affect_which,
@@ -3999,7 +4000,7 @@ impl XcbXkb {
         name: xcb_atom_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_bell)(
+        sym!(self, xcb_xkb_bell)(
             c,
             device_spec,
             bell_class,
@@ -4029,7 +4030,7 @@ impl XcbXkb {
         name: xcb_atom_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_bell_checked)(
+        sym!(self, xcb_xkb_bell_checked)(
             c,
             device_spec,
             bell_class,
@@ -4051,7 +4052,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_state_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_state_reply_t {
-        call!(self, xcb_xkb_get_state_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_state_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4060,7 +4061,7 @@ impl XcbXkb {
         c: *mut xcb_connection_t,
         device_spec: xcb_xkb_device_spec_t,
     ) -> xcb_xkb_get_state_cookie_t {
-        call!(self, xcb_xkb_get_state)(c, device_spec)
+        sym!(self, xcb_xkb_get_state)(c, device_spec)
     }
 
     #[inline]
@@ -4069,7 +4070,7 @@ impl XcbXkb {
         c: *mut xcb_connection_t,
         device_spec: xcb_xkb_device_spec_t,
     ) -> xcb_xkb_get_state_cookie_t {
-        call!(self, xcb_xkb_get_state_unchecked)(c, device_spec)
+        sym!(self, xcb_xkb_get_state_unchecked)(c, device_spec)
     }
 
     #[inline]
@@ -4085,7 +4086,7 @@ impl XcbXkb {
         latch_group: u8,
         group_latch: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_latch_lock_state)(
+        sym!(self, xcb_xkb_latch_lock_state)(
             c,
             device_spec,
             affect_mod_locks,
@@ -4111,7 +4112,7 @@ impl XcbXkb {
         latch_group: u8,
         group_latch: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_latch_lock_state_checked)(
+        sym!(self, xcb_xkb_latch_lock_state_checked)(
             c,
             device_spec,
             affect_mod_locks,
@@ -4131,7 +4132,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_controls_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_controls_reply_t {
-        call!(self, xcb_xkb_get_controls_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_controls_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4140,7 +4141,7 @@ impl XcbXkb {
         c: *mut xcb_connection_t,
         device_spec: xcb_xkb_device_spec_t,
     ) -> xcb_xkb_get_controls_cookie_t {
-        call!(self, xcb_xkb_get_controls)(c, device_spec)
+        sym!(self, xcb_xkb_get_controls)(c, device_spec)
     }
 
     #[inline]
@@ -4149,7 +4150,7 @@ impl XcbXkb {
         c: *mut xcb_connection_t,
         device_spec: xcb_xkb_device_spec_t,
     ) -> xcb_xkb_get_controls_cookie_t {
-        call!(self, xcb_xkb_get_controls_unchecked)(c, device_spec)
+        sym!(self, xcb_xkb_get_controls_unchecked)(c, device_spec)
     }
 
     #[inline]
@@ -4187,7 +4188,7 @@ impl XcbXkb {
         access_x_timeout_options_values: u16,
         per_key_repeat: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_controls)(
+        sym!(self, xcb_xkb_set_controls)(
             c,
             device_spec,
             affect_internal_real_mods,
@@ -4257,7 +4258,7 @@ impl XcbXkb {
         access_x_timeout_options_values: u16,
         per_key_repeat: *const u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_controls_checked)(
+        sym!(self, xcb_xkb_set_controls_checked)(
             c,
             device_spec,
             affect_internal_real_mods,
@@ -4298,7 +4299,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_types_rtrn_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_types_rtrn_length)(R, S)
     }
 
     #[inline]
@@ -4307,7 +4308,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_xkb_key_type_iterator_t {
-        call!(self, xcb_xkb_get_map_map_types_rtrn_iterator)(R, S)
+        sym!(self, xcb_xkb_get_map_map_types_rtrn_iterator)(R, S)
     }
 
     #[inline]
@@ -4316,7 +4317,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_syms_rtrn_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_syms_rtrn_length)(R, S)
     }
 
     #[inline]
@@ -4325,7 +4326,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_xkb_key_sym_map_iterator_t {
-        call!(self, xcb_xkb_get_map_map_syms_rtrn_iterator)(R, S)
+        sym!(self, xcb_xkb_get_map_map_syms_rtrn_iterator)(R, S)
     }
 
     #[inline]
@@ -4333,7 +4334,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_map_map_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_get_map_map_acts_rtrn_count)(S)
+        sym!(self, xcb_xkb_get_map_map_acts_rtrn_count)(S)
     }
 
     #[inline]
@@ -4342,7 +4343,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_acts_rtrn_count_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_acts_rtrn_count_length)(R, S)
     }
 
     #[inline]
@@ -4351,7 +4352,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_map_map_acts_rtrn_count_end)(R, S)
+        sym!(self, xcb_xkb_get_map_map_acts_rtrn_count_end)(R, S)
     }
 
     #[inline]
@@ -4359,7 +4360,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_map_map_t,
     ) -> *mut xcb_xkb_action_t {
-        call!(self, xcb_xkb_get_map_map_acts_rtrn_acts)(S)
+        sym!(self, xcb_xkb_get_map_map_acts_rtrn_acts)(S)
     }
 
     #[inline]
@@ -4368,7 +4369,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_acts_rtrn_acts_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_acts_rtrn_acts_length)(R, S)
     }
 
     #[inline]
@@ -4377,7 +4378,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_xkb_action_iterator_t {
-        call!(self, xcb_xkb_get_map_map_acts_rtrn_acts_iterator)(R, S)
+        sym!(self, xcb_xkb_get_map_map_acts_rtrn_acts_iterator)(R, S)
     }
 
     #[inline]
@@ -4385,7 +4386,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_map_map_t,
     ) -> *mut xcb_xkb_set_behavior_t {
-        call!(self, xcb_xkb_get_map_map_behaviors_rtrn)(S)
+        sym!(self, xcb_xkb_get_map_map_behaviors_rtrn)(S)
     }
 
     #[inline]
@@ -4394,7 +4395,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_behaviors_rtrn_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_behaviors_rtrn_length)(R, S)
     }
 
     #[inline]
@@ -4403,7 +4404,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_xkb_set_behavior_iterator_t {
-        call!(self, xcb_xkb_get_map_map_behaviors_rtrn_iterator)(R, S)
+        sym!(self, xcb_xkb_get_map_map_behaviors_rtrn_iterator)(R, S)
     }
 
     #[inline]
@@ -4411,7 +4412,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_map_map_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_get_map_map_vmods_rtrn)(S)
+        sym!(self, xcb_xkb_get_map_map_vmods_rtrn)(S)
     }
 
     #[inline]
@@ -4420,7 +4421,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_vmods_rtrn_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_vmods_rtrn_length)(R, S)
     }
 
     #[inline]
@@ -4429,7 +4430,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_map_map_vmods_rtrn_end)(R, S)
+        sym!(self, xcb_xkb_get_map_map_vmods_rtrn_end)(R, S)
     }
 
     #[inline]
@@ -4437,7 +4438,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_map_map_t,
     ) -> *mut xcb_xkb_set_explicit_t {
-        call!(self, xcb_xkb_get_map_map_explicit_rtrn)(S)
+        sym!(self, xcb_xkb_get_map_map_explicit_rtrn)(S)
     }
 
     #[inline]
@@ -4446,7 +4447,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_explicit_rtrn_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_explicit_rtrn_length)(R, S)
     }
 
     #[inline]
@@ -4455,7 +4456,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_xkb_set_explicit_iterator_t {
-        call!(self, xcb_xkb_get_map_map_explicit_rtrn_iterator)(R, S)
+        sym!(self, xcb_xkb_get_map_map_explicit_rtrn_iterator)(R, S)
     }
 
     #[inline]
@@ -4463,7 +4464,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_map_map_t,
     ) -> *mut xcb_xkb_key_mod_map_t {
-        call!(self, xcb_xkb_get_map_map_modmap_rtrn)(S)
+        sym!(self, xcb_xkb_get_map_map_modmap_rtrn)(S)
     }
 
     #[inline]
@@ -4472,7 +4473,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_modmap_rtrn_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_modmap_rtrn_length)(R, S)
     }
 
     #[inline]
@@ -4481,7 +4482,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_xkb_key_mod_map_iterator_t {
-        call!(self, xcb_xkb_get_map_map_modmap_rtrn_iterator)(R, S)
+        sym!(self, xcb_xkb_get_map_map_modmap_rtrn_iterator)(R, S)
     }
 
     #[inline]
@@ -4489,7 +4490,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_map_map_t,
     ) -> *mut xcb_xkb_key_v_mod_map_t {
-        call!(self, xcb_xkb_get_map_map_vmodmap_rtrn)(S)
+        sym!(self, xcb_xkb_get_map_map_vmodmap_rtrn)(S)
     }
 
     #[inline]
@@ -4498,7 +4499,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_map_map_vmodmap_rtrn_length)(R, S)
+        sym!(self, xcb_xkb_get_map_map_vmodmap_rtrn_length)(R, S)
     }
 
     #[inline]
@@ -4507,11 +4508,11 @@ impl XcbXkb {
         R: *const xcb_xkb_get_map_reply_t,
         S: *const xcb_xkb_get_map_map_t,
     ) -> xcb_xkb_key_v_mod_map_iterator_t {
-        call!(self, xcb_xkb_get_map_map_vmodmap_rtrn_iterator)(R, S)
+        sym!(self, xcb_xkb_get_map_map_vmodmap_rtrn_iterator)(R, S)
     }
     #[inline]
     pub unsafe fn xcb_xkb_get_map_map(&self, R: *const xcb_xkb_get_map_reply_t) -> *mut c_void {
-        call!(self, xcb_xkb_get_map_map)(R)
+        sym!(self, xcb_xkb_get_map_map)(R)
     }
 
     #[inline]
@@ -4521,7 +4522,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_map_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_map_reply_t {
-        call!(self, xcb_xkb_get_map_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_map_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4547,7 +4548,7 @@ impl XcbXkb {
         first_v_mod_map_key: xcb_keycode_t,
         n_v_mod_map_keys: u8,
     ) -> xcb_xkb_get_map_cookie_t {
-        call!(self, xcb_xkb_get_map)(
+        sym!(self, xcb_xkb_get_map)(
             c,
             device_spec,
             full,
@@ -4593,7 +4594,7 @@ impl XcbXkb {
         first_v_mod_map_key: xcb_keycode_t,
         n_v_mod_map_keys: u8,
     ) -> xcb_xkb_get_map_cookie_t {
-        call!(self, xcb_xkb_get_map_unchecked)(
+        sym!(self, xcb_xkb_get_map_unchecked)(
             c,
             device_spec,
             full,
@@ -4622,7 +4623,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_types_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_types_length)(R, S)
     }
 
     #[inline]
@@ -4631,7 +4632,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_xkb_set_key_type_iterator_t {
-        call!(self, xcb_xkb_set_map_values_types_iterator)(R, S)
+        sym!(self, xcb_xkb_set_map_values_types_iterator)(R, S)
     }
 
     #[inline]
@@ -4640,7 +4641,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_syms_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_syms_length)(R, S)
     }
 
     #[inline]
@@ -4649,7 +4650,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_xkb_key_sym_map_iterator_t {
-        call!(self, xcb_xkb_set_map_values_syms_iterator)(R, S)
+        sym!(self, xcb_xkb_set_map_values_syms_iterator)(R, S)
     }
 
     #[inline]
@@ -4657,7 +4658,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_map_values_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_set_map_values_actions_count)(S)
+        sym!(self, xcb_xkb_set_map_values_actions_count)(S)
     }
 
     #[inline]
@@ -4666,7 +4667,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_actions_count_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_actions_count_length)(R, S)
     }
 
     #[inline]
@@ -4675,7 +4676,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_map_values_actions_count_end)(R, S)
+        sym!(self, xcb_xkb_set_map_values_actions_count_end)(R, S)
     }
 
     #[inline]
@@ -4683,7 +4684,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_map_values_t,
     ) -> *mut xcb_xkb_action_t {
-        call!(self, xcb_xkb_set_map_values_actions)(S)
+        sym!(self, xcb_xkb_set_map_values_actions)(S)
     }
 
     #[inline]
@@ -4692,7 +4693,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_actions_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_actions_length)(R, S)
     }
 
     #[inline]
@@ -4701,7 +4702,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_xkb_action_iterator_t {
-        call!(self, xcb_xkb_set_map_values_actions_iterator)(R, S)
+        sym!(self, xcb_xkb_set_map_values_actions_iterator)(R, S)
     }
 
     #[inline]
@@ -4709,7 +4710,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_map_values_t,
     ) -> *mut xcb_xkb_set_behavior_t {
-        call!(self, xcb_xkb_set_map_values_behaviors)(S)
+        sym!(self, xcb_xkb_set_map_values_behaviors)(S)
     }
 
     #[inline]
@@ -4718,7 +4719,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_behaviors_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_behaviors_length)(R, S)
     }
 
     #[inline]
@@ -4727,7 +4728,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_xkb_set_behavior_iterator_t {
-        call!(self, xcb_xkb_set_map_values_behaviors_iterator)(R, S)
+        sym!(self, xcb_xkb_set_map_values_behaviors_iterator)(R, S)
     }
 
     #[inline]
@@ -4735,7 +4736,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_map_values_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_set_map_values_vmods)(S)
+        sym!(self, xcb_xkb_set_map_values_vmods)(S)
     }
 
     #[inline]
@@ -4744,7 +4745,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_vmods_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_vmods_length)(R, S)
     }
 
     #[inline]
@@ -4753,7 +4754,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_map_values_vmods_end)(R, S)
+        sym!(self, xcb_xkb_set_map_values_vmods_end)(R, S)
     }
 
     #[inline]
@@ -4761,7 +4762,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_map_values_t,
     ) -> *mut xcb_xkb_set_explicit_t {
-        call!(self, xcb_xkb_set_map_values_explicit)(S)
+        sym!(self, xcb_xkb_set_map_values_explicit)(S)
     }
 
     #[inline]
@@ -4770,7 +4771,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_explicit_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_explicit_length)(R, S)
     }
 
     #[inline]
@@ -4779,7 +4780,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_xkb_set_explicit_iterator_t {
-        call!(self, xcb_xkb_set_map_values_explicit_iterator)(R, S)
+        sym!(self, xcb_xkb_set_map_values_explicit_iterator)(R, S)
     }
 
     #[inline]
@@ -4787,7 +4788,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_map_values_t,
     ) -> *mut xcb_xkb_key_mod_map_t {
-        call!(self, xcb_xkb_set_map_values_modmap)(S)
+        sym!(self, xcb_xkb_set_map_values_modmap)(S)
     }
 
     #[inline]
@@ -4796,7 +4797,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_modmap_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_modmap_length)(R, S)
     }
 
     #[inline]
@@ -4805,7 +4806,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_xkb_key_mod_map_iterator_t {
-        call!(self, xcb_xkb_set_map_values_modmap_iterator)(R, S)
+        sym!(self, xcb_xkb_set_map_values_modmap_iterator)(R, S)
     }
 
     #[inline]
@@ -4813,7 +4814,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_map_values_t,
     ) -> *mut xcb_xkb_key_v_mod_map_t {
-        call!(self, xcb_xkb_set_map_values_vmodmap)(S)
+        sym!(self, xcb_xkb_set_map_values_vmodmap)(S)
     }
 
     #[inline]
@@ -4822,7 +4823,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_map_values_vmodmap_length)(R, S)
+        sym!(self, xcb_xkb_set_map_values_vmodmap_length)(R, S)
     }
 
     #[inline]
@@ -4831,7 +4832,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_map_request_t,
         S: *const xcb_xkb_set_map_values_t,
     ) -> xcb_xkb_key_v_mod_map_iterator_t {
-        call!(self, xcb_xkb_set_map_values_vmodmap_iterator)(R, S)
+        sym!(self, xcb_xkb_set_map_values_vmodmap_iterator)(R, S)
     }
 
     #[inline]
@@ -4866,7 +4867,7 @@ impl XcbXkb {
         virtual_mods: u16,
         values: *const xcb_xkb_set_map_values_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_map)(
+        sym!(self, xcb_xkb_set_map)(
             c,
             device_spec,
             present,
@@ -4930,7 +4931,7 @@ impl XcbXkb {
         virtual_mods: u16,
         values: *const xcb_xkb_set_map_values_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_map_checked)(
+        sym!(self, xcb_xkb_set_map_checked)(
             c,
             device_spec,
             present,
@@ -4967,7 +4968,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_compat_map_reply_t,
     ) -> *mut xcb_xkb_sym_interpret_t {
-        call!(self, xcb_xkb_get_compat_map_si_rtrn)(R)
+        sym!(self, xcb_xkb_get_compat_map_si_rtrn)(R)
     }
 
     #[inline]
@@ -4975,7 +4976,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_compat_map_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_compat_map_si_rtrn_length)(R)
+        sym!(self, xcb_xkb_get_compat_map_si_rtrn_length)(R)
     }
 
     #[inline]
@@ -4983,7 +4984,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_compat_map_reply_t,
     ) -> xcb_xkb_sym_interpret_iterator_t {
-        call!(self, xcb_xkb_get_compat_map_si_rtrn_iterator)(R)
+        sym!(self, xcb_xkb_get_compat_map_si_rtrn_iterator)(R)
     }
 
     #[inline]
@@ -4991,7 +4992,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_compat_map_reply_t,
     ) -> *mut xcb_xkb_mod_def_t {
-        call!(self, xcb_xkb_get_compat_map_group_rtrn)(R)
+        sym!(self, xcb_xkb_get_compat_map_group_rtrn)(R)
     }
 
     #[inline]
@@ -4999,7 +5000,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_compat_map_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_compat_map_group_rtrn_length)(R)
+        sym!(self, xcb_xkb_get_compat_map_group_rtrn_length)(R)
     }
 
     #[inline]
@@ -5007,7 +5008,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_compat_map_reply_t,
     ) -> xcb_xkb_mod_def_iterator_t {
-        call!(self, xcb_xkb_get_compat_map_group_rtrn_iterator)(R)
+        sym!(self, xcb_xkb_get_compat_map_group_rtrn_iterator)(R)
     }
 
     #[inline]
@@ -5017,7 +5018,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_compat_map_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_compat_map_reply_t {
-        call!(self, xcb_xkb_get_compat_map_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_compat_map_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5030,7 +5031,7 @@ impl XcbXkb {
         first_si: u16,
         n_si: u16,
     ) -> xcb_xkb_get_compat_map_cookie_t {
-        call!(self, xcb_xkb_get_compat_map)(c, device_spec, groups, get_all_si, first_si, n_si)
+        sym!(self, xcb_xkb_get_compat_map)(c, device_spec, groups, get_all_si, first_si, n_si)
     }
 
     #[inline]
@@ -5043,7 +5044,7 @@ impl XcbXkb {
         first_si: u16,
         n_si: u16,
     ) -> xcb_xkb_get_compat_map_cookie_t {
-        call!(self, xcb_xkb_get_compat_map_unchecked)(
+        sym!(self, xcb_xkb_get_compat_map_unchecked)(
             c,
             device_spec,
             groups,
@@ -5066,7 +5067,7 @@ impl XcbXkb {
         si: *const xcb_xkb_sym_interpret_t,
         group_maps: *const xcb_xkb_mod_def_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_compat_map)(
+        sym!(self, xcb_xkb_set_compat_map)(
             c,
             device_spec,
             recompute_actions,
@@ -5092,7 +5093,7 @@ impl XcbXkb {
         si: *const xcb_xkb_sym_interpret_t,
         group_maps: *const xcb_xkb_mod_def_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_compat_map_checked)(
+        sym!(self, xcb_xkb_set_compat_map_checked)(
             c,
             device_spec,
             recompute_actions,
@@ -5112,7 +5113,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_indicator_state_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_indicator_state_reply_t {
-        call!(self, xcb_xkb_get_indicator_state_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_indicator_state_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5121,7 +5122,7 @@ impl XcbXkb {
         c: *mut xcb_connection_t,
         device_spec: xcb_xkb_device_spec_t,
     ) -> xcb_xkb_get_indicator_state_cookie_t {
-        call!(self, xcb_xkb_get_indicator_state)(c, device_spec)
+        sym!(self, xcb_xkb_get_indicator_state)(c, device_spec)
     }
 
     #[inline]
@@ -5130,7 +5131,7 @@ impl XcbXkb {
         c: *mut xcb_connection_t,
         device_spec: xcb_xkb_device_spec_t,
     ) -> xcb_xkb_get_indicator_state_cookie_t {
-        call!(self, xcb_xkb_get_indicator_state_unchecked)(c, device_spec)
+        sym!(self, xcb_xkb_get_indicator_state_unchecked)(c, device_spec)
     }
 
     #[inline]
@@ -5138,7 +5139,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_indicator_map_reply_t,
     ) -> *mut xcb_xkb_indicator_map_t {
-        call!(self, xcb_xkb_get_indicator_map_maps)(R)
+        sym!(self, xcb_xkb_get_indicator_map_maps)(R)
     }
 
     #[inline]
@@ -5146,7 +5147,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_indicator_map_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_indicator_map_maps_length)(R)
+        sym!(self, xcb_xkb_get_indicator_map_maps_length)(R)
     }
 
     #[inline]
@@ -5154,7 +5155,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_indicator_map_reply_t,
     ) -> xcb_xkb_indicator_map_iterator_t {
-        call!(self, xcb_xkb_get_indicator_map_maps_iterator)(R)
+        sym!(self, xcb_xkb_get_indicator_map_maps_iterator)(R)
     }
 
     #[inline]
@@ -5164,7 +5165,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_indicator_map_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_indicator_map_reply_t {
-        call!(self, xcb_xkb_get_indicator_map_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_indicator_map_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5174,7 +5175,7 @@ impl XcbXkb {
         device_spec: xcb_xkb_device_spec_t,
         which: u32,
     ) -> xcb_xkb_get_indicator_map_cookie_t {
-        call!(self, xcb_xkb_get_indicator_map)(c, device_spec, which)
+        sym!(self, xcb_xkb_get_indicator_map)(c, device_spec, which)
     }
 
     #[inline]
@@ -5184,7 +5185,7 @@ impl XcbXkb {
         device_spec: xcb_xkb_device_spec_t,
         which: u32,
     ) -> xcb_xkb_get_indicator_map_cookie_t {
-        call!(self, xcb_xkb_get_indicator_map_unchecked)(c, device_spec, which)
+        sym!(self, xcb_xkb_get_indicator_map_unchecked)(c, device_spec, which)
     }
 
     #[inline]
@@ -5195,7 +5196,7 @@ impl XcbXkb {
         which: u32,
         maps: *const xcb_xkb_indicator_map_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_indicator_map)(c, device_spec, which, maps)
+        sym!(self, xcb_xkb_set_indicator_map)(c, device_spec, which, maps)
     }
 
     #[inline]
@@ -5206,7 +5207,7 @@ impl XcbXkb {
         which: u32,
         maps: *const xcb_xkb_indicator_map_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_indicator_map_checked)(c, device_spec, which, maps)
+        sym!(self, xcb_xkb_set_indicator_map_checked)(c, device_spec, which, maps)
     }
 
     #[inline]
@@ -5216,7 +5217,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_named_indicator_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_named_indicator_reply_t {
-        call!(self, xcb_xkb_get_named_indicator_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_named_indicator_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5228,7 +5229,7 @@ impl XcbXkb {
         led_id: xcb_xkb_id_spec_t,
         indicator: xcb_atom_t,
     ) -> xcb_xkb_get_named_indicator_cookie_t {
-        call!(self, xcb_xkb_get_named_indicator)(c, device_spec, led_class, led_id, indicator)
+        sym!(self, xcb_xkb_get_named_indicator)(c, device_spec, led_class, led_id, indicator)
     }
 
     #[inline]
@@ -5240,7 +5241,7 @@ impl XcbXkb {
         led_id: xcb_xkb_id_spec_t,
         indicator: xcb_atom_t,
     ) -> xcb_xkb_get_named_indicator_cookie_t {
-        call!(self, xcb_xkb_get_named_indicator_unchecked)(
+        sym!(self, xcb_xkb_get_named_indicator_unchecked)(
             c,
             device_spec,
             led_class,
@@ -5269,7 +5270,7 @@ impl XcbXkb {
         map_vmods: u16,
         map_ctrls: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_named_indicator)(
+        sym!(self, xcb_xkb_set_named_indicator)(
             c,
             device_spec,
             led_class,
@@ -5309,7 +5310,7 @@ impl XcbXkb {
         map_vmods: u16,
         map_ctrls: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_named_indicator_checked)(
+        sym!(self, xcb_xkb_set_named_indicator_checked)(
             c,
             device_spec,
             led_class,
@@ -5334,7 +5335,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_get_names_value_list_type_names)(S)
+        sym!(self, xcb_xkb_get_names_value_list_type_names)(S)
     }
 
     #[inline]
@@ -5343,7 +5344,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_type_names_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_type_names_length)(R, S)
     }
 
     #[inline]
@@ -5352,7 +5353,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_type_names_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_type_names_end)(R, S)
     }
 
     #[inline]
@@ -5360,7 +5361,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_get_names_value_list_n_levels_per_type)(S)
+        sym!(self, xcb_xkb_get_names_value_list_n_levels_per_type)(S)
     }
 
     #[inline]
@@ -5369,7 +5370,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_n_levels_per_type_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_n_levels_per_type_length)(R, S)
     }
 
     #[inline]
@@ -5378,7 +5379,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_n_levels_per_type_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_n_levels_per_type_end)(R, S)
     }
 
     #[inline]
@@ -5386,7 +5387,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_get_names_value_list_alignment_pad)(S)
+        sym!(self, xcb_xkb_get_names_value_list_alignment_pad)(S)
     }
 
     #[inline]
@@ -5395,7 +5396,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_alignment_pad_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_alignment_pad_length)(R, S)
     }
 
     #[inline]
@@ -5404,7 +5405,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_alignment_pad_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_alignment_pad_end)(R, S)
     }
 
     #[inline]
@@ -5412,7 +5413,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_get_names_value_list_kt_level_names)(S)
+        sym!(self, xcb_xkb_get_names_value_list_kt_level_names)(S)
     }
 
     #[inline]
@@ -5421,7 +5422,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_kt_level_names_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_kt_level_names_length)(R, S)
     }
 
     #[inline]
@@ -5430,7 +5431,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_kt_level_names_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_kt_level_names_end)(R, S)
     }
 
     #[inline]
@@ -5438,7 +5439,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_get_names_value_list_indicator_names)(S)
+        sym!(self, xcb_xkb_get_names_value_list_indicator_names)(S)
     }
 
     #[inline]
@@ -5447,7 +5448,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_indicator_names_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_indicator_names_length)(R, S)
     }
 
     #[inline]
@@ -5456,7 +5457,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_indicator_names_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_indicator_names_end)(R, S)
     }
 
     #[inline]
@@ -5464,7 +5465,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_get_names_value_list_virtual_mod_names)(S)
+        sym!(self, xcb_xkb_get_names_value_list_virtual_mod_names)(S)
     }
 
     #[inline]
@@ -5473,7 +5474,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_virtual_mod_names_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_virtual_mod_names_length)(R, S)
     }
 
     #[inline]
@@ -5482,7 +5483,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_virtual_mod_names_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_virtual_mod_names_end)(R, S)
     }
 
     #[inline]
@@ -5490,7 +5491,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_get_names_value_list_groups)(S)
+        sym!(self, xcb_xkb_get_names_value_list_groups)(S)
     }
 
     #[inline]
@@ -5499,7 +5500,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_groups_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_groups_length)(R, S)
     }
 
     #[inline]
@@ -5508,7 +5509,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_groups_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_groups_end)(R, S)
     }
 
     #[inline]
@@ -5516,7 +5517,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_xkb_key_name_t {
-        call!(self, xcb_xkb_get_names_value_list_key_names)(S)
+        sym!(self, xcb_xkb_get_names_value_list_key_names)(S)
     }
 
     #[inline]
@@ -5525,7 +5526,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_key_names_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_key_names_length)(R, S)
     }
 
     #[inline]
@@ -5534,7 +5535,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_xkb_key_name_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_key_names_iterator)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_key_names_iterator)(R, S)
     }
 
     #[inline]
@@ -5542,7 +5543,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_xkb_key_alias_t {
-        call!(self, xcb_xkb_get_names_value_list_key_aliases)(S)
+        sym!(self, xcb_xkb_get_names_value_list_key_aliases)(S)
     }
 
     #[inline]
@@ -5551,7 +5552,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_key_aliases_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_key_aliases_length)(R, S)
     }
 
     #[inline]
@@ -5560,7 +5561,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_xkb_key_alias_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_key_aliases_iterator)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_key_aliases_iterator)(R, S)
     }
 
     #[inline]
@@ -5568,7 +5569,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_get_names_value_list_radio_group_names)(S)
+        sym!(self, xcb_xkb_get_names_value_list_radio_group_names)(S)
     }
 
     #[inline]
@@ -5577,7 +5578,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_names_value_list_radio_group_names_length)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_radio_group_names_length)(R, S)
     }
 
     #[inline]
@@ -5586,14 +5587,14 @@ impl XcbXkb {
         R: *const xcb_xkb_get_names_reply_t,
         S: *const xcb_xkb_get_names_value_list_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_names_value_list_radio_group_names_end)(R, S)
+        sym!(self, xcb_xkb_get_names_value_list_radio_group_names_end)(R, S)
     }
     #[inline]
     pub unsafe fn xcb_xkb_get_names_value_list(
         &self,
         R: *const xcb_xkb_get_names_reply_t,
     ) -> *mut c_void {
-        call!(self, xcb_xkb_get_names_value_list)(R)
+        sym!(self, xcb_xkb_get_names_value_list)(R)
     }
 
     #[inline]
@@ -5603,7 +5604,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_names_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_names_reply_t {
-        call!(self, xcb_xkb_get_names_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_names_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5613,7 +5614,7 @@ impl XcbXkb {
         device_spec: xcb_xkb_device_spec_t,
         which: u32,
     ) -> xcb_xkb_get_names_cookie_t {
-        call!(self, xcb_xkb_get_names)(c, device_spec, which)
+        sym!(self, xcb_xkb_get_names)(c, device_spec, which)
     }
 
     #[inline]
@@ -5623,7 +5624,7 @@ impl XcbXkb {
         device_spec: xcb_xkb_device_spec_t,
         which: u32,
     ) -> xcb_xkb_get_names_cookie_t {
-        call!(self, xcb_xkb_get_names_unchecked)(c, device_spec, which)
+        sym!(self, xcb_xkb_get_names_unchecked)(c, device_spec, which)
     }
 
     #[inline]
@@ -5631,7 +5632,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_set_names_values_type_names)(S)
+        sym!(self, xcb_xkb_set_names_values_type_names)(S)
     }
 
     #[inline]
@@ -5640,7 +5641,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_type_names_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_type_names_length)(R, S)
     }
 
     #[inline]
@@ -5649,7 +5650,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_names_values_type_names_end)(R, S)
+        sym!(self, xcb_xkb_set_names_values_type_names_end)(R, S)
     }
 
     #[inline]
@@ -5657,7 +5658,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_set_names_values_n_levels_per_type)(S)
+        sym!(self, xcb_xkb_set_names_values_n_levels_per_type)(S)
     }
 
     #[inline]
@@ -5666,7 +5667,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_n_levels_per_type_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_n_levels_per_type_length)(R, S)
     }
 
     #[inline]
@@ -5675,7 +5676,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_names_values_n_levels_per_type_end)(R, S)
+        sym!(self, xcb_xkb_set_names_values_n_levels_per_type_end)(R, S)
     }
 
     #[inline]
@@ -5683,7 +5684,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_set_names_values_kt_level_names)(S)
+        sym!(self, xcb_xkb_set_names_values_kt_level_names)(S)
     }
 
     #[inline]
@@ -5692,7 +5693,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_kt_level_names_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_kt_level_names_length)(R, S)
     }
 
     #[inline]
@@ -5701,7 +5702,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_names_values_kt_level_names_end)(R, S)
+        sym!(self, xcb_xkb_set_names_values_kt_level_names_end)(R, S)
     }
 
     #[inline]
@@ -5709,7 +5710,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_set_names_values_indicator_names)(S)
+        sym!(self, xcb_xkb_set_names_values_indicator_names)(S)
     }
 
     #[inline]
@@ -5718,7 +5719,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_indicator_names_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_indicator_names_length)(R, S)
     }
 
     #[inline]
@@ -5727,7 +5728,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_names_values_indicator_names_end)(R, S)
+        sym!(self, xcb_xkb_set_names_values_indicator_names_end)(R, S)
     }
 
     #[inline]
@@ -5735,7 +5736,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_set_names_values_virtual_mod_names)(S)
+        sym!(self, xcb_xkb_set_names_values_virtual_mod_names)(S)
     }
 
     #[inline]
@@ -5744,7 +5745,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_virtual_mod_names_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_virtual_mod_names_length)(R, S)
     }
 
     #[inline]
@@ -5753,7 +5754,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_names_values_virtual_mod_names_end)(R, S)
+        sym!(self, xcb_xkb_set_names_values_virtual_mod_names_end)(R, S)
     }
 
     #[inline]
@@ -5761,7 +5762,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_set_names_values_groups)(S)
+        sym!(self, xcb_xkb_set_names_values_groups)(S)
     }
 
     #[inline]
@@ -5770,7 +5771,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_groups_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_groups_length)(R, S)
     }
 
     #[inline]
@@ -5779,7 +5780,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_names_values_groups_end)(R, S)
+        sym!(self, xcb_xkb_set_names_values_groups_end)(R, S)
     }
 
     #[inline]
@@ -5787,7 +5788,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_xkb_key_name_t {
-        call!(self, xcb_xkb_set_names_values_key_names)(S)
+        sym!(self, xcb_xkb_set_names_values_key_names)(S)
     }
 
     #[inline]
@@ -5796,7 +5797,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_key_names_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_key_names_length)(R, S)
     }
 
     #[inline]
@@ -5805,7 +5806,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_xkb_key_name_iterator_t {
-        call!(self, xcb_xkb_set_names_values_key_names_iterator)(R, S)
+        sym!(self, xcb_xkb_set_names_values_key_names_iterator)(R, S)
     }
 
     #[inline]
@@ -5813,7 +5814,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_xkb_key_alias_t {
-        call!(self, xcb_xkb_set_names_values_key_aliases)(S)
+        sym!(self, xcb_xkb_set_names_values_key_aliases)(S)
     }
 
     #[inline]
@@ -5822,7 +5823,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_key_aliases_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_key_aliases_length)(R, S)
     }
 
     #[inline]
@@ -5831,7 +5832,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_xkb_key_alias_iterator_t {
-        call!(self, xcb_xkb_set_names_values_key_aliases_iterator)(R, S)
+        sym!(self, xcb_xkb_set_names_values_key_aliases_iterator)(R, S)
     }
 
     #[inline]
@@ -5839,7 +5840,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_set_names_values_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xkb_set_names_values_radio_group_names)(S)
+        sym!(self, xcb_xkb_set_names_values_radio_group_names)(S)
     }
 
     #[inline]
@@ -5848,7 +5849,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> c_int {
-        call!(self, xcb_xkb_set_names_values_radio_group_names_length)(R, S)
+        sym!(self, xcb_xkb_set_names_values_radio_group_names_length)(R, S)
     }
 
     #[inline]
@@ -5857,7 +5858,7 @@ impl XcbXkb {
         R: *const xcb_xkb_set_names_request_t,
         S: *const xcb_xkb_set_names_values_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_set_names_values_radio_group_names_end)(R, S)
+        sym!(self, xcb_xkb_set_names_values_radio_group_names_end)(R, S)
     }
 
     #[inline]
@@ -5880,7 +5881,7 @@ impl XcbXkb {
         total_kt_level_names: u16,
         values: *const xcb_xkb_set_names_values_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_names)(
+        sym!(self, xcb_xkb_set_names)(
             c,
             device_spec,
             virtual_mods,
@@ -5920,7 +5921,7 @@ impl XcbXkb {
         total_kt_level_names: u16,
         values: *const xcb_xkb_set_names_values_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_names_checked)(
+        sym!(self, xcb_xkb_set_names_checked)(
             c,
             device_spec,
             virtual_mods,
@@ -5947,7 +5948,7 @@ impl XcbXkb {
         cookie: xcb_xkb_per_client_flags_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_per_client_flags_reply_t {
-        call!(self, xcb_xkb_per_client_flags_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_per_client_flags_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5961,7 +5962,7 @@ impl XcbXkb {
         auto_ctrls: u32,
         auto_ctrls_values: u32,
     ) -> xcb_xkb_per_client_flags_cookie_t {
-        call!(self, xcb_xkb_per_client_flags)(
+        sym!(self, xcb_xkb_per_client_flags)(
             c,
             device_spec,
             change,
@@ -5983,7 +5984,7 @@ impl XcbXkb {
         auto_ctrls: u32,
         auto_ctrls_values: u32,
     ) -> xcb_xkb_per_client_flags_cookie_t {
-        call!(self, xcb_xkb_per_client_flags_unchecked)(
+        sym!(self, xcb_xkb_per_client_flags_unchecked)(
             c,
             device_spec,
             change,
@@ -5999,7 +6000,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_list_components_keymaps_length)(R)
+        sym!(self, xcb_xkb_list_components_keymaps_length)(R)
     }
 
     #[inline]
@@ -6007,7 +6008,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> xcb_xkb_listing_iterator_t {
-        call!(self, xcb_xkb_list_components_keymaps_iterator)(R)
+        sym!(self, xcb_xkb_list_components_keymaps_iterator)(R)
     }
 
     #[inline]
@@ -6015,7 +6016,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_list_components_keycodes_length)(R)
+        sym!(self, xcb_xkb_list_components_keycodes_length)(R)
     }
 
     #[inline]
@@ -6023,7 +6024,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> xcb_xkb_listing_iterator_t {
-        call!(self, xcb_xkb_list_components_keycodes_iterator)(R)
+        sym!(self, xcb_xkb_list_components_keycodes_iterator)(R)
     }
 
     #[inline]
@@ -6031,7 +6032,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_list_components_types_length)(R)
+        sym!(self, xcb_xkb_list_components_types_length)(R)
     }
 
     #[inline]
@@ -6039,7 +6040,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> xcb_xkb_listing_iterator_t {
-        call!(self, xcb_xkb_list_components_types_iterator)(R)
+        sym!(self, xcb_xkb_list_components_types_iterator)(R)
     }
 
     #[inline]
@@ -6047,7 +6048,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_list_components_compat_maps_length)(R)
+        sym!(self, xcb_xkb_list_components_compat_maps_length)(R)
     }
 
     #[inline]
@@ -6055,7 +6056,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> xcb_xkb_listing_iterator_t {
-        call!(self, xcb_xkb_list_components_compat_maps_iterator)(R)
+        sym!(self, xcb_xkb_list_components_compat_maps_iterator)(R)
     }
 
     #[inline]
@@ -6063,7 +6064,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_list_components_symbols_length)(R)
+        sym!(self, xcb_xkb_list_components_symbols_length)(R)
     }
 
     #[inline]
@@ -6071,7 +6072,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> xcb_xkb_listing_iterator_t {
-        call!(self, xcb_xkb_list_components_symbols_iterator)(R)
+        sym!(self, xcb_xkb_list_components_symbols_iterator)(R)
     }
 
     #[inline]
@@ -6079,7 +6080,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_list_components_geometries_length)(R)
+        sym!(self, xcb_xkb_list_components_geometries_length)(R)
     }
 
     #[inline]
@@ -6087,7 +6088,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_list_components_reply_t,
     ) -> xcb_xkb_listing_iterator_t {
-        call!(self, xcb_xkb_list_components_geometries_iterator)(R)
+        sym!(self, xcb_xkb_list_components_geometries_iterator)(R)
     }
 
     #[inline]
@@ -6097,7 +6098,7 @@ impl XcbXkb {
         cookie: xcb_xkb_list_components_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_list_components_reply_t {
-        call!(self, xcb_xkb_list_components_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_list_components_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6107,7 +6108,7 @@ impl XcbXkb {
         device_spec: xcb_xkb_device_spec_t,
         max_names: u16,
     ) -> xcb_xkb_list_components_cookie_t {
-        call!(self, xcb_xkb_list_components)(c, device_spec, max_names)
+        sym!(self, xcb_xkb_list_components)(c, device_spec, max_names)
     }
 
     #[inline]
@@ -6117,14 +6118,14 @@ impl XcbXkb {
         device_spec: xcb_xkb_device_spec_t,
         max_names: u16,
     ) -> xcb_xkb_list_components_cookie_t {
-        call!(self, xcb_xkb_list_components_unchecked)(c, device_spec, max_names)
+        sym!(self, xcb_xkb_list_components_unchecked)(c, device_spec, max_names)
     }
     #[inline]
     pub unsafe fn xcb_xkb_get_kbd_by_name_replies_types_map(
         &self,
         R: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_get_kbd_by_name_replies_types_map_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_types_map)(R)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_types_map)(R)
     }
 
     #[inline]
@@ -6132,7 +6133,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_sym_interpret_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_compat_map_si_rtrn)(S)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_compat_map_si_rtrn)(S)
     }
 
     #[inline]
@@ -6141,7 +6142,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_compat_map_si_rtrn_length
         )(R, S)
@@ -6153,7 +6154,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_sym_interpret_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_compat_map_si_rtrn_iterator
         )(R, S)
@@ -6164,7 +6165,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_mod_def_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_compat_map_group_rtrn)(S)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_compat_map_group_rtrn)(S)
     }
 
     #[inline]
@@ -6173,7 +6174,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_compat_map_group_rtrn_length
         )(R, S)
@@ -6185,7 +6186,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_mod_def_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_compat_map_group_rtrn_iterator
         )(R, S)
@@ -6196,7 +6197,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_indicator_map_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_indicator_maps_maps)(S)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_indicator_maps_maps)(S)
     }
 
     #[inline]
@@ -6205,7 +6206,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_indicator_maps_maps_length
         )(R, S)
@@ -6217,7 +6218,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_indicator_map_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_indicator_maps_maps_iterator
         )(R, S)
@@ -6227,14 +6228,14 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_get_kbd_by_name_replies_key_names_value_list_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_key_names_value_list)(R)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_key_names_value_list)(R)
     }
     #[inline]
     pub unsafe fn xcb_xkb_get_kbd_by_name_replies_geometry_label_font(
         &self,
         R: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_counted_string_16_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_geometry_label_font)(R)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_geometry_label_font)(R)
     }
 
     #[inline]
@@ -6243,7 +6244,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_types_rtrn_length
         )(R, S)
@@ -6255,7 +6256,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_key_type_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_types_rtrn_iterator
         )(R, S)
@@ -6267,7 +6268,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_syms_rtrn_length
         )(R, S)
@@ -6279,7 +6280,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_key_sym_map_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_syms_rtrn_iterator
         )(R, S)
@@ -6290,7 +6291,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut u8 {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_count
         )(S)
@@ -6302,7 +6303,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_count_length
         )(R, S)
@@ -6314,7 +6315,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_count_end
         )(R, S)
@@ -6325,7 +6326,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_action_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_acts
         )(S)
@@ -6337,7 +6338,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_acts_length
         )(R, S)
@@ -6349,7 +6350,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_action_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_acts_iterator
         )(R, S)
@@ -6360,7 +6361,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_set_behavior_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_behaviors_rtrn
         )(S)
@@ -6372,7 +6373,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_behaviors_rtrn_length
         )(R, S)
@@ -6384,7 +6385,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_set_behavior_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_behaviors_rtrn_iterator
         )(R, S)
@@ -6395,7 +6396,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut u8 {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_types_map_vmods_rtrn)(S)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_types_map_vmods_rtrn)(S)
     }
 
     #[inline]
@@ -6404,7 +6405,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_vmods_rtrn_length
         )(R, S)
@@ -6416,7 +6417,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_vmods_rtrn_end
         )(R, S)
@@ -6427,7 +6428,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_set_explicit_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_explicit_rtrn
         )(S)
@@ -6439,7 +6440,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_explicit_rtrn_length
         )(R, S)
@@ -6451,7 +6452,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_set_explicit_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_explicit_rtrn_iterator
         )(R, S)
@@ -6462,7 +6463,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_key_mod_map_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_types_map_modmap_rtrn)(S)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_types_map_modmap_rtrn)(S)
     }
 
     #[inline]
@@ -6471,7 +6472,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_modmap_rtrn_length
         )(R, S)
@@ -6483,7 +6484,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_key_mod_map_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_modmap_rtrn_iterator
         )(R, S)
@@ -6494,7 +6495,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_key_v_mod_map_t {
-        call!(self, xcb_xkb_get_kbd_by_name_replies_types_map_vmodmap_rtrn)(S)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies_types_map_vmodmap_rtrn)(S)
     }
 
     #[inline]
@@ -6503,7 +6504,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_vmodmap_rtrn_length
         )(R, S)
@@ -6515,7 +6516,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_key_v_mod_map_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_types_map_vmodmap_rtrn_iterator
         )(R, S)
@@ -6526,7 +6527,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_atom_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_type_names
         )(S)
@@ -6538,7 +6539,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_type_names_length
         )(R, S)
@@ -6550,7 +6551,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_type_names_end
         )(R, S)
@@ -6561,7 +6562,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut u8 {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_n_levels_per_type
         )(S)
@@ -6573,7 +6574,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_n_levels_per_type_length
         )(R, S)
@@ -6585,7 +6586,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_n_levels_per_type_end
         )(R, S)
@@ -6596,7 +6597,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_atom_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_kt_level_names
         )(S)
@@ -6608,7 +6609,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_kt_level_names_length
         )(R, S)
@@ -6620,7 +6621,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_kt_level_names_end
         )(R, S)
@@ -6631,7 +6632,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_atom_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_indicator_names
         )(S)
@@ -6643,7 +6644,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_indicator_names_length
         )(R, S)
@@ -6655,7 +6656,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_indicator_names_end
         )(R, S)
@@ -6666,7 +6667,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_atom_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_virtual_mod_names
         )(S)
@@ -6678,7 +6679,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_virtual_mod_names_length
         )(R, S)
@@ -6690,7 +6691,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_virtual_mod_names_end
         )(R, S)
@@ -6701,7 +6702,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_atom_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_groups
         )(S)
@@ -6713,7 +6714,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_groups_length
         )(R, S)
@@ -6725,7 +6726,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_groups_end
         )(R, S)
@@ -6736,7 +6737,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_key_name_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_names
         )(S)
@@ -6748,7 +6749,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_names_length
         )(R, S)
@@ -6760,7 +6761,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_key_name_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_names_iterator
         )(R, S)
@@ -6771,7 +6772,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_xkb_key_alias_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_aliases
         )(S)
@@ -6783,7 +6784,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_aliases_length
         )(R, S)
@@ -6795,7 +6796,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_xkb_key_alias_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_aliases_iterator
         )(R, S)
@@ -6806,7 +6807,7 @@ impl XcbXkb {
         &self,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> *mut xcb_atom_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_radio_group_names
         )(S)
@@ -6818,7 +6819,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_radio_group_names_length
         )(R, S)
@@ -6830,7 +6831,7 @@ impl XcbXkb {
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
         S: *const xcb_xkb_get_kbd_by_name_replies_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xkb_get_kbd_by_name_replies_key_names_value_list_radio_group_names_end
         )(R, S)
@@ -6840,7 +6841,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_kbd_by_name_reply_t,
     ) -> *mut c_void {
-        call!(self, xcb_xkb_get_kbd_by_name_replies)(R)
+        sym!(self, xcb_xkb_get_kbd_by_name_replies)(R)
     }
 
     #[inline]
@@ -6850,7 +6851,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_kbd_by_name_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_kbd_by_name_reply_t {
-        call!(self, xcb_xkb_get_kbd_by_name_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_kbd_by_name_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6862,7 +6863,7 @@ impl XcbXkb {
         want: u16,
         load: u8,
     ) -> xcb_xkb_get_kbd_by_name_cookie_t {
-        call!(self, xcb_xkb_get_kbd_by_name)(c, device_spec, need, want, load)
+        sym!(self, xcb_xkb_get_kbd_by_name)(c, device_spec, need, want, load)
     }
 
     #[inline]
@@ -6874,7 +6875,7 @@ impl XcbXkb {
         want: u16,
         load: u8,
     ) -> xcb_xkb_get_kbd_by_name_cookie_t {
-        call!(self, xcb_xkb_get_kbd_by_name_unchecked)(c, device_spec, need, want, load)
+        sym!(self, xcb_xkb_get_kbd_by_name_unchecked)(c, device_spec, need, want, load)
     }
 
     #[inline]
@@ -6882,7 +6883,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> *mut xcb_xkb_string8_t {
-        call!(self, xcb_xkb_get_device_info_name)(R)
+        sym!(self, xcb_xkb_get_device_info_name)(R)
     }
 
     #[inline]
@@ -6890,7 +6891,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_device_info_name_length)(R)
+        sym!(self, xcb_xkb_get_device_info_name_length)(R)
     }
 
     #[inline]
@@ -6898,7 +6899,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xkb_get_device_info_name_end)(R)
+        sym!(self, xcb_xkb_get_device_info_name_end)(R)
     }
 
     #[inline]
@@ -6906,7 +6907,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> *mut xcb_xkb_action_t {
-        call!(self, xcb_xkb_get_device_info_btn_actions)(R)
+        sym!(self, xcb_xkb_get_device_info_btn_actions)(R)
     }
 
     #[inline]
@@ -6914,7 +6915,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_device_info_btn_actions_length)(R)
+        sym!(self, xcb_xkb_get_device_info_btn_actions_length)(R)
     }
 
     #[inline]
@@ -6922,7 +6923,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> xcb_xkb_action_iterator_t {
-        call!(self, xcb_xkb_get_device_info_btn_actions_iterator)(R)
+        sym!(self, xcb_xkb_get_device_info_btn_actions_iterator)(R)
     }
 
     #[inline]
@@ -6930,7 +6931,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_xkb_get_device_info_leds_length)(R)
+        sym!(self, xcb_xkb_get_device_info_leds_length)(R)
     }
 
     #[inline]
@@ -6938,7 +6939,7 @@ impl XcbXkb {
         &self,
         R: *const xcb_xkb_get_device_info_reply_t,
     ) -> xcb_xkb_device_led_info_iterator_t {
-        call!(self, xcb_xkb_get_device_info_leds_iterator)(R)
+        sym!(self, xcb_xkb_get_device_info_leds_iterator)(R)
     }
 
     #[inline]
@@ -6948,7 +6949,7 @@ impl XcbXkb {
         cookie: xcb_xkb_get_device_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_get_device_info_reply_t {
-        call!(self, xcb_xkb_get_device_info_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_get_device_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6963,7 +6964,7 @@ impl XcbXkb {
         led_class: xcb_xkb_led_class_spec_t,
         led_id: xcb_xkb_id_spec_t,
     ) -> xcb_xkb_get_device_info_cookie_t {
-        call!(self, xcb_xkb_get_device_info)(
+        sym!(self, xcb_xkb_get_device_info)(
             c,
             device_spec,
             wanted,
@@ -6987,7 +6988,7 @@ impl XcbXkb {
         led_class: xcb_xkb_led_class_spec_t,
         led_id: xcb_xkb_id_spec_t,
     ) -> xcb_xkb_get_device_info_cookie_t {
-        call!(self, xcb_xkb_get_device_info_unchecked)(
+        sym!(self, xcb_xkb_get_device_info_unchecked)(
             c,
             device_spec,
             wanted,
@@ -7011,7 +7012,7 @@ impl XcbXkb {
         btn_actions: *const xcb_xkb_action_t,
         leds: *const xcb_xkb_device_led_info_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_device_info)(
+        sym!(self, xcb_xkb_set_device_info)(
             c,
             device_spec,
             first_btn,
@@ -7035,7 +7036,7 @@ impl XcbXkb {
         btn_actions: *const xcb_xkb_action_t,
         leds: *const xcb_xkb_device_led_info_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xkb_set_device_info_checked)(
+        sym!(self, xcb_xkb_set_device_info_checked)(
             c,
             device_spec,
             first_btn,
@@ -7054,7 +7055,7 @@ impl XcbXkb {
         cookie: xcb_xkb_set_debugging_flags_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xkb_set_debugging_flags_reply_t {
-        call!(self, xcb_xkb_set_debugging_flags_reply)(c, cookie, error)
+        sym!(self, xcb_xkb_set_debugging_flags_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7068,7 +7069,7 @@ impl XcbXkb {
         ctrls: u32,
         message: *const xcb_xkb_string8_t,
     ) -> xcb_xkb_set_debugging_flags_cookie_t {
-        call!(self, xcb_xkb_set_debugging_flags)(
+        sym!(self, xcb_xkb_set_debugging_flags)(
             c,
             msg_length,
             affect_flags,
@@ -7090,7 +7091,7 @@ impl XcbXkb {
         ctrls: u32,
         message: *const xcb_xkb_string8_t,
     ) -> xcb_xkb_set_debugging_flags_cookie_t {
-        call!(self, xcb_xkb_set_debugging_flags_unchecked)(
+        sym!(self, xcb_xkb_set_debugging_flags_unchecked)(
             c,
             msg_length,
             affect_flags,
@@ -7100,1915 +7101,4 @@ impl XcbXkb {
             message,
         )
     }
-}
-
-pub struct XcbXkb {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xkb_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xkb_device_spec_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_device_spec_iterator_t)>,
-    pub(crate) xcb_xkb_device_spec_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_device_spec_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_led_class_spec_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_led_class_spec_iterator_t)>,
-    pub(crate) xcb_xkb_led_class_spec_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_led_class_spec_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_bell_class_spec_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_bell_class_spec_iterator_t)>,
-    pub(crate) xcb_xkb_bell_class_spec_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_bell_class_spec_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_id_spec_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_id_spec_iterator_t)>,
-    pub(crate) xcb_xkb_id_spec_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_id_spec_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_indicator_map_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_indicator_map_iterator_t)>,
-    pub(crate) xcb_xkb_indicator_map_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_indicator_map_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_mod_def_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_mod_def_iterator_t)>,
-    pub(crate) xcb_xkb_mod_def_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_mod_def_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_name_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_key_name_iterator_t)>,
-    pub(crate) xcb_xkb_key_name_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_name_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_alias_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_key_alias_iterator_t)>,
-    pub(crate) xcb_xkb_key_alias_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_alias_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_counted_string_16_string:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_counted_string_16_t) -> *mut c_char>,
-    pub(crate) xcb_xkb_counted_string_16_string_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_counted_string_16_t) -> c_int>,
-    pub(crate) xcb_xkb_counted_string_16_string_end:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_counted_string_16_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_counted_string_16_alignment_pad:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_counted_string_16_t) -> *mut c_void>,
-    pub(crate) xcb_xkb_counted_string_16_alignment_pad_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_counted_string_16_t) -> c_int>,
-    pub(crate) xcb_xkb_counted_string_16_alignment_pad_end:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_counted_string_16_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_counted_string_16_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_counted_string_16_iterator_t)>,
-    pub(crate) xcb_xkb_counted_string_16_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_counted_string_16_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_kt_map_entry_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_kt_map_entry_iterator_t)>,
-    pub(crate) xcb_xkb_kt_map_entry_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_kt_map_entry_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_type_map:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_type_t) -> *mut xcb_xkb_kt_map_entry_t>,
-    pub(crate) xcb_xkb_key_type_map_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_type_t) -> c_int>,
-    pub(crate) xcb_xkb_key_type_map_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_type_t) -> xcb_xkb_kt_map_entry_iterator_t>,
-    pub(crate) xcb_xkb_key_type_preserve:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_type_t) -> *mut xcb_xkb_mod_def_t>,
-    pub(crate) xcb_xkb_key_type_preserve_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_type_t) -> c_int>,
-    pub(crate) xcb_xkb_key_type_preserve_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_type_t) -> xcb_xkb_mod_def_iterator_t>,
-    pub(crate) xcb_xkb_key_type_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_key_type_iterator_t)>,
-    pub(crate) xcb_xkb_key_type_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_type_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_sym_map_syms:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_sym_map_t) -> *mut xcb_keysym_t>,
-    pub(crate) xcb_xkb_key_sym_map_syms_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_sym_map_t) -> c_int>,
-    pub(crate) xcb_xkb_key_sym_map_syms_end:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_key_sym_map_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_sym_map_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_sym_map_iterator_t)>,
-    pub(crate) xcb_xkb_key_sym_map_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_sym_map_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_common_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_common_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_common_behavior_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_common_behavior_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_default_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_default_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_default_behavior_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_default_behavior_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_lock_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_lock_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_lock_behavior_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_lock_behavior_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_radio_group_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_radio_group_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_radio_group_behavior_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_radio_group_behavior_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_overlay_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_overlay_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_overlay_behavior_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_overlay_behavior_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_permament_lock_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_permament_lock_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_permament_lock_behavior_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_permament_lock_behavior_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_permament_radio_group_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_permament_radio_group_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_permament_radio_group_behavior_end: LazySymbol<
-        unsafe fn(
-            i: *mut xcb_xkb_permament_radio_group_behavior_iterator_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_permament_overlay_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_permament_overlay_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_permament_overlay_behavior_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_permament_overlay_behavior_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_behavior_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_behavior_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_behavior_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_set_behavior_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_set_behavior_iterator_t)>,
-    pub(crate) xcb_xkb_set_behavior_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_set_behavior_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_set_explicit_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_set_explicit_iterator_t)>,
-    pub(crate) xcb_xkb_set_explicit_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_set_explicit_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_mod_map_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_mod_map_iterator_t)>,
-    pub(crate) xcb_xkb_key_mod_map_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_mod_map_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_v_mod_map_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_v_mod_map_iterator_t)>,
-    pub(crate) xcb_xkb_key_v_mod_map_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_v_mod_map_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_kt_set_map_entry_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_kt_set_map_entry_iterator_t)>,
-    pub(crate) xcb_xkb_kt_set_map_entry_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_kt_set_map_entry_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_key_type_entries:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_set_key_type_t) -> *mut xcb_xkb_kt_set_map_entry_t>,
-    pub(crate) xcb_xkb_set_key_type_entries_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_set_key_type_t) -> c_int>,
-    pub(crate) xcb_xkb_set_key_type_entries_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_key_type_t) -> xcb_xkb_kt_set_map_entry_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_key_type_preserve_entries:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_set_key_type_t) -> *mut xcb_xkb_kt_set_map_entry_t>,
-    pub(crate) xcb_xkb_set_key_type_preserve_entries_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_set_key_type_t) -> c_int>,
-    pub(crate) xcb_xkb_set_key_type_preserve_entries_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_key_type_t) -> xcb_xkb_kt_set_map_entry_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_key_type_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_set_key_type_iterator_t)>,
-    pub(crate) xcb_xkb_set_key_type_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_set_key_type_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_string8_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_string8_iterator_t)>,
-    pub(crate) xcb_xkb_string8_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_string8_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_outline_points:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_outline_t) -> *mut xcb_point_t>,
-    pub(crate) xcb_xkb_outline_points_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_outline_t) -> c_int>,
-    pub(crate) xcb_xkb_outline_points_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_outline_t) -> xcb_point_iterator_t>,
-    pub(crate) xcb_xkb_outline_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_outline_iterator_t)>,
-    pub(crate) xcb_xkb_outline_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_outline_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_shape_outlines_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_shape_t) -> c_int>,
-    pub(crate) xcb_xkb_shape_outlines_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_shape_t) -> xcb_xkb_outline_iterator_t>,
-    pub(crate) xcb_xkb_shape_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_shape_iterator_t)>,
-    pub(crate) xcb_xkb_shape_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_shape_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_key_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_key_iterator_t)>,
-    pub(crate) xcb_xkb_key_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_key_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_overlay_key_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_overlay_key_iterator_t)>,
-    pub(crate) xcb_xkb_overlay_key_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_overlay_key_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_overlay_row_keys:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_overlay_row_t) -> *mut xcb_xkb_overlay_key_t>,
-    pub(crate) xcb_xkb_overlay_row_keys_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_overlay_row_t) -> c_int>,
-    pub(crate) xcb_xkb_overlay_row_keys_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_overlay_row_t) -> xcb_xkb_overlay_key_iterator_t>,
-    pub(crate) xcb_xkb_overlay_row_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_overlay_row_iterator_t)>,
-    pub(crate) xcb_xkb_overlay_row_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_overlay_row_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_overlay_rows_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_overlay_t) -> c_int>,
-    pub(crate) xcb_xkb_overlay_rows_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_overlay_t) -> xcb_xkb_overlay_row_iterator_t>,
-    pub(crate) xcb_xkb_overlay_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_overlay_iterator_t)>,
-    pub(crate) xcb_xkb_overlay_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_overlay_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_row_keys:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_row_t) -> *mut xcb_xkb_key_t>,
-    pub(crate) xcb_xkb_row_keys_length: LazySymbol<unsafe fn(R: *const xcb_xkb_row_t) -> c_int>,
-    pub(crate) xcb_xkb_row_keys_iterator:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_row_t) -> xcb_xkb_key_iterator_t>,
-    pub(crate) xcb_xkb_row_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_row_iterator_t)>,
-    pub(crate) xcb_xkb_row_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_row_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_listing_string:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_listing_t) -> *mut xcb_xkb_string8_t>,
-    pub(crate) xcb_xkb_listing_string_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_listing_t) -> c_int>,
-    pub(crate) xcb_xkb_listing_string_end:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_listing_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_listing_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_listing_iterator_t)>,
-    pub(crate) xcb_xkb_listing_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_listing_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_device_led_info_names:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_device_led_info_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_device_led_info_names_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_device_led_info_t) -> c_int>,
-    pub(crate) xcb_xkb_device_led_info_names_end:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_device_led_info_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_device_led_info_maps:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_device_led_info_t) -> *mut xcb_xkb_indicator_map_t>,
-    pub(crate) xcb_xkb_device_led_info_maps_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_device_led_info_t) -> c_int>,
-    pub(crate) xcb_xkb_device_led_info_maps_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_device_led_info_t) -> xcb_xkb_indicator_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_device_led_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_device_led_info_iterator_t)>,
-    pub(crate) xcb_xkb_device_led_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_device_led_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_no_action_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_no_action_iterator_t)>,
-    pub(crate) xcb_xkb_sa_no_action_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_no_action_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_set_mods_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_mods_iterator_t)>,
-    pub(crate) xcb_xkb_sa_set_mods_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_mods_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_latch_mods_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_latch_mods_iterator_t)>,
-    pub(crate) xcb_xkb_sa_latch_mods_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_latch_mods_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_lock_mods_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_mods_iterator_t)>,
-    pub(crate) xcb_xkb_sa_lock_mods_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_mods_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_set_group_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_group_iterator_t)>,
-    pub(crate) xcb_xkb_sa_set_group_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_group_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_latch_group_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_latch_group_iterator_t)>,
-    pub(crate) xcb_xkb_sa_latch_group_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_latch_group_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_lock_group_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_group_iterator_t)>,
-    pub(crate) xcb_xkb_sa_lock_group_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_group_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_move_ptr_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_move_ptr_iterator_t)>,
-    pub(crate) xcb_xkb_sa_move_ptr_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_move_ptr_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_ptr_btn_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_ptr_btn_iterator_t)>,
-    pub(crate) xcb_xkb_sa_ptr_btn_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_ptr_btn_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_lock_ptr_btn_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_ptr_btn_iterator_t)>,
-    pub(crate) xcb_xkb_sa_lock_ptr_btn_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_ptr_btn_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_set_ptr_dflt_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_ptr_dflt_iterator_t)>,
-    pub(crate) xcb_xkb_sa_set_ptr_dflt_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_ptr_dflt_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_iso_lock_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_iso_lock_iterator_t)>,
-    pub(crate) xcb_xkb_sa_iso_lock_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_iso_lock_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_terminate_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_terminate_iterator_t)>,
-    pub(crate) xcb_xkb_sa_terminate_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_terminate_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_switch_screen_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_switch_screen_iterator_t)>,
-    pub(crate) xcb_xkb_sa_switch_screen_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_sa_switch_screen_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_sa_set_controls_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_controls_iterator_t)>,
-    pub(crate) xcb_xkb_sa_set_controls_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_set_controls_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_lock_controls_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_controls_iterator_t)>,
-    pub(crate) xcb_xkb_sa_lock_controls_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_sa_lock_controls_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_sa_action_message_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_action_message_iterator_t)>,
-    pub(crate) xcb_xkb_sa_action_message_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_sa_action_message_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_sa_redirect_key_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_redirect_key_iterator_t)>,
-    pub(crate) xcb_xkb_sa_redirect_key_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_redirect_key_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_device_btn_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_device_btn_iterator_t)>,
-    pub(crate) xcb_xkb_sa_device_btn_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_device_btn_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sa_lock_device_btn_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_lock_device_btn_iterator_t)>,
-    pub(crate) xcb_xkb_sa_lock_device_btn_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_sa_lock_device_btn_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_sa_device_valuator_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sa_device_valuator_iterator_t)>,
-    pub(crate) xcb_xkb_sa_device_valuator_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xkb_sa_device_valuator_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_si_action_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_si_action_iterator_t)>,
-    pub(crate) xcb_xkb_si_action_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_si_action_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_sym_interpret_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sym_interpret_iterator_t)>,
-    pub(crate) xcb_xkb_sym_interpret_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_sym_interpret_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_action_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_action_iterator_t)>,
-    pub(crate) xcb_xkb_action_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xkb_action_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_use_extension_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_use_extension_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_use_extension_reply_t,
-    >,
-    pub(crate) xcb_xkb_use_extension: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            wanted_major: u16,
-            wanted_minor: u16,
-        ) -> xcb_xkb_use_extension_cookie_t,
-    >,
-    pub(crate) xcb_xkb_use_extension_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            wanted_major: u16,
-            wanted_minor: u16,
-        ) -> xcb_xkb_use_extension_cookie_t,
-    >,
-    pub(crate) xcb_xkb_select_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            affect_which: u16,
-            clear: u16,
-            select_all: u16,
-            affect_map: u16,
-            map: u16,
-            details: *const xcb_xkb_select_events_details_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_select_events_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            affect_which: u16,
-            clear: u16,
-            select_all: u16,
-            affect_map: u16,
-            map: u16,
-            details: *const xcb_xkb_select_events_details_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_bell: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            bell_class: xcb_xkb_bell_class_spec_t,
-            bell_id: xcb_xkb_id_spec_t,
-            percent: i8,
-            force_sound: u8,
-            event_only: u8,
-            pitch: i16,
-            duration: i16,
-            name: xcb_atom_t,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_bell_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            bell_class: xcb_xkb_bell_class_spec_t,
-            bell_id: xcb_xkb_id_spec_t,
-            percent: i8,
-            force_sound: u8,
-            event_only: u8,
-            pitch: i16,
-            duration: i16,
-            name: xcb_atom_t,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_state_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_state_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_state_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_state: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-        ) -> xcb_xkb_get_state_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_state_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-        ) -> xcb_xkb_get_state_cookie_t,
-    >,
-    pub(crate) xcb_xkb_latch_lock_state: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            affect_mod_locks: u8,
-            mod_locks: u8,
-            lock_group: u8,
-            group_lock: u8,
-            affect_mod_latches: u8,
-            latch_group: u8,
-            group_latch: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_latch_lock_state_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            affect_mod_locks: u8,
-            mod_locks: u8,
-            lock_group: u8,
-            group_lock: u8,
-            affect_mod_latches: u8,
-            latch_group: u8,
-            group_latch: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_controls_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_controls_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_controls_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_controls: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-        ) -> xcb_xkb_get_controls_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_controls_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-        ) -> xcb_xkb_get_controls_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_controls: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            affect_internal_real_mods: u8,
-            internal_real_mods: u8,
-            affect_ignore_lock_real_mods: u8,
-            ignore_lock_real_mods: u8,
-            affect_internal_virtual_mods: u16,
-            internal_virtual_mods: u16,
-            affect_ignore_lock_virtual_mods: u16,
-            ignore_lock_virtual_mods: u16,
-            mouse_keys_dflt_btn: u8,
-            groups_wrap: u8,
-            access_x_options: u16,
-            affect_enabled_controls: u32,
-            enabled_controls: u32,
-            change_controls: u32,
-            repeat_delay: u16,
-            repeat_interval: u16,
-            slow_keys_delay: u16,
-            debounce_delay: u16,
-            mouse_keys_delay: u16,
-            mouse_keys_interval: u16,
-            mouse_keys_time_to_max: u16,
-            mouse_keys_max_speed: u16,
-            mouse_keys_curve: i16,
-            access_x_timeout: u16,
-            access_x_timeout_mask: u32,
-            access_x_timeout_values: u32,
-            access_x_timeout_options_mask: u16,
-            access_x_timeout_options_values: u16,
-            per_key_repeat: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_controls_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            affect_internal_real_mods: u8,
-            internal_real_mods: u8,
-            affect_ignore_lock_real_mods: u8,
-            ignore_lock_real_mods: u8,
-            affect_internal_virtual_mods: u16,
-            internal_virtual_mods: u16,
-            affect_ignore_lock_virtual_mods: u16,
-            ignore_lock_virtual_mods: u16,
-            mouse_keys_dflt_btn: u8,
-            groups_wrap: u8,
-            access_x_options: u16,
-            affect_enabled_controls: u32,
-            enabled_controls: u32,
-            change_controls: u32,
-            repeat_delay: u16,
-            repeat_interval: u16,
-            slow_keys_delay: u16,
-            debounce_delay: u16,
-            mouse_keys_delay: u16,
-            mouse_keys_interval: u16,
-            mouse_keys_time_to_max: u16,
-            mouse_keys_max_speed: u16,
-            mouse_keys_curve: i16,
-            access_x_timeout: u16,
-            access_x_timeout_mask: u32,
-            access_x_timeout_values: u32,
-            access_x_timeout_options_mask: u16,
-            access_x_timeout_options_values: u16,
-            per_key_repeat: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_types_rtrn_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_types_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_xkb_key_type_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_syms_rtrn_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_syms_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_xkb_key_sym_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_acts_rtrn_count:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_map_map_t) -> *mut u8>,
-    pub(crate) xcb_xkb_get_map_map_acts_rtrn_count_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_acts_rtrn_count_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_acts_rtrn_acts:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_map_map_t) -> *mut xcb_xkb_action_t>,
-    pub(crate) xcb_xkb_get_map_map_acts_rtrn_acts_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_acts_rtrn_acts_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_xkb_action_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_behaviors_rtrn:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_map_map_t) -> *mut xcb_xkb_set_behavior_t>,
-    pub(crate) xcb_xkb_get_map_map_behaviors_rtrn_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_behaviors_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_xkb_set_behavior_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_vmods_rtrn:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_map_map_t) -> *mut u8>,
-    pub(crate) xcb_xkb_get_map_map_vmods_rtrn_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_vmods_rtrn_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_explicit_rtrn:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_map_map_t) -> *mut xcb_xkb_set_explicit_t>,
-    pub(crate) xcb_xkb_get_map_map_explicit_rtrn_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_explicit_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_xkb_set_explicit_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_modmap_rtrn:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_map_map_t) -> *mut xcb_xkb_key_mod_map_t>,
-    pub(crate) xcb_xkb_get_map_map_modmap_rtrn_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_modmap_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_xkb_key_mod_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map_vmodmap_rtrn:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_map_map_t) -> *mut xcb_xkb_key_v_mod_map_t>,
-    pub(crate) xcb_xkb_get_map_map_vmodmap_rtrn_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_map_reply_t, S: *const xcb_xkb_get_map_map_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_map_map_vmodmap_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_map_reply_t,
-            S: *const xcb_xkb_get_map_map_t,
-        ) -> xcb_xkb_key_v_mod_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_map_map:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_map_reply_t) -> *mut c_void>,
-    pub(crate) xcb_xkb_get_map_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_map_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_map_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_map: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            full: u16,
-            partial: u16,
-            first_type: u8,
-            n_types: u8,
-            first_key_sym: xcb_keycode_t,
-            n_key_syms: u8,
-            first_key_action: xcb_keycode_t,
-            n_key_actions: u8,
-            first_key_behavior: xcb_keycode_t,
-            n_key_behaviors: u8,
-            virtual_mods: u16,
-            first_key_explicit: xcb_keycode_t,
-            n_key_explicit: u8,
-            first_mod_map_key: xcb_keycode_t,
-            n_mod_map_keys: u8,
-            first_v_mod_map_key: xcb_keycode_t,
-            n_v_mod_map_keys: u8,
-        ) -> xcb_xkb_get_map_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_map_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            full: u16,
-            partial: u16,
-            first_type: u8,
-            n_types: u8,
-            first_key_sym: xcb_keycode_t,
-            n_key_syms: u8,
-            first_key_action: xcb_keycode_t,
-            n_key_actions: u8,
-            first_key_behavior: xcb_keycode_t,
-            n_key_behaviors: u8,
-            virtual_mods: u16,
-            first_key_explicit: xcb_keycode_t,
-            n_key_explicit: u8,
-            first_mod_map_key: xcb_keycode_t,
-            n_mod_map_keys: u8,
-            first_v_mod_map_key: xcb_keycode_t,
-            n_v_mod_map_keys: u8,
-        ) -> xcb_xkb_get_map_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_types_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_types_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_xkb_set_key_type_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_syms_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_syms_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_xkb_key_sym_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_actions_count:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_map_values_t) -> *mut u8>,
-    pub(crate) xcb_xkb_set_map_values_actions_count_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_actions_count_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_actions:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_map_values_t) -> *mut xcb_xkb_action_t>,
-    pub(crate) xcb_xkb_set_map_values_actions_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_actions_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_xkb_action_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_behaviors:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_map_values_t) -> *mut xcb_xkb_set_behavior_t>,
-    pub(crate) xcb_xkb_set_map_values_behaviors_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_behaviors_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_xkb_set_behavior_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_vmods:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_map_values_t) -> *mut u8>,
-    pub(crate) xcb_xkb_set_map_values_vmods_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_vmods_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_explicit:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_map_values_t) -> *mut xcb_xkb_set_explicit_t>,
-    pub(crate) xcb_xkb_set_map_values_explicit_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_explicit_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_xkb_set_explicit_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_modmap:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_map_values_t) -> *mut xcb_xkb_key_mod_map_t>,
-    pub(crate) xcb_xkb_set_map_values_modmap_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_modmap_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_xkb_key_mod_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map_values_vmodmap:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_map_values_t) -> *mut xcb_xkb_key_v_mod_map_t>,
-    pub(crate) xcb_xkb_set_map_values_vmodmap_length: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_set_map_request_t, S: *const xcb_xkb_set_map_values_t) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_map_values_vmodmap_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_map_request_t,
-            S: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_xkb_key_v_mod_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_map: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            present: u16,
-            flags: u16,
-            min_key_code: xcb_keycode_t,
-            max_key_code: xcb_keycode_t,
-            first_type: u8,
-            n_types: u8,
-            first_key_sym: xcb_keycode_t,
-            n_key_syms: u8,
-            total_syms: u16,
-            first_key_action: xcb_keycode_t,
-            n_key_actions: u8,
-            total_actions: u16,
-            first_key_behavior: xcb_keycode_t,
-            n_key_behaviors: u8,
-            total_key_behaviors: u8,
-            first_key_explicit: xcb_keycode_t,
-            n_key_explicit: u8,
-            total_key_explicit: u8,
-            first_mod_map_key: xcb_keycode_t,
-            n_mod_map_keys: u8,
-            total_mod_map_keys: u8,
-            first_v_mod_map_key: xcb_keycode_t,
-            n_v_mod_map_keys: u8,
-            total_v_mod_map_keys: u8,
-            virtual_mods: u16,
-            values: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_map_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            present: u16,
-            flags: u16,
-            min_key_code: xcb_keycode_t,
-            max_key_code: xcb_keycode_t,
-            first_type: u8,
-            n_types: u8,
-            first_key_sym: xcb_keycode_t,
-            n_key_syms: u8,
-            total_syms: u16,
-            first_key_action: xcb_keycode_t,
-            n_key_actions: u8,
-            total_actions: u16,
-            first_key_behavior: xcb_keycode_t,
-            n_key_behaviors: u8,
-            total_key_behaviors: u8,
-            first_key_explicit: xcb_keycode_t,
-            n_key_explicit: u8,
-            total_key_explicit: u8,
-            first_mod_map_key: xcb_keycode_t,
-            n_mod_map_keys: u8,
-            total_mod_map_keys: u8,
-            first_v_mod_map_key: xcb_keycode_t,
-            n_v_mod_map_keys: u8,
-            total_v_mod_map_keys: u8,
-            virtual_mods: u16,
-            values: *const xcb_xkb_set_map_values_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_compat_map_si_rtrn: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_compat_map_reply_t) -> *mut xcb_xkb_sym_interpret_t,
-    >,
-    pub(crate) xcb_xkb_get_compat_map_si_rtrn_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_compat_map_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_get_compat_map_si_rtrn_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_compat_map_reply_t) -> xcb_xkb_sym_interpret_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_compat_map_group_rtrn:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_compat_map_reply_t) -> *mut xcb_xkb_mod_def_t>,
-    pub(crate) xcb_xkb_get_compat_map_group_rtrn_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_compat_map_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_get_compat_map_group_rtrn_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_compat_map_reply_t) -> xcb_xkb_mod_def_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_compat_map_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_compat_map_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_compat_map_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_compat_map: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            groups: u8,
-            get_all_si: u8,
-            first_si: u16,
-            n_si: u16,
-        ) -> xcb_xkb_get_compat_map_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_compat_map_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            groups: u8,
-            get_all_si: u8,
-            first_si: u16,
-            n_si: u16,
-        ) -> xcb_xkb_get_compat_map_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_compat_map: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            recompute_actions: u8,
-            truncate_si: u8,
-            groups: u8,
-            first_si: u16,
-            n_si: u16,
-            si: *const xcb_xkb_sym_interpret_t,
-            group_maps: *const xcb_xkb_mod_def_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_compat_map_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            recompute_actions: u8,
-            truncate_si: u8,
-            groups: u8,
-            first_si: u16,
-            n_si: u16,
-            si: *const xcb_xkb_sym_interpret_t,
-            group_maps: *const xcb_xkb_mod_def_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_state_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_indicator_state_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_indicator_state_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_state: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-        ) -> xcb_xkb_get_indicator_state_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_state_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-        ) -> xcb_xkb_get_indicator_state_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_map_maps: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_indicator_map_reply_t) -> *mut xcb_xkb_indicator_map_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_map_maps_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_indicator_map_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_get_indicator_map_maps_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_indicator_map_reply_t) -> xcb_xkb_indicator_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_map_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_indicator_map_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_indicator_map_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_map: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            which: u32,
-        ) -> xcb_xkb_get_indicator_map_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_indicator_map_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            which: u32,
-        ) -> xcb_xkb_get_indicator_map_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_indicator_map: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            which: u32,
-            maps: *const xcb_xkb_indicator_map_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_indicator_map_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            which: u32,
-            maps: *const xcb_xkb_indicator_map_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_named_indicator_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_named_indicator_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_named_indicator_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_named_indicator: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            led_class: xcb_xkb_led_class_spec_t,
-            led_id: xcb_xkb_id_spec_t,
-            indicator: xcb_atom_t,
-        ) -> xcb_xkb_get_named_indicator_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_named_indicator_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            led_class: xcb_xkb_led_class_spec_t,
-            led_id: xcb_xkb_id_spec_t,
-            indicator: xcb_atom_t,
-        ) -> xcb_xkb_get_named_indicator_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_named_indicator: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            led_class: xcb_xkb_led_class_spec_t,
-            led_id: xcb_xkb_id_spec_t,
-            indicator: xcb_atom_t,
-            set_state: u8,
-            on: u8,
-            set_map: u8,
-            create_map: u8,
-            map_flags: u8,
-            map_which_groups: u8,
-            map_groups: u8,
-            map_which_mods: u8,
-            map_real_mods: u8,
-            map_vmods: u16,
-            map_ctrls: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_named_indicator_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            led_class: xcb_xkb_led_class_spec_t,
-            led_id: xcb_xkb_id_spec_t,
-            indicator: xcb_atom_t,
-            set_state: u8,
-            on: u8,
-            set_map: u8,
-            create_map: u8,
-            map_flags: u8,
-            map_which_groups: u8,
-            map_groups: u8,
-            map_which_mods: u8,
-            map_real_mods: u8,
-            map_vmods: u16,
-            map_ctrls: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_type_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_names_value_list_type_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_type_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_n_levels_per_type:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut u8>,
-    pub(crate) xcb_xkb_get_names_value_list_n_levels_per_type_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_n_levels_per_type_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_alignment_pad:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut u8>,
-    pub(crate) xcb_xkb_get_names_value_list_alignment_pad_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_alignment_pad_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_kt_level_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_names_value_list_kt_level_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_kt_level_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_indicator_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_names_value_list_indicator_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_indicator_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_virtual_mod_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_names_value_list_virtual_mod_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_virtual_mod_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_groups:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_names_value_list_groups_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_groups_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_key_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_xkb_key_name_t>,
-    pub(crate) xcb_xkb_get_names_value_list_key_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_key_names_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_xkb_key_name_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_key_aliases:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_xkb_key_alias_t>,
-    pub(crate) xcb_xkb_get_names_value_list_key_aliases_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_key_aliases_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_xkb_key_alias_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_radio_group_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_names_value_list_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_names_value_list_radio_group_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list_radio_group_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_names_reply_t,
-            S: *const xcb_xkb_get_names_value_list_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_names_value_list:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_names_reply_t) -> *mut c_void>,
-    pub(crate) xcb_xkb_get_names_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_names_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_names_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_names: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            which: u32,
-        ) -> xcb_xkb_get_names_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_names_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            which: u32,
-        ) -> xcb_xkb_get_names_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_type_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_set_names_values_type_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_type_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_n_levels_per_type:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut u8>,
-    pub(crate) xcb_xkb_set_names_values_n_levels_per_type_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_n_levels_per_type_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_kt_level_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_set_names_values_kt_level_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_kt_level_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_indicator_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_set_names_values_indicator_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_indicator_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_virtual_mod_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_set_names_values_virtual_mod_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_virtual_mod_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_groups:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_set_names_values_groups_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_groups_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_key_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_xkb_key_name_t>,
-    pub(crate) xcb_xkb_set_names_values_key_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_key_names_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_xkb_key_name_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_key_aliases:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_xkb_key_alias_t>,
-    pub(crate) xcb_xkb_set_names_values_key_aliases_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_key_aliases_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_xkb_key_alias_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names_values_radio_group_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_set_names_values_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_set_names_values_radio_group_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_set_names_values_radio_group_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_set_names_request_t,
-            S: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_set_names: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            virtual_mods: u16,
-            which: u32,
-            first_type: u8,
-            n_types: u8,
-            first_kt_levelt: u8,
-            n_kt_levels: u8,
-            indicators: u32,
-            group_names: u8,
-            n_radio_groups: u8,
-            first_key: xcb_keycode_t,
-            n_keys: u8,
-            n_key_aliases: u8,
-            total_kt_level_names: u16,
-            values: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_names_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            virtual_mods: u16,
-            which: u32,
-            first_type: u8,
-            n_types: u8,
-            first_kt_levelt: u8,
-            n_kt_levels: u8,
-            indicators: u32,
-            group_names: u8,
-            n_radio_groups: u8,
-            first_key: xcb_keycode_t,
-            n_keys: u8,
-            n_key_aliases: u8,
-            total_kt_level_names: u16,
-            values: *const xcb_xkb_set_names_values_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_per_client_flags_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_per_client_flags_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_per_client_flags_reply_t,
-    >,
-    pub(crate) xcb_xkb_per_client_flags: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            change: u32,
-            value: u32,
-            ctrls_to_change: u32,
-            auto_ctrls: u32,
-            auto_ctrls_values: u32,
-        ) -> xcb_xkb_per_client_flags_cookie_t,
-    >,
-    pub(crate) xcb_xkb_per_client_flags_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            change: u32,
-            value: u32,
-            ctrls_to_change: u32,
-            auto_ctrls: u32,
-            auto_ctrls_values: u32,
-        ) -> xcb_xkb_per_client_flags_cookie_t,
-    >,
-    pub(crate) xcb_xkb_list_components_keymaps_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_list_components_keymaps_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> xcb_xkb_listing_iterator_t,
-    >,
-    pub(crate) xcb_xkb_list_components_keycodes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_list_components_keycodes_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> xcb_xkb_listing_iterator_t,
-    >,
-    pub(crate) xcb_xkb_list_components_types_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_list_components_types_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> xcb_xkb_listing_iterator_t,
-    >,
-    pub(crate) xcb_xkb_list_components_compat_maps_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_list_components_compat_maps_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> xcb_xkb_listing_iterator_t,
-    >,
-    pub(crate) xcb_xkb_list_components_symbols_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_list_components_symbols_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> xcb_xkb_listing_iterator_t,
-    >,
-    pub(crate) xcb_xkb_list_components_geometries_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_list_components_geometries_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_list_components_reply_t) -> xcb_xkb_listing_iterator_t,
-    >,
-    pub(crate) xcb_xkb_list_components_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_list_components_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_list_components_reply_t,
-    >,
-    pub(crate) xcb_xkb_list_components: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            max_names: u16,
-        ) -> xcb_xkb_list_components_cookie_t,
-    >,
-    pub(crate) xcb_xkb_list_components_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            max_names: u16,
-        ) -> xcb_xkb_list_components_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> *mut xcb_xkb_get_kbd_by_name_replies_types_map_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_compat_map_si_rtrn: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_sym_interpret_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_compat_map_si_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_compat_map_si_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_sym_interpret_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_compat_map_group_rtrn: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_mod_def_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_compat_map_group_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_compat_map_group_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_mod_def_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_indicator_maps_maps: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_indicator_map_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_indicator_maps_maps_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_indicator_maps_maps_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_indicator_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> *mut xcb_xkb_get_kbd_by_name_replies_key_names_value_list_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_geometry_label_font: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_counted_string_16_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_types_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_types_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_key_type_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_syms_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_syms_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_key_sym_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_count:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut u8>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_count_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_count_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_acts:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_action_t>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_acts_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_acts_rtrn_acts_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_action_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_behaviors_rtrn: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_set_behavior_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_behaviors_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_behaviors_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_set_behavior_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_vmods_rtrn:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut u8>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_vmods_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_vmods_rtrn_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_explicit_rtrn: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_set_explicit_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_explicit_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_explicit_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_set_explicit_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_modmap_rtrn: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_key_mod_map_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_modmap_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_modmap_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_key_mod_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_vmodmap_rtrn: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_key_v_mod_map_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_vmodmap_rtrn_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_types_map_vmodmap_rtrn_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_key_v_mod_map_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_type_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_type_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_type_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_n_levels_per_type:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut u8>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_n_levels_per_type_length:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> c_int,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_n_levels_per_type_end:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> xcb_generic_iterator_t,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_kt_level_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_kt_level_names_length:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> c_int,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_kt_level_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_indicator_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_indicator_names_length:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> c_int,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_indicator_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_virtual_mod_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_virtual_mod_names_length:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> c_int,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_virtual_mod_names_end:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> xcb_generic_iterator_t,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_groups:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_groups_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_groups_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_names: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_key_name_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_names_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_names_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> xcb_xkb_key_name_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_aliases: LazySymbol<
-        unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_xkb_key_alias_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_aliases_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xkb_get_kbd_by_name_reply_t,
-            S: *const xcb_xkb_get_kbd_by_name_replies_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_key_aliases_iterator:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> xcb_xkb_key_alias_iterator_t,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_radio_group_names:
-        LazySymbol<unsafe fn(S: *const xcb_xkb_get_kbd_by_name_replies_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_radio_group_names_length:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> c_int,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies_key_names_value_list_radio_group_names_end:
-        LazySymbol<
-            unsafe fn(
-                R: *const xcb_xkb_get_kbd_by_name_reply_t,
-                S: *const xcb_xkb_get_kbd_by_name_replies_t,
-            ) -> xcb_generic_iterator_t,
-        >,
-    pub(crate) xcb_xkb_get_kbd_by_name_replies:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_kbd_by_name_reply_t) -> *mut c_void>,
-    pub(crate) xcb_xkb_get_kbd_by_name_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_kbd_by_name_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_kbd_by_name_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            need: u16,
-            want: u16,
-            load: u8,
-        ) -> xcb_xkb_get_kbd_by_name_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_kbd_by_name_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            need: u16,
-            want: u16,
-            load: u8,
-        ) -> xcb_xkb_get_kbd_by_name_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_device_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> *mut xcb_xkb_string8_t>,
-    pub(crate) xcb_xkb_get_device_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_get_device_info_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xkb_get_device_info_btn_actions:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> *mut xcb_xkb_action_t>,
-    pub(crate) xcb_xkb_get_device_info_btn_actions_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_get_device_info_btn_actions_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> xcb_xkb_action_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_device_info_leds_length:
-        LazySymbol<unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> c_int>,
-    pub(crate) xcb_xkb_get_device_info_leds_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xkb_get_device_info_reply_t) -> xcb_xkb_device_led_info_iterator_t,
-    >,
-    pub(crate) xcb_xkb_get_device_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_get_device_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_get_device_info_reply_t,
-    >,
-    pub(crate) xcb_xkb_get_device_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            wanted: u16,
-            all_buttons: u8,
-            first_button: u8,
-            n_buttons: u8,
-            led_class: xcb_xkb_led_class_spec_t,
-            led_id: xcb_xkb_id_spec_t,
-        ) -> xcb_xkb_get_device_info_cookie_t,
-    >,
-    pub(crate) xcb_xkb_get_device_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            wanted: u16,
-            all_buttons: u8,
-            first_button: u8,
-            n_buttons: u8,
-            led_class: xcb_xkb_led_class_spec_t,
-            led_id: xcb_xkb_id_spec_t,
-        ) -> xcb_xkb_get_device_info_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_device_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            first_btn: u8,
-            n_btns: u8,
-            change: u16,
-            n_device_led_f_bs: u16,
-            btn_actions: *const xcb_xkb_action_t,
-            leds: *const xcb_xkb_device_led_info_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_device_info_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_spec: xcb_xkb_device_spec_t,
-            first_btn: u8,
-            n_btns: u8,
-            change: u16,
-            n_device_led_f_bs: u16,
-            btn_actions: *const xcb_xkb_action_t,
-            leds: *const xcb_xkb_device_led_info_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_debugging_flags_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xkb_set_debugging_flags_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xkb_set_debugging_flags_reply_t,
-    >,
-    pub(crate) xcb_xkb_set_debugging_flags: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            msg_length: u16,
-            affect_flags: u32,
-            flags: u32,
-            affect_ctrls: u32,
-            ctrls: u32,
-            message: *const xcb_xkb_string8_t,
-        ) -> xcb_xkb_set_debugging_flags_cookie_t,
-    >,
-    pub(crate) xcb_xkb_set_debugging_flags_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            msg_length: u16,
-            affect_flags: u32,
-            flags: u32,
-            affect_ctrls: u32,
-            ctrls: u32,
-            message: *const xcb_xkb_string8_t,
-        ) -> xcb_xkb_set_debugging_flags_cookie_t,
-    >,
 }

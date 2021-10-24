@@ -1,15 +1,51 @@
-#![allow(non_camel_case_types)]
+#![allow(non_camel_case_types, non_snake_case)]
 
-pub use headers::{
-    big_requests::*, composite::*, damage::*, dpms::*, dri2::*, dri3::*, ext::*, genericevent::*,
-    glx::*, present::*, randr::*, record::*, render::*, res::*, screensaver::*, selinux::*,
-    shape::*, shm::*, sync::*, test::*, x_print::*, xc_misc::*, xcb::*, xevie::*, xf86dri::*,
-    xf86vidmode::*, xfixes::*, xinerama::*, xinput::*, xkb::*, xproto::*, xv::*, xvmc::*,
-};
-pub use libs::xcb::Xcb;
+pub use libs::*;
 
 #[macro_use]
 mod macros;
 mod headers;
 mod lazy;
 mod libs;
+
+pub mod ffi {
+    pub use crate::headers::*;
+    use std::fmt::{Debug, Formatter};
+
+    impl Debug for xcb_client_message_data_t {
+        fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+            unsafe {
+                f.debug_struct("xcb_client_message_data_t")
+                    .field("data8", &self.data8)
+                    .finish()
+            }
+        }
+    }
+
+    impl Debug for xcb_xkb_action_t {
+        fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+            unsafe {
+                f.debug_struct("xcb_xkb_action_t")
+                    .field("type", &self.type_)
+                    .finish_non_exhaustive()
+            }
+        }
+    }
+
+    impl Debug for xcb_xkb_behavior_t {
+        fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+            unsafe {
+                f.debug_struct("xcb_xkb_behavior_t")
+                    .field("type", &self.type_)
+                    .finish_non_exhaustive()
+            }
+        }
+    }
+
+    impl Debug for xcb_randr_notify_data_t {
+        fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+            f.debug_struct("xcb_randr_notify_data_t")
+                .finish_non_exhaustive()
+        }
+    }
+}

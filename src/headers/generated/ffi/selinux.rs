@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -544,8 +545,8 @@ pub struct xcb_selinux_get_client_context_reply_t {
 
 impl XcbXselinux {
     #[inline]
-    pub fn xcb_selinux_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_selinux_id)
+    pub unsafe fn xcb_selinux_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_selinux_id)
     }
 
     #[inline]
@@ -555,7 +556,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_query_version_reply_t {
-        call!(self, xcb_selinux_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -565,7 +566,7 @@ impl XcbXselinux {
         client_major: u8,
         client_minor: u8,
     ) -> xcb_selinux_query_version_cookie_t {
-        call!(self, xcb_selinux_query_version)(c, client_major, client_minor)
+        sym!(self, xcb_selinux_query_version)(c, client_major, client_minor)
     }
 
     #[inline]
@@ -575,7 +576,7 @@ impl XcbXselinux {
         client_major: u8,
         client_minor: u8,
     ) -> xcb_selinux_query_version_cookie_t {
-        call!(self, xcb_selinux_query_version_unchecked)(c, client_major, client_minor)
+        sym!(self, xcb_selinux_query_version_unchecked)(c, client_major, client_minor)
     }
 
     #[inline]
@@ -585,7 +586,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_device_create_context)(c, context_len, context)
+        sym!(self, xcb_selinux_set_device_create_context)(c, context_len, context)
     }
 
     #[inline]
@@ -595,7 +596,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_device_create_context_checked)(c, context_len, context)
+        sym!(self, xcb_selinux_set_device_create_context_checked)(c, context_len, context)
     }
 
     #[inline]
@@ -603,7 +604,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_device_create_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_device_create_context_context)(R)
+        sym!(self, xcb_selinux_get_device_create_context_context)(R)
     }
 
     #[inline]
@@ -611,7 +612,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_device_create_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_device_create_context_context_length)(R)
+        sym!(self, xcb_selinux_get_device_create_context_context_length)(R)
     }
 
     #[inline]
@@ -619,7 +620,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_device_create_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_device_create_context_context_end)(R)
+        sym!(self, xcb_selinux_get_device_create_context_context_end)(R)
     }
 
     #[inline]
@@ -629,7 +630,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_device_create_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_device_create_context_reply_t {
-        call!(self, xcb_selinux_get_device_create_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_device_create_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -637,7 +638,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_device_create_context_cookie_t {
-        call!(self, xcb_selinux_get_device_create_context)(c)
+        sym!(self, xcb_selinux_get_device_create_context)(c)
     }
 
     #[inline]
@@ -645,7 +646,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_device_create_context_cookie_t {
-        call!(self, xcb_selinux_get_device_create_context_unchecked)(c)
+        sym!(self, xcb_selinux_get_device_create_context_unchecked)(c)
     }
 
     #[inline]
@@ -656,7 +657,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_device_context)(c, device, context_len, context)
+        sym!(self, xcb_selinux_set_device_context)(c, device, context_len, context)
     }
 
     #[inline]
@@ -667,7 +668,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_device_context_checked)(c, device, context_len, context)
+        sym!(self, xcb_selinux_set_device_context_checked)(c, device, context_len, context)
     }
 
     #[inline]
@@ -675,7 +676,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_device_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_device_context_context)(R)
+        sym!(self, xcb_selinux_get_device_context_context)(R)
     }
 
     #[inline]
@@ -683,7 +684,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_device_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_device_context_context_length)(R)
+        sym!(self, xcb_selinux_get_device_context_context_length)(R)
     }
 
     #[inline]
@@ -691,7 +692,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_device_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_device_context_context_end)(R)
+        sym!(self, xcb_selinux_get_device_context_context_end)(R)
     }
 
     #[inline]
@@ -701,7 +702,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_device_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_device_context_reply_t {
-        call!(self, xcb_selinux_get_device_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_device_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -710,7 +711,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         device: u32,
     ) -> xcb_selinux_get_device_context_cookie_t {
-        call!(self, xcb_selinux_get_device_context)(c, device)
+        sym!(self, xcb_selinux_get_device_context)(c, device)
     }
 
     #[inline]
@@ -719,7 +720,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         device: u32,
     ) -> xcb_selinux_get_device_context_cookie_t {
-        call!(self, xcb_selinux_get_device_context_unchecked)(c, device)
+        sym!(self, xcb_selinux_get_device_context_unchecked)(c, device)
     }
 
     #[inline]
@@ -729,7 +730,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_window_create_context)(c, context_len, context)
+        sym!(self, xcb_selinux_set_window_create_context)(c, context_len, context)
     }
 
     #[inline]
@@ -739,7 +740,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_window_create_context_checked)(c, context_len, context)
+        sym!(self, xcb_selinux_set_window_create_context_checked)(c, context_len, context)
     }
 
     #[inline]
@@ -747,7 +748,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_window_create_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_window_create_context_context)(R)
+        sym!(self, xcb_selinux_get_window_create_context_context)(R)
     }
 
     #[inline]
@@ -755,7 +756,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_window_create_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_window_create_context_context_length)(R)
+        sym!(self, xcb_selinux_get_window_create_context_context_length)(R)
     }
 
     #[inline]
@@ -763,7 +764,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_window_create_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_window_create_context_context_end)(R)
+        sym!(self, xcb_selinux_get_window_create_context_context_end)(R)
     }
 
     #[inline]
@@ -773,7 +774,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_window_create_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_window_create_context_reply_t {
-        call!(self, xcb_selinux_get_window_create_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_window_create_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -781,7 +782,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_window_create_context_cookie_t {
-        call!(self, xcb_selinux_get_window_create_context)(c)
+        sym!(self, xcb_selinux_get_window_create_context)(c)
     }
 
     #[inline]
@@ -789,7 +790,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_window_create_context_cookie_t {
-        call!(self, xcb_selinux_get_window_create_context_unchecked)(c)
+        sym!(self, xcb_selinux_get_window_create_context_unchecked)(c)
     }
 
     #[inline]
@@ -797,7 +798,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_window_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_window_context_context)(R)
+        sym!(self, xcb_selinux_get_window_context_context)(R)
     }
 
     #[inline]
@@ -805,7 +806,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_window_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_window_context_context_length)(R)
+        sym!(self, xcb_selinux_get_window_context_context_length)(R)
     }
 
     #[inline]
@@ -813,7 +814,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_window_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_window_context_context_end)(R)
+        sym!(self, xcb_selinux_get_window_context_context_end)(R)
     }
 
     #[inline]
@@ -823,7 +824,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_window_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_window_context_reply_t {
-        call!(self, xcb_selinux_get_window_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_window_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -832,7 +833,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_selinux_get_window_context_cookie_t {
-        call!(self, xcb_selinux_get_window_context)(c, window)
+        sym!(self, xcb_selinux_get_window_context)(c, window)
     }
 
     #[inline]
@@ -841,7 +842,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_selinux_get_window_context_cookie_t {
-        call!(self, xcb_selinux_get_window_context_unchecked)(c, window)
+        sym!(self, xcb_selinux_get_window_context_unchecked)(c, window)
     }
 
     #[inline]
@@ -849,7 +850,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_item_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_list_item_object_context)(R)
+        sym!(self, xcb_selinux_list_item_object_context)(R)
     }
 
     #[inline]
@@ -857,7 +858,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_item_t,
     ) -> c_int {
-        call!(self, xcb_selinux_list_item_object_context_length)(R)
+        sym!(self, xcb_selinux_list_item_object_context_length)(R)
     }
 
     #[inline]
@@ -865,7 +866,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_item_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_list_item_object_context_end)(R)
+        sym!(self, xcb_selinux_list_item_object_context_end)(R)
     }
 
     #[inline]
@@ -873,7 +874,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_item_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_list_item_data_context)(R)
+        sym!(self, xcb_selinux_list_item_data_context)(R)
     }
 
     #[inline]
@@ -881,7 +882,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_item_t,
     ) -> c_int {
-        call!(self, xcb_selinux_list_item_data_context_length)(R)
+        sym!(self, xcb_selinux_list_item_data_context_length)(R)
     }
 
     #[inline]
@@ -889,12 +890,12 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_item_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_list_item_data_context_end)(R)
+        sym!(self, xcb_selinux_list_item_data_context_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_selinux_list_item_next(&self, i: *mut xcb_selinux_list_item_iterator_t) {
-        call!(self, xcb_selinux_list_item_next)(i);
+        sym!(self, xcb_selinux_list_item_next)(i);
     }
 
     #[inline]
@@ -902,7 +903,7 @@ impl XcbXselinux {
         &self,
         i: *mut xcb_selinux_list_item_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_list_item_end)(i)
+        sym!(self, xcb_selinux_list_item_end)(i)
     }
 
     #[inline]
@@ -912,7 +913,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_property_create_context)(c, context_len, context)
+        sym!(self, xcb_selinux_set_property_create_context)(c, context_len, context)
     }
 
     #[inline]
@@ -922,7 +923,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_property_create_context_checked)(c, context_len, context)
+        sym!(self, xcb_selinux_set_property_create_context_checked)(c, context_len, context)
     }
 
     #[inline]
@@ -930,7 +931,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_create_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_property_create_context_context)(R)
+        sym!(self, xcb_selinux_get_property_create_context_context)(R)
     }
 
     #[inline]
@@ -938,7 +939,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_create_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_property_create_context_context_length)(R)
+        sym!(self, xcb_selinux_get_property_create_context_context_length)(R)
     }
 
     #[inline]
@@ -946,7 +947,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_create_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_property_create_context_context_end)(R)
+        sym!(self, xcb_selinux_get_property_create_context_context_end)(R)
     }
 
     #[inline]
@@ -956,7 +957,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_property_create_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_property_create_context_reply_t {
-        call!(self, xcb_selinux_get_property_create_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_property_create_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -964,7 +965,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_property_create_context_cookie_t {
-        call!(self, xcb_selinux_get_property_create_context)(c)
+        sym!(self, xcb_selinux_get_property_create_context)(c)
     }
 
     #[inline]
@@ -972,7 +973,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_property_create_context_cookie_t {
-        call!(self, xcb_selinux_get_property_create_context_unchecked)(c)
+        sym!(self, xcb_selinux_get_property_create_context_unchecked)(c)
     }
 
     #[inline]
@@ -982,7 +983,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_property_use_context)(c, context_len, context)
+        sym!(self, xcb_selinux_set_property_use_context)(c, context_len, context)
     }
 
     #[inline]
@@ -992,7 +993,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_property_use_context_checked)(c, context_len, context)
+        sym!(self, xcb_selinux_set_property_use_context_checked)(c, context_len, context)
     }
 
     #[inline]
@@ -1000,7 +1001,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_use_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_property_use_context_context)(R)
+        sym!(self, xcb_selinux_get_property_use_context_context)(R)
     }
 
     #[inline]
@@ -1008,7 +1009,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_use_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_property_use_context_context_length)(R)
+        sym!(self, xcb_selinux_get_property_use_context_context_length)(R)
     }
 
     #[inline]
@@ -1016,7 +1017,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_use_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_property_use_context_context_end)(R)
+        sym!(self, xcb_selinux_get_property_use_context_context_end)(R)
     }
 
     #[inline]
@@ -1026,7 +1027,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_property_use_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_property_use_context_reply_t {
-        call!(self, xcb_selinux_get_property_use_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_property_use_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1034,7 +1035,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_property_use_context_cookie_t {
-        call!(self, xcb_selinux_get_property_use_context)(c)
+        sym!(self, xcb_selinux_get_property_use_context)(c)
     }
 
     #[inline]
@@ -1042,7 +1043,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_property_use_context_cookie_t {
-        call!(self, xcb_selinux_get_property_use_context_unchecked)(c)
+        sym!(self, xcb_selinux_get_property_use_context_unchecked)(c)
     }
 
     #[inline]
@@ -1050,7 +1051,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_property_context_context)(R)
+        sym!(self, xcb_selinux_get_property_context_context)(R)
     }
 
     #[inline]
@@ -1058,7 +1059,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_property_context_context_length)(R)
+        sym!(self, xcb_selinux_get_property_context_context_length)(R)
     }
 
     #[inline]
@@ -1066,7 +1067,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_property_context_context_end)(R)
+        sym!(self, xcb_selinux_get_property_context_context_end)(R)
     }
 
     #[inline]
@@ -1076,7 +1077,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_property_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_property_context_reply_t {
-        call!(self, xcb_selinux_get_property_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_property_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1086,7 +1087,7 @@ impl XcbXselinux {
         window: xcb_window_t,
         property: xcb_atom_t,
     ) -> xcb_selinux_get_property_context_cookie_t {
-        call!(self, xcb_selinux_get_property_context)(c, window, property)
+        sym!(self, xcb_selinux_get_property_context)(c, window, property)
     }
 
     #[inline]
@@ -1096,7 +1097,7 @@ impl XcbXselinux {
         window: xcb_window_t,
         property: xcb_atom_t,
     ) -> xcb_selinux_get_property_context_cookie_t {
-        call!(self, xcb_selinux_get_property_context_unchecked)(c, window, property)
+        sym!(self, xcb_selinux_get_property_context_unchecked)(c, window, property)
     }
 
     #[inline]
@@ -1104,7 +1105,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_data_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_property_data_context_context)(R)
+        sym!(self, xcb_selinux_get_property_data_context_context)(R)
     }
 
     #[inline]
@@ -1112,7 +1113,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_data_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_property_data_context_context_length)(R)
+        sym!(self, xcb_selinux_get_property_data_context_context_length)(R)
     }
 
     #[inline]
@@ -1120,7 +1121,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_property_data_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_property_data_context_context_end)(R)
+        sym!(self, xcb_selinux_get_property_data_context_context_end)(R)
     }
 
     #[inline]
@@ -1130,7 +1131,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_property_data_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_property_data_context_reply_t {
-        call!(self, xcb_selinux_get_property_data_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_property_data_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1140,7 +1141,7 @@ impl XcbXselinux {
         window: xcb_window_t,
         property: xcb_atom_t,
     ) -> xcb_selinux_get_property_data_context_cookie_t {
-        call!(self, xcb_selinux_get_property_data_context)(c, window, property)
+        sym!(self, xcb_selinux_get_property_data_context)(c, window, property)
     }
 
     #[inline]
@@ -1150,7 +1151,7 @@ impl XcbXselinux {
         window: xcb_window_t,
         property: xcb_atom_t,
     ) -> xcb_selinux_get_property_data_context_cookie_t {
-        call!(self, xcb_selinux_get_property_data_context_unchecked)(c, window, property)
+        sym!(self, xcb_selinux_get_property_data_context_unchecked)(c, window, property)
     }
 
     #[inline]
@@ -1158,7 +1159,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_properties_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_list_properties_properties_length)(R)
+        sym!(self, xcb_selinux_list_properties_properties_length)(R)
     }
 
     #[inline]
@@ -1166,7 +1167,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_properties_reply_t,
     ) -> xcb_selinux_list_item_iterator_t {
-        call!(self, xcb_selinux_list_properties_properties_iterator)(R)
+        sym!(self, xcb_selinux_list_properties_properties_iterator)(R)
     }
 
     #[inline]
@@ -1176,7 +1177,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_list_properties_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_list_properties_reply_t {
-        call!(self, xcb_selinux_list_properties_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_list_properties_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1185,7 +1186,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_selinux_list_properties_cookie_t {
-        call!(self, xcb_selinux_list_properties)(c, window)
+        sym!(self, xcb_selinux_list_properties)(c, window)
     }
 
     #[inline]
@@ -1194,7 +1195,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_selinux_list_properties_cookie_t {
-        call!(self, xcb_selinux_list_properties_unchecked)(c, window)
+        sym!(self, xcb_selinux_list_properties_unchecked)(c, window)
     }
 
     #[inline]
@@ -1204,7 +1205,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_selection_create_context)(c, context_len, context)
+        sym!(self, xcb_selinux_set_selection_create_context)(c, context_len, context)
     }
 
     #[inline]
@@ -1214,7 +1215,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_selection_create_context_checked)(c, context_len, context)
+        sym!(self, xcb_selinux_set_selection_create_context_checked)(c, context_len, context)
     }
 
     #[inline]
@@ -1222,7 +1223,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_create_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_selection_create_context_context)(R)
+        sym!(self, xcb_selinux_get_selection_create_context_context)(R)
     }
 
     #[inline]
@@ -1230,7 +1231,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_create_context_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_selinux_get_selection_create_context_context_length
         )(R)
@@ -1241,7 +1242,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_create_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_selection_create_context_context_end)(R)
+        sym!(self, xcb_selinux_get_selection_create_context_context_end)(R)
     }
 
     #[inline]
@@ -1251,7 +1252,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_selection_create_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_selection_create_context_reply_t {
-        call!(self, xcb_selinux_get_selection_create_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_selection_create_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1259,7 +1260,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_selection_create_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_create_context)(c)
+        sym!(self, xcb_selinux_get_selection_create_context)(c)
     }
 
     #[inline]
@@ -1267,7 +1268,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_selection_create_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_create_context_unchecked)(c)
+        sym!(self, xcb_selinux_get_selection_create_context_unchecked)(c)
     }
 
     #[inline]
@@ -1277,7 +1278,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_selection_use_context)(c, context_len, context)
+        sym!(self, xcb_selinux_set_selection_use_context)(c, context_len, context)
     }
 
     #[inline]
@@ -1287,7 +1288,7 @@ impl XcbXselinux {
         context_len: u32,
         context: *const c_char,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_selinux_set_selection_use_context_checked)(c, context_len, context)
+        sym!(self, xcb_selinux_set_selection_use_context_checked)(c, context_len, context)
     }
 
     #[inline]
@@ -1295,7 +1296,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_use_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_selection_use_context_context)(R)
+        sym!(self, xcb_selinux_get_selection_use_context_context)(R)
     }
 
     #[inline]
@@ -1303,7 +1304,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_use_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_selection_use_context_context_length)(R)
+        sym!(self, xcb_selinux_get_selection_use_context_context_length)(R)
     }
 
     #[inline]
@@ -1311,7 +1312,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_use_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_selection_use_context_context_end)(R)
+        sym!(self, xcb_selinux_get_selection_use_context_context_end)(R)
     }
 
     #[inline]
@@ -1321,7 +1322,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_selection_use_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_selection_use_context_reply_t {
-        call!(self, xcb_selinux_get_selection_use_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_selection_use_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1329,7 +1330,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_selection_use_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_use_context)(c)
+        sym!(self, xcb_selinux_get_selection_use_context)(c)
     }
 
     #[inline]
@@ -1337,7 +1338,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_get_selection_use_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_use_context_unchecked)(c)
+        sym!(self, xcb_selinux_get_selection_use_context_unchecked)(c)
     }
 
     #[inline]
@@ -1345,7 +1346,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_selection_context_context)(R)
+        sym!(self, xcb_selinux_get_selection_context_context)(R)
     }
 
     #[inline]
@@ -1353,7 +1354,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_selection_context_context_length)(R)
+        sym!(self, xcb_selinux_get_selection_context_context_length)(R)
     }
 
     #[inline]
@@ -1361,7 +1362,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_selection_context_context_end)(R)
+        sym!(self, xcb_selinux_get_selection_context_context_end)(R)
     }
 
     #[inline]
@@ -1371,7 +1372,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_selection_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_selection_context_reply_t {
-        call!(self, xcb_selinux_get_selection_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_selection_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1380,7 +1381,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         selection: xcb_atom_t,
     ) -> xcb_selinux_get_selection_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_context)(c, selection)
+        sym!(self, xcb_selinux_get_selection_context)(c, selection)
     }
 
     #[inline]
@@ -1389,7 +1390,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         selection: xcb_atom_t,
     ) -> xcb_selinux_get_selection_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_context_unchecked)(c, selection)
+        sym!(self, xcb_selinux_get_selection_context_unchecked)(c, selection)
     }
 
     #[inline]
@@ -1397,7 +1398,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_data_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_selection_data_context_context)(R)
+        sym!(self, xcb_selinux_get_selection_data_context_context)(R)
     }
 
     #[inline]
@@ -1405,7 +1406,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_data_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_selection_data_context_context_length)(R)
+        sym!(self, xcb_selinux_get_selection_data_context_context_length)(R)
     }
 
     #[inline]
@@ -1413,7 +1414,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_selection_data_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_selection_data_context_context_end)(R)
+        sym!(self, xcb_selinux_get_selection_data_context_context_end)(R)
     }
 
     #[inline]
@@ -1423,7 +1424,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_selection_data_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_selection_data_context_reply_t {
-        call!(self, xcb_selinux_get_selection_data_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_selection_data_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1432,7 +1433,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         selection: xcb_atom_t,
     ) -> xcb_selinux_get_selection_data_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_data_context)(c, selection)
+        sym!(self, xcb_selinux_get_selection_data_context)(c, selection)
     }
 
     #[inline]
@@ -1441,7 +1442,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         selection: xcb_atom_t,
     ) -> xcb_selinux_get_selection_data_context_cookie_t {
-        call!(self, xcb_selinux_get_selection_data_context_unchecked)(c, selection)
+        sym!(self, xcb_selinux_get_selection_data_context_unchecked)(c, selection)
     }
 
     #[inline]
@@ -1449,7 +1450,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_selections_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_list_selections_selections_length)(R)
+        sym!(self, xcb_selinux_list_selections_selections_length)(R)
     }
 
     #[inline]
@@ -1457,7 +1458,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_list_selections_reply_t,
     ) -> xcb_selinux_list_item_iterator_t {
-        call!(self, xcb_selinux_list_selections_selections_iterator)(R)
+        sym!(self, xcb_selinux_list_selections_selections_iterator)(R)
     }
 
     #[inline]
@@ -1467,7 +1468,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_list_selections_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_list_selections_reply_t {
-        call!(self, xcb_selinux_list_selections_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_list_selections_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1475,7 +1476,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_list_selections_cookie_t {
-        call!(self, xcb_selinux_list_selections)(c)
+        sym!(self, xcb_selinux_list_selections)(c)
     }
 
     #[inline]
@@ -1483,7 +1484,7 @@ impl XcbXselinux {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_selinux_list_selections_cookie_t {
-        call!(self, xcb_selinux_list_selections_unchecked)(c)
+        sym!(self, xcb_selinux_list_selections_unchecked)(c)
     }
 
     #[inline]
@@ -1491,7 +1492,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_client_context_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_selinux_get_client_context_context)(R)
+        sym!(self, xcb_selinux_get_client_context_context)(R)
     }
 
     #[inline]
@@ -1499,7 +1500,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_client_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_selinux_get_client_context_context_length)(R)
+        sym!(self, xcb_selinux_get_client_context_context_length)(R)
     }
 
     #[inline]
@@ -1507,7 +1508,7 @@ impl XcbXselinux {
         &self,
         R: *const xcb_selinux_get_client_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_selinux_get_client_context_context_end)(R)
+        sym!(self, xcb_selinux_get_client_context_context_end)(R)
     }
 
     #[inline]
@@ -1517,7 +1518,7 @@ impl XcbXselinux {
         cookie: xcb_selinux_get_client_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_selinux_get_client_context_reply_t {
-        call!(self, xcb_selinux_get_client_context_reply)(c, cookie, error)
+        sym!(self, xcb_selinux_get_client_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1526,7 +1527,7 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         resource: u32,
     ) -> xcb_selinux_get_client_context_cookie_t {
-        call!(self, xcb_selinux_get_client_context)(c, resource)
+        sym!(self, xcb_selinux_get_client_context)(c, resource)
     }
 
     #[inline]
@@ -1535,514 +1536,6 @@ impl XcbXselinux {
         c: *mut xcb_connection_t,
         resource: u32,
     ) -> xcb_selinux_get_client_context_cookie_t {
-        call!(self, xcb_selinux_get_client_context_unchecked)(c, resource)
+        sym!(self, xcb_selinux_get_client_context_unchecked)(c, resource)
     }
-}
-
-pub struct XcbXselinux {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_selinux_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_selinux_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_query_version_reply_t,
-    >,
-    pub(crate) xcb_selinux_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major: u8,
-            client_minor: u8,
-        ) -> xcb_selinux_query_version_cookie_t,
-    >,
-    pub(crate) xcb_selinux_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major: u8,
-            client_minor: u8,
-        ) -> xcb_selinux_query_version_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_device_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_device_create_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_device_create_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_device_create_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_device_create_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_device_create_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_device_create_context_context_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_get_device_create_context_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_device_create_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_device_create_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_device_create_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_device_create_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_device_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_device_create_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_device_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_device_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device: u32,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_device_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device: u32,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_device_context_context:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_device_context_reply_t) -> *mut c_char>,
-    pub(crate) xcb_selinux_get_device_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_device_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_device_context_context_end: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_device_context_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_device_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_device_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_device_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_device_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, device: u32) -> xcb_selinux_get_device_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_device_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, device: u32) -> xcb_selinux_get_device_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_window_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_window_create_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_window_create_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_window_create_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_window_create_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_window_create_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_window_create_context_context_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_get_window_create_context_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_window_create_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_window_create_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_window_create_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_window_create_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_window_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_window_create_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_window_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_window_context_context:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_window_context_reply_t) -> *mut c_char>,
-    pub(crate) xcb_selinux_get_window_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_window_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_window_context_context_end: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_window_context_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_window_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_window_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_window_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_window_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_selinux_get_window_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_window_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_selinux_get_window_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_list_item_object_context:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_item_t) -> *mut c_char>,
-    pub(crate) xcb_selinux_list_item_object_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_item_t) -> c_int>,
-    pub(crate) xcb_selinux_list_item_object_context_end:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_item_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_selinux_list_item_data_context:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_item_t) -> *mut c_char>,
-    pub(crate) xcb_selinux_list_item_data_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_item_t) -> c_int>,
-    pub(crate) xcb_selinux_list_item_data_context_end:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_item_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_selinux_list_item_next:
-        LazySymbol<unsafe fn(i: *mut xcb_selinux_list_item_iterator_t)>,
-    pub(crate) xcb_selinux_list_item_end:
-        LazySymbol<unsafe fn(i: *mut xcb_selinux_list_item_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_selinux_set_property_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_property_create_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_create_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_property_create_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_property_create_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_property_create_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_property_create_context_context_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_get_property_create_context_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_property_create_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_property_create_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_property_create_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_property_create_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_property_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_create_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_property_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_property_use_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_property_use_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_use_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_property_use_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_property_use_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_property_use_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_property_use_context_context_end: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_property_use_context_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_property_use_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_property_use_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_property_use_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_property_use_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_property_use_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_use_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_property_use_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_context_context:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_property_context_reply_t) -> *mut c_char>,
-    pub(crate) xcb_selinux_get_property_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_property_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_property_context_context_end: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_property_context_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_property_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_property_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_property_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_property_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-        ) -> xcb_selinux_get_property_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-        ) -> xcb_selinux_get_property_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_data_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_property_data_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_property_data_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_property_data_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_property_data_context_context_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_get_property_data_context_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_property_data_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_property_data_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_property_data_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_property_data_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-        ) -> xcb_selinux_get_property_data_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_property_data_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            property: xcb_atom_t,
-        ) -> xcb_selinux_get_property_data_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_list_properties_properties_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_properties_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_list_properties_properties_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_list_properties_reply_t,
-        ) -> xcb_selinux_list_item_iterator_t,
-    >,
-    pub(crate) xcb_selinux_list_properties_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_list_properties_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_list_properties_reply_t,
-    >,
-    pub(crate) xcb_selinux_list_properties: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_selinux_list_properties_cookie_t,
-    >,
-    pub(crate) xcb_selinux_list_properties_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_selinux_list_properties_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_selection_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_selection_create_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_create_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_selection_create_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_selection_create_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_selection_create_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_selection_create_context_context_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_get_selection_create_context_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_create_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_selection_create_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_selection_create_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_create_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_selection_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_create_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_selection_create_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_selection_use_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_set_selection_use_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_len: u32,
-            context: *const c_char,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_use_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_selection_use_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_selection_use_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_selection_use_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_selection_use_context_context_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_get_selection_use_context_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_use_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_selection_use_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_selection_use_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_use_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_selection_use_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_use_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_get_selection_use_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_context_context:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_selection_context_reply_t) -> *mut c_char>,
-    pub(crate) xcb_selinux_get_selection_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_selection_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_selection_context_context_end: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_selection_context_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_selection_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_selection_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            selection: xcb_atom_t,
-        ) -> xcb_selinux_get_selection_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            selection: xcb_atom_t,
-        ) -> xcb_selinux_get_selection_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_data_context_context: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_selection_data_context_reply_t) -> *mut c_char,
-    >,
-    pub(crate) xcb_selinux_get_selection_data_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_selection_data_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_selection_data_context_context_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_get_selection_data_context_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_data_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_selection_data_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_selection_data_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_data_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            selection: xcb_atom_t,
-        ) -> xcb_selinux_get_selection_data_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_selection_data_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            selection: xcb_atom_t,
-        ) -> xcb_selinux_get_selection_data_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_list_selections_selections_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_list_selections_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_list_selections_selections_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_selinux_list_selections_reply_t,
-        ) -> xcb_selinux_list_item_iterator_t,
-    >,
-    pub(crate) xcb_selinux_list_selections_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_list_selections_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_list_selections_reply_t,
-    >,
-    pub(crate) xcb_selinux_list_selections:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_list_selections_cookie_t>,
-    pub(crate) xcb_selinux_list_selections_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_selinux_list_selections_cookie_t>,
-    pub(crate) xcb_selinux_get_client_context_context:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_client_context_reply_t) -> *mut c_char>,
-    pub(crate) xcb_selinux_get_client_context_context_length:
-        LazySymbol<unsafe fn(R: *const xcb_selinux_get_client_context_reply_t) -> c_int>,
-    pub(crate) xcb_selinux_get_client_context_context_end: LazySymbol<
-        unsafe fn(R: *const xcb_selinux_get_client_context_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_selinux_get_client_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_selinux_get_client_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_selinux_get_client_context_reply_t,
-    >,
-    pub(crate) xcb_selinux_get_client_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            resource: u32,
-        ) -> xcb_selinux_get_client_context_cookie_t,
-    >,
-    pub(crate) xcb_selinux_get_client_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            resource: u32,
-        ) -> xcb_selinux_get_client_context_cookie_t,
-    >,
 }

@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -1379,13 +1380,13 @@ pub struct xcb_randr_notify_event_t {
 
 impl XcbRandr {
     #[inline]
-    pub fn xcb_randr_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_randr_id)
+    pub unsafe fn xcb_randr_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_randr_id)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_mode_next(&self, i: *mut xcb_randr_mode_iterator_t) {
-        call!(self, xcb_randr_mode_next)(i);
+        sym!(self, xcb_randr_mode_next)(i);
     }
 
     #[inline]
@@ -1393,12 +1394,12 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_mode_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_mode_end)(i)
+        sym!(self, xcb_randr_mode_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_crtc_next(&self, i: *mut xcb_randr_crtc_iterator_t) {
-        call!(self, xcb_randr_crtc_next)(i);
+        sym!(self, xcb_randr_crtc_next)(i);
     }
 
     #[inline]
@@ -1406,12 +1407,12 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_crtc_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_crtc_end)(i)
+        sym!(self, xcb_randr_crtc_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_output_next(&self, i: *mut xcb_randr_output_iterator_t) {
-        call!(self, xcb_randr_output_next)(i);
+        sym!(self, xcb_randr_output_next)(i);
     }
 
     #[inline]
@@ -1419,12 +1420,12 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_output_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_output_end)(i)
+        sym!(self, xcb_randr_output_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_provider_next(&self, i: *mut xcb_randr_provider_iterator_t) {
-        call!(self, xcb_randr_provider_next)(i);
+        sym!(self, xcb_randr_provider_next)(i);
     }
 
     #[inline]
@@ -1432,12 +1433,12 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_provider_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_provider_end)(i)
+        sym!(self, xcb_randr_provider_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_screen_size_next(&self, i: *mut xcb_randr_screen_size_iterator_t) {
-        call!(self, xcb_randr_screen_size_next)(i);
+        sym!(self, xcb_randr_screen_size_next)(i);
     }
 
     #[inline]
@@ -1445,7 +1446,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_screen_size_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_screen_size_end)(i)
+        sym!(self, xcb_randr_screen_size_end)(i)
     }
 
     #[inline]
@@ -1453,7 +1454,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_refresh_rates_t,
     ) -> *mut u16 {
-        call!(self, xcb_randr_refresh_rates_rates)(R)
+        sym!(self, xcb_randr_refresh_rates_rates)(R)
     }
 
     #[inline]
@@ -1461,7 +1462,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_refresh_rates_t,
     ) -> c_int {
-        call!(self, xcb_randr_refresh_rates_rates_length)(R)
+        sym!(self, xcb_randr_refresh_rates_rates_length)(R)
     }
 
     #[inline]
@@ -1469,12 +1470,12 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_refresh_rates_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_refresh_rates_rates_end)(R)
+        sym!(self, xcb_randr_refresh_rates_rates_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_refresh_rates_next(&self, i: *mut xcb_randr_refresh_rates_iterator_t) {
-        call!(self, xcb_randr_refresh_rates_next)(i);
+        sym!(self, xcb_randr_refresh_rates_next)(i);
     }
 
     #[inline]
@@ -1482,7 +1483,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_refresh_rates_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_refresh_rates_end)(i)
+        sym!(self, xcb_randr_refresh_rates_end)(i)
     }
 
     #[inline]
@@ -1492,7 +1493,7 @@ impl XcbRandr {
         cookie: xcb_randr_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_query_version_reply_t {
-        call!(self, xcb_randr_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_randr_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1502,7 +1503,7 @@ impl XcbRandr {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_randr_query_version_cookie_t {
-        call!(self, xcb_randr_query_version)(c, major_version, minor_version)
+        sym!(self, xcb_randr_query_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -1512,7 +1513,7 @@ impl XcbRandr {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_randr_query_version_cookie_t {
-        call!(self, xcb_randr_query_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_randr_query_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -1522,7 +1523,7 @@ impl XcbRandr {
         cookie: xcb_randr_set_screen_config_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_set_screen_config_reply_t {
-        call!(self, xcb_randr_set_screen_config_reply)(c, cookie, error)
+        sym!(self, xcb_randr_set_screen_config_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1536,7 +1537,7 @@ impl XcbRandr {
         rotation: u16,
         rate: u16,
     ) -> xcb_randr_set_screen_config_cookie_t {
-        call!(self, xcb_randr_set_screen_config)(
+        sym!(self, xcb_randr_set_screen_config)(
             c,
             window,
             timestamp,
@@ -1558,7 +1559,7 @@ impl XcbRandr {
         rotation: u16,
         rate: u16,
     ) -> xcb_randr_set_screen_config_cookie_t {
-        call!(self, xcb_randr_set_screen_config_unchecked)(
+        sym!(self, xcb_randr_set_screen_config_unchecked)(
             c,
             window,
             timestamp,
@@ -1576,7 +1577,7 @@ impl XcbRandr {
         window: xcb_window_t,
         enable: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_select_input)(c, window, enable)
+        sym!(self, xcb_randr_select_input)(c, window, enable)
     }
 
     #[inline]
@@ -1586,7 +1587,7 @@ impl XcbRandr {
         window: xcb_window_t,
         enable: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_select_input_checked)(c, window, enable)
+        sym!(self, xcb_randr_select_input_checked)(c, window, enable)
     }
 
     #[inline]
@@ -1594,7 +1595,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_info_reply_t,
     ) -> *mut xcb_randr_screen_size_t {
-        call!(self, xcb_randr_get_screen_info_sizes)(R)
+        sym!(self, xcb_randr_get_screen_info_sizes)(R)
     }
 
     #[inline]
@@ -1602,7 +1603,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_info_sizes_length)(R)
+        sym!(self, xcb_randr_get_screen_info_sizes_length)(R)
     }
 
     #[inline]
@@ -1610,7 +1611,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_info_reply_t,
     ) -> xcb_randr_screen_size_iterator_t {
-        call!(self, xcb_randr_get_screen_info_sizes_iterator)(R)
+        sym!(self, xcb_randr_get_screen_info_sizes_iterator)(R)
     }
 
     #[inline]
@@ -1618,7 +1619,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_info_rates_length)(R)
+        sym!(self, xcb_randr_get_screen_info_rates_length)(R)
     }
 
     #[inline]
@@ -1626,7 +1627,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_info_reply_t,
     ) -> xcb_randr_refresh_rates_iterator_t {
-        call!(self, xcb_randr_get_screen_info_rates_iterator)(R)
+        sym!(self, xcb_randr_get_screen_info_rates_iterator)(R)
     }
 
     #[inline]
@@ -1636,7 +1637,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_screen_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_screen_info_reply_t {
-        call!(self, xcb_randr_get_screen_info_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_screen_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1645,7 +1646,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_info_cookie_t {
-        call!(self, xcb_randr_get_screen_info)(c, window)
+        sym!(self, xcb_randr_get_screen_info)(c, window)
     }
 
     #[inline]
@@ -1654,7 +1655,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_info_cookie_t {
-        call!(self, xcb_randr_get_screen_info_unchecked)(c, window)
+        sym!(self, xcb_randr_get_screen_info_unchecked)(c, window)
     }
 
     #[inline]
@@ -1664,7 +1665,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_screen_size_range_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_screen_size_range_reply_t {
-        call!(self, xcb_randr_get_screen_size_range_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_screen_size_range_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1673,7 +1674,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_size_range_cookie_t {
-        call!(self, xcb_randr_get_screen_size_range)(c, window)
+        sym!(self, xcb_randr_get_screen_size_range)(c, window)
     }
 
     #[inline]
@@ -1682,7 +1683,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_size_range_cookie_t {
-        call!(self, xcb_randr_get_screen_size_range_unchecked)(c, window)
+        sym!(self, xcb_randr_get_screen_size_range_unchecked)(c, window)
     }
 
     #[inline]
@@ -1695,7 +1696,7 @@ impl XcbRandr {
         mm_width: u32,
         mm_height: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_screen_size)(c, window, width, height, mm_width, mm_height)
+        sym!(self, xcb_randr_set_screen_size)(c, window, width, height, mm_width, mm_height)
     }
 
     #[inline]
@@ -1708,14 +1709,12 @@ impl XcbRandr {
         mm_width: u32,
         mm_height: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_screen_size_checked)(
-            c, window, width, height, mm_width, mm_height,
-        )
+        sym!(self, xcb_randr_set_screen_size_checked)(c, window, width, height, mm_width, mm_height)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_mode_info_next(&self, i: *mut xcb_randr_mode_info_iterator_t) {
-        call!(self, xcb_randr_mode_info_next)(i);
+        sym!(self, xcb_randr_mode_info_next)(i);
     }
 
     #[inline]
@@ -1723,7 +1722,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_mode_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_mode_info_end)(i)
+        sym!(self, xcb_randr_mode_info_end)(i)
     }
 
     #[inline]
@@ -1731,7 +1730,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> *mut xcb_randr_crtc_t {
-        call!(self, xcb_randr_get_screen_resources_crtcs)(R)
+        sym!(self, xcb_randr_get_screen_resources_crtcs)(R)
     }
 
     #[inline]
@@ -1739,7 +1738,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_crtcs_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_crtcs_length)(R)
     }
 
     #[inline]
@@ -1747,7 +1746,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_crtcs_end)(R)
+        sym!(self, xcb_randr_get_screen_resources_crtcs_end)(R)
     }
 
     #[inline]
@@ -1755,7 +1754,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> *mut xcb_randr_output_t {
-        call!(self, xcb_randr_get_screen_resources_outputs)(R)
+        sym!(self, xcb_randr_get_screen_resources_outputs)(R)
     }
 
     #[inline]
@@ -1763,7 +1762,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_outputs_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_outputs_length)(R)
     }
 
     #[inline]
@@ -1771,7 +1770,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_outputs_end)(R)
+        sym!(self, xcb_randr_get_screen_resources_outputs_end)(R)
     }
 
     #[inline]
@@ -1779,7 +1778,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> *mut xcb_randr_mode_info_t {
-        call!(self, xcb_randr_get_screen_resources_modes)(R)
+        sym!(self, xcb_randr_get_screen_resources_modes)(R)
     }
 
     #[inline]
@@ -1787,7 +1786,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_modes_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_modes_length)(R)
     }
 
     #[inline]
@@ -1795,7 +1794,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> xcb_randr_mode_info_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_modes_iterator)(R)
+        sym!(self, xcb_randr_get_screen_resources_modes_iterator)(R)
     }
 
     #[inline]
@@ -1803,7 +1802,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_randr_get_screen_resources_names)(R)
+        sym!(self, xcb_randr_get_screen_resources_names)(R)
     }
 
     #[inline]
@@ -1811,7 +1810,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_names_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_names_length)(R)
     }
 
     #[inline]
@@ -1819,7 +1818,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_names_end)(R)
+        sym!(self, xcb_randr_get_screen_resources_names_end)(R)
     }
 
     #[inline]
@@ -1829,7 +1828,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_screen_resources_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_screen_resources_reply_t {
-        call!(self, xcb_randr_get_screen_resources_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_screen_resources_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1838,7 +1837,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_resources_cookie_t {
-        call!(self, xcb_randr_get_screen_resources)(c, window)
+        sym!(self, xcb_randr_get_screen_resources)(c, window)
     }
 
     #[inline]
@@ -1847,7 +1846,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_resources_cookie_t {
-        call!(self, xcb_randr_get_screen_resources_unchecked)(c, window)
+        sym!(self, xcb_randr_get_screen_resources_unchecked)(c, window)
     }
 
     #[inline]
@@ -1855,7 +1854,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> *mut xcb_randr_crtc_t {
-        call!(self, xcb_randr_get_output_info_crtcs)(R)
+        sym!(self, xcb_randr_get_output_info_crtcs)(R)
     }
 
     #[inline]
@@ -1863,7 +1862,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_output_info_crtcs_length)(R)
+        sym!(self, xcb_randr_get_output_info_crtcs_length)(R)
     }
 
     #[inline]
@@ -1871,7 +1870,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_output_info_crtcs_end)(R)
+        sym!(self, xcb_randr_get_output_info_crtcs_end)(R)
     }
 
     #[inline]
@@ -1879,7 +1878,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> *mut xcb_randr_mode_t {
-        call!(self, xcb_randr_get_output_info_modes)(R)
+        sym!(self, xcb_randr_get_output_info_modes)(R)
     }
 
     #[inline]
@@ -1887,7 +1886,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_output_info_modes_length)(R)
+        sym!(self, xcb_randr_get_output_info_modes_length)(R)
     }
 
     #[inline]
@@ -1895,7 +1894,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_output_info_modes_end)(R)
+        sym!(self, xcb_randr_get_output_info_modes_end)(R)
     }
 
     #[inline]
@@ -1903,7 +1902,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> *mut xcb_randr_output_t {
-        call!(self, xcb_randr_get_output_info_clones)(R)
+        sym!(self, xcb_randr_get_output_info_clones)(R)
     }
 
     #[inline]
@@ -1911,7 +1910,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_output_info_clones_length)(R)
+        sym!(self, xcb_randr_get_output_info_clones_length)(R)
     }
 
     #[inline]
@@ -1919,7 +1918,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_output_info_clones_end)(R)
+        sym!(self, xcb_randr_get_output_info_clones_end)(R)
     }
 
     #[inline]
@@ -1927,7 +1926,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_randr_get_output_info_name)(R)
+        sym!(self, xcb_randr_get_output_info_name)(R)
     }
 
     #[inline]
@@ -1935,7 +1934,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_output_info_name_length)(R)
+        sym!(self, xcb_randr_get_output_info_name_length)(R)
     }
 
     #[inline]
@@ -1943,7 +1942,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_output_info_name_end)(R)
+        sym!(self, xcb_randr_get_output_info_name_end)(R)
     }
 
     #[inline]
@@ -1953,7 +1952,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_output_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_output_info_reply_t {
-        call!(self, xcb_randr_get_output_info_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_output_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1963,7 +1962,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_randr_get_output_info_cookie_t {
-        call!(self, xcb_randr_get_output_info)(c, output, config_timestamp)
+        sym!(self, xcb_randr_get_output_info)(c, output, config_timestamp)
     }
 
     #[inline]
@@ -1973,7 +1972,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_randr_get_output_info_cookie_t {
-        call!(self, xcb_randr_get_output_info_unchecked)(c, output, config_timestamp)
+        sym!(self, xcb_randr_get_output_info_unchecked)(c, output, config_timestamp)
     }
 
     #[inline]
@@ -1981,7 +1980,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_list_output_properties_reply_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_randr_list_output_properties_atoms)(R)
+        sym!(self, xcb_randr_list_output_properties_atoms)(R)
     }
 
     #[inline]
@@ -1989,7 +1988,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_list_output_properties_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_list_output_properties_atoms_length)(R)
+        sym!(self, xcb_randr_list_output_properties_atoms_length)(R)
     }
 
     #[inline]
@@ -1997,7 +1996,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_list_output_properties_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_list_output_properties_atoms_end)(R)
+        sym!(self, xcb_randr_list_output_properties_atoms_end)(R)
     }
 
     #[inline]
@@ -2007,7 +2006,7 @@ impl XcbRandr {
         cookie: xcb_randr_list_output_properties_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_list_output_properties_reply_t {
-        call!(self, xcb_randr_list_output_properties_reply)(c, cookie, error)
+        sym!(self, xcb_randr_list_output_properties_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2016,7 +2015,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         output: xcb_randr_output_t,
     ) -> xcb_randr_list_output_properties_cookie_t {
-        call!(self, xcb_randr_list_output_properties)(c, output)
+        sym!(self, xcb_randr_list_output_properties)(c, output)
     }
 
     #[inline]
@@ -2025,7 +2024,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         output: xcb_randr_output_t,
     ) -> xcb_randr_list_output_properties_cookie_t {
-        call!(self, xcb_randr_list_output_properties_unchecked)(c, output)
+        sym!(self, xcb_randr_list_output_properties_unchecked)(c, output)
     }
 
     #[inline]
@@ -2033,7 +2032,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_query_output_property_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_randr_query_output_property_valid_values)(R)
+        sym!(self, xcb_randr_query_output_property_valid_values)(R)
     }
 
     #[inline]
@@ -2041,7 +2040,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_query_output_property_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_query_output_property_valid_values_length)(R)
+        sym!(self, xcb_randr_query_output_property_valid_values_length)(R)
     }
 
     #[inline]
@@ -2049,7 +2048,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_query_output_property_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_query_output_property_valid_values_end)(R)
+        sym!(self, xcb_randr_query_output_property_valid_values_end)(R)
     }
 
     #[inline]
@@ -2059,7 +2058,7 @@ impl XcbRandr {
         cookie: xcb_randr_query_output_property_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_query_output_property_reply_t {
-        call!(self, xcb_randr_query_output_property_reply)(c, cookie, error)
+        sym!(self, xcb_randr_query_output_property_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2069,7 +2068,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         property: xcb_atom_t,
     ) -> xcb_randr_query_output_property_cookie_t {
-        call!(self, xcb_randr_query_output_property)(c, output, property)
+        sym!(self, xcb_randr_query_output_property)(c, output, property)
     }
 
     #[inline]
@@ -2079,7 +2078,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         property: xcb_atom_t,
     ) -> xcb_randr_query_output_property_cookie_t {
-        call!(self, xcb_randr_query_output_property_unchecked)(c, output, property)
+        sym!(self, xcb_randr_query_output_property_unchecked)(c, output, property)
     }
 
     #[inline]
@@ -2093,7 +2092,7 @@ impl XcbRandr {
         values_len: u32,
         values: *const i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_configure_output_property)(
+        sym!(self, xcb_randr_configure_output_property)(
             c, output, property, pending, range, values_len, values,
         )
     }
@@ -2109,7 +2108,7 @@ impl XcbRandr {
         values_len: u32,
         values: *const i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_configure_output_property_checked)(
+        sym!(self, xcb_randr_configure_output_property_checked)(
             c, output, property, pending, range, values_len, values,
         )
     }
@@ -2126,7 +2125,7 @@ impl XcbRandr {
         num_units: u32,
         data: *const c_void,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_change_output_property)(
+        sym!(self, xcb_randr_change_output_property)(
             c, output, property, type_, format, mode, num_units, data,
         )
     }
@@ -2143,7 +2142,7 @@ impl XcbRandr {
         num_units: u32,
         data: *const c_void,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_change_output_property_checked)(
+        sym!(self, xcb_randr_change_output_property_checked)(
             c, output, property, type_, format, mode, num_units, data,
         )
     }
@@ -2155,7 +2154,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_delete_output_property)(c, output, property)
+        sym!(self, xcb_randr_delete_output_property)(c, output, property)
     }
 
     #[inline]
@@ -2165,7 +2164,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_delete_output_property_checked)(c, output, property)
+        sym!(self, xcb_randr_delete_output_property_checked)(c, output, property)
     }
 
     #[inline]
@@ -2173,7 +2172,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_property_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_randr_get_output_property_data)(R)
+        sym!(self, xcb_randr_get_output_property_data)(R)
     }
 
     #[inline]
@@ -2181,7 +2180,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_property_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_output_property_data_length)(R)
+        sym!(self, xcb_randr_get_output_property_data_length)(R)
     }
 
     #[inline]
@@ -2189,7 +2188,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_output_property_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_output_property_data_end)(R)
+        sym!(self, xcb_randr_get_output_property_data_end)(R)
     }
 
     #[inline]
@@ -2199,7 +2198,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_output_property_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_output_property_reply_t {
-        call!(self, xcb_randr_get_output_property_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_output_property_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2214,7 +2213,7 @@ impl XcbRandr {
         delete: u8,
         pending: u8,
     ) -> xcb_randr_get_output_property_cookie_t {
-        call!(self, xcb_randr_get_output_property)(
+        sym!(self, xcb_randr_get_output_property)(
             c,
             output,
             property,
@@ -2238,7 +2237,7 @@ impl XcbRandr {
         delete: u8,
         pending: u8,
     ) -> xcb_randr_get_output_property_cookie_t {
-        call!(self, xcb_randr_get_output_property_unchecked)(
+        sym!(self, xcb_randr_get_output_property_unchecked)(
             c,
             output,
             property,
@@ -2257,7 +2256,7 @@ impl XcbRandr {
         cookie: xcb_randr_create_mode_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_create_mode_reply_t {
-        call!(self, xcb_randr_create_mode_reply)(c, cookie, error)
+        sym!(self, xcb_randr_create_mode_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2269,7 +2268,7 @@ impl XcbRandr {
         name_len: u32,
         name: *const c_char,
     ) -> xcb_randr_create_mode_cookie_t {
-        call!(self, xcb_randr_create_mode)(c, window, mode_info, name_len, name)
+        sym!(self, xcb_randr_create_mode)(c, window, mode_info, name_len, name)
     }
 
     #[inline]
@@ -2281,7 +2280,7 @@ impl XcbRandr {
         name_len: u32,
         name: *const c_char,
     ) -> xcb_randr_create_mode_cookie_t {
-        call!(self, xcb_randr_create_mode_unchecked)(c, window, mode_info, name_len, name)
+        sym!(self, xcb_randr_create_mode_unchecked)(c, window, mode_info, name_len, name)
     }
 
     #[inline]
@@ -2290,7 +2289,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         mode: xcb_randr_mode_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_destroy_mode)(c, mode)
+        sym!(self, xcb_randr_destroy_mode)(c, mode)
     }
 
     #[inline]
@@ -2299,7 +2298,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         mode: xcb_randr_mode_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_destroy_mode_checked)(c, mode)
+        sym!(self, xcb_randr_destroy_mode_checked)(c, mode)
     }
 
     #[inline]
@@ -2309,7 +2308,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         mode: xcb_randr_mode_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_add_output_mode)(c, output, mode)
+        sym!(self, xcb_randr_add_output_mode)(c, output, mode)
     }
 
     #[inline]
@@ -2319,7 +2318,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         mode: xcb_randr_mode_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_add_output_mode_checked)(c, output, mode)
+        sym!(self, xcb_randr_add_output_mode_checked)(c, output, mode)
     }
 
     #[inline]
@@ -2329,7 +2328,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         mode: xcb_randr_mode_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_delete_output_mode)(c, output, mode)
+        sym!(self, xcb_randr_delete_output_mode)(c, output, mode)
     }
 
     #[inline]
@@ -2339,7 +2338,7 @@ impl XcbRandr {
         output: xcb_randr_output_t,
         mode: xcb_randr_mode_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_delete_output_mode_checked)(c, output, mode)
+        sym!(self, xcb_randr_delete_output_mode_checked)(c, output, mode)
     }
 
     #[inline]
@@ -2347,7 +2346,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_info_reply_t,
     ) -> *mut xcb_randr_output_t {
-        call!(self, xcb_randr_get_crtc_info_outputs)(R)
+        sym!(self, xcb_randr_get_crtc_info_outputs)(R)
     }
 
     #[inline]
@@ -2355,7 +2354,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_crtc_info_outputs_length)(R)
+        sym!(self, xcb_randr_get_crtc_info_outputs_length)(R)
     }
 
     #[inline]
@@ -2363,7 +2362,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_info_outputs_end)(R)
+        sym!(self, xcb_randr_get_crtc_info_outputs_end)(R)
     }
 
     #[inline]
@@ -2371,7 +2370,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_info_reply_t,
     ) -> *mut xcb_randr_output_t {
-        call!(self, xcb_randr_get_crtc_info_possible)(R)
+        sym!(self, xcb_randr_get_crtc_info_possible)(R)
     }
 
     #[inline]
@@ -2379,7 +2378,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_crtc_info_possible_length)(R)
+        sym!(self, xcb_randr_get_crtc_info_possible_length)(R)
     }
 
     #[inline]
@@ -2387,7 +2386,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_info_possible_end)(R)
+        sym!(self, xcb_randr_get_crtc_info_possible_end)(R)
     }
 
     #[inline]
@@ -2397,7 +2396,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_crtc_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_crtc_info_reply_t {
-        call!(self, xcb_randr_get_crtc_info_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_crtc_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2407,7 +2406,7 @@ impl XcbRandr {
         crtc: xcb_randr_crtc_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_randr_get_crtc_info_cookie_t {
-        call!(self, xcb_randr_get_crtc_info)(c, crtc, config_timestamp)
+        sym!(self, xcb_randr_get_crtc_info)(c, crtc, config_timestamp)
     }
 
     #[inline]
@@ -2417,7 +2416,7 @@ impl XcbRandr {
         crtc: xcb_randr_crtc_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_randr_get_crtc_info_cookie_t {
-        call!(self, xcb_randr_get_crtc_info_unchecked)(c, crtc, config_timestamp)
+        sym!(self, xcb_randr_get_crtc_info_unchecked)(c, crtc, config_timestamp)
     }
 
     #[inline]
@@ -2427,7 +2426,7 @@ impl XcbRandr {
         cookie: xcb_randr_set_crtc_config_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_set_crtc_config_reply_t {
-        call!(self, xcb_randr_set_crtc_config_reply)(c, cookie, error)
+        sym!(self, xcb_randr_set_crtc_config_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2444,7 +2443,7 @@ impl XcbRandr {
         outputs_len: u32,
         outputs: *const xcb_randr_output_t,
     ) -> xcb_randr_set_crtc_config_cookie_t {
-        call!(self, xcb_randr_set_crtc_config)(
+        sym!(self, xcb_randr_set_crtc_config)(
             c,
             crtc,
             timestamp,
@@ -2472,7 +2471,7 @@ impl XcbRandr {
         outputs_len: u32,
         outputs: *const xcb_randr_output_t,
     ) -> xcb_randr_set_crtc_config_cookie_t {
-        call!(self, xcb_randr_set_crtc_config_unchecked)(
+        sym!(self, xcb_randr_set_crtc_config_unchecked)(
             c,
             crtc,
             timestamp,
@@ -2493,7 +2492,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_crtc_gamma_size_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_crtc_gamma_size_reply_t {
-        call!(self, xcb_randr_get_crtc_gamma_size_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_crtc_gamma_size_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2502,7 +2501,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_crtc_gamma_size_cookie_t {
-        call!(self, xcb_randr_get_crtc_gamma_size)(c, crtc)
+        sym!(self, xcb_randr_get_crtc_gamma_size)(c, crtc)
     }
 
     #[inline]
@@ -2511,7 +2510,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_crtc_gamma_size_cookie_t {
-        call!(self, xcb_randr_get_crtc_gamma_size_unchecked)(c, crtc)
+        sym!(self, xcb_randr_get_crtc_gamma_size_unchecked)(c, crtc)
     }
 
     #[inline]
@@ -2519,7 +2518,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> *mut u16 {
-        call!(self, xcb_randr_get_crtc_gamma_red)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_red)(R)
     }
 
     #[inline]
@@ -2527,7 +2526,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_crtc_gamma_red_length)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_red_length)(R)
     }
 
     #[inline]
@@ -2535,7 +2534,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_gamma_red_end)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_red_end)(R)
     }
 
     #[inline]
@@ -2543,7 +2542,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> *mut u16 {
-        call!(self, xcb_randr_get_crtc_gamma_green)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_green)(R)
     }
 
     #[inline]
@@ -2551,7 +2550,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_crtc_gamma_green_length)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_green_length)(R)
     }
 
     #[inline]
@@ -2559,7 +2558,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_gamma_green_end)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_green_end)(R)
     }
 
     #[inline]
@@ -2567,7 +2566,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> *mut u16 {
-        call!(self, xcb_randr_get_crtc_gamma_blue)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_blue)(R)
     }
 
     #[inline]
@@ -2575,7 +2574,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_crtc_gamma_blue_length)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_blue_length)(R)
     }
 
     #[inline]
@@ -2583,7 +2582,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_gamma_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_gamma_blue_end)(R)
+        sym!(self, xcb_randr_get_crtc_gamma_blue_end)(R)
     }
 
     #[inline]
@@ -2593,7 +2592,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_crtc_gamma_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_crtc_gamma_reply_t {
-        call!(self, xcb_randr_get_crtc_gamma_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_crtc_gamma_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2602,7 +2601,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_crtc_gamma_cookie_t {
-        call!(self, xcb_randr_get_crtc_gamma)(c, crtc)
+        sym!(self, xcb_randr_get_crtc_gamma)(c, crtc)
     }
 
     #[inline]
@@ -2611,7 +2610,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_crtc_gamma_cookie_t {
-        call!(self, xcb_randr_get_crtc_gamma_unchecked)(c, crtc)
+        sym!(self, xcb_randr_get_crtc_gamma_unchecked)(c, crtc)
     }
 
     #[inline]
@@ -2624,7 +2623,7 @@ impl XcbRandr {
         green: *const u16,
         blue: *const u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_crtc_gamma)(c, crtc, size, red, green, blue)
+        sym!(self, xcb_randr_set_crtc_gamma)(c, crtc, size, red, green, blue)
     }
 
     #[inline]
@@ -2637,7 +2636,7 @@ impl XcbRandr {
         green: *const u16,
         blue: *const u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_crtc_gamma_checked)(c, crtc, size, red, green, blue)
+        sym!(self, xcb_randr_set_crtc_gamma_checked)(c, crtc, size, red, green, blue)
     }
 
     #[inline]
@@ -2645,7 +2644,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> *mut xcb_randr_crtc_t {
-        call!(self, xcb_randr_get_screen_resources_current_crtcs)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_crtcs)(R)
     }
 
     #[inline]
@@ -2653,7 +2652,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_current_crtcs_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_crtcs_length)(R)
     }
 
     #[inline]
@@ -2661,7 +2660,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_current_crtcs_end)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_crtcs_end)(R)
     }
 
     #[inline]
@@ -2669,7 +2668,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> *mut xcb_randr_output_t {
-        call!(self, xcb_randr_get_screen_resources_current_outputs)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_outputs)(R)
     }
 
     #[inline]
@@ -2677,7 +2676,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_current_outputs_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_outputs_length)(R)
     }
 
     #[inline]
@@ -2685,7 +2684,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_current_outputs_end)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_outputs_end)(R)
     }
 
     #[inline]
@@ -2693,7 +2692,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> *mut xcb_randr_mode_info_t {
-        call!(self, xcb_randr_get_screen_resources_current_modes)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_modes)(R)
     }
 
     #[inline]
@@ -2701,7 +2700,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_current_modes_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_modes_length)(R)
     }
 
     #[inline]
@@ -2709,7 +2708,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> xcb_randr_mode_info_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_current_modes_iterator)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_modes_iterator)(R)
     }
 
     #[inline]
@@ -2717,7 +2716,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_randr_get_screen_resources_current_names)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_names)(R)
     }
 
     #[inline]
@@ -2725,7 +2724,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_screen_resources_current_names_length)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_names_length)(R)
     }
 
     #[inline]
@@ -2733,7 +2732,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_screen_resources_current_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_screen_resources_current_names_end)(R)
+        sym!(self, xcb_randr_get_screen_resources_current_names_end)(R)
     }
 
     #[inline]
@@ -2743,7 +2742,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_screen_resources_current_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_screen_resources_current_reply_t {
-        call!(self, xcb_randr_get_screen_resources_current_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_screen_resources_current_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2752,7 +2751,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_resources_current_cookie_t {
-        call!(self, xcb_randr_get_screen_resources_current)(c, window)
+        sym!(self, xcb_randr_get_screen_resources_current)(c, window)
     }
 
     #[inline]
@@ -2761,7 +2760,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_screen_resources_current_cookie_t {
-        call!(self, xcb_randr_get_screen_resources_current_unchecked)(c, window)
+        sym!(self, xcb_randr_get_screen_resources_current_unchecked)(c, window)
     }
 
     #[inline]
@@ -2775,7 +2774,7 @@ impl XcbRandr {
         filter_params_len: u32,
         filter_params: *const xcb_render_fixed_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_crtc_transform)(
+        sym!(self, xcb_randr_set_crtc_transform)(
             c,
             crtc,
             transform,
@@ -2797,7 +2796,7 @@ impl XcbRandr {
         filter_params_len: u32,
         filter_params: *const xcb_render_fixed_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_crtc_transform_checked)(
+        sym!(self, xcb_randr_set_crtc_transform_checked)(
             c,
             crtc,
             transform,
@@ -2813,7 +2812,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_randr_get_crtc_transform_pending_filter_name)(R)
+        sym!(self, xcb_randr_get_crtc_transform_pending_filter_name)(R)
     }
 
     #[inline]
@@ -2821,7 +2820,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_randr_get_crtc_transform_pending_filter_name_length
         )(R)
@@ -2832,7 +2831,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_transform_pending_filter_name_end)(R)
+        sym!(self, xcb_randr_get_crtc_transform_pending_filter_name_end)(R)
     }
 
     #[inline]
@@ -2840,7 +2839,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> *mut xcb_render_fixed_t {
-        call!(self, xcb_randr_get_crtc_transform_pending_params)(R)
+        sym!(self, xcb_randr_get_crtc_transform_pending_params)(R)
     }
 
     #[inline]
@@ -2848,7 +2847,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_crtc_transform_pending_params_length)(R)
+        sym!(self, xcb_randr_get_crtc_transform_pending_params_length)(R)
     }
 
     #[inline]
@@ -2856,7 +2855,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_transform_pending_params_end)(R)
+        sym!(self, xcb_randr_get_crtc_transform_pending_params_end)(R)
     }
 
     #[inline]
@@ -2864,7 +2863,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_randr_get_crtc_transform_current_filter_name)(R)
+        sym!(self, xcb_randr_get_crtc_transform_current_filter_name)(R)
     }
 
     #[inline]
@@ -2872,7 +2871,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_randr_get_crtc_transform_current_filter_name_length
         )(R)
@@ -2883,7 +2882,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_transform_current_filter_name_end)(R)
+        sym!(self, xcb_randr_get_crtc_transform_current_filter_name_end)(R)
     }
 
     #[inline]
@@ -2891,7 +2890,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> *mut xcb_render_fixed_t {
-        call!(self, xcb_randr_get_crtc_transform_current_params)(R)
+        sym!(self, xcb_randr_get_crtc_transform_current_params)(R)
     }
 
     #[inline]
@@ -2899,7 +2898,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_crtc_transform_current_params_length)(R)
+        sym!(self, xcb_randr_get_crtc_transform_current_params_length)(R)
     }
 
     #[inline]
@@ -2907,7 +2906,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_crtc_transform_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_crtc_transform_current_params_end)(R)
+        sym!(self, xcb_randr_get_crtc_transform_current_params_end)(R)
     }
 
     #[inline]
@@ -2917,7 +2916,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_crtc_transform_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_crtc_transform_reply_t {
-        call!(self, xcb_randr_get_crtc_transform_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_crtc_transform_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2926,7 +2925,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_crtc_transform_cookie_t {
-        call!(self, xcb_randr_get_crtc_transform)(c, crtc)
+        sym!(self, xcb_randr_get_crtc_transform)(c, crtc)
     }
 
     #[inline]
@@ -2935,7 +2934,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_crtc_transform_cookie_t {
-        call!(self, xcb_randr_get_crtc_transform_unchecked)(c, crtc)
+        sym!(self, xcb_randr_get_crtc_transform_unchecked)(c, crtc)
     }
 
     #[inline]
@@ -2945,7 +2944,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_panning_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_panning_reply_t {
-        call!(self, xcb_randr_get_panning_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_panning_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2954,7 +2953,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_panning_cookie_t {
-        call!(self, xcb_randr_get_panning)(c, crtc)
+        sym!(self, xcb_randr_get_panning)(c, crtc)
     }
 
     #[inline]
@@ -2963,7 +2962,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         crtc: xcb_randr_crtc_t,
     ) -> xcb_randr_get_panning_cookie_t {
-        call!(self, xcb_randr_get_panning_unchecked)(c, crtc)
+        sym!(self, xcb_randr_get_panning_unchecked)(c, crtc)
     }
 
     #[inline]
@@ -2973,7 +2972,7 @@ impl XcbRandr {
         cookie: xcb_randr_set_panning_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_set_panning_reply_t {
-        call!(self, xcb_randr_set_panning_reply)(c, cookie, error)
+        sym!(self, xcb_randr_set_panning_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -2995,7 +2994,7 @@ impl XcbRandr {
         border_right: i16,
         border_bottom: i16,
     ) -> xcb_randr_set_panning_cookie_t {
-        call!(self, xcb_randr_set_panning)(
+        sym!(self, xcb_randr_set_panning)(
             c,
             crtc,
             timestamp,
@@ -3033,7 +3032,7 @@ impl XcbRandr {
         border_right: i16,
         border_bottom: i16,
     ) -> xcb_randr_set_panning_cookie_t {
-        call!(self, xcb_randr_set_panning_unchecked)(
+        sym!(self, xcb_randr_set_panning_unchecked)(
             c,
             crtc,
             timestamp,
@@ -3059,7 +3058,7 @@ impl XcbRandr {
         window: xcb_window_t,
         output: xcb_randr_output_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_output_primary)(c, window, output)
+        sym!(self, xcb_randr_set_output_primary)(c, window, output)
     }
 
     #[inline]
@@ -3069,7 +3068,7 @@ impl XcbRandr {
         window: xcb_window_t,
         output: xcb_randr_output_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_output_primary_checked)(c, window, output)
+        sym!(self, xcb_randr_set_output_primary_checked)(c, window, output)
     }
 
     #[inline]
@@ -3079,7 +3078,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_output_primary_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_output_primary_reply_t {
-        call!(self, xcb_randr_get_output_primary_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_output_primary_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3088,7 +3087,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_output_primary_cookie_t {
-        call!(self, xcb_randr_get_output_primary)(c, window)
+        sym!(self, xcb_randr_get_output_primary)(c, window)
     }
 
     #[inline]
@@ -3097,7 +3096,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_output_primary_cookie_t {
-        call!(self, xcb_randr_get_output_primary_unchecked)(c, window)
+        sym!(self, xcb_randr_get_output_primary_unchecked)(c, window)
     }
 
     #[inline]
@@ -3105,7 +3104,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_providers_reply_t,
     ) -> *mut xcb_randr_provider_t {
-        call!(self, xcb_randr_get_providers_providers)(R)
+        sym!(self, xcb_randr_get_providers_providers)(R)
     }
 
     #[inline]
@@ -3113,7 +3112,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_providers_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_providers_providers_length)(R)
+        sym!(self, xcb_randr_get_providers_providers_length)(R)
     }
 
     #[inline]
@@ -3121,7 +3120,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_providers_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_providers_providers_end)(R)
+        sym!(self, xcb_randr_get_providers_providers_end)(R)
     }
 
     #[inline]
@@ -3131,7 +3130,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_providers_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_providers_reply_t {
-        call!(self, xcb_randr_get_providers_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_providers_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3140,7 +3139,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_providers_cookie_t {
-        call!(self, xcb_randr_get_providers)(c, window)
+        sym!(self, xcb_randr_get_providers)(c, window)
     }
 
     #[inline]
@@ -3149,7 +3148,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_randr_get_providers_cookie_t {
-        call!(self, xcb_randr_get_providers_unchecked)(c, window)
+        sym!(self, xcb_randr_get_providers_unchecked)(c, window)
     }
 
     #[inline]
@@ -3157,7 +3156,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> *mut xcb_randr_crtc_t {
-        call!(self, xcb_randr_get_provider_info_crtcs)(R)
+        sym!(self, xcb_randr_get_provider_info_crtcs)(R)
     }
 
     #[inline]
@@ -3165,7 +3164,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_provider_info_crtcs_length)(R)
+        sym!(self, xcb_randr_get_provider_info_crtcs_length)(R)
     }
 
     #[inline]
@@ -3173,7 +3172,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_provider_info_crtcs_end)(R)
+        sym!(self, xcb_randr_get_provider_info_crtcs_end)(R)
     }
 
     #[inline]
@@ -3181,7 +3180,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> *mut xcb_randr_output_t {
-        call!(self, xcb_randr_get_provider_info_outputs)(R)
+        sym!(self, xcb_randr_get_provider_info_outputs)(R)
     }
 
     #[inline]
@@ -3189,7 +3188,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_provider_info_outputs_length)(R)
+        sym!(self, xcb_randr_get_provider_info_outputs_length)(R)
     }
 
     #[inline]
@@ -3197,7 +3196,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_provider_info_outputs_end)(R)
+        sym!(self, xcb_randr_get_provider_info_outputs_end)(R)
     }
 
     #[inline]
@@ -3205,7 +3204,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> *mut xcb_randr_provider_t {
-        call!(self, xcb_randr_get_provider_info_associated_providers)(R)
+        sym!(self, xcb_randr_get_provider_info_associated_providers)(R)
     }
 
     #[inline]
@@ -3213,7 +3212,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_randr_get_provider_info_associated_providers_length
         )(R)
@@ -3224,7 +3223,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_provider_info_associated_providers_end)(R)
+        sym!(self, xcb_randr_get_provider_info_associated_providers_end)(R)
     }
 
     #[inline]
@@ -3232,7 +3231,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_randr_get_provider_info_associated_capability)(R)
+        sym!(self, xcb_randr_get_provider_info_associated_capability)(R)
     }
 
     #[inline]
@@ -3240,7 +3239,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_randr_get_provider_info_associated_capability_length
         )(R)
@@ -3251,7 +3250,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_provider_info_associated_capability_end)(R)
+        sym!(self, xcb_randr_get_provider_info_associated_capability_end)(R)
     }
 
     #[inline]
@@ -3259,7 +3258,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> *mut c_char {
-        call!(self, xcb_randr_get_provider_info_name)(R)
+        sym!(self, xcb_randr_get_provider_info_name)(R)
     }
 
     #[inline]
@@ -3267,7 +3266,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_provider_info_name_length)(R)
+        sym!(self, xcb_randr_get_provider_info_name_length)(R)
     }
 
     #[inline]
@@ -3275,7 +3274,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_info_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_provider_info_name_end)(R)
+        sym!(self, xcb_randr_get_provider_info_name_end)(R)
     }
 
     #[inline]
@@ -3285,7 +3284,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_provider_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_provider_info_reply_t {
-        call!(self, xcb_randr_get_provider_info_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_provider_info_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3295,7 +3294,7 @@ impl XcbRandr {
         provider: xcb_randr_provider_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_randr_get_provider_info_cookie_t {
-        call!(self, xcb_randr_get_provider_info)(c, provider, config_timestamp)
+        sym!(self, xcb_randr_get_provider_info)(c, provider, config_timestamp)
     }
 
     #[inline]
@@ -3305,7 +3304,7 @@ impl XcbRandr {
         provider: xcb_randr_provider_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_randr_get_provider_info_cookie_t {
-        call!(self, xcb_randr_get_provider_info_unchecked)(c, provider, config_timestamp)
+        sym!(self, xcb_randr_get_provider_info_unchecked)(c, provider, config_timestamp)
     }
 
     #[inline]
@@ -3316,7 +3315,7 @@ impl XcbRandr {
         sink_provider: xcb_randr_provider_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_provider_offload_sink)(
+        sym!(self, xcb_randr_set_provider_offload_sink)(
             c,
             provider,
             sink_provider,
@@ -3332,7 +3331,7 @@ impl XcbRandr {
         sink_provider: xcb_randr_provider_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_provider_offload_sink_checked)(
+        sym!(self, xcb_randr_set_provider_offload_sink_checked)(
             c,
             provider,
             sink_provider,
@@ -3348,7 +3347,7 @@ impl XcbRandr {
         source_provider: xcb_randr_provider_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_provider_output_source)(
+        sym!(self, xcb_randr_set_provider_output_source)(
             c,
             provider,
             source_provider,
@@ -3364,7 +3363,7 @@ impl XcbRandr {
         source_provider: xcb_randr_provider_t,
         config_timestamp: xcb_timestamp_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_set_provider_output_source_checked)(
+        sym!(self, xcb_randr_set_provider_output_source_checked)(
             c,
             provider,
             source_provider,
@@ -3377,7 +3376,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_list_provider_properties_reply_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_randr_list_provider_properties_atoms)(R)
+        sym!(self, xcb_randr_list_provider_properties_atoms)(R)
     }
 
     #[inline]
@@ -3385,7 +3384,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_list_provider_properties_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_list_provider_properties_atoms_length)(R)
+        sym!(self, xcb_randr_list_provider_properties_atoms_length)(R)
     }
 
     #[inline]
@@ -3393,7 +3392,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_list_provider_properties_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_list_provider_properties_atoms_end)(R)
+        sym!(self, xcb_randr_list_provider_properties_atoms_end)(R)
     }
 
     #[inline]
@@ -3403,7 +3402,7 @@ impl XcbRandr {
         cookie: xcb_randr_list_provider_properties_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_list_provider_properties_reply_t {
-        call!(self, xcb_randr_list_provider_properties_reply)(c, cookie, error)
+        sym!(self, xcb_randr_list_provider_properties_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3412,7 +3411,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         provider: xcb_randr_provider_t,
     ) -> xcb_randr_list_provider_properties_cookie_t {
-        call!(self, xcb_randr_list_provider_properties)(c, provider)
+        sym!(self, xcb_randr_list_provider_properties)(c, provider)
     }
 
     #[inline]
@@ -3421,7 +3420,7 @@ impl XcbRandr {
         c: *mut xcb_connection_t,
         provider: xcb_randr_provider_t,
     ) -> xcb_randr_list_provider_properties_cookie_t {
-        call!(self, xcb_randr_list_provider_properties_unchecked)(c, provider)
+        sym!(self, xcb_randr_list_provider_properties_unchecked)(c, provider)
     }
 
     #[inline]
@@ -3429,7 +3428,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_query_provider_property_reply_t,
     ) -> *mut i32 {
-        call!(self, xcb_randr_query_provider_property_valid_values)(R)
+        sym!(self, xcb_randr_query_provider_property_valid_values)(R)
     }
 
     #[inline]
@@ -3437,7 +3436,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_query_provider_property_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_query_provider_property_valid_values_length)(R)
+        sym!(self, xcb_randr_query_provider_property_valid_values_length)(R)
     }
 
     #[inline]
@@ -3445,7 +3444,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_query_provider_property_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_query_provider_property_valid_values_end)(R)
+        sym!(self, xcb_randr_query_provider_property_valid_values_end)(R)
     }
 
     #[inline]
@@ -3455,7 +3454,7 @@ impl XcbRandr {
         cookie: xcb_randr_query_provider_property_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_query_provider_property_reply_t {
-        call!(self, xcb_randr_query_provider_property_reply)(c, cookie, error)
+        sym!(self, xcb_randr_query_provider_property_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3465,7 +3464,7 @@ impl XcbRandr {
         provider: xcb_randr_provider_t,
         property: xcb_atom_t,
     ) -> xcb_randr_query_provider_property_cookie_t {
-        call!(self, xcb_randr_query_provider_property)(c, provider, property)
+        sym!(self, xcb_randr_query_provider_property)(c, provider, property)
     }
 
     #[inline]
@@ -3475,7 +3474,7 @@ impl XcbRandr {
         provider: xcb_randr_provider_t,
         property: xcb_atom_t,
     ) -> xcb_randr_query_provider_property_cookie_t {
-        call!(self, xcb_randr_query_provider_property_unchecked)(c, provider, property)
+        sym!(self, xcb_randr_query_provider_property_unchecked)(c, provider, property)
     }
 
     #[inline]
@@ -3489,7 +3488,7 @@ impl XcbRandr {
         values_len: u32,
         values: *const i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_configure_provider_property)(
+        sym!(self, xcb_randr_configure_provider_property)(
             c, provider, property, pending, range, values_len, values,
         )
     }
@@ -3505,7 +3504,7 @@ impl XcbRandr {
         values_len: u32,
         values: *const i32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_configure_provider_property_checked)(
+        sym!(self, xcb_randr_configure_provider_property_checked)(
             c, provider, property, pending, range, values_len, values,
         )
     }
@@ -3522,7 +3521,7 @@ impl XcbRandr {
         num_items: u32,
         data: *const c_void,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_change_provider_property)(
+        sym!(self, xcb_randr_change_provider_property)(
             c, provider, property, type_, format, mode, num_items, data,
         )
     }
@@ -3539,7 +3538,7 @@ impl XcbRandr {
         num_items: u32,
         data: *const c_void,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_change_provider_property_checked)(
+        sym!(self, xcb_randr_change_provider_property_checked)(
             c, provider, property, type_, format, mode, num_items, data,
         )
     }
@@ -3551,7 +3550,7 @@ impl XcbRandr {
         provider: xcb_randr_provider_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_delete_provider_property)(c, provider, property)
+        sym!(self, xcb_randr_delete_provider_property)(c, provider, property)
     }
 
     #[inline]
@@ -3561,7 +3560,7 @@ impl XcbRandr {
         provider: xcb_randr_provider_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_randr_delete_provider_property_checked)(c, provider, property)
+        sym!(self, xcb_randr_delete_provider_property_checked)(c, provider, property)
     }
 
     #[inline]
@@ -3569,7 +3568,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_property_reply_t,
     ) -> *mut c_void {
-        call!(self, xcb_randr_get_provider_property_data)(R)
+        sym!(self, xcb_randr_get_provider_property_data)(R)
     }
 
     #[inline]
@@ -3577,7 +3576,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_property_reply_t,
     ) -> c_int {
-        call!(self, xcb_randr_get_provider_property_data_length)(R)
+        sym!(self, xcb_randr_get_provider_property_data_length)(R)
     }
 
     #[inline]
@@ -3585,7 +3584,7 @@ impl XcbRandr {
         &self,
         R: *const xcb_randr_get_provider_property_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_get_provider_property_data_end)(R)
+        sym!(self, xcb_randr_get_provider_property_data_end)(R)
     }
 
     #[inline]
@@ -3595,7 +3594,7 @@ impl XcbRandr {
         cookie: xcb_randr_get_provider_property_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_randr_get_provider_property_reply_t {
-        call!(self, xcb_randr_get_provider_property_reply)(c, cookie, error)
+        sym!(self, xcb_randr_get_provider_property_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3610,7 +3609,7 @@ impl XcbRandr {
         delete: u8,
         pending: u8,
     ) -> xcb_randr_get_provider_property_cookie_t {
-        call!(self, xcb_randr_get_provider_property)(
+        sym!(self, xcb_randr_get_provider_property)(
             c,
             provider,
             property,
@@ -3634,7 +3633,7 @@ impl XcbRandr {
         delete: u8,
         pending: u8,
     ) -> xcb_randr_get_provider_property_cookie_t {
-        call!(self, xcb_randr_get_provider_property_unchecked)(
+        sym!(self, xcb_randr_get_provider_property_unchecked)(
             c,
             provider,
             property,
@@ -3648,7 +3647,7 @@ impl XcbRandr {
 
     #[inline]
     pub unsafe fn xcb_randr_crtc_change_next(&self, i: *mut xcb_randr_crtc_change_iterator_t) {
-        call!(self, xcb_randr_crtc_change_next)(i);
+        sym!(self, xcb_randr_crtc_change_next)(i);
     }
 
     #[inline]
@@ -3656,12 +3655,12 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_crtc_change_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_crtc_change_end)(i)
+        sym!(self, xcb_randr_crtc_change_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_output_change_next(&self, i: *mut xcb_randr_output_change_iterator_t) {
-        call!(self, xcb_randr_output_change_next)(i);
+        sym!(self, xcb_randr_output_change_next)(i);
     }
 
     #[inline]
@@ -3669,7 +3668,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_output_change_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_output_change_end)(i)
+        sym!(self, xcb_randr_output_change_end)(i)
     }
 
     #[inline]
@@ -3677,7 +3676,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_output_property_iterator_t,
     ) {
-        call!(self, xcb_randr_output_property_next)(i);
+        sym!(self, xcb_randr_output_property_next)(i);
     }
 
     #[inline]
@@ -3685,7 +3684,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_output_property_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_output_property_end)(i)
+        sym!(self, xcb_randr_output_property_end)(i)
     }
 
     #[inline]
@@ -3693,7 +3692,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_provider_change_iterator_t,
     ) {
-        call!(self, xcb_randr_provider_change_next)(i);
+        sym!(self, xcb_randr_provider_change_next)(i);
     }
 
     #[inline]
@@ -3701,7 +3700,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_provider_change_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_provider_change_end)(i)
+        sym!(self, xcb_randr_provider_change_end)(i)
     }
 
     #[inline]
@@ -3709,7 +3708,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_provider_property_iterator_t,
     ) {
-        call!(self, xcb_randr_provider_property_next)(i);
+        sym!(self, xcb_randr_provider_property_next)(i);
     }
 
     #[inline]
@@ -3717,7 +3716,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_provider_property_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_provider_property_end)(i)
+        sym!(self, xcb_randr_provider_property_end)(i)
     }
 
     #[inline]
@@ -3725,7 +3724,7 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_resource_change_iterator_t,
     ) {
-        call!(self, xcb_randr_resource_change_next)(i);
+        sym!(self, xcb_randr_resource_change_next)(i);
     }
 
     #[inline]
@@ -3733,12 +3732,12 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_resource_change_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_resource_change_end)(i)
+        sym!(self, xcb_randr_resource_change_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_randr_notify_data_next(&self, i: *mut xcb_randr_notify_data_iterator_t) {
-        call!(self, xcb_randr_notify_data_next)(i);
+        sym!(self, xcb_randr_notify_data_next)(i);
     }
 
     #[inline]
@@ -3746,1163 +3745,6 @@ impl XcbRandr {
         &self,
         i: *mut xcb_randr_notify_data_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_randr_notify_data_end)(i)
+        sym!(self, xcb_randr_notify_data_end)(i)
     }
-}
-
-pub struct XcbRandr {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_randr_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_randr_mode_next: LazySymbol<unsafe fn(i: *mut xcb_randr_mode_iterator_t)>,
-    pub(crate) xcb_randr_mode_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_mode_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_crtc_next: LazySymbol<unsafe fn(i: *mut xcb_randr_crtc_iterator_t)>,
-    pub(crate) xcb_randr_crtc_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_crtc_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_output_next: LazySymbol<unsafe fn(i: *mut xcb_randr_output_iterator_t)>,
-    pub(crate) xcb_randr_output_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_output_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_provider_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_provider_iterator_t)>,
-    pub(crate) xcb_randr_provider_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_provider_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_screen_size_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_screen_size_iterator_t)>,
-    pub(crate) xcb_randr_screen_size_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_screen_size_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_refresh_rates_rates:
-        LazySymbol<unsafe fn(R: *const xcb_randr_refresh_rates_t) -> *mut u16>,
-    pub(crate) xcb_randr_refresh_rates_rates_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_refresh_rates_t) -> c_int>,
-    pub(crate) xcb_randr_refresh_rates_rates_end:
-        LazySymbol<unsafe fn(R: *const xcb_randr_refresh_rates_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_refresh_rates_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_refresh_rates_iterator_t)>,
-    pub(crate) xcb_randr_refresh_rates_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_refresh_rates_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_query_version_reply_t,
-    >,
-    pub(crate) xcb_randr_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_randr_query_version_cookie_t,
-    >,
-    pub(crate) xcb_randr_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_randr_query_version_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_screen_config_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_set_screen_config_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_set_screen_config_reply_t,
-    >,
-    pub(crate) xcb_randr_set_screen_config: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            timestamp: xcb_timestamp_t,
-            config_timestamp: xcb_timestamp_t,
-            size_id: u16,
-            rotation: u16,
-            rate: u16,
-        ) -> xcb_randr_set_screen_config_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_screen_config_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            timestamp: xcb_timestamp_t,
-            config_timestamp: xcb_timestamp_t,
-            size_id: u16,
-            rotation: u16,
-            rate: u16,
-        ) -> xcb_randr_set_screen_config_cookie_t,
-    >,
-    pub(crate) xcb_randr_select_input: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, enable: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_select_input_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, enable: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_screen_info_sizes: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_info_reply_t) -> *mut xcb_randr_screen_size_t,
-    >,
-    pub(crate) xcb_randr_get_screen_info_sizes_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_info_sizes_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_info_reply_t) -> xcb_randr_screen_size_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_info_rates_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_info_rates_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_info_reply_t,
-        ) -> xcb_randr_refresh_rates_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_screen_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_screen_info_reply_t,
-    >,
-    pub(crate) xcb_randr_get_screen_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_screen_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_screen_size_range_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_screen_size_range_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_screen_size_range_reply_t,
-    >,
-    pub(crate) xcb_randr_get_screen_size_range: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_size_range_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_screen_size_range_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_size_range_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_screen_size: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            width: u16,
-            height: u16,
-            mm_width: u32,
-            mm_height: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_screen_size_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            width: u16,
-            height: u16,
-            mm_width: u32,
-            mm_height: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_mode_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_mode_info_iterator_t)>,
-    pub(crate) xcb_randr_mode_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_mode_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_get_screen_resources_crtcs: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> *mut xcb_randr_crtc_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_crtcs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_crtcs_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_outputs: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> *mut xcb_randr_output_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_outputs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_outputs_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_modes: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> *mut xcb_randr_mode_info_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_modes_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_modes_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_reply_t,
-        ) -> xcb_randr_mode_info_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_names:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> *mut u8>,
-    pub(crate) xcb_randr_get_screen_resources_names_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_names_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_screen_resources_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_screen_resources_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_screen_resources_reply_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_resources_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_resources_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_output_info_crtcs:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> *mut xcb_randr_crtc_t>,
-    pub(crate) xcb_randr_get_output_info_crtcs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_output_info_crtcs_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_output_info_modes:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> *mut xcb_randr_mode_t>,
-    pub(crate) xcb_randr_get_output_info_modes_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_output_info_modes_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_output_info_clones: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> *mut xcb_randr_output_t,
-    >,
-    pub(crate) xcb_randr_get_output_info_clones_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_output_info_clones_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_output_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> *mut u8>,
-    pub(crate) xcb_randr_get_output_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_output_info_name_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_output_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_output_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_output_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_output_info_reply_t,
-    >,
-    pub(crate) xcb_randr_get_output_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_randr_get_output_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_output_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_randr_get_output_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_list_output_properties_atoms: LazySymbol<
-        unsafe fn(R: *const xcb_randr_list_output_properties_reply_t) -> *mut xcb_atom_t,
-    >,
-    pub(crate) xcb_randr_list_output_properties_atoms_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_list_output_properties_reply_t) -> c_int>,
-    pub(crate) xcb_randr_list_output_properties_atoms_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_list_output_properties_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_list_output_properties_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_list_output_properties_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_list_output_properties_reply_t,
-    >,
-    pub(crate) xcb_randr_list_output_properties: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-        ) -> xcb_randr_list_output_properties_cookie_t,
-    >,
-    pub(crate) xcb_randr_list_output_properties_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-        ) -> xcb_randr_list_output_properties_cookie_t,
-    >,
-    pub(crate) xcb_randr_query_output_property_valid_values:
-        LazySymbol<unsafe fn(R: *const xcb_randr_query_output_property_reply_t) -> *mut i32>,
-    pub(crate) xcb_randr_query_output_property_valid_values_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_query_output_property_reply_t) -> c_int>,
-    pub(crate) xcb_randr_query_output_property_valid_values_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_query_output_property_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_query_output_property_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_query_output_property_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_query_output_property_reply_t,
-    >,
-    pub(crate) xcb_randr_query_output_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-        ) -> xcb_randr_query_output_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_query_output_property_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-        ) -> xcb_randr_query_output_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_configure_output_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-            pending: u8,
-            range: u8,
-            values_len: u32,
-            values: *const i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_configure_output_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-            pending: u8,
-            range: u8,
-            values_len: u32,
-            values: *const i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_change_output_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            format: u8,
-            mode: u8,
-            num_units: u32,
-            data: *const c_void,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_change_output_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            format: u8,
-            mode: u8,
-            num_units: u32,
-            data: *const c_void,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_delete_output_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_delete_output_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_output_property_data:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_property_reply_t) -> *mut u8>,
-    pub(crate) xcb_randr_get_output_property_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_output_property_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_output_property_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_output_property_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_output_property_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_output_property_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_output_property_reply_t,
-    >,
-    pub(crate) xcb_randr_get_output_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            long_offset: u32,
-            long_length: u32,
-            delete: u8,
-            pending: u8,
-        ) -> xcb_randr_get_output_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_output_property_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            long_offset: u32,
-            long_length: u32,
-            delete: u8,
-            pending: u8,
-        ) -> xcb_randr_get_output_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_create_mode_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_create_mode_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_create_mode_reply_t,
-    >,
-    pub(crate) xcb_randr_create_mode: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            mode_info: xcb_randr_mode_info_t,
-            name_len: u32,
-            name: *const c_char,
-        ) -> xcb_randr_create_mode_cookie_t,
-    >,
-    pub(crate) xcb_randr_create_mode_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            mode_info: xcb_randr_mode_info_t,
-            name_len: u32,
-            name: *const c_char,
-        ) -> xcb_randr_create_mode_cookie_t,
-    >,
-    pub(crate) xcb_randr_destroy_mode: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, mode: xcb_randr_mode_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_destroy_mode_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, mode: xcb_randr_mode_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_add_output_mode: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            mode: xcb_randr_mode_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_add_output_mode_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            mode: xcb_randr_mode_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_delete_output_mode: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            mode: xcb_randr_mode_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_delete_output_mode_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            output: xcb_randr_output_t,
-            mode: xcb_randr_mode_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_info_outputs:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_info_reply_t) -> *mut xcb_randr_output_t>,
-    pub(crate) xcb_randr_get_crtc_info_outputs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_info_outputs_end:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_info_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_get_crtc_info_possible:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_info_reply_t) -> *mut xcb_randr_output_t>,
-    pub(crate) xcb_randr_get_crtc_info_possible_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_info_possible_end:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_info_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_get_crtc_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_crtc_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_crtc_info_reply_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_randr_get_crtc_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_randr_get_crtc_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_crtc_config_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_set_crtc_config_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_set_crtc_config_reply_t,
-    >,
-    pub(crate) xcb_randr_set_crtc_config: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            timestamp: xcb_timestamp_t,
-            config_timestamp: xcb_timestamp_t,
-            x: i16,
-            y: i16,
-            mode: xcb_randr_mode_t,
-            rotation: u16,
-            outputs_len: u32,
-            outputs: *const xcb_randr_output_t,
-        ) -> xcb_randr_set_crtc_config_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_crtc_config_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            timestamp: xcb_timestamp_t,
-            config_timestamp: xcb_timestamp_t,
-            x: i16,
-            y: i16,
-            mode: xcb_randr_mode_t,
-            rotation: u16,
-            outputs_len: u32,
-            outputs: *const xcb_randr_output_t,
-        ) -> xcb_randr_set_crtc_config_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_gamma_size_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_crtc_gamma_size_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_crtc_gamma_size_reply_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_gamma_size: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_crtc_gamma_size_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_gamma_size_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_crtc_gamma_size_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_gamma_red:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> *mut u16>,
-    pub(crate) xcb_randr_get_crtc_gamma_red_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_gamma_red_end:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_get_crtc_gamma_green:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> *mut u16>,
-    pub(crate) xcb_randr_get_crtc_gamma_green_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_gamma_green_end:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_get_crtc_gamma_blue:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> *mut u16>,
-    pub(crate) xcb_randr_get_crtc_gamma_blue_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_gamma_blue_end:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_gamma_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_get_crtc_gamma_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_crtc_gamma_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_crtc_gamma_reply_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_gamma: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_crtc_gamma_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_gamma_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_crtc_gamma_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_crtc_gamma: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            size: u16,
-            red: *const u16,
-            green: *const u16,
-            blue: *const u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_crtc_gamma_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            size: u16,
-            red: *const u16,
-            green: *const u16,
-            blue: *const u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_crtcs: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_current_reply_t,
-        ) -> *mut xcb_randr_crtc_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_crtcs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_current_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_current_crtcs_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_current_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_outputs: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_current_reply_t,
-        ) -> *mut xcb_randr_output_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_outputs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_current_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_current_outputs_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_current_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_modes: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_current_reply_t,
-        ) -> *mut xcb_randr_mode_info_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_modes_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_current_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_current_modes_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_current_reply_t,
-        ) -> xcb_randr_mode_info_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_names:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_current_reply_t) -> *mut u8>,
-    pub(crate) xcb_randr_get_screen_resources_current_names_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_screen_resources_current_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_screen_resources_current_names_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_randr_get_screen_resources_current_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_screen_resources_current_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_screen_resources_current_reply_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_resources_current_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_screen_resources_current_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_screen_resources_current_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_crtc_transform: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            transform: xcb_render_transform_t,
-            filter_len: u16,
-            filter_name: *const c_char,
-            filter_params_len: u32,
-            filter_params: *const xcb_render_fixed_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_crtc_transform_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            transform: xcb_render_transform_t,
-            filter_len: u16,
-            filter_name: *const c_char,
-            filter_params_len: u32,
-            filter_params: *const xcb_render_fixed_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_pending_filter_name:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> *mut c_char>,
-    pub(crate) xcb_randr_get_crtc_transform_pending_filter_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_transform_pending_filter_name_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_pending_params: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> *mut xcb_render_fixed_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_pending_params_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_transform_pending_params_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_current_filter_name:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> *mut c_char>,
-    pub(crate) xcb_randr_get_crtc_transform_current_filter_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_transform_current_filter_name_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_current_params: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> *mut xcb_render_fixed_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_current_params_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_crtc_transform_current_params_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_crtc_transform_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_crtc_transform_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_crtc_transform_reply_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_crtc_transform_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_crtc_transform_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_crtc_transform_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_panning_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_panning_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_panning_reply_t,
-    >,
-    pub(crate) xcb_randr_get_panning: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_panning_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_panning_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-        ) -> xcb_randr_get_panning_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_panning_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_set_panning_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_set_panning_reply_t,
-    >,
-    pub(crate) xcb_randr_set_panning: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            timestamp: xcb_timestamp_t,
-            left: u16,
-            top: u16,
-            width: u16,
-            height: u16,
-            track_left: u16,
-            track_top: u16,
-            track_width: u16,
-            track_height: u16,
-            border_left: i16,
-            border_top: i16,
-            border_right: i16,
-            border_bottom: i16,
-        ) -> xcb_randr_set_panning_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_panning_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            crtc: xcb_randr_crtc_t,
-            timestamp: xcb_timestamp_t,
-            left: u16,
-            top: u16,
-            width: u16,
-            height: u16,
-            track_left: u16,
-            track_top: u16,
-            track_width: u16,
-            track_height: u16,
-            border_left: i16,
-            border_top: i16,
-            border_right: i16,
-            border_bottom: i16,
-        ) -> xcb_randr_set_panning_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_output_primary: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            output: xcb_randr_output_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_output_primary_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            output: xcb_randr_output_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_output_primary_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_output_primary_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_output_primary_reply_t,
-    >,
-    pub(crate) xcb_randr_get_output_primary: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_output_primary_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_output_primary_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_output_primary_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_providers_providers: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_providers_reply_t) -> *mut xcb_randr_provider_t,
-    >,
-    pub(crate) xcb_randr_get_providers_providers_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_providers_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_providers_providers_end:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_providers_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_get_providers_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_providers_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_providers_reply_t,
-    >,
-    pub(crate) xcb_randr_get_providers: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_providers_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_providers_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_randr_get_providers_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_crtcs: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> *mut xcb_randr_crtc_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_crtcs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_provider_info_crtcs_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_outputs: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> *mut xcb_randr_output_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_outputs_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_provider_info_outputs_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_associated_providers: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> *mut xcb_randr_provider_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_associated_providers_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_provider_info_associated_providers_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_associated_capability:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> *mut u32>,
-    pub(crate) xcb_randr_get_provider_info_associated_capability_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_provider_info_associated_capability_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> *mut c_char>,
-    pub(crate) xcb_randr_get_provider_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_provider_info_name_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_info_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_provider_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_provider_info_reply_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_randr_get_provider_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_provider_info_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_randr_get_provider_info_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_provider_offload_sink: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            sink_provider: xcb_randr_provider_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_provider_offload_sink_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            sink_provider: xcb_randr_provider_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_provider_output_source: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            source_provider: xcb_randr_provider_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_set_provider_output_source_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            source_provider: xcb_randr_provider_t,
-            config_timestamp: xcb_timestamp_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_list_provider_properties_atoms: LazySymbol<
-        unsafe fn(R: *const xcb_randr_list_provider_properties_reply_t) -> *mut xcb_atom_t,
-    >,
-    pub(crate) xcb_randr_list_provider_properties_atoms_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_list_provider_properties_reply_t) -> c_int>,
-    pub(crate) xcb_randr_list_provider_properties_atoms_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_list_provider_properties_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_list_provider_properties_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_list_provider_properties_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_list_provider_properties_reply_t,
-    >,
-    pub(crate) xcb_randr_list_provider_properties: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-        ) -> xcb_randr_list_provider_properties_cookie_t,
-    >,
-    pub(crate) xcb_randr_list_provider_properties_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-        ) -> xcb_randr_list_provider_properties_cookie_t,
-    >,
-    pub(crate) xcb_randr_query_provider_property_valid_values:
-        LazySymbol<unsafe fn(R: *const xcb_randr_query_provider_property_reply_t) -> *mut i32>,
-    pub(crate) xcb_randr_query_provider_property_valid_values_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_query_provider_property_reply_t) -> c_int>,
-    pub(crate) xcb_randr_query_provider_property_valid_values_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_query_provider_property_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_query_provider_property_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_query_provider_property_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_query_provider_property_reply_t,
-    >,
-    pub(crate) xcb_randr_query_provider_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-        ) -> xcb_randr_query_provider_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_query_provider_property_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-        ) -> xcb_randr_query_provider_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_configure_provider_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-            pending: u8,
-            range: u8,
-            values_len: u32,
-            values: *const i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_configure_provider_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-            pending: u8,
-            range: u8,
-            values_len: u32,
-            values: *const i32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_change_provider_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            format: u8,
-            mode: u8,
-            num_items: u32,
-            data: *const c_void,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_change_provider_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            format: u8,
-            mode: u8,
-            num_items: u32,
-            data: *const c_void,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_delete_provider_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_delete_provider_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_provider_property_data:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_property_reply_t) -> *mut c_void>,
-    pub(crate) xcb_randr_get_provider_property_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_randr_get_provider_property_reply_t) -> c_int>,
-    pub(crate) xcb_randr_get_provider_property_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_randr_get_provider_property_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_get_provider_property_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_randr_get_provider_property_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_randr_get_provider_property_reply_t,
-    >,
-    pub(crate) xcb_randr_get_provider_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            long_offset: u32,
-            long_length: u32,
-            delete: u8,
-            pending: u8,
-        ) -> xcb_randr_get_provider_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_get_provider_property_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            provider: xcb_randr_provider_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            long_offset: u32,
-            long_length: u32,
-            delete: u8,
-            pending: u8,
-        ) -> xcb_randr_get_provider_property_cookie_t,
-    >,
-    pub(crate) xcb_randr_crtc_change_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_crtc_change_iterator_t)>,
-    pub(crate) xcb_randr_crtc_change_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_crtc_change_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_output_change_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_output_change_iterator_t)>,
-    pub(crate) xcb_randr_output_change_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_output_change_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_randr_output_property_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_output_property_iterator_t)>,
-    pub(crate) xcb_randr_output_property_end: LazySymbol<
-        unsafe fn(i: *mut xcb_randr_output_property_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_provider_change_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_provider_change_iterator_t)>,
-    pub(crate) xcb_randr_provider_change_end: LazySymbol<
-        unsafe fn(i: *mut xcb_randr_provider_change_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_provider_property_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_provider_property_iterator_t)>,
-    pub(crate) xcb_randr_provider_property_end: LazySymbol<
-        unsafe fn(i: *mut xcb_randr_provider_property_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_resource_change_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_resource_change_iterator_t)>,
-    pub(crate) xcb_randr_resource_change_end: LazySymbol<
-        unsafe fn(i: *mut xcb_randr_resource_change_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_randr_notify_data_next:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_notify_data_iterator_t)>,
-    pub(crate) xcb_randr_notify_data_end:
-        LazySymbol<unsafe fn(i: *mut xcb_randr_notify_data_iterator_t) -> xcb_generic_iterator_t>,
 }

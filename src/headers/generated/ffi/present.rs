@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -287,13 +288,13 @@ pub struct xcb_present_redirect_notify_event_t {
 
 impl XcbPresent {
     #[inline]
-    pub fn xcb_present_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_present_id)
+    pub unsafe fn xcb_present_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_present_id)
     }
 
     #[inline]
     pub unsafe fn xcb_present_notify_next(&self, i: *mut xcb_present_notify_iterator_t) {
-        call!(self, xcb_present_notify_next)(i);
+        sym!(self, xcb_present_notify_next)(i);
     }
 
     #[inline]
@@ -301,7 +302,7 @@ impl XcbPresent {
         &self,
         i: *mut xcb_present_notify_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_present_notify_end)(i)
+        sym!(self, xcb_present_notify_end)(i)
     }
 
     #[inline]
@@ -311,7 +312,7 @@ impl XcbPresent {
         cookie: xcb_present_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_present_query_version_reply_t {
-        call!(self, xcb_present_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_present_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -321,7 +322,7 @@ impl XcbPresent {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_present_query_version_cookie_t {
-        call!(self, xcb_present_query_version)(c, major_version, minor_version)
+        sym!(self, xcb_present_query_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -331,7 +332,7 @@ impl XcbPresent {
         major_version: u32,
         minor_version: u32,
     ) -> xcb_present_query_version_cookie_t {
-        call!(self, xcb_present_query_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_present_query_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -355,7 +356,7 @@ impl XcbPresent {
         notifies_len: u32,
         notifies: *const xcb_present_notify_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_present_pixmap)(
+        sym!(self, xcb_present_pixmap)(
             c,
             window,
             pixmap,
@@ -397,7 +398,7 @@ impl XcbPresent {
         notifies_len: u32,
         notifies: *const xcb_present_notify_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_present_pixmap_checked)(
+        sym!(self, xcb_present_pixmap_checked)(
             c,
             window,
             pixmap,
@@ -428,7 +429,7 @@ impl XcbPresent {
         divisor: u64,
         remainder: u64,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_present_notify_msc)(c, window, serial, target_msc, divisor, remainder)
+        sym!(self, xcb_present_notify_msc)(c, window, serial, target_msc, divisor, remainder)
     }
 
     #[inline]
@@ -441,14 +442,14 @@ impl XcbPresent {
         divisor: u64,
         remainder: u64,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_present_notify_msc_checked)(
+        sym!(self, xcb_present_notify_msc_checked)(
             c, window, serial, target_msc, divisor, remainder,
         )
     }
 
     #[inline]
     pub unsafe fn xcb_present_event_next(&self, i: *mut xcb_present_event_iterator_t) {
-        call!(self, xcb_present_event_next)(i);
+        sym!(self, xcb_present_event_next)(i);
     }
 
     #[inline]
@@ -456,7 +457,7 @@ impl XcbPresent {
         &self,
         i: *mut xcb_present_event_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_present_event_end)(i)
+        sym!(self, xcb_present_event_end)(i)
     }
 
     #[inline]
@@ -467,7 +468,7 @@ impl XcbPresent {
         window: xcb_window_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_present_select_input)(c, eid, window, event_mask)
+        sym!(self, xcb_present_select_input)(c, eid, window, event_mask)
     }
 
     #[inline]
@@ -478,7 +479,7 @@ impl XcbPresent {
         window: xcb_window_t,
         event_mask: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_present_select_input_checked)(c, eid, window, event_mask)
+        sym!(self, xcb_present_select_input_checked)(c, eid, window, event_mask)
     }
 
     #[inline]
@@ -488,7 +489,7 @@ impl XcbPresent {
         cookie: xcb_present_query_capabilities_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_present_query_capabilities_reply_t {
-        call!(self, xcb_present_query_capabilities_reply)(c, cookie, error)
+        sym!(self, xcb_present_query_capabilities_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -497,7 +498,7 @@ impl XcbPresent {
         c: *mut xcb_connection_t,
         target: u32,
     ) -> xcb_present_query_capabilities_cookie_t {
-        call!(self, xcb_present_query_capabilities)(c, target)
+        sym!(self, xcb_present_query_capabilities)(c, target)
     }
 
     #[inline]
@@ -506,7 +507,7 @@ impl XcbPresent {
         c: *mut xcb_connection_t,
         target: u32,
     ) -> xcb_present_query_capabilities_cookie_t {
-        call!(self, xcb_present_query_capabilities_unchecked)(c, target)
+        sym!(self, xcb_present_query_capabilities_unchecked)(c, target)
     }
 
     #[inline]
@@ -514,7 +515,7 @@ impl XcbPresent {
         &self,
         R: *const xcb_present_redirect_notify_event_t,
     ) -> *mut xcb_present_notify_t {
-        call!(self, xcb_present_redirect_notify_notifies)(R)
+        sym!(self, xcb_present_redirect_notify_notifies)(R)
     }
 
     #[inline]
@@ -522,7 +523,7 @@ impl XcbPresent {
         &self,
         R: *const xcb_present_redirect_notify_event_t,
     ) -> c_int {
-        call!(self, xcb_present_redirect_notify_notifies_length)(R)
+        sym!(self, xcb_present_redirect_notify_notifies_length)(R)
     }
 
     #[inline]
@@ -530,138 +531,6 @@ impl XcbPresent {
         &self,
         R: *const xcb_present_redirect_notify_event_t,
     ) -> xcb_present_notify_iterator_t {
-        call!(self, xcb_present_redirect_notify_notifies_iterator)(R)
+        sym!(self, xcb_present_redirect_notify_notifies_iterator)(R)
     }
-}
-
-pub struct XcbPresent {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_present_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_present_notify_next:
-        LazySymbol<unsafe fn(i: *mut xcb_present_notify_iterator_t)>,
-    pub(crate) xcb_present_notify_end:
-        LazySymbol<unsafe fn(i: *mut xcb_present_notify_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_present_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_present_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_present_query_version_reply_t,
-    >,
-    pub(crate) xcb_present_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_present_query_version_cookie_t,
-    >,
-    pub(crate) xcb_present_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u32,
-            minor_version: u32,
-        ) -> xcb_present_query_version_cookie_t,
-    >,
-    pub(crate) xcb_present_pixmap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            pixmap: xcb_pixmap_t,
-            serial: u32,
-            valid: xcb_xfixes_region_t,
-            update: xcb_xfixes_region_t,
-            x_off: i16,
-            y_off: i16,
-            target_crtc: xcb_randr_crtc_t,
-            wait_fence: xcb_sync_fence_t,
-            idle_fence: xcb_sync_fence_t,
-            options: u32,
-            target_msc: u64,
-            divisor: u64,
-            remainder: u64,
-            notifies_len: u32,
-            notifies: *const xcb_present_notify_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_present_pixmap_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            pixmap: xcb_pixmap_t,
-            serial: u32,
-            valid: xcb_xfixes_region_t,
-            update: xcb_xfixes_region_t,
-            x_off: i16,
-            y_off: i16,
-            target_crtc: xcb_randr_crtc_t,
-            wait_fence: xcb_sync_fence_t,
-            idle_fence: xcb_sync_fence_t,
-            options: u32,
-            target_msc: u64,
-            divisor: u64,
-            remainder: u64,
-            notifies_len: u32,
-            notifies: *const xcb_present_notify_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_present_notify_msc: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            serial: u32,
-            target_msc: u64,
-            divisor: u64,
-            remainder: u64,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_present_notify_msc_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            serial: u32,
-            target_msc: u64,
-            divisor: u64,
-            remainder: u64,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_present_event_next: LazySymbol<unsafe fn(i: *mut xcb_present_event_iterator_t)>,
-    pub(crate) xcb_present_event_end:
-        LazySymbol<unsafe fn(i: *mut xcb_present_event_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_present_select_input: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            eid: xcb_present_event_t,
-            window: xcb_window_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_present_select_input_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            eid: xcb_present_event_t,
-            window: xcb_window_t,
-            event_mask: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_present_query_capabilities_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_present_query_capabilities_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_present_query_capabilities_reply_t,
-    >,
-    pub(crate) xcb_present_query_capabilities: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, target: u32) -> xcb_present_query_capabilities_cookie_t,
-    >,
-    pub(crate) xcb_present_query_capabilities_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, target: u32) -> xcb_present_query_capabilities_cookie_t,
-    >,
-    pub(crate) xcb_present_redirect_notify_notifies: LazySymbol<
-        unsafe fn(R: *const xcb_present_redirect_notify_event_t) -> *mut xcb_present_notify_t,
-    >,
-    pub(crate) xcb_present_redirect_notify_notifies_length:
-        LazySymbol<unsafe fn(R: *const xcb_present_redirect_notify_event_t) -> c_int>,
-    pub(crate) xcb_present_redirect_notify_notifies_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_present_redirect_notify_event_t) -> xcb_present_notify_iterator_t,
-    >,
 }

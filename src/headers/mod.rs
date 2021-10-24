@@ -1,65 +1,70 @@
-pub mod ext;
-pub mod xcb;
+pub use {
+    big_requests::*, composite::*, damage::*, dpms::*, dri2::*, dri3::*, ext::*, genericevent::*,
+    glx::*, present::*, randr::*, record::*, render::*, res::*, screensaver::*, selinux::*,
+    shape::*, shm::*, sync::*, test::*, x_print::*, xc_misc::*, xcb::*, xevie::*, xf86dri::*,
+    xfixes::*, xinerama::*, xinput::*, xkb::*, xproto::*, xv::*, xvmc::*,
+};
+
+mod ext;
+mod xcb;
 
 #[path = "generated/ffi/big_requests.rs"]
-pub mod big_requests;
+mod big_requests;
 #[path = "generated/ffi/composite.rs"]
-pub mod composite;
+mod composite;
 #[path = "generated/ffi/damage.rs"]
-pub mod damage;
+mod damage;
 #[path = "generated/ffi/dpms.rs"]
-pub mod dpms;
+mod dpms;
 #[path = "generated/ffi/dri2.rs"]
-pub mod dri2;
+mod dri2;
 #[path = "generated/ffi/dri3.rs"]
-pub mod dri3;
+mod dri3;
 #[path = "generated/ffi/genericevent.rs"]
-pub mod genericevent;
+mod genericevent;
 #[path = "generated/ffi/glx.rs"]
-pub mod glx;
+mod glx;
 #[path = "generated/ffi/present.rs"]
-pub mod present;
+mod present;
 #[path = "generated/ffi/randr.rs"]
-pub mod randr;
+mod randr;
 #[path = "generated/ffi/record.rs"]
-pub mod record;
+mod record;
 #[path = "generated/ffi/render.rs"]
-pub mod render;
+mod render;
 #[path = "generated/ffi/res.rs"]
-pub mod res;
+mod res;
 #[path = "generated/ffi/screensaver.rs"]
-pub mod screensaver;
+mod screensaver;
 #[path = "generated/ffi/selinux.rs"]
-pub mod selinux;
+mod selinux;
 #[path = "generated/ffi/shape.rs"]
-pub mod shape;
+mod shape;
 #[path = "generated/ffi/shm.rs"]
-pub mod shm;
+mod shm;
 #[path = "generated/ffi/sync.rs"]
-pub mod sync;
+mod sync;
 #[path = "generated/ffi/test.rs"]
-pub mod test;
+mod test;
 #[path = "generated/ffi/x_print.rs"]
-pub mod x_print;
+mod x_print;
 #[path = "generated/ffi/xc_misc.rs"]
-pub mod xc_misc;
+mod xc_misc;
 #[path = "generated/ffi/xevie.rs"]
-pub mod xevie;
+mod xevie;
 #[path = "generated/ffi/xf86dri.rs"]
-pub mod xf86dri;
-#[path = "generated/ffi/xf86vidmode.rs"]
-pub mod xf86vidmode;
+mod xf86dri;
 #[path = "generated/ffi/xfixes.rs"]
-pub mod xfixes;
+mod xfixes;
 #[path = "generated/ffi/xinerama.rs"]
-pub mod xinerama;
+mod xinerama;
 #[path = "generated/ffi/xinput.rs"]
-pub mod xinput;
+mod xinput;
 #[path = "generated/ffi/xkb.rs"]
-pub mod xkb;
+mod xkb;
 #[path = "generated/ffi/xproto.rs"]
-pub mod xproto;
+mod xproto;
 #[path = "generated/ffi/xv.rs"]
-pub mod xv;
+mod xv;
 #[path = "generated/ffi/xvmc.rs"]
-pub mod xvmc;
+mod xvmc;

@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -164,8 +165,8 @@ pub struct xcb_xevie_select_input_reply_t {
 
 impl XcbXevie {
     #[inline]
-    pub fn xcb_xevie_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xevie_id)
+    pub unsafe fn xcb_xevie_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xevie_id)
     }
 
     #[inline]
@@ -175,7 +176,7 @@ impl XcbXevie {
         cookie: xcb_xevie_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xevie_query_version_reply_t {
-        call!(self, xcb_xevie_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_xevie_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -185,7 +186,7 @@ impl XcbXevie {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_xevie_query_version_cookie_t {
-        call!(self, xcb_xevie_query_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_xevie_query_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -195,11 +196,7 @@ impl XcbXevie {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_xevie_query_version_cookie_t {
-        call!(self, xcb_xevie_query_version_unchecked)(
-            c,
-            client_major_version,
-            client_minor_version,
-        )
+        sym!(self, xcb_xevie_query_version_unchecked)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -209,7 +206,7 @@ impl XcbXevie {
         cookie: xcb_xevie_start_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xevie_start_reply_t {
-        call!(self, xcb_xevie_start_reply)(c, cookie, error)
+        sym!(self, xcb_xevie_start_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -218,7 +215,7 @@ impl XcbXevie {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xevie_start_cookie_t {
-        call!(self, xcb_xevie_start)(c, screen)
+        sym!(self, xcb_xevie_start)(c, screen)
     }
 
     #[inline]
@@ -227,7 +224,7 @@ impl XcbXevie {
         c: *mut xcb_connection_t,
         screen: u32,
     ) -> xcb_xevie_start_cookie_t {
-        call!(self, xcb_xevie_start_unchecked)(c, screen)
+        sym!(self, xcb_xevie_start_unchecked)(c, screen)
     }
 
     #[inline]
@@ -237,7 +234,7 @@ impl XcbXevie {
         cookie: xcb_xevie_end_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xevie_end_reply_t {
-        call!(self, xcb_xevie_end_reply)(c, cookie, error)
+        sym!(self, xcb_xevie_end_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -246,7 +243,7 @@ impl XcbXevie {
         c: *mut xcb_connection_t,
         cmap: u32,
     ) -> xcb_xevie_end_cookie_t {
-        call!(self, xcb_xevie_end)(c, cmap)
+        sym!(self, xcb_xevie_end)(c, cmap)
     }
 
     #[inline]
@@ -255,12 +252,12 @@ impl XcbXevie {
         c: *mut xcb_connection_t,
         cmap: u32,
     ) -> xcb_xevie_end_cookie_t {
-        call!(self, xcb_xevie_end_unchecked)(c, cmap)
+        sym!(self, xcb_xevie_end_unchecked)(c, cmap)
     }
 
     #[inline]
     pub unsafe fn xcb_xevie_event_next(&self, i: *mut xcb_xevie_event_iterator_t) {
-        call!(self, xcb_xevie_event_next)(i);
+        sym!(self, xcb_xevie_event_next)(i);
     }
 
     #[inline]
@@ -268,7 +265,7 @@ impl XcbXevie {
         &self,
         i: *mut xcb_xevie_event_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xevie_event_end)(i)
+        sym!(self, xcb_xevie_event_end)(i)
     }
 
     #[inline]
@@ -278,7 +275,7 @@ impl XcbXevie {
         cookie: xcb_xevie_send_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xevie_send_reply_t {
-        call!(self, xcb_xevie_send_reply)(c, cookie, error)
+        sym!(self, xcb_xevie_send_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -288,7 +285,7 @@ impl XcbXevie {
         event: xcb_xevie_event_t,
         data_type: u32,
     ) -> xcb_xevie_send_cookie_t {
-        call!(self, xcb_xevie_send)(c, event, data_type)
+        sym!(self, xcb_xevie_send)(c, event, data_type)
     }
 
     #[inline]
@@ -298,7 +295,7 @@ impl XcbXevie {
         event: xcb_xevie_event_t,
         data_type: u32,
     ) -> xcb_xevie_send_cookie_t {
-        call!(self, xcb_xevie_send_unchecked)(c, event, data_type)
+        sym!(self, xcb_xevie_send_unchecked)(c, event, data_type)
     }
 
     #[inline]
@@ -308,7 +305,7 @@ impl XcbXevie {
         cookie: xcb_xevie_select_input_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xevie_select_input_reply_t {
-        call!(self, xcb_xevie_select_input_reply)(c, cookie, error)
+        sym!(self, xcb_xevie_select_input_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -317,7 +314,7 @@ impl XcbXevie {
         c: *mut xcb_connection_t,
         event_mask: u32,
     ) -> xcb_xevie_select_input_cookie_t {
-        call!(self, xcb_xevie_select_input)(c, event_mask)
+        sym!(self, xcb_xevie_select_input)(c, event_mask)
     }
 
     #[inline]
@@ -326,91 +323,6 @@ impl XcbXevie {
         c: *mut xcb_connection_t,
         event_mask: u32,
     ) -> xcb_xevie_select_input_cookie_t {
-        call!(self, xcb_xevie_select_input_unchecked)(c, event_mask)
+        sym!(self, xcb_xevie_select_input_unchecked)(c, event_mask)
     }
-}
-
-pub struct XcbXevie {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xevie_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xevie_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xevie_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xevie_query_version_reply_t,
-    >,
-    pub(crate) xcb_xevie_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_xevie_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xevie_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_xevie_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xevie_start_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xevie_start_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xevie_start_reply_t,
-    >,
-    pub(crate) xcb_xevie_start:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_xevie_start_cookie_t>,
-    pub(crate) xcb_xevie_start_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_xevie_start_cookie_t>,
-    pub(crate) xcb_xevie_end_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xevie_end_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xevie_end_reply_t,
-    >,
-    pub(crate) xcb_xevie_end:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: u32) -> xcb_xevie_end_cookie_t>,
-    pub(crate) xcb_xevie_end_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cmap: u32) -> xcb_xevie_end_cookie_t>,
-    pub(crate) xcb_xevie_event_next: LazySymbol<unsafe fn(i: *mut xcb_xevie_event_iterator_t)>,
-    pub(crate) xcb_xevie_event_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xevie_event_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xevie_send_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xevie_send_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xevie_send_reply_t,
-    >,
-    pub(crate) xcb_xevie_send: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            event: xcb_xevie_event_t,
-            data_type: u32,
-        ) -> xcb_xevie_send_cookie_t,
-    >,
-    pub(crate) xcb_xevie_send_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            event: xcb_xevie_event_t,
-            data_type: u32,
-        ) -> xcb_xevie_send_cookie_t,
-    >,
-    pub(crate) xcb_xevie_select_input_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xevie_select_input_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xevie_select_input_reply_t,
-    >,
-    pub(crate) xcb_xevie_select_input: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, event_mask: u32) -> xcb_xevie_select_input_cookie_t,
-    >,
-    pub(crate) xcb_xevie_select_input_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, event_mask: u32) -> xcb_xevie_select_input_cookie_t,
-    >,
 }

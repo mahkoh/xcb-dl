@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -32,8 +33,8 @@ pub struct xcb_big_requests_enable_reply_t {
 
 impl Xcb {
     #[inline]
-    pub fn xcb_big_requests_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_big_requests_id)
+    pub unsafe fn xcb_big_requests_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_big_requests_id)
     }
 
     #[inline]
@@ -43,7 +44,7 @@ impl Xcb {
         cookie: xcb_big_requests_enable_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_big_requests_enable_reply_t {
-        call!(self, xcb_big_requests_enable_reply)(c, cookie, error)
+        sym!(self, xcb_big_requests_enable_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -51,7 +52,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_big_requests_enable_cookie_t {
-        call!(self, xcb_big_requests_enable)(c)
+        sym!(self, xcb_big_requests_enable)(c)
     }
 
     #[inline]
@@ -59,22 +60,6 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_big_requests_enable_cookie_t {
-        call!(self, xcb_big_requests_enable_unchecked)(c)
+        sym!(self, xcb_big_requests_enable_unchecked)(c)
     }
-}
-
-pub struct Xcb {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_big_requests_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_big_requests_enable_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_big_requests_enable_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_big_requests_enable_reply_t,
-    >,
-    pub(crate) xcb_big_requests_enable:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_big_requests_enable_cookie_t>,
-    pub(crate) xcb_big_requests_enable_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_big_requests_enable_cookie_t>,
 }

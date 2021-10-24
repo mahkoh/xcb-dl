@@ -208,12 +208,12 @@ impl CodeGen {
         let out = &mut self.ffi_buf;
         writeln!(out).unwrap();
         writeln!(out, "#[inline]");
-        writeln!(out, "pub unsafe fn {}(&self, i: *mut {}) {{ call!(self, {})(i); }}", &it_next, &it_typ, it_next).unwrap();
+        writeln!(out, "pub unsafe fn {}(&self, i: *mut {}) {{ sym!(self, {})(i); }}", &it_next, &it_typ, it_next).unwrap();
         writeln!(out).unwrap();
         writeln!(out, "#[inline]");
         writeln!(
             out,
-            "pub unsafe fn {}(&self, i: *mut {}) -> xcb_generic_iterator_t {{ call!(self, {})(i) }}",
+            "pub unsafe fn {}(&self, i: *mut {}) -> xcb_generic_iterator_t {{ sym!(self, {})(i) }}",
             &it_end, &it_typ, it_end
         )
         .unwrap();
@@ -257,7 +257,7 @@ impl CodeGen {
             writeln!(out, "#[inline]");
             writeln!(
                 out,
-                "pub unsafe fn {}(&self, {}: *const {}) -> *mut {} {{ call!(self, {})({}) }}",
+                "pub unsafe fn {}(&self, {}: *const {}) -> *mut {} {{ sym!(self, {})({}) }}",
                 &acc_fn, param, &ffi_typ, &ftyp, acc_fn, param
             )?;
         }
@@ -268,7 +268,7 @@ impl CodeGen {
             let out = &mut self.ffi_buf;
             writeln!(out)?;
             writeln!(out, "#[inline]");
-            writeln!(out, "pub unsafe fn {}(&self, {}) -> c_int {{ call!(self, {})({}) }}", &len_fn, &params, len_fn, args)?;
+            writeln!(out, "pub unsafe fn {}(&self, {}) -> c_int {{ sym!(self, {})({}) }}", &len_fn, &params, len_fn, args)?;
         }
 
         if end_needed {
@@ -279,7 +279,7 @@ impl CodeGen {
             writeln!(out, "#[inline]");
             writeln!(
                 out,
-                "pub unsafe fn {}(&self, {}) -> xcb_generic_iterator_t {{ call!(self, {})({}) }}",
+                "pub unsafe fn {}(&self, {}) -> xcb_generic_iterator_t {{ sym!(self, {})({}) }}",
                 &end_fn, &params, end_fn, args,
             )?;
         }
@@ -293,7 +293,7 @@ impl CodeGen {
             writeln!(out, "#[inline]");
             writeln!(
                 out,
-                "pub unsafe fn {}(&self, {}) -> {} {{ call!(self, {})({}) }}",
+                "pub unsafe fn {}(&self, {}) -> {} {{ sym!(self, {})({}) }}",
                 &it_fn, &params, &it_typ, it_fn, args
             )?;
         }
@@ -360,7 +360,7 @@ impl CodeGen {
                         writeln!(out, "#[inline]");
                         writeln!(
                             out,
-                            "pub unsafe fn {}(&self, R: *const {}) -> *mut {} {{ call!(self, {})(R) }}",
+                            "pub unsafe fn {}(&self, R: *const {}) -> *mut {} {{ sym!(self, {})(R) }}",
                             &fn_name, ffi_typ, ret, fn_name,
                         )?;
                     }
@@ -381,7 +381,7 @@ impl CodeGen {
                     writeln!(out, "#[inline]");
                     writeln!(
                         out,
-                        "pub unsafe fn {}(&self, R: *const {}) -> *mut {} {{ call!(self, {})(R) }}",
+                        "pub unsafe fn {}(&self, R: *const {}) -> *mut {} {{ sym!(self, {})(R) }}",
                         &fn_name, ffi_typ, ret, fn_name,
                     )?;
                 }
@@ -675,7 +675,7 @@ impl CodeGen {
         }
 
         let out = &mut self.ffi_buf;
-        writeln!(out, "{}    ) -> {} {{ call!(self, {})({}) }}", params, &cookie_typ, fn_name, args)?;
+        writeln!(out, "{}    ) -> {} {{ sym!(self, {})({}) }}", params, &cookie_typ, fn_name, args)?;
 
         writeln!(self.ffi_struct_buf, "pub(crate) {}: LazySymbol<unsafe fn({}) -> {}>,", fn_name, params, cookie_typ);
 
@@ -743,7 +743,7 @@ impl CodeGen {
             writeln!(out, "        c: *mut xcb_connection_t,")?;
             writeln!(out, "        cookie: {},", &cookie_ffi_typ)?;
             writeln!(out, "        error: *mut *mut xcb_generic_error_t,")?;
-            writeln!(out, "    ) -> *mut {} {{ call!(self, {})(c, cookie, error) }}", &ffi_reply_typ, ffi_reply_fn)?;
+            writeln!(out, "    ) -> *mut {} {{ sym!(self, {})(c, cookie, error) }}", &ffi_reply_typ, ffi_reply_fn)?;
         }
 
         if has_fd(&reply.fields) {
@@ -756,7 +756,7 @@ impl CodeGen {
             writeln!(out, "        &self,")?;
             writeln!(out, "        c: *mut xcb_connection_t,")?;
             writeln!(out, "        reply: *mut {},", &ffi_reply_typ)?;
-            writeln!(out, "    ) -> *mut c_int {{ call!(self, {})(c, reply) }}", fds_fn)?;
+            writeln!(out, "    ) -> *mut c_int {{ sym!(self, {})(c, reply) }}", fds_fn)?;
         }
 
         Ok((cookie_ffi_typ, ffi_reply_fn, ffi_reply_typ))

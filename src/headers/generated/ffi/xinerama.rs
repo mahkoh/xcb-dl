@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -190,8 +191,8 @@ pub struct xcb_xinerama_query_screens_reply_t {
 
 impl XcbXinerama {
     #[inline]
-    pub fn xcb_xinerama_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xinerama_id)
+    pub unsafe fn xcb_xinerama_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xinerama_id)
     }
 
     #[inline]
@@ -199,7 +200,7 @@ impl XcbXinerama {
         &self,
         i: *mut xcb_xinerama_screen_info_iterator_t,
     ) {
-        call!(self, xcb_xinerama_screen_info_next)(i);
+        sym!(self, xcb_xinerama_screen_info_next)(i);
     }
 
     #[inline]
@@ -207,7 +208,7 @@ impl XcbXinerama {
         &self,
         i: *mut xcb_xinerama_screen_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinerama_screen_info_end)(i)
+        sym!(self, xcb_xinerama_screen_info_end)(i)
     }
 
     #[inline]
@@ -217,7 +218,7 @@ impl XcbXinerama {
         cookie: xcb_xinerama_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinerama_query_version_reply_t {
-        call!(self, xcb_xinerama_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_xinerama_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -227,7 +228,7 @@ impl XcbXinerama {
         major: u8,
         minor: u8,
     ) -> xcb_xinerama_query_version_cookie_t {
-        call!(self, xcb_xinerama_query_version)(c, major, minor)
+        sym!(self, xcb_xinerama_query_version)(c, major, minor)
     }
 
     #[inline]
@@ -237,7 +238,7 @@ impl XcbXinerama {
         major: u8,
         minor: u8,
     ) -> xcb_xinerama_query_version_cookie_t {
-        call!(self, xcb_xinerama_query_version_unchecked)(c, major, minor)
+        sym!(self, xcb_xinerama_query_version_unchecked)(c, major, minor)
     }
 
     #[inline]
@@ -247,7 +248,7 @@ impl XcbXinerama {
         cookie: xcb_xinerama_get_state_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinerama_get_state_reply_t {
-        call!(self, xcb_xinerama_get_state_reply)(c, cookie, error)
+        sym!(self, xcb_xinerama_get_state_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -256,7 +257,7 @@ impl XcbXinerama {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinerama_get_state_cookie_t {
-        call!(self, xcb_xinerama_get_state)(c, window)
+        sym!(self, xcb_xinerama_get_state)(c, window)
     }
 
     #[inline]
@@ -265,7 +266,7 @@ impl XcbXinerama {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinerama_get_state_cookie_t {
-        call!(self, xcb_xinerama_get_state_unchecked)(c, window)
+        sym!(self, xcb_xinerama_get_state_unchecked)(c, window)
     }
 
     #[inline]
@@ -275,7 +276,7 @@ impl XcbXinerama {
         cookie: xcb_xinerama_get_screen_count_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinerama_get_screen_count_reply_t {
-        call!(self, xcb_xinerama_get_screen_count_reply)(c, cookie, error)
+        sym!(self, xcb_xinerama_get_screen_count_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -284,7 +285,7 @@ impl XcbXinerama {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinerama_get_screen_count_cookie_t {
-        call!(self, xcb_xinerama_get_screen_count)(c, window)
+        sym!(self, xcb_xinerama_get_screen_count)(c, window)
     }
 
     #[inline]
@@ -293,7 +294,7 @@ impl XcbXinerama {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinerama_get_screen_count_cookie_t {
-        call!(self, xcb_xinerama_get_screen_count_unchecked)(c, window)
+        sym!(self, xcb_xinerama_get_screen_count_unchecked)(c, window)
     }
 
     #[inline]
@@ -303,7 +304,7 @@ impl XcbXinerama {
         cookie: xcb_xinerama_get_screen_size_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinerama_get_screen_size_reply_t {
-        call!(self, xcb_xinerama_get_screen_size_reply)(c, cookie, error)
+        sym!(self, xcb_xinerama_get_screen_size_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -313,7 +314,7 @@ impl XcbXinerama {
         window: xcb_window_t,
         screen: u32,
     ) -> xcb_xinerama_get_screen_size_cookie_t {
-        call!(self, xcb_xinerama_get_screen_size)(c, window, screen)
+        sym!(self, xcb_xinerama_get_screen_size)(c, window, screen)
     }
 
     #[inline]
@@ -323,7 +324,7 @@ impl XcbXinerama {
         window: xcb_window_t,
         screen: u32,
     ) -> xcb_xinerama_get_screen_size_cookie_t {
-        call!(self, xcb_xinerama_get_screen_size_unchecked)(c, window, screen)
+        sym!(self, xcb_xinerama_get_screen_size_unchecked)(c, window, screen)
     }
 
     #[inline]
@@ -333,7 +334,7 @@ impl XcbXinerama {
         cookie: xcb_xinerama_is_active_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinerama_is_active_reply_t {
-        call!(self, xcb_xinerama_is_active_reply)(c, cookie, error)
+        sym!(self, xcb_xinerama_is_active_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -341,7 +342,7 @@ impl XcbXinerama {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xinerama_is_active_cookie_t {
-        call!(self, xcb_xinerama_is_active)(c)
+        sym!(self, xcb_xinerama_is_active)(c)
     }
 
     #[inline]
@@ -349,7 +350,7 @@ impl XcbXinerama {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xinerama_is_active_cookie_t {
-        call!(self, xcb_xinerama_is_active_unchecked)(c)
+        sym!(self, xcb_xinerama_is_active_unchecked)(c)
     }
 
     #[inline]
@@ -357,7 +358,7 @@ impl XcbXinerama {
         &self,
         R: *const xcb_xinerama_query_screens_reply_t,
     ) -> *mut xcb_xinerama_screen_info_t {
-        call!(self, xcb_xinerama_query_screens_screen_info)(R)
+        sym!(self, xcb_xinerama_query_screens_screen_info)(R)
     }
 
     #[inline]
@@ -365,7 +366,7 @@ impl XcbXinerama {
         &self,
         R: *const xcb_xinerama_query_screens_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinerama_query_screens_screen_info_length)(R)
+        sym!(self, xcb_xinerama_query_screens_screen_info_length)(R)
     }
 
     #[inline]
@@ -373,7 +374,7 @@ impl XcbXinerama {
         &self,
         R: *const xcb_xinerama_query_screens_reply_t,
     ) -> xcb_xinerama_screen_info_iterator_t {
-        call!(self, xcb_xinerama_query_screens_screen_info_iterator)(R)
+        sym!(self, xcb_xinerama_query_screens_screen_info_iterator)(R)
     }
 
     #[inline]
@@ -383,7 +384,7 @@ impl XcbXinerama {
         cookie: xcb_xinerama_query_screens_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinerama_query_screens_reply_t {
-        call!(self, xcb_xinerama_query_screens_reply)(c, cookie, error)
+        sym!(self, xcb_xinerama_query_screens_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -391,7 +392,7 @@ impl XcbXinerama {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xinerama_query_screens_cookie_t {
-        call!(self, xcb_xinerama_query_screens)(c)
+        sym!(self, xcb_xinerama_query_screens)(c)
     }
 
     #[inline]
@@ -399,128 +400,6 @@ impl XcbXinerama {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xinerama_query_screens_cookie_t {
-        call!(self, xcb_xinerama_query_screens_unchecked)(c)
+        sym!(self, xcb_xinerama_query_screens_unchecked)(c)
     }
-}
-
-pub struct XcbXinerama {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xinerama_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xinerama_screen_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinerama_screen_info_iterator_t)>,
-    pub(crate) xcb_xinerama_screen_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinerama_screen_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinerama_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinerama_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinerama_query_version_reply_t,
-    >,
-    pub(crate) xcb_xinerama_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major: u8,
-            minor: u8,
-        ) -> xcb_xinerama_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major: u8,
-            minor: u8,
-        ) -> xcb_xinerama_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_get_state_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinerama_get_state_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinerama_get_state_reply_t,
-    >,
-    pub(crate) xcb_xinerama_get_state: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinerama_get_state_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_get_state_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinerama_get_state_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_get_screen_count_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinerama_get_screen_count_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinerama_get_screen_count_reply_t,
-    >,
-    pub(crate) xcb_xinerama_get_screen_count: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinerama_get_screen_count_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_get_screen_count_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinerama_get_screen_count_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_get_screen_size_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinerama_get_screen_size_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinerama_get_screen_size_reply_t,
-    >,
-    pub(crate) xcb_xinerama_get_screen_size: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            screen: u32,
-        ) -> xcb_xinerama_get_screen_size_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_get_screen_size_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            screen: u32,
-        ) -> xcb_xinerama_get_screen_size_cookie_t,
-    >,
-    pub(crate) xcb_xinerama_is_active_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinerama_is_active_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinerama_is_active_reply_t,
-    >,
-    pub(crate) xcb_xinerama_is_active:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xinerama_is_active_cookie_t>,
-    pub(crate) xcb_xinerama_is_active_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xinerama_is_active_cookie_t>,
-    pub(crate) xcb_xinerama_query_screens_screen_info: LazySymbol<
-        unsafe fn(R: *const xcb_xinerama_query_screens_reply_t) -> *mut xcb_xinerama_screen_info_t,
-    >,
-    pub(crate) xcb_xinerama_query_screens_screen_info_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinerama_query_screens_reply_t) -> c_int>,
-    pub(crate) xcb_xinerama_query_screens_screen_info_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinerama_query_screens_reply_t,
-        ) -> xcb_xinerama_screen_info_iterator_t,
-    >,
-    pub(crate) xcb_xinerama_query_screens_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinerama_query_screens_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinerama_query_screens_reply_t,
-    >,
-    pub(crate) xcb_xinerama_query_screens:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xinerama_query_screens_cookie_t>,
-    pub(crate) xcb_xinerama_query_screens_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xinerama_query_screens_cookie_t>,
 }

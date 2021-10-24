@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -3327,13 +3328,13 @@ pub struct xcb_xinput_class_error_t {
 
 impl XcbXinput {
     #[inline]
-    pub fn xcb_xinput_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xinput_id)
+    pub unsafe fn xcb_xinput_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xinput_id)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_event_class_next(&self, i: *mut xcb_xinput_event_class_iterator_t) {
-        call!(self, xcb_xinput_event_class_next)(i);
+        sym!(self, xcb_xinput_event_class_next)(i);
     }
 
     #[inline]
@@ -3341,12 +3342,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_event_class_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_event_class_end)(i)
+        sym!(self, xcb_xinput_event_class_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_key_code_next(&self, i: *mut xcb_xinput_key_code_iterator_t) {
-        call!(self, xcb_xinput_key_code_next)(i);
+        sym!(self, xcb_xinput_key_code_next)(i);
     }
 
     #[inline]
@@ -3354,12 +3355,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_key_code_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_key_code_end)(i)
+        sym!(self, xcb_xinput_key_code_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_device_id_next(&self, i: *mut xcb_xinput_device_id_iterator_t) {
-        call!(self, xcb_xinput_device_id_next)(i);
+        sym!(self, xcb_xinput_device_id_next)(i);
     }
 
     #[inline]
@@ -3367,12 +3368,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_id_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_id_end)(i)
+        sym!(self, xcb_xinput_device_id_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_fp1616_next(&self, i: *mut xcb_xinput_fp1616_iterator_t) {
-        call!(self, xcb_xinput_fp1616_next)(i);
+        sym!(self, xcb_xinput_fp1616_next)(i);
     }
 
     #[inline]
@@ -3380,12 +3381,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_fp1616_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_fp1616_end)(i)
+        sym!(self, xcb_xinput_fp1616_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_fp3232_next(&self, i: *mut xcb_xinput_fp3232_iterator_t) {
-        call!(self, xcb_xinput_fp3232_next)(i);
+        sym!(self, xcb_xinput_fp3232_next)(i);
     }
 
     #[inline]
@@ -3393,7 +3394,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_fp3232_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_fp3232_end)(i)
+        sym!(self, xcb_xinput_fp3232_end)(i)
     }
 
     #[inline]
@@ -3403,7 +3404,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_extension_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_extension_version_reply_t {
-        call!(self, xcb_xinput_get_extension_version_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_extension_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3413,7 +3414,7 @@ impl XcbXinput {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_xinput_get_extension_version_cookie_t {
-        call!(self, xcb_xinput_get_extension_version)(c, name_len, name)
+        sym!(self, xcb_xinput_get_extension_version)(c, name_len, name)
     }
 
     #[inline]
@@ -3423,12 +3424,12 @@ impl XcbXinput {
         name_len: u16,
         name: *const c_char,
     ) -> xcb_xinput_get_extension_version_cookie_t {
-        call!(self, xcb_xinput_get_extension_version_unchecked)(c, name_len, name)
+        sym!(self, xcb_xinput_get_extension_version_unchecked)(c, name_len, name)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_device_info_next(&self, i: *mut xcb_xinput_device_info_iterator_t) {
-        call!(self, xcb_xinput_device_info_next)(i);
+        sym!(self, xcb_xinput_device_info_next)(i);
     }
 
     #[inline]
@@ -3436,12 +3437,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_info_end)(i)
+        sym!(self, xcb_xinput_device_info_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_key_info_next(&self, i: *mut xcb_xinput_key_info_iterator_t) {
-        call!(self, xcb_xinput_key_info_next)(i);
+        sym!(self, xcb_xinput_key_info_next)(i);
     }
 
     #[inline]
@@ -3449,12 +3450,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_key_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_key_info_end)(i)
+        sym!(self, xcb_xinput_key_info_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_button_info_next(&self, i: *mut xcb_xinput_button_info_iterator_t) {
-        call!(self, xcb_xinput_button_info_next)(i);
+        sym!(self, xcb_xinput_button_info_next)(i);
     }
 
     #[inline]
@@ -3462,12 +3463,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_button_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_button_info_end)(i)
+        sym!(self, xcb_xinput_button_info_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_axis_info_next(&self, i: *mut xcb_xinput_axis_info_iterator_t) {
-        call!(self, xcb_xinput_axis_info_next)(i);
+        sym!(self, xcb_xinput_axis_info_next)(i);
     }
 
     #[inline]
@@ -3475,7 +3476,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_axis_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_axis_info_end)(i)
+        sym!(self, xcb_xinput_axis_info_end)(i)
     }
 
     #[inline]
@@ -3483,7 +3484,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_valuator_info_t,
     ) -> *mut xcb_xinput_axis_info_t {
-        call!(self, xcb_xinput_valuator_info_axes)(R)
+        sym!(self, xcb_xinput_valuator_info_axes)(R)
     }
 
     #[inline]
@@ -3491,7 +3492,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_valuator_info_t,
     ) -> c_int {
-        call!(self, xcb_xinput_valuator_info_axes_length)(R)
+        sym!(self, xcb_xinput_valuator_info_axes_length)(R)
     }
 
     #[inline]
@@ -3499,7 +3500,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_valuator_info_t,
     ) -> xcb_xinput_axis_info_iterator_t {
-        call!(self, xcb_xinput_valuator_info_axes_iterator)(R)
+        sym!(self, xcb_xinput_valuator_info_axes_iterator)(R)
     }
 
     #[inline]
@@ -3507,7 +3508,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_valuator_info_iterator_t,
     ) {
-        call!(self, xcb_xinput_valuator_info_next)(i);
+        sym!(self, xcb_xinput_valuator_info_next)(i);
     }
 
     #[inline]
@@ -3515,12 +3516,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_valuator_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_valuator_info_end)(i)
+        sym!(self, xcb_xinput_valuator_info_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_input_info_next(&self, i: *mut xcb_xinput_input_info_iterator_t) {
-        call!(self, xcb_xinput_input_info_next)(i);
+        sym!(self, xcb_xinput_input_info_next)(i);
     }
 
     #[inline]
@@ -3528,7 +3529,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_input_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_input_info_end)(i)
+        sym!(self, xcb_xinput_input_info_end)(i)
     }
 
     #[inline]
@@ -3536,7 +3537,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_name_t,
     ) -> *mut c_char {
-        call!(self, xcb_xinput_device_name_string)(R)
+        sym!(self, xcb_xinput_device_name_string)(R)
     }
 
     #[inline]
@@ -3544,7 +3545,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_name_t,
     ) -> c_int {
-        call!(self, xcb_xinput_device_name_string_length)(R)
+        sym!(self, xcb_xinput_device_name_string_length)(R)
     }
 
     #[inline]
@@ -3552,12 +3553,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_name_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_name_string_end)(R)
+        sym!(self, xcb_xinput_device_name_string_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_device_name_next(&self, i: *mut xcb_xinput_device_name_iterator_t) {
-        call!(self, xcb_xinput_device_name_next)(i);
+        sym!(self, xcb_xinput_device_name_next)(i);
     }
 
     #[inline]
@@ -3565,7 +3566,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_name_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_name_end)(i)
+        sym!(self, xcb_xinput_device_name_end)(i)
     }
 
     #[inline]
@@ -3573,7 +3574,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_list_input_devices_reply_t,
     ) -> *mut xcb_xinput_device_info_t {
-        call!(self, xcb_xinput_list_input_devices_devices)(R)
+        sym!(self, xcb_xinput_list_input_devices_devices)(R)
     }
 
     #[inline]
@@ -3581,7 +3582,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_list_input_devices_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_list_input_devices_devices_length)(R)
+        sym!(self, xcb_xinput_list_input_devices_devices_length)(R)
     }
 
     #[inline]
@@ -3589,7 +3590,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_list_input_devices_reply_t,
     ) -> xcb_xinput_device_info_iterator_t {
-        call!(self, xcb_xinput_list_input_devices_devices_iterator)(R)
+        sym!(self, xcb_xinput_list_input_devices_devices_iterator)(R)
     }
 
     #[inline]
@@ -3599,7 +3600,7 @@ impl XcbXinput {
         cookie: xcb_xinput_list_input_devices_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_list_input_devices_reply_t {
-        call!(self, xcb_xinput_list_input_devices_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_list_input_devices_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3607,7 +3608,7 @@ impl XcbXinput {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xinput_list_input_devices_cookie_t {
-        call!(self, xcb_xinput_list_input_devices)(c)
+        sym!(self, xcb_xinput_list_input_devices)(c)
     }
 
     #[inline]
@@ -3615,7 +3616,7 @@ impl XcbXinput {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xinput_list_input_devices_cookie_t {
-        call!(self, xcb_xinput_list_input_devices_unchecked)(c)
+        sym!(self, xcb_xinput_list_input_devices_unchecked)(c)
     }
 
     #[inline]
@@ -3623,7 +3624,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_input_class_info_iterator_t,
     ) {
-        call!(self, xcb_xinput_input_class_info_next)(i);
+        sym!(self, xcb_xinput_input_class_info_next)(i);
     }
 
     #[inline]
@@ -3631,7 +3632,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_input_class_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_input_class_info_end)(i)
+        sym!(self, xcb_xinput_input_class_info_end)(i)
     }
 
     #[inline]
@@ -3639,7 +3640,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_open_device_reply_t,
     ) -> *mut xcb_xinput_input_class_info_t {
-        call!(self, xcb_xinput_open_device_class_info)(R)
+        sym!(self, xcb_xinput_open_device_class_info)(R)
     }
 
     #[inline]
@@ -3647,7 +3648,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_open_device_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_open_device_class_info_length)(R)
+        sym!(self, xcb_xinput_open_device_class_info_length)(R)
     }
 
     #[inline]
@@ -3655,7 +3656,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_open_device_reply_t,
     ) -> xcb_xinput_input_class_info_iterator_t {
-        call!(self, xcb_xinput_open_device_class_info_iterator)(R)
+        sym!(self, xcb_xinput_open_device_class_info_iterator)(R)
     }
 
     #[inline]
@@ -3665,7 +3666,7 @@ impl XcbXinput {
         cookie: xcb_xinput_open_device_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_open_device_reply_t {
-        call!(self, xcb_xinput_open_device_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_open_device_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3674,7 +3675,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_open_device_cookie_t {
-        call!(self, xcb_xinput_open_device)(c, device_id)
+        sym!(self, xcb_xinput_open_device)(c, device_id)
     }
 
     #[inline]
@@ -3683,7 +3684,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_open_device_cookie_t {
-        call!(self, xcb_xinput_open_device_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_open_device_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -3692,7 +3693,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_close_device)(c, device_id)
+        sym!(self, xcb_xinput_close_device)(c, device_id)
     }
 
     #[inline]
@@ -3701,7 +3702,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_close_device_checked)(c, device_id)
+        sym!(self, xcb_xinput_close_device_checked)(c, device_id)
     }
 
     #[inline]
@@ -3711,7 +3712,7 @@ impl XcbXinput {
         cookie: xcb_xinput_set_device_mode_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_set_device_mode_reply_t {
-        call!(self, xcb_xinput_set_device_mode_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_set_device_mode_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3721,7 +3722,7 @@ impl XcbXinput {
         device_id: u8,
         mode: u8,
     ) -> xcb_xinput_set_device_mode_cookie_t {
-        call!(self, xcb_xinput_set_device_mode)(c, device_id, mode)
+        sym!(self, xcb_xinput_set_device_mode)(c, device_id, mode)
     }
 
     #[inline]
@@ -3731,7 +3732,7 @@ impl XcbXinput {
         device_id: u8,
         mode: u8,
     ) -> xcb_xinput_set_device_mode_cookie_t {
-        call!(self, xcb_xinput_set_device_mode_unchecked)(c, device_id, mode)
+        sym!(self, xcb_xinput_set_device_mode_unchecked)(c, device_id, mode)
     }
 
     #[inline]
@@ -3742,7 +3743,7 @@ impl XcbXinput {
         num_classes: u16,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_select_extension_event)(c, window, num_classes, classes)
+        sym!(self, xcb_xinput_select_extension_event)(c, window, num_classes, classes)
     }
 
     #[inline]
@@ -3753,7 +3754,7 @@ impl XcbXinput {
         num_classes: u16,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_select_extension_event_checked)(c, window, num_classes, classes)
+        sym!(self, xcb_xinput_select_extension_event_checked)(c, window, num_classes, classes)
     }
 
     #[inline]
@@ -3761,7 +3762,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_selected_extension_events_reply_t,
     ) -> *mut xcb_xinput_event_class_t {
-        call!(self, xcb_xinput_get_selected_extension_events_this_classes)(R)
+        sym!(self, xcb_xinput_get_selected_extension_events_this_classes)(R)
     }
 
     #[inline]
@@ -3769,7 +3770,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_selected_extension_events_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xinput_get_selected_extension_events_this_classes_length
         )(R)
@@ -3780,7 +3781,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_selected_extension_events_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xinput_get_selected_extension_events_this_classes_end
         )(R)
@@ -3791,7 +3792,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_selected_extension_events_reply_t,
     ) -> *mut xcb_xinput_event_class_t {
-        call!(self, xcb_xinput_get_selected_extension_events_all_classes)(R)
+        sym!(self, xcb_xinput_get_selected_extension_events_all_classes)(R)
     }
 
     #[inline]
@@ -3799,7 +3800,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_selected_extension_events_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xinput_get_selected_extension_events_all_classes_length
         )(R)
@@ -3810,7 +3811,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_selected_extension_events_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xinput_get_selected_extension_events_all_classes_end
         )(R)
@@ -3823,7 +3824,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_selected_extension_events_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_selected_extension_events_reply_t {
-        call!(self, xcb_xinput_get_selected_extension_events_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_selected_extension_events_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3832,7 +3833,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_get_selected_extension_events_cookie_t {
-        call!(self, xcb_xinput_get_selected_extension_events)(c, window)
+        sym!(self, xcb_xinput_get_selected_extension_events)(c, window)
     }
 
     #[inline]
@@ -3841,7 +3842,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_get_selected_extension_events_cookie_t {
-        call!(self, xcb_xinput_get_selected_extension_events_unchecked)(c, window)
+        sym!(self, xcb_xinput_get_selected_extension_events_unchecked)(c, window)
     }
 
     #[inline]
@@ -3853,7 +3854,7 @@ impl XcbXinput {
         mode: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_device_dont_propagate_list)(
+        sym!(self, xcb_xinput_change_device_dont_propagate_list)(
             c,
             window,
             num_classes,
@@ -3871,7 +3872,7 @@ impl XcbXinput {
         mode: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_device_dont_propagate_list_checked)(
+        sym!(self, xcb_xinput_change_device_dont_propagate_list_checked)(
             c,
             window,
             num_classes,
@@ -3885,7 +3886,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_dont_propagate_list_reply_t,
     ) -> *mut xcb_xinput_event_class_t {
-        call!(self, xcb_xinput_get_device_dont_propagate_list_classes)(R)
+        sym!(self, xcb_xinput_get_device_dont_propagate_list_classes)(R)
     }
 
     #[inline]
@@ -3893,7 +3894,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_dont_propagate_list_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xinput_get_device_dont_propagate_list_classes_length
         )(R)
@@ -3904,7 +3905,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_dont_propagate_list_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_get_device_dont_propagate_list_classes_end)(R)
+        sym!(self, xcb_xinput_get_device_dont_propagate_list_classes_end)(R)
     }
 
     #[inline]
@@ -3914,7 +3915,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_dont_propagate_list_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_dont_propagate_list_reply_t {
-        call!(self, xcb_xinput_get_device_dont_propagate_list_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_dont_propagate_list_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3923,7 +3924,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_get_device_dont_propagate_list_cookie_t {
-        call!(self, xcb_xinput_get_device_dont_propagate_list)(c, window)
+        sym!(self, xcb_xinput_get_device_dont_propagate_list)(c, window)
     }
 
     #[inline]
@@ -3932,7 +3933,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_get_device_dont_propagate_list_cookie_t {
-        call!(self, xcb_xinput_get_device_dont_propagate_list_unchecked)(c, window)
+        sym!(self, xcb_xinput_get_device_dont_propagate_list_unchecked)(c, window)
     }
 
     #[inline]
@@ -3940,7 +3941,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_time_coord_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_time_coord_next)(i);
+        sym!(self, xcb_xinput_device_time_coord_next)(i);
     }
 
     #[inline]
@@ -3948,7 +3949,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_time_coord_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_time_coord_end)(i)
+        sym!(self, xcb_xinput_device_time_coord_end)(i)
     }
 
     #[inline]
@@ -3958,7 +3959,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_motion_events_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_motion_events_reply_t {
-        call!(self, xcb_xinput_get_device_motion_events_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_motion_events_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3969,7 +3970,7 @@ impl XcbXinput {
         stop: xcb_timestamp_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_motion_events_cookie_t {
-        call!(self, xcb_xinput_get_device_motion_events)(c, start, stop, device_id)
+        sym!(self, xcb_xinput_get_device_motion_events)(c, start, stop, device_id)
     }
 
     #[inline]
@@ -3980,7 +3981,7 @@ impl XcbXinput {
         stop: xcb_timestamp_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_motion_events_cookie_t {
-        call!(self, xcb_xinput_get_device_motion_events_unchecked)(c, start, stop, device_id)
+        sym!(self, xcb_xinput_get_device_motion_events_unchecked)(c, start, stop, device_id)
     }
 
     #[inline]
@@ -3990,7 +3991,7 @@ impl XcbXinput {
         cookie: xcb_xinput_change_keyboard_device_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_change_keyboard_device_reply_t {
-        call!(self, xcb_xinput_change_keyboard_device_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_change_keyboard_device_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -3999,7 +4000,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_change_keyboard_device_cookie_t {
-        call!(self, xcb_xinput_change_keyboard_device)(c, device_id)
+        sym!(self, xcb_xinput_change_keyboard_device)(c, device_id)
     }
 
     #[inline]
@@ -4008,7 +4009,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_change_keyboard_device_cookie_t {
-        call!(self, xcb_xinput_change_keyboard_device_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_change_keyboard_device_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -4018,7 +4019,7 @@ impl XcbXinput {
         cookie: xcb_xinput_change_pointer_device_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_change_pointer_device_reply_t {
-        call!(self, xcb_xinput_change_pointer_device_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_change_pointer_device_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4029,7 +4030,7 @@ impl XcbXinput {
         y_axis: u8,
         device_id: u8,
     ) -> xcb_xinput_change_pointer_device_cookie_t {
-        call!(self, xcb_xinput_change_pointer_device)(c, x_axis, y_axis, device_id)
+        sym!(self, xcb_xinput_change_pointer_device)(c, x_axis, y_axis, device_id)
     }
 
     #[inline]
@@ -4040,7 +4041,7 @@ impl XcbXinput {
         y_axis: u8,
         device_id: u8,
     ) -> xcb_xinput_change_pointer_device_cookie_t {
-        call!(self, xcb_xinput_change_pointer_device_unchecked)(c, x_axis, y_axis, device_id)
+        sym!(self, xcb_xinput_change_pointer_device_unchecked)(c, x_axis, y_axis, device_id)
     }
 
     #[inline]
@@ -4050,7 +4051,7 @@ impl XcbXinput {
         cookie: xcb_xinput_grab_device_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_grab_device_reply_t {
-        call!(self, xcb_xinput_grab_device_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_grab_device_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4066,7 +4067,7 @@ impl XcbXinput {
         device_id: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_xinput_grab_device_cookie_t {
-        call!(self, xcb_xinput_grab_device)(
+        sym!(self, xcb_xinput_grab_device)(
             c,
             grab_window,
             time,
@@ -4092,7 +4093,7 @@ impl XcbXinput {
         device_id: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_xinput_grab_device_cookie_t {
-        call!(self, xcb_xinput_grab_device_unchecked)(
+        sym!(self, xcb_xinput_grab_device_unchecked)(
             c,
             grab_window,
             time,
@@ -4112,7 +4113,7 @@ impl XcbXinput {
         time: xcb_timestamp_t,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_ungrab_device)(c, time, device_id)
+        sym!(self, xcb_xinput_ungrab_device)(c, time, device_id)
     }
 
     #[inline]
@@ -4122,7 +4123,7 @@ impl XcbXinput {
         time: xcb_timestamp_t,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_ungrab_device_checked)(c, time, device_id)
+        sym!(self, xcb_xinput_ungrab_device_checked)(c, time, device_id)
     }
 
     #[inline]
@@ -4140,7 +4141,7 @@ impl XcbXinput {
         owner_events: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_grab_device_key)(
+        sym!(self, xcb_xinput_grab_device_key)(
             c,
             grab_window,
             num_classes,
@@ -4170,7 +4171,7 @@ impl XcbXinput {
         owner_events: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_grab_device_key_checked)(
+        sym!(self, xcb_xinput_grab_device_key_checked)(
             c,
             grab_window,
             num_classes,
@@ -4195,7 +4196,7 @@ impl XcbXinput {
         key: u8,
         grabbed_device: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_ungrab_device_key)(
+        sym!(self, xcb_xinput_ungrab_device_key)(
             c,
             grab_window,
             modifiers,
@@ -4215,7 +4216,7 @@ impl XcbXinput {
         key: u8,
         grabbed_device: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_ungrab_device_key_checked)(
+        sym!(self, xcb_xinput_ungrab_device_key_checked)(
             c,
             grab_window,
             modifiers,
@@ -4240,7 +4241,7 @@ impl XcbXinput {
         owner_events: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_grab_device_button)(
+        sym!(self, xcb_xinput_grab_device_button)(
             c,
             grab_window,
             grabbed_device,
@@ -4270,7 +4271,7 @@ impl XcbXinput {
         owner_events: u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_grab_device_button_checked)(
+        sym!(self, xcb_xinput_grab_device_button_checked)(
             c,
             grab_window,
             grabbed_device,
@@ -4295,7 +4296,7 @@ impl XcbXinput {
         button: u8,
         grabbed_device: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_ungrab_device_button)(
+        sym!(self, xcb_xinput_ungrab_device_button)(
             c,
             grab_window,
             modifiers,
@@ -4315,7 +4316,7 @@ impl XcbXinput {
         button: u8,
         grabbed_device: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_ungrab_device_button_checked)(
+        sym!(self, xcb_xinput_ungrab_device_button_checked)(
             c,
             grab_window,
             modifiers,
@@ -4333,7 +4334,7 @@ impl XcbXinput {
         mode: u8,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_allow_device_events)(c, time, mode, device_id)
+        sym!(self, xcb_xinput_allow_device_events)(c, time, mode, device_id)
     }
 
     #[inline]
@@ -4344,7 +4345,7 @@ impl XcbXinput {
         mode: u8,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_allow_device_events_checked)(c, time, mode, device_id)
+        sym!(self, xcb_xinput_allow_device_events_checked)(c, time, mode, device_id)
     }
 
     #[inline]
@@ -4354,7 +4355,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_focus_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_focus_reply_t {
-        call!(self, xcb_xinput_get_device_focus_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_focus_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4363,7 +4364,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_focus_cookie_t {
-        call!(self, xcb_xinput_get_device_focus)(c, device_id)
+        sym!(self, xcb_xinput_get_device_focus)(c, device_id)
     }
 
     #[inline]
@@ -4372,7 +4373,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_focus_cookie_t {
-        call!(self, xcb_xinput_get_device_focus_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_get_device_focus_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -4384,7 +4385,7 @@ impl XcbXinput {
         revert_to: u8,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_set_device_focus)(c, focus, time, revert_to, device_id)
+        sym!(self, xcb_xinput_set_device_focus)(c, focus, time, revert_to, device_id)
     }
 
     #[inline]
@@ -4396,7 +4397,7 @@ impl XcbXinput {
         revert_to: u8,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_set_device_focus_checked)(c, focus, time, revert_to, device_id)
+        sym!(self, xcb_xinput_set_device_focus_checked)(c, focus, time, revert_to, device_id)
     }
 
     #[inline]
@@ -4404,7 +4405,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_kbd_feedback_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_kbd_feedback_state_next)(i);
+        sym!(self, xcb_xinput_kbd_feedback_state_next)(i);
     }
 
     #[inline]
@@ -4412,7 +4413,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_kbd_feedback_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_kbd_feedback_state_end)(i)
+        sym!(self, xcb_xinput_kbd_feedback_state_end)(i)
     }
 
     #[inline]
@@ -4420,7 +4421,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_ptr_feedback_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_ptr_feedback_state_next)(i);
+        sym!(self, xcb_xinput_ptr_feedback_state_next)(i);
     }
 
     #[inline]
@@ -4428,7 +4429,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_ptr_feedback_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_ptr_feedback_state_end)(i)
+        sym!(self, xcb_xinput_ptr_feedback_state_end)(i)
     }
 
     #[inline]
@@ -4436,7 +4437,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_integer_feedback_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_integer_feedback_state_next)(i);
+        sym!(self, xcb_xinput_integer_feedback_state_next)(i);
     }
 
     #[inline]
@@ -4444,7 +4445,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_integer_feedback_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_integer_feedback_state_end)(i)
+        sym!(self, xcb_xinput_integer_feedback_state_end)(i)
     }
 
     #[inline]
@@ -4452,7 +4453,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_string_feedback_state_t,
     ) -> *mut xcb_keysym_t {
-        call!(self, xcb_xinput_string_feedback_state_keysyms)(R)
+        sym!(self, xcb_xinput_string_feedback_state_keysyms)(R)
     }
 
     #[inline]
@@ -4460,7 +4461,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_string_feedback_state_t,
     ) -> c_int {
-        call!(self, xcb_xinput_string_feedback_state_keysyms_length)(R)
+        sym!(self, xcb_xinput_string_feedback_state_keysyms_length)(R)
     }
 
     #[inline]
@@ -4468,7 +4469,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_string_feedback_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_string_feedback_state_keysyms_end)(R)
+        sym!(self, xcb_xinput_string_feedback_state_keysyms_end)(R)
     }
 
     #[inline]
@@ -4476,7 +4477,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_string_feedback_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_string_feedback_state_next)(i);
+        sym!(self, xcb_xinput_string_feedback_state_next)(i);
     }
 
     #[inline]
@@ -4484,7 +4485,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_string_feedback_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_string_feedback_state_end)(i)
+        sym!(self, xcb_xinput_string_feedback_state_end)(i)
     }
 
     #[inline]
@@ -4492,7 +4493,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_bell_feedback_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_bell_feedback_state_next)(i);
+        sym!(self, xcb_xinput_bell_feedback_state_next)(i);
     }
 
     #[inline]
@@ -4500,7 +4501,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_bell_feedback_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_bell_feedback_state_end)(i)
+        sym!(self, xcb_xinput_bell_feedback_state_end)(i)
     }
 
     #[inline]
@@ -4508,7 +4509,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_led_feedback_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_led_feedback_state_next)(i);
+        sym!(self, xcb_xinput_led_feedback_state_next)(i);
     }
 
     #[inline]
@@ -4516,7 +4517,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_led_feedback_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_led_feedback_state_end)(i)
+        sym!(self, xcb_xinput_led_feedback_state_end)(i)
     }
 
     #[inline]
@@ -4524,7 +4525,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_feedback_state_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_feedback_state_uninterpreted_data)(R)
+        sym!(self, xcb_xinput_feedback_state_uninterpreted_data)(R)
     }
 
     #[inline]
@@ -4532,7 +4533,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_feedback_state_t,
     ) -> c_int {
-        call!(self, xcb_xinput_feedback_state_uninterpreted_data_length)(R)
+        sym!(self, xcb_xinput_feedback_state_uninterpreted_data_length)(R)
     }
 
     #[inline]
@@ -4540,7 +4541,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_feedback_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_feedback_state_uninterpreted_data_end)(R)
+        sym!(self, xcb_xinput_feedback_state_uninterpreted_data_end)(R)
     }
 
     #[inline]
@@ -4548,7 +4549,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_feedback_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_feedback_state_next)(i);
+        sym!(self, xcb_xinput_feedback_state_next)(i);
     }
 
     #[inline]
@@ -4556,7 +4557,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_feedback_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_feedback_state_end)(i)
+        sym!(self, xcb_xinput_feedback_state_end)(i)
     }
 
     #[inline]
@@ -4564,7 +4565,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_feedback_control_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_get_feedback_control_feedbacks_length)(R)
+        sym!(self, xcb_xinput_get_feedback_control_feedbacks_length)(R)
     }
 
     #[inline]
@@ -4572,7 +4573,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_feedback_control_reply_t,
     ) -> xcb_xinput_feedback_state_iterator_t {
-        call!(self, xcb_xinput_get_feedback_control_feedbacks_iterator)(R)
+        sym!(self, xcb_xinput_get_feedback_control_feedbacks_iterator)(R)
     }
 
     #[inline]
@@ -4582,7 +4583,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_feedback_control_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_feedback_control_reply_t {
-        call!(self, xcb_xinput_get_feedback_control_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_feedback_control_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4591,7 +4592,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_feedback_control_cookie_t {
-        call!(self, xcb_xinput_get_feedback_control)(c, device_id)
+        sym!(self, xcb_xinput_get_feedback_control)(c, device_id)
     }
 
     #[inline]
@@ -4600,7 +4601,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_feedback_control_cookie_t {
-        call!(self, xcb_xinput_get_feedback_control_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_get_feedback_control_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -4608,7 +4609,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_kbd_feedback_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_kbd_feedback_ctl_next)(i);
+        sym!(self, xcb_xinput_kbd_feedback_ctl_next)(i);
     }
 
     #[inline]
@@ -4616,7 +4617,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_kbd_feedback_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_kbd_feedback_ctl_end)(i)
+        sym!(self, xcb_xinput_kbd_feedback_ctl_end)(i)
     }
 
     #[inline]
@@ -4624,7 +4625,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_ptr_feedback_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_ptr_feedback_ctl_next)(i);
+        sym!(self, xcb_xinput_ptr_feedback_ctl_next)(i);
     }
 
     #[inline]
@@ -4632,7 +4633,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_ptr_feedback_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_ptr_feedback_ctl_end)(i)
+        sym!(self, xcb_xinput_ptr_feedback_ctl_end)(i)
     }
 
     #[inline]
@@ -4640,7 +4641,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_integer_feedback_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_integer_feedback_ctl_next)(i);
+        sym!(self, xcb_xinput_integer_feedback_ctl_next)(i);
     }
 
     #[inline]
@@ -4648,7 +4649,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_integer_feedback_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_integer_feedback_ctl_end)(i)
+        sym!(self, xcb_xinput_integer_feedback_ctl_end)(i)
     }
 
     #[inline]
@@ -4656,7 +4657,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_string_feedback_ctl_t,
     ) -> *mut xcb_keysym_t {
-        call!(self, xcb_xinput_string_feedback_ctl_keysyms)(R)
+        sym!(self, xcb_xinput_string_feedback_ctl_keysyms)(R)
     }
 
     #[inline]
@@ -4664,7 +4665,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_string_feedback_ctl_t,
     ) -> c_int {
-        call!(self, xcb_xinput_string_feedback_ctl_keysyms_length)(R)
+        sym!(self, xcb_xinput_string_feedback_ctl_keysyms_length)(R)
     }
 
     #[inline]
@@ -4672,7 +4673,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_string_feedback_ctl_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_string_feedback_ctl_keysyms_end)(R)
+        sym!(self, xcb_xinput_string_feedback_ctl_keysyms_end)(R)
     }
 
     #[inline]
@@ -4680,7 +4681,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_string_feedback_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_string_feedback_ctl_next)(i);
+        sym!(self, xcb_xinput_string_feedback_ctl_next)(i);
     }
 
     #[inline]
@@ -4688,7 +4689,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_string_feedback_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_string_feedback_ctl_end)(i)
+        sym!(self, xcb_xinput_string_feedback_ctl_end)(i)
     }
 
     #[inline]
@@ -4696,7 +4697,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_bell_feedback_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_bell_feedback_ctl_next)(i);
+        sym!(self, xcb_xinput_bell_feedback_ctl_next)(i);
     }
 
     #[inline]
@@ -4704,7 +4705,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_bell_feedback_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_bell_feedback_ctl_end)(i)
+        sym!(self, xcb_xinput_bell_feedback_ctl_end)(i)
     }
 
     #[inline]
@@ -4712,7 +4713,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_led_feedback_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_led_feedback_ctl_next)(i);
+        sym!(self, xcb_xinput_led_feedback_ctl_next)(i);
     }
 
     #[inline]
@@ -4720,7 +4721,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_led_feedback_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_led_feedback_ctl_end)(i)
+        sym!(self, xcb_xinput_led_feedback_ctl_end)(i)
     }
 
     #[inline]
@@ -4728,7 +4729,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_feedback_ctl_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_feedback_ctl_uninterpreted_data)(R)
+        sym!(self, xcb_xinput_feedback_ctl_uninterpreted_data)(R)
     }
 
     #[inline]
@@ -4736,7 +4737,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_feedback_ctl_t,
     ) -> c_int {
-        call!(self, xcb_xinput_feedback_ctl_uninterpreted_data_length)(R)
+        sym!(self, xcb_xinput_feedback_ctl_uninterpreted_data_length)(R)
     }
 
     #[inline]
@@ -4744,12 +4745,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_feedback_ctl_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_feedback_ctl_uninterpreted_data_end)(R)
+        sym!(self, xcb_xinput_feedback_ctl_uninterpreted_data_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_feedback_ctl_next(&self, i: *mut xcb_xinput_feedback_ctl_iterator_t) {
-        call!(self, xcb_xinput_feedback_ctl_next)(i);
+        sym!(self, xcb_xinput_feedback_ctl_next)(i);
     }
 
     #[inline]
@@ -4757,7 +4758,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_feedback_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_feedback_ctl_end)(i)
+        sym!(self, xcb_xinput_feedback_ctl_end)(i)
     }
 
     #[inline]
@@ -4769,7 +4770,7 @@ impl XcbXinput {
         feedback_id: u8,
         feedback: *mut xcb_xinput_feedback_ctl_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_feedback_control)(c, mask, device_id, feedback_id, feedback)
+        sym!(self, xcb_xinput_change_feedback_control)(c, mask, device_id, feedback_id, feedback)
     }
 
     #[inline]
@@ -4781,7 +4782,7 @@ impl XcbXinput {
         feedback_id: u8,
         feedback: *mut xcb_xinput_feedback_ctl_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_feedback_control_checked)(
+        sym!(self, xcb_xinput_change_feedback_control_checked)(
             c,
             mask,
             device_id,
@@ -4795,7 +4796,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_key_mapping_reply_t,
     ) -> *mut xcb_keysym_t {
-        call!(self, xcb_xinput_get_device_key_mapping_keysyms)(R)
+        sym!(self, xcb_xinput_get_device_key_mapping_keysyms)(R)
     }
 
     #[inline]
@@ -4803,7 +4804,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_key_mapping_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_get_device_key_mapping_keysyms_length)(R)
+        sym!(self, xcb_xinput_get_device_key_mapping_keysyms_length)(R)
     }
 
     #[inline]
@@ -4811,7 +4812,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_key_mapping_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_get_device_key_mapping_keysyms_end)(R)
+        sym!(self, xcb_xinput_get_device_key_mapping_keysyms_end)(R)
     }
 
     #[inline]
@@ -4821,7 +4822,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_key_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_key_mapping_reply_t {
-        call!(self, xcb_xinput_get_device_key_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_key_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4832,7 +4833,7 @@ impl XcbXinput {
         first_keycode: xcb_xinput_key_code_t,
         count: u8,
     ) -> xcb_xinput_get_device_key_mapping_cookie_t {
-        call!(self, xcb_xinput_get_device_key_mapping)(c, device_id, first_keycode, count)
+        sym!(self, xcb_xinput_get_device_key_mapping)(c, device_id, first_keycode, count)
     }
 
     #[inline]
@@ -4843,7 +4844,7 @@ impl XcbXinput {
         first_keycode: xcb_xinput_key_code_t,
         count: u8,
     ) -> xcb_xinput_get_device_key_mapping_cookie_t {
-        call!(self, xcb_xinput_get_device_key_mapping_unchecked)(c, device_id, first_keycode, count)
+        sym!(self, xcb_xinput_get_device_key_mapping_unchecked)(c, device_id, first_keycode, count)
     }
 
     #[inline]
@@ -4856,7 +4857,7 @@ impl XcbXinput {
         keycode_count: u8,
         keysyms: *const xcb_keysym_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_device_key_mapping)(
+        sym!(self, xcb_xinput_change_device_key_mapping)(
             c,
             device_id,
             first_keycode,
@@ -4876,7 +4877,7 @@ impl XcbXinput {
         keycode_count: u8,
         keysyms: *const xcb_keysym_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_device_key_mapping_checked)(
+        sym!(self, xcb_xinput_change_device_key_mapping_checked)(
             c,
             device_id,
             first_keycode,
@@ -4891,7 +4892,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_modifier_mapping_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_get_device_modifier_mapping_keymaps)(R)
+        sym!(self, xcb_xinput_get_device_modifier_mapping_keymaps)(R)
     }
 
     #[inline]
@@ -4899,7 +4900,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_modifier_mapping_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_get_device_modifier_mapping_keymaps_length)(R)
+        sym!(self, xcb_xinput_get_device_modifier_mapping_keymaps_length)(R)
     }
 
     #[inline]
@@ -4907,7 +4908,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_modifier_mapping_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_get_device_modifier_mapping_keymaps_end)(R)
+        sym!(self, xcb_xinput_get_device_modifier_mapping_keymaps_end)(R)
     }
 
     #[inline]
@@ -4917,7 +4918,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_modifier_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_modifier_mapping_reply_t {
-        call!(self, xcb_xinput_get_device_modifier_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_modifier_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4926,7 +4927,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_modifier_mapping_cookie_t {
-        call!(self, xcb_xinput_get_device_modifier_mapping)(c, device_id)
+        sym!(self, xcb_xinput_get_device_modifier_mapping)(c, device_id)
     }
 
     #[inline]
@@ -4935,7 +4936,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_modifier_mapping_cookie_t {
-        call!(self, xcb_xinput_get_device_modifier_mapping_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_get_device_modifier_mapping_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -4945,7 +4946,7 @@ impl XcbXinput {
         cookie: xcb_xinput_set_device_modifier_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_set_device_modifier_mapping_reply_t {
-        call!(self, xcb_xinput_set_device_modifier_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_set_device_modifier_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -4956,7 +4957,7 @@ impl XcbXinput {
         keycodes_per_modifier: u8,
         keymaps: *const u8,
     ) -> xcb_xinput_set_device_modifier_mapping_cookie_t {
-        call!(self, xcb_xinput_set_device_modifier_mapping)(
+        sym!(self, xcb_xinput_set_device_modifier_mapping)(
             c,
             device_id,
             keycodes_per_modifier,
@@ -4972,7 +4973,7 @@ impl XcbXinput {
         keycodes_per_modifier: u8,
         keymaps: *const u8,
     ) -> xcb_xinput_set_device_modifier_mapping_cookie_t {
-        call!(self, xcb_xinput_set_device_modifier_mapping_unchecked)(
+        sym!(self, xcb_xinput_set_device_modifier_mapping_unchecked)(
             c,
             device_id,
             keycodes_per_modifier,
@@ -4985,7 +4986,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_button_mapping_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_get_device_button_mapping_map)(R)
+        sym!(self, xcb_xinput_get_device_button_mapping_map)(R)
     }
 
     #[inline]
@@ -4993,7 +4994,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_button_mapping_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_get_device_button_mapping_map_length)(R)
+        sym!(self, xcb_xinput_get_device_button_mapping_map_length)(R)
     }
 
     #[inline]
@@ -5001,7 +5002,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_get_device_button_mapping_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_get_device_button_mapping_map_end)(R)
+        sym!(self, xcb_xinput_get_device_button_mapping_map_end)(R)
     }
 
     #[inline]
@@ -5011,7 +5012,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_button_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_button_mapping_reply_t {
-        call!(self, xcb_xinput_get_device_button_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_button_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5020,7 +5021,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_button_mapping_cookie_t {
-        call!(self, xcb_xinput_get_device_button_mapping)(c, device_id)
+        sym!(self, xcb_xinput_get_device_button_mapping)(c, device_id)
     }
 
     #[inline]
@@ -5029,7 +5030,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_get_device_button_mapping_cookie_t {
-        call!(self, xcb_xinput_get_device_button_mapping_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_get_device_button_mapping_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -5039,7 +5040,7 @@ impl XcbXinput {
         cookie: xcb_xinput_set_device_button_mapping_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_set_device_button_mapping_reply_t {
-        call!(self, xcb_xinput_set_device_button_mapping_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_set_device_button_mapping_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5050,7 +5051,7 @@ impl XcbXinput {
         map_size: u8,
         map: *const u8,
     ) -> xcb_xinput_set_device_button_mapping_cookie_t {
-        call!(self, xcb_xinput_set_device_button_mapping)(c, device_id, map_size, map)
+        sym!(self, xcb_xinput_set_device_button_mapping)(c, device_id, map_size, map)
     }
 
     #[inline]
@@ -5061,12 +5062,12 @@ impl XcbXinput {
         map_size: u8,
         map: *const u8,
     ) -> xcb_xinput_set_device_button_mapping_cookie_t {
-        call!(self, xcb_xinput_set_device_button_mapping_unchecked)(c, device_id, map_size, map)
+        sym!(self, xcb_xinput_set_device_button_mapping_unchecked)(c, device_id, map_size, map)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_key_state_next(&self, i: *mut xcb_xinput_key_state_iterator_t) {
-        call!(self, xcb_xinput_key_state_next)(i);
+        sym!(self, xcb_xinput_key_state_next)(i);
     }
 
     #[inline]
@@ -5074,12 +5075,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_key_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_key_state_end)(i)
+        sym!(self, xcb_xinput_key_state_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_button_state_next(&self, i: *mut xcb_xinput_button_state_iterator_t) {
-        call!(self, xcb_xinput_button_state_next)(i);
+        sym!(self, xcb_xinput_button_state_next)(i);
     }
 
     #[inline]
@@ -5087,7 +5088,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_button_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_button_state_end)(i)
+        sym!(self, xcb_xinput_button_state_end)(i)
     }
 
     #[inline]
@@ -5095,7 +5096,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_valuator_state_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_valuator_state_valuators)(R)
+        sym!(self, xcb_xinput_valuator_state_valuators)(R)
     }
 
     #[inline]
@@ -5103,7 +5104,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_valuator_state_t,
     ) -> c_int {
-        call!(self, xcb_xinput_valuator_state_valuators_length)(R)
+        sym!(self, xcb_xinput_valuator_state_valuators_length)(R)
     }
 
     #[inline]
@@ -5111,7 +5112,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_valuator_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_valuator_state_valuators_end)(R)
+        sym!(self, xcb_xinput_valuator_state_valuators_end)(R)
     }
 
     #[inline]
@@ -5119,7 +5120,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_valuator_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_valuator_state_next)(i);
+        sym!(self, xcb_xinput_valuator_state_next)(i);
     }
 
     #[inline]
@@ -5127,7 +5128,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_valuator_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_valuator_state_end)(i)
+        sym!(self, xcb_xinput_valuator_state_end)(i)
     }
 
     #[inline]
@@ -5135,7 +5136,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_input_state_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_input_state_uninterpreted_data)(R)
+        sym!(self, xcb_xinput_input_state_uninterpreted_data)(R)
     }
 
     #[inline]
@@ -5143,7 +5144,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_input_state_t,
     ) -> c_int {
-        call!(self, xcb_xinput_input_state_uninterpreted_data_length)(R)
+        sym!(self, xcb_xinput_input_state_uninterpreted_data_length)(R)
     }
 
     #[inline]
@@ -5151,12 +5152,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_input_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_input_state_uninterpreted_data_end)(R)
+        sym!(self, xcb_xinput_input_state_uninterpreted_data_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_input_state_next(&self, i: *mut xcb_xinput_input_state_iterator_t) {
-        call!(self, xcb_xinput_input_state_next)(i);
+        sym!(self, xcb_xinput_input_state_next)(i);
     }
 
     #[inline]
@@ -5164,7 +5165,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_input_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_input_state_end)(i)
+        sym!(self, xcb_xinput_input_state_end)(i)
     }
 
     #[inline]
@@ -5172,7 +5173,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_query_device_state_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_query_device_state_classes_length)(R)
+        sym!(self, xcb_xinput_query_device_state_classes_length)(R)
     }
 
     #[inline]
@@ -5180,7 +5181,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_query_device_state_reply_t,
     ) -> xcb_xinput_input_state_iterator_t {
-        call!(self, xcb_xinput_query_device_state_classes_iterator)(R)
+        sym!(self, xcb_xinput_query_device_state_classes_iterator)(R)
     }
 
     #[inline]
@@ -5190,7 +5191,7 @@ impl XcbXinput {
         cookie: xcb_xinput_query_device_state_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_query_device_state_reply_t {
-        call!(self, xcb_xinput_query_device_state_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_query_device_state_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5199,7 +5200,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_query_device_state_cookie_t {
-        call!(self, xcb_xinput_query_device_state)(c, device_id)
+        sym!(self, xcb_xinput_query_device_state)(c, device_id)
     }
 
     #[inline]
@@ -5208,7 +5209,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_query_device_state_cookie_t {
-        call!(self, xcb_xinput_query_device_state_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_query_device_state_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -5223,7 +5224,7 @@ impl XcbXinput {
         events: *const u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_send_extension_event)(
+        sym!(self, xcb_xinput_send_extension_event)(
             c,
             destination,
             device_id,
@@ -5247,7 +5248,7 @@ impl XcbXinput {
         events: *const u8,
         classes: *const xcb_xinput_event_class_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_send_extension_event_checked)(
+        sym!(self, xcb_xinput_send_extension_event_checked)(
             c,
             destination,
             device_id,
@@ -5268,7 +5269,7 @@ impl XcbXinput {
         feedback_class: u8,
         percent: i8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_device_bell)(c, device_id, feedback_id, feedback_class, percent)
+        sym!(self, xcb_xinput_device_bell)(c, device_id, feedback_id, feedback_class, percent)
     }
 
     #[inline]
@@ -5280,7 +5281,7 @@ impl XcbXinput {
         feedback_class: u8,
         percent: i8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_device_bell_checked)(
+        sym!(self, xcb_xinput_device_bell_checked)(
             c,
             device_id,
             feedback_id,
@@ -5296,7 +5297,7 @@ impl XcbXinput {
         cookie: xcb_xinput_set_device_valuators_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_set_device_valuators_reply_t {
-        call!(self, xcb_xinput_set_device_valuators_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_set_device_valuators_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5308,7 +5309,7 @@ impl XcbXinput {
         num_valuators: u8,
         valuators: *const i32,
     ) -> xcb_xinput_set_device_valuators_cookie_t {
-        call!(self, xcb_xinput_set_device_valuators)(
+        sym!(self, xcb_xinput_set_device_valuators)(
             c,
             device_id,
             first_valuator,
@@ -5326,7 +5327,7 @@ impl XcbXinput {
         num_valuators: u8,
         valuators: *const i32,
     ) -> xcb_xinput_set_device_valuators_cookie_t {
-        call!(self, xcb_xinput_set_device_valuators_unchecked)(
+        sym!(self, xcb_xinput_set_device_valuators_unchecked)(
             c,
             device_id,
             first_valuator,
@@ -5340,7 +5341,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_device_resolution_state_resolution_values)(R)
+        sym!(self, xcb_xinput_device_resolution_state_resolution_values)(R)
     }
 
     #[inline]
@@ -5348,7 +5349,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xinput_device_resolution_state_resolution_values_length
         )(R)
@@ -5359,7 +5360,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(
+        sym!(
             self,
             xcb_xinput_device_resolution_state_resolution_values_end
         )(R)
@@ -5370,7 +5371,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_device_resolution_state_resolution_min)(R)
+        sym!(self, xcb_xinput_device_resolution_state_resolution_min)(R)
     }
 
     #[inline]
@@ -5378,7 +5379,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xinput_device_resolution_state_resolution_min_length
         )(R)
@@ -5389,7 +5390,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_resolution_state_resolution_min_end)(R)
+        sym!(self, xcb_xinput_device_resolution_state_resolution_min_end)(R)
     }
 
     #[inline]
@@ -5397,7 +5398,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_device_resolution_state_resolution_max)(R)
+        sym!(self, xcb_xinput_device_resolution_state_resolution_max)(R)
     }
 
     #[inline]
@@ -5405,7 +5406,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xinput_device_resolution_state_resolution_max_length
         )(R)
@@ -5416,7 +5417,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_resolution_state_resolution_max_end)(R)
+        sym!(self, xcb_xinput_device_resolution_state_resolution_max_end)(R)
     }
 
     #[inline]
@@ -5424,7 +5425,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_resolution_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_resolution_state_next)(i);
+        sym!(self, xcb_xinput_device_resolution_state_next)(i);
     }
 
     #[inline]
@@ -5432,7 +5433,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_resolution_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_resolution_state_end)(i)
+        sym!(self, xcb_xinput_device_resolution_state_end)(i)
     }
 
     #[inline]
@@ -5440,7 +5441,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_calib_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_abs_calib_state_next)(i);
+        sym!(self, xcb_xinput_device_abs_calib_state_next)(i);
     }
 
     #[inline]
@@ -5448,7 +5449,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_calib_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_abs_calib_state_end)(i)
+        sym!(self, xcb_xinput_device_abs_calib_state_end)(i)
     }
 
     #[inline]
@@ -5456,7 +5457,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_area_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_abs_area_state_next)(i);
+        sym!(self, xcb_xinput_device_abs_area_state_next)(i);
     }
 
     #[inline]
@@ -5464,7 +5465,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_area_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_abs_area_state_end)(i)
+        sym!(self, xcb_xinput_device_abs_area_state_end)(i)
     }
 
     #[inline]
@@ -5472,7 +5473,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_core_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_core_state_next)(i);
+        sym!(self, xcb_xinput_device_core_state_next)(i);
     }
 
     #[inline]
@@ -5480,7 +5481,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_core_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_core_state_end)(i)
+        sym!(self, xcb_xinput_device_core_state_end)(i)
     }
 
     #[inline]
@@ -5488,7 +5489,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_enable_state_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_enable_state_next)(i);
+        sym!(self, xcb_xinput_device_enable_state_next)(i);
     }
 
     #[inline]
@@ -5496,7 +5497,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_enable_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_enable_state_end)(i)
+        sym!(self, xcb_xinput_device_enable_state_end)(i)
     }
 
     #[inline]
@@ -5504,7 +5505,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_state_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_device_state_uninterpreted_data)(R)
+        sym!(self, xcb_xinput_device_state_uninterpreted_data)(R)
     }
 
     #[inline]
@@ -5512,7 +5513,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_state_t,
     ) -> c_int {
-        call!(self, xcb_xinput_device_state_uninterpreted_data_length)(R)
+        sym!(self, xcb_xinput_device_state_uninterpreted_data_length)(R)
     }
 
     #[inline]
@@ -5520,12 +5521,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_state_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_state_uninterpreted_data_end)(R)
+        sym!(self, xcb_xinput_device_state_uninterpreted_data_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_device_state_next(&self, i: *mut xcb_xinput_device_state_iterator_t) {
-        call!(self, xcb_xinput_device_state_next)(i);
+        sym!(self, xcb_xinput_device_state_next)(i);
     }
 
     #[inline]
@@ -5533,7 +5534,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_state_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_state_end)(i)
+        sym!(self, xcb_xinput_device_state_end)(i)
     }
 
     #[inline]
@@ -5543,7 +5544,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_control_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_control_reply_t {
-        call!(self, xcb_xinput_get_device_control_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_control_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5553,7 +5554,7 @@ impl XcbXinput {
         control_id: u16,
         device_id: u8,
     ) -> xcb_xinput_get_device_control_cookie_t {
-        call!(self, xcb_xinput_get_device_control)(c, control_id, device_id)
+        sym!(self, xcb_xinput_get_device_control)(c, control_id, device_id)
     }
 
     #[inline]
@@ -5563,7 +5564,7 @@ impl XcbXinput {
         control_id: u16,
         device_id: u8,
     ) -> xcb_xinput_get_device_control_cookie_t {
-        call!(self, xcb_xinput_get_device_control_unchecked)(c, control_id, device_id)
+        sym!(self, xcb_xinput_get_device_control_unchecked)(c, control_id, device_id)
     }
 
     #[inline]
@@ -5571,7 +5572,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_ctl_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_device_resolution_ctl_resolution_values)(R)
+        sym!(self, xcb_xinput_device_resolution_ctl_resolution_values)(R)
     }
 
     #[inline]
@@ -5579,7 +5580,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_ctl_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_xinput_device_resolution_ctl_resolution_values_length
         )(R)
@@ -5590,7 +5591,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_resolution_ctl_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_resolution_ctl_resolution_values_end)(R)
+        sym!(self, xcb_xinput_device_resolution_ctl_resolution_values_end)(R)
     }
 
     #[inline]
@@ -5598,7 +5599,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_resolution_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_resolution_ctl_next)(i);
+        sym!(self, xcb_xinput_device_resolution_ctl_next)(i);
     }
 
     #[inline]
@@ -5606,7 +5607,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_resolution_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_resolution_ctl_end)(i)
+        sym!(self, xcb_xinput_device_resolution_ctl_end)(i)
     }
 
     #[inline]
@@ -5614,7 +5615,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_calib_ctl_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_abs_calib_ctl_next)(i);
+        sym!(self, xcb_xinput_device_abs_calib_ctl_next)(i);
     }
 
     #[inline]
@@ -5622,7 +5623,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_calib_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_abs_calib_ctl_end)(i)
+        sym!(self, xcb_xinput_device_abs_calib_ctl_end)(i)
     }
 
     #[inline]
@@ -5630,7 +5631,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_area_ctrl_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_abs_area_ctrl_next)(i);
+        sym!(self, xcb_xinput_device_abs_area_ctrl_next)(i);
     }
 
     #[inline]
@@ -5638,7 +5639,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_abs_area_ctrl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_abs_area_ctrl_end)(i)
+        sym!(self, xcb_xinput_device_abs_area_ctrl_end)(i)
     }
 
     #[inline]
@@ -5646,7 +5647,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_core_ctrl_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_core_ctrl_next)(i);
+        sym!(self, xcb_xinput_device_core_ctrl_next)(i);
     }
 
     #[inline]
@@ -5654,7 +5655,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_core_ctrl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_core_ctrl_end)(i)
+        sym!(self, xcb_xinput_device_core_ctrl_end)(i)
     }
 
     #[inline]
@@ -5662,7 +5663,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_enable_ctrl_iterator_t,
     ) {
-        call!(self, xcb_xinput_device_enable_ctrl_next)(i);
+        sym!(self, xcb_xinput_device_enable_ctrl_next)(i);
     }
 
     #[inline]
@@ -5670,7 +5671,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_enable_ctrl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_enable_ctrl_end)(i)
+        sym!(self, xcb_xinput_device_enable_ctrl_end)(i)
     }
 
     #[inline]
@@ -5678,7 +5679,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_ctl_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_device_ctl_uninterpreted_data)(R)
+        sym!(self, xcb_xinput_device_ctl_uninterpreted_data)(R)
     }
 
     #[inline]
@@ -5686,7 +5687,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_ctl_t,
     ) -> c_int {
-        call!(self, xcb_xinput_device_ctl_uninterpreted_data_length)(R)
+        sym!(self, xcb_xinput_device_ctl_uninterpreted_data_length)(R)
     }
 
     #[inline]
@@ -5694,12 +5695,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_ctl_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_ctl_uninterpreted_data_end)(R)
+        sym!(self, xcb_xinput_device_ctl_uninterpreted_data_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_device_ctl_next(&self, i: *mut xcb_xinput_device_ctl_iterator_t) {
-        call!(self, xcb_xinput_device_ctl_next)(i);
+        sym!(self, xcb_xinput_device_ctl_next)(i);
     }
 
     #[inline]
@@ -5707,7 +5708,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_ctl_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_ctl_end)(i)
+        sym!(self, xcb_xinput_device_ctl_end)(i)
     }
 
     #[inline]
@@ -5717,7 +5718,7 @@ impl XcbXinput {
         cookie: xcb_xinput_change_device_control_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_change_device_control_reply_t {
-        call!(self, xcb_xinput_change_device_control_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_change_device_control_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5728,7 +5729,7 @@ impl XcbXinput {
         device_id: u8,
         control: *mut xcb_xinput_device_ctl_t,
     ) -> xcb_xinput_change_device_control_cookie_t {
-        call!(self, xcb_xinput_change_device_control)(c, control_id, device_id, control)
+        sym!(self, xcb_xinput_change_device_control)(c, control_id, device_id, control)
     }
 
     #[inline]
@@ -5739,7 +5740,7 @@ impl XcbXinput {
         device_id: u8,
         control: *mut xcb_xinput_device_ctl_t,
     ) -> xcb_xinput_change_device_control_cookie_t {
-        call!(self, xcb_xinput_change_device_control_unchecked)(c, control_id, device_id, control)
+        sym!(self, xcb_xinput_change_device_control_unchecked)(c, control_id, device_id, control)
     }
 
     #[inline]
@@ -5747,7 +5748,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_list_device_properties_reply_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xinput_list_device_properties_atoms)(R)
+        sym!(self, xcb_xinput_list_device_properties_atoms)(R)
     }
 
     #[inline]
@@ -5755,7 +5756,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_list_device_properties_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_list_device_properties_atoms_length)(R)
+        sym!(self, xcb_xinput_list_device_properties_atoms_length)(R)
     }
 
     #[inline]
@@ -5763,7 +5764,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_list_device_properties_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_list_device_properties_atoms_end)(R)
+        sym!(self, xcb_xinput_list_device_properties_atoms_end)(R)
     }
 
     #[inline]
@@ -5773,7 +5774,7 @@ impl XcbXinput {
         cookie: xcb_xinput_list_device_properties_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_list_device_properties_reply_t {
-        call!(self, xcb_xinput_list_device_properties_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_list_device_properties_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -5782,7 +5783,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_list_device_properties_cookie_t {
-        call!(self, xcb_xinput_list_device_properties)(c, device_id)
+        sym!(self, xcb_xinput_list_device_properties)(c, device_id)
     }
 
     #[inline]
@@ -5791,7 +5792,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         device_id: u8,
     ) -> xcb_xinput_list_device_properties_cookie_t {
-        call!(self, xcb_xinput_list_device_properties_unchecked)(c, device_id)
+        sym!(self, xcb_xinput_list_device_properties_unchecked)(c, device_id)
     }
 
     #[inline]
@@ -5799,7 +5800,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_change_device_property_items_data_8)(S)
+        sym!(self, xcb_xinput_change_device_property_items_data_8)(S)
     }
 
     #[inline]
@@ -5808,7 +5809,7 @@ impl XcbXinput {
         R: *const xcb_xinput_change_device_property_request_t,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_change_device_property_items_data_8_length)(R, S)
+        sym!(self, xcb_xinput_change_device_property_items_data_8_length)(R, S)
     }
 
     #[inline]
@@ -5817,7 +5818,7 @@ impl XcbXinput {
         R: *const xcb_xinput_change_device_property_request_t,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_change_device_property_items_data_8_end)(R, S)
+        sym!(self, xcb_xinput_change_device_property_items_data_8_end)(R, S)
     }
 
     #[inline]
@@ -5825,7 +5826,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> *mut u16 {
-        call!(self, xcb_xinput_change_device_property_items_data_16)(S)
+        sym!(self, xcb_xinput_change_device_property_items_data_16)(S)
     }
 
     #[inline]
@@ -5834,7 +5835,7 @@ impl XcbXinput {
         R: *const xcb_xinput_change_device_property_request_t,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_change_device_property_items_data_16_length)(R, S)
+        sym!(self, xcb_xinput_change_device_property_items_data_16_length)(R, S)
     }
 
     #[inline]
@@ -5843,7 +5844,7 @@ impl XcbXinput {
         R: *const xcb_xinput_change_device_property_request_t,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_change_device_property_items_data_16_end)(R, S)
+        sym!(self, xcb_xinput_change_device_property_items_data_16_end)(R, S)
     }
 
     #[inline]
@@ -5851,7 +5852,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_change_device_property_items_data_32)(S)
+        sym!(self, xcb_xinput_change_device_property_items_data_32)(S)
     }
 
     #[inline]
@@ -5860,7 +5861,7 @@ impl XcbXinput {
         R: *const xcb_xinput_change_device_property_request_t,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_change_device_property_items_data_32_length)(R, S)
+        sym!(self, xcb_xinput_change_device_property_items_data_32_length)(R, S)
     }
 
     #[inline]
@@ -5869,7 +5870,7 @@ impl XcbXinput {
         R: *const xcb_xinput_change_device_property_request_t,
         S: *const xcb_xinput_change_device_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_change_device_property_items_data_32_end)(R, S)
+        sym!(self, xcb_xinput_change_device_property_items_data_32_end)(R, S)
     }
 
     #[inline]
@@ -5884,7 +5885,7 @@ impl XcbXinput {
         num_items: u32,
         items: *const xcb_xinput_change_device_property_items_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_device_property)(
+        sym!(self, xcb_xinput_change_device_property)(
             c, property, type_, device_id, format, mode, num_items, items,
         )
     }
@@ -5901,7 +5902,7 @@ impl XcbXinput {
         num_items: u32,
         items: *const xcb_xinput_change_device_property_items_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_change_device_property_checked)(
+        sym!(self, xcb_xinput_change_device_property_checked)(
             c, property, type_, device_id, format, mode, num_items, items,
         )
     }
@@ -5913,7 +5914,7 @@ impl XcbXinput {
         property: xcb_atom_t,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_delete_device_property)(c, property, device_id)
+        sym!(self, xcb_xinput_delete_device_property)(c, property, device_id)
     }
 
     #[inline]
@@ -5923,7 +5924,7 @@ impl XcbXinput {
         property: xcb_atom_t,
         device_id: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_delete_device_property_checked)(c, property, device_id)
+        sym!(self, xcb_xinput_delete_device_property_checked)(c, property, device_id)
     }
 
     #[inline]
@@ -5931,7 +5932,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_get_device_property_items_data_8)(S)
+        sym!(self, xcb_xinput_get_device_property_items_data_8)(S)
     }
 
     #[inline]
@@ -5940,7 +5941,7 @@ impl XcbXinput {
         R: *const xcb_xinput_get_device_property_reply_t,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_get_device_property_items_data_8_length)(R, S)
+        sym!(self, xcb_xinput_get_device_property_items_data_8_length)(R, S)
     }
 
     #[inline]
@@ -5949,7 +5950,7 @@ impl XcbXinput {
         R: *const xcb_xinput_get_device_property_reply_t,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_get_device_property_items_data_8_end)(R, S)
+        sym!(self, xcb_xinput_get_device_property_items_data_8_end)(R, S)
     }
 
     #[inline]
@@ -5957,7 +5958,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> *mut u16 {
-        call!(self, xcb_xinput_get_device_property_items_data_16)(S)
+        sym!(self, xcb_xinput_get_device_property_items_data_16)(S)
     }
 
     #[inline]
@@ -5966,7 +5967,7 @@ impl XcbXinput {
         R: *const xcb_xinput_get_device_property_reply_t,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_get_device_property_items_data_16_length)(R, S)
+        sym!(self, xcb_xinput_get_device_property_items_data_16_length)(R, S)
     }
 
     #[inline]
@@ -5975,7 +5976,7 @@ impl XcbXinput {
         R: *const xcb_xinput_get_device_property_reply_t,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_get_device_property_items_data_16_end)(R, S)
+        sym!(self, xcb_xinput_get_device_property_items_data_16_end)(R, S)
     }
 
     #[inline]
@@ -5983,7 +5984,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_get_device_property_items_data_32)(S)
+        sym!(self, xcb_xinput_get_device_property_items_data_32)(S)
     }
 
     #[inline]
@@ -5992,7 +5993,7 @@ impl XcbXinput {
         R: *const xcb_xinput_get_device_property_reply_t,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_get_device_property_items_data_32_length)(R, S)
+        sym!(self, xcb_xinput_get_device_property_items_data_32_length)(R, S)
     }
 
     #[inline]
@@ -6001,14 +6002,14 @@ impl XcbXinput {
         R: *const xcb_xinput_get_device_property_reply_t,
         S: *const xcb_xinput_get_device_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_get_device_property_items_data_32_end)(R, S)
+        sym!(self, xcb_xinput_get_device_property_items_data_32_end)(R, S)
     }
     #[inline]
     pub unsafe fn xcb_xinput_get_device_property_items(
         &self,
         R: *const xcb_xinput_get_device_property_reply_t,
     ) -> *mut c_void {
-        call!(self, xcb_xinput_get_device_property_items)(R)
+        sym!(self, xcb_xinput_get_device_property_items)(R)
     }
 
     #[inline]
@@ -6018,7 +6019,7 @@ impl XcbXinput {
         cookie: xcb_xinput_get_device_property_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_get_device_property_reply_t {
-        call!(self, xcb_xinput_get_device_property_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_get_device_property_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6032,7 +6033,7 @@ impl XcbXinput {
         device_id: u8,
         delete: u8,
     ) -> xcb_xinput_get_device_property_cookie_t {
-        call!(self, xcb_xinput_get_device_property)(
+        sym!(self, xcb_xinput_get_device_property)(
             c, property, type_, offset, len, device_id, delete,
         )
     }
@@ -6048,14 +6049,14 @@ impl XcbXinput {
         device_id: u8,
         delete: u8,
     ) -> xcb_xinput_get_device_property_cookie_t {
-        call!(self, xcb_xinput_get_device_property_unchecked)(
+        sym!(self, xcb_xinput_get_device_property_unchecked)(
             c, property, type_, offset, len, device_id, delete,
         )
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_group_info_next(&self, i: *mut xcb_xinput_group_info_iterator_t) {
-        call!(self, xcb_xinput_group_info_next)(i);
+        sym!(self, xcb_xinput_group_info_next)(i);
     }
 
     #[inline]
@@ -6063,7 +6064,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_group_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_group_info_end)(i)
+        sym!(self, xcb_xinput_group_info_end)(i)
     }
 
     #[inline]
@@ -6071,7 +6072,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_modifier_info_iterator_t,
     ) {
-        call!(self, xcb_xinput_modifier_info_next)(i);
+        sym!(self, xcb_xinput_modifier_info_next)(i);
     }
 
     #[inline]
@@ -6079,7 +6080,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_modifier_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_modifier_info_end)(i)
+        sym!(self, xcb_xinput_modifier_info_end)(i)
     }
 
     #[inline]
@@ -6087,7 +6088,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_query_pointer_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_xi_query_pointer_buttons)(R)
+        sym!(self, xcb_xinput_xi_query_pointer_buttons)(R)
     }
 
     #[inline]
@@ -6095,7 +6096,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_query_pointer_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_query_pointer_buttons_length)(R)
+        sym!(self, xcb_xinput_xi_query_pointer_buttons_length)(R)
     }
 
     #[inline]
@@ -6103,7 +6104,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_query_pointer_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_query_pointer_buttons_end)(R)
+        sym!(self, xcb_xinput_xi_query_pointer_buttons_end)(R)
     }
 
     #[inline]
@@ -6113,7 +6114,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_query_pointer_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_query_pointer_reply_t {
-        call!(self, xcb_xinput_xi_query_pointer_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_query_pointer_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6123,7 +6124,7 @@ impl XcbXinput {
         window: xcb_window_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_query_pointer_cookie_t {
-        call!(self, xcb_xinput_xi_query_pointer)(c, window, deviceid)
+        sym!(self, xcb_xinput_xi_query_pointer)(c, window, deviceid)
     }
 
     #[inline]
@@ -6133,7 +6134,7 @@ impl XcbXinput {
         window: xcb_window_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_query_pointer_cookie_t {
-        call!(self, xcb_xinput_xi_query_pointer_unchecked)(c, window, deviceid)
+        sym!(self, xcb_xinput_xi_query_pointer_unchecked)(c, window, deviceid)
     }
 
     #[inline]
@@ -6150,7 +6151,7 @@ impl XcbXinput {
         dst_y: xcb_xinput_fp1616_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_warp_pointer)(
+        sym!(self, xcb_xinput_xi_warp_pointer)(
             c, src_win, dst_win, src_x, src_y, src_width, src_height, dst_x, dst_y, deviceid,
         )
     }
@@ -6169,7 +6170,7 @@ impl XcbXinput {
         dst_y: xcb_xinput_fp1616_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_warp_pointer_checked)(
+        sym!(self, xcb_xinput_xi_warp_pointer_checked)(
             c, src_win, dst_win, src_x, src_y, src_width, src_height, dst_x, dst_y, deviceid,
         )
     }
@@ -6182,7 +6183,7 @@ impl XcbXinput {
         cursor: xcb_cursor_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_change_cursor)(c, window, cursor, deviceid)
+        sym!(self, xcb_xinput_xi_change_cursor)(c, window, cursor, deviceid)
     }
 
     #[inline]
@@ -6193,7 +6194,7 @@ impl XcbXinput {
         cursor: xcb_cursor_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_change_cursor_checked)(c, window, cursor, deviceid)
+        sym!(self, xcb_xinput_xi_change_cursor_checked)(c, window, cursor, deviceid)
     }
 
     #[inline]
@@ -6201,7 +6202,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_add_master_t,
     ) -> *mut c_char {
-        call!(self, xcb_xinput_add_master_name)(R)
+        sym!(self, xcb_xinput_add_master_name)(R)
     }
 
     #[inline]
@@ -6209,7 +6210,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_add_master_t,
     ) -> c_int {
-        call!(self, xcb_xinput_add_master_name_length)(R)
+        sym!(self, xcb_xinput_add_master_name_length)(R)
     }
 
     #[inline]
@@ -6217,12 +6218,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_add_master_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_add_master_name_end)(R)
+        sym!(self, xcb_xinput_add_master_name_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_add_master_next(&self, i: *mut xcb_xinput_add_master_iterator_t) {
-        call!(self, xcb_xinput_add_master_next)(i);
+        sym!(self, xcb_xinput_add_master_next)(i);
     }
 
     #[inline]
@@ -6230,7 +6231,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_add_master_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_add_master_end)(i)
+        sym!(self, xcb_xinput_add_master_end)(i)
     }
 
     #[inline]
@@ -6238,7 +6239,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_remove_master_iterator_t,
     ) {
-        call!(self, xcb_xinput_remove_master_next)(i);
+        sym!(self, xcb_xinput_remove_master_next)(i);
     }
 
     #[inline]
@@ -6246,12 +6247,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_remove_master_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_remove_master_end)(i)
+        sym!(self, xcb_xinput_remove_master_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_attach_slave_next(&self, i: *mut xcb_xinput_attach_slave_iterator_t) {
-        call!(self, xcb_xinput_attach_slave_next)(i);
+        sym!(self, xcb_xinput_attach_slave_next)(i);
     }
 
     #[inline]
@@ -6259,12 +6260,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_attach_slave_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_attach_slave_end)(i)
+        sym!(self, xcb_xinput_attach_slave_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_detach_slave_next(&self, i: *mut xcb_xinput_detach_slave_iterator_t) {
-        call!(self, xcb_xinput_detach_slave_next)(i);
+        sym!(self, xcb_xinput_detach_slave_next)(i);
     }
 
     #[inline]
@@ -6272,7 +6273,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_detach_slave_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_detach_slave_end)(i)
+        sym!(self, xcb_xinput_detach_slave_end)(i)
     }
 
     #[inline]
@@ -6280,7 +6281,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_hierarchy_change_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_hierarchy_change_uninterpreted_data)(R)
+        sym!(self, xcb_xinput_hierarchy_change_uninterpreted_data)(R)
     }
 
     #[inline]
@@ -6288,7 +6289,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_hierarchy_change_t,
     ) -> c_int {
-        call!(self, xcb_xinput_hierarchy_change_uninterpreted_data_length)(R)
+        sym!(self, xcb_xinput_hierarchy_change_uninterpreted_data_length)(R)
     }
 
     #[inline]
@@ -6296,7 +6297,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_hierarchy_change_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_hierarchy_change_uninterpreted_data_end)(R)
+        sym!(self, xcb_xinput_hierarchy_change_uninterpreted_data_end)(R)
     }
 
     #[inline]
@@ -6304,7 +6305,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_hierarchy_change_iterator_t,
     ) {
-        call!(self, xcb_xinput_hierarchy_change_next)(i);
+        sym!(self, xcb_xinput_hierarchy_change_next)(i);
     }
 
     #[inline]
@@ -6312,7 +6313,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_hierarchy_change_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_hierarchy_change_end)(i)
+        sym!(self, xcb_xinput_hierarchy_change_end)(i)
     }
 
     #[inline]
@@ -6322,7 +6323,7 @@ impl XcbXinput {
         num_changes: u8,
         changes: *const xcb_xinput_hierarchy_change_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_change_hierarchy)(c, num_changes, changes)
+        sym!(self, xcb_xinput_xi_change_hierarchy)(c, num_changes, changes)
     }
 
     #[inline]
@@ -6332,7 +6333,7 @@ impl XcbXinput {
         num_changes: u8,
         changes: *const xcb_xinput_hierarchy_change_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_change_hierarchy_checked)(c, num_changes, changes)
+        sym!(self, xcb_xinput_xi_change_hierarchy_checked)(c, num_changes, changes)
     }
 
     #[inline]
@@ -6342,7 +6343,7 @@ impl XcbXinput {
         window: xcb_window_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_set_client_pointer)(c, window, deviceid)
+        sym!(self, xcb_xinput_xi_set_client_pointer)(c, window, deviceid)
     }
 
     #[inline]
@@ -6352,7 +6353,7 @@ impl XcbXinput {
         window: xcb_window_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_set_client_pointer_checked)(c, window, deviceid)
+        sym!(self, xcb_xinput_xi_set_client_pointer_checked)(c, window, deviceid)
     }
 
     #[inline]
@@ -6362,7 +6363,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_get_client_pointer_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_get_client_pointer_reply_t {
-        call!(self, xcb_xinput_xi_get_client_pointer_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_get_client_pointer_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6371,7 +6372,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_xi_get_client_pointer_cookie_t {
-        call!(self, xcb_xinput_xi_get_client_pointer)(c, window)
+        sym!(self, xcb_xinput_xi_get_client_pointer)(c, window)
     }
 
     #[inline]
@@ -6380,12 +6381,12 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_xi_get_client_pointer_cookie_t {
-        call!(self, xcb_xinput_xi_get_client_pointer_unchecked)(c, window)
+        sym!(self, xcb_xinput_xi_get_client_pointer_unchecked)(c, window)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_event_mask_mask(&self, R: *const xcb_xinput_event_mask_t) -> *mut u32 {
-        call!(self, xcb_xinput_event_mask_mask)(R)
+        sym!(self, xcb_xinput_event_mask_mask)(R)
     }
 
     #[inline]
@@ -6393,7 +6394,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_event_mask_t,
     ) -> c_int {
-        call!(self, xcb_xinput_event_mask_mask_length)(R)
+        sym!(self, xcb_xinput_event_mask_mask_length)(R)
     }
 
     #[inline]
@@ -6401,12 +6402,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_event_mask_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_event_mask_mask_end)(R)
+        sym!(self, xcb_xinput_event_mask_mask_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_event_mask_next(&self, i: *mut xcb_xinput_event_mask_iterator_t) {
-        call!(self, xcb_xinput_event_mask_next)(i);
+        sym!(self, xcb_xinput_event_mask_next)(i);
     }
 
     #[inline]
@@ -6414,7 +6415,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_event_mask_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_event_mask_end)(i)
+        sym!(self, xcb_xinput_event_mask_end)(i)
     }
 
     #[inline]
@@ -6425,7 +6426,7 @@ impl XcbXinput {
         num_mask: u16,
         masks: *const xcb_xinput_event_mask_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_select_events)(c, window, num_mask, masks)
+        sym!(self, xcb_xinput_xi_select_events)(c, window, num_mask, masks)
     }
 
     #[inline]
@@ -6436,7 +6437,7 @@ impl XcbXinput {
         num_mask: u16,
         masks: *const xcb_xinput_event_mask_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_select_events_checked)(c, window, num_mask, masks)
+        sym!(self, xcb_xinput_xi_select_events_checked)(c, window, num_mask, masks)
     }
 
     #[inline]
@@ -6446,7 +6447,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_query_version_reply_t {
-        call!(self, xcb_xinput_xi_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6456,7 +6457,7 @@ impl XcbXinput {
         major_version: u16,
         minor_version: u16,
     ) -> xcb_xinput_xi_query_version_cookie_t {
-        call!(self, xcb_xinput_xi_query_version)(c, major_version, minor_version)
+        sym!(self, xcb_xinput_xi_query_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -6466,7 +6467,7 @@ impl XcbXinput {
         major_version: u16,
         minor_version: u16,
     ) -> xcb_xinput_xi_query_version_cookie_t {
-        call!(self, xcb_xinput_xi_query_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_xinput_xi_query_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -6474,7 +6475,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_class_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_button_class_state)(R)
+        sym!(self, xcb_xinput_button_class_state)(R)
     }
 
     #[inline]
@@ -6482,7 +6483,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_class_t,
     ) -> c_int {
-        call!(self, xcb_xinput_button_class_state_length)(R)
+        sym!(self, xcb_xinput_button_class_state_length)(R)
     }
 
     #[inline]
@@ -6490,7 +6491,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_class_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_button_class_state_end)(R)
+        sym!(self, xcb_xinput_button_class_state_end)(R)
     }
 
     #[inline]
@@ -6498,7 +6499,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_class_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xinput_button_class_labels)(R)
+        sym!(self, xcb_xinput_button_class_labels)(R)
     }
 
     #[inline]
@@ -6506,7 +6507,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_class_t,
     ) -> c_int {
-        call!(self, xcb_xinput_button_class_labels_length)(R)
+        sym!(self, xcb_xinput_button_class_labels_length)(R)
     }
 
     #[inline]
@@ -6514,12 +6515,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_class_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_button_class_labels_end)(R)
+        sym!(self, xcb_xinput_button_class_labels_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_button_class_next(&self, i: *mut xcb_xinput_button_class_iterator_t) {
-        call!(self, xcb_xinput_button_class_next)(i);
+        sym!(self, xcb_xinput_button_class_next)(i);
     }
 
     #[inline]
@@ -6527,12 +6528,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_button_class_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_button_class_end)(i)
+        sym!(self, xcb_xinput_button_class_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_key_class_keys(&self, R: *const xcb_xinput_key_class_t) -> *mut u32 {
-        call!(self, xcb_xinput_key_class_keys)(R)
+        sym!(self, xcb_xinput_key_class_keys)(R)
     }
 
     #[inline]
@@ -6540,7 +6541,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_class_t,
     ) -> c_int {
-        call!(self, xcb_xinput_key_class_keys_length)(R)
+        sym!(self, xcb_xinput_key_class_keys_length)(R)
     }
 
     #[inline]
@@ -6548,12 +6549,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_class_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_key_class_keys_end)(R)
+        sym!(self, xcb_xinput_key_class_keys_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_key_class_next(&self, i: *mut xcb_xinput_key_class_iterator_t) {
-        call!(self, xcb_xinput_key_class_next)(i);
+        sym!(self, xcb_xinput_key_class_next)(i);
     }
 
     #[inline]
@@ -6561,12 +6562,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_key_class_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_key_class_end)(i)
+        sym!(self, xcb_xinput_key_class_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_scroll_class_next(&self, i: *mut xcb_xinput_scroll_class_iterator_t) {
-        call!(self, xcb_xinput_scroll_class_next)(i);
+        sym!(self, xcb_xinput_scroll_class_next)(i);
     }
 
     #[inline]
@@ -6574,12 +6575,12 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_scroll_class_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_scroll_class_end)(i)
+        sym!(self, xcb_xinput_scroll_class_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_touch_class_next(&self, i: *mut xcb_xinput_touch_class_iterator_t) {
-        call!(self, xcb_xinput_touch_class_next)(i);
+        sym!(self, xcb_xinput_touch_class_next)(i);
     }
 
     #[inline]
@@ -6587,7 +6588,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_touch_class_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_touch_class_end)(i)
+        sym!(self, xcb_xinput_touch_class_end)(i)
     }
 
     #[inline]
@@ -6595,7 +6596,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_valuator_class_iterator_t,
     ) {
-        call!(self, xcb_xinput_valuator_class_next)(i);
+        sym!(self, xcb_xinput_valuator_class_next)(i);
     }
 
     #[inline]
@@ -6603,7 +6604,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_valuator_class_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_valuator_class_end)(i)
+        sym!(self, xcb_xinput_valuator_class_end)(i)
     }
 
     #[inline]
@@ -6611,7 +6612,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_class_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_device_class_uninterpreted_data)(R)
+        sym!(self, xcb_xinput_device_class_uninterpreted_data)(R)
     }
 
     #[inline]
@@ -6619,7 +6620,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_class_t,
     ) -> c_int {
-        call!(self, xcb_xinput_device_class_uninterpreted_data_length)(R)
+        sym!(self, xcb_xinput_device_class_uninterpreted_data_length)(R)
     }
 
     #[inline]
@@ -6627,12 +6628,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_class_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_class_uninterpreted_data_end)(R)
+        sym!(self, xcb_xinput_device_class_uninterpreted_data_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_device_class_next(&self, i: *mut xcb_xinput_device_class_iterator_t) {
-        call!(self, xcb_xinput_device_class_next)(i);
+        sym!(self, xcb_xinput_device_class_next)(i);
     }
 
     #[inline]
@@ -6640,7 +6641,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_device_class_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_device_class_end)(i)
+        sym!(self, xcb_xinput_device_class_end)(i)
     }
 
     #[inline]
@@ -6648,7 +6649,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_device_info_t,
     ) -> *mut c_char {
-        call!(self, xcb_xinput_xi_device_info_name)(R)
+        sym!(self, xcb_xinput_xi_device_info_name)(R)
     }
 
     #[inline]
@@ -6656,7 +6657,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_device_info_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_device_info_name_length)(R)
+        sym!(self, xcb_xinput_xi_device_info_name_length)(R)
     }
 
     #[inline]
@@ -6664,7 +6665,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_device_info_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_device_info_name_end)(R)
+        sym!(self, xcb_xinput_xi_device_info_name_end)(R)
     }
 
     #[inline]
@@ -6672,7 +6673,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_device_info_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_device_info_classes_length)(R)
+        sym!(self, xcb_xinput_xi_device_info_classes_length)(R)
     }
 
     #[inline]
@@ -6680,7 +6681,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_device_info_t,
     ) -> xcb_xinput_device_class_iterator_t {
-        call!(self, xcb_xinput_xi_device_info_classes_iterator)(R)
+        sym!(self, xcb_xinput_xi_device_info_classes_iterator)(R)
     }
 
     #[inline]
@@ -6688,7 +6689,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_xi_device_info_iterator_t,
     ) {
-        call!(self, xcb_xinput_xi_device_info_next)(i);
+        sym!(self, xcb_xinput_xi_device_info_next)(i);
     }
 
     #[inline]
@@ -6696,7 +6697,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_xi_device_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_device_info_end)(i)
+        sym!(self, xcb_xinput_xi_device_info_end)(i)
     }
 
     #[inline]
@@ -6704,7 +6705,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_query_device_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_query_device_infos_length)(R)
+        sym!(self, xcb_xinput_xi_query_device_infos_length)(R)
     }
 
     #[inline]
@@ -6712,7 +6713,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_query_device_reply_t,
     ) -> xcb_xinput_xi_device_info_iterator_t {
-        call!(self, xcb_xinput_xi_query_device_infos_iterator)(R)
+        sym!(self, xcb_xinput_xi_query_device_infos_iterator)(R)
     }
 
     #[inline]
@@ -6722,7 +6723,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_query_device_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_query_device_reply_t {
-        call!(self, xcb_xinput_xi_query_device_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_query_device_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6731,7 +6732,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_query_device_cookie_t {
-        call!(self, xcb_xinput_xi_query_device)(c, deviceid)
+        sym!(self, xcb_xinput_xi_query_device)(c, deviceid)
     }
 
     #[inline]
@@ -6740,7 +6741,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_query_device_cookie_t {
-        call!(self, xcb_xinput_xi_query_device_unchecked)(c, deviceid)
+        sym!(self, xcb_xinput_xi_query_device_unchecked)(c, deviceid)
     }
 
     #[inline]
@@ -6751,7 +6752,7 @@ impl XcbXinput {
         time: xcb_timestamp_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_set_focus)(c, window, time, deviceid)
+        sym!(self, xcb_xinput_xi_set_focus)(c, window, time, deviceid)
     }
 
     #[inline]
@@ -6762,7 +6763,7 @@ impl XcbXinput {
         time: xcb_timestamp_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_set_focus_checked)(c, window, time, deviceid)
+        sym!(self, xcb_xinput_xi_set_focus_checked)(c, window, time, deviceid)
     }
 
     #[inline]
@@ -6772,7 +6773,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_get_focus_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_get_focus_reply_t {
-        call!(self, xcb_xinput_xi_get_focus_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_get_focus_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6781,7 +6782,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_get_focus_cookie_t {
-        call!(self, xcb_xinput_xi_get_focus)(c, deviceid)
+        sym!(self, xcb_xinput_xi_get_focus)(c, deviceid)
     }
 
     #[inline]
@@ -6790,7 +6791,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_get_focus_cookie_t {
-        call!(self, xcb_xinput_xi_get_focus_unchecked)(c, deviceid)
+        sym!(self, xcb_xinput_xi_get_focus_unchecked)(c, deviceid)
     }
 
     #[inline]
@@ -6800,7 +6801,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_grab_device_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_grab_device_reply_t {
-        call!(self, xcb_xinput_xi_grab_device_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_grab_device_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6817,7 +6818,7 @@ impl XcbXinput {
         mask_len: u16,
         mask: *const u32,
     ) -> xcb_xinput_xi_grab_device_cookie_t {
-        call!(self, xcb_xinput_xi_grab_device)(
+        sym!(self, xcb_xinput_xi_grab_device)(
             c,
             window,
             time,
@@ -6845,7 +6846,7 @@ impl XcbXinput {
         mask_len: u16,
         mask: *const u32,
     ) -> xcb_xinput_xi_grab_device_cookie_t {
-        call!(self, xcb_xinput_xi_grab_device_unchecked)(
+        sym!(self, xcb_xinput_xi_grab_device_unchecked)(
             c,
             window,
             time,
@@ -6866,7 +6867,7 @@ impl XcbXinput {
         time: xcb_timestamp_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_ungrab_device)(c, time, deviceid)
+        sym!(self, xcb_xinput_xi_ungrab_device)(c, time, deviceid)
     }
 
     #[inline]
@@ -6876,7 +6877,7 @@ impl XcbXinput {
         time: xcb_timestamp_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_ungrab_device_checked)(c, time, deviceid)
+        sym!(self, xcb_xinput_xi_ungrab_device_checked)(c, time, deviceid)
     }
 
     #[inline]
@@ -6889,7 +6890,7 @@ impl XcbXinput {
         touchid: u32,
         grab_window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_allow_events)(c, time, deviceid, event_mode, touchid, grab_window)
+        sym!(self, xcb_xinput_xi_allow_events)(c, time, deviceid, event_mode, touchid, grab_window)
     }
 
     #[inline]
@@ -6902,7 +6903,7 @@ impl XcbXinput {
         touchid: u32,
         grab_window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_allow_events_checked)(
+        sym!(self, xcb_xinput_xi_allow_events_checked)(
             c,
             time,
             deviceid,
@@ -6917,7 +6918,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_grab_modifier_info_iterator_t,
     ) {
-        call!(self, xcb_xinput_grab_modifier_info_next)(i);
+        sym!(self, xcb_xinput_grab_modifier_info_next)(i);
     }
 
     #[inline]
@@ -6925,7 +6926,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_grab_modifier_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_grab_modifier_info_end)(i)
+        sym!(self, xcb_xinput_grab_modifier_info_end)(i)
     }
 
     #[inline]
@@ -6933,7 +6934,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_passive_grab_device_reply_t,
     ) -> *mut xcb_xinput_grab_modifier_info_t {
-        call!(self, xcb_xinput_xi_passive_grab_device_modifiers)(R)
+        sym!(self, xcb_xinput_xi_passive_grab_device_modifiers)(R)
     }
 
     #[inline]
@@ -6941,7 +6942,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_passive_grab_device_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_passive_grab_device_modifiers_length)(R)
+        sym!(self, xcb_xinput_xi_passive_grab_device_modifiers_length)(R)
     }
 
     #[inline]
@@ -6949,7 +6950,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_passive_grab_device_reply_t,
     ) -> xcb_xinput_grab_modifier_info_iterator_t {
-        call!(self, xcb_xinput_xi_passive_grab_device_modifiers_iterator)(R)
+        sym!(self, xcb_xinput_xi_passive_grab_device_modifiers_iterator)(R)
     }
 
     #[inline]
@@ -6959,7 +6960,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_passive_grab_device_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_passive_grab_device_reply_t {
-        call!(self, xcb_xinput_xi_passive_grab_device_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_passive_grab_device_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -6980,7 +6981,7 @@ impl XcbXinput {
         mask: *const u32,
         modifiers: *const u32,
     ) -> xcb_xinput_xi_passive_grab_device_cookie_t {
-        call!(self, xcb_xinput_xi_passive_grab_device)(
+        sym!(self, xcb_xinput_xi_passive_grab_device)(
             c,
             time,
             grab_window,
@@ -7016,7 +7017,7 @@ impl XcbXinput {
         mask: *const u32,
         modifiers: *const u32,
     ) -> xcb_xinput_xi_passive_grab_device_cookie_t {
-        call!(self, xcb_xinput_xi_passive_grab_device_unchecked)(
+        sym!(self, xcb_xinput_xi_passive_grab_device_unchecked)(
             c,
             time,
             grab_window,
@@ -7045,7 +7046,7 @@ impl XcbXinput {
         grab_type: u8,
         modifiers: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_passive_ungrab_device)(
+        sym!(self, xcb_xinput_xi_passive_ungrab_device)(
             c,
             grab_window,
             detail,
@@ -7067,7 +7068,7 @@ impl XcbXinput {
         grab_type: u8,
         modifiers: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_passive_ungrab_device_checked)(
+        sym!(self, xcb_xinput_xi_passive_ungrab_device_checked)(
             c,
             grab_window,
             detail,
@@ -7083,7 +7084,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_list_properties_reply_t,
     ) -> *mut xcb_atom_t {
-        call!(self, xcb_xinput_xi_list_properties_properties)(R)
+        sym!(self, xcb_xinput_xi_list_properties_properties)(R)
     }
 
     #[inline]
@@ -7091,7 +7092,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_list_properties_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_list_properties_properties_length)(R)
+        sym!(self, xcb_xinput_xi_list_properties_properties_length)(R)
     }
 
     #[inline]
@@ -7099,7 +7100,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_list_properties_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_list_properties_properties_end)(R)
+        sym!(self, xcb_xinput_xi_list_properties_properties_end)(R)
     }
 
     #[inline]
@@ -7109,7 +7110,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_list_properties_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_list_properties_reply_t {
-        call!(self, xcb_xinput_xi_list_properties_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_list_properties_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7118,7 +7119,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_list_properties_cookie_t {
-        call!(self, xcb_xinput_xi_list_properties)(c, deviceid)
+        sym!(self, xcb_xinput_xi_list_properties)(c, deviceid)
     }
 
     #[inline]
@@ -7127,7 +7128,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         deviceid: xcb_xinput_device_id_t,
     ) -> xcb_xinput_xi_list_properties_cookie_t {
-        call!(self, xcb_xinput_xi_list_properties_unchecked)(c, deviceid)
+        sym!(self, xcb_xinput_xi_list_properties_unchecked)(c, deviceid)
     }
 
     #[inline]
@@ -7135,7 +7136,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_xi_change_property_items_data_8)(S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_8)(S)
     }
 
     #[inline]
@@ -7144,7 +7145,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_change_property_request_t,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_change_property_items_data_8_length)(R, S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_8_length)(R, S)
     }
 
     #[inline]
@@ -7153,7 +7154,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_change_property_request_t,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_change_property_items_data_8_end)(R, S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_8_end)(R, S)
     }
 
     #[inline]
@@ -7161,7 +7162,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> *mut u16 {
-        call!(self, xcb_xinput_xi_change_property_items_data_16)(S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_16)(S)
     }
 
     #[inline]
@@ -7170,7 +7171,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_change_property_request_t,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_change_property_items_data_16_length)(R, S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_16_length)(R, S)
     }
 
     #[inline]
@@ -7179,7 +7180,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_change_property_request_t,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_change_property_items_data_16_end)(R, S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_16_end)(R, S)
     }
 
     #[inline]
@@ -7187,7 +7188,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_xi_change_property_items_data_32)(S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_32)(S)
     }
 
     #[inline]
@@ -7196,7 +7197,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_change_property_request_t,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_change_property_items_data_32_length)(R, S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_32_length)(R, S)
     }
 
     #[inline]
@@ -7205,7 +7206,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_change_property_request_t,
         S: *const xcb_xinput_xi_change_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_change_property_items_data_32_end)(R, S)
+        sym!(self, xcb_xinput_xi_change_property_items_data_32_end)(R, S)
     }
 
     #[inline]
@@ -7220,7 +7221,7 @@ impl XcbXinput {
         num_items: u32,
         items: *const xcb_xinput_xi_change_property_items_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_change_property)(
+        sym!(self, xcb_xinput_xi_change_property)(
             c, deviceid, mode, format, property, type_, num_items, items,
         )
     }
@@ -7237,7 +7238,7 @@ impl XcbXinput {
         num_items: u32,
         items: *const xcb_xinput_xi_change_property_items_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_change_property_checked)(
+        sym!(self, xcb_xinput_xi_change_property_checked)(
             c, deviceid, mode, format, property, type_, num_items, items,
         )
     }
@@ -7249,7 +7250,7 @@ impl XcbXinput {
         deviceid: xcb_xinput_device_id_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_delete_property)(c, deviceid, property)
+        sym!(self, xcb_xinput_xi_delete_property)(c, deviceid, property)
     }
 
     #[inline]
@@ -7259,7 +7260,7 @@ impl XcbXinput {
         deviceid: xcb_xinput_device_id_t,
         property: xcb_atom_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_delete_property_checked)(c, deviceid, property)
+        sym!(self, xcb_xinput_xi_delete_property_checked)(c, deviceid, property)
     }
 
     #[inline]
@@ -7267,7 +7268,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> *mut u8 {
-        call!(self, xcb_xinput_xi_get_property_items_data_8)(S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_8)(S)
     }
 
     #[inline]
@@ -7276,7 +7277,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_get_property_reply_t,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_get_property_items_data_8_length)(R, S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_8_length)(R, S)
     }
 
     #[inline]
@@ -7285,7 +7286,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_get_property_reply_t,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_get_property_items_data_8_end)(R, S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_8_end)(R, S)
     }
 
     #[inline]
@@ -7293,7 +7294,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> *mut u16 {
-        call!(self, xcb_xinput_xi_get_property_items_data_16)(S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_16)(S)
     }
 
     #[inline]
@@ -7302,7 +7303,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_get_property_reply_t,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_get_property_items_data_16_length)(R, S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_16_length)(R, S)
     }
 
     #[inline]
@@ -7311,7 +7312,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_get_property_reply_t,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_get_property_items_data_16_end)(R, S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_16_end)(R, S)
     }
 
     #[inline]
@@ -7319,7 +7320,7 @@ impl XcbXinput {
         &self,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_xi_get_property_items_data_32)(S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_32)(S)
     }
 
     #[inline]
@@ -7328,7 +7329,7 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_get_property_reply_t,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_get_property_items_data_32_length)(R, S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_32_length)(R, S)
     }
 
     #[inline]
@@ -7337,14 +7338,14 @@ impl XcbXinput {
         R: *const xcb_xinput_xi_get_property_reply_t,
         S: *const xcb_xinput_xi_get_property_items_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_xi_get_property_items_data_32_end)(R, S)
+        sym!(self, xcb_xinput_xi_get_property_items_data_32_end)(R, S)
     }
     #[inline]
     pub unsafe fn xcb_xinput_xi_get_property_items(
         &self,
         R: *const xcb_xinput_xi_get_property_reply_t,
     ) -> *mut c_void {
-        call!(self, xcb_xinput_xi_get_property_items)(R)
+        sym!(self, xcb_xinput_xi_get_property_items)(R)
     }
 
     #[inline]
@@ -7354,7 +7355,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_get_property_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_get_property_reply_t {
-        call!(self, xcb_xinput_xi_get_property_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_get_property_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7368,7 +7369,7 @@ impl XcbXinput {
         offset: u32,
         len: u32,
     ) -> xcb_xinput_xi_get_property_cookie_t {
-        call!(self, xcb_xinput_xi_get_property)(c, deviceid, delete, property, type_, offset, len)
+        sym!(self, xcb_xinput_xi_get_property)(c, deviceid, delete, property, type_, offset, len)
     }
 
     #[inline]
@@ -7382,7 +7383,7 @@ impl XcbXinput {
         offset: u32,
         len: u32,
     ) -> xcb_xinput_xi_get_property_cookie_t {
-        call!(self, xcb_xinput_xi_get_property_unchecked)(
+        sym!(self, xcb_xinput_xi_get_property_unchecked)(
             c, deviceid, delete, property, type_, offset, len,
         )
     }
@@ -7392,7 +7393,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_get_selected_events_reply_t,
     ) -> c_int {
-        call!(self, xcb_xinput_xi_get_selected_events_masks_length)(R)
+        sym!(self, xcb_xinput_xi_get_selected_events_masks_length)(R)
     }
 
     #[inline]
@@ -7400,7 +7401,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_xi_get_selected_events_reply_t,
     ) -> xcb_xinput_event_mask_iterator_t {
-        call!(self, xcb_xinput_xi_get_selected_events_masks_iterator)(R)
+        sym!(self, xcb_xinput_xi_get_selected_events_masks_iterator)(R)
     }
 
     #[inline]
@@ -7410,7 +7411,7 @@ impl XcbXinput {
         cookie: xcb_xinput_xi_get_selected_events_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xinput_xi_get_selected_events_reply_t {
-        call!(self, xcb_xinput_xi_get_selected_events_reply)(c, cookie, error)
+        sym!(self, xcb_xinput_xi_get_selected_events_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -7419,7 +7420,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_xi_get_selected_events_cookie_t {
-        call!(self, xcb_xinput_xi_get_selected_events)(c, window)
+        sym!(self, xcb_xinput_xi_get_selected_events)(c, window)
     }
 
     #[inline]
@@ -7428,7 +7429,7 @@ impl XcbXinput {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_xinput_xi_get_selected_events_cookie_t {
-        call!(self, xcb_xinput_xi_get_selected_events_unchecked)(c, window)
+        sym!(self, xcb_xinput_xi_get_selected_events_unchecked)(c, window)
     }
 
     #[inline]
@@ -7436,7 +7437,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_barrier_release_pointer_info_iterator_t,
     ) {
-        call!(self, xcb_xinput_barrier_release_pointer_info_next)(i);
+        sym!(self, xcb_xinput_barrier_release_pointer_info_next)(i);
     }
 
     #[inline]
@@ -7444,7 +7445,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_barrier_release_pointer_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_barrier_release_pointer_info_end)(i)
+        sym!(self, xcb_xinput_barrier_release_pointer_info_end)(i)
     }
 
     #[inline]
@@ -7454,7 +7455,7 @@ impl XcbXinput {
         num_barriers: u32,
         barriers: *const xcb_xinput_barrier_release_pointer_info_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_barrier_release_pointer)(c, num_barriers, barriers)
+        sym!(self, xcb_xinput_xi_barrier_release_pointer)(c, num_barriers, barriers)
     }
 
     #[inline]
@@ -7464,7 +7465,7 @@ impl XcbXinput {
         num_barriers: u32,
         barriers: *const xcb_xinput_barrier_release_pointer_info_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xinput_xi_barrier_release_pointer_checked)(c, num_barriers, barriers)
+        sym!(self, xcb_xinput_xi_barrier_release_pointer_checked)(c, num_barriers, barriers)
     }
 
     #[inline]
@@ -7472,7 +7473,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_changed_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_device_changed_classes_length)(R)
+        sym!(self, xcb_xinput_device_changed_classes_length)(R)
     }
 
     #[inline]
@@ -7480,7 +7481,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_device_changed_event_t,
     ) -> xcb_xinput_device_class_iterator_t {
-        call!(self, xcb_xinput_device_changed_classes_iterator)(R)
+        sym!(self, xcb_xinput_device_changed_classes_iterator)(R)
     }
 
     #[inline]
@@ -7488,7 +7489,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_press_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_key_press_button_mask)(R)
+        sym!(self, xcb_xinput_key_press_button_mask)(R)
     }
 
     #[inline]
@@ -7496,7 +7497,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_press_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_key_press_button_mask_length)(R)
+        sym!(self, xcb_xinput_key_press_button_mask_length)(R)
     }
 
     #[inline]
@@ -7504,7 +7505,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_press_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_key_press_button_mask_end)(R)
+        sym!(self, xcb_xinput_key_press_button_mask_end)(R)
     }
 
     #[inline]
@@ -7512,7 +7513,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_press_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_key_press_valuator_mask)(R)
+        sym!(self, xcb_xinput_key_press_valuator_mask)(R)
     }
 
     #[inline]
@@ -7520,7 +7521,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_press_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_key_press_valuator_mask_length)(R)
+        sym!(self, xcb_xinput_key_press_valuator_mask_length)(R)
     }
 
     #[inline]
@@ -7528,7 +7529,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_key_press_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_key_press_valuator_mask_end)(R)
+        sym!(self, xcb_xinput_key_press_valuator_mask_end)(R)
     }
 
     #[inline]
@@ -7536,7 +7537,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_press_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_button_press_button_mask)(R)
+        sym!(self, xcb_xinput_button_press_button_mask)(R)
     }
 
     #[inline]
@@ -7544,7 +7545,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_press_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_button_press_button_mask_length)(R)
+        sym!(self, xcb_xinput_button_press_button_mask_length)(R)
     }
 
     #[inline]
@@ -7552,7 +7553,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_press_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_button_press_button_mask_end)(R)
+        sym!(self, xcb_xinput_button_press_button_mask_end)(R)
     }
 
     #[inline]
@@ -7560,7 +7561,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_press_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_button_press_valuator_mask)(R)
+        sym!(self, xcb_xinput_button_press_valuator_mask)(R)
     }
 
     #[inline]
@@ -7568,7 +7569,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_press_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_button_press_valuator_mask_length)(R)
+        sym!(self, xcb_xinput_button_press_valuator_mask_length)(R)
     }
 
     #[inline]
@@ -7576,12 +7577,12 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_button_press_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_button_press_valuator_mask_end)(R)
+        sym!(self, xcb_xinput_button_press_valuator_mask_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_xinput_enter_buttons(&self, R: *const xcb_xinput_enter_event_t) -> *mut u32 {
-        call!(self, xcb_xinput_enter_buttons)(R)
+        sym!(self, xcb_xinput_enter_buttons)(R)
     }
 
     #[inline]
@@ -7589,7 +7590,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_enter_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_enter_buttons_length)(R)
+        sym!(self, xcb_xinput_enter_buttons_length)(R)
     }
 
     #[inline]
@@ -7597,7 +7598,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_enter_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_enter_buttons_end)(R)
+        sym!(self, xcb_xinput_enter_buttons_end)(R)
     }
 
     #[inline]
@@ -7605,7 +7606,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_hierarchy_info_iterator_t,
     ) {
-        call!(self, xcb_xinput_hierarchy_info_next)(i);
+        sym!(self, xcb_xinput_hierarchy_info_next)(i);
     }
 
     #[inline]
@@ -7613,7 +7614,7 @@ impl XcbXinput {
         &self,
         i: *mut xcb_xinput_hierarchy_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_hierarchy_info_end)(i)
+        sym!(self, xcb_xinput_hierarchy_info_end)(i)
     }
 
     #[inline]
@@ -7621,7 +7622,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_hierarchy_event_t,
     ) -> *mut xcb_xinput_hierarchy_info_t {
-        call!(self, xcb_xinput_hierarchy_infos)(R)
+        sym!(self, xcb_xinput_hierarchy_infos)(R)
     }
 
     #[inline]
@@ -7629,7 +7630,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_hierarchy_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_hierarchy_infos_length)(R)
+        sym!(self, xcb_xinput_hierarchy_infos_length)(R)
     }
 
     #[inline]
@@ -7637,7 +7638,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_hierarchy_event_t,
     ) -> xcb_xinput_hierarchy_info_iterator_t {
-        call!(self, xcb_xinput_hierarchy_infos_iterator)(R)
+        sym!(self, xcb_xinput_hierarchy_infos_iterator)(R)
     }
 
     #[inline]
@@ -7645,7 +7646,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_key_press_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_raw_key_press_valuator_mask)(R)
+        sym!(self, xcb_xinput_raw_key_press_valuator_mask)(R)
     }
 
     #[inline]
@@ -7653,7 +7654,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_key_press_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_raw_key_press_valuator_mask_length)(R)
+        sym!(self, xcb_xinput_raw_key_press_valuator_mask_length)(R)
     }
 
     #[inline]
@@ -7661,7 +7662,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_key_press_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_raw_key_press_valuator_mask_end)(R)
+        sym!(self, xcb_xinput_raw_key_press_valuator_mask_end)(R)
     }
 
     #[inline]
@@ -7669,7 +7670,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_button_press_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_raw_button_press_valuator_mask)(R)
+        sym!(self, xcb_xinput_raw_button_press_valuator_mask)(R)
     }
 
     #[inline]
@@ -7677,7 +7678,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_button_press_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_raw_button_press_valuator_mask_length)(R)
+        sym!(self, xcb_xinput_raw_button_press_valuator_mask_length)(R)
     }
 
     #[inline]
@@ -7685,7 +7686,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_button_press_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_raw_button_press_valuator_mask_end)(R)
+        sym!(self, xcb_xinput_raw_button_press_valuator_mask_end)(R)
     }
 
     #[inline]
@@ -7693,7 +7694,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_touch_begin_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_touch_begin_button_mask)(R)
+        sym!(self, xcb_xinput_touch_begin_button_mask)(R)
     }
 
     #[inline]
@@ -7701,7 +7702,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_touch_begin_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_touch_begin_button_mask_length)(R)
+        sym!(self, xcb_xinput_touch_begin_button_mask_length)(R)
     }
 
     #[inline]
@@ -7709,7 +7710,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_touch_begin_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_touch_begin_button_mask_end)(R)
+        sym!(self, xcb_xinput_touch_begin_button_mask_end)(R)
     }
 
     #[inline]
@@ -7717,7 +7718,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_touch_begin_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_touch_begin_valuator_mask)(R)
+        sym!(self, xcb_xinput_touch_begin_valuator_mask)(R)
     }
 
     #[inline]
@@ -7725,7 +7726,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_touch_begin_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_touch_begin_valuator_mask_length)(R)
+        sym!(self, xcb_xinput_touch_begin_valuator_mask_length)(R)
     }
 
     #[inline]
@@ -7733,7 +7734,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_touch_begin_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_touch_begin_valuator_mask_end)(R)
+        sym!(self, xcb_xinput_touch_begin_valuator_mask_end)(R)
     }
 
     #[inline]
@@ -7741,7 +7742,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_touch_begin_event_t,
     ) -> *mut u32 {
-        call!(self, xcb_xinput_raw_touch_begin_valuator_mask)(R)
+        sym!(self, xcb_xinput_raw_touch_begin_valuator_mask)(R)
     }
 
     #[inline]
@@ -7749,7 +7750,7 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_touch_begin_event_t,
     ) -> c_int {
-        call!(self, xcb_xinput_raw_touch_begin_valuator_mask_length)(R)
+        sym!(self, xcb_xinput_raw_touch_begin_valuator_mask_length)(R)
     }
 
     #[inline]
@@ -7757,2065 +7758,6 @@ impl XcbXinput {
         &self,
         R: *const xcb_xinput_raw_touch_begin_event_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xinput_raw_touch_begin_valuator_mask_end)(R)
+        sym!(self, xcb_xinput_raw_touch_begin_valuator_mask_end)(R)
     }
-}
-
-pub struct XcbXinput {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xinput_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xinput_event_class_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_event_class_iterator_t)>,
-    pub(crate) xcb_xinput_event_class_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_event_class_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_key_code_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_code_iterator_t)>,
-    pub(crate) xcb_xinput_key_code_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_code_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_device_id_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_id_iterator_t)>,
-    pub(crate) xcb_xinput_device_id_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_id_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_fp1616_next: LazySymbol<unsafe fn(i: *mut xcb_xinput_fp1616_iterator_t)>,
-    pub(crate) xcb_xinput_fp1616_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_fp1616_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_fp3232_next: LazySymbol<unsafe fn(i: *mut xcb_xinput_fp3232_iterator_t)>,
-    pub(crate) xcb_xinput_fp3232_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_fp3232_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_get_extension_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_extension_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_extension_version_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_extension_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_xinput_get_extension_version_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_extension_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            name_len: u16,
-            name: *const c_char,
-        ) -> xcb_xinput_get_extension_version_cookie_t,
-    >,
-    pub(crate) xcb_xinput_device_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_info_iterator_t)>,
-    pub(crate) xcb_xinput_device_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_key_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_info_iterator_t)>,
-    pub(crate) xcb_xinput_key_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_button_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_button_info_iterator_t)>,
-    pub(crate) xcb_xinput_button_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_button_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_axis_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_axis_info_iterator_t)>,
-    pub(crate) xcb_xinput_axis_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_axis_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_valuator_info_axes:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_valuator_info_t) -> *mut xcb_xinput_axis_info_t>,
-    pub(crate) xcb_xinput_valuator_info_axes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_valuator_info_t) -> c_int>,
-    pub(crate) xcb_xinput_valuator_info_axes_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_valuator_info_t) -> xcb_xinput_axis_info_iterator_t,
-    >,
-    pub(crate) xcb_xinput_valuator_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_valuator_info_iterator_t)>,
-    pub(crate) xcb_xinput_valuator_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_valuator_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_input_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_input_info_iterator_t)>,
-    pub(crate) xcb_xinput_input_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_input_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_device_name_string:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_name_t) -> *mut c_char>,
-    pub(crate) xcb_xinput_device_name_string_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_name_t) -> c_int>,
-    pub(crate) xcb_xinput_device_name_string_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_name_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_device_name_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_name_iterator_t)>,
-    pub(crate) xcb_xinput_device_name_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_name_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_list_input_devices_devices: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_list_input_devices_reply_t) -> *mut xcb_xinput_device_info_t,
-    >,
-    pub(crate) xcb_xinput_list_input_devices_devices_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_list_input_devices_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_list_input_devices_devices_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_list_input_devices_reply_t,
-        ) -> xcb_xinput_device_info_iterator_t,
-    >,
-    pub(crate) xcb_xinput_list_input_devices_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_list_input_devices_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_list_input_devices_reply_t,
-    >,
-    pub(crate) xcb_xinput_list_input_devices:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xinput_list_input_devices_cookie_t>,
-    pub(crate) xcb_xinput_list_input_devices_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xinput_list_input_devices_cookie_t>,
-    pub(crate) xcb_xinput_input_class_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_input_class_info_iterator_t)>,
-    pub(crate) xcb_xinput_input_class_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_input_class_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_open_device_class_info: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_open_device_reply_t) -> *mut xcb_xinput_input_class_info_t,
-    >,
-    pub(crate) xcb_xinput_open_device_class_info_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_open_device_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_open_device_class_info_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_open_device_reply_t,
-        ) -> xcb_xinput_input_class_info_iterator_t,
-    >,
-    pub(crate) xcb_xinput_open_device_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_open_device_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_open_device_reply_t,
-    >,
-    pub(crate) xcb_xinput_open_device: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, device_id: u8) -> xcb_xinput_open_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_open_device_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, device_id: u8) -> xcb_xinput_open_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_close_device:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, device_id: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xinput_close_device_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, device_id: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_xinput_set_device_mode_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_set_device_mode_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_set_device_mode_reply_t,
-    >,
-    pub(crate) xcb_xinput_set_device_mode: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            mode: u8,
-        ) -> xcb_xinput_set_device_mode_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_mode_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            mode: u8,
-        ) -> xcb_xinput_set_device_mode_cookie_t,
-    >,
-    pub(crate) xcb_xinput_select_extension_event: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            num_classes: u16,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_select_extension_event_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            num_classes: u16,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_selected_extension_events_this_classes: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_selected_extension_events_reply_t,
-        ) -> *mut xcb_xinput_event_class_t,
-    >,
-    pub(crate) xcb_xinput_get_selected_extension_events_this_classes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_selected_extension_events_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_get_selected_extension_events_this_classes_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_selected_extension_events_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_selected_extension_events_all_classes: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_selected_extension_events_reply_t,
-        ) -> *mut xcb_xinput_event_class_t,
-    >,
-    pub(crate) xcb_xinput_get_selected_extension_events_all_classes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_selected_extension_events_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_get_selected_extension_events_all_classes_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_selected_extension_events_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_selected_extension_events_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_selected_extension_events_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_selected_extension_events_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_selected_extension_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_get_selected_extension_events_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_selected_extension_events_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_get_selected_extension_events_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_device_dont_propagate_list: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            num_classes: u16,
-            mode: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_device_dont_propagate_list_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            num_classes: u16,
-            mode: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_dont_propagate_list_classes: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_dont_propagate_list_reply_t,
-        ) -> *mut xcb_xinput_event_class_t,
-    >,
-    pub(crate) xcb_xinput_get_device_dont_propagate_list_classes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_device_dont_propagate_list_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_get_device_dont_propagate_list_classes_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_dont_propagate_list_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_dont_propagate_list_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_dont_propagate_list_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_dont_propagate_list_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_dont_propagate_list: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_get_device_dont_propagate_list_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_dont_propagate_list_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_get_device_dont_propagate_list_cookie_t,
-    >,
-    pub(crate) xcb_xinput_device_time_coord_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_time_coord_iterator_t)>,
-    pub(crate) xcb_xinput_device_time_coord_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_time_coord_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_motion_events_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_motion_events_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_motion_events_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_motion_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            start: xcb_timestamp_t,
-            stop: xcb_timestamp_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_motion_events_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_motion_events_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            start: xcb_timestamp_t,
-            stop: xcb_timestamp_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_motion_events_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_keyboard_device_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_change_keyboard_device_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_change_keyboard_device_reply_t,
-    >,
-    pub(crate) xcb_xinput_change_keyboard_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_change_keyboard_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_keyboard_device_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_change_keyboard_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_pointer_device_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_change_pointer_device_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_change_pointer_device_reply_t,
-    >,
-    pub(crate) xcb_xinput_change_pointer_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            x_axis: u8,
-            y_axis: u8,
-            device_id: u8,
-        ) -> xcb_xinput_change_pointer_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_pointer_device_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            x_axis: u8,
-            y_axis: u8,
-            device_id: u8,
-        ) -> xcb_xinput_change_pointer_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_grab_device_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_grab_device_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_grab_device_reply_t,
-    >,
-    pub(crate) xcb_xinput_grab_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            time: xcb_timestamp_t,
-            num_classes: u16,
-            this_device_mode: u8,
-            other_device_mode: u8,
-            owner_events: u8,
-            device_id: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_xinput_grab_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_grab_device_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            time: xcb_timestamp_t,
-            num_classes: u16,
-            this_device_mode: u8,
-            other_device_mode: u8,
-            owner_events: u8,
-            device_id: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_xinput_grab_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_ungrab_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_ungrab_device_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_grab_device_key: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            num_classes: u16,
-            modifiers: u16,
-            modifier_device: u8,
-            grabbed_device: u8,
-            key: u8,
-            this_device_mode: u8,
-            other_device_mode: u8,
-            owner_events: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_grab_device_key_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            num_classes: u16,
-            modifiers: u16,
-            modifier_device: u8,
-            grabbed_device: u8,
-            key: u8,
-            this_device_mode: u8,
-            other_device_mode: u8,
-            owner_events: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_ungrab_device_key: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-            modifier_device: u8,
-            key: u8,
-            grabbed_device: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_ungrab_device_key_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-            modifier_device: u8,
-            key: u8,
-            grabbed_device: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_grab_device_button: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            grabbed_device: u8,
-            modifier_device: u8,
-            num_classes: u16,
-            modifiers: u16,
-            this_device_mode: u8,
-            other_device_mode: u8,
-            button: u8,
-            owner_events: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_grab_device_button_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            grabbed_device: u8,
-            modifier_device: u8,
-            num_classes: u16,
-            modifiers: u16,
-            this_device_mode: u8,
-            other_device_mode: u8,
-            button: u8,
-            owner_events: u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_ungrab_device_button: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-            modifier_device: u8,
-            button: u8,
-            grabbed_device: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_ungrab_device_button_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            modifiers: u16,
-            modifier_device: u8,
-            button: u8,
-            grabbed_device: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_allow_device_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            mode: u8,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_allow_device_events_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            mode: u8,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_focus_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_focus_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_focus_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_focus: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, device_id: u8) -> xcb_xinput_get_device_focus_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_focus_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, device_id: u8) -> xcb_xinput_get_device_focus_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_focus: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            focus: xcb_window_t,
-            time: xcb_timestamp_t,
-            revert_to: u8,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_focus_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            focus: xcb_window_t,
-            time: xcb_timestamp_t,
-            revert_to: u8,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_kbd_feedback_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_kbd_feedback_state_iterator_t)>,
-    pub(crate) xcb_xinput_kbd_feedback_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_kbd_feedback_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_ptr_feedback_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_ptr_feedback_state_iterator_t)>,
-    pub(crate) xcb_xinput_ptr_feedback_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_ptr_feedback_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_integer_feedback_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_integer_feedback_state_iterator_t)>,
-    pub(crate) xcb_xinput_integer_feedback_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_integer_feedback_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_string_feedback_state_keysyms:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_string_feedback_state_t) -> *mut xcb_keysym_t>,
-    pub(crate) xcb_xinput_string_feedback_state_keysyms_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_string_feedback_state_t) -> c_int>,
-    pub(crate) xcb_xinput_string_feedback_state_keysyms_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_string_feedback_state_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_string_feedback_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_string_feedback_state_iterator_t)>,
-    pub(crate) xcb_xinput_string_feedback_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_string_feedback_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_bell_feedback_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_bell_feedback_state_iterator_t)>,
-    pub(crate) xcb_xinput_bell_feedback_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_bell_feedback_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_led_feedback_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_led_feedback_state_iterator_t)>,
-    pub(crate) xcb_xinput_led_feedback_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_led_feedback_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_feedback_state_uninterpreted_data:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_feedback_state_t) -> *mut u8>,
-    pub(crate) xcb_xinput_feedback_state_uninterpreted_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_feedback_state_t) -> c_int>,
-    pub(crate) xcb_xinput_feedback_state_uninterpreted_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_feedback_state_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_feedback_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_feedback_state_iterator_t)>,
-    pub(crate) xcb_xinput_feedback_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_feedback_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_feedback_control_feedbacks_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_feedback_control_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_get_feedback_control_feedbacks_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_feedback_control_reply_t,
-        ) -> xcb_xinput_feedback_state_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_feedback_control_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_feedback_control_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_feedback_control_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_feedback_control: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_feedback_control_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_feedback_control_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_feedback_control_cookie_t,
-    >,
-    pub(crate) xcb_xinput_kbd_feedback_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_kbd_feedback_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_kbd_feedback_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_kbd_feedback_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_ptr_feedback_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_ptr_feedback_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_ptr_feedback_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_ptr_feedback_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_integer_feedback_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_integer_feedback_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_integer_feedback_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_integer_feedback_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_string_feedback_ctl_keysyms:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_string_feedback_ctl_t) -> *mut xcb_keysym_t>,
-    pub(crate) xcb_xinput_string_feedback_ctl_keysyms_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_string_feedback_ctl_t) -> c_int>,
-    pub(crate) xcb_xinput_string_feedback_ctl_keysyms_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_string_feedback_ctl_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_string_feedback_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_string_feedback_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_string_feedback_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_string_feedback_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_bell_feedback_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_bell_feedback_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_bell_feedback_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_bell_feedback_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_led_feedback_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_led_feedback_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_led_feedback_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_led_feedback_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_feedback_ctl_uninterpreted_data:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_feedback_ctl_t) -> *mut u8>,
-    pub(crate) xcb_xinput_feedback_ctl_uninterpreted_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_feedback_ctl_t) -> c_int>,
-    pub(crate) xcb_xinput_feedback_ctl_uninterpreted_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_feedback_ctl_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_feedback_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_feedback_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_feedback_ctl_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_feedback_ctl_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_change_feedback_control: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mask: u32,
-            device_id: u8,
-            feedback_id: u8,
-            feedback: *mut xcb_xinput_feedback_ctl_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_feedback_control_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            mask: u32,
-            device_id: u8,
-            feedback_id: u8,
-            feedback: *mut xcb_xinput_feedback_ctl_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_key_mapping_keysyms: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_get_device_key_mapping_reply_t) -> *mut xcb_keysym_t,
-    >,
-    pub(crate) xcb_xinput_get_device_key_mapping_keysyms_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_device_key_mapping_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_get_device_key_mapping_keysyms_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_get_device_key_mapping_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_key_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_key_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_key_mapping_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_key_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            first_keycode: xcb_xinput_key_code_t,
-            count: u8,
-        ) -> xcb_xinput_get_device_key_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_key_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            first_keycode: xcb_xinput_key_code_t,
-            count: u8,
-        ) -> xcb_xinput_get_device_key_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_device_key_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            first_keycode: xcb_xinput_key_code_t,
-            keysyms_per_keycode: u8,
-            keycode_count: u8,
-            keysyms: *const xcb_keysym_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_device_key_mapping_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            first_keycode: xcb_xinput_key_code_t,
-            keysyms_per_keycode: u8,
-            keycode_count: u8,
-            keysyms: *const xcb_keysym_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_modifier_mapping_keymaps:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_device_modifier_mapping_reply_t) -> *mut u8>,
-    pub(crate) xcb_xinput_get_device_modifier_mapping_keymaps_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_device_modifier_mapping_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_get_device_modifier_mapping_keymaps_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_modifier_mapping_reply_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_modifier_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_modifier_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_modifier_mapping_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_modifier_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_modifier_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_modifier_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_modifier_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_modifier_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_set_device_modifier_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_set_device_modifier_mapping_reply_t,
-    >,
-    pub(crate) xcb_xinput_set_device_modifier_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            keycodes_per_modifier: u8,
-            keymaps: *const u8,
-        ) -> xcb_xinput_set_device_modifier_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_modifier_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            keycodes_per_modifier: u8,
-            keymaps: *const u8,
-        ) -> xcb_xinput_set_device_modifier_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_button_mapping_map:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_device_button_mapping_reply_t) -> *mut u8>,
-    pub(crate) xcb_xinput_get_device_button_mapping_map_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_device_button_mapping_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_get_device_button_mapping_map_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_get_device_button_mapping_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_button_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_button_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_button_mapping_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_button_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_button_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_button_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_button_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_button_mapping_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_set_device_button_mapping_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_set_device_button_mapping_reply_t,
-    >,
-    pub(crate) xcb_xinput_set_device_button_mapping: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            map_size: u8,
-            map: *const u8,
-        ) -> xcb_xinput_set_device_button_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_button_mapping_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            map_size: u8,
-            map: *const u8,
-        ) -> xcb_xinput_set_device_button_mapping_cookie_t,
-    >,
-    pub(crate) xcb_xinput_key_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_state_iterator_t)>,
-    pub(crate) xcb_xinput_key_state_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_state_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_button_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_button_state_iterator_t)>,
-    pub(crate) xcb_xinput_button_state_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_button_state_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_valuator_state_valuators:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_valuator_state_t) -> *mut u32>,
-    pub(crate) xcb_xinput_valuator_state_valuators_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_valuator_state_t) -> c_int>,
-    pub(crate) xcb_xinput_valuator_state_valuators_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_valuator_state_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_valuator_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_valuator_state_iterator_t)>,
-    pub(crate) xcb_xinput_valuator_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_valuator_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_input_state_uninterpreted_data:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_input_state_t) -> *mut u8>,
-    pub(crate) xcb_xinput_input_state_uninterpreted_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_input_state_t) -> c_int>,
-    pub(crate) xcb_xinput_input_state_uninterpreted_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_input_state_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_input_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_input_state_iterator_t)>,
-    pub(crate) xcb_xinput_input_state_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_input_state_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_query_device_state_classes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_query_device_state_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_query_device_state_classes_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_query_device_state_reply_t,
-        ) -> xcb_xinput_input_state_iterator_t,
-    >,
-    pub(crate) xcb_xinput_query_device_state_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_query_device_state_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_query_device_state_reply_t,
-    >,
-    pub(crate) xcb_xinput_query_device_state: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_query_device_state_cookie_t,
-    >,
-    pub(crate) xcb_xinput_query_device_state_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_query_device_state_cookie_t,
-    >,
-    pub(crate) xcb_xinput_send_extension_event: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            destination: xcb_window_t,
-            device_id: u8,
-            propagate: u8,
-            num_classes: u16,
-            num_events: u8,
-            events: *const u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_send_extension_event_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            destination: xcb_window_t,
-            device_id: u8,
-            propagate: u8,
-            num_classes: u16,
-            num_events: u8,
-            events: *const u8,
-            classes: *const xcb_xinput_event_class_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_device_bell: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            feedback_id: u8,
-            feedback_class: u8,
-            percent: i8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_device_bell_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            feedback_id: u8,
-            feedback_class: u8,
-            percent: i8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_valuators_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_set_device_valuators_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_set_device_valuators_reply_t,
-    >,
-    pub(crate) xcb_xinput_set_device_valuators: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            first_valuator: u8,
-            num_valuators: u8,
-            valuators: *const i32,
-        ) -> xcb_xinput_set_device_valuators_cookie_t,
-    >,
-    pub(crate) xcb_xinput_set_device_valuators_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-            first_valuator: u8,
-            num_valuators: u8,
-            valuators: *const i32,
-        ) -> xcb_xinput_set_device_valuators_cookie_t,
-    >,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_values:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> *mut u32>,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_values_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> c_int>,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_values_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_min:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> *mut u32>,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_min_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> c_int>,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_min_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_max:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> *mut u32>,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_max_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> c_int>,
-    pub(crate) xcb_xinput_device_resolution_state_resolution_max_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_device_resolution_state_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_resolution_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_resolution_state_iterator_t)>,
-    pub(crate) xcb_xinput_device_resolution_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_resolution_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_abs_calib_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_abs_calib_state_iterator_t)>,
-    pub(crate) xcb_xinput_device_abs_calib_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_abs_calib_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_abs_area_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_abs_area_state_iterator_t)>,
-    pub(crate) xcb_xinput_device_abs_area_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_abs_area_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_core_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_core_state_iterator_t)>,
-    pub(crate) xcb_xinput_device_core_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_core_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_enable_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_enable_state_iterator_t)>,
-    pub(crate) xcb_xinput_device_enable_state_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_enable_state_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_state_uninterpreted_data:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_state_t) -> *mut u8>,
-    pub(crate) xcb_xinput_device_state_uninterpreted_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_state_t) -> c_int>,
-    pub(crate) xcb_xinput_device_state_uninterpreted_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_state_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_device_state_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_state_iterator_t)>,
-    pub(crate) xcb_xinput_device_state_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_state_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_get_device_control_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_control_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_control_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_control: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            control_id: u16,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_control_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_control_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            control_id: u16,
-            device_id: u8,
-        ) -> xcb_xinput_get_device_control_cookie_t,
-    >,
-    pub(crate) xcb_xinput_device_resolution_ctl_resolution_values:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_ctl_t) -> *mut u32>,
-    pub(crate) xcb_xinput_device_resolution_ctl_resolution_values_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_resolution_ctl_t) -> c_int>,
-    pub(crate) xcb_xinput_device_resolution_ctl_resolution_values_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_device_resolution_ctl_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_resolution_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_resolution_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_device_resolution_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_resolution_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_abs_calib_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_abs_calib_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_device_abs_calib_ctl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_abs_calib_ctl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_abs_area_ctrl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_abs_area_ctrl_iterator_t)>,
-    pub(crate) xcb_xinput_device_abs_area_ctrl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_abs_area_ctrl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_core_ctrl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_core_ctrl_iterator_t)>,
-    pub(crate) xcb_xinput_device_core_ctrl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_core_ctrl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_enable_ctrl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_enable_ctrl_iterator_t)>,
-    pub(crate) xcb_xinput_device_enable_ctrl_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_device_enable_ctrl_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_ctl_uninterpreted_data:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_ctl_t) -> *mut u8>,
-    pub(crate) xcb_xinput_device_ctl_uninterpreted_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_ctl_t) -> c_int>,
-    pub(crate) xcb_xinput_device_ctl_uninterpreted_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_ctl_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_device_ctl_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_ctl_iterator_t)>,
-    pub(crate) xcb_xinput_device_ctl_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_ctl_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_change_device_control_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_change_device_control_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_change_device_control_reply_t,
-    >,
-    pub(crate) xcb_xinput_change_device_control: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            control_id: u16,
-            device_id: u8,
-            control: *mut xcb_xinput_device_ctl_t,
-        ) -> xcb_xinput_change_device_control_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_device_control_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            control_id: u16,
-            device_id: u8,
-            control: *mut xcb_xinput_device_ctl_t,
-        ) -> xcb_xinput_change_device_control_cookie_t,
-    >,
-    pub(crate) xcb_xinput_list_device_properties_atoms: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_list_device_properties_reply_t) -> *mut xcb_atom_t,
-    >,
-    pub(crate) xcb_xinput_list_device_properties_atoms_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_list_device_properties_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_list_device_properties_atoms_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_list_device_properties_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_list_device_properties_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_list_device_properties_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_list_device_properties_reply_t,
-    >,
-    pub(crate) xcb_xinput_list_device_properties: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_list_device_properties_cookie_t,
-    >,
-    pub(crate) xcb_xinput_list_device_properties_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            device_id: u8,
-        ) -> xcb_xinput_list_device_properties_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_device_property_items_data_8:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_change_device_property_items_t) -> *mut u8>,
-    pub(crate) xcb_xinput_change_device_property_items_data_8_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_change_device_property_request_t,
-            S: *const xcb_xinput_change_device_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_change_device_property_items_data_8_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_change_device_property_request_t,
-            S: *const xcb_xinput_change_device_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_change_device_property_items_data_16:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_change_device_property_items_t) -> *mut u16>,
-    pub(crate) xcb_xinput_change_device_property_items_data_16_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_change_device_property_request_t,
-            S: *const xcb_xinput_change_device_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_change_device_property_items_data_16_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_change_device_property_request_t,
-            S: *const xcb_xinput_change_device_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_change_device_property_items_data_32:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_change_device_property_items_t) -> *mut u32>,
-    pub(crate) xcb_xinput_change_device_property_items_data_32_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_change_device_property_request_t,
-            S: *const xcb_xinput_change_device_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_change_device_property_items_data_32_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_change_device_property_request_t,
-            S: *const xcb_xinput_change_device_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_change_device_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            device_id: u8,
-            format: u8,
-            mode: u8,
-            num_items: u32,
-            items: *const xcb_xinput_change_device_property_items_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_change_device_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            device_id: u8,
-            format: u8,
-            mode: u8,
-            num_items: u32,
-            items: *const xcb_xinput_change_device_property_items_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_delete_device_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            property: xcb_atom_t,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_delete_device_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            property: xcb_atom_t,
-            device_id: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_property_items_data_8:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_get_device_property_items_t) -> *mut u8>,
-    pub(crate) xcb_xinput_get_device_property_items_data_8_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_property_reply_t,
-            S: *const xcb_xinput_get_device_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_get_device_property_items_data_8_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_property_reply_t,
-            S: *const xcb_xinput_get_device_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_property_items_data_16:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_get_device_property_items_t) -> *mut u16>,
-    pub(crate) xcb_xinput_get_device_property_items_data_16_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_property_reply_t,
-            S: *const xcb_xinput_get_device_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_get_device_property_items_data_16_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_property_reply_t,
-            S: *const xcb_xinput_get_device_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_property_items_data_32:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_get_device_property_items_t) -> *mut u32>,
-    pub(crate) xcb_xinput_get_device_property_items_data_32_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_property_reply_t,
-            S: *const xcb_xinput_get_device_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_get_device_property_items_data_32_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_get_device_property_reply_t,
-            S: *const xcb_xinput_get_device_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_get_device_property_items:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_get_device_property_reply_t) -> *mut c_void>,
-    pub(crate) xcb_xinput_get_device_property_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_get_device_property_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_get_device_property_reply_t,
-    >,
-    pub(crate) xcb_xinput_get_device_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            offset: u32,
-            len: u32,
-            device_id: u8,
-            delete: u8,
-        ) -> xcb_xinput_get_device_property_cookie_t,
-    >,
-    pub(crate) xcb_xinput_get_device_property_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            offset: u32,
-            len: u32,
-            device_id: u8,
-            delete: u8,
-        ) -> xcb_xinput_get_device_property_cookie_t,
-    >,
-    pub(crate) xcb_xinput_group_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_group_info_iterator_t)>,
-    pub(crate) xcb_xinput_group_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_group_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_modifier_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_modifier_info_iterator_t)>,
-    pub(crate) xcb_xinput_modifier_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_modifier_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_pointer_buttons:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_query_pointer_reply_t) -> *mut u32>,
-    pub(crate) xcb_xinput_xi_query_pointer_buttons_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_query_pointer_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_xi_query_pointer_buttons_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_xi_query_pointer_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_pointer_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_query_pointer_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_query_pointer_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_pointer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_query_pointer_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_pointer_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_query_pointer_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_warp_pointer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_win: xcb_window_t,
-            dst_win: xcb_window_t,
-            src_x: xcb_xinput_fp1616_t,
-            src_y: xcb_xinput_fp1616_t,
-            src_width: u16,
-            src_height: u16,
-            dst_x: xcb_xinput_fp1616_t,
-            dst_y: xcb_xinput_fp1616_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_warp_pointer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            src_win: xcb_window_t,
-            dst_win: xcb_window_t,
-            src_x: xcb_xinput_fp1616_t,
-            src_y: xcb_xinput_fp1616_t,
-            src_width: u16,
-            src_height: u16,
-            dst_x: xcb_xinput_fp1616_t,
-            dst_y: xcb_xinput_fp1616_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            cursor: xcb_cursor_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_cursor_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            cursor: xcb_cursor_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_add_master_name:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_add_master_t) -> *mut c_char>,
-    pub(crate) xcb_xinput_add_master_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_add_master_t) -> c_int>,
-    pub(crate) xcb_xinput_add_master_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_add_master_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_add_master_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_add_master_iterator_t)>,
-    pub(crate) xcb_xinput_add_master_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_add_master_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_remove_master_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_remove_master_iterator_t)>,
-    pub(crate) xcb_xinput_remove_master_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_remove_master_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_attach_slave_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_attach_slave_iterator_t)>,
-    pub(crate) xcb_xinput_attach_slave_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_attach_slave_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_detach_slave_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_detach_slave_iterator_t)>,
-    pub(crate) xcb_xinput_detach_slave_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_detach_slave_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_hierarchy_change_uninterpreted_data:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_hierarchy_change_t) -> *mut u8>,
-    pub(crate) xcb_xinput_hierarchy_change_uninterpreted_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_hierarchy_change_t) -> c_int>,
-    pub(crate) xcb_xinput_hierarchy_change_uninterpreted_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_hierarchy_change_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_hierarchy_change_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_hierarchy_change_iterator_t)>,
-    pub(crate) xcb_xinput_hierarchy_change_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_hierarchy_change_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_hierarchy: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            num_changes: u8,
-            changes: *const xcb_xinput_hierarchy_change_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_hierarchy_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            num_changes: u8,
-            changes: *const xcb_xinput_hierarchy_change_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_set_client_pointer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_set_client_pointer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_client_pointer_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_get_client_pointer_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_get_client_pointer_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_client_pointer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_xi_get_client_pointer_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_client_pointer_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_xi_get_client_pointer_cookie_t,
-    >,
-    pub(crate) xcb_xinput_event_mask_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_event_mask_t) -> *mut u32>,
-    pub(crate) xcb_xinput_event_mask_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_event_mask_t) -> c_int>,
-    pub(crate) xcb_xinput_event_mask_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_event_mask_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_event_mask_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_event_mask_iterator_t)>,
-    pub(crate) xcb_xinput_event_mask_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_event_mask_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_xi_select_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            num_mask: u16,
-            masks: *const xcb_xinput_event_mask_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_select_events_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            num_mask: u16,
-            masks: *const xcb_xinput_event_mask_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_query_version_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u16,
-            minor_version: u16,
-        ) -> xcb_xinput_xi_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u16,
-            minor_version: u16,
-        ) -> xcb_xinput_xi_query_version_cookie_t,
-    >,
-    pub(crate) xcb_xinput_button_class_state:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_class_t) -> *mut u32>,
-    pub(crate) xcb_xinput_button_class_state_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_class_t) -> c_int>,
-    pub(crate) xcb_xinput_button_class_state_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_class_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_button_class_labels:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_class_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xinput_button_class_labels_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_class_t) -> c_int>,
-    pub(crate) xcb_xinput_button_class_labels_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_class_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_button_class_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_button_class_iterator_t)>,
-    pub(crate) xcb_xinput_button_class_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_button_class_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_key_class_keys:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_class_t) -> *mut u32>,
-    pub(crate) xcb_xinput_key_class_keys_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_class_t) -> c_int>,
-    pub(crate) xcb_xinput_key_class_keys_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_class_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_key_class_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_class_iterator_t)>,
-    pub(crate) xcb_xinput_key_class_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_key_class_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_scroll_class_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_scroll_class_iterator_t)>,
-    pub(crate) xcb_xinput_scroll_class_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_scroll_class_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_touch_class_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_touch_class_iterator_t)>,
-    pub(crate) xcb_xinput_touch_class_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_touch_class_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_valuator_class_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_valuator_class_iterator_t)>,
-    pub(crate) xcb_xinput_valuator_class_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_valuator_class_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_device_class_uninterpreted_data:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_class_t) -> *mut u8>,
-    pub(crate) xcb_xinput_device_class_uninterpreted_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_class_t) -> c_int>,
-    pub(crate) xcb_xinput_device_class_uninterpreted_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_class_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_device_class_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_class_iterator_t)>,
-    pub(crate) xcb_xinput_device_class_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_device_class_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_xi_device_info_name:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_device_info_t) -> *mut c_char>,
-    pub(crate) xcb_xinput_xi_device_info_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_device_info_t) -> c_int>,
-    pub(crate) xcb_xinput_xi_device_info_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_device_info_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_xi_device_info_classes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_device_info_t) -> c_int>,
-    pub(crate) xcb_xinput_xi_device_info_classes_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_xi_device_info_t) -> xcb_xinput_device_class_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_device_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_xi_device_info_iterator_t)>,
-    pub(crate) xcb_xinput_xi_device_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_xi_device_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_device_infos_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_query_device_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_xi_query_device_infos_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_query_device_reply_t,
-        ) -> xcb_xinput_xi_device_info_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_device_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_query_device_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_query_device_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_query_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_query_device_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_query_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_set_focus: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            time: xcb_timestamp_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_set_focus_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            time: xcb_timestamp_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_focus_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_get_focus_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_get_focus_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_focus: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_get_focus_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_focus_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_get_focus_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_grab_device_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_grab_device_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_grab_device_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_grab_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            time: xcb_timestamp_t,
-            cursor: xcb_cursor_t,
-            deviceid: xcb_xinput_device_id_t,
-            mode: u8,
-            paired_device_mode: u8,
-            owner_events: u8,
-            mask_len: u16,
-            mask: *const u32,
-        ) -> xcb_xinput_xi_grab_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_grab_device_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            time: xcb_timestamp_t,
-            cursor: xcb_cursor_t,
-            deviceid: xcb_xinput_device_id_t,
-            mode: u8,
-            paired_device_mode: u8,
-            owner_events: u8,
-            mask_len: u16,
-            mask: *const u32,
-        ) -> xcb_xinput_xi_grab_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_ungrab_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_ungrab_device_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_allow_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            deviceid: xcb_xinput_device_id_t,
-            event_mode: u8,
-            touchid: u32,
-            grab_window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_allow_events_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            deviceid: xcb_xinput_device_id_t,
-            event_mode: u8,
-            touchid: u32,
-            grab_window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_grab_modifier_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_grab_modifier_info_iterator_t)>,
-    pub(crate) xcb_xinput_grab_modifier_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_grab_modifier_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_passive_grab_device_modifiers: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_passive_grab_device_reply_t,
-        ) -> *mut xcb_xinput_grab_modifier_info_t,
-    >,
-    pub(crate) xcb_xinput_xi_passive_grab_device_modifiers_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_passive_grab_device_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_xi_passive_grab_device_modifiers_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_passive_grab_device_reply_t,
-        ) -> xcb_xinput_grab_modifier_info_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_passive_grab_device_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_passive_grab_device_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_passive_grab_device_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_passive_grab_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            grab_window: xcb_window_t,
-            cursor: xcb_cursor_t,
-            detail: u32,
-            deviceid: xcb_xinput_device_id_t,
-            num_modifiers: u16,
-            mask_len: u16,
-            grab_type: u8,
-            grab_mode: u8,
-            paired_device_mode: u8,
-            owner_events: u8,
-            mask: *const u32,
-            modifiers: *const u32,
-        ) -> xcb_xinput_xi_passive_grab_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_passive_grab_device_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            time: xcb_timestamp_t,
-            grab_window: xcb_window_t,
-            cursor: xcb_cursor_t,
-            detail: u32,
-            deviceid: xcb_xinput_device_id_t,
-            num_modifiers: u16,
-            mask_len: u16,
-            grab_type: u8,
-            grab_mode: u8,
-            paired_device_mode: u8,
-            owner_events: u8,
-            mask: *const u32,
-            modifiers: *const u32,
-        ) -> xcb_xinput_xi_passive_grab_device_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_passive_ungrab_device: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            detail: u32,
-            deviceid: xcb_xinput_device_id_t,
-            num_modifiers: u16,
-            grab_type: u8,
-            modifiers: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_passive_ungrab_device_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            grab_window: xcb_window_t,
-            detail: u32,
-            deviceid: xcb_xinput_device_id_t,
-            num_modifiers: u16,
-            grab_type: u8,
-            modifiers: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_list_properties_properties:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_list_properties_reply_t) -> *mut xcb_atom_t>,
-    pub(crate) xcb_xinput_xi_list_properties_properties_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_list_properties_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_xi_list_properties_properties_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_xi_list_properties_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_list_properties_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_list_properties_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_list_properties_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_list_properties: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_list_properties_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_list_properties_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-        ) -> xcb_xinput_xi_list_properties_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_property_items_data_8:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_xi_change_property_items_t) -> *mut u8>,
-    pub(crate) xcb_xinput_xi_change_property_items_data_8_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_change_property_request_t,
-            S: *const xcb_xinput_xi_change_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_xi_change_property_items_data_8_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_change_property_request_t,
-            S: *const xcb_xinput_xi_change_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_property_items_data_16:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_xi_change_property_items_t) -> *mut u16>,
-    pub(crate) xcb_xinput_xi_change_property_items_data_16_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_change_property_request_t,
-            S: *const xcb_xinput_xi_change_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_xi_change_property_items_data_16_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_change_property_request_t,
-            S: *const xcb_xinput_xi_change_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_property_items_data_32:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_xi_change_property_items_t) -> *mut u32>,
-    pub(crate) xcb_xinput_xi_change_property_items_data_32_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_change_property_request_t,
-            S: *const xcb_xinput_xi_change_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_xi_change_property_items_data_32_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_change_property_request_t,
-            S: *const xcb_xinput_xi_change_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-            mode: u8,
-            format: u8,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            num_items: u32,
-            items: *const xcb_xinput_xi_change_property_items_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_change_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-            mode: u8,
-            format: u8,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            num_items: u32,
-            items: *const xcb_xinput_xi_change_property_items_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_delete_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_delete_property_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-            property: xcb_atom_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_items_data_8:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_xi_get_property_items_t) -> *mut u8>,
-    pub(crate) xcb_xinput_xi_get_property_items_data_8_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_get_property_reply_t,
-            S: *const xcb_xinput_xi_get_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_items_data_8_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_get_property_reply_t,
-            S: *const xcb_xinput_xi_get_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_items_data_16:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_xi_get_property_items_t) -> *mut u16>,
-    pub(crate) xcb_xinput_xi_get_property_items_data_16_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_get_property_reply_t,
-            S: *const xcb_xinput_xi_get_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_items_data_16_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_get_property_reply_t,
-            S: *const xcb_xinput_xi_get_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_items_data_32:
-        LazySymbol<unsafe fn(S: *const xcb_xinput_xi_get_property_items_t) -> *mut u32>,
-    pub(crate) xcb_xinput_xi_get_property_items_data_32_length: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_get_property_reply_t,
-            S: *const xcb_xinput_xi_get_property_items_t,
-        ) -> c_int,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_items_data_32_end: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_get_property_reply_t,
-            S: *const xcb_xinput_xi_get_property_items_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_items:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_get_property_reply_t) -> *mut c_void>,
-    pub(crate) xcb_xinput_xi_get_property_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_get_property_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_get_property_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_property: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-            delete: u8,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            offset: u32,
-            len: u32,
-        ) -> xcb_xinput_xi_get_property_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_property_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            deviceid: xcb_xinput_device_id_t,
-            delete: u8,
-            property: xcb_atom_t,
-            type_: xcb_atom_t,
-            offset: u32,
-            len: u32,
-        ) -> xcb_xinput_xi_get_property_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_selected_events_masks_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_xi_get_selected_events_reply_t) -> c_int>,
-    pub(crate) xcb_xinput_xi_get_selected_events_masks_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_xi_get_selected_events_reply_t,
-        ) -> xcb_xinput_event_mask_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_selected_events_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xinput_xi_get_selected_events_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xinput_xi_get_selected_events_reply_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_selected_events: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_xi_get_selected_events_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_get_selected_events_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_xinput_xi_get_selected_events_cookie_t,
-    >,
-    pub(crate) xcb_xinput_barrier_release_pointer_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_barrier_release_pointer_info_iterator_t)>,
-    pub(crate) xcb_xinput_barrier_release_pointer_info_end: LazySymbol<
-        unsafe fn(
-            i: *mut xcb_xinput_barrier_release_pointer_info_iterator_t,
-        ) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_xi_barrier_release_pointer: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            num_barriers: u32,
-            barriers: *const xcb_xinput_barrier_release_pointer_info_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_xi_barrier_release_pointer_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            num_barriers: u32,
-            barriers: *const xcb_xinput_barrier_release_pointer_info_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xinput_device_changed_classes_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_device_changed_event_t) -> c_int>,
-    pub(crate) xcb_xinput_device_changed_classes_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xinput_device_changed_event_t,
-        ) -> xcb_xinput_device_class_iterator_t,
-    >,
-    pub(crate) xcb_xinput_key_press_button_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_press_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_key_press_button_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_press_event_t) -> c_int>,
-    pub(crate) xcb_xinput_key_press_button_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_press_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_key_press_valuator_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_press_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_key_press_valuator_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_press_event_t) -> c_int>,
-    pub(crate) xcb_xinput_key_press_valuator_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_key_press_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_button_press_button_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_press_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_button_press_button_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_press_event_t) -> c_int>,
-    pub(crate) xcb_xinput_button_press_button_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_press_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_button_press_valuator_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_press_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_button_press_valuator_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_press_event_t) -> c_int>,
-    pub(crate) xcb_xinput_button_press_valuator_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_button_press_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_enter_buttons:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_enter_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_enter_buttons_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_enter_event_t) -> c_int>,
-    pub(crate) xcb_xinput_enter_buttons_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_enter_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_hierarchy_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xinput_hierarchy_info_iterator_t)>,
-    pub(crate) xcb_xinput_hierarchy_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xinput_hierarchy_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_hierarchy_infos: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_hierarchy_event_t) -> *mut xcb_xinput_hierarchy_info_t,
-    >,
-    pub(crate) xcb_xinput_hierarchy_infos_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_hierarchy_event_t) -> c_int>,
-    pub(crate) xcb_xinput_hierarchy_infos_iterator: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_hierarchy_event_t) -> xcb_xinput_hierarchy_info_iterator_t,
-    >,
-    pub(crate) xcb_xinput_raw_key_press_valuator_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_raw_key_press_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_raw_key_press_valuator_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_raw_key_press_event_t) -> c_int>,
-    pub(crate) xcb_xinput_raw_key_press_valuator_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_raw_key_press_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_raw_button_press_valuator_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_raw_button_press_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_raw_button_press_valuator_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_raw_button_press_event_t) -> c_int>,
-    pub(crate) xcb_xinput_raw_button_press_valuator_mask_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_raw_button_press_event_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xinput_touch_begin_button_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_touch_begin_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_touch_begin_button_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_touch_begin_event_t) -> c_int>,
-    pub(crate) xcb_xinput_touch_begin_button_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_touch_begin_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_touch_begin_valuator_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_touch_begin_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_touch_begin_valuator_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_touch_begin_event_t) -> c_int>,
-    pub(crate) xcb_xinput_touch_begin_valuator_mask_end:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_touch_begin_event_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xinput_raw_touch_begin_valuator_mask:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_raw_touch_begin_event_t) -> *mut u32>,
-    pub(crate) xcb_xinput_raw_touch_begin_valuator_mask_length:
-        LazySymbol<unsafe fn(R: *const xcb_xinput_raw_touch_begin_event_t) -> c_int>,
-    pub(crate) xcb_xinput_raw_touch_begin_valuator_mask_end: LazySymbol<
-        unsafe fn(R: *const xcb_xinput_raw_touch_begin_event_t) -> xcb_generic_iterator_t,
-    >,
 }

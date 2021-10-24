@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -155,8 +156,8 @@ pub struct xcb_composite_release_overlay_window_request_t {
 
 impl XcbComposite {
     #[inline]
-    pub fn xcb_composite_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_composite_id)
+    pub unsafe fn xcb_composite_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_composite_id)
     }
 
     #[inline]
@@ -166,7 +167,7 @@ impl XcbComposite {
         cookie: xcb_composite_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_composite_query_version_reply_t {
-        call!(self, xcb_composite_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_composite_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -176,7 +177,7 @@ impl XcbComposite {
         client_major_version: u32,
         client_minor_version: u32,
     ) -> xcb_composite_query_version_cookie_t {
-        call!(self, xcb_composite_query_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_composite_query_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -186,7 +187,7 @@ impl XcbComposite {
         client_major_version: u32,
         client_minor_version: u32,
     ) -> xcb_composite_query_version_cookie_t {
-        call!(self, xcb_composite_query_version_unchecked)(
+        sym!(self, xcb_composite_query_version_unchecked)(
             c,
             client_major_version,
             client_minor_version,
@@ -200,7 +201,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_redirect_window)(c, window, update)
+        sym!(self, xcb_composite_redirect_window)(c, window, update)
     }
 
     #[inline]
@@ -210,7 +211,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_redirect_window_checked)(c, window, update)
+        sym!(self, xcb_composite_redirect_window_checked)(c, window, update)
     }
 
     #[inline]
@@ -220,7 +221,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_redirect_subwindows)(c, window, update)
+        sym!(self, xcb_composite_redirect_subwindows)(c, window, update)
     }
 
     #[inline]
@@ -230,7 +231,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_redirect_subwindows_checked)(c, window, update)
+        sym!(self, xcb_composite_redirect_subwindows_checked)(c, window, update)
     }
 
     #[inline]
@@ -240,7 +241,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_unredirect_window)(c, window, update)
+        sym!(self, xcb_composite_unredirect_window)(c, window, update)
     }
 
     #[inline]
@@ -250,7 +251,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_unredirect_window_checked)(c, window, update)
+        sym!(self, xcb_composite_unredirect_window_checked)(c, window, update)
     }
 
     #[inline]
@@ -260,7 +261,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_unredirect_subwindows)(c, window, update)
+        sym!(self, xcb_composite_unredirect_subwindows)(c, window, update)
     }
 
     #[inline]
@@ -270,7 +271,7 @@ impl XcbComposite {
         window: xcb_window_t,
         update: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_unredirect_subwindows_checked)(c, window, update)
+        sym!(self, xcb_composite_unredirect_subwindows_checked)(c, window, update)
     }
 
     #[inline]
@@ -280,7 +281,7 @@ impl XcbComposite {
         region: xcb_xfixes_region_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_create_region_from_border_clip)(c, region, window)
+        sym!(self, xcb_composite_create_region_from_border_clip)(c, region, window)
     }
 
     #[inline]
@@ -290,7 +291,7 @@ impl XcbComposite {
         region: xcb_xfixes_region_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_create_region_from_border_clip_checked)(c, region, window)
+        sym!(self, xcb_composite_create_region_from_border_clip_checked)(c, region, window)
     }
 
     #[inline]
@@ -300,7 +301,7 @@ impl XcbComposite {
         window: xcb_window_t,
         pixmap: xcb_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_name_window_pixmap)(c, window, pixmap)
+        sym!(self, xcb_composite_name_window_pixmap)(c, window, pixmap)
     }
 
     #[inline]
@@ -310,7 +311,7 @@ impl XcbComposite {
         window: xcb_window_t,
         pixmap: xcb_pixmap_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_name_window_pixmap_checked)(c, window, pixmap)
+        sym!(self, xcb_composite_name_window_pixmap_checked)(c, window, pixmap)
     }
 
     #[inline]
@@ -320,7 +321,7 @@ impl XcbComposite {
         cookie: xcb_composite_get_overlay_window_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_composite_get_overlay_window_reply_t {
-        call!(self, xcb_composite_get_overlay_window_reply)(c, cookie, error)
+        sym!(self, xcb_composite_get_overlay_window_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -329,7 +330,7 @@ impl XcbComposite {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_composite_get_overlay_window_cookie_t {
-        call!(self, xcb_composite_get_overlay_window)(c, window)
+        sym!(self, xcb_composite_get_overlay_window)(c, window)
     }
 
     #[inline]
@@ -338,7 +339,7 @@ impl XcbComposite {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_composite_get_overlay_window_cookie_t {
-        call!(self, xcb_composite_get_overlay_window_unchecked)(c, window)
+        sym!(self, xcb_composite_get_overlay_window_unchecked)(c, window)
     }
 
     #[inline]
@@ -347,7 +348,7 @@ impl XcbComposite {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_release_overlay_window)(c, window)
+        sym!(self, xcb_composite_release_overlay_window)(c, window)
     }
 
     #[inline]
@@ -356,107 +357,6 @@ impl XcbComposite {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_composite_release_overlay_window_checked)(c, window)
+        sym!(self, xcb_composite_release_overlay_window_checked)(c, window)
     }
-}
-
-pub struct XcbComposite {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_composite_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_composite_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_composite_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_composite_query_version_reply_t,
-    >,
-    pub(crate) xcb_composite_query_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u32,
-            client_minor_version: u32,
-        ) -> xcb_composite_query_version_cookie_t,
-    >,
-    pub(crate) xcb_composite_query_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u32,
-            client_minor_version: u32,
-        ) -> xcb_composite_query_version_cookie_t,
-    >,
-    pub(crate) xcb_composite_redirect_window: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_redirect_window_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_redirect_subwindows: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_redirect_subwindows_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_unredirect_window: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_unredirect_window_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_unredirect_subwindows: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_unredirect_subwindows_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t, update: u8) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_create_region_from_border_clip: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_create_region_from_border_clip_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            region: xcb_xfixes_region_t,
-            window: xcb_window_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_name_window_pixmap: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            pixmap: xcb_pixmap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_name_window_pixmap_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            pixmap: xcb_pixmap_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_composite_get_overlay_window_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_composite_get_overlay_window_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_composite_get_overlay_window_reply_t,
-    >,
-    pub(crate) xcb_composite_get_overlay_window: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_composite_get_overlay_window_cookie_t,
-    >,
-    pub(crate) xcb_composite_get_overlay_window_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-        ) -> xcb_composite_get_overlay_window_cookie_t,
-    >,
-    pub(crate) xcb_composite_release_overlay_window:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_composite_release_overlay_window_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
 }

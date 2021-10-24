@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -90,8 +91,8 @@ pub struct xcb_xc_misc_get_xid_list_reply_t {
 
 impl Xcb {
     #[inline]
-    pub fn xcb_xc_misc_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xc_misc_id)
+    pub unsafe fn xcb_xc_misc_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xc_misc_id)
     }
 
     #[inline]
@@ -101,7 +102,7 @@ impl Xcb {
         cookie: xcb_xc_misc_get_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xc_misc_get_version_reply_t {
-        call!(self, xcb_xc_misc_get_version_reply)(c, cookie, error)
+        sym!(self, xcb_xc_misc_get_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -111,7 +112,7 @@ impl Xcb {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_xc_misc_get_version_cookie_t {
-        call!(self, xcb_xc_misc_get_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_xc_misc_get_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -121,11 +122,7 @@ impl Xcb {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_xc_misc_get_version_cookie_t {
-        call!(self, xcb_xc_misc_get_version_unchecked)(
-            c,
-            client_major_version,
-            client_minor_version,
-        )
+        sym!(self, xcb_xc_misc_get_version_unchecked)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -135,7 +132,7 @@ impl Xcb {
         cookie: xcb_xc_misc_get_xid_range_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xc_misc_get_xid_range_reply_t {
-        call!(self, xcb_xc_misc_get_xid_range_reply)(c, cookie, error)
+        sym!(self, xcb_xc_misc_get_xid_range_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -143,7 +140,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xc_misc_get_xid_range_cookie_t {
-        call!(self, xcb_xc_misc_get_xid_range)(c)
+        sym!(self, xcb_xc_misc_get_xid_range)(c)
     }
 
     #[inline]
@@ -151,7 +148,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xc_misc_get_xid_range_cookie_t {
-        call!(self, xcb_xc_misc_get_xid_range_unchecked)(c)
+        sym!(self, xcb_xc_misc_get_xid_range_unchecked)(c)
     }
 
     #[inline]
@@ -159,7 +156,7 @@ impl Xcb {
         &self,
         R: *const xcb_xc_misc_get_xid_list_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xc_misc_get_xid_list_ids)(R)
+        sym!(self, xcb_xc_misc_get_xid_list_ids)(R)
     }
 
     #[inline]
@@ -167,7 +164,7 @@ impl Xcb {
         &self,
         R: *const xcb_xc_misc_get_xid_list_reply_t,
     ) -> c_int {
-        call!(self, xcb_xc_misc_get_xid_list_ids_length)(R)
+        sym!(self, xcb_xc_misc_get_xid_list_ids_length)(R)
     }
 
     #[inline]
@@ -175,7 +172,7 @@ impl Xcb {
         &self,
         R: *const xcb_xc_misc_get_xid_list_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xc_misc_get_xid_list_ids_end)(R)
+        sym!(self, xcb_xc_misc_get_xid_list_ids_end)(R)
     }
 
     #[inline]
@@ -185,7 +182,7 @@ impl Xcb {
         cookie: xcb_xc_misc_get_xid_list_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xc_misc_get_xid_list_reply_t {
-        call!(self, xcb_xc_misc_get_xid_list_reply)(c, cookie, error)
+        sym!(self, xcb_xc_misc_get_xid_list_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -194,7 +191,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         count: u32,
     ) -> xcb_xc_misc_get_xid_list_cookie_t {
-        call!(self, xcb_xc_misc_get_xid_list)(c, count)
+        sym!(self, xcb_xc_misc_get_xid_list)(c, count)
     }
 
     #[inline]
@@ -203,62 +200,6 @@ impl Xcb {
         c: *mut xcb_connection_t,
         count: u32,
     ) -> xcb_xc_misc_get_xid_list_cookie_t {
-        call!(self, xcb_xc_misc_get_xid_list_unchecked)(c, count)
+        sym!(self, xcb_xc_misc_get_xid_list_unchecked)(c, count)
     }
-}
-
-pub struct Xcb {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xc_misc_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xc_misc_get_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xc_misc_get_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xc_misc_get_version_reply_t,
-    >,
-    pub(crate) xcb_xc_misc_get_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_xc_misc_get_version_cookie_t,
-    >,
-    pub(crate) xcb_xc_misc_get_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_xc_misc_get_version_cookie_t,
-    >,
-    pub(crate) xcb_xc_misc_get_xid_range_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xc_misc_get_xid_range_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xc_misc_get_xid_range_reply_t,
-    >,
-    pub(crate) xcb_xc_misc_get_xid_range:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xc_misc_get_xid_range_cookie_t>,
-    pub(crate) xcb_xc_misc_get_xid_range_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xc_misc_get_xid_range_cookie_t>,
-    pub(crate) xcb_xc_misc_get_xid_list_ids:
-        LazySymbol<unsafe fn(R: *const xcb_xc_misc_get_xid_list_reply_t) -> *mut u32>,
-    pub(crate) xcb_xc_misc_get_xid_list_ids_length:
-        LazySymbol<unsafe fn(R: *const xcb_xc_misc_get_xid_list_reply_t) -> c_int>,
-    pub(crate) xcb_xc_misc_get_xid_list_ids_end:
-        LazySymbol<unsafe fn(R: *const xcb_xc_misc_get_xid_list_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xc_misc_get_xid_list_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xc_misc_get_xid_list_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xc_misc_get_xid_list_reply_t,
-    >,
-    pub(crate) xcb_xc_misc_get_xid_list: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, count: u32) -> xcb_xc_misc_get_xid_list_cookie_t,
-    >,
-    pub(crate) xcb_xc_misc_get_xid_list_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, count: u32) -> xcb_xc_misc_get_xid_list_cookie_t,
-    >,
 }

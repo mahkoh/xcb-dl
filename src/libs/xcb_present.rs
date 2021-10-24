@@ -1,5 +1,5 @@
+use crate::ffi::*;
 use crate::lazy::*;
-use crate::*;
 use libloading::{Error, Library};
 use std::os::raw::*;
 

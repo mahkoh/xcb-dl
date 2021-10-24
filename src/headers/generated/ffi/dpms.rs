@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -169,8 +170,8 @@ pub struct xcb_dpms_info_reply_t {
 
 impl XcbDpms {
     #[inline]
-    pub fn xcb_dpms_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_dpms_id)
+    pub unsafe fn xcb_dpms_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_dpms_id)
     }
 
     #[inline]
@@ -180,7 +181,7 @@ impl XcbDpms {
         cookie: xcb_dpms_get_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dpms_get_version_reply_t {
-        call!(self, xcb_dpms_get_version_reply)(c, cookie, error)
+        sym!(self, xcb_dpms_get_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -190,7 +191,7 @@ impl XcbDpms {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_dpms_get_version_cookie_t {
-        call!(self, xcb_dpms_get_version)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_dpms_get_version)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -200,7 +201,7 @@ impl XcbDpms {
         client_major_version: u16,
         client_minor_version: u16,
     ) -> xcb_dpms_get_version_cookie_t {
-        call!(self, xcb_dpms_get_version_unchecked)(c, client_major_version, client_minor_version)
+        sym!(self, xcb_dpms_get_version_unchecked)(c, client_major_version, client_minor_version)
     }
 
     #[inline]
@@ -210,12 +211,12 @@ impl XcbDpms {
         cookie: xcb_dpms_capable_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dpms_capable_reply_t {
-        call!(self, xcb_dpms_capable_reply)(c, cookie, error)
+        sym!(self, xcb_dpms_capable_reply)(c, cookie, error)
     }
 
     #[inline]
     pub unsafe fn xcb_dpms_capable(&self, c: *mut xcb_connection_t) -> xcb_dpms_capable_cookie_t {
-        call!(self, xcb_dpms_capable)(c)
+        sym!(self, xcb_dpms_capable)(c)
     }
 
     #[inline]
@@ -223,7 +224,7 @@ impl XcbDpms {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_dpms_capable_cookie_t {
-        call!(self, xcb_dpms_capable_unchecked)(c)
+        sym!(self, xcb_dpms_capable_unchecked)(c)
     }
 
     #[inline]
@@ -233,7 +234,7 @@ impl XcbDpms {
         cookie: xcb_dpms_get_timeouts_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dpms_get_timeouts_reply_t {
-        call!(self, xcb_dpms_get_timeouts_reply)(c, cookie, error)
+        sym!(self, xcb_dpms_get_timeouts_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -241,7 +242,7 @@ impl XcbDpms {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_dpms_get_timeouts_cookie_t {
-        call!(self, xcb_dpms_get_timeouts)(c)
+        sym!(self, xcb_dpms_get_timeouts)(c)
     }
 
     #[inline]
@@ -249,7 +250,7 @@ impl XcbDpms {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_dpms_get_timeouts_cookie_t {
-        call!(self, xcb_dpms_get_timeouts_unchecked)(c)
+        sym!(self, xcb_dpms_get_timeouts_unchecked)(c)
     }
 
     #[inline]
@@ -260,7 +261,7 @@ impl XcbDpms {
         suspend_timeout: u16,
         off_timeout: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_set_timeouts)(c, standby_timeout, suspend_timeout, off_timeout)
+        sym!(self, xcb_dpms_set_timeouts)(c, standby_timeout, suspend_timeout, off_timeout)
     }
 
     #[inline]
@@ -271,27 +272,27 @@ impl XcbDpms {
         suspend_timeout: u16,
         off_timeout: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_set_timeouts_checked)(c, standby_timeout, suspend_timeout, off_timeout)
+        sym!(self, xcb_dpms_set_timeouts_checked)(c, standby_timeout, suspend_timeout, off_timeout)
     }
 
     #[inline]
     pub unsafe fn xcb_dpms_enable(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_enable)(c)
+        sym!(self, xcb_dpms_enable)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_dpms_enable_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_enable_checked)(c)
+        sym!(self, xcb_dpms_enable_checked)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_dpms_disable(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_disable)(c)
+        sym!(self, xcb_dpms_disable)(c)
     }
 
     #[inline]
     pub unsafe fn xcb_dpms_disable_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_disable_checked)(c)
+        sym!(self, xcb_dpms_disable_checked)(c)
     }
 
     #[inline]
@@ -300,7 +301,7 @@ impl XcbDpms {
         c: *mut xcb_connection_t,
         power_level: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_force_level)(c, power_level)
+        sym!(self, xcb_dpms_force_level)(c, power_level)
     }
 
     #[inline]
@@ -309,7 +310,7 @@ impl XcbDpms {
         c: *mut xcb_connection_t,
         power_level: u16,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_dpms_force_level_checked)(c, power_level)
+        sym!(self, xcb_dpms_force_level_checked)(c, power_level)
     }
 
     #[inline]
@@ -319,12 +320,12 @@ impl XcbDpms {
         cookie: xcb_dpms_info_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_dpms_info_reply_t {
-        call!(self, xcb_dpms_info_reply)(c, cookie, error)
+        sym!(self, xcb_dpms_info_reply)(c, cookie, error)
     }
 
     #[inline]
     pub unsafe fn xcb_dpms_info(&self, c: *mut xcb_connection_t) -> xcb_dpms_info_cookie_t {
-        call!(self, xcb_dpms_info)(c)
+        sym!(self, xcb_dpms_info)(c)
     }
 
     #[inline]
@@ -332,93 +333,6 @@ impl XcbDpms {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_dpms_info_cookie_t {
-        call!(self, xcb_dpms_info_unchecked)(c)
+        sym!(self, xcb_dpms_info_unchecked)(c)
     }
-}
-
-pub struct XcbDpms {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_dpms_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_dpms_get_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dpms_get_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dpms_get_version_reply_t,
-    >,
-    pub(crate) xcb_dpms_get_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_dpms_get_version_cookie_t,
-    >,
-    pub(crate) xcb_dpms_get_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            client_major_version: u16,
-            client_minor_version: u16,
-        ) -> xcb_dpms_get_version_cookie_t,
-    >,
-    pub(crate) xcb_dpms_capable_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dpms_capable_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dpms_capable_reply_t,
-    >,
-    pub(crate) xcb_dpms_capable:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_capable_cookie_t>,
-    pub(crate) xcb_dpms_capable_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_capable_cookie_t>,
-    pub(crate) xcb_dpms_get_timeouts_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dpms_get_timeouts_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dpms_get_timeouts_reply_t,
-    >,
-    pub(crate) xcb_dpms_get_timeouts:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_get_timeouts_cookie_t>,
-    pub(crate) xcb_dpms_get_timeouts_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_get_timeouts_cookie_t>,
-    pub(crate) xcb_dpms_set_timeouts: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            standby_timeout: u16,
-            suspend_timeout: u16,
-            off_timeout: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dpms_set_timeouts_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            standby_timeout: u16,
-            suspend_timeout: u16,
-            off_timeout: u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_dpms_enable:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_dpms_enable_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_dpms_disable:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_dpms_disable_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_dpms_force_level:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, power_level: u16) -> xcb_void_cookie_t>,
-    pub(crate) xcb_dpms_force_level_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, power_level: u16) -> xcb_void_cookie_t>,
-    pub(crate) xcb_dpms_info_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_dpms_info_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_dpms_info_reply_t,
-    >,
-    pub(crate) xcb_dpms_info:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_info_cookie_t>,
-    pub(crate) xcb_dpms_info_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_info_cookie_t>,
 }

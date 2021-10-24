@@ -1,6 +1,6 @@
-use crate::{xcb_extension_t, Xcb};
-use std::ffi::c_void;
-use std::os::raw::{c_char, c_int, c_uint};
+use crate::ffi::*;
+use crate::*;
+use std::os::raw::*;
 
 /// xcb connection errors because of socket, pipe and other stream errors.
 pub const XCB_CONN_ERROR: c_int = 1;
@@ -130,7 +130,7 @@ impl Xcb {
     /// Return > 0 on success, <= 0 otherwise.
     #[inline]
     pub unsafe fn xcb_flush(&self, c: *mut xcb_connection_t) -> c_int {
-        call!(self, xcb_flush)(c)
+        sym!(self, xcb_flush)(c)
     }
 
     /// Returns the maximum request length that this server accepts.
@@ -148,7 +148,7 @@ impl Xcb {
     /// Returns The maximum request length field.
     #[inline]
     pub unsafe fn xcb_get_maximum_request_length(&self, c: *mut xcb_connection_t) -> u32 {
-        call!(self, xcb_get_maximum_request_length)(c)
+        sym!(self, xcb_get_maximum_request_length)(c)
     }
 
     /// Prefetch the maximum request length without blocking.
@@ -167,7 +167,7 @@ impl Xcb {
     /// must have already arrived.
     #[inline]
     pub unsafe fn xcb_prefetch_maximum_request_length(&self, c: *mut xcb_connection_t) {
-        call!(self, xcb_prefetch_maximum_request_length)(c)
+        sym!(self, xcb_prefetch_maximum_request_length)(c)
     }
 
     /// Returns the next event or error from the server.
@@ -177,7 +177,7 @@ impl Xcb {
     /// arrive, or an I/O error occurs.
     #[inline]
     pub unsafe fn xcb_wait_for_event(&self, c: *mut xcb_connection_t) -> *mut xcb_generic_event_t {
-        call!(self, xcb_wait_for_event)(c)
+        sym!(self, xcb_wait_for_event)(c)
     }
 
     /// Returns the next event or error from the server.
@@ -189,7 +189,7 @@ impl Xcb {
     /// shut down when this function returns.
     #[inline]
     pub unsafe fn xcb_poll_for_event(&self, c: *mut xcb_connection_t) -> *mut xcb_generic_event_t {
-        call!(self, xcb_poll_for_event)(c)
+        sym!(self, xcb_poll_for_event)(c)
     }
 
     /// Returns the next event without reading from the connection.
@@ -207,7 +207,7 @@ impl Xcb {
         &self,
         c: *mut xcb_connection_t,
     ) -> *mut xcb_generic_event_t {
-        call!(self, xcb_poll_for_queued_event)(c)
+        sym!(self, xcb_poll_for_queued_event)(c)
     }
 
     /// Returns the next event from a special queue
@@ -217,7 +217,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         se: *mut xcb_special_event_t,
     ) -> *mut xcb_generic_event_t {
-        call!(self, xcb_poll_for_special_event)(c, se)
+        sym!(self, xcb_poll_for_special_event)(c, se)
     }
 
     /// Returns the next event from a special queue, blocking until one arrives
@@ -227,7 +227,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         se: *mut xcb_special_event_t,
     ) -> *mut xcb_generic_event_t {
-        call!(self, xcb_wait_for_special_event)(c, se)
+        sym!(self, xcb_wait_for_special_event)(c, se)
     }
 
     /// Listen for a special event
@@ -239,7 +239,7 @@ impl Xcb {
         eid: u32,
         stamp: *mut u32,
     ) -> *mut xcb_special_event_t {
-        call!(self, xcb_register_for_special_xge)(c, ext, eid, stamp)
+        sym!(self, xcb_register_for_special_xge)(c, ext, eid, stamp)
     }
 
     /// Stop listening for a special event
@@ -249,7 +249,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         se: *mut xcb_special_event_t,
     ) {
-        call!(self, xcb_unregister_for_special_event)(c, se)
+        sym!(self, xcb_unregister_for_special_event)(c, se)
     }
 
     /// Return the error for a request, or NULL if none can ever arrive.
@@ -269,7 +269,7 @@ impl Xcb {
         c: *mut xcb_connection_t,
         cookie: xcb_void_cookie_t,
     ) -> *mut xcb_generic_error_t {
-        call!(self, xcb_request_check)(c, cookie)
+        sym!(self, xcb_request_check)(c, cookie)
     }
 
     /// Discards the reply for a request.
@@ -286,7 +286,7 @@ impl Xcb {
     /// this function is not designed to operate on socket-handoff replies.
     #[inline]
     pub unsafe fn xcb_discard_reply(&self, c: *mut xcb_connection_t, sequence: c_uint) {
-        call!(self, xcb_discard_reply)(c, sequence)
+        sym!(self, xcb_discard_reply)(c, sequence)
     }
 
     /// Discards the reply for a request, given by a 64bit sequence number
@@ -309,29 +309,30 @@ impl Xcb {
     ///
     #[inline]
     pub unsafe fn xcb_discard_reply64(&self, c: *mut xcb_connection_t, sequence: u64) {
-        call!(self, xcb_discard_reply64)(c, sequence)
+        sym!(self, xcb_discard_reply64)(c, sequence)
     }
 
-    // /// Caches reply information from QueryExtension requests.
-    // ///
-    // /// This function is the primary interface to the "extension cache",
-    // /// which caches reply information from QueryExtension
-    // /// requests. Invoking this function may cause a call to
-    // /// xcb_query_extension to retrieve extension information from the
-    // /// server, and may block until extension data is received from the
-    // /// server.
-    // ///
-    // /// The result must not be freed. This storage is managed by the cache
-    // /// itself.
-    // ///
-    // /// Returns A pointer to the xcb_query_extension_reply_t for the extension.
-    // #[inline] pub unsafe fn xcb_get_extension_data(
-    //     &self,
-    //     c: *mut xcb_connection_t,
-    //     ext: *mut xcb_extension_t,
-    // ) -> *const xcb_query_extension_reply_t {
-    //     call!(self, xcb_get_extension_data)(c, ext)
-    // }
+    /// Caches reply information from QueryExtension requests.
+    ///
+    /// This function is the primary interface to the "extension cache",
+    /// which caches reply information from QueryExtension
+    /// requests. Invoking this function may cause a call to
+    /// xcb_query_extension to retrieve extension information from the
+    /// server, and may block until extension data is received from the
+    /// server.
+    ///
+    /// The result must not be freed. This storage is managed by the cache
+    /// itself.
+    ///
+    /// Returns A pointer to the xcb_query_extension_reply_t for the extension.
+    #[inline]
+    pub unsafe fn xcb_get_extension_data(
+        &self,
+        c: *mut xcb_connection_t,
+        ext: *mut xcb_extension_t,
+    ) -> *const xcb_query_extension_reply_t {
+        sym!(self, xcb_get_extension_data)(c, ext)
+    }
 
     /// Prefetch of extension data into the extension cache
     ///
@@ -346,27 +347,28 @@ impl Xcb {
         c: *mut xcb_connection_t,
         ext: *mut xcb_extension_t,
     ) {
-        call!(self, xcb_prefetch_extension_data)(c, ext)
+        sym!(self, xcb_prefetch_extension_data)(c, ext)
     }
 
-    // /// Access the data returned by the server.
-    // ///
-    // /// Accessor for the data returned by the server when the xcb_connection_t
-    // /// was initialized. This data includes
-    // /// - the server's required format for images,
-    // /// - a list of available visuals,
-    // /// - a list of available screens,
-    // /// - the server's maximum request length (in the absence of the
-    // /// BIG-REQUESTS extension),
-    // /// - and other assorted information.
-    // ///
-    // /// See the X protocol specification for more details.
-    // ///
-    // /// Returns A pointer to an xcb_setup_t structure.
-    // /// The result must not be freed.
-    // #[inline] pub unsafe fn xcb_get_setup(&self, c: *mut xcb_connection_t) -> *const xcb_setup_t {
-    //     call!(self, xcb_get_setup)(c)
-    // }
+    /// Access the data returned by the server.
+    ///
+    /// Accessor for the data returned by the server when the xcb_connection_t
+    /// was initialized. This data includes
+    /// - the server's required format for images,
+    /// - a list of available visuals,
+    /// - a list of available screens,
+    /// - the server's maximum request length (in the absence of the
+    /// BIG-REQUESTS extension),
+    /// - and other assorted information.
+    ///
+    /// See the X protocol specification for more details.
+    ///
+    /// Returns A pointer to an xcb_setup_t structure.
+    /// The result must not be freed.
+    #[inline]
+    pub unsafe fn xcb_get_setup(&self, c: *mut xcb_connection_t) -> *const xcb_setup_t {
+        sym!(self, xcb_get_setup)(c)
+    }
 
     /// Access the file descriptor of the connection.
     ///
@@ -376,7 +378,7 @@ impl Xcb {
     /// Returns The file descriptor.
     #[inline]
     pub unsafe fn xcb_get_file_descriptor(&self, c: *mut xcb_connection_t) -> c_int {
-        call!(self, xcb_get_file_descriptor)(c)
+        sym!(self, xcb_get_file_descriptor)(c)
     }
 
     /// Test whether the connection has shut down due to a fatal error.
@@ -397,7 +399,7 @@ impl Xcb {
     /// Returns > 0 if the connection is in an error state; 0 otherwise.
     #[inline]
     pub unsafe fn xcb_connection_has_error(&self, c: *mut xcb_connection_t) -> c_int {
-        call!(self, xcb_connection_has_error)(c)
+        sym!(self, xcb_connection_has_error)(c)
     }
 
     /// Connects to the X server.
@@ -418,7 +420,7 @@ impl Xcb {
         fd: c_int,
         auth_info: *mut xcb_auth_info_t,
     ) -> *mut xcb_connection_t {
-        call!(self, xcb_connect_to_fd)(fd, auth_info)
+        sym!(self, xcb_connect_to_fd)(fd, auth_info)
     }
 
     /// Closes the connection.
@@ -427,7 +429,7 @@ impl Xcb {
     /// connection @c c. If @p c is @c NULL, nothing is done.
     #[inline]
     pub unsafe fn xcb_disconnect(&self, c: *mut xcb_connection_t) {
-        call!(self, xcb_disconnect)(c)
+        sym!(self, xcb_disconnect)(c)
     }
 
     /// Parses a display string name in the form documented by X(7x).
@@ -454,7 +456,7 @@ impl Xcb {
         display: *mut c_int,
         screen: *mut c_int,
     ) -> c_int {
-        call!(self, xcb_parse_display)(name, host, display, screen)
+        sym!(self, xcb_parse_display)(name, host, display, screen)
     }
 
     /// Connects to the X server.
@@ -478,7 +480,7 @@ impl Xcb {
         displayname: *const c_char,
         screenp: *mut c_int,
     ) -> *mut xcb_connection_t {
-        call!(self, xcb_connect)(displayname, screenp)
+        sym!(self, xcb_connect)(displayname, screenp)
     }
 
     /// Connects to the X server, using an authorization information.
@@ -503,7 +505,7 @@ impl Xcb {
         auth: *mut xcb_auth_info_t,
         screen: *mut c_int,
     ) -> *mut xcb_connection_t {
-        call!(self, xcb_connect_to_display_with_auth_info)(display, auth, screen)
+        sym!(self, xcb_connect_to_display_with_auth_info)(display, auth, screen)
     }
 
     /// Allocates an XID for a new object.
@@ -513,6 +515,6 @@ impl Xcb {
     /// various object creation functions, such as xcb_create_window.
     #[inline]
     pub unsafe fn xcb_generate_id(&self, c: *mut xcb_connection_t) -> u32 {
-        call!(self, xcb_generate_id)(c)
+        sym!(self, xcb_generate_id)(c)
     }
 }

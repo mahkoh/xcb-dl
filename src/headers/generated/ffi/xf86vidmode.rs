@@ -1,4 +1,5 @@
 use crate::*;
+use crate::ffi::*;
 use std::os::raw::*;
 
 pub const XCB_XF86VIDMODE_MAJOR_VERSION: u32 = 2;
@@ -684,141 +685,83 @@ pub struct xcb_xf86vidmode_zoom_locked_error_t {
 }
 
 impl XcbXf86vidmode {
-    #[inline]
-    pub fn xcb_xf86vidmode_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xf86vidmode_id)
-    }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_syncrange_next(
-        &self,
-        i: *mut xcb_xf86vidmode_syncrange_iterator_t,
-    ) {
-        call!(self, xcb_xf86vidmode_syncrange_next)(i);
-    }
+    pub unsafe fn xcb_xf86vidmode_id(&self) -> *mut xcb_extension_t { sym!(self, xcb_xf86vidmode_id) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_syncrange_next(&self, i: *mut xcb_xf86vidmode_syncrange_iterator_t) { sym!(self, xcb_xf86vidmode_syncrange_next)(i); }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_syncrange_end(&self, i: *mut xcb_xf86vidmode_syncrange_iterator_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_syncrange_end)(i) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_dotclock_next(&self, i: *mut xcb_xf86vidmode_dotclock_iterator_t) { sym!(self, xcb_xf86vidmode_dotclock_next)(i); }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_dotclock_end(&self, i: *mut xcb_xf86vidmode_dotclock_iterator_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_dotclock_end)(i) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_mode_info_next(&self, i: *mut xcb_xf86vidmode_mode_info_iterator_t) { sym!(self, xcb_xf86vidmode_mode_info_next)(i); }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_mode_info_end(&self, i: *mut xcb_xf86vidmode_mode_info_iterator_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_mode_info_end)(i) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_syncrange_end(
-        &self,
-        i: *mut xcb_xf86vidmode_syncrange_iterator_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_syncrange_end)(i)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_dotclock_next(
-        &self,
-        i: *mut xcb_xf86vidmode_dotclock_iterator_t,
-    ) {
-        call!(self, xcb_xf86vidmode_dotclock_next)(i);
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_dotclock_end(
-        &self,
-        i: *mut xcb_xf86vidmode_dotclock_iterator_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_dotclock_end)(i)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_mode_info_next(
-        &self,
-        i: *mut xcb_xf86vidmode_mode_info_iterator_t,
-    ) {
-        call!(self, xcb_xf86vidmode_mode_info_next)(i);
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_mode_info_end(
-        &self,
-        i: *mut xcb_xf86vidmode_mode_info_iterator_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_mode_info_end)(i)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_query_version_reply(
+    pub unsafe fn xcb_xf86vidmode_query_version_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_query_version_reply_t {
-        call!(self, xcb_xf86vidmode_query_version_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_query_version_reply_t { sym!(self, xcb_xf86vidmode_query_version_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_query_version(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_query_version (
         &self,
-        c: *mut xcb_connection_t,
-    ) -> xcb_xf86vidmode_query_version_cookie_t {
-        call!(self, xcb_xf86vidmode_query_version)(c)
-    }
+c: *mut xcb_connection_t,
+    ) -> xcb_xf86vidmode_query_version_cookie_t { sym!(self, xcb_xf86vidmode_query_version)(c) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_query_version_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_query_version_unchecked (
         &self,
-        c: *mut xcb_connection_t,
-    ) -> xcb_xf86vidmode_query_version_cookie_t {
-        call!(self, xcb_xf86vidmode_query_version_unchecked)(c)
-    }
+c: *mut xcb_connection_t,
+    ) -> xcb_xf86vidmode_query_version_cookie_t { sym!(self, xcb_xf86vidmode_query_version_unchecked)(c) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_mode_line_private(&self, R: *const xcb_xf86vidmode_get_mode_line_reply_t) -> *mut u8 { sym!(self, xcb_xf86vidmode_get_mode_line_private)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_mode_line_private_length(&self, R: *const xcb_xf86vidmode_get_mode_line_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_mode_line_private_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_mode_line_private_end(&self, R: *const xcb_xf86vidmode_get_mode_line_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_mode_line_private_end)(R) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_mode_line_private(
-        &self,
-        R: *const xcb_xf86vidmode_get_mode_line_reply_t,
-    ) -> *mut u8 {
-        call!(self, xcb_xf86vidmode_get_mode_line_private)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_mode_line_private_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_mode_line_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_mode_line_private_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_mode_line_private_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_mode_line_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_mode_line_private_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_mode_line_reply(
+    pub unsafe fn xcb_xf86vidmode_get_mode_line_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_mode_line_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_mode_line_reply_t {
-        call!(self, xcb_xf86vidmode_get_mode_line_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_mode_line_reply_t { sym!(self, xcb_xf86vidmode_get_mode_line_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_mode_line(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_mode_line (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_mode_line_cookie_t {
-        call!(self, xcb_xf86vidmode_get_mode_line)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_mode_line_cookie_t { sym!(self, xcb_xf86vidmode_get_mode_line)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_mode_line_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_mode_line_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_mode_line_cookie_t {
-        call!(self, xcb_xf86vidmode_get_mode_line_unchecked)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_mode_line_cookie_t { sym!(self, xcb_xf86vidmode_get_mode_line_unchecked)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_mod_mode_line(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_mod_mode_line (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         hdisplay: u16,
         hsyncstart: u16,
@@ -832,17 +775,12 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_mod_mode_line)(
-            c, screen, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart,
-            vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_mod_mode_line)(c, screen, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_mod_mode_line_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_mod_mode_line_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         hdisplay: u16,
         hsyncstart: u16,
@@ -856,257 +794,142 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_mod_mode_line_checked)(
-            c, screen, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart,
-            vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_mod_mode_line_checked)(c, screen, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_switch_mode(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_switch_mode (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         zoom: u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_switch_mode)(c, screen, zoom)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_switch_mode)(c, screen, zoom) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_switch_mode_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_switch_mode_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         zoom: u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_switch_mode_checked)(c, screen, zoom)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_switch_mode_checked)(c, screen, zoom) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_hsync(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut xcb_xf86vidmode_syncrange_t { sym!(self, xcb_xf86vidmode_get_monitor_hsync)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_hsync_length(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_monitor_hsync_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_hsync_end(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_monitor_hsync_end)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_vsync(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut xcb_xf86vidmode_syncrange_t { sym!(self, xcb_xf86vidmode_get_monitor_vsync)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_vsync_length(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_monitor_vsync_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_vsync_end(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_monitor_vsync_end)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_vendor(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut c_char { sym!(self, xcb_xf86vidmode_get_monitor_vendor)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_vendor_length(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_monitor_vendor_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_vendor_end(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_monitor_vendor_end)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_alignment_pad(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut c_void { sym!(self, xcb_xf86vidmode_get_monitor_alignment_pad)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_alignment_pad_length(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_monitor_alignment_pad_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_alignment_pad_end(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_monitor_alignment_pad_end)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_model(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut c_char { sym!(self, xcb_xf86vidmode_get_monitor_model)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_model_length(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_monitor_model_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_monitor_model_end(&self, R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_monitor_model_end)(R) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_hsync(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> *mut xcb_xf86vidmode_syncrange_t {
-        call!(self, xcb_xf86vidmode_get_monitor_hsync)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_hsync_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_monitor_hsync_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_hsync_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_monitor_hsync_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_vsync(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> *mut xcb_xf86vidmode_syncrange_t {
-        call!(self, xcb_xf86vidmode_get_monitor_vsync)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_vsync_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_monitor_vsync_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_vsync_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_monitor_vsync_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_vendor(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> *mut c_char {
-        call!(self, xcb_xf86vidmode_get_monitor_vendor)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_vendor_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_monitor_vendor_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_vendor_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_monitor_vendor_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_alignment_pad(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> *mut c_void {
-        call!(self, xcb_xf86vidmode_get_monitor_alignment_pad)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_alignment_pad_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_monitor_alignment_pad_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_alignment_pad_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_monitor_alignment_pad_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_model(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> *mut c_char {
-        call!(self, xcb_xf86vidmode_get_monitor_model)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_model_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_monitor_model_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_model_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_monitor_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_monitor_model_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_reply(
+    pub unsafe fn xcb_xf86vidmode_get_monitor_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_monitor_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_monitor_reply_t {
-        call!(self, xcb_xf86vidmode_get_monitor_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_monitor_reply_t { sym!(self, xcb_xf86vidmode_get_monitor_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_monitor (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_monitor_cookie_t {
-        call!(self, xcb_xf86vidmode_get_monitor)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_monitor_cookie_t { sym!(self, xcb_xf86vidmode_get_monitor)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_monitor_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_monitor_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_monitor_cookie_t {
-        call!(self, xcb_xf86vidmode_get_monitor_unchecked)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_monitor_cookie_t { sym!(self, xcb_xf86vidmode_get_monitor_unchecked)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_lock_mode_switch(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_lock_mode_switch (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         lock: u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_lock_mode_switch)(c, screen, lock)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_lock_mode_switch)(c, screen, lock) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_lock_mode_switch_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_lock_mode_switch_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         lock: u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_lock_mode_switch_checked)(c, screen, lock)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_lock_mode_switch_checked)(c, screen, lock) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_modeinfo(&self, R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t) -> *mut xcb_xf86vidmode_mode_info_t { sym!(self, xcb_xf86vidmode_get_all_mode_lines_modeinfo)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_modeinfo_length(&self, R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_all_mode_lines_modeinfo_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_modeinfo_iterator(&self, R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t) -> xcb_xf86vidmode_mode_info_iterator_t { sym!(self, xcb_xf86vidmode_get_all_mode_lines_modeinfo_iterator)(R) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_modeinfo(
-        &self,
-        R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t,
-    ) -> *mut xcb_xf86vidmode_mode_info_t {
-        call!(self, xcb_xf86vidmode_get_all_mode_lines_modeinfo)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_modeinfo_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_all_mode_lines_modeinfo_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_modeinfo_iterator(
-        &self,
-        R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t,
-    ) -> xcb_xf86vidmode_mode_info_iterator_t {
-        call!(self, xcb_xf86vidmode_get_all_mode_lines_modeinfo_iterator)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_reply(
+    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_all_mode_lines_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_all_mode_lines_reply_t {
-        call!(self, xcb_xf86vidmode_get_all_mode_lines_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_all_mode_lines_reply_t { sym!(self, xcb_xf86vidmode_get_all_mode_lines_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_all_mode_lines_cookie_t {
-        call!(self, xcb_xf86vidmode_get_all_mode_lines)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_all_mode_lines_cookie_t { sym!(self, xcb_xf86vidmode_get_all_mode_lines)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_all_mode_lines_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_all_mode_lines_cookie_t {
-        call!(self, xcb_xf86vidmode_get_all_mode_lines_unchecked)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_all_mode_lines_cookie_t { sym!(self, xcb_xf86vidmode_get_all_mode_lines_unchecked)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_add_mode_line(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_add_mode_line (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1132,41 +955,12 @@ impl XcbXf86vidmode {
         after_vtotal: u16,
         after_flags: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_add_mode_line)(
-            c,
-            screen,
-            dotclock,
-            hdisplay,
-            hsyncstart,
-            hsyncend,
-            htotal,
-            hskew,
-            vdisplay,
-            vsyncstart,
-            vsyncend,
-            vtotal,
-            flags,
-            privsize,
-            after_dotclock,
-            after_hdisplay,
-            after_hsyncstart,
-            after_hsyncend,
-            after_htotal,
-            after_hskew,
-            after_vdisplay,
-            after_vsyncstart,
-            after_vsyncend,
-            after_vtotal,
-            after_flags,
-            private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_add_mode_line)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, after_dotclock, after_hdisplay, after_hsyncstart, after_hsyncend, after_htotal, after_hskew, after_vdisplay, after_vsyncstart, after_vsyncend, after_vtotal, after_flags, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_add_mode_line_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_add_mode_line_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1192,41 +986,12 @@ impl XcbXf86vidmode {
         after_vtotal: u16,
         after_flags: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_add_mode_line_checked)(
-            c,
-            screen,
-            dotclock,
-            hdisplay,
-            hsyncstart,
-            hsyncend,
-            htotal,
-            hskew,
-            vdisplay,
-            vsyncstart,
-            vsyncend,
-            vtotal,
-            flags,
-            privsize,
-            after_dotclock,
-            after_hdisplay,
-            after_hsyncstart,
-            after_hsyncend,
-            after_htotal,
-            after_hskew,
-            after_vdisplay,
-            after_vsyncstart,
-            after_vsyncend,
-            after_vtotal,
-            after_flags,
-            private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_add_mode_line_checked)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, after_dotclock, after_hdisplay, after_hsyncstart, after_hsyncend, after_htotal, after_hskew, after_vdisplay, after_vsyncstart, after_vsyncend, after_vtotal, after_flags, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_delete_mode_line(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_delete_mode_line (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1241,17 +1006,12 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_delete_mode_line)(
-            c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay,
-            vsyncstart, vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_delete_mode_line)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_delete_mode_line_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_delete_mode_line_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1266,27 +1026,20 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_delete_mode_line_checked)(
-            c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay,
-            vsyncstart, vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_delete_mode_line_checked)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_validate_mode_line_reply(
+    pub unsafe fn xcb_xf86vidmode_validate_mode_line_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_validate_mode_line_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_validate_mode_line_reply_t {
-        call!(self, xcb_xf86vidmode_validate_mode_line_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_validate_mode_line_reply_t { sym!(self, xcb_xf86vidmode_validate_mode_line_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_validate_mode_line(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_validate_mode_line (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1301,17 +1054,12 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_xf86vidmode_validate_mode_line_cookie_t {
-        call!(self, xcb_xf86vidmode_validate_mode_line)(
-            c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay,
-            vsyncstart, vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_xf86vidmode_validate_mode_line_cookie_t { sym!(self, xcb_xf86vidmode_validate_mode_line)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_validate_mode_line_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_validate_mode_line_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1326,17 +1074,12 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_xf86vidmode_validate_mode_line_cookie_t {
-        call!(self, xcb_xf86vidmode_validate_mode_line_unchecked)(
-            c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay,
-            vsyncstart, vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_xf86vidmode_validate_mode_line_cookie_t { sym!(self, xcb_xf86vidmode_validate_mode_line_unchecked)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_switch_to_mode(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_switch_to_mode (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1351,17 +1094,12 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_switch_to_mode)(
-            c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay,
-            vsyncstart, vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_switch_to_mode)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_switch_to_mode_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_switch_to_mode_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u32,
         dotclock: xcb_xf86vidmode_dotclock_t,
         hdisplay: u16,
@@ -1376,909 +1114,252 @@ impl XcbXf86vidmode {
         flags: u32,
         privsize: u32,
         private: *const u8,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_switch_to_mode_checked)(
-            c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay,
-            vsyncstart, vsyncend, vtotal, flags, privsize, private,
-        )
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_switch_to_mode_checked)(c, screen, dotclock, hdisplay, hsyncstart, hsyncend, htotal, hskew, vdisplay, vsyncstart, vsyncend, vtotal, flags, privsize, private) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_view_port_reply(
+    pub unsafe fn xcb_xf86vidmode_get_view_port_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_view_port_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_view_port_reply_t {
-        call!(self, xcb_xf86vidmode_get_view_port_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_view_port_reply_t { sym!(self, xcb_xf86vidmode_get_view_port_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_view_port(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_view_port (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_view_port_cookie_t {
-        call!(self, xcb_xf86vidmode_get_view_port)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_view_port_cookie_t { sym!(self, xcb_xf86vidmode_get_view_port)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_view_port_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_view_port_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_view_port_cookie_t {
-        call!(self, xcb_xf86vidmode_get_view_port_unchecked)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_view_port_cookie_t { sym!(self, xcb_xf86vidmode_get_view_port_unchecked)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_view_port(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_view_port (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         x: u32,
         y: u32,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_view_port)(c, screen, x, y)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_view_port)(c, screen, x, y) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_view_port_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_view_port_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         x: u32,
         y: u32,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_view_port_checked)(c, screen, x, y)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_view_port_checked)(c, screen, x, y) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_dot_clocks_clock(&self, R: *const xcb_xf86vidmode_get_dot_clocks_reply_t) -> *mut u32 { sym!(self, xcb_xf86vidmode_get_dot_clocks_clock)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_dot_clocks_clock_length(&self, R: *const xcb_xf86vidmode_get_dot_clocks_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_dot_clocks_clock_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_dot_clocks_clock_end(&self, R: *const xcb_xf86vidmode_get_dot_clocks_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_dot_clocks_clock_end)(R) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_dot_clocks_clock(
-        &self,
-        R: *const xcb_xf86vidmode_get_dot_clocks_reply_t,
-    ) -> *mut u32 {
-        call!(self, xcb_xf86vidmode_get_dot_clocks_clock)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_dot_clocks_clock_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_dot_clocks_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_dot_clocks_clock_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_dot_clocks_clock_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_dot_clocks_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_dot_clocks_clock_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_dot_clocks_reply(
+    pub unsafe fn xcb_xf86vidmode_get_dot_clocks_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_dot_clocks_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_dot_clocks_reply_t {
-        call!(self, xcb_xf86vidmode_get_dot_clocks_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_dot_clocks_reply_t { sym!(self, xcb_xf86vidmode_get_dot_clocks_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_dot_clocks(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_dot_clocks (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_dot_clocks_cookie_t {
-        call!(self, xcb_xf86vidmode_get_dot_clocks)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_dot_clocks_cookie_t { sym!(self, xcb_xf86vidmode_get_dot_clocks)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_dot_clocks_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_dot_clocks_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_dot_clocks_cookie_t {
-        call!(self, xcb_xf86vidmode_get_dot_clocks_unchecked)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_dot_clocks_cookie_t { sym!(self, xcb_xf86vidmode_get_dot_clocks_unchecked)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_client_version(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_client_version (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         major: u16,
         minor: u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_client_version)(c, major, minor)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_client_version)(c, major, minor) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_client_version_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_client_version_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         major: u16,
         minor: u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_client_version_checked)(c, major, minor)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_client_version_checked)(c, major, minor) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_gamma(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_gamma (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         red: u32,
         green: u32,
         blue: u32,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_gamma)(c, screen, red, green, blue)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_gamma)(c, screen, red, green, blue) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_gamma_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_gamma_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         red: u32,
         green: u32,
         blue: u32,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_gamma_checked)(c, screen, red, green, blue)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_gamma_checked)(c, screen, red, green, blue) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_reply(
+    pub unsafe fn xcb_xf86vidmode_get_gamma_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_gamma_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_gamma_reply_t {
-        call!(self, xcb_xf86vidmode_get_gamma_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_gamma_reply_t { sym!(self, xcb_xf86vidmode_get_gamma_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_gamma (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_gamma_cookie_t {
-        call!(self, xcb_xf86vidmode_get_gamma)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_gamma_cookie_t { sym!(self, xcb_xf86vidmode_get_gamma)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_gamma_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_gamma_cookie_t {
-        call!(self, xcb_xf86vidmode_get_gamma_unchecked)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_gamma_cookie_t { sym!(self, xcb_xf86vidmode_get_gamma_unchecked)(c, screen) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_red(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> *mut u16 { sym!(self, xcb_xf86vidmode_get_gamma_ramp_red)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_red_length(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_gamma_ramp_red_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_red_end(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_red_end)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_green(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> *mut u16 { sym!(self, xcb_xf86vidmode_get_gamma_ramp_green)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_green_length(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_gamma_ramp_green_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_green_end(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_green_end)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_blue(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> *mut u16 { sym!(self, xcb_xf86vidmode_get_gamma_ramp_blue)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_blue_length(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> c_int { sym!(self, xcb_xf86vidmode_get_gamma_ramp_blue_length)(R) }
+
+#[inline]
+pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_blue_end(&self, R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> xcb_generic_iterator_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_blue_end)(R) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_red(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> *mut u16 {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_red)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_red_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_red_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_red_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_red_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_green(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> *mut u16 {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_green)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_green_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_green_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_green_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_green_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_blue(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> *mut u16 {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_blue)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_blue_length(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> c_int {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_blue_length)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_blue_end(
-        &self,
-        R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_blue_end)(R)
-    }
-
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_reply(
+    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_gamma_ramp_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_gamma_ramp_reply_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_gamma_ramp_reply_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         size: u16,
-    ) -> xcb_xf86vidmode_get_gamma_ramp_cookie_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp)(c, screen, size)
-    }
+    ) -> xcb_xf86vidmode_get_gamma_ramp_cookie_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp)(c, screen, size) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         size: u16,
-    ) -> xcb_xf86vidmode_get_gamma_ramp_cookie_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_unchecked)(c, screen, size)
-    }
+    ) -> xcb_xf86vidmode_get_gamma_ramp_cookie_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_unchecked)(c, screen, size) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_gamma_ramp(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_gamma_ramp (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         size: u16,
         red: *const u16,
         green: *const u16,
         blue: *const u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_gamma_ramp)(c, screen, size, red, green, blue)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_gamma_ramp)(c, screen, size, red, green, blue) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_set_gamma_ramp_checked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_set_gamma_ramp_checked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
         size: u16,
         red: *const u16,
         green: *const u16,
         blue: *const u16,
-    ) -> xcb_void_cookie_t {
-        call!(self, xcb_xf86vidmode_set_gamma_ramp_checked)(c, screen, size, red, green, blue)
-    }
+    ) -> xcb_void_cookie_t { sym!(self, xcb_xf86vidmode_set_gamma_ramp_checked)(c, screen, size, red, green, blue) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_size_reply(
+    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_size_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_gamma_ramp_size_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_gamma_ramp_size_reply_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_size_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_gamma_ramp_size_reply_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_size_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_size(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_size (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_gamma_ramp_size_cookie_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_size)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_gamma_ramp_size_cookie_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_size)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_size_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_gamma_ramp_size_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_gamma_ramp_size_cookie_t {
-        call!(self, xcb_xf86vidmode_get_gamma_ramp_size_unchecked)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_gamma_ramp_size_cookie_t { sym!(self, xcb_xf86vidmode_get_gamma_ramp_size_unchecked)(c, screen) }
 
     #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_permissions_reply(
+    pub unsafe fn xcb_xf86vidmode_get_permissions_reply (
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86vidmode_get_permissions_cookie_t,
         error: *mut *mut xcb_generic_error_t,
-    ) -> *mut xcb_xf86vidmode_get_permissions_reply_t {
-        call!(self, xcb_xf86vidmode_get_permissions_reply)(c, cookie, error)
-    }
+    ) -> *mut xcb_xf86vidmode_get_permissions_reply_t { sym!(self, xcb_xf86vidmode_get_permissions_reply)(c, cookie, error) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_permissions(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_permissions (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_permissions_cookie_t {
-        call!(self, xcb_xf86vidmode_get_permissions)(c, screen)
-    }
+    ) -> xcb_xf86vidmode_get_permissions_cookie_t { sym!(self, xcb_xf86vidmode_get_permissions)(c, screen) }
 
-    #[inline]
-    pub unsafe fn xcb_xf86vidmode_get_permissions_unchecked(
+#[inline]
+    pub unsafe fn xcb_xf86vidmode_get_permissions_unchecked (
         &self,
-        c: *mut xcb_connection_t,
+c: *mut xcb_connection_t,
         screen: u16,
-    ) -> xcb_xf86vidmode_get_permissions_cookie_t {
-        call!(self, xcb_xf86vidmode_get_permissions_unchecked)(c, screen)
-    }
-}
+    ) -> xcb_xf86vidmode_get_permissions_cookie_t { sym!(self, xcb_xf86vidmode_get_permissions_unchecked)(c, screen) }
 
-pub struct XcbXf86vidmode {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xf86vidmode_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xf86vidmode_syncrange_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xf86vidmode_syncrange_iterator_t)>,
-    pub(crate) xcb_xf86vidmode_syncrange_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xf86vidmode_syncrange_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_dotclock_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xf86vidmode_dotclock_iterator_t)>,
-    pub(crate) xcb_xf86vidmode_dotclock_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xf86vidmode_dotclock_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_mode_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xf86vidmode_mode_info_iterator_t)>,
-    pub(crate) xcb_xf86vidmode_mode_info_end: LazySymbol<
-        unsafe fn(i: *mut xcb_xf86vidmode_mode_info_iterator_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_query_version_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_query_version:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xf86vidmode_query_version_cookie_t>,
-    pub(crate) xcb_xf86vidmode_query_version_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xf86vidmode_query_version_cookie_t>,
-    pub(crate) xcb_xf86vidmode_get_mode_line_private:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_mode_line_reply_t) -> *mut u8>,
-    pub(crate) xcb_xf86vidmode_get_mode_line_private_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_mode_line_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_mode_line_private_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_mode_line_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_mode_line_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_mode_line_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_mode_line_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_mode_line: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_mode_line_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_mode_line_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_mode_line_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_mod_mode_line: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_mod_mode_line_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_switch_mode: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16, zoom: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_switch_mode_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16, zoom: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_hsync: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86vidmode_get_monitor_reply_t,
-        ) -> *mut xcb_xf86vidmode_syncrange_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_hsync_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_monitor_hsync_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_vsync: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86vidmode_get_monitor_reply_t,
-        ) -> *mut xcb_xf86vidmode_syncrange_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_vsync_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_monitor_vsync_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_vendor:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut c_char>,
-    pub(crate) xcb_xf86vidmode_get_monitor_vendor_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_monitor_vendor_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_alignment_pad:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut c_void>,
-    pub(crate) xcb_xf86vidmode_get_monitor_alignment_pad_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_monitor_alignment_pad_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_model:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> *mut c_char>,
-    pub(crate) xcb_xf86vidmode_get_monitor_model_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_monitor_model_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_monitor_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_monitor_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_monitor_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_monitor_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_monitor_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_monitor_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_lock_mode_switch: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16, lock: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_lock_mode_switch_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16, lock: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_all_mode_lines_modeinfo: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t,
-        ) -> *mut xcb_xf86vidmode_mode_info_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_all_mode_lines_modeinfo_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_all_mode_lines_modeinfo_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xf86vidmode_get_all_mode_lines_reply_t,
-        ) -> xcb_xf86vidmode_mode_info_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_all_mode_lines_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_all_mode_lines_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_all_mode_lines_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_all_mode_lines: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-        ) -> xcb_xf86vidmode_get_all_mode_lines_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_all_mode_lines_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-        ) -> xcb_xf86vidmode_get_all_mode_lines_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_add_mode_line: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            after_dotclock: xcb_xf86vidmode_dotclock_t,
-            after_hdisplay: u16,
-            after_hsyncstart: u16,
-            after_hsyncend: u16,
-            after_htotal: u16,
-            after_hskew: u16,
-            after_vdisplay: u16,
-            after_vsyncstart: u16,
-            after_vsyncend: u16,
-            after_vtotal: u16,
-            after_flags: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_add_mode_line_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            after_dotclock: xcb_xf86vidmode_dotclock_t,
-            after_hdisplay: u16,
-            after_hsyncstart: u16,
-            after_hsyncend: u16,
-            after_htotal: u16,
-            after_hskew: u16,
-            after_vdisplay: u16,
-            after_vsyncstart: u16,
-            after_vsyncend: u16,
-            after_vtotal: u16,
-            after_flags: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_delete_mode_line: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_delete_mode_line_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_validate_mode_line_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_validate_mode_line_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_validate_mode_line_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_validate_mode_line: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_xf86vidmode_validate_mode_line_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_validate_mode_line_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_xf86vidmode_validate_mode_line_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_switch_to_mode: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_switch_to_mode_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u32,
-            dotclock: xcb_xf86vidmode_dotclock_t,
-            hdisplay: u16,
-            hsyncstart: u16,
-            hsyncend: u16,
-            htotal: u16,
-            hskew: u16,
-            vdisplay: u16,
-            vsyncstart: u16,
-            vsyncend: u16,
-            vtotal: u16,
-            flags: u32,
-            privsize: u32,
-            private: *const u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_view_port_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_view_port_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_view_port_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_view_port: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_view_port_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_view_port_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_view_port_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_view_port: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16, x: u32, y: u32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_view_port_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16, x: u32, y: u32) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_dot_clocks_clock:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_dot_clocks_reply_t) -> *mut u32>,
-    pub(crate) xcb_xf86vidmode_get_dot_clocks_clock_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_dot_clocks_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_dot_clocks_clock_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_dot_clocks_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_dot_clocks_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_dot_clocks_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_dot_clocks_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_dot_clocks: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_dot_clocks_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_dot_clocks_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_dot_clocks_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_client_version: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, major: u16, minor: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_client_version_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, major: u16, minor: u16) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_gamma: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-            red: u32,
-            green: u32,
-            blue: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_gamma_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-            red: u32,
-            green: u32,
-            blue: u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_gamma_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_gamma_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_gamma_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, screen: u16) -> xcb_xf86vidmode_get_gamma_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_red:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> *mut u16>,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_red_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_red_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_green:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> *mut u16>,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_green_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_green_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_blue:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> *mut u16>,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_blue_length:
-        LazySymbol<unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> c_int>,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_blue_end: LazySymbol<
-        unsafe fn(R: *const xcb_xf86vidmode_get_gamma_ramp_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_gamma_ramp_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_gamma_ramp_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-            size: u16,
-        ) -> xcb_xf86vidmode_get_gamma_ramp_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-            size: u16,
-        ) -> xcb_xf86vidmode_get_gamma_ramp_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_gamma_ramp: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-            size: u16,
-            red: *const u16,
-            green: *const u16,
-            blue: *const u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_set_gamma_ramp_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-            size: u16,
-            red: *const u16,
-            green: *const u16,
-            blue: *const u16,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_size_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_gamma_ramp_size_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_gamma_ramp_size_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_size: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-        ) -> xcb_xf86vidmode_get_gamma_ramp_size_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_gamma_ramp_size_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-        ) -> xcb_xf86vidmode_get_gamma_ramp_size_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_permissions_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xf86vidmode_get_permissions_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xf86vidmode_get_permissions_reply_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_permissions: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-        ) -> xcb_xf86vidmode_get_permissions_cookie_t,
-    >,
-    pub(crate) xcb_xf86vidmode_get_permissions_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            screen: u16,
-        ) -> xcb_xf86vidmode_get_permissions_cookie_t,
-    >,
 }

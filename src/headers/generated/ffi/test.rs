@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -98,8 +99,8 @@ pub struct xcb_test_grab_control_request_t {
 
 impl XcbXtest {
     #[inline]
-    pub fn xcb_test_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_test_id)
+    pub unsafe fn xcb_test_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_test_id)
     }
 
     #[inline]
@@ -109,7 +110,7 @@ impl XcbXtest {
         cookie: xcb_test_get_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_test_get_version_reply_t {
-        call!(self, xcb_test_get_version_reply)(c, cookie, error)
+        sym!(self, xcb_test_get_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -119,7 +120,7 @@ impl XcbXtest {
         major_version: u8,
         minor_version: u16,
     ) -> xcb_test_get_version_cookie_t {
-        call!(self, xcb_test_get_version)(c, major_version, minor_version)
+        sym!(self, xcb_test_get_version)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -129,7 +130,7 @@ impl XcbXtest {
         major_version: u8,
         minor_version: u16,
     ) -> xcb_test_get_version_cookie_t {
-        call!(self, xcb_test_get_version_unchecked)(c, major_version, minor_version)
+        sym!(self, xcb_test_get_version_unchecked)(c, major_version, minor_version)
     }
 
     #[inline]
@@ -139,7 +140,7 @@ impl XcbXtest {
         cookie: xcb_test_compare_cursor_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_test_compare_cursor_reply_t {
-        call!(self, xcb_test_compare_cursor_reply)(c, cookie, error)
+        sym!(self, xcb_test_compare_cursor_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -149,7 +150,7 @@ impl XcbXtest {
         window: xcb_window_t,
         cursor: xcb_cursor_t,
     ) -> xcb_test_compare_cursor_cookie_t {
-        call!(self, xcb_test_compare_cursor)(c, window, cursor)
+        sym!(self, xcb_test_compare_cursor)(c, window, cursor)
     }
 
     #[inline]
@@ -159,7 +160,7 @@ impl XcbXtest {
         window: xcb_window_t,
         cursor: xcb_cursor_t,
     ) -> xcb_test_compare_cursor_cookie_t {
-        call!(self, xcb_test_compare_cursor_unchecked)(c, window, cursor)
+        sym!(self, xcb_test_compare_cursor_unchecked)(c, window, cursor)
     }
 
     #[inline]
@@ -174,7 +175,7 @@ impl XcbXtest {
         root_y: i16,
         deviceid: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_test_fake_input)(c, type_, detail, time, root, root_x, root_y, deviceid)
+        sym!(self, xcb_test_fake_input)(c, type_, detail, time, root, root_x, root_y, deviceid)
     }
 
     #[inline]
@@ -189,7 +190,7 @@ impl XcbXtest {
         root_y: i16,
         deviceid: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_test_fake_input_checked)(
+        sym!(self, xcb_test_fake_input_checked)(
             c, type_, detail, time, root, root_x, root_y, deviceid,
         )
     }
@@ -200,7 +201,7 @@ impl XcbXtest {
         c: *mut xcb_connection_t,
         impervious: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_test_grab_control)(c, impervious)
+        sym!(self, xcb_test_grab_control)(c, impervious)
     }
 
     #[inline]
@@ -209,81 +210,6 @@ impl XcbXtest {
         c: *mut xcb_connection_t,
         impervious: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_test_grab_control_checked)(c, impervious)
+        sym!(self, xcb_test_grab_control_checked)(c, impervious)
     }
-}
-
-pub struct XcbXtest {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_test_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_test_get_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_test_get_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_test_get_version_reply_t,
-    >,
-    pub(crate) xcb_test_get_version: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u8,
-            minor_version: u16,
-        ) -> xcb_test_get_version_cookie_t,
-    >,
-    pub(crate) xcb_test_get_version_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            major_version: u8,
-            minor_version: u16,
-        ) -> xcb_test_get_version_cookie_t,
-    >,
-    pub(crate) xcb_test_compare_cursor_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_test_compare_cursor_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_test_compare_cursor_reply_t,
-    >,
-    pub(crate) xcb_test_compare_cursor: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            cursor: xcb_cursor_t,
-        ) -> xcb_test_compare_cursor_cookie_t,
-    >,
-    pub(crate) xcb_test_compare_cursor_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            window: xcb_window_t,
-            cursor: xcb_cursor_t,
-        ) -> xcb_test_compare_cursor_cookie_t,
-    >,
-    pub(crate) xcb_test_fake_input: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            type_: u8,
-            detail: u8,
-            time: u32,
-            root: xcb_window_t,
-            root_x: i16,
-            root_y: i16,
-            deviceid: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_test_fake_input_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            type_: u8,
-            detail: u8,
-            time: u32,
-            root: xcb_window_t,
-            root_x: i16,
-            root_y: i16,
-            deviceid: u8,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_test_grab_control:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, impervious: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_test_grab_control_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, impervious: u8) -> xcb_void_cookie_t>,
 }

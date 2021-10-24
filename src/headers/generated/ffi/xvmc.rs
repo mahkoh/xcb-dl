@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -274,13 +275,13 @@ pub struct xcb_xvmc_list_subpicture_types_reply_t {
 
 impl XcbXvmc {
     #[inline]
-    pub fn xcb_xvmc_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_xvmc_id)
+    pub unsafe fn xcb_xvmc_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_xvmc_id)
     }
 
     #[inline]
     pub unsafe fn xcb_xvmc_context_next(&self, i: *mut xcb_xvmc_context_iterator_t) {
-        call!(self, xcb_xvmc_context_next)(i);
+        sym!(self, xcb_xvmc_context_next)(i);
     }
 
     #[inline]
@@ -288,12 +289,12 @@ impl XcbXvmc {
         &self,
         i: *mut xcb_xvmc_context_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xvmc_context_end)(i)
+        sym!(self, xcb_xvmc_context_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xvmc_surface_next(&self, i: *mut xcb_xvmc_surface_iterator_t) {
-        call!(self, xcb_xvmc_surface_next)(i);
+        sym!(self, xcb_xvmc_surface_next)(i);
     }
 
     #[inline]
@@ -301,12 +302,12 @@ impl XcbXvmc {
         &self,
         i: *mut xcb_xvmc_surface_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xvmc_surface_end)(i)
+        sym!(self, xcb_xvmc_surface_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xvmc_subpicture_next(&self, i: *mut xcb_xvmc_subpicture_iterator_t) {
-        call!(self, xcb_xvmc_subpicture_next)(i);
+        sym!(self, xcb_xvmc_subpicture_next)(i);
     }
 
     #[inline]
@@ -314,12 +315,12 @@ impl XcbXvmc {
         &self,
         i: *mut xcb_xvmc_subpicture_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xvmc_subpicture_end)(i)
+        sym!(self, xcb_xvmc_subpicture_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_xvmc_surface_info_next(&self, i: *mut xcb_xvmc_surface_info_iterator_t) {
-        call!(self, xcb_xvmc_surface_info_next)(i);
+        sym!(self, xcb_xvmc_surface_info_next)(i);
     }
 
     #[inline]
@@ -327,7 +328,7 @@ impl XcbXvmc {
         &self,
         i: *mut xcb_xvmc_surface_info_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xvmc_surface_info_end)(i)
+        sym!(self, xcb_xvmc_surface_info_end)(i)
     }
 
     #[inline]
@@ -337,7 +338,7 @@ impl XcbXvmc {
         cookie: xcb_xvmc_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xvmc_query_version_reply_t {
-        call!(self, xcb_xvmc_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_xvmc_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -345,7 +346,7 @@ impl XcbXvmc {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xvmc_query_version_cookie_t {
-        call!(self, xcb_xvmc_query_version)(c)
+        sym!(self, xcb_xvmc_query_version)(c)
     }
 
     #[inline]
@@ -353,7 +354,7 @@ impl XcbXvmc {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_xvmc_query_version_cookie_t {
-        call!(self, xcb_xvmc_query_version_unchecked)(c)
+        sym!(self, xcb_xvmc_query_version_unchecked)(c)
     }
 
     #[inline]
@@ -361,7 +362,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_list_surface_types_reply_t,
     ) -> *mut xcb_xvmc_surface_info_t {
-        call!(self, xcb_xvmc_list_surface_types_surfaces)(R)
+        sym!(self, xcb_xvmc_list_surface_types_surfaces)(R)
     }
 
     #[inline]
@@ -369,7 +370,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_list_surface_types_reply_t,
     ) -> c_int {
-        call!(self, xcb_xvmc_list_surface_types_surfaces_length)(R)
+        sym!(self, xcb_xvmc_list_surface_types_surfaces_length)(R)
     }
 
     #[inline]
@@ -377,7 +378,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_list_surface_types_reply_t,
     ) -> xcb_xvmc_surface_info_iterator_t {
-        call!(self, xcb_xvmc_list_surface_types_surfaces_iterator)(R)
+        sym!(self, xcb_xvmc_list_surface_types_surfaces_iterator)(R)
     }
 
     #[inline]
@@ -387,7 +388,7 @@ impl XcbXvmc {
         cookie: xcb_xvmc_list_surface_types_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xvmc_list_surface_types_reply_t {
-        call!(self, xcb_xvmc_list_surface_types_reply)(c, cookie, error)
+        sym!(self, xcb_xvmc_list_surface_types_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -396,7 +397,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         port_id: xcb_xv_port_t,
     ) -> xcb_xvmc_list_surface_types_cookie_t {
-        call!(self, xcb_xvmc_list_surface_types)(c, port_id)
+        sym!(self, xcb_xvmc_list_surface_types)(c, port_id)
     }
 
     #[inline]
@@ -405,7 +406,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         port_id: xcb_xv_port_t,
     ) -> xcb_xvmc_list_surface_types_cookie_t {
-        call!(self, xcb_xvmc_list_surface_types_unchecked)(c, port_id)
+        sym!(self, xcb_xvmc_list_surface_types_unchecked)(c, port_id)
     }
 
     #[inline]
@@ -413,7 +414,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_context_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xvmc_create_context_priv_data)(R)
+        sym!(self, xcb_xvmc_create_context_priv_data)(R)
     }
 
     #[inline]
@@ -421,7 +422,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_context_reply_t,
     ) -> c_int {
-        call!(self, xcb_xvmc_create_context_priv_data_length)(R)
+        sym!(self, xcb_xvmc_create_context_priv_data_length)(R)
     }
 
     #[inline]
@@ -429,7 +430,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_context_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xvmc_create_context_priv_data_end)(R)
+        sym!(self, xcb_xvmc_create_context_priv_data_end)(R)
     }
 
     #[inline]
@@ -439,7 +440,7 @@ impl XcbXvmc {
         cookie: xcb_xvmc_create_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xvmc_create_context_reply_t {
-        call!(self, xcb_xvmc_create_context_reply)(c, cookie, error)
+        sym!(self, xcb_xvmc_create_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -453,7 +454,7 @@ impl XcbXvmc {
         height: u16,
         flags: u32,
     ) -> xcb_xvmc_create_context_cookie_t {
-        call!(self, xcb_xvmc_create_context)(
+        sym!(self, xcb_xvmc_create_context)(
             c, context_id, port_id, surface_id, width, height, flags,
         )
     }
@@ -469,7 +470,7 @@ impl XcbXvmc {
         height: u16,
         flags: u32,
     ) -> xcb_xvmc_create_context_cookie_t {
-        call!(self, xcb_xvmc_create_context_unchecked)(
+        sym!(self, xcb_xvmc_create_context_unchecked)(
             c, context_id, port_id, surface_id, width, height, flags,
         )
     }
@@ -480,7 +481,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         context_id: xcb_xvmc_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xvmc_destroy_context)(c, context_id)
+        sym!(self, xcb_xvmc_destroy_context)(c, context_id)
     }
 
     #[inline]
@@ -489,7 +490,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         context_id: xcb_xvmc_context_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xvmc_destroy_context_checked)(c, context_id)
+        sym!(self, xcb_xvmc_destroy_context_checked)(c, context_id)
     }
 
     #[inline]
@@ -497,7 +498,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_surface_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xvmc_create_surface_priv_data)(R)
+        sym!(self, xcb_xvmc_create_surface_priv_data)(R)
     }
 
     #[inline]
@@ -505,7 +506,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_surface_reply_t,
     ) -> c_int {
-        call!(self, xcb_xvmc_create_surface_priv_data_length)(R)
+        sym!(self, xcb_xvmc_create_surface_priv_data_length)(R)
     }
 
     #[inline]
@@ -513,7 +514,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_surface_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xvmc_create_surface_priv_data_end)(R)
+        sym!(self, xcb_xvmc_create_surface_priv_data_end)(R)
     }
 
     #[inline]
@@ -523,7 +524,7 @@ impl XcbXvmc {
         cookie: xcb_xvmc_create_surface_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xvmc_create_surface_reply_t {
-        call!(self, xcb_xvmc_create_surface_reply)(c, cookie, error)
+        sym!(self, xcb_xvmc_create_surface_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -533,7 +534,7 @@ impl XcbXvmc {
         surface_id: xcb_xvmc_surface_t,
         context_id: xcb_xvmc_context_t,
     ) -> xcb_xvmc_create_surface_cookie_t {
-        call!(self, xcb_xvmc_create_surface)(c, surface_id, context_id)
+        sym!(self, xcb_xvmc_create_surface)(c, surface_id, context_id)
     }
 
     #[inline]
@@ -543,7 +544,7 @@ impl XcbXvmc {
         surface_id: xcb_xvmc_surface_t,
         context_id: xcb_xvmc_context_t,
     ) -> xcb_xvmc_create_surface_cookie_t {
-        call!(self, xcb_xvmc_create_surface_unchecked)(c, surface_id, context_id)
+        sym!(self, xcb_xvmc_create_surface_unchecked)(c, surface_id, context_id)
     }
 
     #[inline]
@@ -552,7 +553,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         surface_id: xcb_xvmc_surface_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xvmc_destroy_surface)(c, surface_id)
+        sym!(self, xcb_xvmc_destroy_surface)(c, surface_id)
     }
 
     #[inline]
@@ -561,7 +562,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         surface_id: xcb_xvmc_surface_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xvmc_destroy_surface_checked)(c, surface_id)
+        sym!(self, xcb_xvmc_destroy_surface_checked)(c, surface_id)
     }
 
     #[inline]
@@ -569,7 +570,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_subpicture_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_xvmc_create_subpicture_priv_data)(R)
+        sym!(self, xcb_xvmc_create_subpicture_priv_data)(R)
     }
 
     #[inline]
@@ -577,7 +578,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_subpicture_reply_t,
     ) -> c_int {
-        call!(self, xcb_xvmc_create_subpicture_priv_data_length)(R)
+        sym!(self, xcb_xvmc_create_subpicture_priv_data_length)(R)
     }
 
     #[inline]
@@ -585,7 +586,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_create_subpicture_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_xvmc_create_subpicture_priv_data_end)(R)
+        sym!(self, xcb_xvmc_create_subpicture_priv_data_end)(R)
     }
 
     #[inline]
@@ -595,7 +596,7 @@ impl XcbXvmc {
         cookie: xcb_xvmc_create_subpicture_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xvmc_create_subpicture_reply_t {
-        call!(self, xcb_xvmc_create_subpicture_reply)(c, cookie, error)
+        sym!(self, xcb_xvmc_create_subpicture_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -608,14 +609,7 @@ impl XcbXvmc {
         width: u16,
         height: u16,
     ) -> xcb_xvmc_create_subpicture_cookie_t {
-        call!(self, xcb_xvmc_create_subpicture)(
-            c,
-            subpicture_id,
-            context,
-            xvimage_id,
-            width,
-            height,
-        )
+        sym!(self, xcb_xvmc_create_subpicture)(c, subpicture_id, context, xvimage_id, width, height)
     }
 
     #[inline]
@@ -628,7 +622,7 @@ impl XcbXvmc {
         width: u16,
         height: u16,
     ) -> xcb_xvmc_create_subpicture_cookie_t {
-        call!(self, xcb_xvmc_create_subpicture_unchecked)(
+        sym!(self, xcb_xvmc_create_subpicture_unchecked)(
             c,
             subpicture_id,
             context,
@@ -644,7 +638,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         subpicture_id: xcb_xvmc_subpicture_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xvmc_destroy_subpicture)(c, subpicture_id)
+        sym!(self, xcb_xvmc_destroy_subpicture)(c, subpicture_id)
     }
 
     #[inline]
@@ -653,7 +647,7 @@ impl XcbXvmc {
         c: *mut xcb_connection_t,
         subpicture_id: xcb_xvmc_subpicture_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_xvmc_destroy_subpicture_checked)(c, subpicture_id)
+        sym!(self, xcb_xvmc_destroy_subpicture_checked)(c, subpicture_id)
     }
 
     #[inline]
@@ -661,7 +655,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_list_subpicture_types_reply_t,
     ) -> *mut xcb_xv_image_format_info_t {
-        call!(self, xcb_xvmc_list_subpicture_types_types)(R)
+        sym!(self, xcb_xvmc_list_subpicture_types_types)(R)
     }
 
     #[inline]
@@ -669,7 +663,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_list_subpicture_types_reply_t,
     ) -> c_int {
-        call!(self, xcb_xvmc_list_subpicture_types_types_length)(R)
+        sym!(self, xcb_xvmc_list_subpicture_types_types_length)(R)
     }
 
     #[inline]
@@ -677,7 +671,7 @@ impl XcbXvmc {
         &self,
         R: *const xcb_xvmc_list_subpicture_types_reply_t,
     ) -> xcb_xv_image_format_info_iterator_t {
-        call!(self, xcb_xvmc_list_subpicture_types_types_iterator)(R)
+        sym!(self, xcb_xvmc_list_subpicture_types_types_iterator)(R)
     }
 
     #[inline]
@@ -687,7 +681,7 @@ impl XcbXvmc {
         cookie: xcb_xvmc_list_subpicture_types_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_xvmc_list_subpicture_types_reply_t {
-        call!(self, xcb_xvmc_list_subpicture_types_reply)(c, cookie, error)
+        sym!(self, xcb_xvmc_list_subpicture_types_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -697,7 +691,7 @@ impl XcbXvmc {
         port_id: xcb_xv_port_t,
         surface_id: xcb_xvmc_surface_t,
     ) -> xcb_xvmc_list_subpicture_types_cookie_t {
-        call!(self, xcb_xvmc_list_subpicture_types)(c, port_id, surface_id)
+        sym!(self, xcb_xvmc_list_subpicture_types)(c, port_id, surface_id)
     }
 
     #[inline]
@@ -707,218 +701,6 @@ impl XcbXvmc {
         port_id: xcb_xv_port_t,
         surface_id: xcb_xvmc_surface_t,
     ) -> xcb_xvmc_list_subpicture_types_cookie_t {
-        call!(self, xcb_xvmc_list_subpicture_types_unchecked)(c, port_id, surface_id)
+        sym!(self, xcb_xvmc_list_subpicture_types_unchecked)(c, port_id, surface_id)
     }
-}
-
-pub struct XcbXvmc {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_xvmc_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_xvmc_context_next: LazySymbol<unsafe fn(i: *mut xcb_xvmc_context_iterator_t)>,
-    pub(crate) xcb_xvmc_context_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xvmc_context_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xvmc_surface_next: LazySymbol<unsafe fn(i: *mut xcb_xvmc_surface_iterator_t)>,
-    pub(crate) xcb_xvmc_surface_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xvmc_surface_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xvmc_subpicture_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xvmc_subpicture_iterator_t)>,
-    pub(crate) xcb_xvmc_subpicture_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xvmc_subpicture_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xvmc_surface_info_next:
-        LazySymbol<unsafe fn(i: *mut xcb_xvmc_surface_info_iterator_t)>,
-    pub(crate) xcb_xvmc_surface_info_end:
-        LazySymbol<unsafe fn(i: *mut xcb_xvmc_surface_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xvmc_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xvmc_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xvmc_query_version_reply_t,
-    >,
-    pub(crate) xcb_xvmc_query_version:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xvmc_query_version_cookie_t>,
-    pub(crate) xcb_xvmc_query_version_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xvmc_query_version_cookie_t>,
-    pub(crate) xcb_xvmc_list_surface_types_surfaces: LazySymbol<
-        unsafe fn(R: *const xcb_xvmc_list_surface_types_reply_t) -> *mut xcb_xvmc_surface_info_t,
-    >,
-    pub(crate) xcb_xvmc_list_surface_types_surfaces_length:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_list_surface_types_reply_t) -> c_int>,
-    pub(crate) xcb_xvmc_list_surface_types_surfaces_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xvmc_list_surface_types_reply_t,
-        ) -> xcb_xvmc_surface_info_iterator_t,
-    >,
-    pub(crate) xcb_xvmc_list_surface_types_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xvmc_list_surface_types_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xvmc_list_surface_types_reply_t,
-    >,
-    pub(crate) xcb_xvmc_list_surface_types: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port_id: xcb_xv_port_t,
-        ) -> xcb_xvmc_list_surface_types_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_list_surface_types_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port_id: xcb_xv_port_t,
-        ) -> xcb_xvmc_list_surface_types_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_create_context_priv_data:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_context_reply_t) -> *mut u32>,
-    pub(crate) xcb_xvmc_create_context_priv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_context_reply_t) -> c_int>,
-    pub(crate) xcb_xvmc_create_context_priv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_context_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xvmc_create_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xvmc_create_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xvmc_create_context_reply_t,
-    >,
-    pub(crate) xcb_xvmc_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_id: xcb_xvmc_context_t,
-            port_id: xcb_xv_port_t,
-            surface_id: xcb_xvmc_surface_t,
-            width: u16,
-            height: u16,
-            flags: u32,
-        ) -> xcb_xvmc_create_context_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_create_context_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_id: xcb_xvmc_context_t,
-            port_id: xcb_xv_port_t,
-            surface_id: xcb_xvmc_surface_t,
-            width: u16,
-            height: u16,
-            flags: u32,
-        ) -> xcb_xvmc_create_context_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_destroy_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context_id: xcb_xvmc_context_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_destroy_context_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, context_id: xcb_xvmc_context_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_create_surface_priv_data:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_surface_reply_t) -> *mut u32>,
-    pub(crate) xcb_xvmc_create_surface_priv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_surface_reply_t) -> c_int>,
-    pub(crate) xcb_xvmc_create_surface_priv_data_end:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_surface_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_xvmc_create_surface_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xvmc_create_surface_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xvmc_create_surface_reply_t,
-    >,
-    pub(crate) xcb_xvmc_create_surface: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            surface_id: xcb_xvmc_surface_t,
-            context_id: xcb_xvmc_context_t,
-        ) -> xcb_xvmc_create_surface_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_create_surface_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            surface_id: xcb_xvmc_surface_t,
-            context_id: xcb_xvmc_context_t,
-        ) -> xcb_xvmc_create_surface_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_destroy_surface: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, surface_id: xcb_xvmc_surface_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_destroy_surface_checked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, surface_id: xcb_xvmc_surface_t) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_create_subpicture_priv_data:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_subpicture_reply_t) -> *mut u32>,
-    pub(crate) xcb_xvmc_create_subpicture_priv_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_create_subpicture_reply_t) -> c_int>,
-    pub(crate) xcb_xvmc_create_subpicture_priv_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_xvmc_create_subpicture_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_xvmc_create_subpicture_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xvmc_create_subpicture_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xvmc_create_subpicture_reply_t,
-    >,
-    pub(crate) xcb_xvmc_create_subpicture: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            subpicture_id: xcb_xvmc_subpicture_t,
-            context: xcb_xvmc_context_t,
-            xvimage_id: u32,
-            width: u16,
-            height: u16,
-        ) -> xcb_xvmc_create_subpicture_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_create_subpicture_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            subpicture_id: xcb_xvmc_subpicture_t,
-            context: xcb_xvmc_context_t,
-            xvimage_id: u32,
-            width: u16,
-            height: u16,
-        ) -> xcb_xvmc_create_subpicture_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_destroy_subpicture: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            subpicture_id: xcb_xvmc_subpicture_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_destroy_subpicture_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            subpicture_id: xcb_xvmc_subpicture_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_list_subpicture_types_types: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xvmc_list_subpicture_types_reply_t,
-        ) -> *mut xcb_xv_image_format_info_t,
-    >,
-    pub(crate) xcb_xvmc_list_subpicture_types_types_length:
-        LazySymbol<unsafe fn(R: *const xcb_xvmc_list_subpicture_types_reply_t) -> c_int>,
-    pub(crate) xcb_xvmc_list_subpicture_types_types_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_xvmc_list_subpicture_types_reply_t,
-        ) -> xcb_xv_image_format_info_iterator_t,
-    >,
-    pub(crate) xcb_xvmc_list_subpicture_types_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_xvmc_list_subpicture_types_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_xvmc_list_subpicture_types_reply_t,
-    >,
-    pub(crate) xcb_xvmc_list_subpicture_types: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port_id: xcb_xv_port_t,
-            surface_id: xcb_xvmc_surface_t,
-        ) -> xcb_xvmc_list_subpicture_types_cookie_t,
-    >,
-    pub(crate) xcb_xvmc_list_subpicture_types_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            port_id: xcb_xv_port_t,
-            surface_id: xcb_xvmc_surface_t,
-        ) -> xcb_xvmc_list_subpicture_types_cookie_t,
-    >,
 }

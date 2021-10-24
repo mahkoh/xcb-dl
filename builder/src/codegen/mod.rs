@@ -150,6 +150,7 @@ impl CodeGen {
 
         let out = &mut self.ffi;
         writeln!(out, "use crate::*;")?;
+        writeln!(out, "use crate::ffi::*;")?;
         writeln!(out, "use std::os::raw::*;")?;
 
         if let Some(ext_info) = ext_info {
@@ -174,7 +175,7 @@ impl CodeGen {
             writeln!(out, "    #[inline]");
             writeln!(
                 out,
-                "    pub fn xcb_{}_id(&self) -> *mut xcb_extension_t {{ call!(self, xcb_{}_id) }}",
+                "    pub unsafe fn xcb_{}_id(&self) -> *mut xcb_extension_t {{ sym!(self, xcb_{}_id) }}",
                 &self.xcb_mod, &self.xcb_mod,
             )?;
         }
@@ -243,10 +244,10 @@ impl CodeGen {
         writeln!(out)?;
         writeln!(out, "}}")?;
 
-        writeln!(out)?;
-        writeln!(out, "pub struct {} {{", type_name)?;
-        out.write_all(self.ffi_struct_buf.get_ref())?;
-        writeln!(out, "}}")?;
+        // writeln!(out)?;
+        // writeln!(out, "pub struct {} {{", type_name)?;
+        // out.write_all(self.ffi_struct_buf.get_ref())?;
+        // writeln!(out, "}}")?;
 
         let out = &mut self.rs;
         out.write_all(self.rs_buf.get_ref())?;

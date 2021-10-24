@@ -1,3 +1,4 @@
+use crate::ffi::*;
 use crate::*;
 use std::os::raw::*;
 
@@ -605,13 +606,13 @@ pub struct xcb_x_print_bad_sequence_error_t {
 
 impl XcbXprint {
     #[inline]
-    pub fn xcb_x_print_id(&self) -> *mut xcb_extension_t {
-        call!(self, xcb_x_print_id)
+    pub unsafe fn xcb_x_print_id(&self) -> *mut xcb_extension_t {
+        sym!(self, xcb_x_print_id)
     }
 
     #[inline]
     pub unsafe fn xcb_x_print_string8_next(&self, i: *mut xcb_x_print_string8_iterator_t) {
-        call!(self, xcb_x_print_string8_next)(i);
+        sym!(self, xcb_x_print_string8_next)(i);
     }
 
     #[inline]
@@ -619,7 +620,7 @@ impl XcbXprint {
         &self,
         i: *mut xcb_x_print_string8_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_string8_end)(i)
+        sym!(self, xcb_x_print_string8_end)(i)
     }
 
     #[inline]
@@ -627,12 +628,12 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_printer_t,
     ) -> *mut xcb_x_print_string8_t {
-        call!(self, xcb_x_print_printer_name)(R)
+        sym!(self, xcb_x_print_printer_name)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_x_print_printer_name_length(&self, R: *const xcb_x_print_printer_t) -> c_int {
-        call!(self, xcb_x_print_printer_name_length)(R)
+        sym!(self, xcb_x_print_printer_name_length)(R)
     }
 
     #[inline]
@@ -640,7 +641,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_printer_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_printer_name_end)(R)
+        sym!(self, xcb_x_print_printer_name_end)(R)
     }
 
     #[inline]
@@ -648,7 +649,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_printer_t,
     ) -> *mut xcb_x_print_string8_t {
-        call!(self, xcb_x_print_printer_description)(R)
+        sym!(self, xcb_x_print_printer_description)(R)
     }
 
     #[inline]
@@ -656,7 +657,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_printer_t,
     ) -> c_int {
-        call!(self, xcb_x_print_printer_description_length)(R)
+        sym!(self, xcb_x_print_printer_description_length)(R)
     }
 
     #[inline]
@@ -664,12 +665,12 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_printer_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_printer_description_end)(R)
+        sym!(self, xcb_x_print_printer_description_end)(R)
     }
 
     #[inline]
     pub unsafe fn xcb_x_print_printer_next(&self, i: *mut xcb_x_print_printer_iterator_t) {
-        call!(self, xcb_x_print_printer_next)(i);
+        sym!(self, xcb_x_print_printer_next)(i);
     }
 
     #[inline]
@@ -677,12 +678,12 @@ impl XcbXprint {
         &self,
         i: *mut xcb_x_print_printer_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_printer_end)(i)
+        sym!(self, xcb_x_print_printer_end)(i)
     }
 
     #[inline]
     pub unsafe fn xcb_x_print_pcontext_next(&self, i: *mut xcb_x_print_pcontext_iterator_t) {
-        call!(self, xcb_x_print_pcontext_next)(i);
+        sym!(self, xcb_x_print_pcontext_next)(i);
     }
 
     #[inline]
@@ -690,7 +691,7 @@ impl XcbXprint {
         &self,
         i: *mut xcb_x_print_pcontext_iterator_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_pcontext_end)(i)
+        sym!(self, xcb_x_print_pcontext_end)(i)
     }
 
     #[inline]
@@ -700,7 +701,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_query_version_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_query_version_reply_t {
-        call!(self, xcb_x_print_print_query_version_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_query_version_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -708,7 +709,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_query_version_cookie_t {
-        call!(self, xcb_x_print_print_query_version)(c)
+        sym!(self, xcb_x_print_print_query_version)(c)
     }
 
     #[inline]
@@ -716,7 +717,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_query_version_cookie_t {
-        call!(self, xcb_x_print_print_query_version_unchecked)(c)
+        sym!(self, xcb_x_print_print_query_version_unchecked)(c)
     }
 
     #[inline]
@@ -724,7 +725,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_printer_list_reply_t,
     ) -> c_int {
-        call!(self, xcb_x_print_print_get_printer_list_printers_length)(R)
+        sym!(self, xcb_x_print_print_get_printer_list_printers_length)(R)
     }
 
     #[inline]
@@ -732,7 +733,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_printer_list_reply_t,
     ) -> xcb_x_print_printer_iterator_t {
-        call!(self, xcb_x_print_print_get_printer_list_printers_iterator)(R)
+        sym!(self, xcb_x_print_print_get_printer_list_printers_iterator)(R)
     }
 
     #[inline]
@@ -742,7 +743,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_printer_list_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_printer_list_reply_t {
-        call!(self, xcb_x_print_print_get_printer_list_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_printer_list_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -754,7 +755,7 @@ impl XcbXprint {
         printer_name: *const xcb_x_print_string8_t,
         locale: *const xcb_x_print_string8_t,
     ) -> xcb_x_print_print_get_printer_list_cookie_t {
-        call!(self, xcb_x_print_print_get_printer_list)(
+        sym!(self, xcb_x_print_print_get_printer_list)(
             c,
             printer_name_len,
             locale_len,
@@ -772,7 +773,7 @@ impl XcbXprint {
         printer_name: *const xcb_x_print_string8_t,
         locale: *const xcb_x_print_string8_t,
     ) -> xcb_x_print_print_get_printer_list_cookie_t {
-        call!(self, xcb_x_print_print_get_printer_list_unchecked)(
+        sym!(self, xcb_x_print_print_get_printer_list_unchecked)(
             c,
             printer_name_len,
             locale_len,
@@ -786,7 +787,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_rehash_printer_list)(c)
+        sym!(self, xcb_x_print_print_rehash_printer_list)(c)
     }
 
     #[inline]
@@ -794,7 +795,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_rehash_printer_list_checked)(c)
+        sym!(self, xcb_x_print_print_rehash_printer_list_checked)(c)
     }
 
     #[inline]
@@ -807,7 +808,7 @@ impl XcbXprint {
         printer_name: *const xcb_x_print_string8_t,
         locale: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_create_context)(
+        sym!(self, xcb_x_print_create_context)(
             c,
             context_id,
             printer_name_len,
@@ -827,7 +828,7 @@ impl XcbXprint {
         printer_name: *const xcb_x_print_string8_t,
         locale: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_create_context_checked)(
+        sym!(self, xcb_x_print_create_context_checked)(
             c,
             context_id,
             printer_name_len,
@@ -843,7 +844,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_set_context)(c, context)
+        sym!(self, xcb_x_print_print_set_context)(c, context)
     }
 
     #[inline]
@@ -852,7 +853,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_set_context_checked)(c, context)
+        sym!(self, xcb_x_print_print_set_context_checked)(c, context)
     }
 
     #[inline]
@@ -862,7 +863,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_context_reply_t {
-        call!(self, xcb_x_print_print_get_context_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -870,7 +871,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_get_context_cookie_t {
-        call!(self, xcb_x_print_print_get_context)(c)
+        sym!(self, xcb_x_print_print_get_context)(c)
     }
 
     #[inline]
@@ -878,7 +879,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_get_context_cookie_t {
-        call!(self, xcb_x_print_print_get_context_unchecked)(c)
+        sym!(self, xcb_x_print_print_get_context_unchecked)(c)
     }
 
     #[inline]
@@ -887,7 +888,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_destroy_context)(c, context)
+        sym!(self, xcb_x_print_print_destroy_context)(c, context)
     }
 
     #[inline]
@@ -896,7 +897,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_destroy_context_checked)(c, context)
+        sym!(self, xcb_x_print_print_destroy_context_checked)(c, context)
     }
 
     #[inline]
@@ -906,7 +907,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_screen_of_context_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_screen_of_context_reply_t {
-        call!(self, xcb_x_print_print_get_screen_of_context_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_screen_of_context_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -914,7 +915,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_get_screen_of_context_cookie_t {
-        call!(self, xcb_x_print_print_get_screen_of_context)(c)
+        sym!(self, xcb_x_print_print_get_screen_of_context)(c)
     }
 
     #[inline]
@@ -922,7 +923,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_get_screen_of_context_cookie_t {
-        call!(self, xcb_x_print_print_get_screen_of_context_unchecked)(c)
+        sym!(self, xcb_x_print_print_get_screen_of_context_unchecked)(c)
     }
 
     #[inline]
@@ -931,7 +932,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         output_mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_start_job)(c, output_mode)
+        sym!(self, xcb_x_print_print_start_job)(c, output_mode)
     }
 
     #[inline]
@@ -940,7 +941,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         output_mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_start_job_checked)(c, output_mode)
+        sym!(self, xcb_x_print_print_start_job_checked)(c, output_mode)
     }
 
     #[inline]
@@ -949,7 +950,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         cancel: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_end_job)(c, cancel)
+        sym!(self, xcb_x_print_print_end_job)(c, cancel)
     }
 
     #[inline]
@@ -958,7 +959,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         cancel: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_end_job_checked)(c, cancel)
+        sym!(self, xcb_x_print_print_end_job_checked)(c, cancel)
     }
 
     #[inline]
@@ -967,7 +968,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         driver_mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_start_doc)(c, driver_mode)
+        sym!(self, xcb_x_print_print_start_doc)(c, driver_mode)
     }
 
     #[inline]
@@ -976,7 +977,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         driver_mode: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_start_doc_checked)(c, driver_mode)
+        sym!(self, xcb_x_print_print_start_doc_checked)(c, driver_mode)
     }
 
     #[inline]
@@ -985,7 +986,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         cancel: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_end_doc)(c, cancel)
+        sym!(self, xcb_x_print_print_end_doc)(c, cancel)
     }
 
     #[inline]
@@ -994,7 +995,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         cancel: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_end_doc_checked)(c, cancel)
+        sym!(self, xcb_x_print_print_end_doc_checked)(c, cancel)
     }
 
     #[inline]
@@ -1011,7 +1012,7 @@ impl XcbXprint {
         options_len: u32,
         options: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_put_document_data)(
+        sym!(self, xcb_x_print_print_put_document_data)(
             c,
             drawable,
             len_data,
@@ -1039,7 +1040,7 @@ impl XcbXprint {
         options_len: u32,
         options: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_put_document_data_checked)(
+        sym!(self, xcb_x_print_print_put_document_data_checked)(
             c,
             drawable,
             len_data,
@@ -1058,7 +1059,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_document_data_reply_t,
     ) -> *mut u8 {
-        call!(self, xcb_x_print_print_get_document_data_data)(R)
+        sym!(self, xcb_x_print_print_get_document_data_data)(R)
     }
 
     #[inline]
@@ -1066,7 +1067,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_document_data_reply_t,
     ) -> c_int {
-        call!(self, xcb_x_print_print_get_document_data_data_length)(R)
+        sym!(self, xcb_x_print_print_get_document_data_data_length)(R)
     }
 
     #[inline]
@@ -1074,7 +1075,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_document_data_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_print_get_document_data_data_end)(R)
+        sym!(self, xcb_x_print_print_get_document_data_data_end)(R)
     }
 
     #[inline]
@@ -1084,7 +1085,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_document_data_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_document_data_reply_t {
-        call!(self, xcb_x_print_print_get_document_data_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_document_data_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1094,7 +1095,7 @@ impl XcbXprint {
         context: xcb_x_print_pcontext_t,
         max_bytes: u32,
     ) -> xcb_x_print_print_get_document_data_cookie_t {
-        call!(self, xcb_x_print_print_get_document_data)(c, context, max_bytes)
+        sym!(self, xcb_x_print_print_get_document_data)(c, context, max_bytes)
     }
 
     #[inline]
@@ -1104,7 +1105,7 @@ impl XcbXprint {
         context: xcb_x_print_pcontext_t,
         max_bytes: u32,
     ) -> xcb_x_print_print_get_document_data_cookie_t {
-        call!(self, xcb_x_print_print_get_document_data_unchecked)(c, context, max_bytes)
+        sym!(self, xcb_x_print_print_get_document_data_unchecked)(c, context, max_bytes)
     }
 
     #[inline]
@@ -1113,7 +1114,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_start_page)(c, window)
+        sym!(self, xcb_x_print_print_start_page)(c, window)
     }
 
     #[inline]
@@ -1122,7 +1123,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         window: xcb_window_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_start_page_checked)(c, window)
+        sym!(self, xcb_x_print_print_start_page_checked)(c, window)
     }
 
     #[inline]
@@ -1131,7 +1132,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         cancel: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_end_page)(c, cancel)
+        sym!(self, xcb_x_print_print_end_page)(c, cancel)
     }
 
     #[inline]
@@ -1140,7 +1141,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         cancel: u8,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_end_page_checked)(c, cancel)
+        sym!(self, xcb_x_print_print_end_page_checked)(c, cancel)
     }
 
     #[inline]
@@ -1151,7 +1152,7 @@ impl XcbXprint {
         event_mask: u32,
         event_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_select_input)(c, context, event_mask, event_list)
+        sym!(self, xcb_x_print_print_select_input)(c, context, event_mask, event_list)
     }
 
     #[inline]
@@ -1162,7 +1163,7 @@ impl XcbXprint {
         event_mask: u32,
         event_list: *const u32,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_select_input_checked)(c, context, event_mask, event_list)
+        sym!(self, xcb_x_print_print_select_input_checked)(c, context, event_mask, event_list)
     }
 
     #[inline]
@@ -1170,7 +1171,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_input_selected_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_x_print_print_input_selected_event_list)(R)
+        sym!(self, xcb_x_print_print_input_selected_event_list)(R)
     }
 
     #[inline]
@@ -1178,7 +1179,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_input_selected_reply_t,
     ) -> c_int {
-        call!(self, xcb_x_print_print_input_selected_event_list_length)(R)
+        sym!(self, xcb_x_print_print_input_selected_event_list_length)(R)
     }
 
     #[inline]
@@ -1186,7 +1187,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_input_selected_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_print_input_selected_event_list_end)(R)
+        sym!(self, xcb_x_print_print_input_selected_event_list_end)(R)
     }
 
     #[inline]
@@ -1194,7 +1195,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_input_selected_reply_t,
     ) -> *mut u32 {
-        call!(self, xcb_x_print_print_input_selected_all_events_list)(R)
+        sym!(self, xcb_x_print_print_input_selected_all_events_list)(R)
     }
 
     #[inline]
@@ -1202,7 +1203,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_input_selected_reply_t,
     ) -> c_int {
-        call!(
+        sym!(
             self,
             xcb_x_print_print_input_selected_all_events_list_length
         )(R)
@@ -1213,7 +1214,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_input_selected_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_print_input_selected_all_events_list_end)(R)
+        sym!(self, xcb_x_print_print_input_selected_all_events_list_end)(R)
     }
 
     #[inline]
@@ -1223,7 +1224,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_input_selected_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_input_selected_reply_t {
-        call!(self, xcb_x_print_print_input_selected_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_input_selected_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1232,7 +1233,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
     ) -> xcb_x_print_print_input_selected_cookie_t {
-        call!(self, xcb_x_print_print_input_selected)(c, context)
+        sym!(self, xcb_x_print_print_input_selected)(c, context)
     }
 
     #[inline]
@@ -1241,7 +1242,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
     ) -> xcb_x_print_print_input_selected_cookie_t {
-        call!(self, xcb_x_print_print_input_selected_unchecked)(c, context)
+        sym!(self, xcb_x_print_print_input_selected_unchecked)(c, context)
     }
 
     #[inline]
@@ -1249,7 +1250,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_attributes_reply_t,
     ) -> *mut xcb_x_print_string8_t {
-        call!(self, xcb_x_print_print_get_attributes_attributes)(R)
+        sym!(self, xcb_x_print_print_get_attributes_attributes)(R)
     }
 
     #[inline]
@@ -1257,7 +1258,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_attributes_reply_t,
     ) -> c_int {
-        call!(self, xcb_x_print_print_get_attributes_attributes_length)(R)
+        sym!(self, xcb_x_print_print_get_attributes_attributes_length)(R)
     }
 
     #[inline]
@@ -1265,7 +1266,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_attributes_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_print_get_attributes_attributes_end)(R)
+        sym!(self, xcb_x_print_print_get_attributes_attributes_end)(R)
     }
 
     #[inline]
@@ -1275,7 +1276,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_attributes_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_attributes_reply_t {
-        call!(self, xcb_x_print_print_get_attributes_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_attributes_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1285,7 +1286,7 @@ impl XcbXprint {
         context: xcb_x_print_pcontext_t,
         pool: u8,
     ) -> xcb_x_print_print_get_attributes_cookie_t {
-        call!(self, xcb_x_print_print_get_attributes)(c, context, pool)
+        sym!(self, xcb_x_print_print_get_attributes)(c, context, pool)
     }
 
     #[inline]
@@ -1295,7 +1296,7 @@ impl XcbXprint {
         context: xcb_x_print_pcontext_t,
         pool: u8,
     ) -> xcb_x_print_print_get_attributes_cookie_t {
-        call!(self, xcb_x_print_print_get_attributes_unchecked)(c, context, pool)
+        sym!(self, xcb_x_print_print_get_attributes_unchecked)(c, context, pool)
     }
 
     #[inline]
@@ -1303,7 +1304,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_one_attributes_reply_t,
     ) -> *mut xcb_x_print_string8_t {
-        call!(self, xcb_x_print_print_get_one_attributes_value)(R)
+        sym!(self, xcb_x_print_print_get_one_attributes_value)(R)
     }
 
     #[inline]
@@ -1311,7 +1312,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_one_attributes_reply_t,
     ) -> c_int {
-        call!(self, xcb_x_print_print_get_one_attributes_value_length)(R)
+        sym!(self, xcb_x_print_print_get_one_attributes_value_length)(R)
     }
 
     #[inline]
@@ -1319,7 +1320,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_get_one_attributes_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_print_get_one_attributes_value_end)(R)
+        sym!(self, xcb_x_print_print_get_one_attributes_value_end)(R)
     }
 
     #[inline]
@@ -1329,7 +1330,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_one_attributes_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_one_attributes_reply_t {
-        call!(self, xcb_x_print_print_get_one_attributes_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_one_attributes_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1341,7 +1342,7 @@ impl XcbXprint {
         pool: u8,
         name: *const xcb_x_print_string8_t,
     ) -> xcb_x_print_print_get_one_attributes_cookie_t {
-        call!(self, xcb_x_print_print_get_one_attributes)(c, context, name_len, pool, name)
+        sym!(self, xcb_x_print_print_get_one_attributes)(c, context, name_len, pool, name)
     }
 
     #[inline]
@@ -1353,9 +1354,7 @@ impl XcbXprint {
         pool: u8,
         name: *const xcb_x_print_string8_t,
     ) -> xcb_x_print_print_get_one_attributes_cookie_t {
-        call!(self, xcb_x_print_print_get_one_attributes_unchecked)(
-            c, context, name_len, pool, name,
-        )
+        sym!(self, xcb_x_print_print_get_one_attributes_unchecked)(c, context, name_len, pool, name)
     }
 
     #[inline]
@@ -1369,7 +1368,7 @@ impl XcbXprint {
         attributes_len: u32,
         attributes: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_set_attributes)(
+        sym!(self, xcb_x_print_print_set_attributes)(
             c,
             context,
             string_len,
@@ -1391,7 +1390,7 @@ impl XcbXprint {
         attributes_len: u32,
         attributes: *const xcb_x_print_string8_t,
     ) -> xcb_void_cookie_t {
-        call!(self, xcb_x_print_print_set_attributes_checked)(
+        sym!(self, xcb_x_print_print_set_attributes_checked)(
             c,
             context,
             string_len,
@@ -1409,7 +1408,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_page_dimensions_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_page_dimensions_reply_t {
-        call!(self, xcb_x_print_print_get_page_dimensions_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_page_dimensions_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1418,7 +1417,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
     ) -> xcb_x_print_print_get_page_dimensions_cookie_t {
-        call!(self, xcb_x_print_print_get_page_dimensions)(c, context)
+        sym!(self, xcb_x_print_print_get_page_dimensions)(c, context)
     }
 
     #[inline]
@@ -1427,7 +1426,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
     ) -> xcb_x_print_print_get_page_dimensions_cookie_t {
-        call!(self, xcb_x_print_print_get_page_dimensions_unchecked)(c, context)
+        sym!(self, xcb_x_print_print_get_page_dimensions_unchecked)(c, context)
     }
 
     #[inline]
@@ -1435,7 +1434,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_query_screens_reply_t,
     ) -> *mut xcb_window_t {
-        call!(self, xcb_x_print_print_query_screens_roots)(R)
+        sym!(self, xcb_x_print_print_query_screens_roots)(R)
     }
 
     #[inline]
@@ -1443,7 +1442,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_query_screens_reply_t,
     ) -> c_int {
-        call!(self, xcb_x_print_print_query_screens_roots_length)(R)
+        sym!(self, xcb_x_print_print_query_screens_roots_length)(R)
     }
 
     #[inline]
@@ -1451,7 +1450,7 @@ impl XcbXprint {
         &self,
         R: *const xcb_x_print_print_query_screens_reply_t,
     ) -> xcb_generic_iterator_t {
-        call!(self, xcb_x_print_print_query_screens_roots_end)(R)
+        sym!(self, xcb_x_print_print_query_screens_roots_end)(R)
     }
 
     #[inline]
@@ -1461,7 +1460,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_query_screens_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_query_screens_reply_t {
-        call!(self, xcb_x_print_print_query_screens_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_query_screens_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1469,7 +1468,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_query_screens_cookie_t {
-        call!(self, xcb_x_print_print_query_screens)(c)
+        sym!(self, xcb_x_print_print_query_screens)(c)
     }
 
     #[inline]
@@ -1477,7 +1476,7 @@ impl XcbXprint {
         &self,
         c: *mut xcb_connection_t,
     ) -> xcb_x_print_print_query_screens_cookie_t {
-        call!(self, xcb_x_print_print_query_screens_unchecked)(c)
+        sym!(self, xcb_x_print_print_query_screens_unchecked)(c)
     }
 
     #[inline]
@@ -1487,7 +1486,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_set_image_resolution_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_set_image_resolution_reply_t {
-        call!(self, xcb_x_print_print_set_image_resolution_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_set_image_resolution_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1497,7 +1496,7 @@ impl XcbXprint {
         context: xcb_x_print_pcontext_t,
         image_resolution: u16,
     ) -> xcb_x_print_print_set_image_resolution_cookie_t {
-        call!(self, xcb_x_print_print_set_image_resolution)(c, context, image_resolution)
+        sym!(self, xcb_x_print_print_set_image_resolution)(c, context, image_resolution)
     }
 
     #[inline]
@@ -1507,7 +1506,7 @@ impl XcbXprint {
         context: xcb_x_print_pcontext_t,
         image_resolution: u16,
     ) -> xcb_x_print_print_set_image_resolution_cookie_t {
-        call!(self, xcb_x_print_print_set_image_resolution_unchecked)(c, context, image_resolution)
+        sym!(self, xcb_x_print_print_set_image_resolution_unchecked)(c, context, image_resolution)
     }
 
     #[inline]
@@ -1517,7 +1516,7 @@ impl XcbXprint {
         cookie: xcb_x_print_print_get_image_resolution_cookie_t,
         error: *mut *mut xcb_generic_error_t,
     ) -> *mut xcb_x_print_print_get_image_resolution_reply_t {
-        call!(self, xcb_x_print_print_get_image_resolution_reply)(c, cookie, error)
+        sym!(self, xcb_x_print_print_get_image_resolution_reply)(c, cookie, error)
     }
 
     #[inline]
@@ -1526,7 +1525,7 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
     ) -> xcb_x_print_print_get_image_resolution_cookie_t {
-        call!(self, xcb_x_print_print_get_image_resolution)(c, context)
+        sym!(self, xcb_x_print_print_get_image_resolution)(c, context)
     }
 
     #[inline]
@@ -1535,427 +1534,6 @@ impl XcbXprint {
         c: *mut xcb_connection_t,
         context: xcb_x_print_pcontext_t,
     ) -> xcb_x_print_print_get_image_resolution_cookie_t {
-        call!(self, xcb_x_print_print_get_image_resolution_unchecked)(c, context)
+        sym!(self, xcb_x_print_print_get_image_resolution_unchecked)(c, context)
     }
-}
-
-pub struct XcbXprint {
-    pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_x_print_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_x_print_string8_next:
-        LazySymbol<unsafe fn(i: *mut xcb_x_print_string8_iterator_t)>,
-    pub(crate) xcb_x_print_string8_end:
-        LazySymbol<unsafe fn(i: *mut xcb_x_print_string8_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_x_print_printer_name:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_printer_t) -> *mut xcb_x_print_string8_t>,
-    pub(crate) xcb_x_print_printer_name_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_printer_t) -> c_int>,
-    pub(crate) xcb_x_print_printer_name_end:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_printer_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_x_print_printer_description:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_printer_t) -> *mut xcb_x_print_string8_t>,
-    pub(crate) xcb_x_print_printer_description_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_printer_t) -> c_int>,
-    pub(crate) xcb_x_print_printer_description_end:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_printer_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_x_print_printer_next:
-        LazySymbol<unsafe fn(i: *mut xcb_x_print_printer_iterator_t)>,
-    pub(crate) xcb_x_print_printer_end:
-        LazySymbol<unsafe fn(i: *mut xcb_x_print_printer_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_x_print_pcontext_next:
-        LazySymbol<unsafe fn(i: *mut xcb_x_print_pcontext_iterator_t)>,
-    pub(crate) xcb_x_print_pcontext_end:
-        LazySymbol<unsafe fn(i: *mut xcb_x_print_pcontext_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_x_print_print_query_version_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_query_version_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_query_version_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_query_version:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_query_version_cookie_t>,
-    pub(crate) xcb_x_print_print_query_version_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_query_version_cookie_t>,
-    pub(crate) xcb_x_print_print_get_printer_list_printers_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_get_printer_list_reply_t) -> c_int>,
-    pub(crate) xcb_x_print_print_get_printer_list_printers_iterator: LazySymbol<
-        unsafe fn(
-            R: *const xcb_x_print_print_get_printer_list_reply_t,
-        ) -> xcb_x_print_printer_iterator_t,
-    >,
-    pub(crate) xcb_x_print_print_get_printer_list_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_printer_list_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_printer_list_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_printer_list: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            printer_name_len: u32,
-            locale_len: u32,
-            printer_name: *const xcb_x_print_string8_t,
-            locale: *const xcb_x_print_string8_t,
-        ) -> xcb_x_print_print_get_printer_list_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_printer_list_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            printer_name_len: u32,
-            locale_len: u32,
-            printer_name: *const xcb_x_print_string8_t,
-            locale: *const xcb_x_print_string8_t,
-        ) -> xcb_x_print_print_get_printer_list_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_rehash_printer_list:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_rehash_printer_list_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_create_context: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_id: u32,
-            printer_name_len: u32,
-            locale_len: u32,
-            printer_name: *const xcb_x_print_string8_t,
-            locale: *const xcb_x_print_string8_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_create_context_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context_id: u32,
-            printer_name_len: u32,
-            locale_len: u32,
-            printer_name: *const xcb_x_print_string8_t,
-            locale: *const xcb_x_print_string8_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_set_context:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_set_context_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_get_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_context_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_context:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_get_context_cookie_t>,
-    pub(crate) xcb_x_print_print_get_context_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_get_context_cookie_t>,
-    pub(crate) xcb_x_print_print_destroy_context:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_destroy_context_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: u32) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_get_screen_of_context_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_screen_of_context_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_screen_of_context_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_screen_of_context: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_get_screen_of_context_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_screen_of_context_unchecked: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_get_screen_of_context_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_start_job:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, output_mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_start_job_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, output_mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_end_job:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cancel: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_end_job_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cancel: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_start_doc:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, driver_mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_start_doc_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, driver_mode: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_end_doc:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cancel: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_end_doc_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cancel: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_put_document_data: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            len_data: u32,
-            len_fmt: u16,
-            len_options: u16,
-            data: *const u8,
-            doc_format_len: u32,
-            doc_format: *const xcb_x_print_string8_t,
-            options_len: u32,
-            options: *const xcb_x_print_string8_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_put_document_data_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            drawable: xcb_drawable_t,
-            len_data: u32,
-            len_fmt: u16,
-            len_options: u16,
-            data: *const u8,
-            doc_format_len: u32,
-            doc_format: *const xcb_x_print_string8_t,
-            options_len: u32,
-            options: *const xcb_x_print_string8_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_document_data_data:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_get_document_data_reply_t) -> *mut u8>,
-    pub(crate) xcb_x_print_print_get_document_data_data_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_get_document_data_reply_t) -> c_int>,
-    pub(crate) xcb_x_print_print_get_document_data_data_end: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_get_document_data_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_x_print_print_get_document_data_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_document_data_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_document_data_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_document_data: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            max_bytes: u32,
-        ) -> xcb_x_print_print_get_document_data_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_document_data_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            max_bytes: u32,
-        ) -> xcb_x_print_print_get_document_data_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_start_page:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_start_page_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_end_page:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cancel: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_end_page_checked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, cancel: u8) -> xcb_void_cookie_t>,
-    pub(crate) xcb_x_print_print_select_input: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            event_mask: u32,
-            event_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_select_input_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            event_mask: u32,
-            event_list: *const u32,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_input_selected_event_list:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_input_selected_reply_t) -> *mut u32>,
-    pub(crate) xcb_x_print_print_input_selected_event_list_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_input_selected_reply_t) -> c_int>,
-    pub(crate) xcb_x_print_print_input_selected_event_list_end: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_input_selected_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_x_print_print_input_selected_all_events_list:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_input_selected_reply_t) -> *mut u32>,
-    pub(crate) xcb_x_print_print_input_selected_all_events_list_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_input_selected_reply_t) -> c_int>,
-    pub(crate) xcb_x_print_print_input_selected_all_events_list_end: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_input_selected_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_x_print_print_input_selected_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_input_selected_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_input_selected_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_input_selected: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-        ) -> xcb_x_print_print_input_selected_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_input_selected_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-        ) -> xcb_x_print_print_input_selected_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_attributes_attributes: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_get_attributes_reply_t) -> *mut xcb_x_print_string8_t,
-    >,
-    pub(crate) xcb_x_print_print_get_attributes_attributes_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_get_attributes_reply_t) -> c_int>,
-    pub(crate) xcb_x_print_print_get_attributes_attributes_end: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_get_attributes_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_x_print_print_get_attributes_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_attributes_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_attributes_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            pool: u8,
-        ) -> xcb_x_print_print_get_attributes_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_attributes_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            pool: u8,
-        ) -> xcb_x_print_print_get_attributes_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_one_attributes_value: LazySymbol<
-        unsafe fn(
-            R: *const xcb_x_print_print_get_one_attributes_reply_t,
-        ) -> *mut xcb_x_print_string8_t,
-    >,
-    pub(crate) xcb_x_print_print_get_one_attributes_value_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_get_one_attributes_reply_t) -> c_int>,
-    pub(crate) xcb_x_print_print_get_one_attributes_value_end: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_get_one_attributes_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_x_print_print_get_one_attributes_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_one_attributes_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_one_attributes_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_one_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            name_len: u32,
-            pool: u8,
-            name: *const xcb_x_print_string8_t,
-        ) -> xcb_x_print_print_get_one_attributes_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_one_attributes_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            name_len: u32,
-            pool: u8,
-            name: *const xcb_x_print_string8_t,
-        ) -> xcb_x_print_print_get_one_attributes_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_set_attributes: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            string_len: u32,
-            pool: u8,
-            rule: u8,
-            attributes_len: u32,
-            attributes: *const xcb_x_print_string8_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_set_attributes_checked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            string_len: u32,
-            pool: u8,
-            rule: u8,
-            attributes_len: u32,
-            attributes: *const xcb_x_print_string8_t,
-        ) -> xcb_void_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_page_dimensions_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_page_dimensions_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_page_dimensions_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_page_dimensions: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-        ) -> xcb_x_print_print_get_page_dimensions_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_page_dimensions_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-        ) -> xcb_x_print_print_get_page_dimensions_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_query_screens_roots: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_query_screens_reply_t) -> *mut xcb_window_t,
-    >,
-    pub(crate) xcb_x_print_print_query_screens_roots_length:
-        LazySymbol<unsafe fn(R: *const xcb_x_print_print_query_screens_reply_t) -> c_int>,
-    pub(crate) xcb_x_print_print_query_screens_roots_end: LazySymbol<
-        unsafe fn(R: *const xcb_x_print_print_query_screens_reply_t) -> xcb_generic_iterator_t,
-    >,
-    pub(crate) xcb_x_print_print_query_screens_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_query_screens_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_query_screens_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_query_screens:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_query_screens_cookie_t>,
-    pub(crate) xcb_x_print_print_query_screens_unchecked:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_x_print_print_query_screens_cookie_t>,
-    pub(crate) xcb_x_print_print_set_image_resolution_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_set_image_resolution_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_set_image_resolution_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_set_image_resolution: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            image_resolution: u16,
-        ) -> xcb_x_print_print_set_image_resolution_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_set_image_resolution_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-            image_resolution: u16,
-        ) -> xcb_x_print_print_set_image_resolution_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_image_resolution_reply: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            cookie: xcb_x_print_print_get_image_resolution_cookie_t,
-            error: *mut *mut xcb_generic_error_t,
-        ) -> *mut xcb_x_print_print_get_image_resolution_reply_t,
-    >,
-    pub(crate) xcb_x_print_print_get_image_resolution: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-        ) -> xcb_x_print_print_get_image_resolution_cookie_t,
-    >,
-    pub(crate) xcb_x_print_print_get_image_resolution_unchecked: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            context: xcb_x_print_pcontext_t,
-        ) -> xcb_x_print_print_get_image_resolution_cookie_t,
-    >,
 }
