@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for f in xcbproto/*.xml; do
+  echo "GEN $f"
+  ./generate.py $f
+done
+
+cargo fmt

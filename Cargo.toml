@@ -2,7 +2,46 @@
 name = "xcb-dl"
 version = "0.1.0"
 edition = "2018"
-license = "MIT"
+license = "X11"
+license-file = "LICENSE"
+description = "Rust bindings for libxcb"
+keywords = ["xcb", "window", "xlib", "x11"]
+repository = "https://github.com/mahkoh/xcb-dl"
+exclude = ["xcbproto", "generate.py", "generate-all"]
+
+[lib]
+doctest = false
 
 [dependencies]
 libloading = "0.7.1"
+
+[features]
+has_symbol = []
+
+xcb_composite = []
+xcb_damage = []
+xcb_dpms = []
+xcb_dri2 = []
+xcb_dri3 = []
+xcb_ge = []
+xcb_glx = []
+xcb_present = []
+xcb_randr = []
+xcb_record = []
+xcb_render = []
+xcb_res = []
+xcb_screensaver = []
+xcb_shape = []
+xcb_shm = []
+xcb_sync = []
+xcb_xevie = []
+xcb_xf86dri = []
+xcb_xfixes = []
+xcb_xinerama = []
+xcb_xinput = []
+xcb_xkb = []
+xcb_xprint = []
+xcb_xselinux = []
+xcb_xtest = []
+xcb_xv = []
+xcb_xvmc = []

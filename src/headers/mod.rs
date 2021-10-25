@@ -1,70 +1,149 @@
-pub use {
-    big_requests::*, composite::*, damage::*, dpms::*, dri2::*, dri3::*, ext::*, genericevent::*,
-    glx::*, present::*, randr::*, record::*, render::*, res::*, screensaver::*, selinux::*,
-    shape::*, shm::*, sync::*, test::*, x_print::*, xc_misc::*, xcb::*, xevie::*, xf86dri::*,
-    xfixes::*, xinerama::*, xinput::*, xkb::*, xproto::*, xv::*, xvmc::*,
-};
+mod bigreq;
+pub use bigreq::*;
 
-mod ext;
-mod xcb;
-
-#[path = "generated/ffi/big_requests.rs"]
-mod big_requests;
-#[path = "generated/ffi/composite.rs"]
-mod composite;
-#[path = "generated/ffi/damage.rs"]
-mod damage;
-#[path = "generated/ffi/dpms.rs"]
-mod dpms;
-#[path = "generated/ffi/dri2.rs"]
-mod dri2;
-#[path = "generated/ffi/dri3.rs"]
-mod dri3;
-#[path = "generated/ffi/genericevent.rs"]
-mod genericevent;
-#[path = "generated/ffi/glx.rs"]
-mod glx;
-#[path = "generated/ffi/present.rs"]
-mod present;
-#[path = "generated/ffi/randr.rs"]
-mod randr;
-#[path = "generated/ffi/record.rs"]
-mod record;
-#[path = "generated/ffi/render.rs"]
-mod render;
-#[path = "generated/ffi/res.rs"]
-mod res;
-#[path = "generated/ffi/screensaver.rs"]
-mod screensaver;
-#[path = "generated/ffi/selinux.rs"]
-mod selinux;
-#[path = "generated/ffi/shape.rs"]
-mod shape;
-#[path = "generated/ffi/shm.rs"]
-mod shm;
-#[path = "generated/ffi/sync.rs"]
-mod sync;
-#[path = "generated/ffi/test.rs"]
-mod test;
-#[path = "generated/ffi/x_print.rs"]
-mod x_print;
-#[path = "generated/ffi/xc_misc.rs"]
 mod xc_misc;
-#[path = "generated/ffi/xevie.rs"]
-mod xevie;
-#[path = "generated/ffi/xf86dri.rs"]
-mod xf86dri;
-#[path = "generated/ffi/xfixes.rs"]
-mod xfixes;
-#[path = "generated/ffi/xinerama.rs"]
-mod xinerama;
-#[path = "generated/ffi/xinput.rs"]
-mod xinput;
-#[path = "generated/ffi/xkb.rs"]
-mod xkb;
-#[path = "generated/ffi/xproto.rs"]
+pub use xc_misc::*;
+
+mod xcb;
+pub use xcb::*;
+
+mod xcbext;
+pub use xcbext::*;
+
 mod xproto;
-#[path = "generated/ffi/xv.rs"]
+pub use xproto::*;
+
+#[cfg(feature = "xcb_composite")]
+mod composite;
+#[cfg(feature = "xcb_composite")]
+pub use composite::*;
+
+#[cfg(feature = "xcb_damage")]
+mod damage;
+#[cfg(feature = "xcb_damage")]
+pub use damage::*;
+
+#[cfg(feature = "xcb_dpms")]
+mod dpms;
+#[cfg(feature = "xcb_dpms")]
+pub use dpms::*;
+
+#[cfg(feature = "xcb_dri2")]
+mod dri2;
+#[cfg(feature = "xcb_dri2")]
+pub use dri2::*;
+
+#[cfg(feature = "xcb_dri3")]
+mod dri3;
+#[cfg(feature = "xcb_dri3")]
+pub use dri3::*;
+
+#[cfg(feature = "xcb_ge")]
+mod ge;
+#[cfg(feature = "xcb_ge")]
+pub use ge::*;
+
+#[cfg(feature = "xcb_glx")]
+mod glx;
+#[cfg(feature = "xcb_glx")]
+pub use glx::*;
+
+#[cfg(feature = "xcb_present")]
+mod present;
+#[cfg(feature = "xcb_glx")]
+pub use present::*;
+
+#[cfg(feature = "xcb_randr")]
+mod randr;
+#[cfg(feature = "xcb_randr")]
+pub use randr::*;
+
+#[cfg(feature = "xcb_record")]
+mod record;
+#[cfg(feature = "xcb_record")]
+pub use record::*;
+
+#[cfg(feature = "xcb_render")]
+mod render;
+#[cfg(feature = "xcb_render")]
+pub use render::*;
+
+#[cfg(feature = "xcb_res")]
+mod res;
+#[cfg(feature = "xcb_res")]
+pub use res::*;
+
+#[cfg(feature = "xcb_screensaver")]
+mod screensaver;
+#[cfg(feature = "xcb_screensaver")]
+pub use screensaver::*;
+
+#[cfg(feature = "xcb_shape")]
+mod shape;
+#[cfg(feature = "xcb_shape")]
+pub use shape::*;
+
+#[cfg(feature = "xcb_shm")]
+mod shm;
+#[cfg(feature = "xcb_shm")]
+pub use shm::*;
+
+#[cfg(feature = "xcb_sync")]
+mod sync;
+#[cfg(feature = "xcb_sync")]
+pub use sync::*;
+
+#[cfg(feature = "xcb_xevie")]
+mod xevie;
+#[cfg(feature = "xcb_xevie")]
+pub use xevie::*;
+
+#[cfg(feature = "xcb_xf86dri")]
+mod xf86dri;
+#[cfg(feature = "xcb_xf86dri")]
+pub use xf86dri::*;
+
+#[cfg(feature = "xcb_xfixes")]
+mod xfixes;
+#[cfg(feature = "xcb_xfixes")]
+pub use xfixes::*;
+
+#[cfg(feature = "xcb_xinerama")]
+mod xinerama;
+#[cfg(feature = "xcb_xinerama")]
+pub use xinerama::*;
+
+#[cfg(feature = "xcb_xinput")]
+mod xinput;
+#[cfg(feature = "xcb_xinput")]
+pub use xinput::*;
+
+#[cfg(feature = "xcb_xkb")]
+mod xkb;
+#[cfg(feature = "xcb_xkb")]
+pub use xkb::*;
+
+#[cfg(feature = "xcb_xprint")]
+mod xprint;
+#[cfg(feature = "xcb_xprint")]
+pub use xprint::*;
+
+#[cfg(feature = "xcb_xselinux")]
+mod xselinux;
+#[cfg(feature = "xcb_xselinux")]
+pub use xselinux::*;
+
+#[cfg(feature = "xcb_xtest")]
+mod xtest;
+#[cfg(feature = "xcb_xtest")]
+pub use xtest::*;
+
+#[cfg(feature = "xcb_xv")]
 mod xv;
-#[path = "generated/ffi/xvmc.rs"]
+#[cfg(feature = "xcb_xv")]
+pub use xv::*;
+
+#[cfg(feature = "xcb_xvmc")]
 mod xvmc;
+#[cfg(feature = "xcb_xvmc")]
+pub use xvmc::*;

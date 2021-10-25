@@ -22,6 +22,7 @@ pub mod ffi {
         }
     }
 
+    #[cfg(feature = "xcb_xkb")]
     impl Debug for xcb_xkb_action_t {
         fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
             unsafe {
@@ -32,6 +33,7 @@ pub mod ffi {
         }
     }
 
+    #[cfg(feature = "xcb_xkb")]
     impl Debug for xcb_xkb_behavior_t {
         fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
             unsafe {
@@ -42,6 +44,7 @@ pub mod ffi {
         }
     }
 
+    #[cfg(feature = "xcb_randr")]
     impl Debug for xcb_randr_notify_data_t {
         fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
             f.debug_struct("xcb_randr_notify_data_t")

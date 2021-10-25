@@ -1,53 +1,9 @@
 use crate::ffi::*;
 use crate::lazy::*;
-use libloading::{Error, Library};
-use std::os::raw::*;
 
-#[rustfmt::skip]
 pub struct XcbRecord {
     pub(crate) lib: NamedLibrary,
-    pub(crate) xcb_record_client_info_end: LazySymbol<unsafe fn(i: *mut xcb_record_client_info_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_client_info_next: LazySymbol<unsafe fn(i: *mut xcb_record_client_info_iterator_t)>,
-    pub(crate) xcb_record_client_info_ranges: LazySymbol<unsafe fn(R: *const xcb_record_client_info_t) -> *mut xcb_record_range_t>,
-    pub(crate) xcb_record_client_info_ranges_iterator: LazySymbol<unsafe fn(R: *const xcb_record_client_info_t) -> xcb_record_range_iterator_t>,
-    pub(crate) xcb_record_client_info_ranges_length: LazySymbol<unsafe fn(R: *const xcb_record_client_info_t) -> c_int>,
-    pub(crate) xcb_record_client_spec_end: LazySymbol<unsafe fn(i: *mut xcb_record_client_spec_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_client_spec_next: LazySymbol<unsafe fn(i: *mut xcb_record_client_spec_iterator_t)>,
-    pub(crate) xcb_record_context_end: LazySymbol<unsafe fn(i: *mut xcb_record_context_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_context_next: LazySymbol<unsafe fn(i: *mut xcb_record_context_iterator_t)>,
-    pub(crate) xcb_record_create_context: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t, element_header: xcb_record_element_header_t, num_client_specs: u32, num_ranges: u32, client_specs: *const xcb_record_client_spec_t, ranges: *const xcb_record_range_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_create_context_checked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t, element_header: xcb_record_element_header_t, num_client_specs: u32, num_ranges: u32, client_specs: *const xcb_record_client_spec_t, ranges: *const xcb_record_range_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_disable_context: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_disable_context_checked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_element_header_end: LazySymbol<unsafe fn(i: *mut xcb_record_element_header_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_element_header_next: LazySymbol<unsafe fn(i: *mut xcb_record_element_header_iterator_t)>,
-    pub(crate) xcb_record_enable_context: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_record_enable_context_cookie_t>,
-    pub(crate) xcb_record_enable_context_data: LazySymbol<unsafe fn(R: *const xcb_record_enable_context_reply_t) -> *mut u8>,
-    pub(crate) xcb_record_enable_context_data_end: LazySymbol<unsafe fn(R: *const xcb_record_enable_context_reply_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_enable_context_data_length: LazySymbol<unsafe fn(R: *const xcb_record_enable_context_reply_t) -> c_int>,
-    pub(crate) xcb_record_enable_context_reply: LazySymbol<unsafe fn(c: *mut xcb_connection_t, cookie: xcb_record_enable_context_cookie_t, error: *mut *mut xcb_generic_error_t) -> *mut xcb_record_enable_context_reply_t>,
-    pub(crate) xcb_record_enable_context_unchecked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_record_enable_context_cookie_t>,
-    pub(crate) xcb_record_ext_range_end: LazySymbol<unsafe fn(i: *mut xcb_record_ext_range_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_ext_range_next: LazySymbol<unsafe fn(i: *mut xcb_record_ext_range_iterator_t)>,
-    pub(crate) xcb_record_free_context: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_free_context_checked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_get_context: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_record_get_context_cookie_t>,
-    pub(crate) xcb_record_get_context_intercepted_clients_iterator: LazySymbol<unsafe fn(R: *const xcb_record_get_context_reply_t) -> xcb_record_client_info_iterator_t>,
-    pub(crate) xcb_record_get_context_intercepted_clients_length: LazySymbol<unsafe fn(R: *const xcb_record_get_context_reply_t) -> c_int>,
-    pub(crate) xcb_record_get_context_reply: LazySymbol<unsafe fn(c: *mut xcb_connection_t, cookie: xcb_record_get_context_cookie_t, error: *mut *mut xcb_generic_error_t) -> *mut xcb_record_get_context_reply_t>,
-    pub(crate) xcb_record_get_context_unchecked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t) -> xcb_record_get_context_cookie_t>,
-    pub(crate) xcb_record_id: LazySymbol<*mut xcb_extension_t>,
-    pub(crate) xcb_record_query_version: LazySymbol<unsafe fn(c: *mut xcb_connection_t, major_version: u16, minor_version: u16) -> xcb_record_query_version_cookie_t>,
-    pub(crate) xcb_record_query_version_reply: LazySymbol<unsafe fn(c: *mut xcb_connection_t, cookie: xcb_record_query_version_cookie_t, error: *mut *mut xcb_generic_error_t) -> *mut xcb_record_query_version_reply_t>,
-    pub(crate) xcb_record_query_version_unchecked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, major_version: u16, minor_version: u16) -> xcb_record_query_version_cookie_t>,
-    pub(crate) xcb_record_range_16_end: LazySymbol<unsafe fn(i: *mut xcb_record_range_16_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_range_16_next: LazySymbol<unsafe fn(i: *mut xcb_record_range_16_iterator_t)>,
-    pub(crate) xcb_record_range_8_end: LazySymbol<unsafe fn(i: *mut xcb_record_range_8_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_range_8_next: LazySymbol<unsafe fn(i: *mut xcb_record_range_8_iterator_t)>,
-    pub(crate) xcb_record_range_end: LazySymbol<unsafe fn(i: *mut xcb_record_range_iterator_t) -> xcb_generic_iterator_t>,
-    pub(crate) xcb_record_range_next: LazySymbol<unsafe fn(i: *mut xcb_record_range_iterator_t)>,
-    pub(crate) xcb_record_register_clients: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t, element_header: xcb_record_element_header_t, num_client_specs: u32, num_ranges: u32, client_specs: *const xcb_record_client_spec_t, ranges: *const xcb_record_range_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_register_clients_checked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t, element_header: xcb_record_element_header_t, num_client_specs: u32, num_ranges: u32, client_specs: *const xcb_record_client_spec_t, ranges: *const xcb_record_range_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_unregister_clients: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t, num_client_specs: u32, client_specs: *const xcb_record_client_spec_t) -> xcb_void_cookie_t>,
-    pub(crate) xcb_record_unregister_clients_checked: LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: xcb_record_context_t, num_client_specs: u32, client_specs: *const xcb_record_client_spec_t) -> xcb_void_cookie_t>,
+    pub(crate) record: XcbRecordRecord,
 }
+
+lib_entry!(XcbRecord, "libxcb-record.so.0");

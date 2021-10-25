@@ -1,4 +1,5 @@
 use crate::ffi::*;
+use crate::lazy::LazySymbol;
 use crate::*;
 use std::os::raw::*;
 
@@ -53,6 +54,22 @@ pub struct xcb_generic_event_t {
     pub sequence: u16,
     pub pad: [u32; 7],
     pub full_sequence: u32,
+}
+
+/// Raw Generic event.
+///
+/// A generic event structure as used on the wire, i.e., without the full_sequence field
+#[derive(Copy, Clone, Debug)]
+#[repr(C)]
+pub struct xcb_raw_generic_event_t {
+    /// Type of the response
+    pub response_type: u8,
+    /// Padding
+    pub pad0: u8,
+    /// Sequence number
+    pub sequence: u16,
+    /// Padding
+    pub pad: [u32; 7],
 }
 
 /// GE event
@@ -121,6 +138,91 @@ pub struct xcb_auth_info_t {
     pub datalen: c_int,
     /// data interpreted in a protocol specific manner
     pub data: *mut c_char,
+}
+
+pub(crate) struct XcbXcb {
+    xcb_connect: LazySymbol<
+        unsafe fn(displayname: *const c_char, screenp: *mut c_int) -> *mut xcb_connection_t,
+    >,
+    xcb_connect_to_display_with_auth_info: LazySymbol<
+        unsafe fn(
+            display: *const c_char,
+            auth: *mut xcb_auth_info_t,
+            screen: *mut c_int,
+        ) -> *mut xcb_connection_t,
+    >,
+    xcb_connect_to_fd:
+        LazySymbol<unsafe fn(fd: c_int, auth_info: *mut xcb_auth_info_t) -> *mut xcb_connection_t>,
+    xcb_connection_has_error: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
+    xcb_discard_reply64: LazySymbol<unsafe fn(c: *mut xcb_connection_t, sequence: u64)>,
+    xcb_discard_reply: LazySymbol<unsafe fn(c: *mut xcb_connection_t, sequence: c_uint)>,
+    xcb_disconnect: LazySymbol<unsafe fn(c: *mut xcb_connection_t)>,
+    xcb_flush: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
+    xcb_generate_id: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> u32>,
+    xcb_get_extension_data: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            ext: *mut xcb_extension_t,
+        ) -> *const xcb_query_extension_reply_t,
+    >,
+    xcb_get_file_descriptor: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
+    xcb_get_maximum_request_length: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> u32>,
+    xcb_get_setup: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *const xcb_setup_t>,
+    xcb_parse_display: LazySymbol<
+        unsafe fn(
+            name: *const c_char,
+            host: *mut *mut c_char,
+            display: *mut c_int,
+            screen: *mut c_int,
+        ) -> c_int,
+    >,
+    xcb_poll_for_event: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
+    xcb_poll_for_queued_event:
+        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
+    xcb_poll_for_special_event: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            se: *mut xcb_special_event_t,
+        ) -> *mut xcb_generic_event_t,
+    >,
+    xcb_prefetch_extension_data:
+        LazySymbol<unsafe fn(c: *mut xcb_connection_t, ext: *mut xcb_extension_t)>,
+    xcb_prefetch_maximum_request_length: LazySymbol<unsafe fn(c: *mut xcb_connection_t)>,
+    xcb_register_for_special_xge: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            ext: *mut xcb_extension_t,
+            eid: u32,
+            stamp: *mut u32,
+        ) -> *mut xcb_special_event_t,
+    >,
+    xcb_request_check: LazySymbol<
+        unsafe fn(c: *mut xcb_connection_t, cookie: xcb_void_cookie_t) -> *mut xcb_generic_error_t,
+    >,
+    xcb_unregister_for_special_event:
+        LazySymbol<unsafe fn(c: *mut xcb_connection_t, se: *mut xcb_special_event_t)>,
+    xcb_wait_for_event: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
+    xcb_wait_for_special_event: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            se: *mut xcb_special_event_t,
+        ) -> *mut xcb_generic_event_t,
+    >,
+}
+
+macro_rules! sym {
+    ($self:expr, $f:ident) => {
+        ($self.xcb.$f.get(&$self.lib, concat!(stringify!($f), "\0")))
+    };
+}
+
+macro_rules! has_sym {
+    ($self:expr, $f:ident) => {
+        ($self
+            .xcb
+            .$f
+            .exists(&$self.lib, concat!(stringify!($f), "\0")))
+    };
 }
 
 impl Xcb {
