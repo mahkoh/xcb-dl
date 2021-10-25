@@ -270,6 +270,7 @@ impl Default for xcb_xevie_select_input_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_xevie")]
 pub(crate) struct XcbXevieXevie {
     xcb_xevie_id: LazySymbol<*mut xcb_extension_t>,
     xcb_xevie_query_version: LazySymbol<
@@ -374,6 +375,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xevie")]
 impl XcbXevie {
     pub fn xcb_xevie_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xevie_id) }
@@ -793,6 +795,7 @@ impl XcbXevie {
     }
 }
 
+#[cfg(feature = "xcb_xevie")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

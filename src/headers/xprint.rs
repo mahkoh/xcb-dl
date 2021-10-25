@@ -975,6 +975,7 @@ impl Default for xcb_x_print_bad_sequence_error_t {
     }
 }
 
+#[cfg(feature = "xcb_xprint")]
 pub(crate) struct XcbXprintXprint {
     xcb_x_print_id: LazySymbol<*mut xcb_extension_t>,
     xcb_x_print_string8_next: LazySymbol<unsafe fn(i: *mut xcb_x_print_string8_iterator_t)>,
@@ -1476,6 +1477,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xprint")]
 impl XcbXprint {
     pub fn xcb_x_print_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_x_print_id) }
@@ -3807,6 +3809,7 @@ impl XcbXprint {
     }
 }
 
+#[cfg(feature = "xcb_xprint")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

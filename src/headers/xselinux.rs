@@ -908,6 +908,7 @@ impl Default for xcb_selinux_get_client_context_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_xselinux")]
 pub(crate) struct XcbXselinuxXselinux {
     xcb_selinux_id: LazySymbol<*mut xcb_extension_t>,
     xcb_selinux_query_version: LazySymbol<
@@ -1540,6 +1541,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xselinux")]
 impl XcbXselinux {
     pub fn xcb_selinux_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_selinux_id) }
@@ -4322,6 +4324,7 @@ impl XcbXselinux {
     }
 }
 
+#[cfg(feature = "xcb_xselinux")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

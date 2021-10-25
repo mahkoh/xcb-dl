@@ -3971,6 +3971,7 @@ impl Default for xcb_xkb_extension_device_notify_event_t {
     }
 }
 
+#[cfg(feature = "xcb_xkb")]
 pub(crate) struct XcbXkbXkb {
     xcb_xkb_id: LazySymbol<*mut xcb_extension_t>,
     xcb_xkb_device_spec_next: LazySymbol<unsafe fn(i: *mut xcb_xkb_device_spec_iterator_t)>,
@@ -6317,6 +6318,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xkb")]
 impl XcbXkb {
     pub fn xcb_xkb_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xkb_id) }
@@ -15182,6 +15184,7 @@ impl XcbXkb {
     }
 }
 
+#[cfg(feature = "xcb_xkb")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

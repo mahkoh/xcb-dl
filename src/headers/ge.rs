@@ -54,6 +54,7 @@ impl Default for xcb_genericevent_query_version_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_ge")]
 pub(crate) struct XcbGeGe {
     xcb_genericevent_id: LazySymbol<*mut xcb_extension_t>,
     xcb_genericevent_query_version: LazySymbol<
@@ -96,6 +97,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_ge")]
 impl XcbGe {
     pub fn xcb_genericevent_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_genericevent_id) }
@@ -190,6 +192,7 @@ impl XcbGe {
     }
 }
 
+#[cfg(feature = "xcb_ge")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

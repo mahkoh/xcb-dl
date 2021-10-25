@@ -272,6 +272,7 @@ impl Default for xcb_dpms_info_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_dpms")]
 pub(crate) struct XcbDpmsDpms {
     xcb_dpms_id: LazySymbol<*mut xcb_extension_t>,
     xcb_dpms_get_version: LazySymbol<
@@ -369,6 +370,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_dpms")]
 impl XcbDpms {
     pub fn xcb_dpms_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_dpms_id) }
@@ -851,6 +853,7 @@ impl XcbDpms {
     }
 }
 
+#[cfg(feature = "xcb_dpms")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

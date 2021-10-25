@@ -1550,6 +1550,7 @@ impl Default for xcb_render_create_conical_gradient_request_t {
     }
 }
 
+#[cfg(feature = "xcb_render")]
 pub(crate) struct XcbRenderRender {
     xcb_render_id: LazySymbol<*mut xcb_extension_t>,
     xcb_render_glyph_next: LazySymbol<unsafe fn(i: *mut xcb_render_glyph_iterator_t)>,
@@ -2619,6 +2620,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_render")]
 impl XcbRender {
     pub fn xcb_render_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_render_id) }
@@ -6834,6 +6836,7 @@ impl XcbRender {
     }
 }
 
+#[cfg(feature = "xcb_render")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

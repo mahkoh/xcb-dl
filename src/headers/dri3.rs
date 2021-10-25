@@ -383,6 +383,7 @@ impl Default for xcb_dri3_buffers_from_pixmap_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_dri3")]
 pub(crate) struct XcbDri3Dri3 {
     xcb_dri3_id: LazySymbol<*mut xcb_extension_t>,
     xcb_dri3_query_version: LazySymbol<
@@ -677,6 +678,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_dri3")]
 impl XcbDri3 {
     pub fn xcb_dri3_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_dri3_id) }
@@ -1681,6 +1683,7 @@ impl XcbDri3 {
     }
 }
 
+#[cfg(feature = "xcb_dri3")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

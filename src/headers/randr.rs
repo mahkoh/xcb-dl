@@ -2371,6 +2371,7 @@ impl Default for xcb_randr_notify_event_t {
     }
 }
 
+#[cfg(feature = "xcb_randr")]
 pub(crate) struct XcbRandrRandr {
     xcb_randr_id: LazySymbol<*mut xcb_extension_t>,
     xcb_randr_mode_next: LazySymbol<unsafe fn(i: *mut xcb_randr_mode_iterator_t)>,
@@ -3764,6 +3765,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_randr")]
 impl XcbRandr {
     pub fn xcb_randr_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_randr_id) }
@@ -9582,6 +9584,7 @@ impl XcbRandr {
     }
 }
 
+#[cfg(feature = "xcb_randr")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

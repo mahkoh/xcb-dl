@@ -850,6 +850,7 @@ impl Default for xcb_sync_alarm_notify_event_t {
     }
 }
 
+#[cfg(feature = "xcb_sync")]
 pub(crate) struct XcbSyncSync {
     xcb_sync_id: LazySymbol<*mut xcb_extension_t>,
     xcb_sync_alarm_next: LazySymbol<unsafe fn(i: *mut xcb_sync_alarm_iterator_t)>,
@@ -1248,6 +1249,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_sync")]
 impl XcbSync {
     pub fn xcb_sync_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_sync_id) }
@@ -2986,6 +2988,7 @@ impl XcbSync {
     }
 }
 
+#[cfg(feature = "xcb_sync")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

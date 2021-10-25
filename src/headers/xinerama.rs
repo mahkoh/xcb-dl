@@ -315,6 +315,7 @@ impl Default for xcb_xinerama_query_screens_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_xinerama")]
 pub(crate) struct XcbXineramaXinerama {
     xcb_xinerama_id: LazySymbol<*mut xcb_extension_t>,
     xcb_xinerama_screen_info_next:
@@ -456,6 +457,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xinerama")]
 impl XcbXinerama {
     pub fn xcb_xinerama_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xinerama_id) }
@@ -999,6 +1001,7 @@ impl XcbXinerama {
     }
 }
 
+#[cfg(feature = "xcb_xinerama")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

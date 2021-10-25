@@ -947,6 +947,7 @@ impl Default for xcb_xfixes_delete_pointer_barrier_request_t {
     }
 }
 
+#[cfg(feature = "xcb_xfixes")]
 pub(crate) struct XcbXfixesXfixes {
     xcb_xfixes_id: LazySymbol<*mut xcb_extension_t>,
     xcb_xfixes_query_version: LazySymbol<
@@ -1562,6 +1563,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xfixes")]
 impl XcbXfixes {
     pub fn xcb_xfixes_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xfixes_id) }
@@ -3961,6 +3963,7 @@ impl XcbXfixes {
     }
 }
 
+#[cfg(feature = "xcb_xfixes")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

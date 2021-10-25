@@ -241,6 +241,7 @@ impl Default for xcb_composite_release_overlay_window_request_t {
     }
 }
 
+#[cfg(feature = "xcb_composite")]
 pub(crate) struct XcbCompositeComposite {
     xcb_composite_id: LazySymbol<*mut xcb_extension_t>,
     xcb_composite_query_version: LazySymbol<
@@ -361,6 +362,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_composite")]
 impl XcbComposite {
     pub fn xcb_composite_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_composite_id) }
@@ -872,6 +874,7 @@ impl XcbComposite {
     }
 }
 
+#[cfg(feature = "xcb_composite")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

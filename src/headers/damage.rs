@@ -193,6 +193,7 @@ impl Default for xcb_damage_notify_event_t {
     }
 }
 
+#[cfg(feature = "xcb_damage")]
 pub(crate) struct XcbDamageDamage {
     xcb_damage_id: LazySymbol<*mut xcb_extension_t>,
     xcb_damage_damage_next: LazySymbol<unsafe fn(i: *mut xcb_damage_damage_iterator_t)>,
@@ -293,6 +294,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_damage")]
 impl XcbDamage {
     pub fn xcb_damage_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_damage_id) }
@@ -608,6 +610,7 @@ impl XcbDamage {
     }
 }
 
+#[cfg(feature = "xcb_damage")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

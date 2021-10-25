@@ -438,6 +438,7 @@ impl Default for xcb_xvmc_list_subpicture_types_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_xvmc")]
 pub(crate) struct XcbXvmcXvmc {
     xcb_xvmc_id: LazySymbol<*mut xcb_extension_t>,
     xcb_xvmc_context_next: LazySymbol<unsafe fn(i: *mut xcb_xvmc_context_iterator_t)>,
@@ -669,6 +670,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xvmc")]
 impl XcbXvmc {
     pub fn xcb_xvmc_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xvmc_id) }
@@ -1646,6 +1648,7 @@ impl XcbXvmc {
     }
 }
 
+#[cfg(feature = "xcb_xvmc")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

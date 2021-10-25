@@ -400,6 +400,7 @@ impl Default for xcb_present_redirect_notify_event_t {
     }
 }
 
+#[cfg(feature = "xcb_present")]
 pub(crate) struct XcbPresentPresent {
     xcb_present_id: LazySymbol<*mut xcb_extension_t>,
     xcb_present_notify_next: LazySymbol<unsafe fn(i: *mut xcb_present_notify_iterator_t)>,
@@ -561,6 +562,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_present")]
 impl XcbPresent {
     pub fn xcb_present_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_present_id) }
@@ -1100,6 +1102,7 @@ impl XcbPresent {
     }
 }
 
+#[cfg(feature = "xcb_present")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

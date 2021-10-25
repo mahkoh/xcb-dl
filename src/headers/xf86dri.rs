@@ -531,6 +531,7 @@ impl Default for xcb_xf86dri_auth_connection_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_xf86dri")]
 pub(crate) struct XcbXf86driXf86Dri {
     xcb_xf86dri_id: LazySymbol<*mut xcb_extension_t>,
     xcb_xf86dri_drm_clip_rect_next:
@@ -786,6 +787,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xf86dri")]
 impl XcbXf86dri {
     pub fn xcb_xf86dri_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xf86dri_id) }
@@ -1911,6 +1913,7 @@ impl XcbXf86dri {
     }
 }
 
+#[cfg(feature = "xcb_xf86dri")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

@@ -736,6 +736,7 @@ impl Default for xcb_dri2_invalidate_buffers_event_t {
     }
 }
 
+#[cfg(feature = "xcb_dri2")]
 pub(crate) struct XcbDri2Dri2 {
     xcb_dri2_id: LazySymbol<*mut xcb_extension_t>,
     xcb_dri2_dri2_buffer_next: LazySymbol<unsafe fn(i: *mut xcb_dri2_dri2_buffer_iterator_t)>,
@@ -1089,6 +1090,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_dri2")]
 impl XcbDri2 {
     pub fn xcb_dri2_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_dri2_id) }
@@ -2461,6 +2463,7 @@ impl XcbDri2 {
     }
 }
 
+#[cfg(feature = "xcb_dri2")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

@@ -1105,6 +1105,7 @@ impl Default for xcb_xv_shm_put_image_request_t {
     }
 }
 
+#[cfg(feature = "xcb_xv")]
 pub(crate) struct XcbXvXv {
     xcb_xv_id: LazySymbol<*mut xcb_extension_t>,
     xcb_xv_port_next: LazySymbol<unsafe fn(i: *mut xcb_xv_port_iterator_t)>,
@@ -1691,6 +1692,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xv")]
 impl XcbXv {
     pub fn xcb_xv_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xv_id) }
@@ -3882,6 +3884,7 @@ impl XcbXv {
     }
 }
 
+#[cfg(feature = "xcb_xv")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

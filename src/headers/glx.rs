@@ -4365,6 +4365,7 @@ impl Default for xcb_glx_get_query_objectuiv_arb_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_glx")]
 pub(crate) struct XcbGlxGlx {
     xcb_glx_id: LazySymbol<*mut xcb_extension_t>,
     xcb_glx_pixmap_next: LazySymbol<unsafe fn(i: *mut xcb_glx_pixmap_iterator_t)>,
@@ -7015,6 +7016,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_glx")]
 impl XcbGlx {
     pub fn xcb_glx_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_glx_id) }
@@ -18108,6 +18110,7 @@ impl XcbGlx {
     }
 }
 
+#[cfg(feature = "xcb_glx")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

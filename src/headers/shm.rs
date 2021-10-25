@@ -321,6 +321,7 @@ impl Default for xcb_shm_create_segment_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_shm")]
 pub(crate) struct XcbShmShm {
     xcb_shm_id: LazySymbol<*mut xcb_extension_t>,
     xcb_shm_seg_next: LazySymbol<unsafe fn(i: *mut xcb_shm_seg_iterator_t)>,
@@ -519,6 +520,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_shm")]
 impl XcbShm {
     pub fn xcb_shm_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_shm_id) }
@@ -1133,6 +1135,7 @@ impl XcbShm {
     }
 }
 
+#[cfg(feature = "xcb_shm")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

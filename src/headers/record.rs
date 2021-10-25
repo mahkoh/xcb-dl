@@ -471,6 +471,7 @@ impl Default for xcb_record_free_context_request_t {
     }
 }
 
+#[cfg(feature = "xcb_record")]
 pub(crate) struct XcbRecordRecord {
     xcb_record_id: LazySymbol<*mut xcb_extension_t>,
     xcb_record_context_next: LazySymbol<unsafe fn(i: *mut xcb_record_context_iterator_t)>,
@@ -717,6 +718,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_record")]
 impl XcbRecord {
     pub fn xcb_record_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_record_id) }
@@ -1801,6 +1803,7 @@ impl XcbRecord {
     }
 }
 
+#[cfg(feature = "xcb_record")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

@@ -385,6 +385,7 @@ impl Default for xcb_shape_get_rectangles_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_shape")]
 pub(crate) struct XcbShapeShape {
     xcb_shape_id: LazySymbol<*mut xcb_extension_t>,
     xcb_shape_op_next: LazySymbol<unsafe fn(i: *mut xcb_shape_op_iterator_t)>,
@@ -604,6 +605,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_shape")]
 impl XcbShape {
     pub fn xcb_shape_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_shape_id) }
@@ -1404,6 +1406,7 @@ impl XcbShape {
     }
 }
 
+#[cfg(feature = "xcb_shape")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

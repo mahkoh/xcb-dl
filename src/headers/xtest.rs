@@ -149,6 +149,7 @@ impl Default for xcb_test_grab_control_request_t {
     }
 }
 
+#[cfg(feature = "xcb_xtest")]
 pub(crate) struct XcbXtestXtest {
     xcb_test_id: LazySymbol<*mut xcb_extension_t>,
     xcb_test_get_version: LazySymbol<
@@ -243,6 +244,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xtest")]
 impl XcbXtest {
     pub fn xcb_test_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_test_id) }
@@ -519,6 +521,7 @@ impl XcbXtest {
     }
 }
 
+#[cfg(feature = "xcb_xtest")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

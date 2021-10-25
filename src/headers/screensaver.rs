@@ -252,6 +252,7 @@ impl Default for xcb_screensaver_notify_event_t {
     }
 }
 
+#[cfg(feature = "xcb_screensaver")]
 pub(crate) struct XcbScreensaverScreensaver {
     xcb_screensaver_id: LazySymbol<*mut xcb_extension_t>,
     xcb_screensaver_query_version: LazySymbol<
@@ -423,6 +424,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_screensaver")]
 impl XcbScreensaver {
     pub fn xcb_screensaver_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_screensaver_id) }
@@ -989,6 +991,7 @@ impl XcbScreensaver {
     }
 }
 
+#[cfg(feature = "xcb_screensaver")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

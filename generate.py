@@ -208,6 +208,12 @@ def c_open(self):
     else:
         obj_name = 'Xcb' + _ns.header.title()
 
+    no_feature = {'bigreq', 'xc_misc', 'xproto'}
+    if _ns.header in no_feature:
+        feature = None
+    else:
+        feature = f'#[cfg(feature = "xcb_{_ns.header.lower()}")]'
+
     local_obj_name = f'{obj_name}{_ns.header.title()}'
 
     # Build the type-name collision avoidance table used by c_enum
@@ -224,6 +230,8 @@ def c_open(self):
 
     _h_setlevel(1)
     _h('')
+    if feature:
+        _h(feature)
     _h(f'pub(crate) struct {local_obj_name} {{')
 
     _h_setlevel(2)
@@ -242,10 +250,14 @@ def c_open(self):
     _h('    };')
     _h('}')
     _h('')
+    if feature:
+        _h(feature)
     _h(f'impl {obj_name} {{')
 
     _h_setlevel(3)
     _h('')
+    if feature:
+        _h(feature)
     _h('#[cfg(all(test, feature = "has_symbol"))]')
     _h('mod test {')
     _h('    #[test]')

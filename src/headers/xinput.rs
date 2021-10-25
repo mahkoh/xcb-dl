@@ -5892,6 +5892,7 @@ impl Default for xcb_input_class_error_t {
     }
 }
 
+#[cfg(feature = "xcb_xinput")]
 pub(crate) struct XcbXinputXinput {
     xcb_input_id: LazySymbol<*mut xcb_extension_t>,
     xcb_input_event_class_next: LazySymbol<unsafe fn(i: *mut xcb_input_event_class_iterator_t)>,
@@ -8600,6 +8601,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_xinput")]
 impl XcbXinput {
     pub fn xcb_input_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_input_id) }
@@ -19880,6 +19882,7 @@ impl XcbXinput {
     }
 }
 
+#[cfg(feature = "xcb_xinput")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]

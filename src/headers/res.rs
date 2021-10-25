@@ -483,6 +483,7 @@ impl Default for xcb_res_query_resource_bytes_reply_t {
     }
 }
 
+#[cfg(feature = "xcb_res")]
 pub(crate) struct XcbResRes {
     xcb_res_id: LazySymbol<*mut xcb_extension_t>,
     xcb_res_client_next: LazySymbol<unsafe fn(i: *mut xcb_res_client_iterator_t)>,
@@ -675,6 +676,7 @@ macro_rules! has_sym {
     };
 }
 
+#[cfg(feature = "xcb_res")]
 impl XcbRes {
     pub fn xcb_res_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_res_id) }
@@ -1584,6 +1586,7 @@ impl XcbRes {
     }
 }
 
+#[cfg(feature = "xcb_res")]
 #[cfg(all(test, feature = "has_symbol"))]
 mod test {
     #[test]
