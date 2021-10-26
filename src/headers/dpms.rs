@@ -1,13 +1,20 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The cookie for the reply to a `DPMS::GetVersion` request.
+///
+/// Pass this cookie to [`xcb_dpms_get_version_reply`] to retrieve the reply.
+///
+/// [`xcb_dpms_get_version_reply`]: XcbDpms::xcb_dpms_get_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_get_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -17,9 +24,14 @@ impl Default for xcb_dpms_get_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_dpms_get_version.
+/// The opcode for `DPMS::GetVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_get_version_request_t`].
 pub const XCB_DPMS_GET_VERSION: u8 = 0i32 as u8;
 
+/// The `DPMS::GetVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_get_version_request_t {
@@ -36,6 +48,7 @@ impl Default for xcb_dpms_get_version_request_t {
     }
 }
 
+/// The `DPMS::GetVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_get_version_reply_t {
@@ -53,9 +66,15 @@ impl Default for xcb_dpms_get_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `DPMS::Capable` request.
+///
+/// Pass this cookie to [`xcb_dpms_capable_reply`] to retrieve the reply.
+///
+/// [`xcb_dpms_capable_reply`]: XcbDpms::xcb_dpms_capable_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_capable_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -65,9 +84,14 @@ impl Default for xcb_dpms_capable_cookie_t {
     }
 }
 
-/// Opcode for xcb_dpms_capable.
+/// The opcode for `DPMS::Capable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_capable_request_t`].
 pub const XCB_DPMS_CAPABLE: u8 = 1i32 as u8;
 
+/// The `DPMS::Capable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_capable_request_t {
@@ -82,6 +106,7 @@ impl Default for xcb_dpms_capable_request_t {
     }
 }
 
+/// The `DPMS::Capable` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_capable_reply_t {
@@ -99,9 +124,15 @@ impl Default for xcb_dpms_capable_reply_t {
     }
 }
 
+/// The cookie for the reply to a `DPMS::GetTimeouts` request.
+///
+/// Pass this cookie to [`xcb_dpms_get_timeouts_reply`] to retrieve the reply.
+///
+/// [`xcb_dpms_get_timeouts_reply`]: XcbDpms::xcb_dpms_get_timeouts_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_get_timeouts_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -111,9 +142,14 @@ impl Default for xcb_dpms_get_timeouts_cookie_t {
     }
 }
 
-/// Opcode for xcb_dpms_get_timeouts.
+/// The opcode for `DPMS::GetTimeouts` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_get_timeouts_request_t`].
 pub const XCB_DPMS_GET_TIMEOUTS: u8 = 2i32 as u8;
 
+/// The `DPMS::GetTimeouts` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_get_timeouts_request_t {
@@ -128,6 +164,7 @@ impl Default for xcb_dpms_get_timeouts_request_t {
     }
 }
 
+/// The `DPMS::GetTimeouts` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_get_timeouts_reply_t {
@@ -147,9 +184,14 @@ impl Default for xcb_dpms_get_timeouts_reply_t {
     }
 }
 
-/// Opcode for xcb_dpms_set_timeouts.
+/// The opcode for `DPMS::SetTimeouts` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_set_timeouts_request_t`].
 pub const XCB_DPMS_SET_TIMEOUTS: u8 = 3i32 as u8;
 
+/// The `DPMS::SetTimeouts` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_set_timeouts_request_t {
@@ -167,9 +209,14 @@ impl Default for xcb_dpms_set_timeouts_request_t {
     }
 }
 
-/// Opcode for xcb_dpms_enable.
+/// The opcode for `DPMS::Enable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_enable_request_t`].
 pub const XCB_DPMS_ENABLE: u8 = 4i32 as u8;
 
+/// The `DPMS::Enable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_enable_request_t {
@@ -184,9 +231,14 @@ impl Default for xcb_dpms_enable_request_t {
     }
 }
 
-/// Opcode for xcb_dpms_disable.
+/// The opcode for `DPMS::Disable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_disable_request_t`].
 pub const XCB_DPMS_DISABLE: u8 = 5i32 as u8;
 
+/// The `DPMS::Disable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_disable_request_t {
@@ -201,15 +253,40 @@ impl Default for xcb_dpms_disable_request_t {
     }
 }
 
+/// The `DPMS::DPMSMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`DPMS::DPMSMode::On`](XCB_DPMS_DPMS_MODE_ON)
+/// - [`DPMS::DPMSMode::Standby`](XCB_DPMS_DPMS_MODE_STANDBY)
+/// - [`DPMS::DPMSMode::Suspend`](XCB_DPMS_DPMS_MODE_SUSPEND)
+/// - [`DPMS::DPMSMode::Off`](XCB_DPMS_DPMS_MODE_OFF)
 pub type xcb_dpms_dpms_mode_t = u32;
+/// The `DPMS::DPMSMode::On` enum variant.
+///
+/// This is a variant of [`xcb_dpms_dpms_mode_t`].
 pub const XCB_DPMS_DPMS_MODE_ON: xcb_dpms_dpms_mode_t = 0;
+/// The `DPMS::DPMSMode::Standby` enum variant.
+///
+/// This is a variant of [`xcb_dpms_dpms_mode_t`].
 pub const XCB_DPMS_DPMS_MODE_STANDBY: xcb_dpms_dpms_mode_t = 1;
+/// The `DPMS::DPMSMode::Suspend` enum variant.
+///
+/// This is a variant of [`xcb_dpms_dpms_mode_t`].
 pub const XCB_DPMS_DPMS_MODE_SUSPEND: xcb_dpms_dpms_mode_t = 2;
+/// The `DPMS::DPMSMode::Off` enum variant.
+///
+/// This is a variant of [`xcb_dpms_dpms_mode_t`].
 pub const XCB_DPMS_DPMS_MODE_OFF: xcb_dpms_dpms_mode_t = 3;
 
-/// Opcode for xcb_dpms_force_level.
+/// The opcode for `DPMS::ForceLevel` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_force_level_request_t`].
 pub const XCB_DPMS_FORCE_LEVEL: u8 = 6i32 as u8;
 
+/// The `DPMS::ForceLevel` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_force_level_request_t {
@@ -225,9 +302,15 @@ impl Default for xcb_dpms_force_level_request_t {
     }
 }
 
+/// The cookie for the reply to a `DPMS::Info` request.
+///
+/// Pass this cookie to [`xcb_dpms_info_reply`] to retrieve the reply.
+///
+/// [`xcb_dpms_info_reply`]: XcbDpms::xcb_dpms_info_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_info_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -237,9 +320,14 @@ impl Default for xcb_dpms_info_cookie_t {
     }
 }
 
-/// Opcode for xcb_dpms_info.
+/// The opcode for `DPMS::Info` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDpms::xcb_dpms_id()`], then the type of the request is
+/// [`xcb_dpms_info_request_t`].
 pub const XCB_DPMS_INFO: u8 = 7i32 as u8;
 
+/// The `DPMS::Info` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_info_request_t {
@@ -254,6 +342,7 @@ impl Default for xcb_dpms_info_request_t {
     }
 }
 
+/// The `DPMS::Info` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dpms_info_reply_t {
@@ -294,7 +383,7 @@ pub(crate) struct XcbDpmsDpms {
             c: *mut xcb_connection_t,
             cookie: xcb_dpms_get_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dpms_get_version_reply_t,
+        ) -> *mut xcb_dpms_get_version_reply_t,
     >,
     xcb_dpms_capable: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_capable_cookie_t>,
     xcb_dpms_capable_unchecked:
@@ -304,7 +393,7 @@ pub(crate) struct XcbDpmsDpms {
             c: *mut xcb_connection_t,
             cookie: xcb_dpms_capable_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dpms_capable_reply_t,
+        ) -> *mut xcb_dpms_capable_reply_t,
     >,
     xcb_dpms_get_timeouts:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_dpms_get_timeouts_cookie_t>,
@@ -315,7 +404,7 @@ pub(crate) struct XcbDpmsDpms {
             c: *mut xcb_connection_t,
             cookie: xcb_dpms_get_timeouts_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dpms_get_timeouts_reply_t,
+        ) -> *mut xcb_dpms_get_timeouts_reply_t,
     >,
     xcb_dpms_set_timeouts_checked: LazySymbol<
         unsafe fn(
@@ -349,7 +438,7 @@ pub(crate) struct XcbDpmsDpms {
             c: *mut xcb_connection_t,
             cookie: xcb_dpms_info_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dpms_info_reply_t,
+        ) -> *mut xcb_dpms_info_reply_t,
     >,
 }
 
@@ -372,6 +461,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_dpms")]
 impl XcbDpms {
+    /// The libxcb identifier of the `DPMS` extension.
+    #[inline]
     pub fn xcb_dpms_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_dpms_id) }
     }
@@ -382,14 +473,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::GetVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_get_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_get_version_reply`]: Self::xcb_dpms_get_version_reply
+    #[inline]
     pub unsafe fn xcb_dpms_get_version(
         &self,
         c: *mut xcb_connection_t,
@@ -405,17 +496,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_get_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DPMS::GetVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_get_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_get_version_reply`]: Self::xcb_dpms_get_version_reply
+    #[inline]
     pub unsafe fn xcb_dpms_get_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -431,26 +519,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_get_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dpms_get_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DPMS::GetVersion` request.
+    #[inline]
     pub unsafe fn xcb_dpms_get_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dpms_get_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dpms_get_version_reply_t {
+    ) -> *mut xcb_dpms_get_version_reply_t {
         sym!(self, xcb_dpms_get_version_reply)(c, cookie, e)
     }
 
@@ -460,14 +536,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_get_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::Capable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_capable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_capable_reply`]: Self::xcb_dpms_capable_reply
+    #[inline]
     pub unsafe fn xcb_dpms_capable(&self, c: *mut xcb_connection_t) -> xcb_dpms_capable_cookie_t {
         sym!(self, xcb_dpms_capable)(c)
     }
@@ -478,17 +554,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_capable)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DPMS::Capable` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_capable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_capable_reply`]: Self::xcb_dpms_capable_reply
+    #[inline]
     pub unsafe fn xcb_dpms_capable_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -502,26 +575,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_capable_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dpms_capable_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DPMS::Capable` request.
+    #[inline]
     pub unsafe fn xcb_dpms_capable_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dpms_capable_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dpms_capable_reply_t {
+    ) -> *mut xcb_dpms_capable_reply_t {
         sym!(self, xcb_dpms_capable_reply)(c, cookie, e)
     }
 
@@ -531,14 +592,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_capable_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::GetTimeouts` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_get_timeouts_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_get_timeouts_reply`]: Self::xcb_dpms_get_timeouts_reply
+    #[inline]
     pub unsafe fn xcb_dpms_get_timeouts(
         &self,
         c: *mut xcb_connection_t,
@@ -552,17 +613,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_get_timeouts)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DPMS::GetTimeouts` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_get_timeouts_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_get_timeouts_reply`]: Self::xcb_dpms_get_timeouts_reply
+    #[inline]
     pub unsafe fn xcb_dpms_get_timeouts_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -576,26 +634,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_get_timeouts_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dpms_get_timeouts_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DPMS::GetTimeouts` request.
+    #[inline]
     pub unsafe fn xcb_dpms_get_timeouts_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dpms_get_timeouts_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dpms_get_timeouts_reply_t {
+    ) -> *mut xcb_dpms_get_timeouts_reply_t {
         sym!(self, xcb_dpms_get_timeouts_reply)(c, cookie, e)
     }
 
@@ -605,17 +651,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_get_timeouts_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DPMS::SetTimeouts` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_dpms_set_timeouts_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -632,14 +675,8 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_set_timeouts_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::SetTimeouts` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_dpms_set_timeouts(
         &self,
         c: *mut xcb_connection_t,
@@ -656,17 +693,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_set_timeouts)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DPMS::Enable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_dpms_enable_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_dpms_enable_checked)(c)
     }
@@ -677,14 +711,8 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_enable_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::Enable` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_dpms_enable(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_dpms_enable)(c)
     }
@@ -695,17 +723,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_enable)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DPMS::Disable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_dpms_disable_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_dpms_disable_checked)(c)
     }
@@ -716,14 +741,8 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_disable_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::Disable` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_dpms_disable(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_dpms_disable)(c)
     }
@@ -734,17 +753,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_disable)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DPMS::ForceLevel` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_dpms_force_level_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -759,14 +775,8 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_force_level_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::ForceLevel` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_dpms_force_level(
         &self,
         c: *mut xcb_connection_t,
@@ -781,14 +791,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_force_level)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DPMS::Info` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_info_reply`]: Self::xcb_dpms_info_reply
+    #[inline]
     pub unsafe fn xcb_dpms_info(&self, c: *mut xcb_connection_t) -> xcb_dpms_info_cookie_t {
         sym!(self, xcb_dpms_info)(c)
     }
@@ -799,17 +809,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_info)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DPMS::Info` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dpms_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dpms_info_reply`]: Self::xcb_dpms_info_reply
+    #[inline]
     pub unsafe fn xcb_dpms_info_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -823,26 +830,14 @@ impl XcbDpms {
         has_sym!(self, xcb_dpms_info_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dpms_info_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DPMS::Info` request.
+    #[inline]
     pub unsafe fn xcb_dpms_info_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dpms_info_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dpms_info_reply_t {
+    ) -> *mut xcb_dpms_info_reply_t {
         sym!(self, xcb_dpms_info_reply)(c, cookie, e)
     }
 

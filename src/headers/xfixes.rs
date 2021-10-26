@@ -1,13 +1,20 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The cookie for the reply to a `XFixes::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_xfixes_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_xfixes_query_version_reply`]: XcbXfixes::xcb_xfixes_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -17,9 +24,14 @@ impl Default for xcb_xfixes_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_xfixes_query_version.
+/// The opcode for `XFixes::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_query_version_request_t`].
 pub const XCB_XFIXES_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `XFixes::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_query_version_request_t {
@@ -36,6 +48,7 @@ impl Default for xcb_xfixes_query_version_request_t {
     }
 }
 
+/// The `XFixes::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_query_version_reply_t {
@@ -54,21 +67,62 @@ impl Default for xcb_xfixes_query_version_reply_t {
     }
 }
 
+/// The `XFixes::SaveSetMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::SaveSetMode::Insert`](XCB_XFIXES_SAVE_SET_MODE_INSERT)
+/// - [`XFixes::SaveSetMode::Delete`](XCB_XFIXES_SAVE_SET_MODE_DELETE)
 pub type xcb_xfixes_save_set_mode_t = u32;
+/// The `XFixes::SaveSetMode::Insert` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_save_set_mode_t`].
 pub const XCB_XFIXES_SAVE_SET_MODE_INSERT: xcb_xfixes_save_set_mode_t = 0;
+/// The `XFixes::SaveSetMode::Delete` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_save_set_mode_t`].
 pub const XCB_XFIXES_SAVE_SET_MODE_DELETE: xcb_xfixes_save_set_mode_t = 1;
 
+/// The `XFixes::SaveSetTarget` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::SaveSetTarget::Nearest`](XCB_XFIXES_SAVE_SET_TARGET_NEAREST)
+/// - [`XFixes::SaveSetTarget::Root`](XCB_XFIXES_SAVE_SET_TARGET_ROOT)
 pub type xcb_xfixes_save_set_target_t = u32;
+/// The `XFixes::SaveSetTarget::Nearest` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_save_set_target_t`].
 pub const XCB_XFIXES_SAVE_SET_TARGET_NEAREST: xcb_xfixes_save_set_target_t = 0;
+/// The `XFixes::SaveSetTarget::Root` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_save_set_target_t`].
 pub const XCB_XFIXES_SAVE_SET_TARGET_ROOT: xcb_xfixes_save_set_target_t = 1;
 
+/// The `XFixes::SaveSetMapping` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::SaveSetMapping::Map`](XCB_XFIXES_SAVE_SET_MAPPING_MAP)
+/// - [`XFixes::SaveSetMapping::Unmap`](XCB_XFIXES_SAVE_SET_MAPPING_UNMAP)
 pub type xcb_xfixes_save_set_mapping_t = u32;
+/// The `XFixes::SaveSetMapping::Map` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_save_set_mapping_t`].
 pub const XCB_XFIXES_SAVE_SET_MAPPING_MAP: xcb_xfixes_save_set_mapping_t = 0;
+/// The `XFixes::SaveSetMapping::Unmap` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_save_set_mapping_t`].
 pub const XCB_XFIXES_SAVE_SET_MAPPING_UNMAP: xcb_xfixes_save_set_mapping_t = 1;
 
-/// Opcode for xcb_xfixes_change_save_set.
+/// The opcode for `XFixes::ChangeSaveSet` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_change_save_set_request_t`].
 pub const XCB_XFIXES_CHANGE_SAVE_SET: u8 = 1i32 as u8;
 
+/// The `XFixes::ChangeSaveSet` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_change_save_set_request_t {
@@ -88,22 +142,58 @@ impl Default for xcb_xfixes_change_save_set_request_t {
     }
 }
 
+/// The `XFixes::SelectionEvent` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::SelectionEvent::SetSelectionOwner`](XCB_XFIXES_SELECTION_EVENT_SET_SELECTION_OWNER)
+/// - [`XFixes::SelectionEvent::SelectionWindowDestroy`](XCB_XFIXES_SELECTION_EVENT_SELECTION_WINDOW_DESTROY)
+/// - [`XFixes::SelectionEvent::SelectionClientClose`](XCB_XFIXES_SELECTION_EVENT_SELECTION_CLIENT_CLOSE)
 pub type xcb_xfixes_selection_event_t = u32;
+/// The `XFixes::SelectionEvent::SetSelectionOwner` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_selection_event_t`].
 pub const XCB_XFIXES_SELECTION_EVENT_SET_SELECTION_OWNER: xcb_xfixes_selection_event_t = 0;
+/// The `XFixes::SelectionEvent::SelectionWindowDestroy` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_selection_event_t`].
 pub const XCB_XFIXES_SELECTION_EVENT_SELECTION_WINDOW_DESTROY: xcb_xfixes_selection_event_t = 1;
+/// The `XFixes::SelectionEvent::SelectionClientClose` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_selection_event_t`].
 pub const XCB_XFIXES_SELECTION_EVENT_SELECTION_CLIENT_CLOSE: xcb_xfixes_selection_event_t = 2;
 
+/// The `XFixes::SelectionEventMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::SelectionEventMask::SetSelectionOwner`](XCB_XFIXES_SELECTION_EVENT_MASK_SET_SELECTION_OWNER)
+/// - [`XFixes::SelectionEventMask::SelectionWindowDestroy`](XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_WINDOW_DESTROY)
+/// - [`XFixes::SelectionEventMask::SelectionClientClose`](XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_CLIENT_CLOSE)
 pub type xcb_xfixes_selection_event_mask_t = u32;
+/// The `XFixes::SelectionEventMask::SetSelectionOwner` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_selection_event_mask_t`].
 pub const XCB_XFIXES_SELECTION_EVENT_MASK_SET_SELECTION_OWNER: xcb_xfixes_selection_event_mask_t =
     1;
+/// The `XFixes::SelectionEventMask::SelectionWindowDestroy` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_selection_event_mask_t`].
 pub const XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_WINDOW_DESTROY:
     xcb_xfixes_selection_event_mask_t = 2;
+/// The `XFixes::SelectionEventMask::SelectionClientClose` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_selection_event_mask_t`].
 pub const XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_CLIENT_CLOSE:
     xcb_xfixes_selection_event_mask_t = 4;
 
-/// Opcode for xcb_xfixes_selection_notify.
+/// The opcode for `XFixes::SelectionNotify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_xfixes_selection_notify_event_t`].
 pub const XCB_XFIXES_SELECTION_NOTIFY: u8 = 0i32 as u8;
 
+/// The `XFixes::SelectionNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_selection_notify_event_t {
@@ -124,9 +214,14 @@ impl Default for xcb_xfixes_selection_notify_event_t {
     }
 }
 
-/// Opcode for xcb_xfixes_select_selection_input.
+/// The opcode for `XFixes::SelectSelectionInput` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_select_selection_input_request_t`].
 pub const XCB_XFIXES_SELECT_SELECTION_INPUT: u8 = 2i32 as u8;
 
+/// The `XFixes::SelectSelectionInput` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_select_selection_input_request_t {
@@ -144,15 +239,35 @@ impl Default for xcb_xfixes_select_selection_input_request_t {
     }
 }
 
+/// The `XFixes::CursorNotify` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::CursorNotify::DisplayCursor`](XCB_XFIXES_CURSOR_NOTIFY_DISPLAY_CURSOR)
 pub type xcb_xfixes_cursor_notify_t = u32;
+/// The `XFixes::CursorNotify::DisplayCursor` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_cursor_notify_t`].
 pub const XCB_XFIXES_CURSOR_NOTIFY_DISPLAY_CURSOR: xcb_xfixes_cursor_notify_t = 0;
 
+/// The `XFixes::CursorNotifyMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::CursorNotifyMask::DisplayCursor`](XCB_XFIXES_CURSOR_NOTIFY_MASK_DISPLAY_CURSOR)
 pub type xcb_xfixes_cursor_notify_mask_t = u32;
+/// The `XFixes::CursorNotifyMask::DisplayCursor` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_cursor_notify_mask_t`].
 pub const XCB_XFIXES_CURSOR_NOTIFY_MASK_DISPLAY_CURSOR: xcb_xfixes_cursor_notify_mask_t = 1;
 
-/// Opcode for xcb_xfixes_cursor_notify.
+/// The opcode for `XFixes::CursorNotify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_xfixes_cursor_notify_event_t`].
 pub const XCB_XFIXES_CURSOR_NOTIFY: u8 = 1i32 as u8;
 
+/// The `XFixes::CursorNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_cursor_notify_event_t {
@@ -172,9 +287,14 @@ impl Default for xcb_xfixes_cursor_notify_event_t {
     }
 }
 
-/// Opcode for xcb_xfixes_select_cursor_input.
+/// The opcode for `XFixes::SelectCursorInput` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_select_cursor_input_request_t`].
 pub const XCB_XFIXES_SELECT_CURSOR_INPUT: u8 = 3i32 as u8;
 
+/// The `XFixes::SelectCursorInput` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_select_cursor_input_request_t {
@@ -191,9 +311,15 @@ impl Default for xcb_xfixes_select_cursor_input_request_t {
     }
 }
 
+/// The cookie for the reply to a `XFixes::GetCursorImage` request.
+///
+/// Pass this cookie to [`xcb_xfixes_get_cursor_image_reply`] to retrieve the reply.
+///
+/// [`xcb_xfixes_get_cursor_image_reply`]: XcbXfixes::xcb_xfixes_get_cursor_image_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_image_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -203,9 +329,14 @@ impl Default for xcb_xfixes_get_cursor_image_cookie_t {
     }
 }
 
-/// Opcode for xcb_xfixes_get_cursor_image.
+/// The opcode for `XFixes::GetCursorImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_get_cursor_image_request_t`].
 pub const XCB_XFIXES_GET_CURSOR_IMAGE: u8 = 4i32 as u8;
 
+/// The `XFixes::GetCursorImage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_image_request_t {
@@ -220,6 +351,11 @@ impl Default for xcb_xfixes_get_cursor_image_request_t {
     }
 }
 
+/// The `XFixes::GetCursorImage` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `cursor_image`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_image_reply_t {
@@ -243,13 +379,18 @@ impl Default for xcb_xfixes_get_cursor_image_reply_t {
     }
 }
 
+/// The `XFixes::REGION` type.
 pub type xcb_xfixes_region_t = u32;
 
+/// An iterator over `XFixes::REGION` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_region_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xfixes_region_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -259,9 +400,13 @@ impl Default for xcb_xfixes_region_iterator_t {
     }
 }
 
-/// Opcode for xcb_xfixes_bad_region.
+/// The opcode for `XFixes::BadRegion` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_xfixes_bad_region_error_t`].
 pub const XCB_XFIXES_BAD_REGION: u8 = 0i32 as u8;
 
+/// The `XFixes::BadRegion` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_bad_region_error_t {
@@ -276,12 +421,29 @@ impl Default for xcb_xfixes_bad_region_error_t {
     }
 }
 
+/// The `XFixes::Region` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::Region::None`](XCB_XFIXES_REGION_NONE)
 pub type xcb_xfixes_region_enum_t = u32;
+/// The `XFixes::Region::None` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_region_enum_t`].
 pub const XCB_XFIXES_REGION_NONE: xcb_xfixes_region_enum_t = 0;
 
-/// Opcode for xcb_xfixes_create_region.
+/// The opcode for `XFixes::CreateRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_create_region_request_t`].
 pub const XCB_XFIXES_CREATE_REGION: u8 = 5i32 as u8;
 
+/// The `XFixes::CreateRegion` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_create_region_request_t {
@@ -297,9 +459,14 @@ impl Default for xcb_xfixes_create_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_create_region_from_bitmap.
+/// The opcode for `XFixes::CreateRegionFromBitmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_create_region_from_bitmap_request_t`].
 pub const XCB_XFIXES_CREATE_REGION_FROM_BITMAP: u8 = 6i32 as u8;
 
+/// The `XFixes::CreateRegionFromBitmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_create_region_from_bitmap_request_t {
@@ -316,9 +483,14 @@ impl Default for xcb_xfixes_create_region_from_bitmap_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_create_region_from_window.
+/// The opcode for `XFixes::CreateRegionFromWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_create_region_from_window_request_t`].
 pub const XCB_XFIXES_CREATE_REGION_FROM_WINDOW: u8 = 7i32 as u8;
 
+/// The `XFixes::CreateRegionFromWindow` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_create_region_from_window_request_t {
@@ -337,9 +509,14 @@ impl Default for xcb_xfixes_create_region_from_window_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_create_region_from_gc.
+/// The opcode for `XFixes::CreateRegionFromGC` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_create_region_from_gc_request_t`].
 pub const XCB_XFIXES_CREATE_REGION_FROM_GC: u8 = 8i32 as u8;
 
+/// The `XFixes::CreateRegionFromGC` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_create_region_from_gc_request_t {
@@ -356,9 +533,14 @@ impl Default for xcb_xfixes_create_region_from_gc_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_create_region_from_picture.
+/// The opcode for `XFixes::CreateRegionFromPicture` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_create_region_from_picture_request_t`].
 pub const XCB_XFIXES_CREATE_REGION_FROM_PICTURE: u8 = 9i32 as u8;
 
+/// The `XFixes::CreateRegionFromPicture` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_create_region_from_picture_request_t {
@@ -375,9 +557,14 @@ impl Default for xcb_xfixes_create_region_from_picture_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_destroy_region.
+/// The opcode for `XFixes::DestroyRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_destroy_region_request_t`].
 pub const XCB_XFIXES_DESTROY_REGION: u8 = 10i32 as u8;
 
+/// The `XFixes::DestroyRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_destroy_region_request_t {
@@ -393,9 +580,18 @@ impl Default for xcb_xfixes_destroy_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_set_region.
+/// The opcode for `XFixes::SetRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_set_region_request_t`].
 pub const XCB_XFIXES_SET_REGION: u8 = 11i32 as u8;
 
+/// The `XFixes::SetRegion` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_set_region_request_t {
@@ -411,9 +607,14 @@ impl Default for xcb_xfixes_set_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_copy_region.
+/// The opcode for `XFixes::CopyRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_copy_region_request_t`].
 pub const XCB_XFIXES_COPY_REGION: u8 = 12i32 as u8;
 
+/// The `XFixes::CopyRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_copy_region_request_t {
@@ -430,9 +631,14 @@ impl Default for xcb_xfixes_copy_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_union_region.
+/// The opcode for `XFixes::UnionRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_union_region_request_t`].
 pub const XCB_XFIXES_UNION_REGION: u8 = 13i32 as u8;
 
+/// The `XFixes::UnionRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_union_region_request_t {
@@ -450,9 +656,14 @@ impl Default for xcb_xfixes_union_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_intersect_region.
+/// The opcode for `XFixes::IntersectRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_intersect_region_request_t`].
 pub const XCB_XFIXES_INTERSECT_REGION: u8 = 14i32 as u8;
 
+/// The `XFixes::IntersectRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_intersect_region_request_t {
@@ -470,9 +681,14 @@ impl Default for xcb_xfixes_intersect_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_subtract_region.
+/// The opcode for `XFixes::SubtractRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_subtract_region_request_t`].
 pub const XCB_XFIXES_SUBTRACT_REGION: u8 = 15i32 as u8;
 
+/// The `XFixes::SubtractRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_subtract_region_request_t {
@@ -490,9 +706,14 @@ impl Default for xcb_xfixes_subtract_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_invert_region.
+/// The opcode for `XFixes::InvertRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_invert_region_request_t`].
 pub const XCB_XFIXES_INVERT_REGION: u8 = 16i32 as u8;
 
+/// The `XFixes::InvertRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_invert_region_request_t {
@@ -510,9 +731,14 @@ impl Default for xcb_xfixes_invert_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_translate_region.
+/// The opcode for `XFixes::TranslateRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_translate_region_request_t`].
 pub const XCB_XFIXES_TRANSLATE_REGION: u8 = 17i32 as u8;
 
+/// The `XFixes::TranslateRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_translate_region_request_t {
@@ -530,9 +756,14 @@ impl Default for xcb_xfixes_translate_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_region_extents.
+/// The opcode for `XFixes::RegionExtents` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_region_extents_request_t`].
 pub const XCB_XFIXES_REGION_EXTENTS: u8 = 18i32 as u8;
 
+/// The `XFixes::RegionExtents` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_region_extents_request_t {
@@ -549,9 +780,15 @@ impl Default for xcb_xfixes_region_extents_request_t {
     }
 }
 
+/// The cookie for the reply to a `XFixes::FetchRegion` request.
+///
+/// Pass this cookie to [`xcb_xfixes_fetch_region_reply`] to retrieve the reply.
+///
+/// [`xcb_xfixes_fetch_region_reply`]: XcbXfixes::xcb_xfixes_fetch_region_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_fetch_region_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -561,9 +798,14 @@ impl Default for xcb_xfixes_fetch_region_cookie_t {
     }
 }
 
-/// Opcode for xcb_xfixes_fetch_region.
+/// The opcode for `XFixes::FetchRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_fetch_region_request_t`].
 pub const XCB_XFIXES_FETCH_REGION: u8 = 19i32 as u8;
 
+/// The `XFixes::FetchRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_fetch_region_request_t {
@@ -579,6 +821,11 @@ impl Default for xcb_xfixes_fetch_region_request_t {
     }
 }
 
+/// The `XFixes::FetchRegion` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_fetch_region_reply_t {
@@ -596,9 +843,14 @@ impl Default for xcb_xfixes_fetch_region_reply_t {
     }
 }
 
-/// Opcode for xcb_xfixes_set_gc_clip_region.
+/// The opcode for `XFixes::SetGCClipRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_set_gc_clip_region_request_t`].
 pub const XCB_XFIXES_SET_GC_CLIP_REGION: u8 = 20i32 as u8;
 
+/// The `XFixes::SetGCClipRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_set_gc_clip_region_request_t {
@@ -617,9 +869,14 @@ impl Default for xcb_xfixes_set_gc_clip_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_set_window_shape_region.
+/// The opcode for `XFixes::SetWindowShapeRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_set_window_shape_region_request_t`].
 pub const XCB_XFIXES_SET_WINDOW_SHAPE_REGION: u8 = 21i32 as u8;
 
+/// The `XFixes::SetWindowShapeRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_set_window_shape_region_request_t {
@@ -640,9 +897,14 @@ impl Default for xcb_xfixes_set_window_shape_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_set_picture_clip_region.
+/// The opcode for `XFixes::SetPictureClipRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_set_picture_clip_region_request_t`].
 pub const XCB_XFIXES_SET_PICTURE_CLIP_REGION: u8 = 22i32 as u8;
 
+/// The `XFixes::SetPictureClipRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_set_picture_clip_region_request_t {
@@ -661,9 +923,18 @@ impl Default for xcb_xfixes_set_picture_clip_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_set_cursor_name.
+/// The opcode for `XFixes::SetCursorName` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_set_cursor_name_request_t`].
 pub const XCB_XFIXES_SET_CURSOR_NAME: u8 = 23i32 as u8;
 
+/// The `XFixes::SetCursorName` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_set_cursor_name_request_t {
@@ -681,9 +952,15 @@ impl Default for xcb_xfixes_set_cursor_name_request_t {
     }
 }
 
+/// The cookie for the reply to a `XFixes::GetCursorName` request.
+///
+/// Pass this cookie to [`xcb_xfixes_get_cursor_name_reply`] to retrieve the reply.
+///
+/// [`xcb_xfixes_get_cursor_name_reply`]: XcbXfixes::xcb_xfixes_get_cursor_name_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_name_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -693,9 +970,14 @@ impl Default for xcb_xfixes_get_cursor_name_cookie_t {
     }
 }
 
-/// Opcode for xcb_xfixes_get_cursor_name.
+/// The opcode for `XFixes::GetCursorName` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_get_cursor_name_request_t`].
 pub const XCB_XFIXES_GET_CURSOR_NAME: u8 = 24i32 as u8;
 
+/// The `XFixes::GetCursorName` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_name_request_t {
@@ -711,6 +993,11 @@ impl Default for xcb_xfixes_get_cursor_name_request_t {
     }
 }
 
+/// The `XFixes::GetCursorName` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_name_reply_t {
@@ -729,9 +1016,15 @@ impl Default for xcb_xfixes_get_cursor_name_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XFixes::GetCursorImageAndName` request.
+///
+/// Pass this cookie to [`xcb_xfixes_get_cursor_image_and_name_reply`] to retrieve the reply.
+///
+/// [`xcb_xfixes_get_cursor_image_and_name_reply`]: XcbXfixes::xcb_xfixes_get_cursor_image_and_name_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_image_and_name_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -741,9 +1034,14 @@ impl Default for xcb_xfixes_get_cursor_image_and_name_cookie_t {
     }
 }
 
-/// Opcode for xcb_xfixes_get_cursor_image_and_name.
+/// The opcode for `XFixes::GetCursorImageAndName` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_get_cursor_image_and_name_request_t`].
 pub const XCB_XFIXES_GET_CURSOR_IMAGE_AND_NAME: u8 = 25i32 as u8;
 
+/// The `XFixes::GetCursorImageAndName` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_image_and_name_request_t {
@@ -758,6 +1056,12 @@ impl Default for xcb_xfixes_get_cursor_image_and_name_request_t {
     }
 }
 
+/// The `XFixes::GetCursorImageAndName` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `cursor_image`
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_get_cursor_image_and_name_reply_t {
@@ -783,9 +1087,14 @@ impl Default for xcb_xfixes_get_cursor_image_and_name_reply_t {
     }
 }
 
-/// Opcode for xcb_xfixes_change_cursor.
+/// The opcode for `XFixes::ChangeCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_change_cursor_request_t`].
 pub const XCB_XFIXES_CHANGE_CURSOR: u8 = 26i32 as u8;
 
+/// The `XFixes::ChangeCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_change_cursor_request_t {
@@ -802,9 +1111,18 @@ impl Default for xcb_xfixes_change_cursor_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_change_cursor_by_name.
+/// The opcode for `XFixes::ChangeCursorByName` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_change_cursor_by_name_request_t`].
 pub const XCB_XFIXES_CHANGE_CURSOR_BY_NAME: u8 = 27i32 as u8;
 
+/// The `XFixes::ChangeCursorByName` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_change_cursor_by_name_request_t {
@@ -822,9 +1140,14 @@ impl Default for xcb_xfixes_change_cursor_by_name_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_expand_region.
+/// The opcode for `XFixes::ExpandRegion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_expand_region_request_t`].
 pub const XCB_XFIXES_EXPAND_REGION: u8 = 28i32 as u8;
 
+/// The `XFixes::ExpandRegion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_expand_region_request_t {
@@ -845,9 +1168,14 @@ impl Default for xcb_xfixes_expand_region_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_hide_cursor.
+/// The opcode for `XFixes::HideCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_hide_cursor_request_t`].
 pub const XCB_XFIXES_HIDE_CURSOR: u8 = 29i32 as u8;
 
+/// The `XFixes::HideCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_hide_cursor_request_t {
@@ -863,9 +1191,14 @@ impl Default for xcb_xfixes_hide_cursor_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_show_cursor.
+/// The opcode for `XFixes::ShowCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_show_cursor_request_t`].
 pub const XCB_XFIXES_SHOW_CURSOR: u8 = 30i32 as u8;
 
+/// The `XFixes::ShowCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_show_cursor_request_t {
@@ -881,13 +1214,18 @@ impl Default for xcb_xfixes_show_cursor_request_t {
     }
 }
 
+/// The `XFixes::BARRIER` type.
 pub type xcb_xfixes_barrier_t = u32;
 
+/// An iterator over `XFixes::BARRIER` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_barrier_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xfixes_barrier_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -897,15 +1235,44 @@ impl Default for xcb_xfixes_barrier_iterator_t {
     }
 }
 
+/// The `XFixes::BarrierDirections` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XFixes::BarrierDirections::PositiveX`](XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_X)
+/// - [`XFixes::BarrierDirections::PositiveY`](XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_Y)
+/// - [`XFixes::BarrierDirections::NegativeX`](XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_X)
+/// - [`XFixes::BarrierDirections::NegativeY`](XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_Y)
 pub type xcb_xfixes_barrier_directions_t = u32;
+/// The `XFixes::BarrierDirections::PositiveX` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_barrier_directions_t`].
 pub const XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_X: xcb_xfixes_barrier_directions_t = 1;
+/// The `XFixes::BarrierDirections::PositiveY` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_barrier_directions_t`].
 pub const XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_Y: xcb_xfixes_barrier_directions_t = 2;
+/// The `XFixes::BarrierDirections::NegativeX` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_barrier_directions_t`].
 pub const XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_X: xcb_xfixes_barrier_directions_t = 4;
+/// The `XFixes::BarrierDirections::NegativeY` enum variant.
+///
+/// This is a variant of [`xcb_xfixes_barrier_directions_t`].
 pub const XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_Y: xcb_xfixes_barrier_directions_t = 8;
 
-/// Opcode for xcb_xfixes_create_pointer_barrier.
+/// The opcode for `XFixes::CreatePointerBarrier` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_create_pointer_barrier_request_t`].
 pub const XCB_XFIXES_CREATE_POINTER_BARRIER: u8 = 31i32 as u8;
 
+/// The `XFixes::CreatePointerBarrier` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `devices`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_create_pointer_barrier_request_t {
@@ -929,9 +1296,14 @@ impl Default for xcb_xfixes_create_pointer_barrier_request_t {
     }
 }
 
-/// Opcode for xcb_xfixes_delete_pointer_barrier.
+/// The opcode for `XFixes::DeletePointerBarrier` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXfixes::xcb_xfixes_id()`], then the type of the request is
+/// [`xcb_xfixes_delete_pointer_barrier_request_t`].
 pub const XCB_XFIXES_DELETE_POINTER_BARRIER: u8 = 32i32 as u8;
 
+/// The `XFixes::DeletePointerBarrier` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xfixes_delete_pointer_barrier_request_t {
@@ -969,7 +1341,7 @@ pub(crate) struct XcbXfixesXfixes {
             c: *mut xcb_connection_t,
             cookie: xcb_xfixes_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xfixes_query_version_reply_t,
+        ) -> *mut xcb_xfixes_query_version_reply_t,
     >,
     xcb_xfixes_change_save_set_checked: LazySymbol<
         unsafe fn(
@@ -1036,7 +1408,7 @@ pub(crate) struct XcbXfixesXfixes {
             c: *mut xcb_connection_t,
             cookie: xcb_xfixes_get_cursor_image_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xfixes_get_cursor_image_reply_t,
+        ) -> *mut xcb_xfixes_get_cursor_image_reply_t,
     >,
     xcb_xfixes_region_next: LazySymbol<unsafe fn(i: *mut xcb_xfixes_region_iterator_t)>,
     xcb_xfixes_region_end:
@@ -1288,7 +1660,7 @@ pub(crate) struct XcbXfixesXfixes {
             c: *mut xcb_connection_t,
             cookie: xcb_xfixes_fetch_region_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xfixes_fetch_region_reply_t,
+        ) -> *mut xcb_xfixes_fetch_region_reply_t,
     >,
     xcb_xfixes_set_gc_clip_region_checked: LazySymbol<
         unsafe fn(
@@ -1395,7 +1767,7 @@ pub(crate) struct XcbXfixesXfixes {
             c: *mut xcb_connection_t,
             cookie: xcb_xfixes_get_cursor_name_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xfixes_get_cursor_name_reply_t,
+        ) -> *mut xcb_xfixes_get_cursor_name_reply_t,
     >,
     xcb_xfixes_get_cursor_image_and_name_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -1425,7 +1797,7 @@ pub(crate) struct XcbXfixesXfixes {
             c: *mut xcb_connection_t,
             cookie: xcb_xfixes_get_cursor_image_and_name_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xfixes_get_cursor_image_and_name_reply_t,
+        ) -> *mut xcb_xfixes_get_cursor_image_and_name_reply_t,
     >,
     xcb_xfixes_change_cursor_checked: LazySymbol<
         unsafe fn(
@@ -1565,6 +1937,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_xfixes")]
 impl XcbXfixes {
+    /// The libxcb identifier of the `XFixes` extension.
+    #[inline]
     pub fn xcb_xfixes_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xfixes_id) }
     }
@@ -1575,14 +1949,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_query_version_reply`]: Self::xcb_xfixes_query_version_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -1598,17 +1972,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XFixes::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_query_version_reply`]: Self::xcb_xfixes_query_version_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1628,26 +1999,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xfixes_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XFixes::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_xfixes_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xfixes_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xfixes_query_version_reply_t {
+    ) -> *mut xcb_xfixes_query_version_reply_t {
         sym!(self, xcb_xfixes_query_version_reply)(c, cookie, e)
     }
 
@@ -1657,17 +2016,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_query_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::ChangeSaveSet` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_change_save_set_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1685,14 +2041,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_save_set_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::ChangeSaveSet` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_change_save_set(
         &self,
         c: *mut xcb_connection_t,
@@ -1710,17 +2060,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_save_set)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SelectSelectionInput` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_select_selection_input_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1737,14 +2084,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_select_selection_input_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SelectSelectionInput` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_select_selection_input(
         &self,
         c: *mut xcb_connection_t,
@@ -1761,17 +2102,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_select_selection_input)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SelectCursorInput` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_select_cursor_input_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1787,14 +2125,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_select_cursor_input_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SelectCursorInput` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_select_cursor_input(
         &self,
         c: *mut xcb_connection_t,
@@ -1810,6 +2142,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_select_cursor_input)
     }
 
+    /// Computes the size of a `xcb_xfixes_get_cursor_image_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xfixes_get_cursor_image_sizeof)(_buffer)
     }
@@ -1820,14 +2154,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::GetCursorImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_get_cursor_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_get_cursor_image_reply`]: Self::xcb_xfixes_get_cursor_image_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image(
         &self,
         c: *mut xcb_connection_t,
@@ -1841,17 +2175,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XFixes::GetCursorImage` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_get_cursor_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_get_cursor_image_reply`]: Self::xcb_xfixes_get_cursor_image_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1865,6 +2196,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_unchecked)
     }
 
+    /// Returns a pointer to the `cursor_image` field of a `xcb_xfixes_get_cursor_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_cursor_image(
         &self,
         r: *const xcb_xfixes_get_cursor_image_reply_t,
@@ -1878,6 +2211,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_cursor_image)
     }
 
+    /// Returns the number of elements of the `cursor_image` field of a `xcb_xfixes_get_cursor_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_cursor_image_length(
         &self,
         r: *const xcb_xfixes_get_cursor_image_reply_t,
@@ -1891,6 +2226,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_cursor_image_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `cursor_image` field of a `xcb_xfixes_get_cursor_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_cursor_image_end(
         &self,
         r: *const xcb_xfixes_get_cursor_image_reply_t,
@@ -1904,26 +2242,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_cursor_image_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xfixes_get_cursor_image_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XFixes::GetCursorImage` request.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xfixes_get_cursor_image_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xfixes_get_cursor_image_reply_t {
+    ) -> *mut xcb_xfixes_get_cursor_image_reply_t {
         sym!(self, xcb_xfixes_get_cursor_image_reply)(c, cookie, e)
     }
 
@@ -1933,6 +2259,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_reply)
     }
 
+    /// Advances a `xcb_xfixes_region_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xfixes_region_next(&self, i: *mut xcb_xfixes_region_iterator_t) {
         sym!(self, xcb_xfixes_region_next)(i)
     }
@@ -1943,6 +2271,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_region_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xfixes_region_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xfixes_region_end(
         &self,
         i: xcb_xfixes_region_iterator_t,
@@ -1956,6 +2286,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_region_end)
     }
 
+    /// Computes the size of a `xcb_xfixes_create_region_request_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_sizeof(
         &self,
         _buffer: *const c_void,
@@ -1970,17 +2302,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::CreateRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1997,14 +2326,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::CreateRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2021,6 +2344,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_xfixes_create_region_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_rectangles(
         &self,
         r: *const xcb_xfixes_create_region_request_t,
@@ -2034,6 +2359,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_xfixes_create_region_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_rectangles_length(
         &self,
         r: *const xcb_xfixes_create_region_request_t,
@@ -2047,6 +2374,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_xfixes_create_region_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_rectangles_iterator(
         &self,
         r: *const xcb_xfixes_create_region_request_t,
@@ -2060,17 +2390,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_rectangles_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::CreateRegionFromBitmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_bitmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2086,14 +2413,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_bitmap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::CreateRegionFromBitmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_bitmap(
         &self,
         c: *mut xcb_connection_t,
@@ -2109,17 +2430,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_bitmap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::CreateRegionFromWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2136,14 +2454,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_window_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::CreateRegionFromWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_window(
         &self,
         c: *mut xcb_connection_t,
@@ -2160,17 +2472,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_window)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::CreateRegionFromGC` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_gc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2186,14 +2495,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_gc_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::CreateRegionFromGC` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_gc(
         &self,
         c: *mut xcb_connection_t,
@@ -2209,17 +2512,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_gc)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::CreateRegionFromPicture` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_picture_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2235,14 +2535,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_picture_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::CreateRegionFromPicture` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_create_region_from_picture(
         &self,
         c: *mut xcb_connection_t,
@@ -2258,17 +2552,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_region_from_picture)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::DestroyRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_destroy_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2283,14 +2574,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_destroy_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::DestroyRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_destroy_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2305,6 +2590,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_destroy_region)
     }
 
+    /// Computes the size of a `xcb_xfixes_set_region_request_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_region_sizeof(
         &self,
         _buffer: *const c_void,
@@ -2319,17 +2606,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_region_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SetRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_set_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2346,14 +2630,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SetRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_set_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2370,6 +2648,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_region)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_xfixes_set_region_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_region_rectangles(
         &self,
         r: *const xcb_xfixes_set_region_request_t,
@@ -2383,6 +2663,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_region_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_xfixes_set_region_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_region_rectangles_length(
         &self,
         r: *const xcb_xfixes_set_region_request_t,
@@ -2396,6 +2678,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_region_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_xfixes_set_region_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_region_rectangles_iterator(
         &self,
         r: *const xcb_xfixes_set_region_request_t,
@@ -2409,17 +2694,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_region_rectangles_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::CopyRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_copy_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2435,14 +2717,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_copy_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::CopyRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_copy_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2458,17 +2734,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_copy_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::UnionRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_union_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2485,14 +2758,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_union_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::UnionRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_union_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2509,17 +2776,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_union_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::IntersectRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_intersect_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2536,14 +2800,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_intersect_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::IntersectRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_intersect_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2560,17 +2818,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_intersect_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SubtractRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_subtract_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2587,14 +2842,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_subtract_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SubtractRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_subtract_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2611,17 +2860,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_subtract_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::InvertRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_invert_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2638,14 +2884,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_invert_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::InvertRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_invert_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2662,17 +2902,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_invert_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::TranslateRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_translate_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2689,14 +2926,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_translate_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::TranslateRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_translate_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2713,17 +2944,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_translate_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::RegionExtents` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_region_extents_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2739,14 +2967,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_region_extents_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::RegionExtents` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_region_extents(
         &self,
         c: *mut xcb_connection_t,
@@ -2762,6 +2984,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_region_extents)
     }
 
+    /// Computes the size of a `xcb_xfixes_fetch_region_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_fetch_region_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xfixes_fetch_region_sizeof)(_buffer)
     }
@@ -2772,14 +2996,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_fetch_region_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::FetchRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_fetch_region_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_fetch_region_reply`]: Self::xcb_xfixes_fetch_region_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_fetch_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2794,17 +3018,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_fetch_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XFixes::FetchRegion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_fetch_region_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_fetch_region_reply`]: Self::xcb_xfixes_fetch_region_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_fetch_region_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2819,6 +3040,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_fetch_region_unchecked)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_xfixes_fetch_region_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_fetch_region_rectangles(
         &self,
         r: *const xcb_xfixes_fetch_region_reply_t,
@@ -2832,6 +3055,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_fetch_region_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_xfixes_fetch_region_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_fetch_region_rectangles_length(
         &self,
         r: *const xcb_xfixes_fetch_region_reply_t,
@@ -2845,6 +3070,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_fetch_region_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_xfixes_fetch_region_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_fetch_region_rectangles_iterator(
         &self,
         r: *const xcb_xfixes_fetch_region_reply_t,
@@ -2858,26 +3086,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_fetch_region_rectangles_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xfixes_fetch_region_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XFixes::FetchRegion` request.
+    #[inline]
     pub unsafe fn xcb_xfixes_fetch_region_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xfixes_fetch_region_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xfixes_fetch_region_reply_t {
+    ) -> *mut xcb_xfixes_fetch_region_reply_t {
         sym!(self, xcb_xfixes_fetch_region_reply)(c, cookie, e)
     }
 
@@ -2887,17 +3103,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_fetch_region_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SetGCClipRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_set_gc_clip_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2915,14 +3128,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_gc_clip_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SetGCClipRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_set_gc_clip_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2940,17 +3147,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_gc_clip_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SetWindowShapeRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_set_window_shape_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2971,14 +3175,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_window_shape_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SetWindowShapeRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_set_window_shape_region(
         &self,
         c: *mut xcb_connection_t,
@@ -2999,17 +3197,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_window_shape_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SetPictureClipRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_set_picture_clip_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3029,14 +3224,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_picture_clip_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SetPictureClipRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_set_picture_clip_region(
         &self,
         c: *mut xcb_connection_t,
@@ -3054,6 +3243,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_picture_clip_region)
     }
 
+    /// Computes the size of a `xcb_xfixes_set_cursor_name_request_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_cursor_name_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xfixes_set_cursor_name_sizeof)(_buffer)
     }
@@ -3064,17 +3255,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_cursor_name_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::SetCursorName` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_set_cursor_name_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3091,14 +3279,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_cursor_name_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::SetCursorName` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_set_cursor_name(
         &self,
         c: *mut xcb_connection_t,
@@ -3115,6 +3297,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_cursor_name)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_xfixes_set_cursor_name_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_cursor_name_name(
         &self,
         r: *const xcb_xfixes_set_cursor_name_request_t,
@@ -3128,6 +3312,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_cursor_name_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_xfixes_set_cursor_name_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_cursor_name_name_length(
         &self,
         r: *const xcb_xfixes_set_cursor_name_request_t,
@@ -3141,6 +3327,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_cursor_name_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_xfixes_set_cursor_name_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_set_cursor_name_name_end(
         &self,
         r: *const xcb_xfixes_set_cursor_name_request_t,
@@ -3154,6 +3343,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_set_cursor_name_name_end)
     }
 
+    /// Computes the size of a `xcb_xfixes_get_cursor_name_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_name_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xfixes_get_cursor_name_sizeof)(_buffer)
     }
@@ -3164,14 +3355,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_name_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::GetCursorName` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_get_cursor_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_get_cursor_name_reply`]: Self::xcb_xfixes_get_cursor_name_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_name(
         &self,
         c: *mut xcb_connection_t,
@@ -3186,17 +3377,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_name)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XFixes::GetCursorName` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_get_cursor_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_get_cursor_name_reply`]: Self::xcb_xfixes_get_cursor_name_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_name_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3211,6 +3399,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_name_unchecked)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_xfixes_get_cursor_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_name_name(
         &self,
         r: *const xcb_xfixes_get_cursor_name_reply_t,
@@ -3224,6 +3414,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_name_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_xfixes_get_cursor_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_name_name_length(
         &self,
         r: *const xcb_xfixes_get_cursor_name_reply_t,
@@ -3237,6 +3429,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_name_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_xfixes_get_cursor_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_name_name_end(
         &self,
         r: *const xcb_xfixes_get_cursor_name_reply_t,
@@ -3250,26 +3445,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_name_name_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xfixes_get_cursor_name_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XFixes::GetCursorName` request.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_name_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xfixes_get_cursor_name_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xfixes_get_cursor_name_reply_t {
+    ) -> *mut xcb_xfixes_get_cursor_name_reply_t {
         sym!(self, xcb_xfixes_get_cursor_name_reply)(c, cookie, e)
     }
 
@@ -3279,6 +3462,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_name_reply)
     }
 
+    /// Computes the size of a `xcb_xfixes_get_cursor_image_and_name_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_sizeof(
         &self,
         _buffer: *const c_void,
@@ -3292,14 +3477,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::GetCursorImageAndName` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_get_cursor_image_and_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_get_cursor_image_and_name_reply`]: Self::xcb_xfixes_get_cursor_image_and_name_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name(
         &self,
         c: *mut xcb_connection_t,
@@ -3313,17 +3498,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XFixes::GetCursorImageAndName` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xfixes_get_cursor_image_and_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xfixes_get_cursor_image_and_name_reply`]: Self::xcb_xfixes_get_cursor_image_and_name_reply
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3337,6 +3519,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_unchecked)
     }
 
+    /// Returns a pointer to the `cursor_image` field of a `xcb_xfixes_get_cursor_image_and_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_cursor_image(
         &self,
         r: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
@@ -3350,6 +3534,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_cursor_image)
     }
 
+    /// Returns the number of elements of the `cursor_image` field of a `xcb_xfixes_get_cursor_image_and_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_cursor_image_length(
         &self,
         r: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
@@ -3369,6 +3555,9 @@ impl XcbXfixes {
         )
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `cursor_image` field of a `xcb_xfixes_get_cursor_image_and_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_cursor_image_end(
         &self,
         r: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
@@ -3382,6 +3571,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_cursor_image_end)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_xfixes_get_cursor_image_and_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name(
         &self,
         r: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
@@ -3395,6 +3586,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_xfixes_get_cursor_image_and_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name_length(
         &self,
         r: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
@@ -3408,6 +3601,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_xfixes_get_cursor_image_and_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_name_end(
         &self,
         r: *const xcb_xfixes_get_cursor_image_and_name_reply_t,
@@ -3421,26 +3617,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_name_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xfixes_get_cursor_image_and_name_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XFixes::GetCursorImageAndName` request.
+    #[inline]
     pub unsafe fn xcb_xfixes_get_cursor_image_and_name_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xfixes_get_cursor_image_and_name_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xfixes_get_cursor_image_and_name_reply_t {
+    ) -> *mut xcb_xfixes_get_cursor_image_and_name_reply_t {
         sym!(self, xcb_xfixes_get_cursor_image_and_name_reply)(c, cookie, e)
     }
 
@@ -3450,17 +3634,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_get_cursor_image_and_name_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::ChangeCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3476,14 +3657,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::ChangeCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -3499,6 +3674,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor)
     }
 
+    /// Computes the size of a `xcb_xfixes_change_cursor_by_name_request_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor_by_name_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xfixes_change_cursor_by_name_sizeof)(_buffer)
     }
@@ -3509,17 +3686,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor_by_name_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::ChangeCursorByName` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor_by_name_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3536,14 +3710,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor_by_name_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::ChangeCursorByName` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor_by_name(
         &self,
         c: *mut xcb_connection_t,
@@ -3560,6 +3728,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor_by_name)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_xfixes_change_cursor_by_name_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor_by_name_name(
         &self,
         r: *const xcb_xfixes_change_cursor_by_name_request_t,
@@ -3573,6 +3743,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor_by_name_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_xfixes_change_cursor_by_name_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor_by_name_name_length(
         &self,
         r: *const xcb_xfixes_change_cursor_by_name_request_t,
@@ -3586,6 +3758,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor_by_name_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_xfixes_change_cursor_by_name_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_change_cursor_by_name_name_end(
         &self,
         r: *const xcb_xfixes_change_cursor_by_name_request_t,
@@ -3599,17 +3774,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_change_cursor_by_name_name_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::ExpandRegion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_expand_region_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3637,14 +3809,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_expand_region_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::ExpandRegion` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_expand_region(
         &self,
         c: *mut xcb_connection_t,
@@ -3664,17 +3830,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_expand_region)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::HideCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_hide_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3689,14 +3852,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_hide_cursor_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::HideCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_hide_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -3711,17 +3868,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_hide_cursor)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::ShowCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_show_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3736,14 +3890,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_show_cursor_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::ShowCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_show_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -3758,6 +3906,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_show_cursor)
     }
 
+    /// Advances a `xcb_xfixes_barrier_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xfixes_barrier_next(&self, i: *mut xcb_xfixes_barrier_iterator_t) {
         sym!(self, xcb_xfixes_barrier_next)(i)
     }
@@ -3768,6 +3918,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_barrier_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xfixes_barrier_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xfixes_barrier_end(
         &self,
         i: xcb_xfixes_barrier_iterator_t,
@@ -3781,6 +3933,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_barrier_end)
     }
 
+    /// Computes the size of a `xcb_xfixes_create_pointer_barrier_request_t` object.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_pointer_barrier_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xfixes_create_pointer_barrier_sizeof)(_buffer)
     }
@@ -3791,17 +3945,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_pointer_barrier_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::CreatePointerBarrier` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_create_pointer_barrier_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3835,14 +3986,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_pointer_barrier_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::CreatePointerBarrier` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_create_pointer_barrier(
         &self,
         c: *mut xcb_connection_t,
@@ -3876,6 +4021,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_pointer_barrier)
     }
 
+    /// Returns a pointer to the `devices` field of a `xcb_xfixes_create_pointer_barrier_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_pointer_barrier_devices(
         &self,
         r: *const xcb_xfixes_create_pointer_barrier_request_t,
@@ -3889,6 +4036,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_pointer_barrier_devices)
     }
 
+    /// Returns the number of elements of the `devices` field of a `xcb_xfixes_create_pointer_barrier_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_pointer_barrier_devices_length(
         &self,
         r: *const xcb_xfixes_create_pointer_barrier_request_t,
@@ -3902,6 +4051,9 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_pointer_barrier_devices_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `devices` field of a `xcb_xfixes_create_pointer_barrier_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xfixes_create_pointer_barrier_devices_end(
         &self,
         r: *const xcb_xfixes_create_pointer_barrier_request_t,
@@ -3915,17 +4067,14 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_create_pointer_barrier_devices_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XFixes::DeletePointerBarrier` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xfixes_delete_pointer_barrier_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3940,14 +4089,8 @@ impl XcbXfixes {
         has_sym!(self, xcb_xfixes_delete_pointer_barrier_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XFixes::DeletePointerBarrier` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xfixes_delete_pointer_barrier(
         &self,
         c: *mut xcb_connection_t,

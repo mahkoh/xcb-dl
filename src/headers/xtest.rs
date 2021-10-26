@@ -1,13 +1,20 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The cookie for the reply to a `Test::GetVersion` request.
+///
+/// Pass this cookie to [`xcb_test_get_version_reply`] to retrieve the reply.
+///
+/// [`xcb_test_get_version_reply`]: XcbXtest::xcb_test_get_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_get_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -17,9 +24,14 @@ impl Default for xcb_test_get_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_test_get_version.
+/// The opcode for `Test::GetVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXtest::xcb_test_id()`], then the type of the request is
+/// [`xcb_test_get_version_request_t`].
 pub const XCB_TEST_GET_VERSION: u8 = 0i32 as u8;
 
+/// The `Test::GetVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_get_version_request_t {
@@ -37,6 +49,7 @@ impl Default for xcb_test_get_version_request_t {
     }
 }
 
+/// The `Test::GetVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_get_version_reply_t {
@@ -53,13 +66,31 @@ impl Default for xcb_test_get_version_reply_t {
     }
 }
 
+/// The `Test::Cursor` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Test::Cursor::None`](XCB_TEST_CURSOR_NONE)
+/// - [`Test::Cursor::Current`](XCB_TEST_CURSOR_CURRENT)
 pub type xcb_test_cursor_t = u32;
+/// The `Test::Cursor::None` enum variant.
+///
+/// This is a variant of [`xcb_test_cursor_t`].
 pub const XCB_TEST_CURSOR_NONE: xcb_test_cursor_t = 0;
+/// The `Test::Cursor::Current` enum variant.
+///
+/// This is a variant of [`xcb_test_cursor_t`].
 pub const XCB_TEST_CURSOR_CURRENT: xcb_test_cursor_t = 1;
 
+/// The cookie for the reply to a `Test::CompareCursor` request.
+///
+/// Pass this cookie to [`xcb_test_compare_cursor_reply`] to retrieve the reply.
+///
+/// [`xcb_test_compare_cursor_reply`]: XcbXtest::xcb_test_compare_cursor_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_compare_cursor_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -69,9 +100,14 @@ impl Default for xcb_test_compare_cursor_cookie_t {
     }
 }
 
-/// Opcode for xcb_test_compare_cursor.
+/// The opcode for `Test::CompareCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXtest::xcb_test_id()`], then the type of the request is
+/// [`xcb_test_compare_cursor_request_t`].
 pub const XCB_TEST_COMPARE_CURSOR: u8 = 1i32 as u8;
 
+/// The `Test::CompareCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_compare_cursor_request_t {
@@ -88,6 +124,7 @@ impl Default for xcb_test_compare_cursor_request_t {
     }
 }
 
+/// The `Test::CompareCursor` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_compare_cursor_reply_t {
@@ -103,9 +140,14 @@ impl Default for xcb_test_compare_cursor_reply_t {
     }
 }
 
-/// Opcode for xcb_test_fake_input.
+/// The opcode for `Test::FakeInput` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXtest::xcb_test_id()`], then the type of the request is
+/// [`xcb_test_fake_input_request_t`].
 pub const XCB_TEST_FAKE_INPUT: u8 = 2i32 as u8;
 
+/// The `Test::FakeInput` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_fake_input_request_t {
@@ -130,9 +172,14 @@ impl Default for xcb_test_fake_input_request_t {
     }
 }
 
-/// Opcode for xcb_test_grab_control.
+/// The opcode for `Test::GrabControl` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXtest::xcb_test_id()`], then the type of the request is
+/// [`xcb_test_grab_control_request_t`].
 pub const XCB_TEST_GRAB_CONTROL: u8 = 3i32 as u8;
 
+/// The `Test::GrabControl` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_test_grab_control_request_t {
@@ -171,7 +218,7 @@ pub(crate) struct XcbXtestXtest {
             c: *mut xcb_connection_t,
             cookie: xcb_test_get_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_test_get_version_reply_t,
+        ) -> *mut xcb_test_get_version_reply_t,
     >,
     xcb_test_compare_cursor: LazySymbol<
         unsafe fn(
@@ -192,7 +239,7 @@ pub(crate) struct XcbXtestXtest {
             c: *mut xcb_connection_t,
             cookie: xcb_test_compare_cursor_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_test_compare_cursor_reply_t,
+        ) -> *mut xcb_test_compare_cursor_reply_t,
     >,
     xcb_test_fake_input_checked: LazySymbol<
         unsafe fn(
@@ -246,6 +293,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_xtest")]
 impl XcbXtest {
+    /// The libxcb identifier of the `Test` extension.
+    #[inline]
     pub fn xcb_test_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_test_id) }
     }
@@ -256,14 +305,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Test::GetVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_test_get_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_test_get_version_reply`]: Self::xcb_test_get_version_reply
+    #[inline]
     pub unsafe fn xcb_test_get_version(
         &self,
         c: *mut xcb_connection_t,
@@ -279,17 +328,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_get_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Test::GetVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_test_get_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_test_get_version_reply`]: Self::xcb_test_get_version_reply
+    #[inline]
     pub unsafe fn xcb_test_get_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -305,26 +351,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_get_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_test_get_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Test::GetVersion` request.
+    #[inline]
     pub unsafe fn xcb_test_get_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_test_get_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_test_get_version_reply_t {
+    ) -> *mut xcb_test_get_version_reply_t {
         sym!(self, xcb_test_get_version_reply)(c, cookie, e)
     }
 
@@ -334,14 +368,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_get_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Test::CompareCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_test_compare_cursor_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_test_compare_cursor_reply`]: Self::xcb_test_compare_cursor_reply
+    #[inline]
     pub unsafe fn xcb_test_compare_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -357,17 +391,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_compare_cursor)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Test::CompareCursor` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_test_compare_cursor_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_test_compare_cursor_reply`]: Self::xcb_test_compare_cursor_reply
+    #[inline]
     pub unsafe fn xcb_test_compare_cursor_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -383,26 +414,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_compare_cursor_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_test_compare_cursor_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Test::CompareCursor` request.
+    #[inline]
     pub unsafe fn xcb_test_compare_cursor_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_test_compare_cursor_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_test_compare_cursor_reply_t {
+    ) -> *mut xcb_test_compare_cursor_reply_t {
         sym!(self, xcb_test_compare_cursor_reply)(c, cookie, e)
     }
 
@@ -412,17 +431,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_compare_cursor_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Test::FakeInput` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_test_fake_input_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -445,14 +461,8 @@ impl XcbXtest {
         has_sym!(self, xcb_test_fake_input_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Test::FakeInput` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_test_fake_input(
         &self,
         c: *mut xcb_connection_t,
@@ -473,17 +483,14 @@ impl XcbXtest {
         has_sym!(self, xcb_test_fake_input)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Test::GrabControl` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_test_grab_control_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -498,14 +505,8 @@ impl XcbXtest {
         has_sym!(self, xcb_test_grab_control_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Test::GrabControl` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_test_grab_control(
         &self,
         c: *mut xcb_connection_t,

@@ -1,17 +1,23 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Xv::PORT` type.
 pub type xcb_xv_port_t = u32;
 
+/// An iterator over `Xv::PORT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_port_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_port_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -21,13 +27,18 @@ impl Default for xcb_xv_port_iterator_t {
     }
 }
 
+/// The `Xv::ENCODING` type.
 pub type xcb_xv_encoding_t = u32;
 
+/// An iterator over `Xv::ENCODING` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_encoding_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_encoding_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -37,44 +48,169 @@ impl Default for xcb_xv_encoding_iterator_t {
     }
 }
 
+/// The `Xv::Type` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Xv::Type::InputMask`](XCB_XV_TYPE_INPUT_MASK)
+/// - [`Xv::Type::OutputMask`](XCB_XV_TYPE_OUTPUT_MASK)
+/// - [`Xv::Type::VideoMask`](XCB_XV_TYPE_VIDEO_MASK)
+/// - [`Xv::Type::StillMask`](XCB_XV_TYPE_STILL_MASK)
+/// - [`Xv::Type::ImageMask`](XCB_XV_TYPE_IMAGE_MASK)
 pub type xcb_xv_type_t = u32;
+/// The `Xv::Type::InputMask` enum variant.
+///
+/// This is a variant of [`xcb_xv_type_t`].
 pub const XCB_XV_TYPE_INPUT_MASK: xcb_xv_type_t = 1;
+/// The `Xv::Type::OutputMask` enum variant.
+///
+/// This is a variant of [`xcb_xv_type_t`].
 pub const XCB_XV_TYPE_OUTPUT_MASK: xcb_xv_type_t = 2;
+/// The `Xv::Type::VideoMask` enum variant.
+///
+/// This is a variant of [`xcb_xv_type_t`].
 pub const XCB_XV_TYPE_VIDEO_MASK: xcb_xv_type_t = 4;
+/// The `Xv::Type::StillMask` enum variant.
+///
+/// This is a variant of [`xcb_xv_type_t`].
 pub const XCB_XV_TYPE_STILL_MASK: xcb_xv_type_t = 8;
+/// The `Xv::Type::ImageMask` enum variant.
+///
+/// This is a variant of [`xcb_xv_type_t`].
 pub const XCB_XV_TYPE_IMAGE_MASK: xcb_xv_type_t = 16;
 
+/// The `Xv::ImageFormatInfoType` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Xv::ImageFormatInfoType::RGB`](XCB_XV_IMAGE_FORMAT_INFO_TYPE_RGB)
+/// - [`Xv::ImageFormatInfoType::YUV`](XCB_XV_IMAGE_FORMAT_INFO_TYPE_YUV)
 pub type xcb_xv_image_format_info_type_t = u32;
+/// The `Xv::ImageFormatInfoType::RGB` enum variant.
+///
+/// This is a variant of [`xcb_xv_image_format_info_type_t`].
 pub const XCB_XV_IMAGE_FORMAT_INFO_TYPE_RGB: xcb_xv_image_format_info_type_t = 0;
+/// The `Xv::ImageFormatInfoType::YUV` enum variant.
+///
+/// This is a variant of [`xcb_xv_image_format_info_type_t`].
 pub const XCB_XV_IMAGE_FORMAT_INFO_TYPE_YUV: xcb_xv_image_format_info_type_t = 1;
 
+/// The `Xv::ImageFormatInfoFormat` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Xv::ImageFormatInfoFormat::Packed`](XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PACKED)
+/// - [`Xv::ImageFormatInfoFormat::Planar`](XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PLANAR)
 pub type xcb_xv_image_format_info_format_t = u32;
+/// The `Xv::ImageFormatInfoFormat::Packed` enum variant.
+///
+/// This is a variant of [`xcb_xv_image_format_info_format_t`].
 pub const XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PACKED: xcb_xv_image_format_info_format_t = 0;
+/// The `Xv::ImageFormatInfoFormat::Planar` enum variant.
+///
+/// This is a variant of [`xcb_xv_image_format_info_format_t`].
 pub const XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PLANAR: xcb_xv_image_format_info_format_t = 1;
 
+/// The `Xv::AttributeFlag` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Xv::AttributeFlag::Gettable`](XCB_XV_ATTRIBUTE_FLAG_GETTABLE)
+/// - [`Xv::AttributeFlag::Settable`](XCB_XV_ATTRIBUTE_FLAG_SETTABLE)
 pub type xcb_xv_attribute_flag_t = u32;
+/// The `Xv::AttributeFlag::Gettable` enum variant.
+///
+/// This is a variant of [`xcb_xv_attribute_flag_t`].
 pub const XCB_XV_ATTRIBUTE_FLAG_GETTABLE: xcb_xv_attribute_flag_t = 1;
+/// The `Xv::AttributeFlag::Settable` enum variant.
+///
+/// This is a variant of [`xcb_xv_attribute_flag_t`].
 pub const XCB_XV_ATTRIBUTE_FLAG_SETTABLE: xcb_xv_attribute_flag_t = 2;
 
+/// The `Xv::VideoNotifyReason` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Xv::VideoNotifyReason::Started`](XCB_XV_VIDEO_NOTIFY_REASON_STARTED)
+/// - [`Xv::VideoNotifyReason::Stopped`](XCB_XV_VIDEO_NOTIFY_REASON_STOPPED)
+/// - [`Xv::VideoNotifyReason::Busy`](XCB_XV_VIDEO_NOTIFY_REASON_BUSY)
+/// - [`Xv::VideoNotifyReason::Preempted`](XCB_XV_VIDEO_NOTIFY_REASON_PREEMPTED)
+/// - [`Xv::VideoNotifyReason::HardError`](XCB_XV_VIDEO_NOTIFY_REASON_HARD_ERROR)
 pub type xcb_xv_video_notify_reason_t = u32;
+/// The `Xv::VideoNotifyReason::Started` enum variant.
+///
+/// This is a variant of [`xcb_xv_video_notify_reason_t`].
 pub const XCB_XV_VIDEO_NOTIFY_REASON_STARTED: xcb_xv_video_notify_reason_t = 0;
+/// The `Xv::VideoNotifyReason::Stopped` enum variant.
+///
+/// This is a variant of [`xcb_xv_video_notify_reason_t`].
 pub const XCB_XV_VIDEO_NOTIFY_REASON_STOPPED: xcb_xv_video_notify_reason_t = 1;
+/// The `Xv::VideoNotifyReason::Busy` enum variant.
+///
+/// This is a variant of [`xcb_xv_video_notify_reason_t`].
 pub const XCB_XV_VIDEO_NOTIFY_REASON_BUSY: xcb_xv_video_notify_reason_t = 2;
+/// The `Xv::VideoNotifyReason::Preempted` enum variant.
+///
+/// This is a variant of [`xcb_xv_video_notify_reason_t`].
 pub const XCB_XV_VIDEO_NOTIFY_REASON_PREEMPTED: xcb_xv_video_notify_reason_t = 3;
+/// The `Xv::VideoNotifyReason::HardError` enum variant.
+///
+/// This is a variant of [`xcb_xv_video_notify_reason_t`].
 pub const XCB_XV_VIDEO_NOTIFY_REASON_HARD_ERROR: xcb_xv_video_notify_reason_t = 4;
 
+/// The `Xv::ScanlineOrder` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Xv::ScanlineOrder::TopToBottom`](XCB_XV_SCANLINE_ORDER_TOP_TO_BOTTOM)
+/// - [`Xv::ScanlineOrder::BottomToTop`](XCB_XV_SCANLINE_ORDER_BOTTOM_TO_TOP)
 pub type xcb_xv_scanline_order_t = u32;
+/// The `Xv::ScanlineOrder::TopToBottom` enum variant.
+///
+/// This is a variant of [`xcb_xv_scanline_order_t`].
 pub const XCB_XV_SCANLINE_ORDER_TOP_TO_BOTTOM: xcb_xv_scanline_order_t = 0;
+/// The `Xv::ScanlineOrder::BottomToTop` enum variant.
+///
+/// This is a variant of [`xcb_xv_scanline_order_t`].
 pub const XCB_XV_SCANLINE_ORDER_BOTTOM_TO_TOP: xcb_xv_scanline_order_t = 1;
 
+/// The `Xv::GrabPortStatus` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Xv::GrabPortStatus::Success`](XCB_XV_GRAB_PORT_STATUS_SUCCESS)
+/// - [`Xv::GrabPortStatus::BadExtension`](XCB_XV_GRAB_PORT_STATUS_BAD_EXTENSION)
+/// - [`Xv::GrabPortStatus::AlreadyGrabbed`](XCB_XV_GRAB_PORT_STATUS_ALREADY_GRABBED)
+/// - [`Xv::GrabPortStatus::InvalidTime`](XCB_XV_GRAB_PORT_STATUS_INVALID_TIME)
+/// - [`Xv::GrabPortStatus::BadReply`](XCB_XV_GRAB_PORT_STATUS_BAD_REPLY)
+/// - [`Xv::GrabPortStatus::BadAlloc`](XCB_XV_GRAB_PORT_STATUS_BAD_ALLOC)
 pub type xcb_xv_grab_port_status_t = u32;
+/// The `Xv::GrabPortStatus::Success` enum variant.
+///
+/// This is a variant of [`xcb_xv_grab_port_status_t`].
 pub const XCB_XV_GRAB_PORT_STATUS_SUCCESS: xcb_xv_grab_port_status_t = 0;
+/// The `Xv::GrabPortStatus::BadExtension` enum variant.
+///
+/// This is a variant of [`xcb_xv_grab_port_status_t`].
 pub const XCB_XV_GRAB_PORT_STATUS_BAD_EXTENSION: xcb_xv_grab_port_status_t = 1;
+/// The `Xv::GrabPortStatus::AlreadyGrabbed` enum variant.
+///
+/// This is a variant of [`xcb_xv_grab_port_status_t`].
 pub const XCB_XV_GRAB_PORT_STATUS_ALREADY_GRABBED: xcb_xv_grab_port_status_t = 2;
+/// The `Xv::GrabPortStatus::InvalidTime` enum variant.
+///
+/// This is a variant of [`xcb_xv_grab_port_status_t`].
 pub const XCB_XV_GRAB_PORT_STATUS_INVALID_TIME: xcb_xv_grab_port_status_t = 3;
+/// The `Xv::GrabPortStatus::BadReply` enum variant.
+///
+/// This is a variant of [`xcb_xv_grab_port_status_t`].
 pub const XCB_XV_GRAB_PORT_STATUS_BAD_REPLY: xcb_xv_grab_port_status_t = 4;
+/// The `Xv::GrabPortStatus::BadAlloc` enum variant.
+///
+/// This is a variant of [`xcb_xv_grab_port_status_t`].
 pub const XCB_XV_GRAB_PORT_STATUS_BAD_ALLOC: xcb_xv_grab_port_status_t = 5;
 
+/// The `Xv::Rational` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_rational_t {
@@ -88,11 +224,15 @@ impl Default for xcb_xv_rational_t {
     }
 }
 
+/// An iterator over `Xv::Rational` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_rational_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_rational_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -102,6 +242,7 @@ impl Default for xcb_xv_rational_iterator_t {
     }
 }
 
+/// The `Xv::Format` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_format_t {
@@ -116,11 +257,15 @@ impl Default for xcb_xv_format_t {
     }
 }
 
+/// An iterator over `Xv::Format` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_format_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_format_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -130,6 +275,12 @@ impl Default for xcb_xv_format_iterator_t {
     }
 }
 
+/// The `Xv::AdaptorInfo` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
+/// - `formats`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_adaptor_info_t {
@@ -147,11 +298,15 @@ impl Default for xcb_xv_adaptor_info_t {
     }
 }
 
+/// An iterator over `Xv::AdaptorInfo` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_adaptor_info_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_adaptor_info_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -161,6 +316,11 @@ impl Default for xcb_xv_adaptor_info_iterator_t {
     }
 }
 
+/// The `Xv::EncodingInfo` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_encoding_info_t {
@@ -178,11 +338,15 @@ impl Default for xcb_xv_encoding_info_t {
     }
 }
 
+/// An iterator over `Xv::EncodingInfo` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_encoding_info_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_encoding_info_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -192,6 +356,13 @@ impl Default for xcb_xv_encoding_info_iterator_t {
     }
 }
 
+/// The `Xv::Image` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pitches`
+/// - `offsets`
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_image_t {
@@ -208,11 +379,15 @@ impl Default for xcb_xv_image_t {
     }
 }
 
+/// An iterator over `Xv::Image` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_image_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_image_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -222,6 +397,11 @@ impl Default for xcb_xv_image_iterator_t {
     }
 }
 
+/// The `Xv::AttributeInfo` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_attribute_info_t {
@@ -237,11 +417,15 @@ impl Default for xcb_xv_attribute_info_t {
     }
 }
 
+/// An iterator over `Xv::AttributeInfo` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_attribute_info_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_attribute_info_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -251,6 +435,7 @@ impl Default for xcb_xv_attribute_info_iterator_t {
     }
 }
 
+/// The `Xv::ImageFormatInfo` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_image_format_info_t {
@@ -289,11 +474,15 @@ impl Default for xcb_xv_image_format_info_t {
     }
 }
 
+/// An iterator over `Xv::ImageFormatInfo` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_image_format_info_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xv_image_format_info_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -303,9 +492,13 @@ impl Default for xcb_xv_image_format_info_iterator_t {
     }
 }
 
-/// Opcode for xcb_xv_bad_port.
+/// The opcode for `Xv::BadPort` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_xv_bad_port_error_t`].
 pub const XCB_XV_BAD_PORT: u8 = 0i32 as u8;
 
+/// The `Xv::BadPort` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_bad_port_error_t {
@@ -320,9 +513,13 @@ impl Default for xcb_xv_bad_port_error_t {
     }
 }
 
-/// Opcode for xcb_xv_bad_encoding.
+/// The opcode for `Xv::BadEncoding` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_xv_bad_encoding_error_t`].
 pub const XCB_XV_BAD_ENCODING: u8 = 1i32 as u8;
 
+/// The `Xv::BadEncoding` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_bad_encoding_error_t {
@@ -337,9 +534,13 @@ impl Default for xcb_xv_bad_encoding_error_t {
     }
 }
 
-/// Opcode for xcb_xv_bad_control.
+/// The opcode for `Xv::BadControl` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_xv_bad_control_error_t`].
 pub const XCB_XV_BAD_CONTROL: u8 = 2i32 as u8;
 
+/// The `Xv::BadControl` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_bad_control_error_t {
@@ -354,9 +555,13 @@ impl Default for xcb_xv_bad_control_error_t {
     }
 }
 
-/// Opcode for xcb_xv_video_notify.
+/// The opcode for `Xv::VideoNotify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_xv_video_notify_event_t`].
 pub const XCB_XV_VIDEO_NOTIFY: u8 = 0i32 as u8;
 
+/// The `Xv::VideoNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_video_notify_event_t {
@@ -374,9 +579,13 @@ impl Default for xcb_xv_video_notify_event_t {
     }
 }
 
-/// Opcode for xcb_xv_port_notify.
+/// The opcode for `Xv::PortNotify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_xv_port_notify_event_t`].
 pub const XCB_XV_PORT_NOTIFY: u8 = 1i32 as u8;
 
+/// The `Xv::PortNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_port_notify_event_t {
@@ -395,9 +604,15 @@ impl Default for xcb_xv_port_notify_event_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::QueryExtension` request.
+///
+/// Pass this cookie to [`xcb_xv_query_extension_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_query_extension_reply`]: XcbXv::xcb_xv_query_extension_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_extension_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -407,9 +622,14 @@ impl Default for xcb_xv_query_extension_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_query_extension.
+/// The opcode for `Xv::QueryExtension` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_query_extension_request_t`].
 pub const XCB_XV_QUERY_EXTENSION: u8 = 0i32 as u8;
 
+/// The `Xv::QueryExtension` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_extension_request_t {
@@ -424,6 +644,7 @@ impl Default for xcb_xv_query_extension_request_t {
     }
 }
 
+/// The `Xv::QueryExtension` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_extension_reply_t {
@@ -441,9 +662,15 @@ impl Default for xcb_xv_query_extension_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::QueryAdaptors` request.
+///
+/// Pass this cookie to [`xcb_xv_query_adaptors_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_query_adaptors_reply`]: XcbXv::xcb_xv_query_adaptors_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_adaptors_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -453,9 +680,14 @@ impl Default for xcb_xv_query_adaptors_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_query_adaptors.
+/// The opcode for `Xv::QueryAdaptors` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_query_adaptors_request_t`].
 pub const XCB_XV_QUERY_ADAPTORS: u8 = 1i32 as u8;
 
+/// The `Xv::QueryAdaptors` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_adaptors_request_t {
@@ -471,6 +703,11 @@ impl Default for xcb_xv_query_adaptors_request_t {
     }
 }
 
+/// The `Xv::QueryAdaptors` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `info`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_adaptors_reply_t {
@@ -488,9 +725,15 @@ impl Default for xcb_xv_query_adaptors_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::QueryEncodings` request.
+///
+/// Pass this cookie to [`xcb_xv_query_encodings_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_query_encodings_reply`]: XcbXv::xcb_xv_query_encodings_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_encodings_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -500,9 +743,14 @@ impl Default for xcb_xv_query_encodings_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_query_encodings.
+/// The opcode for `Xv::QueryEncodings` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_query_encodings_request_t`].
 pub const XCB_XV_QUERY_ENCODINGS: u8 = 2i32 as u8;
 
+/// The `Xv::QueryEncodings` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_encodings_request_t {
@@ -518,6 +766,11 @@ impl Default for xcb_xv_query_encodings_request_t {
     }
 }
 
+/// The `Xv::QueryEncodings` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `info`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_encodings_reply_t {
@@ -535,9 +788,15 @@ impl Default for xcb_xv_query_encodings_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::GrabPort` request.
+///
+/// Pass this cookie to [`xcb_xv_grab_port_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_grab_port_reply`]: XcbXv::xcb_xv_grab_port_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_grab_port_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -547,9 +806,14 @@ impl Default for xcb_xv_grab_port_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_grab_port.
+/// The opcode for `Xv::GrabPort` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_grab_port_request_t`].
 pub const XCB_XV_GRAB_PORT: u8 = 3i32 as u8;
 
+/// The `Xv::GrabPort` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_grab_port_request_t {
@@ -566,6 +830,7 @@ impl Default for xcb_xv_grab_port_request_t {
     }
 }
 
+/// The `Xv::GrabPort` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_grab_port_reply_t {
@@ -581,9 +846,14 @@ impl Default for xcb_xv_grab_port_reply_t {
     }
 }
 
-/// Opcode for xcb_xv_ungrab_port.
+/// The opcode for `Xv::UngrabPort` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_ungrab_port_request_t`].
 pub const XCB_XV_UNGRAB_PORT: u8 = 4i32 as u8;
 
+/// The `Xv::UngrabPort` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_ungrab_port_request_t {
@@ -600,9 +870,14 @@ impl Default for xcb_xv_ungrab_port_request_t {
     }
 }
 
-/// Opcode for xcb_xv_put_video.
+/// The opcode for `Xv::PutVideo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_put_video_request_t`].
 pub const XCB_XV_PUT_VIDEO: u8 = 5i32 as u8;
 
+/// The `Xv::PutVideo` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_put_video_request_t {
@@ -628,9 +903,14 @@ impl Default for xcb_xv_put_video_request_t {
     }
 }
 
-/// Opcode for xcb_xv_put_still.
+/// The opcode for `Xv::PutStill` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_put_still_request_t`].
 pub const XCB_XV_PUT_STILL: u8 = 6i32 as u8;
 
+/// The `Xv::PutStill` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_put_still_request_t {
@@ -656,9 +936,14 @@ impl Default for xcb_xv_put_still_request_t {
     }
 }
 
-/// Opcode for xcb_xv_get_video.
+/// The opcode for `Xv::GetVideo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_get_video_request_t`].
 pub const XCB_XV_GET_VIDEO: u8 = 7i32 as u8;
 
+/// The `Xv::GetVideo` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_get_video_request_t {
@@ -684,9 +969,14 @@ impl Default for xcb_xv_get_video_request_t {
     }
 }
 
-/// Opcode for xcb_xv_get_still.
+/// The opcode for `Xv::GetStill` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_get_still_request_t`].
 pub const XCB_XV_GET_STILL: u8 = 8i32 as u8;
 
+/// The `Xv::GetStill` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_get_still_request_t {
@@ -712,9 +1002,14 @@ impl Default for xcb_xv_get_still_request_t {
     }
 }
 
-/// Opcode for xcb_xv_stop_video.
+/// The opcode for `Xv::StopVideo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_stop_video_request_t`].
 pub const XCB_XV_STOP_VIDEO: u8 = 9i32 as u8;
 
+/// The `Xv::StopVideo` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_stop_video_request_t {
@@ -731,9 +1026,14 @@ impl Default for xcb_xv_stop_video_request_t {
     }
 }
 
-/// Opcode for xcb_xv_select_video_notify.
+/// The opcode for `Xv::SelectVideoNotify` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_select_video_notify_request_t`].
 pub const XCB_XV_SELECT_VIDEO_NOTIFY: u8 = 10i32 as u8;
 
+/// The `Xv::SelectVideoNotify` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_select_video_notify_request_t {
@@ -751,9 +1051,14 @@ impl Default for xcb_xv_select_video_notify_request_t {
     }
 }
 
-/// Opcode for xcb_xv_select_port_notify.
+/// The opcode for `Xv::SelectPortNotify` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_select_port_notify_request_t`].
 pub const XCB_XV_SELECT_PORT_NOTIFY: u8 = 11i32 as u8;
 
+/// The `Xv::SelectPortNotify` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_select_port_notify_request_t {
@@ -771,9 +1076,15 @@ impl Default for xcb_xv_select_port_notify_request_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::QueryBestSize` request.
+///
+/// Pass this cookie to [`xcb_xv_query_best_size_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_query_best_size_reply`]: XcbXv::xcb_xv_query_best_size_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_best_size_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -783,9 +1094,14 @@ impl Default for xcb_xv_query_best_size_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_query_best_size.
+/// The opcode for `Xv::QueryBestSize` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_query_best_size_request_t`].
 pub const XCB_XV_QUERY_BEST_SIZE: u8 = 12i32 as u8;
 
+/// The `Xv::QueryBestSize` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_best_size_request_t {
@@ -807,6 +1123,7 @@ impl Default for xcb_xv_query_best_size_request_t {
     }
 }
 
+/// The `Xv::QueryBestSize` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_best_size_reply_t {
@@ -824,9 +1141,14 @@ impl Default for xcb_xv_query_best_size_reply_t {
     }
 }
 
-/// Opcode for xcb_xv_set_port_attribute.
+/// The opcode for `Xv::SetPortAttribute` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_set_port_attribute_request_t`].
 pub const XCB_XV_SET_PORT_ATTRIBUTE: u8 = 13i32 as u8;
 
+/// The `Xv::SetPortAttribute` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_set_port_attribute_request_t {
@@ -844,9 +1166,15 @@ impl Default for xcb_xv_set_port_attribute_request_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::GetPortAttribute` request.
+///
+/// Pass this cookie to [`xcb_xv_get_port_attribute_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_get_port_attribute_reply`]: XcbXv::xcb_xv_get_port_attribute_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_get_port_attribute_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -856,9 +1184,14 @@ impl Default for xcb_xv_get_port_attribute_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_get_port_attribute.
+/// The opcode for `Xv::GetPortAttribute` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_get_port_attribute_request_t`].
 pub const XCB_XV_GET_PORT_ATTRIBUTE: u8 = 14i32 as u8;
 
+/// The `Xv::GetPortAttribute` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_get_port_attribute_request_t {
@@ -875,6 +1208,7 @@ impl Default for xcb_xv_get_port_attribute_request_t {
     }
 }
 
+/// The `Xv::GetPortAttribute` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_get_port_attribute_reply_t {
@@ -891,9 +1225,15 @@ impl Default for xcb_xv_get_port_attribute_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::QueryPortAttributes` request.
+///
+/// Pass this cookie to [`xcb_xv_query_port_attributes_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_query_port_attributes_reply`]: XcbXv::xcb_xv_query_port_attributes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_port_attributes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -903,9 +1243,14 @@ impl Default for xcb_xv_query_port_attributes_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_query_port_attributes.
+/// The opcode for `Xv::QueryPortAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_query_port_attributes_request_t`].
 pub const XCB_XV_QUERY_PORT_ATTRIBUTES: u8 = 15i32 as u8;
 
+/// The `Xv::QueryPortAttributes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_port_attributes_request_t {
@@ -921,6 +1266,11 @@ impl Default for xcb_xv_query_port_attributes_request_t {
     }
 }
 
+/// The `Xv::QueryPortAttributes` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attributes`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_port_attributes_reply_t {
@@ -939,9 +1289,15 @@ impl Default for xcb_xv_query_port_attributes_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::ListImageFormats` request.
+///
+/// Pass this cookie to [`xcb_xv_list_image_formats_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_list_image_formats_reply`]: XcbXv::xcb_xv_list_image_formats_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_list_image_formats_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -951,9 +1307,14 @@ impl Default for xcb_xv_list_image_formats_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_list_image_formats.
+/// The opcode for `Xv::ListImageFormats` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_list_image_formats_request_t`].
 pub const XCB_XV_LIST_IMAGE_FORMATS: u8 = 16i32 as u8;
 
+/// The `Xv::ListImageFormats` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_list_image_formats_request_t {
@@ -969,6 +1330,11 @@ impl Default for xcb_xv_list_image_formats_request_t {
     }
 }
 
+/// The `Xv::ListImageFormats` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `format`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_list_image_formats_reply_t {
@@ -986,9 +1352,15 @@ impl Default for xcb_xv_list_image_formats_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Xv::QueryImageAttributes` request.
+///
+/// Pass this cookie to [`xcb_xv_query_image_attributes_reply`] to retrieve the reply.
+///
+/// [`xcb_xv_query_image_attributes_reply`]: XcbXv::xcb_xv_query_image_attributes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_image_attributes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -998,9 +1370,14 @@ impl Default for xcb_xv_query_image_attributes_cookie_t {
     }
 }
 
-/// Opcode for xcb_xv_query_image_attributes.
+/// The opcode for `Xv::QueryImageAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_query_image_attributes_request_t`].
 pub const XCB_XV_QUERY_IMAGE_ATTRIBUTES: u8 = 17i32 as u8;
 
+/// The `Xv::QueryImageAttributes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_image_attributes_request_t {
@@ -1019,6 +1396,12 @@ impl Default for xcb_xv_query_image_attributes_request_t {
     }
 }
 
+/// The `Xv::QueryImageAttributes` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pitches`
+/// - `offsets`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_query_image_attributes_reply_t {
@@ -1039,9 +1422,18 @@ impl Default for xcb_xv_query_image_attributes_reply_t {
     }
 }
 
-/// Opcode for xcb_xv_put_image.
+/// The opcode for `Xv::PutImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_put_image_request_t`].
 pub const XCB_XV_PUT_IMAGE: u8 = 18i32 as u8;
 
+/// The `Xv::PutImage` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_put_image_request_t {
@@ -1070,9 +1462,14 @@ impl Default for xcb_xv_put_image_request_t {
     }
 }
 
-/// Opcode for xcb_xv_shm_put_image.
+/// The opcode for `Xv::ShmPutImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXv::xcb_xv_id()`], then the type of the request is
+/// [`xcb_xv_shm_put_image_request_t`].
 pub const XCB_XV_SHM_PUT_IMAGE: u8 = 19i32 as u8;
 
+/// The `Xv::ShmPutImage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xv_shm_put_image_request_t {
@@ -1181,7 +1578,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_query_extension_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_query_extension_reply_t,
+        ) -> *mut xcb_xv_query_extension_reply_t,
     >,
     xcb_xv_query_adaptors_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xv_query_adaptors: LazySymbol<
@@ -1200,7 +1597,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_query_adaptors_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_query_adaptors_reply_t,
+        ) -> *mut xcb_xv_query_adaptors_reply_t,
     >,
     xcb_xv_query_encodings_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xv_query_encodings: LazySymbol<
@@ -1219,7 +1616,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_query_encodings_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_query_encodings_reply_t,
+        ) -> *mut xcb_xv_query_encodings_reply_t,
     >,
     xcb_xv_grab_port: LazySymbol<
         unsafe fn(
@@ -1240,7 +1637,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_grab_port_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_grab_port_reply_t,
+        ) -> *mut xcb_xv_grab_port_reply_t,
     >,
     xcb_xv_ungrab_port_checked: LazySymbol<
         unsafe fn(
@@ -1445,7 +1842,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_query_best_size_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_query_best_size_reply_t,
+        ) -> *mut xcb_xv_query_best_size_reply_t,
     >,
     xcb_xv_set_port_attribute_checked: LazySymbol<
         unsafe fn(
@@ -1482,7 +1879,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_get_port_attribute_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_get_port_attribute_reply_t,
+        ) -> *mut xcb_xv_get_port_attribute_reply_t,
     >,
     xcb_xv_query_port_attributes_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xv_query_port_attributes: LazySymbol<
@@ -1509,7 +1906,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_query_port_attributes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_query_port_attributes_reply_t,
+        ) -> *mut xcb_xv_query_port_attributes_reply_t,
     >,
     xcb_xv_list_image_formats_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xv_list_image_formats: LazySymbol<
@@ -1539,7 +1936,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_list_image_formats_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_list_image_formats_reply_t,
+        ) -> *mut xcb_xv_list_image_formats_reply_t,
     >,
     xcb_xv_query_image_attributes_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xv_query_image_attributes: LazySymbol<
@@ -1579,7 +1976,7 @@ pub(crate) struct XcbXvXv {
             c: *mut xcb_connection_t,
             cookie: xcb_xv_query_image_attributes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xv_query_image_attributes_reply_t,
+        ) -> *mut xcb_xv_query_image_attributes_reply_t,
     >,
     xcb_xv_put_image_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void, data_len: u32) -> c_int>,
     xcb_xv_put_image_checked: LazySymbol<
@@ -1694,6 +2091,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_xv")]
 impl XcbXv {
+    /// The libxcb identifier of the `Xv` extension.
+    #[inline]
     pub fn xcb_xv_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xv_id) }
     }
@@ -1704,6 +2103,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_id)
     }
 
+    /// Advances a `xcb_xv_port_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_port_next(&self, i: *mut xcb_xv_port_iterator_t) {
         sym!(self, xcb_xv_port_next)(i)
     }
@@ -1714,6 +2115,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_port_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_port_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_port_end(&self, i: xcb_xv_port_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_xv_port_end)(i)
     }
@@ -1724,6 +2127,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_port_end)
     }
 
+    /// Advances a `xcb_xv_encoding_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_next(&self, i: *mut xcb_xv_encoding_iterator_t) {
         sym!(self, xcb_xv_encoding_next)(i)
     }
@@ -1734,6 +2139,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_encoding_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_end(
         &self,
         i: xcb_xv_encoding_iterator_t,
@@ -1747,6 +2154,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_end)
     }
 
+    /// Advances a `xcb_xv_rational_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_rational_next(&self, i: *mut xcb_xv_rational_iterator_t) {
         sym!(self, xcb_xv_rational_next)(i)
     }
@@ -1757,6 +2166,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_rational_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_rational_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_rational_end(
         &self,
         i: xcb_xv_rational_iterator_t,
@@ -1770,6 +2181,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_rational_end)
     }
 
+    /// Advances a `xcb_xv_format_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_format_next(&self, i: *mut xcb_xv_format_iterator_t) {
         sym!(self, xcb_xv_format_next)(i)
     }
@@ -1780,6 +2193,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_format_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_format_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_format_end(&self, i: xcb_xv_format_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_xv_format_end)(i)
     }
@@ -1790,6 +2205,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_format_end)
     }
 
+    /// Computes the size of a `xcb_xv_adaptor_info_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_adaptor_info_sizeof)(_buffer)
     }
@@ -1800,6 +2217,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_sizeof)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_xv_adaptor_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_name(&self, r: *const xcb_xv_adaptor_info_t) -> *mut c_char {
         sym!(self, xcb_xv_adaptor_info_name)(r)
     }
@@ -1810,6 +2229,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_xv_adaptor_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_name_length(&self, r: *const xcb_xv_adaptor_info_t) -> c_int {
         sym!(self, xcb_xv_adaptor_info_name_length)(r)
     }
@@ -1820,6 +2241,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_xv_adaptor_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_name_end(
         &self,
         r: *const xcb_xv_adaptor_info_t,
@@ -1833,6 +2257,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_name_end)
     }
 
+    /// Returns a pointer to the `formats` field of a `xcb_xv_adaptor_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_formats(
         &self,
         r: *const xcb_xv_adaptor_info_t,
@@ -1846,6 +2272,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_formats)
     }
 
+    /// Returns the number of elements of the `formats` field of a `xcb_xv_adaptor_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_formats_length(
         &self,
         r: *const xcb_xv_adaptor_info_t,
@@ -1859,6 +2287,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_formats_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `formats` field of a `xcb_xv_adaptor_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_formats_iterator(
         &self,
         r: *const xcb_xv_adaptor_info_t,
@@ -1872,6 +2303,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_formats_iterator)
     }
 
+    /// Advances a `xcb_xv_adaptor_info_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_next(&self, i: *mut xcb_xv_adaptor_info_iterator_t) {
         sym!(self, xcb_xv_adaptor_info_next)(i)
     }
@@ -1882,6 +2315,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_adaptor_info_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_adaptor_info_end(
         &self,
         i: xcb_xv_adaptor_info_iterator_t,
@@ -1895,6 +2330,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_adaptor_info_end)
     }
 
+    /// Computes the size of a `xcb_xv_encoding_info_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_info_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_encoding_info_sizeof)(_buffer)
     }
@@ -1905,6 +2342,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_info_sizeof)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_xv_encoding_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_info_name(
         &self,
         r: *const xcb_xv_encoding_info_t,
@@ -1918,6 +2357,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_info_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_xv_encoding_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_info_name_length(
         &self,
         r: *const xcb_xv_encoding_info_t,
@@ -1931,6 +2372,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_info_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_xv_encoding_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_info_name_end(
         &self,
         r: *const xcb_xv_encoding_info_t,
@@ -1944,6 +2388,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_info_name_end)
     }
 
+    /// Advances a `xcb_xv_encoding_info_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_info_next(&self, i: *mut xcb_xv_encoding_info_iterator_t) {
         sym!(self, xcb_xv_encoding_info_next)(i)
     }
@@ -1954,6 +2400,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_info_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_encoding_info_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_encoding_info_end(
         &self,
         i: xcb_xv_encoding_info_iterator_t,
@@ -1967,6 +2415,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_encoding_info_end)
     }
 
+    /// Computes the size of a `xcb_xv_image_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_image_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_image_sizeof)(_buffer)
     }
@@ -1977,6 +2427,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_sizeof)
     }
 
+    /// Returns a pointer to the `pitches` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_pitches(&self, r: *const xcb_xv_image_t) -> *mut u32 {
         sym!(self, xcb_xv_image_pitches)(r)
     }
@@ -1987,6 +2439,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_pitches)
     }
 
+    /// Returns the number of elements of the `pitches` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_pitches_length(&self, r: *const xcb_xv_image_t) -> c_int {
         sym!(self, xcb_xv_image_pitches_length)(r)
     }
@@ -1997,6 +2451,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_pitches_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `pitches` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_pitches_end(
         &self,
         r: *const xcb_xv_image_t,
@@ -2010,6 +2467,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_pitches_end)
     }
 
+    /// Returns a pointer to the `offsets` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_offsets(&self, r: *const xcb_xv_image_t) -> *mut u32 {
         sym!(self, xcb_xv_image_offsets)(r)
     }
@@ -2020,6 +2479,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_offsets)
     }
 
+    /// Returns the number of elements of the `offsets` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_offsets_length(&self, r: *const xcb_xv_image_t) -> c_int {
         sym!(self, xcb_xv_image_offsets_length)(r)
     }
@@ -2030,6 +2491,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_offsets_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `offsets` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_offsets_end(
         &self,
         r: *const xcb_xv_image_t,
@@ -2043,6 +2507,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_offsets_end)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_data(&self, r: *const xcb_xv_image_t) -> *mut u8 {
         sym!(self, xcb_xv_image_data)(r)
     }
@@ -2053,6 +2519,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_data_length(&self, r: *const xcb_xv_image_t) -> c_int {
         sym!(self, xcb_xv_image_data_length)(r)
     }
@@ -2063,6 +2531,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_xv_image_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_image_data_end(&self, r: *const xcb_xv_image_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_xv_image_data_end)(r)
     }
@@ -2073,6 +2544,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_data_end)
     }
 
+    /// Advances a `xcb_xv_image_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_image_next(&self, i: *mut xcb_xv_image_iterator_t) {
         sym!(self, xcb_xv_image_next)(i)
     }
@@ -2083,6 +2556,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_image_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_image_end(&self, i: xcb_xv_image_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_xv_image_end)(i)
     }
@@ -2093,6 +2568,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_end)
     }
 
+    /// Computes the size of a `xcb_xv_attribute_info_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_attribute_info_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_attribute_info_sizeof)(_buffer)
     }
@@ -2103,6 +2580,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_attribute_info_sizeof)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_xv_attribute_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_attribute_info_name(
         &self,
         r: *const xcb_xv_attribute_info_t,
@@ -2116,6 +2595,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_attribute_info_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_xv_attribute_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_attribute_info_name_length(
         &self,
         r: *const xcb_xv_attribute_info_t,
@@ -2129,6 +2610,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_attribute_info_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_xv_attribute_info_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_attribute_info_name_end(
         &self,
         r: *const xcb_xv_attribute_info_t,
@@ -2142,6 +2626,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_attribute_info_name_end)
     }
 
+    /// Advances a `xcb_xv_attribute_info_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_attribute_info_next(&self, i: *mut xcb_xv_attribute_info_iterator_t) {
         sym!(self, xcb_xv_attribute_info_next)(i)
     }
@@ -2152,6 +2638,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_attribute_info_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_attribute_info_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_attribute_info_end(
         &self,
         i: xcb_xv_attribute_info_iterator_t,
@@ -2165,6 +2653,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_attribute_info_end)
     }
 
+    /// Advances a `xcb_xv_image_format_info_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xv_image_format_info_next(
         &self,
         i: *mut xcb_xv_image_format_info_iterator_t,
@@ -2178,6 +2668,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_format_info_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xv_image_format_info_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xv_image_format_info_end(
         &self,
         i: xcb_xv_image_format_info_iterator_t,
@@ -2191,14 +2683,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_image_format_info_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::QueryExtension` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_extension_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_extension_reply`]: Self::xcb_xv_query_extension_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_extension(
         &self,
         c: *mut xcb_connection_t,
@@ -2212,17 +2704,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_extension)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::QueryExtension` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_extension_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_extension_reply`]: Self::xcb_xv_query_extension_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_extension_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2236,26 +2725,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_extension_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_query_extension_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::QueryExtension` request.
+    #[inline]
     pub unsafe fn xcb_xv_query_extension_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_query_extension_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_query_extension_reply_t {
+    ) -> *mut xcb_xv_query_extension_reply_t {
         sym!(self, xcb_xv_query_extension_reply)(c, cookie, e)
     }
 
@@ -2265,6 +2742,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_extension_reply)
     }
 
+    /// Computes the size of a `xcb_xv_query_adaptors_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_query_adaptors_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_query_adaptors_sizeof)(_buffer)
     }
@@ -2275,14 +2754,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_adaptors_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::QueryAdaptors` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_adaptors_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_adaptors_reply`]: Self::xcb_xv_query_adaptors_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_adaptors(
         &self,
         c: *mut xcb_connection_t,
@@ -2297,17 +2776,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_adaptors)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::QueryAdaptors` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_adaptors_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_adaptors_reply`]: Self::xcb_xv_query_adaptors_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_adaptors_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2322,6 +2798,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_adaptors_unchecked)
     }
 
+    /// Returns the number of elements of the `info` field of a `xcb_xv_query_adaptors_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_adaptors_info_length(
         &self,
         r: *const xcb_xv_query_adaptors_reply_t,
@@ -2335,6 +2813,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_adaptors_info_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `info` field of a `xcb_xv_query_adaptors_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_adaptors_info_iterator(
         &self,
         r: *const xcb_xv_query_adaptors_reply_t,
@@ -2348,26 +2829,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_adaptors_info_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_query_adaptors_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::QueryAdaptors` request.
+    #[inline]
     pub unsafe fn xcb_xv_query_adaptors_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_query_adaptors_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_query_adaptors_reply_t {
+    ) -> *mut xcb_xv_query_adaptors_reply_t {
         sym!(self, xcb_xv_query_adaptors_reply)(c, cookie, e)
     }
 
@@ -2377,6 +2846,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_adaptors_reply)
     }
 
+    /// Computes the size of a `xcb_xv_query_encodings_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_query_encodings_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_query_encodings_sizeof)(_buffer)
     }
@@ -2387,14 +2858,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_encodings_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::QueryEncodings` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_encodings_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_encodings_reply`]: Self::xcb_xv_query_encodings_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_encodings(
         &self,
         c: *mut xcb_connection_t,
@@ -2409,17 +2880,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_encodings)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::QueryEncodings` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_encodings_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_encodings_reply`]: Self::xcb_xv_query_encodings_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_encodings_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2434,6 +2902,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_encodings_unchecked)
     }
 
+    /// Returns the number of elements of the `info` field of a `xcb_xv_query_encodings_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_encodings_info_length(
         &self,
         r: *const xcb_xv_query_encodings_reply_t,
@@ -2447,6 +2917,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_encodings_info_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `info` field of a `xcb_xv_query_encodings_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_encodings_info_iterator(
         &self,
         r: *const xcb_xv_query_encodings_reply_t,
@@ -2460,26 +2933,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_encodings_info_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_query_encodings_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::QueryEncodings` request.
+    #[inline]
     pub unsafe fn xcb_xv_query_encodings_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_query_encodings_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_query_encodings_reply_t {
+    ) -> *mut xcb_xv_query_encodings_reply_t {
         sym!(self, xcb_xv_query_encodings_reply)(c, cookie, e)
     }
 
@@ -2489,14 +2950,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_encodings_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::GrabPort` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_grab_port_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_grab_port_reply`]: Self::xcb_xv_grab_port_reply
+    #[inline]
     pub unsafe fn xcb_xv_grab_port(
         &self,
         c: *mut xcb_connection_t,
@@ -2512,17 +2973,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_grab_port)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::GrabPort` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_grab_port_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_grab_port_reply`]: Self::xcb_xv_grab_port_reply
+    #[inline]
     pub unsafe fn xcb_xv_grab_port_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2538,26 +2996,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_grab_port_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_grab_port_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::GrabPort` request.
+    #[inline]
     pub unsafe fn xcb_xv_grab_port_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_grab_port_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_grab_port_reply_t {
+    ) -> *mut xcb_xv_grab_port_reply_t {
         sym!(self, xcb_xv_grab_port_reply)(c, cookie, e)
     }
 
@@ -2567,17 +3013,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_grab_port_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::UngrabPort` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_ungrab_port_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2593,14 +3036,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_ungrab_port_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::UngrabPort` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_ungrab_port(
         &self,
         c: *mut xcb_connection_t,
@@ -2616,17 +3053,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_ungrab_port)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::PutVideo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_put_video_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2653,14 +3087,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_video_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::PutVideo` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_put_video(
         &self,
         c: *mut xcb_connection_t,
@@ -2687,17 +3115,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_video)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::PutStill` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_put_still_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2724,14 +3149,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_still_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::PutStill` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_put_still(
         &self,
         c: *mut xcb_connection_t,
@@ -2758,17 +3177,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_still)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::GetVideo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_get_video_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2795,14 +3211,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_get_video_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::GetVideo` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_get_video(
         &self,
         c: *mut xcb_connection_t,
@@ -2829,17 +3239,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_get_video)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::GetStill` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_get_still_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2866,14 +3273,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_get_still_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::GetStill` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_get_still(
         &self,
         c: *mut xcb_connection_t,
@@ -2900,17 +3301,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_get_still)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::StopVideo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_stop_video_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2926,14 +3324,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_stop_video_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::StopVideo` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_stop_video(
         &self,
         c: *mut xcb_connection_t,
@@ -2949,17 +3341,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_stop_video)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::SelectVideoNotify` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_select_video_notify_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2975,14 +3364,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_select_video_notify_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::SelectVideoNotify` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_select_video_notify(
         &self,
         c: *mut xcb_connection_t,
@@ -2998,17 +3381,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_select_video_notify)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::SelectPortNotify` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_select_port_notify_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3024,14 +3404,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_select_port_notify_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::SelectPortNotify` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_select_port_notify(
         &self,
         c: *mut xcb_connection_t,
@@ -3047,14 +3421,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_select_port_notify)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::QueryBestSize` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_best_size_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_best_size_reply`]: Self::xcb_xv_query_best_size_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_best_size(
         &self,
         c: *mut xcb_connection_t,
@@ -3074,17 +3448,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_best_size)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::QueryBestSize` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_best_size_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_best_size_reply`]: Self::xcb_xv_query_best_size_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_best_size_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3104,26 +3475,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_best_size_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_query_best_size_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::QueryBestSize` request.
+    #[inline]
     pub unsafe fn xcb_xv_query_best_size_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_query_best_size_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_query_best_size_reply_t {
+    ) -> *mut xcb_xv_query_best_size_reply_t {
         sym!(self, xcb_xv_query_best_size_reply)(c, cookie, e)
     }
 
@@ -3133,17 +3492,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_best_size_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::SetPortAttribute` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_set_port_attribute_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3160,14 +3516,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_set_port_attribute_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::SetPortAttribute` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_set_port_attribute(
         &self,
         c: *mut xcb_connection_t,
@@ -3184,14 +3534,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_set_port_attribute)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::GetPortAttribute` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_get_port_attribute_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_get_port_attribute_reply`]: Self::xcb_xv_get_port_attribute_reply
+    #[inline]
     pub unsafe fn xcb_xv_get_port_attribute(
         &self,
         c: *mut xcb_connection_t,
@@ -3207,17 +3557,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_get_port_attribute)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::GetPortAttribute` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_get_port_attribute_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_get_port_attribute_reply`]: Self::xcb_xv_get_port_attribute_reply
+    #[inline]
     pub unsafe fn xcb_xv_get_port_attribute_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3233,26 +3580,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_get_port_attribute_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_get_port_attribute_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::GetPortAttribute` request.
+    #[inline]
     pub unsafe fn xcb_xv_get_port_attribute_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_get_port_attribute_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_get_port_attribute_reply_t {
+    ) -> *mut xcb_xv_get_port_attribute_reply_t {
         sym!(self, xcb_xv_get_port_attribute_reply)(c, cookie, e)
     }
 
@@ -3262,6 +3597,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_get_port_attribute_reply)
     }
 
+    /// Computes the size of a `xcb_xv_query_port_attributes_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_query_port_attributes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_query_port_attributes_sizeof)(_buffer)
     }
@@ -3272,14 +3609,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_port_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::QueryPortAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_port_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_port_attributes_reply`]: Self::xcb_xv_query_port_attributes_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_port_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -3294,17 +3631,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_port_attributes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::QueryPortAttributes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_port_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_port_attributes_reply`]: Self::xcb_xv_query_port_attributes_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_port_attributes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3319,6 +3653,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_port_attributes_unchecked)
     }
 
+    /// Returns the number of elements of the `attributes` field of a `xcb_xv_query_port_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_port_attributes_attributes_length(
         &self,
         r: *const xcb_xv_query_port_attributes_reply_t,
@@ -3332,6 +3668,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_port_attributes_attributes_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `attributes` field of a `xcb_xv_query_port_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_port_attributes_attributes_iterator(
         &self,
         r: *const xcb_xv_query_port_attributes_reply_t,
@@ -3345,26 +3684,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_port_attributes_attributes_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_query_port_attributes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::QueryPortAttributes` request.
+    #[inline]
     pub unsafe fn xcb_xv_query_port_attributes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_query_port_attributes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_query_port_attributes_reply_t {
+    ) -> *mut xcb_xv_query_port_attributes_reply_t {
         sym!(self, xcb_xv_query_port_attributes_reply)(c, cookie, e)
     }
 
@@ -3374,6 +3701,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_port_attributes_reply)
     }
 
+    /// Computes the size of a `xcb_xv_list_image_formats_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_list_image_formats_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_list_image_formats_sizeof)(_buffer)
     }
@@ -3384,14 +3713,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_list_image_formats_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::ListImageFormats` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_list_image_formats_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_list_image_formats_reply`]: Self::xcb_xv_list_image_formats_reply
+    #[inline]
     pub unsafe fn xcb_xv_list_image_formats(
         &self,
         c: *mut xcb_connection_t,
@@ -3406,17 +3735,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_list_image_formats)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::ListImageFormats` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_list_image_formats_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_list_image_formats_reply`]: Self::xcb_xv_list_image_formats_reply
+    #[inline]
     pub unsafe fn xcb_xv_list_image_formats_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3431,6 +3757,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_list_image_formats_unchecked)
     }
 
+    /// Returns a pointer to the `format` field of a `xcb_xv_list_image_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_list_image_formats_format(
         &self,
         r: *const xcb_xv_list_image_formats_reply_t,
@@ -3444,6 +3772,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_list_image_formats_format)
     }
 
+    /// Returns the number of elements of the `format` field of a `xcb_xv_list_image_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_list_image_formats_format_length(
         &self,
         r: *const xcb_xv_list_image_formats_reply_t,
@@ -3457,6 +3787,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_list_image_formats_format_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `format` field of a `xcb_xv_list_image_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_list_image_formats_format_iterator(
         &self,
         r: *const xcb_xv_list_image_formats_reply_t,
@@ -3470,26 +3803,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_list_image_formats_format_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_list_image_formats_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::ListImageFormats` request.
+    #[inline]
     pub unsafe fn xcb_xv_list_image_formats_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_list_image_formats_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_list_image_formats_reply_t {
+    ) -> *mut xcb_xv_list_image_formats_reply_t {
         sym!(self, xcb_xv_list_image_formats_reply)(c, cookie, e)
     }
 
@@ -3499,6 +3820,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_list_image_formats_reply)
     }
 
+    /// Computes the size of a `xcb_xv_query_image_attributes_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xv_query_image_attributes_sizeof)(_buffer)
     }
@@ -3509,14 +3832,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::QueryImageAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_image_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_image_attributes_reply`]: Self::xcb_xv_query_image_attributes_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -3534,17 +3857,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Xv::QueryImageAttributes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xv_query_image_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xv_query_image_attributes_reply`]: Self::xcb_xv_query_image_attributes_reply
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3562,6 +3882,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_unchecked)
     }
 
+    /// Returns a pointer to the `pitches` field of a `xcb_xv_query_image_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_pitches(
         &self,
         r: *const xcb_xv_query_image_attributes_reply_t,
@@ -3575,6 +3897,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_pitches)
     }
 
+    /// Returns the number of elements of the `pitches` field of a `xcb_xv_query_image_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_pitches_length(
         &self,
         r: *const xcb_xv_query_image_attributes_reply_t,
@@ -3588,6 +3912,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_pitches_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `pitches` field of a `xcb_xv_query_image_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_pitches_end(
         &self,
         r: *const xcb_xv_query_image_attributes_reply_t,
@@ -3601,6 +3928,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_pitches_end)
     }
 
+    /// Returns a pointer to the `offsets` field of a `xcb_xv_query_image_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_offsets(
         &self,
         r: *const xcb_xv_query_image_attributes_reply_t,
@@ -3614,6 +3943,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_offsets)
     }
 
+    /// Returns the number of elements of the `offsets` field of a `xcb_xv_query_image_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_offsets_length(
         &self,
         r: *const xcb_xv_query_image_attributes_reply_t,
@@ -3627,6 +3958,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_offsets_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `offsets` field of a `xcb_xv_query_image_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_offsets_end(
         &self,
         r: *const xcb_xv_query_image_attributes_reply_t,
@@ -3640,26 +3974,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_offsets_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xv_query_image_attributes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Xv::QueryImageAttributes` request.
+    #[inline]
     pub unsafe fn xcb_xv_query_image_attributes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xv_query_image_attributes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xv_query_image_attributes_reply_t {
+    ) -> *mut xcb_xv_query_image_attributes_reply_t {
         sym!(self, xcb_xv_query_image_attributes_reply)(c, cookie, e)
     }
 
@@ -3669,6 +3991,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_query_image_attributes_reply)
     }
 
+    /// Computes the size of a `xcb_xv_put_image_request_t` object.
+    #[inline]
     pub unsafe fn xcb_xv_put_image_sizeof(&self, _buffer: *const c_void, data_len: u32) -> c_int {
         sym!(self, xcb_xv_put_image_sizeof)(_buffer, data_len)
     }
@@ -3679,17 +4003,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_image_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::PutImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_put_image_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3722,14 +4043,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_image_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::PutImage` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_put_image(
         &self,
         c: *mut xcb_connection_t,
@@ -3762,6 +4077,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_image)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_xv_put_image_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_put_image_data(&self, r: *const xcb_xv_put_image_request_t) -> *mut u8 {
         sym!(self, xcb_xv_put_image_data)(r)
     }
@@ -3772,6 +4089,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_image_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_xv_put_image_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_put_image_data_length(
         &self,
         r: *const xcb_xv_put_image_request_t,
@@ -3785,6 +4104,9 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_image_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_xv_put_image_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_xv_put_image_data_end(
         &self,
         r: *const xcb_xv_put_image_request_t,
@@ -3798,17 +4120,14 @@ impl XcbXv {
         has_sym!(self, xcb_xv_put_image_data_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Xv::ShmPutImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xv_shm_put_image_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3842,14 +4161,8 @@ impl XcbXv {
         has_sym!(self, xcb_xv_shm_put_image_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Xv::ShmPutImage` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xv_shm_put_image(
         &self,
         c: *mut xcb_connection_t,

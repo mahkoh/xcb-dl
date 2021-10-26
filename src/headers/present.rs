@@ -1,46 +1,168 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Present::Event` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Present::Event::ConfigureNotify`](XCB_PRESENT_EVENT_CONFIGURE_NOTIFY)
+/// - [`Present::Event::CompleteNotify`](XCB_PRESENT_EVENT_COMPLETE_NOTIFY)
+/// - [`Present::Event::IdleNotify`](XCB_PRESENT_EVENT_IDLE_NOTIFY)
+/// - [`Present::Event::RedirectNotify`](XCB_PRESENT_EVENT_REDIRECT_NOTIFY)
 pub type xcb_present_event_enum_t = u32;
+/// The `Present::Event::ConfigureNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_enum_t`].
 pub const XCB_PRESENT_EVENT_CONFIGURE_NOTIFY: xcb_present_event_enum_t = 0;
+/// The `Present::Event::CompleteNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_enum_t`].
 pub const XCB_PRESENT_EVENT_COMPLETE_NOTIFY: xcb_present_event_enum_t = 1;
+/// The `Present::Event::IdleNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_enum_t`].
 pub const XCB_PRESENT_EVENT_IDLE_NOTIFY: xcb_present_event_enum_t = 2;
+/// The `Present::Event::RedirectNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_enum_t`].
 pub const XCB_PRESENT_EVENT_REDIRECT_NOTIFY: xcb_present_event_enum_t = 3;
 
+/// The `Present::EventMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Present::EventMask::NoEvent`](XCB_PRESENT_EVENT_MASK_NO_EVENT)
+/// - [`Present::EventMask::ConfigureNotify`](XCB_PRESENT_EVENT_MASK_CONFIGURE_NOTIFY)
+/// - [`Present::EventMask::CompleteNotify`](XCB_PRESENT_EVENT_MASK_COMPLETE_NOTIFY)
+/// - [`Present::EventMask::IdleNotify`](XCB_PRESENT_EVENT_MASK_IDLE_NOTIFY)
+/// - [`Present::EventMask::RedirectNotify`](XCB_PRESENT_EVENT_MASK_REDIRECT_NOTIFY)
 pub type xcb_present_event_mask_t = u32;
+/// The `Present::EventMask::NoEvent` enum variant.
+///
+/// This is a variant of [`xcb_present_event_mask_t`].
 pub const XCB_PRESENT_EVENT_MASK_NO_EVENT: xcb_present_event_mask_t = 0;
+/// The `Present::EventMask::ConfigureNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_mask_t`].
 pub const XCB_PRESENT_EVENT_MASK_CONFIGURE_NOTIFY: xcb_present_event_mask_t = 1;
+/// The `Present::EventMask::CompleteNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_mask_t`].
 pub const XCB_PRESENT_EVENT_MASK_COMPLETE_NOTIFY: xcb_present_event_mask_t = 2;
+/// The `Present::EventMask::IdleNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_mask_t`].
 pub const XCB_PRESENT_EVENT_MASK_IDLE_NOTIFY: xcb_present_event_mask_t = 4;
+/// The `Present::EventMask::RedirectNotify` enum variant.
+///
+/// This is a variant of [`xcb_present_event_mask_t`].
 pub const XCB_PRESENT_EVENT_MASK_REDIRECT_NOTIFY: xcb_present_event_mask_t = 8;
 
+/// The `Present::Option` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Present::Option::None`](XCB_PRESENT_OPTION_NONE)
+/// - [`Present::Option::Async`](XCB_PRESENT_OPTION_ASYNC)
+/// - [`Present::Option::Copy`](XCB_PRESENT_OPTION_COPY)
+/// - [`Present::Option::UST`](XCB_PRESENT_OPTION_UST)
+/// - [`Present::Option::Suboptimal`](XCB_PRESENT_OPTION_SUBOPTIMAL)
 pub type xcb_present_option_t = u32;
+/// The `Present::Option::None` enum variant.
+///
+/// This is a variant of [`xcb_present_option_t`].
 pub const XCB_PRESENT_OPTION_NONE: xcb_present_option_t = 0;
+/// The `Present::Option::Async` enum variant.
+///
+/// This is a variant of [`xcb_present_option_t`].
 pub const XCB_PRESENT_OPTION_ASYNC: xcb_present_option_t = 1;
+/// The `Present::Option::Copy` enum variant.
+///
+/// This is a variant of [`xcb_present_option_t`].
 pub const XCB_PRESENT_OPTION_COPY: xcb_present_option_t = 2;
+/// The `Present::Option::UST` enum variant.
+///
+/// This is a variant of [`xcb_present_option_t`].
 pub const XCB_PRESENT_OPTION_UST: xcb_present_option_t = 4;
+/// The `Present::Option::Suboptimal` enum variant.
+///
+/// This is a variant of [`xcb_present_option_t`].
 pub const XCB_PRESENT_OPTION_SUBOPTIMAL: xcb_present_option_t = 8;
 
+/// The `Present::Capability` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Present::Capability::None`](XCB_PRESENT_CAPABILITY_NONE)
+/// - [`Present::Capability::Async`](XCB_PRESENT_CAPABILITY_ASYNC)
+/// - [`Present::Capability::Fence`](XCB_PRESENT_CAPABILITY_FENCE)
+/// - [`Present::Capability::UST`](XCB_PRESENT_CAPABILITY_UST)
 pub type xcb_present_capability_t = u32;
+/// The `Present::Capability::None` enum variant.
+///
+/// This is a variant of [`xcb_present_capability_t`].
 pub const XCB_PRESENT_CAPABILITY_NONE: xcb_present_capability_t = 0;
+/// The `Present::Capability::Async` enum variant.
+///
+/// This is a variant of [`xcb_present_capability_t`].
 pub const XCB_PRESENT_CAPABILITY_ASYNC: xcb_present_capability_t = 1;
+/// The `Present::Capability::Fence` enum variant.
+///
+/// This is a variant of [`xcb_present_capability_t`].
 pub const XCB_PRESENT_CAPABILITY_FENCE: xcb_present_capability_t = 2;
+/// The `Present::Capability::UST` enum variant.
+///
+/// This is a variant of [`xcb_present_capability_t`].
 pub const XCB_PRESENT_CAPABILITY_UST: xcb_present_capability_t = 4;
 
+/// The `Present::CompleteKind` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Present::CompleteKind::Pixmap`](XCB_PRESENT_COMPLETE_KIND_PIXMAP)
+/// - [`Present::CompleteKind::NotifyMSC`](XCB_PRESENT_COMPLETE_KIND_NOTIFY_MSC)
 pub type xcb_present_complete_kind_t = u32;
+/// The `Present::CompleteKind::Pixmap` enum variant.
+///
+/// This is a variant of [`xcb_present_complete_kind_t`].
 pub const XCB_PRESENT_COMPLETE_KIND_PIXMAP: xcb_present_complete_kind_t = 0;
+/// The `Present::CompleteKind::NotifyMSC` enum variant.
+///
+/// This is a variant of [`xcb_present_complete_kind_t`].
 pub const XCB_PRESENT_COMPLETE_KIND_NOTIFY_MSC: xcb_present_complete_kind_t = 1;
 
+/// The `Present::CompleteMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Present::CompleteMode::Copy`](XCB_PRESENT_COMPLETE_MODE_COPY)
+/// - [`Present::CompleteMode::Flip`](XCB_PRESENT_COMPLETE_MODE_FLIP)
+/// - [`Present::CompleteMode::Skip`](XCB_PRESENT_COMPLETE_MODE_SKIP)
+/// - [`Present::CompleteMode::SuboptimalCopy`](XCB_PRESENT_COMPLETE_MODE_SUBOPTIMAL_COPY)
 pub type xcb_present_complete_mode_t = u32;
+/// The `Present::CompleteMode::Copy` enum variant.
+///
+/// This is a variant of [`xcb_present_complete_mode_t`].
 pub const XCB_PRESENT_COMPLETE_MODE_COPY: xcb_present_complete_mode_t = 0;
+/// The `Present::CompleteMode::Flip` enum variant.
+///
+/// This is a variant of [`xcb_present_complete_mode_t`].
 pub const XCB_PRESENT_COMPLETE_MODE_FLIP: xcb_present_complete_mode_t = 1;
+/// The `Present::CompleteMode::Skip` enum variant.
+///
+/// This is a variant of [`xcb_present_complete_mode_t`].
 pub const XCB_PRESENT_COMPLETE_MODE_SKIP: xcb_present_complete_mode_t = 2;
+/// The `Present::CompleteMode::SuboptimalCopy` enum variant.
+///
+/// This is a variant of [`xcb_present_complete_mode_t`].
 pub const XCB_PRESENT_COMPLETE_MODE_SUBOPTIMAL_COPY: xcb_present_complete_mode_t = 3;
 
+/// The `Present::Notify` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_notify_t {
@@ -54,11 +176,15 @@ impl Default for xcb_present_notify_t {
     }
 }
 
+/// An iterator over `Present::Notify` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_notify_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_present_notify_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -68,9 +194,15 @@ impl Default for xcb_present_notify_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `Present::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_present_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_present_query_version_reply`]: XcbPresent::xcb_present_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -80,9 +212,14 @@ impl Default for xcb_present_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_present_query_version.
+/// The opcode for `Present::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbPresent::xcb_present_id()`], then the type of the request is
+/// [`xcb_present_query_version_request_t`].
 pub const XCB_PRESENT_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `Present::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_query_version_request_t {
@@ -99,6 +236,7 @@ impl Default for xcb_present_query_version_request_t {
     }
 }
 
+/// The `Present::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_query_version_reply_t {
@@ -116,9 +254,18 @@ impl Default for xcb_present_query_version_reply_t {
     }
 }
 
-/// Opcode for xcb_present_pixmap.
+/// The opcode for `Present::Pixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbPresent::xcb_present_id()`], then the type of the request is
+/// [`xcb_present_pixmap_request_t`].
 pub const XCB_PRESENT_PIXMAP: u8 = 1i32 as u8;
 
+/// The `Present::Pixmap` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `notifies`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_pixmap_request_t {
@@ -148,9 +295,14 @@ impl Default for xcb_present_pixmap_request_t {
     }
 }
 
-/// Opcode for xcb_present_notify_msc.
+/// The opcode for `Present::NotifyMSC` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbPresent::xcb_present_id()`], then the type of the request is
+/// [`xcb_present_notify_msc_request_t`].
 pub const XCB_PRESENT_NOTIFY_MSC: u8 = 2i32 as u8;
 
+/// The `Present::NotifyMSC` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_notify_msc_request_t {
@@ -171,13 +323,18 @@ impl Default for xcb_present_notify_msc_request_t {
     }
 }
 
+/// The `Present::EVENT` type.
 pub type xcb_present_event_t = u32;
 
+/// An iterator over `Present::EVENT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_event_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_present_event_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -187,9 +344,14 @@ impl Default for xcb_present_event_iterator_t {
     }
 }
 
-/// Opcode for xcb_present_select_input.
+/// The opcode for `Present::SelectInput` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbPresent::xcb_present_id()`], then the type of the request is
+/// [`xcb_present_select_input_request_t`].
 pub const XCB_PRESENT_SELECT_INPUT: u8 = 3i32 as u8;
 
+/// The `Present::SelectInput` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_select_input_request_t {
@@ -207,9 +369,15 @@ impl Default for xcb_present_select_input_request_t {
     }
 }
 
+/// The cookie for the reply to a `Present::QueryCapabilities` request.
+///
+/// Pass this cookie to [`xcb_present_query_capabilities_reply`] to retrieve the reply.
+///
+/// [`xcb_present_query_capabilities_reply`]: XcbPresent::xcb_present_query_capabilities_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_query_capabilities_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -219,9 +387,14 @@ impl Default for xcb_present_query_capabilities_cookie_t {
     }
 }
 
-/// Opcode for xcb_present_query_capabilities.
+/// The opcode for `Present::QueryCapabilities` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbPresent::xcb_present_id()`], then the type of the request is
+/// [`xcb_present_query_capabilities_request_t`].
 pub const XCB_PRESENT_QUERY_CAPABILITIES: u8 = 4i32 as u8;
 
+/// The `Present::QueryCapabilities` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_query_capabilities_request_t {
@@ -237,6 +410,7 @@ impl Default for xcb_present_query_capabilities_request_t {
     }
 }
 
+/// The `Present::QueryCapabilities` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_query_capabilities_reply_t {
@@ -253,9 +427,13 @@ impl Default for xcb_present_query_capabilities_reply_t {
     }
 }
 
-/// Opcode for xcb_present_generic.
+/// The opcode for `Present::Generic` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_present_generic_event_t`].
 pub const XCB_PRESENT_GENERIC: u8 = 0i32 as u8;
 
+/// The `Present::Generic` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_generic_event_t {
@@ -274,9 +452,14 @@ impl Default for xcb_present_generic_event_t {
     }
 }
 
-/// Opcode for xcb_present_configure_notify.
-pub const XCB_PRESENT_CONFIGURE_NOTIFY: u8 = 0i32 as u8;
+/// The opcode for `Present::ConfigureNotify` events.
+///
+/// If this value appears in [`xcb_ge_generic_event_t::event_type`], and
+/// [`xcb_ge_generic_event_t::extension`] is the opcode of the `Present` extension,
+/// then the type of the event is [`xcb_present_configure_notify_event_t`].
+pub const XCB_PRESENT_CONFIGURE_NOTIFY: u16 = 0i32 as u16;
 
+/// The `Present::ConfigureNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_configure_notify_event_t {
@@ -306,9 +489,14 @@ impl Default for xcb_present_configure_notify_event_t {
     }
 }
 
-/// Opcode for xcb_present_complete_notify.
-pub const XCB_PRESENT_COMPLETE_NOTIFY: u8 = 1i32 as u8;
+/// The opcode for `Present::CompleteNotify` events.
+///
+/// If this value appears in [`xcb_ge_generic_event_t::event_type`], and
+/// [`xcb_ge_generic_event_t::extension`] is the opcode of the `Present` extension,
+/// then the type of the event is [`xcb_present_complete_notify_event_t`].
+pub const XCB_PRESENT_COMPLETE_NOTIFY: u16 = 1i32 as u16;
 
+/// The `Present::CompleteNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C, packed)]
 pub struct xcb_present_complete_notify_event_t {
@@ -333,9 +521,14 @@ impl Default for xcb_present_complete_notify_event_t {
     }
 }
 
-/// Opcode for xcb_present_idle_notify.
-pub const XCB_PRESENT_IDLE_NOTIFY: u8 = 2i32 as u8;
+/// The opcode for `Present::IdleNotify` events.
+///
+/// If this value appears in [`xcb_ge_generic_event_t::event_type`], and
+/// [`xcb_ge_generic_event_t::extension`] is the opcode of the `Present` extension,
+/// then the type of the event is [`xcb_present_idle_notify_event_t`].
+pub const XCB_PRESENT_IDLE_NOTIFY: u16 = 2i32 as u16;
 
+/// The `Present::IdleNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_present_idle_notify_event_t {
@@ -359,9 +552,18 @@ impl Default for xcb_present_idle_notify_event_t {
     }
 }
 
-/// Opcode for xcb_present_redirect_notify.
-pub const XCB_PRESENT_REDIRECT_NOTIFY: u8 = 3i32 as u8;
+/// The opcode for `Present::RedirectNotify` events.
+///
+/// If this value appears in [`xcb_ge_generic_event_t::event_type`], and
+/// [`xcb_ge_generic_event_t::extension`] is the opcode of the `Present` extension,
+/// then the type of the event is [`xcb_present_redirect_notify_event_t`].
+pub const XCB_PRESENT_REDIRECT_NOTIFY: u16 = 3i32 as u16;
 
+/// The `Present::RedirectNotify` event.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `notifies`
 #[derive(Copy, Clone, Debug)]
 #[repr(C, packed)]
 pub struct xcb_present_redirect_notify_event_t {
@@ -425,7 +627,7 @@ pub(crate) struct XcbPresentPresent {
             c: *mut xcb_connection_t,
             cookie: xcb_present_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_present_query_version_reply_t,
+        ) -> *mut xcb_present_query_version_reply_t,
     >,
     xcb_present_pixmap_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, notifies_len: u32) -> c_int>,
@@ -528,7 +730,7 @@ pub(crate) struct XcbPresentPresent {
             c: *mut xcb_connection_t,
             cookie: xcb_present_query_capabilities_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_present_query_capabilities_reply_t,
+        ) -> *mut xcb_present_query_capabilities_reply_t,
     >,
     xcb_present_redirect_notify_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, notifies_len: u32) -> c_int>,
@@ -564,6 +766,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_present")]
 impl XcbPresent {
+    /// The libxcb identifier of the `Present` extension.
+    #[inline]
     pub fn xcb_present_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_present_id) }
     }
@@ -574,6 +778,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_id)
     }
 
+    /// Advances a `xcb_present_notify_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_present_notify_next(&self, i: *mut xcb_present_notify_iterator_t) {
         sym!(self, xcb_present_notify_next)(i)
     }
@@ -584,6 +790,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_notify_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_present_notify_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_present_notify_end(
         &self,
         i: xcb_present_notify_iterator_t,
@@ -597,14 +805,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_notify_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Present::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_present_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_present_query_version_reply`]: Self::xcb_present_query_version_reply
+    #[inline]
     pub unsafe fn xcb_present_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -620,17 +828,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Present::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_present_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_present_query_version_reply`]: Self::xcb_present_query_version_reply
+    #[inline]
     pub unsafe fn xcb_present_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -646,26 +851,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_present_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Present::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_present_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_present_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_present_query_version_reply_t {
+    ) -> *mut xcb_present_query_version_reply_t {
         sym!(self, xcb_present_query_version_reply)(c, cookie, e)
     }
 
@@ -675,6 +868,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_query_version_reply)
     }
 
+    /// Computes the size of a `xcb_present_pixmap_request_t` object.
+    #[inline]
     pub unsafe fn xcb_present_pixmap_sizeof(
         &self,
         _buffer: *const c_void,
@@ -689,17 +884,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_pixmap_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Present::Pixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_present_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -747,14 +939,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_pixmap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Present::Pixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_present_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -802,6 +988,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_pixmap)
     }
 
+    /// Returns a pointer to the `notifies` field of a `xcb_present_pixmap_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_present_pixmap_notifies(
         &self,
         r: *const xcb_present_pixmap_request_t,
@@ -815,6 +1003,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_pixmap_notifies)
     }
 
+    /// Returns the number of elements of the `notifies` field of a `xcb_present_pixmap_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_present_pixmap_notifies_length(
         &self,
         r: *const xcb_present_pixmap_request_t,
@@ -828,6 +1018,9 @@ impl XcbPresent {
         has_sym!(self, xcb_present_pixmap_notifies_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `notifies` field of a `xcb_present_pixmap_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_present_pixmap_notifies_iterator(
         &self,
         r: *const xcb_present_pixmap_request_t,
@@ -841,17 +1034,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_pixmap_notifies_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Present::NotifyMSC` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_present_notify_msc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -872,14 +1062,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_notify_msc_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Present::NotifyMSC` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_present_notify_msc(
         &self,
         c: *mut xcb_connection_t,
@@ -898,6 +1082,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_notify_msc)
     }
 
+    /// Advances a `xcb_present_event_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_present_event_next(&self, i: *mut xcb_present_event_iterator_t) {
         sym!(self, xcb_present_event_next)(i)
     }
@@ -908,6 +1094,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_event_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_present_event_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_present_event_end(
         &self,
         i: xcb_present_event_iterator_t,
@@ -921,17 +1109,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_event_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Present::SelectInput` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_present_select_input_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -948,14 +1133,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_select_input_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Present::SelectInput` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_present_select_input(
         &self,
         c: *mut xcb_connection_t,
@@ -972,14 +1151,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_select_input)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Present::QueryCapabilities` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_present_query_capabilities_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_present_query_capabilities_reply`]: Self::xcb_present_query_capabilities_reply
+    #[inline]
     pub unsafe fn xcb_present_query_capabilities(
         &self,
         c: *mut xcb_connection_t,
@@ -994,17 +1173,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_query_capabilities)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Present::QueryCapabilities` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_present_query_capabilities_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_present_query_capabilities_reply`]: Self::xcb_present_query_capabilities_reply
+    #[inline]
     pub unsafe fn xcb_present_query_capabilities_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1019,26 +1195,14 @@ impl XcbPresent {
         has_sym!(self, xcb_present_query_capabilities_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_present_query_capabilities_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Present::QueryCapabilities` request.
+    #[inline]
     pub unsafe fn xcb_present_query_capabilities_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_present_query_capabilities_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_present_query_capabilities_reply_t {
+    ) -> *mut xcb_present_query_capabilities_reply_t {
         sym!(self, xcb_present_query_capabilities_reply)(c, cookie, e)
     }
 
@@ -1048,6 +1212,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_query_capabilities_reply)
     }
 
+    /// Computes the size of a `xcb_present_redirect_notify_event_t` object.
+    #[inline]
     pub unsafe fn xcb_present_redirect_notify_sizeof(
         &self,
         _buffer: *const c_void,
@@ -1062,6 +1228,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_redirect_notify_sizeof)
     }
 
+    /// Returns a pointer to the `notifies` field of a `xcb_present_redirect_notify_event_t` struct.
+    #[inline]
     pub unsafe fn xcb_present_redirect_notify_notifies(
         &self,
         r: *const xcb_present_redirect_notify_event_t,
@@ -1075,6 +1243,8 @@ impl XcbPresent {
         has_sym!(self, xcb_present_redirect_notify_notifies)
     }
 
+    /// Returns the number of elements of the `notifies` field of a `xcb_present_redirect_notify_event_t` struct.
+    #[inline]
     pub unsafe fn xcb_present_redirect_notify_notifies_length(
         &self,
         r: *const xcb_present_redirect_notify_event_t,
@@ -1088,6 +1258,9 @@ impl XcbPresent {
         has_sym!(self, xcb_present_redirect_notify_notifies_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `notifies` field of a `xcb_present_redirect_notify_event_t` struct.
+    #[inline]
     pub unsafe fn xcb_present_redirect_notify_notifies_iterator(
         &self,
         r: *const xcb_present_redirect_notify_event_t,

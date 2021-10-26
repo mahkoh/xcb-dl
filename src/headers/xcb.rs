@@ -19,14 +19,10 @@ pub const XCB_CONN_CLOSED_INVALID_SCREEN: c_int = 6;
 /// Connection closed because some FD passing operation failed
 pub const XCB_CONN_CLOSED_FDPASSING_FAILED: c_int = 7;
 
-/// XCB connection structure
-/// An opaque structure that contain all data that XCB needs to communicate
-/// with an X server.
+/// XCB Connection structure.
 pub enum xcb_connection_t {}
 
-pub enum xcb_special_event_t {}
-
-/// Generic iterator
+/// Generic iterator.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_generic_iterator_t {
@@ -35,17 +31,29 @@ pub struct xcb_generic_iterator_t {
     pub index: c_int,
 }
 
-/// Generic reply
+impl Default for xcb_generic_iterator_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
+}
+
+/// Generic reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_generic_reply_t {
     pub response_type: u8,
-    pad0: u8,
+    pub pad0: u8,
     pub sequence: u16,
     pub length: u32,
 }
 
-/// Generic event
+impl Default for xcb_generic_reply_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
+}
+
+/// Generic event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_generic_event_t {
@@ -56,29 +64,29 @@ pub struct xcb_generic_event_t {
     pub full_sequence: u32,
 }
 
+impl Default for xcb_generic_event_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
+}
+
 /// Raw Generic event.
-///
-/// A generic event structure as used on the wire, i.e., without the full_sequence field
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_raw_generic_event_t {
-    /// Type of the response
     pub response_type: u8,
-    /// Padding
     pub pad0: u8,
-    /// Sequence number
     pub sequence: u16,
-    /// Padding
     pub pad: [u32; 7],
 }
 
-/// GE event
-///
-/// An event as sent by the XGE extension. The length field specifies the
-/// number of 4-byte blocks trailing the struct.
-///
-/// Deprecated Since some fields in this struct have unfortunate names, it is
-/// recommended to use xcb_ge_generic_event_t instead.
+impl Default for xcb_raw_generic_event_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
+}
+
+/// GE event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_ge_event_t {
@@ -92,7 +100,13 @@ pub struct xcb_ge_event_t {
     pub full_sequence: u32,
 }
 
-/// Generic error
+impl Default for xcb_ge_event_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
+}
+
+/// Generic error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_generic_error_t {
@@ -107,12 +121,24 @@ pub struct xcb_generic_error_t {
     pub full_sequence: u32,
 }
 
-/// Generic cookie
+impl Default for xcb_generic_error_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
+}
+
+/// Generic cookie.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_void_cookie_t {
     /// sequence number
     pub sequence: c_uint,
+}
+
+impl Default for xcb_void_cookie_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
 }
 
 /// XCB_NONE is the universal null resource or null atom parameter value for many core X requests
@@ -125,22 +151,80 @@ pub const XCB_CURRENT_TIME: u32 = 0;
 pub const XCB_NO_SYMBOL: u32 = 0;
 
 /// Container for authorization information.
-/// A container for authorization information to be sent to the X server
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_auth_info_t {
-    /// length of the string name (as returned by strlen)
     pub namelen: c_int,
-    /// String containing the authentication protocol name,
-    /// such as "MIT-MAGIC-COOKIE-1" or "XDM-AUTHORIZATION-1".
     pub name: *mut c_char,
-    /// length of the data member
     pub datalen: c_int,
-    /// data interpreted in a protocol specific manner
     pub data: *mut c_char,
 }
 
+impl Default for xcb_auth_info_t {
+    fn default() -> Self {
+        unsafe { std::mem::MaybeUninit::zeroed().assume_init() }
+    }
+}
+
+pub enum xcb_special_event_t {}
+
 pub(crate) struct XcbXcb {
+    xcb_flush: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
+    xcb_get_maximum_request_length: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> u32>,
+    xcb_prefetch_maximum_request_length: LazySymbol<unsafe fn(c: *mut xcb_connection_t)>,
+    xcb_wait_for_event: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
+    xcb_poll_for_event: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
+    xcb_poll_for_queued_event:
+        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
+    xcb_poll_for_special_event: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            se: *mut xcb_special_event_t,
+        ) -> *mut xcb_generic_event_t,
+    >,
+    xcb_wait_for_special_event: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            se: *mut xcb_special_event_t,
+        ) -> *mut xcb_generic_event_t,
+    >,
+    xcb_register_for_special_xge: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            ext: *mut xcb_extension_t,
+            eid: u32,
+            stamp: *mut u32,
+        ) -> *mut xcb_special_event_t,
+    >,
+    xcb_unregister_for_special_event:
+        LazySymbol<unsafe fn(c: *mut xcb_connection_t, se: *mut xcb_special_event_t)>,
+    xcb_request_check: LazySymbol<
+        unsafe fn(c: *mut xcb_connection_t, cookie: xcb_void_cookie_t) -> *mut xcb_generic_error_t,
+    >,
+    xcb_discard_reply: LazySymbol<unsafe fn(c: *mut xcb_connection_t, sequence: c_uint)>,
+    xcb_discard_reply64: LazySymbol<unsafe fn(c: *mut xcb_connection_t, sequence: u64)>,
+    xcb_get_extension_data: LazySymbol<
+        unsafe fn(
+            c: *mut xcb_connection_t,
+            ext: *mut xcb_extension_t,
+        ) -> *const xcb_query_extension_reply_t,
+    >,
+    xcb_prefetch_extension_data:
+        LazySymbol<unsafe fn(c: *mut xcb_connection_t, ext: *mut xcb_extension_t)>,
+    xcb_get_setup: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *const xcb_setup_t>,
+    xcb_get_file_descriptor: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
+    xcb_connection_has_error: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
+    xcb_connect_to_fd:
+        LazySymbol<unsafe fn(fd: c_int, auth_info: *mut xcb_auth_info_t) -> *mut xcb_connection_t>,
+    xcb_disconnect: LazySymbol<unsafe fn(c: *mut xcb_connection_t)>,
+    xcb_parse_display: LazySymbol<
+        unsafe fn(
+            name: *const c_char,
+            host: *mut *mut c_char,
+            display: *mut c_int,
+            screen: *mut c_int,
+        ) -> c_int,
+    >,
     xcb_connect: LazySymbol<
         unsafe fn(displayname: *const c_char, screenp: *mut c_int) -> *mut xcb_connection_t,
     >,
@@ -151,63 +235,9 @@ pub(crate) struct XcbXcb {
             screen: *mut c_int,
         ) -> *mut xcb_connection_t,
     >,
-    xcb_connect_to_fd:
-        LazySymbol<unsafe fn(fd: c_int, auth_info: *mut xcb_auth_info_t) -> *mut xcb_connection_t>,
-    xcb_connection_has_error: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
-    xcb_discard_reply64: LazySymbol<unsafe fn(c: *mut xcb_connection_t, sequence: u64)>,
-    xcb_discard_reply: LazySymbol<unsafe fn(c: *mut xcb_connection_t, sequence: c_uint)>,
-    xcb_disconnect: LazySymbol<unsafe fn(c: *mut xcb_connection_t)>,
-    xcb_flush: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
     xcb_generate_id: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> u32>,
-    xcb_get_extension_data: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            ext: *mut xcb_extension_t,
-        ) -> *const xcb_query_extension_reply_t,
-    >,
-    xcb_get_file_descriptor: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> c_int>,
-    xcb_get_maximum_request_length: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> u32>,
-    xcb_get_setup: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *const xcb_setup_t>,
-    xcb_parse_display: LazySymbol<
-        unsafe fn(
-            name: *const c_char,
-            host: *mut *mut c_char,
-            display: *mut c_int,
-            screen: *mut c_int,
-        ) -> c_int,
-    >,
-    xcb_poll_for_event: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
-    xcb_poll_for_queued_event:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
-    xcb_poll_for_special_event: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            se: *mut xcb_special_event_t,
-        ) -> *mut xcb_generic_event_t,
-    >,
-    xcb_prefetch_extension_data:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, ext: *mut xcb_extension_t)>,
-    xcb_prefetch_maximum_request_length: LazySymbol<unsafe fn(c: *mut xcb_connection_t)>,
-    xcb_register_for_special_xge: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            ext: *mut xcb_extension_t,
-            eid: u32,
-            stamp: *mut u32,
-        ) -> *mut xcb_special_event_t,
-    >,
-    xcb_request_check: LazySymbol<
-        unsafe fn(c: *mut xcb_connection_t, cookie: xcb_void_cookie_t) -> *mut xcb_generic_error_t,
-    >,
-    xcb_unregister_for_special_event:
-        LazySymbol<unsafe fn(c: *mut xcb_connection_t, se: *mut xcb_special_event_t)>,
-    xcb_wait_for_event: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> *mut xcb_generic_event_t>,
-    xcb_wait_for_special_event: LazySymbol<
-        unsafe fn(
-            c: *mut xcb_connection_t,
-            se: *mut xcb_special_event_t,
-        ) -> *mut xcb_generic_event_t,
-    >,
+    xcb_total_read: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> u64>,
+    xcb_total_written: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> u64>,
 }
 
 macro_rules! sym {
@@ -218,98 +248,89 @@ macro_rules! sym {
 
 macro_rules! has_sym {
     ($self:expr, $f:ident) => {
-        ($self
-            .xcb
-            .$f
-            .exists(&$self.lib, concat!(stringify!($f), "\0")))
+        unsafe {
+            ($self
+                .xcb
+                .$f
+                .exists(&$self.lib, concat!(stringify!($f), "\0")))
+        }
     };
 }
 
 impl Xcb {
-    /// Forces any buffered output to be written to the server. Blocks
-    /// until the write is complete.
-    ///
-    /// Return > 0 on success, <= 0 otherwise.
+    /// Forces any buffered output to be written to the server.
     #[inline]
     pub unsafe fn xcb_flush(&self, c: *mut xcb_connection_t) -> c_int {
         sym!(self, xcb_flush)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_flush` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_flush(&self) -> bool {
+        has_sym!(self, xcb_flush)
+    }
+
     /// Returns the maximum request length that this server accepts.
-    ///
-    /// In the absence of the BIG-REQUESTS extension, returns the
-    /// maximum request length field from the connection setup data, which
-    /// may be as much as 65535. If the server supports BIG-REQUESTS, then
-    /// the maximum request length field from the reply to the
-    /// BigRequestsEnable request will be returned instead.
-    ///
-    /// Note that this length is measured in four-byte units, making the
-    /// theoretical maximum lengths roughly 256kB without BIG-REQUESTS and
-    /// 16GB with.
-    ///
-    /// Returns The maximum request length field.
     #[inline]
     pub unsafe fn xcb_get_maximum_request_length(&self, c: *mut xcb_connection_t) -> u32 {
         sym!(self, xcb_get_maximum_request_length)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_get_maximum_request_length` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_get_maximum_request_length(&self) -> bool {
+        has_sym!(self, xcb_get_maximum_request_length)
+    }
+
     /// Prefetch the maximum request length without blocking.
-    ///
-    /// Without blocking, does as much work as possible toward computing
-    /// the maximum request length accepted by the X server.
-    ///
-    /// Invoking this function may cause a call to xcb_big_requests_enable,
-    /// but will not block waiting for the reply.
-    /// xcb_get_maximum_request_length will return the prefetched data
-    /// after possibly blocking while the reply is retrieved.
-    ///
-    /// Note that in order for this function to be fully non-blocking, the
-    /// application must previously have called
-    /// xcb_prefetch_extension_data(c, &xcb_big_requests_id) and the reply
-    /// must have already arrived.
     #[inline]
     pub unsafe fn xcb_prefetch_maximum_request_length(&self, c: *mut xcb_connection_t) {
         sym!(self, xcb_prefetch_maximum_request_length)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_prefetch_maximum_request_length` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_prefetch_maximum_request_length(&self) -> bool {
+        has_sym!(self, xcb_prefetch_maximum_request_length)
+    }
+
     /// Returns the next event or error from the server.
-    ///
-    /// Returns the next event or error from the server, or returns null in
-    /// the event of an I/O error. Blocks until either an event or error
-    /// arrive, or an I/O error occurs.
     #[inline]
     pub unsafe fn xcb_wait_for_event(&self, c: *mut xcb_connection_t) -> *mut xcb_generic_event_t {
         sym!(self, xcb_wait_for_event)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_wait_for_event` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_wait_for_event(&self) -> bool {
+        has_sym!(self, xcb_wait_for_event)
+    }
+
     /// Returns the next event or error from the server.
-    ///
-    /// Returns the next event or error from the server, if one is
-    /// available, or returns @c NULL otherwise. If no event is available, that
-    /// might be because an I/O error like connection close occurred while
-    /// attempting to read the next event, in which case the connection is
-    /// shut down when this function returns.
     #[inline]
     pub unsafe fn xcb_poll_for_event(&self, c: *mut xcb_connection_t) -> *mut xcb_generic_event_t {
         sym!(self, xcb_poll_for_event)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_poll_for_event` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_poll_for_event(&self) -> bool {
+        has_sym!(self, xcb_poll_for_event)
+    }
+
     /// Returns the next event without reading from the connection.
-    ///
-    /// This is a version of xcb_poll_for_event that only examines the
-    /// event queue for new events. The function doesn't try to read new
-    /// events from the connection if no queued events are found.
-    ///
-    /// This function is useful for callers that know in advance that all
-    /// interesting events have already been read from the connection. For
-    /// example, callers might use xcb_wait_for_reply and be interested
-    /// only of events that preceded a specific reply.
     #[inline]
     pub unsafe fn xcb_poll_for_queued_event(
         &self,
         c: *mut xcb_connection_t,
     ) -> *mut xcb_generic_event_t {
         sym!(self, xcb_poll_for_queued_event)(c)
+    }
+
+    /// Returns `true` iff the symbol `xcb_poll_for_queued_event` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_poll_for_queued_event(&self) -> bool {
+        has_sym!(self, xcb_poll_for_queued_event)
     }
 
     /// Returns the next event from a special queue
@@ -322,6 +343,12 @@ impl Xcb {
         sym!(self, xcb_poll_for_special_event)(c, se)
     }
 
+    /// Returns `true` iff the symbol `xcb_poll_for_special_event` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_poll_for_special_event(&self) -> bool {
+        has_sym!(self, xcb_poll_for_special_event)
+    }
+
     /// Returns the next event from a special queue, blocking until one arrives
     #[inline]
     pub unsafe fn xcb_wait_for_special_event(
@@ -330,6 +357,12 @@ impl Xcb {
         se: *mut xcb_special_event_t,
     ) -> *mut xcb_generic_event_t {
         sym!(self, xcb_wait_for_special_event)(c, se)
+    }
+
+    /// Returns `true` iff the symbol `xcb_wait_for_special_event` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_wait_for_special_event(&self) -> bool {
+        has_sym!(self, xcb_wait_for_special_event)
     }
 
     /// Listen for a special event
@@ -344,6 +377,12 @@ impl Xcb {
         sym!(self, xcb_register_for_special_xge)(c, ext, eid, stamp)
     }
 
+    /// Returns `true` iff the symbol `xcb_register_for_special_xge` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_register_for_special_xge(&self) -> bool {
+        has_sym!(self, xcb_register_for_special_xge)
+    }
+
     /// Stop listening for a special event
     #[inline]
     pub unsafe fn xcb_unregister_for_special_event(
@@ -354,17 +393,13 @@ impl Xcb {
         sym!(self, xcb_unregister_for_special_event)(c, se)
     }
 
+    /// Returns `true` iff the symbol `xcb_unregister_for_special_event` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_unregister_for_special_event(&self) -> bool {
+        has_sym!(self, xcb_unregister_for_special_event)
+    }
+
     /// Return the error for a request, or NULL if none can ever arrive.
-    ///
-    /// The xcb_void_cookie_t cookie supplied to this function must have resulted
-    /// from a call to xcb_[request_name]_checked().  This function will block
-    /// until one of two conditions happens.  If an error is received, it will be
-    /// returned.  If a reply to a subsequent request has already arrived, no error
-    /// can arrive for this request, so this function will return NULL.
-    ///
-    /// Note that this function will perform a sync if needed to ensure that the
-    /// sequence number will advance beyond that provided in cookie; this is a
-    /// convenience to avoid races in determining whether the sync is needed.
     #[inline]
     pub unsafe fn xcb_request_check(
         &self,
@@ -374,59 +409,37 @@ impl Xcb {
         sym!(self, xcb_request_check)(c, cookie)
     }
 
+    /// Returns `true` iff the symbol `xcb_request_check` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_request_check(&self) -> bool {
+        has_sym!(self, xcb_request_check)
+    }
+
     /// Discards the reply for a request.
-    ///
-    /// sequence is the request sequence number from a cookie.
-    ///
-    /// Discards the reply for a request. Additionally, any error generated
-    /// by the request is also discarded (unless it was an _unchecked request
-    /// and the error has already arrived).
-    ///
-    /// This function will not block even if the reply is not yet available.
-    ///
-    /// Note that the sequence really does have to come from an xcb cookie;
-    /// this function is not designed to operate on socket-handoff replies.
     #[inline]
     pub unsafe fn xcb_discard_reply(&self, c: *mut xcb_connection_t, sequence: c_uint) {
         sym!(self, xcb_discard_reply)(c, sequence)
     }
 
+    /// Returns `true` iff the symbol `xcb_discard_reply` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_discard_reply(&self) -> bool {
+        has_sym!(self, xcb_discard_reply)
+    }
+
     /// Discards the reply for a request, given by a 64bit sequence number
-    ///
-    /// sequence is the 64-bit sequence number as returned by xcb_send_request64().
-    ///
-    /// Discards the reply for a request. Additionally, any error generated
-    /// by the request is also discarded (unless it was an _unchecked request
-    /// and the error has already arrived).
-    ///
-    /// This function will not block even if the reply is not yet available.
-    ///
-    /// Note that the sequence really does have to come from xcb_send_request64();
-    /// the cookie sequence number is defined as "unsigned" int and therefore
-    /// not 64-bit on all platforms.
-    /// This function is not designed to operate on socket-handoff replies.
-    ///
-    /// Unlike its xcb_discard_reply() counterpart, the given sequence number is not
-    /// automatically "widened" to 64-bit.
-    ///
     #[inline]
     pub unsafe fn xcb_discard_reply64(&self, c: *mut xcb_connection_t, sequence: u64) {
         sym!(self, xcb_discard_reply64)(c, sequence)
     }
 
+    /// Returns `true` iff the symbol `xcb_discard_reply64` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_discard_reply64(&self) -> bool {
+        has_sym!(self, xcb_discard_reply64)
+    }
+
     /// Caches reply information from QueryExtension requests.
-    ///
-    /// This function is the primary interface to the "extension cache",
-    /// which caches reply information from QueryExtension
-    /// requests. Invoking this function may cause a call to
-    /// xcb_query_extension to retrieve extension information from the
-    /// server, and may block until extension data is received from the
-    /// server.
-    ///
-    /// The result must not be freed. This storage is managed by the cache
-    /// itself.
-    ///
-    /// Returns A pointer to the xcb_query_extension_reply_t for the extension.
     #[inline]
     pub unsafe fn xcb_get_extension_data(
         &self,
@@ -436,13 +449,13 @@ impl Xcb {
         sym!(self, xcb_get_extension_data)(c, ext)
     }
 
+    /// Returns `true` iff the symbol `xcb_get_extension_data` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_get_extension_data(&self) -> bool {
+        has_sym!(self, xcb_get_extension_data)
+    }
+
     /// Prefetch of extension data into the extension cache
-    ///
-    /// This function allows a "prefetch" of extension data into the
-    /// extension cache. Invoking the function may cause a call to
-    /// xcb_query_extension, but will not block waiting for the
-    /// reply. xcb_get_extension_data will return the prefetched data after
-    /// possibly blocking while it is retrieved.
     #[inline]
     pub unsafe fn xcb_prefetch_extension_data(
         &self,
@@ -452,70 +465,49 @@ impl Xcb {
         sym!(self, xcb_prefetch_extension_data)(c, ext)
     }
 
+    /// Returns `true` iff the symbol `xcb_prefetch_extension_data` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_prefetch_extension_data(&self) -> bool {
+        has_sym!(self, xcb_prefetch_extension_data)
+    }
+
     /// Access the data returned by the server.
-    ///
-    /// Accessor for the data returned by the server when the xcb_connection_t
-    /// was initialized. This data includes
-    /// - the server's required format for images,
-    /// - a list of available visuals,
-    /// - a list of available screens,
-    /// - the server's maximum request length (in the absence of the
-    /// BIG-REQUESTS extension),
-    /// - and other assorted information.
-    ///
-    /// See the X protocol specification for more details.
-    ///
-    /// Returns A pointer to an xcb_setup_t structure.
-    /// The result must not be freed.
     #[inline]
     pub unsafe fn xcb_get_setup(&self, c: *mut xcb_connection_t) -> *const xcb_setup_t {
         sym!(self, xcb_get_setup)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_get_setup` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_get_setup(&self) -> bool {
+        has_sym!(self, xcb_get_setup)
+    }
+
     /// Access the file descriptor of the connection.
-    ///
-    /// Accessor for the file descriptor that was passed to the
-    /// xcb_connect_to_fd call that returned @p c.
-    ///
-    /// Returns The file descriptor.
     #[inline]
     pub unsafe fn xcb_get_file_descriptor(&self, c: *mut xcb_connection_t) -> c_int {
         sym!(self, xcb_get_file_descriptor)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_get_file_descriptor` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_get_file_descriptor(&self) -> bool {
+        has_sym!(self, xcb_get_file_descriptor)
+    }
+
     /// Test whether the connection has shut down due to a fatal error.
-    ///
-    /// Some errors that occur in the context of an xcb_connection_t
-    /// are unrecoverable. When such an error occurs, the
-    /// connection is shut down and further operations on the
-    /// xcb_connection_t have no effect, but memory will not be freed until
-    /// xcb_disconnect() is called on the xcb_connection_t.
-    ///
-    /// Returns XCB_CONN_ERROR, because of socket errors, pipe errors or other stream errors.
-    /// Returns XCB_CONN_CLOSED_EXT_NOTSUPPORTED, when extension not supported.
-    /// Returns XCB_CONN_CLOSED_MEM_INSUFFICIENT, when memory not available.
-    /// Returns XCB_CONN_CLOSED_REQ_LEN_EXCEED, exceeding request length that server accepts.
-    /// Returns XCB_CONN_CLOSED_PARSE_ERR, error during parsing display string.
-    /// Returns XCB_CONN_CLOSED_INVALID_SCREEN, because the server does not have a screen matching the display.
-    ///
-    /// Returns > 0 if the connection is in an error state; 0 otherwise.
     #[inline]
     pub unsafe fn xcb_connection_has_error(&self, c: *mut xcb_connection_t) -> c_int {
         sym!(self, xcb_connection_has_error)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_connection_has_error` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_connection_has_error(&self) -> bool {
+        has_sym!(self, xcb_connection_has_error)
+    }
+
     /// Connects to the X server.
-    ///
-    /// Connects to an X server, given the open socket @p fd and the
-    /// xcb_auth_info_t @p auth_info. The file descriptor @p fd is
-    /// bidirectionally connected to an X server. If the connection
-    /// should be unauthenticated, @p auth_info must be @c
-    /// NULL.
-    ///
-    /// Always returns a non-NULL pointer to a xcb_connection_t, even on failure.
-    /// Callers need to use xcb_connection_has_error() to check for failure.
-    /// When finished, use xcb_disconnect() to close the connection and free
-    /// the structure.
     #[inline]
     pub unsafe fn xcb_connect_to_fd(
         &self,
@@ -525,31 +517,25 @@ impl Xcb {
         sym!(self, xcb_connect_to_fd)(fd, auth_info)
     }
 
+    /// Returns `true` iff the symbol `xcb_connect_to_fd` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_connect_to_fd(&self) -> bool {
+        has_sym!(self, xcb_connect_to_fd)
+    }
+
     /// Closes the connection.
-    ///
-    /// Closes the file descriptor and frees all memory associated with the
-    /// connection @c c. If @p c is @c NULL, nothing is done.
     #[inline]
     pub unsafe fn xcb_disconnect(&self, c: *mut xcb_connection_t) {
         sym!(self, xcb_disconnect)(c)
     }
 
+    /// Returns `true` iff the symbol `xcb_disconnect` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_disconnect(&self) -> bool {
+        has_sym!(self, xcb_disconnect)
+    }
+
     /// Parses a display string name in the form documented by X(7x).
-    /// name: The name of the display.
-    /// host: A pointer to a malloc'd copy of the hostname.
-    /// display: A pointer to the display number.
-    /// screen: A pointer to the screen number.
-    ///
-    /// Parses the display string name display_name in the form
-    /// documented by X(7x). Has no side effects on failure. If
-    /// displayname is NULL or empty, it uses the environment
-    /// variable DISPLAY. hostp is a pointer to a newly allocated string
-    /// that contain the host name. displayp is set to the display
-    /// number and screenp to the preferred screen number. screenp
-    /// can be NULL. If displayname does not contain a screen number,
-    /// it is set to 0.
-    ///
-    /// Returns 0 on failure, non 0 otherwise.
     #[inline]
     pub unsafe fn xcb_parse_display(
         &self,
@@ -561,21 +547,13 @@ impl Xcb {
         sym!(self, xcb_parse_display)(name, host, display, screen)
     }
 
+    /// Returns `true` iff the symbol `xcb_parse_display` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_parse_display(&self) -> bool {
+        has_sym!(self, xcb_parse_display)
+    }
+
     /// Connects to the X server.
-    /// displayname: The name of the display.
-    /// screenp: A pointer to a preferred screen number.
-    /// Returns A newly allocated xcb_connection_t structure.
-    ///
-    /// Connects to the X server specified by displayname. If
-    /// displayname is NULL, uses the value of the DISPLAY environment
-    /// variable. If a particular screen on that server is preferred, the
-    /// int pointed to by screenp (if not NULL) will be set to that
-    /// screen; otherwise the screen will be set to 0.
-    ///
-    /// Always returns a non-NULL pointer to a xcb_connection_t, even on failure.
-    /// Callers need to use xcb_connection_has_error() to check for failure.
-    /// When finished, use xcb_disconnect() to close the connection and free
-    /// the structure.
     #[inline]
     pub unsafe fn xcb_connect(
         &self,
@@ -585,21 +563,13 @@ impl Xcb {
         sym!(self, xcb_connect)(displayname, screenp)
     }
 
+    /// Returns `true` iff the symbol `xcb_connect` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_connect(&self) -> bool {
+        has_sym!(self, xcb_connect)
+    }
+
     /// Connects to the X server, using an authorization information.
-    /// display: The name of the display.
-    /// auth: The authorization information.
-    /// screen: A pointer to a preferred screen number.
-    /// Returns A newly allocated xcb_connection_t structure.
-    ///
-    /// Connects to the X server specified by displayname, using the
-    /// authorization auth. If a particular screen on that server is
-    /// preferred, the int pointed to by screenp (if not NULL) will
-    /// be set to that screen; otherwise screenp will be set to 0.
-    ///
-    /// Always returns a non-NULL pointer to a xcb_connection_t, even on failure.
-    /// Callers need to use xcb_connection_has_error() to check for failure.
-    /// When finished, use xcb_disconnect() to close the connection and free
-    /// the structure.
     #[inline]
     pub unsafe fn xcb_connect_to_display_with_auth_info(
         &self,
@@ -610,13 +580,79 @@ impl Xcb {
         sym!(self, xcb_connect_to_display_with_auth_info)(display, auth, screen)
     }
 
+    /// Returns `true` iff the symbol `xcb_connect_to_display_with_auth_info` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_connect_to_display_with_auth_info(&self) -> bool {
+        has_sym!(self, xcb_connect_to_display_with_auth_info)
+    }
+
     /// Allocates an XID for a new object.
-    /// Returns A newly allocated XID.
-    ///
-    /// Allocates an XID for a new object. Typically used just prior to
-    /// various object creation functions, such as xcb_create_window.
     #[inline]
     pub unsafe fn xcb_generate_id(&self, c: *mut xcb_connection_t) -> u32 {
         sym!(self, xcb_generate_id)(c)
+    }
+
+    /// Returns `true` iff the symbol `xcb_generate_id` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_generate_id(&self) -> bool {
+        has_sym!(self, xcb_generate_id)
+    }
+
+    /// Obtain number of bytes read from the connection.
+    #[inline]
+    pub unsafe fn xcb_total_read(&self, c: *mut xcb_connection_t) -> u64 {
+        sym!(self, xcb_total_read)(c)
+    }
+
+    /// Returns `true` iff the symbol `xcb_total_read` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_total_read(&self) -> bool {
+        has_sym!(self, xcb_total_read)
+    }
+
+    /// Obtain number of bytes written to the connection.
+    #[inline]
+    pub unsafe fn xcb_total_written(&self, c: *mut xcb_connection_t) -> u64 {
+        sym!(self, xcb_total_written)(c)
+    }
+
+    /// Returns `true` iff the symbol `xcb_total_written` could be loaded.
+    #[cfg(feature = "has_symbol")]
+    pub fn has_xcb_total_written(&self) -> bool {
+        has_sym!(self, xcb_total_written)
+    }
+}
+
+#[cfg(all(test, feature = "has_symbol"))]
+mod test {
+    #[test]
+    fn has_all() {
+        let lib = unsafe { crate::Xcb::load().unwrap() };
+        assert!(lib.has_xcb_flush());
+        assert!(lib.has_xcb_get_maximum_request_length());
+        assert!(lib.has_xcb_prefetch_maximum_request_length());
+        assert!(lib.has_xcb_wait_for_event());
+        assert!(lib.has_xcb_poll_for_event());
+        assert!(lib.has_xcb_poll_for_queued_event());
+        assert!(lib.has_xcb_poll_for_special_event());
+        assert!(lib.has_xcb_wait_for_special_event());
+        assert!(lib.has_xcb_register_for_special_xge());
+        assert!(lib.has_xcb_unregister_for_special_event());
+        assert!(lib.has_xcb_request_check());
+        assert!(lib.has_xcb_discard_reply());
+        assert!(lib.has_xcb_discard_reply64());
+        assert!(lib.has_xcb_get_extension_data());
+        assert!(lib.has_xcb_prefetch_extension_data());
+        assert!(lib.has_xcb_get_setup());
+        assert!(lib.has_xcb_get_file_descriptor());
+        assert!(lib.has_xcb_connection_has_error());
+        assert!(lib.has_xcb_connect_to_fd());
+        assert!(lib.has_xcb_disconnect());
+        assert!(lib.has_xcb_parse_display());
+        assert!(lib.has_xcb_connect());
+        assert!(lib.has_xcb_connect_to_display_with_auth_info());
+        assert!(lib.has_xcb_generate_id());
+        assert!(lib.has_xcb_total_read());
+        assert!(lib.has_xcb_total_written());
     }
 }

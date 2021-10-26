@@ -1,17 +1,23 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Sync::ALARM` type.
 pub type xcb_sync_alarm_t = u32;
 
+/// An iterator over `Sync::ALARM` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_alarm_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_sync_alarm_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -21,18 +27,39 @@ impl Default for xcb_sync_alarm_iterator_t {
     }
 }
 
+/// The `Sync::ALARMSTATE` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Sync::ALARMSTATE::Active`](XCB_SYNC_ALARMSTATE_ACTIVE)
+/// - [`Sync::ALARMSTATE::Inactive`](XCB_SYNC_ALARMSTATE_INACTIVE)
+/// - [`Sync::ALARMSTATE::Destroyed`](XCB_SYNC_ALARMSTATE_DESTROYED)
 pub type xcb_sync_alarmstate_t = u32;
+/// The `Sync::ALARMSTATE::Active` enum variant.
+///
+/// This is a variant of [`xcb_sync_alarmstate_t`].
 pub const XCB_SYNC_ALARMSTATE_ACTIVE: xcb_sync_alarmstate_t = 0;
+/// The `Sync::ALARMSTATE::Inactive` enum variant.
+///
+/// This is a variant of [`xcb_sync_alarmstate_t`].
 pub const XCB_SYNC_ALARMSTATE_INACTIVE: xcb_sync_alarmstate_t = 1;
+/// The `Sync::ALARMSTATE::Destroyed` enum variant.
+///
+/// This is a variant of [`xcb_sync_alarmstate_t`].
 pub const XCB_SYNC_ALARMSTATE_DESTROYED: xcb_sync_alarmstate_t = 2;
 
+/// The `Sync::COUNTER` type.
 pub type xcb_sync_counter_t = u32;
 
+/// An iterator over `Sync::COUNTER` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_counter_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_sync_counter_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -42,13 +69,18 @@ impl Default for xcb_sync_counter_iterator_t {
     }
 }
 
+/// The `Sync::FENCE` type.
 pub type xcb_sync_fence_t = u32;
 
+/// An iterator over `Sync::FENCE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_fence_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_sync_fence_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -58,24 +90,85 @@ impl Default for xcb_sync_fence_iterator_t {
     }
 }
 
+/// The `Sync::TESTTYPE` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Sync::TESTTYPE::PositiveTransition`](XCB_SYNC_TESTTYPE_POSITIVE_TRANSITION)
+/// - [`Sync::TESTTYPE::NegativeTransition`](XCB_SYNC_TESTTYPE_NEGATIVE_TRANSITION)
+/// - [`Sync::TESTTYPE::PositiveComparison`](XCB_SYNC_TESTTYPE_POSITIVE_COMPARISON)
+/// - [`Sync::TESTTYPE::NegativeComparison`](XCB_SYNC_TESTTYPE_NEGATIVE_COMPARISON)
 pub type xcb_sync_testtype_t = u32;
+/// The `Sync::TESTTYPE::PositiveTransition` enum variant.
+///
+/// This is a variant of [`xcb_sync_testtype_t`].
 pub const XCB_SYNC_TESTTYPE_POSITIVE_TRANSITION: xcb_sync_testtype_t = 0;
+/// The `Sync::TESTTYPE::NegativeTransition` enum variant.
+///
+/// This is a variant of [`xcb_sync_testtype_t`].
 pub const XCB_SYNC_TESTTYPE_NEGATIVE_TRANSITION: xcb_sync_testtype_t = 1;
+/// The `Sync::TESTTYPE::PositiveComparison` enum variant.
+///
+/// This is a variant of [`xcb_sync_testtype_t`].
 pub const XCB_SYNC_TESTTYPE_POSITIVE_COMPARISON: xcb_sync_testtype_t = 2;
+/// The `Sync::TESTTYPE::NegativeComparison` enum variant.
+///
+/// This is a variant of [`xcb_sync_testtype_t`].
 pub const XCB_SYNC_TESTTYPE_NEGATIVE_COMPARISON: xcb_sync_testtype_t = 3;
 
+/// The `Sync::VALUETYPE` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Sync::VALUETYPE::Absolute`](XCB_SYNC_VALUETYPE_ABSOLUTE)
+/// - [`Sync::VALUETYPE::Relative`](XCB_SYNC_VALUETYPE_RELATIVE)
 pub type xcb_sync_valuetype_t = u32;
+/// The `Sync::VALUETYPE::Absolute` enum variant.
+///
+/// This is a variant of [`xcb_sync_valuetype_t`].
 pub const XCB_SYNC_VALUETYPE_ABSOLUTE: xcb_sync_valuetype_t = 0;
+/// The `Sync::VALUETYPE::Relative` enum variant.
+///
+/// This is a variant of [`xcb_sync_valuetype_t`].
 pub const XCB_SYNC_VALUETYPE_RELATIVE: xcb_sync_valuetype_t = 1;
 
+/// The `Sync::CA` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Sync::CA::Counter`](XCB_SYNC_CA_COUNTER)
+/// - [`Sync::CA::ValueType`](XCB_SYNC_CA_VALUE_TYPE)
+/// - [`Sync::CA::Value`](XCB_SYNC_CA_VALUE)
+/// - [`Sync::CA::TestType`](XCB_SYNC_CA_TEST_TYPE)
+/// - [`Sync::CA::Delta`](XCB_SYNC_CA_DELTA)
+/// - [`Sync::CA::Events`](XCB_SYNC_CA_EVENTS)
 pub type xcb_sync_ca_t = u32;
+/// The `Sync::CA::Counter` enum variant.
+///
+/// This is a variant of [`xcb_sync_ca_t`].
 pub const XCB_SYNC_CA_COUNTER: xcb_sync_ca_t = 1;
+/// The `Sync::CA::ValueType` enum variant.
+///
+/// This is a variant of [`xcb_sync_ca_t`].
 pub const XCB_SYNC_CA_VALUE_TYPE: xcb_sync_ca_t = 2;
+/// The `Sync::CA::Value` enum variant.
+///
+/// This is a variant of [`xcb_sync_ca_t`].
 pub const XCB_SYNC_CA_VALUE: xcb_sync_ca_t = 4;
+/// The `Sync::CA::TestType` enum variant.
+///
+/// This is a variant of [`xcb_sync_ca_t`].
 pub const XCB_SYNC_CA_TEST_TYPE: xcb_sync_ca_t = 8;
+/// The `Sync::CA::Delta` enum variant.
+///
+/// This is a variant of [`xcb_sync_ca_t`].
 pub const XCB_SYNC_CA_DELTA: xcb_sync_ca_t = 16;
+/// The `Sync::CA::Events` enum variant.
+///
+/// This is a variant of [`xcb_sync_ca_t`].
 pub const XCB_SYNC_CA_EVENTS: xcb_sync_ca_t = 32;
 
+/// The `Sync::INT64` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_int64_t {
@@ -89,11 +182,15 @@ impl Default for xcb_sync_int64_t {
     }
 }
 
+/// An iterator over `Sync::INT64` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_int64_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_sync_int64_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -103,6 +200,11 @@ impl Default for xcb_sync_int64_iterator_t {
     }
 }
 
+/// The `Sync::SYSTEMCOUNTER` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_systemcounter_t {
@@ -117,11 +219,15 @@ impl Default for xcb_sync_systemcounter_t {
     }
 }
 
+/// An iterator over `Sync::SYSTEMCOUNTER` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_systemcounter_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_sync_systemcounter_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -131,6 +237,7 @@ impl Default for xcb_sync_systemcounter_iterator_t {
     }
 }
 
+/// The `Sync::TRIGGER` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_trigger_t {
@@ -146,11 +253,15 @@ impl Default for xcb_sync_trigger_t {
     }
 }
 
+/// An iterator over `Sync::TRIGGER` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_trigger_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_sync_trigger_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -160,6 +271,7 @@ impl Default for xcb_sync_trigger_iterator_t {
     }
 }
 
+/// The `Sync::WAITCONDITION` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_waitcondition_t {
@@ -173,11 +285,15 @@ impl Default for xcb_sync_waitcondition_t {
     }
 }
 
+/// An iterator over `Sync::WAITCONDITION` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_waitcondition_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_sync_waitcondition_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -187,9 +303,13 @@ impl Default for xcb_sync_waitcondition_iterator_t {
     }
 }
 
-/// Opcode for xcb_sync_counter.
+/// The opcode for `Sync::Counter` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_sync_counter_error_t`].
 pub const XCB_SYNC_COUNTER: u8 = 0i32 as u8;
 
+/// The `Sync::Counter` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_counter_error_t {
@@ -207,9 +327,13 @@ impl Default for xcb_sync_counter_error_t {
     }
 }
 
-/// Opcode for xcb_sync_alarm.
+/// The opcode for `Sync::Alarm` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_sync_alarm_error_t`].
 pub const XCB_SYNC_ALARM: u8 = 1i32 as u8;
 
+/// The `Sync::Alarm` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_alarm_error_t {
@@ -227,9 +351,15 @@ impl Default for xcb_sync_alarm_error_t {
     }
 }
 
+/// The cookie for the reply to a `Sync::Initialize` request.
+///
+/// Pass this cookie to [`xcb_sync_initialize_reply`] to retrieve the reply.
+///
+/// [`xcb_sync_initialize_reply`]: XcbSync::xcb_sync_initialize_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_initialize_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -239,9 +369,14 @@ impl Default for xcb_sync_initialize_cookie_t {
     }
 }
 
-/// Opcode for xcb_sync_initialize.
+/// The opcode for `Sync::Initialize` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_initialize_request_t`].
 pub const XCB_SYNC_INITIALIZE: u8 = 0i32 as u8;
 
+/// The `Sync::Initialize` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_initialize_request_t {
@@ -258,6 +393,7 @@ impl Default for xcb_sync_initialize_request_t {
     }
 }
 
+/// The `Sync::Initialize` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_initialize_reply_t {
@@ -276,9 +412,15 @@ impl Default for xcb_sync_initialize_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Sync::ListSystemCounters` request.
+///
+/// Pass this cookie to [`xcb_sync_list_system_counters_reply`] to retrieve the reply.
+///
+/// [`xcb_sync_list_system_counters_reply`]: XcbSync::xcb_sync_list_system_counters_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_list_system_counters_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -288,9 +430,14 @@ impl Default for xcb_sync_list_system_counters_cookie_t {
     }
 }
 
-/// Opcode for xcb_sync_list_system_counters.
+/// The opcode for `Sync::ListSystemCounters` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_list_system_counters_request_t`].
 pub const XCB_SYNC_LIST_SYSTEM_COUNTERS: u8 = 1i32 as u8;
 
+/// The `Sync::ListSystemCounters` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_list_system_counters_request_t {
@@ -305,6 +452,11 @@ impl Default for xcb_sync_list_system_counters_request_t {
     }
 }
 
+/// The `Sync::ListSystemCounters` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `counters`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_list_system_counters_reply_t {
@@ -322,9 +474,14 @@ impl Default for xcb_sync_list_system_counters_reply_t {
     }
 }
 
-/// Opcode for xcb_sync_create_counter.
+/// The opcode for `Sync::CreateCounter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_create_counter_request_t`].
 pub const XCB_SYNC_CREATE_COUNTER: u8 = 2i32 as u8;
 
+/// The `Sync::CreateCounter` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_create_counter_request_t {
@@ -341,9 +498,14 @@ impl Default for xcb_sync_create_counter_request_t {
     }
 }
 
-/// Opcode for xcb_sync_destroy_counter.
+/// The opcode for `Sync::DestroyCounter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_destroy_counter_request_t`].
 pub const XCB_SYNC_DESTROY_COUNTER: u8 = 6i32 as u8;
 
+/// The `Sync::DestroyCounter` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_destroy_counter_request_t {
@@ -359,9 +521,15 @@ impl Default for xcb_sync_destroy_counter_request_t {
     }
 }
 
+/// The cookie for the reply to a `Sync::QueryCounter` request.
+///
+/// Pass this cookie to [`xcb_sync_query_counter_reply`] to retrieve the reply.
+///
+/// [`xcb_sync_query_counter_reply`]: XcbSync::xcb_sync_query_counter_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_counter_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -371,9 +539,14 @@ impl Default for xcb_sync_query_counter_cookie_t {
     }
 }
 
-/// Opcode for xcb_sync_query_counter.
+/// The opcode for `Sync::QueryCounter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_query_counter_request_t`].
 pub const XCB_SYNC_QUERY_COUNTER: u8 = 5i32 as u8;
 
+/// The `Sync::QueryCounter` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_counter_request_t {
@@ -389,6 +562,7 @@ impl Default for xcb_sync_query_counter_request_t {
     }
 }
 
+/// The `Sync::QueryCounter` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_counter_reply_t {
@@ -405,9 +579,18 @@ impl Default for xcb_sync_query_counter_reply_t {
     }
 }
 
-/// Opcode for xcb_sync_await.
+/// The opcode for `Sync::Await` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_await_request_t`].
 pub const XCB_SYNC_AWAIT: u8 = 7i32 as u8;
 
+/// The `Sync::Await` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `wait_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_await_request_t {
@@ -422,9 +605,14 @@ impl Default for xcb_sync_await_request_t {
     }
 }
 
-/// Opcode for xcb_sync_change_counter.
+/// The opcode for `Sync::ChangeCounter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_change_counter_request_t`].
 pub const XCB_SYNC_CHANGE_COUNTER: u8 = 4i32 as u8;
 
+/// The `Sync::ChangeCounter` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_change_counter_request_t {
@@ -441,9 +629,14 @@ impl Default for xcb_sync_change_counter_request_t {
     }
 }
 
-/// Opcode for xcb_sync_set_counter.
+/// The opcode for `Sync::SetCounter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_set_counter_request_t`].
 pub const XCB_SYNC_SET_COUNTER: u8 = 3i32 as u8;
 
+/// The `Sync::SetCounter` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_set_counter_request_t {
@@ -460,6 +653,7 @@ impl Default for xcb_sync_set_counter_request_t {
     }
 }
 
+/// The `Sync::value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_create_alarm_value_list_t {
@@ -477,9 +671,18 @@ impl Default for xcb_sync_create_alarm_value_list_t {
     }
 }
 
-/// Opcode for xcb_sync_create_alarm.
+/// The opcode for `Sync::CreateAlarm` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_create_alarm_request_t`].
 pub const XCB_SYNC_CREATE_ALARM: u8 = 8i32 as u8;
 
+/// The `Sync::CreateAlarm` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_create_alarm_request_t {
@@ -496,6 +699,7 @@ impl Default for xcb_sync_create_alarm_request_t {
     }
 }
 
+/// The `Sync::value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_change_alarm_value_list_t {
@@ -513,9 +717,18 @@ impl Default for xcb_sync_change_alarm_value_list_t {
     }
 }
 
-/// Opcode for xcb_sync_change_alarm.
+/// The opcode for `Sync::ChangeAlarm` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_change_alarm_request_t`].
 pub const XCB_SYNC_CHANGE_ALARM: u8 = 9i32 as u8;
 
+/// The `Sync::ChangeAlarm` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_change_alarm_request_t {
@@ -532,9 +745,14 @@ impl Default for xcb_sync_change_alarm_request_t {
     }
 }
 
-/// Opcode for xcb_sync_destroy_alarm.
+/// The opcode for `Sync::DestroyAlarm` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_destroy_alarm_request_t`].
 pub const XCB_SYNC_DESTROY_ALARM: u8 = 11i32 as u8;
 
+/// The `Sync::DestroyAlarm` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_destroy_alarm_request_t {
@@ -550,9 +768,15 @@ impl Default for xcb_sync_destroy_alarm_request_t {
     }
 }
 
+/// The cookie for the reply to a `Sync::QueryAlarm` request.
+///
+/// Pass this cookie to [`xcb_sync_query_alarm_reply`] to retrieve the reply.
+///
+/// [`xcb_sync_query_alarm_reply`]: XcbSync::xcb_sync_query_alarm_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_alarm_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -562,9 +786,14 @@ impl Default for xcb_sync_query_alarm_cookie_t {
     }
 }
 
-/// Opcode for xcb_sync_query_alarm.
+/// The opcode for `Sync::QueryAlarm` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_query_alarm_request_t`].
 pub const XCB_SYNC_QUERY_ALARM: u8 = 10i32 as u8;
 
+/// The `Sync::QueryAlarm` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_alarm_request_t {
@@ -580,6 +809,7 @@ impl Default for xcb_sync_query_alarm_request_t {
     }
 }
 
+/// The `Sync::QueryAlarm` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_alarm_reply_t {
@@ -600,9 +830,14 @@ impl Default for xcb_sync_query_alarm_reply_t {
     }
 }
 
-/// Opcode for xcb_sync_set_priority.
+/// The opcode for `Sync::SetPriority` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_set_priority_request_t`].
 pub const XCB_SYNC_SET_PRIORITY: u8 = 12i32 as u8;
 
+/// The `Sync::SetPriority` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_set_priority_request_t {
@@ -619,9 +854,15 @@ impl Default for xcb_sync_set_priority_request_t {
     }
 }
 
+/// The cookie for the reply to a `Sync::GetPriority` request.
+///
+/// Pass this cookie to [`xcb_sync_get_priority_reply`] to retrieve the reply.
+///
+/// [`xcb_sync_get_priority_reply`]: XcbSync::xcb_sync_get_priority_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_get_priority_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -631,9 +872,14 @@ impl Default for xcb_sync_get_priority_cookie_t {
     }
 }
 
-/// Opcode for xcb_sync_get_priority.
+/// The opcode for `Sync::GetPriority` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_get_priority_request_t`].
 pub const XCB_SYNC_GET_PRIORITY: u8 = 13i32 as u8;
 
+/// The `Sync::GetPriority` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_get_priority_request_t {
@@ -649,6 +895,7 @@ impl Default for xcb_sync_get_priority_request_t {
     }
 }
 
+/// The `Sync::GetPriority` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_get_priority_reply_t {
@@ -665,9 +912,14 @@ impl Default for xcb_sync_get_priority_reply_t {
     }
 }
 
-/// Opcode for xcb_sync_create_fence.
+/// The opcode for `Sync::CreateFence` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_create_fence_request_t`].
 pub const XCB_SYNC_CREATE_FENCE: u8 = 14i32 as u8;
 
+/// The `Sync::CreateFence` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_create_fence_request_t {
@@ -685,9 +937,14 @@ impl Default for xcb_sync_create_fence_request_t {
     }
 }
 
-/// Opcode for xcb_sync_trigger_fence.
+/// The opcode for `Sync::TriggerFence` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_trigger_fence_request_t`].
 pub const XCB_SYNC_TRIGGER_FENCE: u8 = 15i32 as u8;
 
+/// The `Sync::TriggerFence` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_trigger_fence_request_t {
@@ -703,9 +960,14 @@ impl Default for xcb_sync_trigger_fence_request_t {
     }
 }
 
-/// Opcode for xcb_sync_reset_fence.
+/// The opcode for `Sync::ResetFence` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_reset_fence_request_t`].
 pub const XCB_SYNC_RESET_FENCE: u8 = 16i32 as u8;
 
+/// The `Sync::ResetFence` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_reset_fence_request_t {
@@ -721,9 +983,14 @@ impl Default for xcb_sync_reset_fence_request_t {
     }
 }
 
-/// Opcode for xcb_sync_destroy_fence.
+/// The opcode for `Sync::DestroyFence` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_destroy_fence_request_t`].
 pub const XCB_SYNC_DESTROY_FENCE: u8 = 17i32 as u8;
 
+/// The `Sync::DestroyFence` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_destroy_fence_request_t {
@@ -739,9 +1006,15 @@ impl Default for xcb_sync_destroy_fence_request_t {
     }
 }
 
+/// The cookie for the reply to a `Sync::QueryFence` request.
+///
+/// Pass this cookie to [`xcb_sync_query_fence_reply`] to retrieve the reply.
+///
+/// [`xcb_sync_query_fence_reply`]: XcbSync::xcb_sync_query_fence_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_fence_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -751,9 +1024,14 @@ impl Default for xcb_sync_query_fence_cookie_t {
     }
 }
 
-/// Opcode for xcb_sync_query_fence.
+/// The opcode for `Sync::QueryFence` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_query_fence_request_t`].
 pub const XCB_SYNC_QUERY_FENCE: u8 = 18i32 as u8;
 
+/// The `Sync::QueryFence` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_fence_request_t {
@@ -769,6 +1047,7 @@ impl Default for xcb_sync_query_fence_request_t {
     }
 }
 
+/// The `Sync::QueryFence` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_query_fence_reply_t {
@@ -786,9 +1065,18 @@ impl Default for xcb_sync_query_fence_reply_t {
     }
 }
 
-/// Opcode for xcb_sync_await_fence.
+/// The opcode for `Sync::AwaitFence` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbSync::xcb_sync_id()`], then the type of the request is
+/// [`xcb_sync_await_fence_request_t`].
 pub const XCB_SYNC_AWAIT_FENCE: u8 = 19i32 as u8;
 
+/// The `Sync::AwaitFence` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `fence_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_await_fence_request_t {
@@ -803,9 +1091,13 @@ impl Default for xcb_sync_await_fence_request_t {
     }
 }
 
-/// Opcode for xcb_sync_counter_notify.
+/// The opcode for `Sync::CounterNotify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_sync_counter_notify_event_t`].
 pub const XCB_SYNC_COUNTER_NOTIFY: u8 = 0i32 as u8;
 
+/// The `Sync::CounterNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_counter_notify_event_t {
@@ -827,9 +1119,13 @@ impl Default for xcb_sync_counter_notify_event_t {
     }
 }
 
-/// Opcode for xcb_sync_alarm_notify.
+/// The opcode for `Sync::AlarmNotify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_sync_alarm_notify_event_t`].
 pub const XCB_SYNC_ALARM_NOTIFY: u8 = 1i32 as u8;
 
+/// The `Sync::AlarmNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_sync_alarm_notify_event_t {
@@ -900,7 +1196,7 @@ pub(crate) struct XcbSyncSync {
             c: *mut xcb_connection_t,
             cookie: xcb_sync_initialize_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_sync_initialize_reply_t,
+        ) -> *mut xcb_sync_initialize_reply_t,
     >,
     xcb_sync_list_system_counters_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_sync_list_system_counters:
@@ -919,7 +1215,7 @@ pub(crate) struct XcbSyncSync {
             c: *mut xcb_connection_t,
             cookie: xcb_sync_list_system_counters_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_sync_list_system_counters_reply_t,
+        ) -> *mut xcb_sync_list_system_counters_reply_t,
     >,
     xcb_sync_create_counter_checked: LazySymbol<
         unsafe fn(
@@ -958,7 +1254,7 @@ pub(crate) struct XcbSyncSync {
             c: *mut xcb_connection_t,
             cookie: xcb_sync_query_counter_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_sync_query_counter_reply_t,
+        ) -> *mut xcb_sync_query_counter_reply_t,
     >,
     xcb_sync_await_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, wait_list_len: u32) -> c_int>,
@@ -1136,7 +1432,7 @@ pub(crate) struct XcbSyncSync {
             c: *mut xcb_connection_t,
             cookie: xcb_sync_query_alarm_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_sync_query_alarm_reply_t,
+        ) -> *mut xcb_sync_query_alarm_reply_t,
     >,
     xcb_sync_set_priority_checked: LazySymbol<
         unsafe fn(c: *mut xcb_connection_t, id: u32, priority: i32) -> xcb_void_cookie_t,
@@ -1153,7 +1449,7 @@ pub(crate) struct XcbSyncSync {
             c: *mut xcb_connection_t,
             cookie: xcb_sync_get_priority_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_sync_get_priority_reply_t,
+        ) -> *mut xcb_sync_get_priority_reply_t,
     >,
     xcb_sync_create_fence_checked: LazySymbol<
         unsafe fn(
@@ -1206,7 +1502,7 @@ pub(crate) struct XcbSyncSync {
             c: *mut xcb_connection_t,
             cookie: xcb_sync_query_fence_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_sync_query_fence_reply_t,
+        ) -> *mut xcb_sync_query_fence_reply_t,
     >,
     xcb_sync_await_fence_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, fence_list_len: u32) -> c_int>,
@@ -1251,6 +1547,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_sync")]
 impl XcbSync {
+    /// The libxcb identifier of the `Sync` extension.
+    #[inline]
     pub fn xcb_sync_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_sync_id) }
     }
@@ -1261,6 +1559,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_id)
     }
 
+    /// Advances a `xcb_sync_alarm_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_sync_alarm_next(&self, i: *mut xcb_sync_alarm_iterator_t) {
         sym!(self, xcb_sync_alarm_next)(i)
     }
@@ -1271,6 +1571,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_alarm_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_sync_alarm_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_sync_alarm_end(
         &self,
         i: xcb_sync_alarm_iterator_t,
@@ -1284,6 +1586,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_alarm_end)
     }
 
+    /// Advances a `xcb_sync_counter_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_sync_counter_next(&self, i: *mut xcb_sync_counter_iterator_t) {
         sym!(self, xcb_sync_counter_next)(i)
     }
@@ -1294,6 +1598,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_counter_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_sync_counter_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_sync_counter_end(
         &self,
         i: xcb_sync_counter_iterator_t,
@@ -1307,6 +1613,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_counter_end)
     }
 
+    /// Advances a `xcb_sync_fence_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_sync_fence_next(&self, i: *mut xcb_sync_fence_iterator_t) {
         sym!(self, xcb_sync_fence_next)(i)
     }
@@ -1317,6 +1625,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_fence_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_sync_fence_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_sync_fence_end(
         &self,
         i: xcb_sync_fence_iterator_t,
@@ -1330,6 +1640,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_fence_end)
     }
 
+    /// Advances a `xcb_sync_int64_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_sync_int64_next(&self, i: *mut xcb_sync_int64_iterator_t) {
         sym!(self, xcb_sync_int64_next)(i)
     }
@@ -1340,6 +1652,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_int64_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_sync_int64_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_sync_int64_end(
         &self,
         i: xcb_sync_int64_iterator_t,
@@ -1353,6 +1667,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_int64_end)
     }
 
+    /// Computes the size of a `xcb_sync_systemcounter_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_systemcounter_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_sync_systemcounter_sizeof)(_buffer)
     }
@@ -1363,6 +1679,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_systemcounter_sizeof)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_sync_systemcounter_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_systemcounter_name(
         &self,
         r: *const xcb_sync_systemcounter_t,
@@ -1376,6 +1694,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_systemcounter_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_sync_systemcounter_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_systemcounter_name_length(
         &self,
         r: *const xcb_sync_systemcounter_t,
@@ -1389,6 +1709,9 @@ impl XcbSync {
         has_sym!(self, xcb_sync_systemcounter_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_sync_systemcounter_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_systemcounter_name_end(
         &self,
         r: *const xcb_sync_systemcounter_t,
@@ -1402,6 +1725,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_systemcounter_name_end)
     }
 
+    /// Advances a `xcb_sync_systemcounter_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_sync_systemcounter_next(&self, i: *mut xcb_sync_systemcounter_iterator_t) {
         sym!(self, xcb_sync_systemcounter_next)(i)
     }
@@ -1412,6 +1737,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_systemcounter_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_sync_systemcounter_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_sync_systemcounter_end(
         &self,
         i: xcb_sync_systemcounter_iterator_t,
@@ -1425,6 +1752,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_systemcounter_end)
     }
 
+    /// Advances a `xcb_sync_trigger_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_sync_trigger_next(&self, i: *mut xcb_sync_trigger_iterator_t) {
         sym!(self, xcb_sync_trigger_next)(i)
     }
@@ -1435,6 +1764,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_trigger_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_sync_trigger_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_sync_trigger_end(
         &self,
         i: xcb_sync_trigger_iterator_t,
@@ -1448,6 +1779,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_trigger_end)
     }
 
+    /// Advances a `xcb_sync_waitcondition_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_sync_waitcondition_next(&self, i: *mut xcb_sync_waitcondition_iterator_t) {
         sym!(self, xcb_sync_waitcondition_next)(i)
     }
@@ -1458,6 +1791,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_waitcondition_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_sync_waitcondition_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_sync_waitcondition_end(
         &self,
         i: xcb_sync_waitcondition_iterator_t,
@@ -1471,14 +1806,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_waitcondition_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::Initialize` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_initialize_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_initialize_reply`]: Self::xcb_sync_initialize_reply
+    #[inline]
     pub unsafe fn xcb_sync_initialize(
         &self,
         c: *mut xcb_connection_t,
@@ -1494,17 +1829,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_initialize)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Sync::Initialize` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_initialize_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_initialize_reply`]: Self::xcb_sync_initialize_reply
+    #[inline]
     pub unsafe fn xcb_sync_initialize_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1520,26 +1852,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_initialize_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_sync_initialize_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Sync::Initialize` request.
+    #[inline]
     pub unsafe fn xcb_sync_initialize_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_sync_initialize_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_sync_initialize_reply_t {
+    ) -> *mut xcb_sync_initialize_reply_t {
         sym!(self, xcb_sync_initialize_reply)(c, cookie, e)
     }
 
@@ -1549,6 +1869,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_initialize_reply)
     }
 
+    /// Computes the size of a `xcb_sync_list_system_counters_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_list_system_counters_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_sync_list_system_counters_sizeof)(_buffer)
     }
@@ -1559,14 +1881,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_list_system_counters_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::ListSystemCounters` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_list_system_counters_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_list_system_counters_reply`]: Self::xcb_sync_list_system_counters_reply
+    #[inline]
     pub unsafe fn xcb_sync_list_system_counters(
         &self,
         c: *mut xcb_connection_t,
@@ -1580,17 +1902,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_list_system_counters)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Sync::ListSystemCounters` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_list_system_counters_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_list_system_counters_reply`]: Self::xcb_sync_list_system_counters_reply
+    #[inline]
     pub unsafe fn xcb_sync_list_system_counters_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1604,6 +1923,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_list_system_counters_unchecked)
     }
 
+    /// Returns the number of elements of the `counters` field of a `xcb_sync_list_system_counters_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_list_system_counters_counters_length(
         &self,
         r: *const xcb_sync_list_system_counters_reply_t,
@@ -1617,6 +1938,9 @@ impl XcbSync {
         has_sym!(self, xcb_sync_list_system_counters_counters_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `counters` field of a `xcb_sync_list_system_counters_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_list_system_counters_counters_iterator(
         &self,
         r: *const xcb_sync_list_system_counters_reply_t,
@@ -1630,26 +1954,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_list_system_counters_counters_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_sync_list_system_counters_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Sync::ListSystemCounters` request.
+    #[inline]
     pub unsafe fn xcb_sync_list_system_counters_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_sync_list_system_counters_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_sync_list_system_counters_reply_t {
+    ) -> *mut xcb_sync_list_system_counters_reply_t {
         sym!(self, xcb_sync_list_system_counters_reply)(c, cookie, e)
     }
 
@@ -1659,17 +1971,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_list_system_counters_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::CreateCounter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_create_counter_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1685,14 +1994,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_counter_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::CreateCounter` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_create_counter(
         &self,
         c: *mut xcb_connection_t,
@@ -1708,17 +2011,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_counter)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::DestroyCounter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_destroy_counter_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1733,14 +2033,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_destroy_counter_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::DestroyCounter` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_destroy_counter(
         &self,
         c: *mut xcb_connection_t,
@@ -1755,14 +2049,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_destroy_counter)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::QueryCounter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_query_counter_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_query_counter_reply`]: Self::xcb_sync_query_counter_reply
+    #[inline]
     pub unsafe fn xcb_sync_query_counter(
         &self,
         c: *mut xcb_connection_t,
@@ -1777,17 +2071,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_counter)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Sync::QueryCounter` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_query_counter_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_query_counter_reply`]: Self::xcb_sync_query_counter_reply
+    #[inline]
     pub unsafe fn xcb_sync_query_counter_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1802,26 +2093,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_counter_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_sync_query_counter_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Sync::QueryCounter` request.
+    #[inline]
     pub unsafe fn xcb_sync_query_counter_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_sync_query_counter_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_sync_query_counter_reply_t {
+    ) -> *mut xcb_sync_query_counter_reply_t {
         sym!(self, xcb_sync_query_counter_reply)(c, cookie, e)
     }
 
@@ -1831,6 +2110,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_counter_reply)
     }
 
+    /// Computes the size of a `xcb_sync_await_request_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_await_sizeof(
         &self,
         _buffer: *const c_void,
@@ -1845,17 +2126,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::Await` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_await_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1871,14 +2149,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::Await` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_await(
         &self,
         c: *mut xcb_connection_t,
@@ -1894,6 +2166,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await)
     }
 
+    /// Returns a pointer to the `wait_list` field of a `xcb_sync_await_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_await_wait_list(
         &self,
         r: *const xcb_sync_await_request_t,
@@ -1907,6 +2181,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_wait_list)
     }
 
+    /// Returns the number of elements of the `wait_list` field of a `xcb_sync_await_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_await_wait_list_length(
         &self,
         r: *const xcb_sync_await_request_t,
@@ -1920,6 +2196,9 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_wait_list_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `wait_list` field of a `xcb_sync_await_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_await_wait_list_iterator(
         &self,
         r: *const xcb_sync_await_request_t,
@@ -1933,17 +2212,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_wait_list_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::ChangeCounter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_change_counter_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1959,14 +2235,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_counter_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::ChangeCounter` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_change_counter(
         &self,
         c: *mut xcb_connection_t,
@@ -1982,17 +2252,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_counter)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::SetCounter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_set_counter_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2008,14 +2275,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_set_counter_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::SetCounter` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_set_counter(
         &self,
         c: *mut xcb_connection_t,
@@ -2031,6 +2292,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_set_counter)
     }
 
+    /// Serializes a `xcb_sync_create_alarm_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -2046,6 +2309,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_sync_create_alarm_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -2061,6 +2326,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_sync_create_alarm_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -2075,6 +2342,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_sync_create_alarm_request_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_sync_create_alarm_sizeof)(_buffer)
     }
@@ -2085,17 +2354,18 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::CreateAlarm` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_sync_create_alarm_aux_checked`].
+    ///
+    /// [`xcb_sync_create_alarm_aux_checked`]: Self::xcb_sync_create_alarm_aux_checked
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2112,14 +2382,12 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::CreateAlarm` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_sync_create_alarm_aux`].
+    ///
+    /// [`xcb_sync_create_alarm_aux`]: Self::xcb_sync_create_alarm_aux
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm(
         &self,
         c: *mut xcb_connection_t,
@@ -2136,17 +2404,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::CreateAlarm` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2163,14 +2428,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_aux_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::CreateAlarm` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -2187,6 +2446,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_sync_create_alarm_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_create_alarm_value_list(
         &self,
         r: *const xcb_sync_create_alarm_request_t,
@@ -2200,6 +2461,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_alarm_value_list)
     }
 
+    /// Serializes a `xcb_sync_change_alarm_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -2215,6 +2478,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_sync_change_alarm_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -2230,6 +2495,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_sync_change_alarm_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -2244,6 +2511,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_sync_change_alarm_request_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_sync_change_alarm_sizeof)(_buffer)
     }
@@ -2254,17 +2523,18 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::ChangeAlarm` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_sync_change_alarm_aux_checked`].
+    ///
+    /// [`xcb_sync_change_alarm_aux_checked`]: Self::xcb_sync_change_alarm_aux_checked
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2281,14 +2551,12 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::ChangeAlarm` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_sync_change_alarm_aux`].
+    ///
+    /// [`xcb_sync_change_alarm_aux`]: Self::xcb_sync_change_alarm_aux
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm(
         &self,
         c: *mut xcb_connection_t,
@@ -2305,17 +2573,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::ChangeAlarm` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2332,14 +2597,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_aux_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::ChangeAlarm` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -2356,6 +2615,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_sync_change_alarm_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_change_alarm_value_list(
         &self,
         r: *const xcb_sync_change_alarm_request_t,
@@ -2369,17 +2630,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_change_alarm_value_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::DestroyAlarm` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_destroy_alarm_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2394,14 +2652,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_destroy_alarm_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::DestroyAlarm` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_destroy_alarm(
         &self,
         c: *mut xcb_connection_t,
@@ -2416,14 +2668,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_destroy_alarm)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::QueryAlarm` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_query_alarm_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_query_alarm_reply`]: Self::xcb_sync_query_alarm_reply
+    #[inline]
     pub unsafe fn xcb_sync_query_alarm(
         &self,
         c: *mut xcb_connection_t,
@@ -2438,17 +2690,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_alarm)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Sync::QueryAlarm` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_query_alarm_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_query_alarm_reply`]: Self::xcb_sync_query_alarm_reply
+    #[inline]
     pub unsafe fn xcb_sync_query_alarm_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2463,26 +2712,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_alarm_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_sync_query_alarm_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Sync::QueryAlarm` request.
+    #[inline]
     pub unsafe fn xcb_sync_query_alarm_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_sync_query_alarm_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_sync_query_alarm_reply_t {
+    ) -> *mut xcb_sync_query_alarm_reply_t {
         sym!(self, xcb_sync_query_alarm_reply)(c, cookie, e)
     }
 
@@ -2492,17 +2729,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_alarm_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::SetPriority` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_set_priority_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2518,14 +2752,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_set_priority_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::SetPriority` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_set_priority(
         &self,
         c: *mut xcb_connection_t,
@@ -2541,14 +2769,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_set_priority)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::GetPriority` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_get_priority_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_get_priority_reply`]: Self::xcb_sync_get_priority_reply
+    #[inline]
     pub unsafe fn xcb_sync_get_priority(
         &self,
         c: *mut xcb_connection_t,
@@ -2563,17 +2791,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_get_priority)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Sync::GetPriority` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_get_priority_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_get_priority_reply`]: Self::xcb_sync_get_priority_reply
+    #[inline]
     pub unsafe fn xcb_sync_get_priority_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2588,26 +2813,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_get_priority_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_sync_get_priority_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Sync::GetPriority` request.
+    #[inline]
     pub unsafe fn xcb_sync_get_priority_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_sync_get_priority_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_sync_get_priority_reply_t {
+    ) -> *mut xcb_sync_get_priority_reply_t {
         sym!(self, xcb_sync_get_priority_reply)(c, cookie, e)
     }
 
@@ -2617,17 +2830,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_get_priority_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::CreateFence` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_create_fence_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2644,14 +2854,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_fence_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::CreateFence` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_create_fence(
         &self,
         c: *mut xcb_connection_t,
@@ -2668,17 +2872,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_create_fence)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::TriggerFence` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_trigger_fence_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2693,14 +2894,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_trigger_fence_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::TriggerFence` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_trigger_fence(
         &self,
         c: *mut xcb_connection_t,
@@ -2715,17 +2910,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_trigger_fence)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::ResetFence` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_reset_fence_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2740,14 +2932,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_reset_fence_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::ResetFence` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_reset_fence(
         &self,
         c: *mut xcb_connection_t,
@@ -2762,17 +2948,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_reset_fence)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::DestroyFence` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_destroy_fence_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2787,14 +2970,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_destroy_fence_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::DestroyFence` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_destroy_fence(
         &self,
         c: *mut xcb_connection_t,
@@ -2809,14 +2986,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_destroy_fence)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::QueryFence` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_query_fence_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_query_fence_reply`]: Self::xcb_sync_query_fence_reply
+    #[inline]
     pub unsafe fn xcb_sync_query_fence(
         &self,
         c: *mut xcb_connection_t,
@@ -2831,17 +3008,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_fence)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Sync::QueryFence` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_sync_query_fence_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_sync_query_fence_reply`]: Self::xcb_sync_query_fence_reply
+    #[inline]
     pub unsafe fn xcb_sync_query_fence_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2856,26 +3030,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_fence_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_sync_query_fence_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Sync::QueryFence` request.
+    #[inline]
     pub unsafe fn xcb_sync_query_fence_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_sync_query_fence_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_sync_query_fence_reply_t {
+    ) -> *mut xcb_sync_query_fence_reply_t {
         sym!(self, xcb_sync_query_fence_reply)(c, cookie, e)
     }
 
@@ -2885,6 +3047,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_query_fence_reply)
     }
 
+    /// Computes the size of a `xcb_sync_await_fence_request_t` object.
+    #[inline]
     pub unsafe fn xcb_sync_await_fence_sizeof(
         &self,
         _buffer: *const c_void,
@@ -2899,17 +3063,14 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_fence_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Sync::AwaitFence` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_sync_await_fence_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2925,14 +3086,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_fence_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Sync::AwaitFence` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_sync_await_fence(
         &self,
         c: *mut xcb_connection_t,
@@ -2948,6 +3103,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_fence)
     }
 
+    /// Returns a pointer to the `fence_list` field of a `xcb_sync_await_fence_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_await_fence_fence_list(
         &self,
         r: *const xcb_sync_await_fence_request_t,
@@ -2961,6 +3118,8 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_fence_fence_list)
     }
 
+    /// Returns the number of elements of the `fence_list` field of a `xcb_sync_await_fence_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_await_fence_fence_list_length(
         &self,
         r: *const xcb_sync_await_fence_request_t,
@@ -2974,6 +3133,9 @@ impl XcbSync {
         has_sym!(self, xcb_sync_await_fence_fence_list_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `fence_list` field of a `xcb_sync_await_fence_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_sync_await_fence_fence_list_end(
         &self,
         r: *const xcb_sync_await_fence_request_t,

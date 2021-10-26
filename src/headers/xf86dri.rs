@@ -1,10 +1,12 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `XF86Dri::DrmClipRect` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_drm_clip_rect_t {
@@ -20,11 +22,15 @@ impl Default for xcb_xf86dri_drm_clip_rect_t {
     }
 }
 
+/// An iterator over `XF86Dri::DrmClipRect` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_drm_clip_rect_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_xf86dri_drm_clip_rect_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -34,9 +40,15 @@ impl Default for xcb_xf86dri_drm_clip_rect_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_query_version_reply`]: XcbXf86dri::xcb_xf86dri_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -46,9 +58,14 @@ impl Default for xcb_xf86dri_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_query_version.
+/// The opcode for `XF86Dri::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_query_version_request_t`].
 pub const XCB_XF86DRI_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `XF86Dri::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_query_version_request_t {
@@ -63,6 +80,7 @@ impl Default for xcb_xf86dri_query_version_request_t {
     }
 }
 
+/// The `XF86Dri::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_query_version_reply_t {
@@ -81,9 +99,15 @@ impl Default for xcb_xf86dri_query_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::QueryDirectRenderingCapable` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_query_direct_rendering_capable_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_query_direct_rendering_capable_reply`]: XcbXf86dri::xcb_xf86dri_query_direct_rendering_capable_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_query_direct_rendering_capable_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -93,9 +117,14 @@ impl Default for xcb_xf86dri_query_direct_rendering_capable_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_query_direct_rendering_capable.
+/// The opcode for `XF86Dri::QueryDirectRenderingCapable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_query_direct_rendering_capable_request_t`].
 pub const XCB_XF86DRI_QUERY_DIRECT_RENDERING_CAPABLE: u8 = 1i32 as u8;
 
+/// The `XF86Dri::QueryDirectRenderingCapable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_query_direct_rendering_capable_request_t {
@@ -111,6 +140,7 @@ impl Default for xcb_xf86dri_query_direct_rendering_capable_request_t {
     }
 }
 
+/// The `XF86Dri::QueryDirectRenderingCapable` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_query_direct_rendering_capable_reply_t {
@@ -127,9 +157,15 @@ impl Default for xcb_xf86dri_query_direct_rendering_capable_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::OpenConnection` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_open_connection_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_open_connection_reply`]: XcbXf86dri::xcb_xf86dri_open_connection_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_open_connection_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -139,9 +175,14 @@ impl Default for xcb_xf86dri_open_connection_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_open_connection.
+/// The opcode for `XF86Dri::OpenConnection` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_open_connection_request_t`].
 pub const XCB_XF86DRI_OPEN_CONNECTION: u8 = 2i32 as u8;
 
+/// The `XF86Dri::OpenConnection` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_open_connection_request_t {
@@ -157,6 +198,11 @@ impl Default for xcb_xf86dri_open_connection_request_t {
     }
 }
 
+/// The `XF86Dri::OpenConnection` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `bus_id`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_open_connection_reply_t {
@@ -176,9 +222,14 @@ impl Default for xcb_xf86dri_open_connection_reply_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_close_connection.
+/// The opcode for `XF86Dri::CloseConnection` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_close_connection_request_t`].
 pub const XCB_XF86DRI_CLOSE_CONNECTION: u8 = 3i32 as u8;
 
+/// The `XF86Dri::CloseConnection` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_close_connection_request_t {
@@ -194,9 +245,15 @@ impl Default for xcb_xf86dri_close_connection_request_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::GetClientDriverName` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_get_client_driver_name_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_get_client_driver_name_reply`]: XcbXf86dri::xcb_xf86dri_get_client_driver_name_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_client_driver_name_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -206,9 +263,14 @@ impl Default for xcb_xf86dri_get_client_driver_name_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_get_client_driver_name.
+/// The opcode for `XF86Dri::GetClientDriverName` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_get_client_driver_name_request_t`].
 pub const XCB_XF86DRI_GET_CLIENT_DRIVER_NAME: u8 = 4i32 as u8;
 
+/// The `XF86Dri::GetClientDriverName` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_client_driver_name_request_t {
@@ -224,6 +286,11 @@ impl Default for xcb_xf86dri_get_client_driver_name_request_t {
     }
 }
 
+/// The `XF86Dri::GetClientDriverName` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `client_driver_name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_client_driver_name_reply_t {
@@ -244,9 +311,15 @@ impl Default for xcb_xf86dri_get_client_driver_name_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::CreateContext` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_create_context_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_create_context_reply`]: XcbXf86dri::xcb_xf86dri_create_context_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_create_context_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -256,9 +329,14 @@ impl Default for xcb_xf86dri_create_context_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_create_context.
+/// The opcode for `XF86Dri::CreateContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_create_context_request_t`].
 pub const XCB_XF86DRI_CREATE_CONTEXT: u8 = 5i32 as u8;
 
+/// The `XF86Dri::CreateContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_create_context_request_t {
@@ -276,6 +354,7 @@ impl Default for xcb_xf86dri_create_context_request_t {
     }
 }
 
+/// The `XF86Dri::CreateContext` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_create_context_reply_t {
@@ -292,9 +371,14 @@ impl Default for xcb_xf86dri_create_context_reply_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_destroy_context.
+/// The opcode for `XF86Dri::DestroyContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_destroy_context_request_t`].
 pub const XCB_XF86DRI_DESTROY_CONTEXT: u8 = 6i32 as u8;
 
+/// The `XF86Dri::DestroyContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_destroy_context_request_t {
@@ -311,9 +395,15 @@ impl Default for xcb_xf86dri_destroy_context_request_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::CreateDrawable` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_create_drawable_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_create_drawable_reply`]: XcbXf86dri::xcb_xf86dri_create_drawable_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_create_drawable_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -323,9 +413,14 @@ impl Default for xcb_xf86dri_create_drawable_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_create_drawable.
+/// The opcode for `XF86Dri::CreateDrawable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_create_drawable_request_t`].
 pub const XCB_XF86DRI_CREATE_DRAWABLE: u8 = 7i32 as u8;
 
+/// The `XF86Dri::CreateDrawable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_create_drawable_request_t {
@@ -342,6 +437,7 @@ impl Default for xcb_xf86dri_create_drawable_request_t {
     }
 }
 
+/// The `XF86Dri::CreateDrawable` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_create_drawable_reply_t {
@@ -358,9 +454,14 @@ impl Default for xcb_xf86dri_create_drawable_reply_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_destroy_drawable.
+/// The opcode for `XF86Dri::DestroyDrawable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_destroy_drawable_request_t`].
 pub const XCB_XF86DRI_DESTROY_DRAWABLE: u8 = 8i32 as u8;
 
+/// The `XF86Dri::DestroyDrawable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_destroy_drawable_request_t {
@@ -377,9 +478,15 @@ impl Default for xcb_xf86dri_destroy_drawable_request_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::GetDrawableInfo` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_get_drawable_info_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_get_drawable_info_reply`]: XcbXf86dri::xcb_xf86dri_get_drawable_info_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_drawable_info_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -389,9 +496,14 @@ impl Default for xcb_xf86dri_get_drawable_info_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_get_drawable_info.
+/// The opcode for `XF86Dri::GetDrawableInfo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_get_drawable_info_request_t`].
 pub const XCB_XF86DRI_GET_DRAWABLE_INFO: u8 = 9i32 as u8;
 
+/// The `XF86Dri::GetDrawableInfo` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_drawable_info_request_t {
@@ -408,6 +520,12 @@ impl Default for xcb_xf86dri_get_drawable_info_request_t {
     }
 }
 
+/// The `XF86Dri::GetDrawableInfo` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `clip_rects`
+/// - `back_clip_rects`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_drawable_info_reply_t {
@@ -433,9 +551,15 @@ impl Default for xcb_xf86dri_get_drawable_info_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::GetDeviceInfo` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_get_device_info_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_get_device_info_reply`]: XcbXf86dri::xcb_xf86dri_get_device_info_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_device_info_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -445,9 +569,14 @@ impl Default for xcb_xf86dri_get_device_info_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_get_device_info.
+/// The opcode for `XF86Dri::GetDeviceInfo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_get_device_info_request_t`].
 pub const XCB_XF86DRI_GET_DEVICE_INFO: u8 = 10i32 as u8;
 
+/// The `XF86Dri::GetDeviceInfo` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_device_info_request_t {
@@ -463,6 +592,11 @@ impl Default for xcb_xf86dri_get_device_info_request_t {
     }
 }
 
+/// The `XF86Dri::GetDeviceInfo` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `device_private`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_get_device_info_reply_t {
@@ -484,9 +618,15 @@ impl Default for xcb_xf86dri_get_device_info_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XF86Dri::AuthConnection` request.
+///
+/// Pass this cookie to [`xcb_xf86dri_auth_connection_reply`] to retrieve the reply.
+///
+/// [`xcb_xf86dri_auth_connection_reply`]: XcbXf86dri::xcb_xf86dri_auth_connection_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_auth_connection_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -496,9 +636,14 @@ impl Default for xcb_xf86dri_auth_connection_cookie_t {
     }
 }
 
-/// Opcode for xcb_xf86dri_auth_connection.
+/// The opcode for `XF86Dri::AuthConnection` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXf86dri::xcb_xf86dri_id()`], then the type of the request is
+/// [`xcb_xf86dri_auth_connection_request_t`].
 pub const XCB_XF86DRI_AUTH_CONNECTION: u8 = 11i32 as u8;
 
+/// The `XF86Dri::AuthConnection` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_auth_connection_request_t {
@@ -515,6 +660,7 @@ impl Default for xcb_xf86dri_auth_connection_request_t {
     }
 }
 
+/// The `XF86Dri::AuthConnection` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xf86dri_auth_connection_reply_t {
@@ -547,7 +693,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_query_version_reply_t,
+        ) -> *mut xcb_xf86dri_query_version_reply_t,
     >,
     xcb_xf86dri_query_direct_rendering_capable: LazySymbol<
         unsafe fn(
@@ -566,7 +712,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_query_direct_rendering_capable_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_query_direct_rendering_capable_reply_t,
+        ) -> *mut xcb_xf86dri_query_direct_rendering_capable_reply_t,
     >,
     xcb_xf86dri_open_connection_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xf86dri_open_connection: LazySymbol<
@@ -587,7 +733,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_open_connection_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_open_connection_reply_t,
+        ) -> *mut xcb_xf86dri_open_connection_reply_t,
     >,
     xcb_xf86dri_close_connection_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, screen: u32) -> xcb_void_cookie_t>,
@@ -619,7 +765,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_get_client_driver_name_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_get_client_driver_name_reply_t,
+        ) -> *mut xcb_xf86dri_get_client_driver_name_reply_t,
     >,
     xcb_xf86dri_create_context: LazySymbol<
         unsafe fn(
@@ -642,7 +788,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_create_context_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_create_context_reply_t,
+        ) -> *mut xcb_xf86dri_create_context_reply_t,
     >,
     xcb_xf86dri_destroy_context_checked: LazySymbol<
         unsafe fn(c: *mut xcb_connection_t, screen: u32, context: u32) -> xcb_void_cookie_t,
@@ -669,7 +815,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_create_drawable_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_create_drawable_reply_t,
+        ) -> *mut xcb_xf86dri_create_drawable_reply_t,
     >,
     xcb_xf86dri_destroy_drawable_checked: LazySymbol<
         unsafe fn(c: *mut xcb_connection_t, screen: u32, drawable: u32) -> xcb_void_cookie_t,
@@ -721,7 +867,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_get_drawable_info_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_get_drawable_info_reply_t,
+        ) -> *mut xcb_xf86dri_get_drawable_info_reply_t,
     >,
     xcb_xf86dri_get_device_info_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xf86dri_get_device_info: LazySymbol<
@@ -742,7 +888,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_get_device_info_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_get_device_info_reply_t,
+        ) -> *mut xcb_xf86dri_get_device_info_reply_t,
     >,
     xcb_xf86dri_auth_connection: LazySymbol<
         unsafe fn(
@@ -763,7 +909,7 @@ pub(crate) struct XcbXf86driXf86Dri {
             c: *mut xcb_connection_t,
             cookie: xcb_xf86dri_auth_connection_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xf86dri_auth_connection_reply_t,
+        ) -> *mut xcb_xf86dri_auth_connection_reply_t,
     >,
 }
 
@@ -789,6 +935,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_xf86dri")]
 impl XcbXf86dri {
+    /// The libxcb identifier of the `XF86Dri` extension.
+    #[inline]
     pub fn xcb_xf86dri_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xf86dri_id) }
     }
@@ -799,6 +947,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_id)
     }
 
+    /// Advances a `xcb_xf86dri_drm_clip_rect_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_xf86dri_drm_clip_rect_next(
         &self,
         i: *mut xcb_xf86dri_drm_clip_rect_iterator_t,
@@ -812,6 +962,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_drm_clip_rect_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_xf86dri_drm_clip_rect_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_xf86dri_drm_clip_rect_end(
         &self,
         i: xcb_xf86dri_drm_clip_rect_iterator_t,
@@ -825,14 +977,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_drm_clip_rect_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_query_version_reply`]: Self::xcb_xf86dri_query_version_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -846,17 +998,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_query_version_reply`]: Self::xcb_xf86dri_query_version_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -870,26 +1019,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_query_version_reply_t {
+    ) -> *mut xcb_xf86dri_query_version_reply_t {
         sym!(self, xcb_xf86dri_query_version_reply)(c, cookie, e)
     }
 
@@ -899,14 +1036,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_query_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::QueryDirectRenderingCapable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_query_direct_rendering_capable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_query_direct_rendering_capable_reply`]: Self::xcb_xf86dri_query_direct_rendering_capable_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_query_direct_rendering_capable(
         &self,
         c: *mut xcb_connection_t,
@@ -921,17 +1058,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_query_direct_rendering_capable)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::QueryDirectRenderingCapable` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_query_direct_rendering_capable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_query_direct_rendering_capable_reply`]: Self::xcb_xf86dri_query_direct_rendering_capable_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_query_direct_rendering_capable_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -946,26 +1080,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_query_direct_rendering_capable_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_query_direct_rendering_capable_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::QueryDirectRenderingCapable` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_query_direct_rendering_capable_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_query_direct_rendering_capable_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_query_direct_rendering_capable_reply_t {
+    ) -> *mut xcb_xf86dri_query_direct_rendering_capable_reply_t {
         sym!(self, xcb_xf86dri_query_direct_rendering_capable_reply)(c, cookie, e)
     }
 
@@ -975,6 +1097,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_query_direct_rendering_capable_reply)
     }
 
+    /// Computes the size of a `xcb_xf86dri_open_connection_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xf86dri_open_connection_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xf86dri_open_connection_sizeof)(_buffer)
     }
@@ -985,14 +1109,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_open_connection_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::OpenConnection` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_open_connection_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_open_connection_reply`]: Self::xcb_xf86dri_open_connection_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_open_connection(
         &self,
         c: *mut xcb_connection_t,
@@ -1007,17 +1131,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_open_connection)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::OpenConnection` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_open_connection_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_open_connection_reply`]: Self::xcb_xf86dri_open_connection_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_open_connection_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1032,6 +1153,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_open_connection_unchecked)
     }
 
+    /// Returns a pointer to the `bus_id` field of a `xcb_xf86dri_open_connection_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_open_connection_bus_id(
         &self,
         r: *const xcb_xf86dri_open_connection_reply_t,
@@ -1045,6 +1168,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_open_connection_bus_id)
     }
 
+    /// Returns the number of elements of the `bus_id` field of a `xcb_xf86dri_open_connection_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_open_connection_bus_id_length(
         &self,
         r: *const xcb_xf86dri_open_connection_reply_t,
@@ -1058,6 +1183,9 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_open_connection_bus_id_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `bus_id` field of a `xcb_xf86dri_open_connection_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_open_connection_bus_id_end(
         &self,
         r: *const xcb_xf86dri_open_connection_reply_t,
@@ -1071,26 +1199,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_open_connection_bus_id_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_open_connection_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::OpenConnection` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_open_connection_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_open_connection_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_open_connection_reply_t {
+    ) -> *mut xcb_xf86dri_open_connection_reply_t {
         sym!(self, xcb_xf86dri_open_connection_reply)(c, cookie, e)
     }
 
@@ -1100,17 +1216,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_open_connection_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XF86Dri::CloseConnection` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xf86dri_close_connection_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1125,14 +1238,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_close_connection_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::CloseConnection` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xf86dri_close_connection(
         &self,
         c: *mut xcb_connection_t,
@@ -1147,6 +1254,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_close_connection)
     }
 
+    /// Computes the size of a `xcb_xf86dri_get_client_driver_name_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_client_driver_name_sizeof(
         &self,
         _buffer: *const c_void,
@@ -1160,14 +1269,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_client_driver_name_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::GetClientDriverName` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_get_client_driver_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_get_client_driver_name_reply`]: Self::xcb_xf86dri_get_client_driver_name_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_client_driver_name(
         &self,
         c: *mut xcb_connection_t,
@@ -1182,17 +1291,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_client_driver_name)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::GetClientDriverName` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_get_client_driver_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_get_client_driver_name_reply`]: Self::xcb_xf86dri_get_client_driver_name_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_client_driver_name_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1207,6 +1313,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_client_driver_name_unchecked)
     }
 
+    /// Returns a pointer to the `client_driver_name` field of a `xcb_xf86dri_get_client_driver_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_client_driver_name_client_driver_name(
         &self,
         r: *const xcb_xf86dri_get_client_driver_name_reply_t,
@@ -1220,6 +1328,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_client_driver_name_client_driver_name)
     }
 
+    /// Returns the number of elements of the `client_driver_name` field of a `xcb_xf86dri_get_client_driver_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_client_driver_name_client_driver_name_length(
         &self,
         r: *const xcb_xf86dri_get_client_driver_name_reply_t,
@@ -1239,6 +1349,9 @@ impl XcbXf86dri {
         )
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `client_driver_name` field of a `xcb_xf86dri_get_client_driver_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_client_driver_name_client_driver_name_end(
         &self,
         r: *const xcb_xf86dri_get_client_driver_name_reply_t,
@@ -1258,26 +1371,14 @@ impl XcbXf86dri {
         )
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_get_client_driver_name_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::GetClientDriverName` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_client_driver_name_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_get_client_driver_name_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_get_client_driver_name_reply_t {
+    ) -> *mut xcb_xf86dri_get_client_driver_name_reply_t {
         sym!(self, xcb_xf86dri_get_client_driver_name_reply)(c, cookie, e)
     }
 
@@ -1287,14 +1388,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_client_driver_name_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::CreateContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_create_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_create_context_reply`]: Self::xcb_xf86dri_create_context_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_create_context(
         &self,
         c: *mut xcb_connection_t,
@@ -1311,17 +1412,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_create_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::CreateContext` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_create_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_create_context_reply`]: Self::xcb_xf86dri_create_context_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_create_context_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1338,26 +1436,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_create_context_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_create_context_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::CreateContext` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_create_context_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_create_context_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_create_context_reply_t {
+    ) -> *mut xcb_xf86dri_create_context_reply_t {
         sym!(self, xcb_xf86dri_create_context_reply)(c, cookie, e)
     }
 
@@ -1367,17 +1453,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_create_context_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XF86Dri::DestroyContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xf86dri_destroy_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1393,14 +1476,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_destroy_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::DestroyContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xf86dri_destroy_context(
         &self,
         c: *mut xcb_connection_t,
@@ -1416,14 +1493,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_destroy_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::CreateDrawable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_create_drawable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_create_drawable_reply`]: Self::xcb_xf86dri_create_drawable_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_create_drawable(
         &self,
         c: *mut xcb_connection_t,
@@ -1439,17 +1516,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_create_drawable)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::CreateDrawable` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_create_drawable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_create_drawable_reply`]: Self::xcb_xf86dri_create_drawable_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_create_drawable_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1465,26 +1539,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_create_drawable_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_create_drawable_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::CreateDrawable` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_create_drawable_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_create_drawable_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_create_drawable_reply_t {
+    ) -> *mut xcb_xf86dri_create_drawable_reply_t {
         sym!(self, xcb_xf86dri_create_drawable_reply)(c, cookie, e)
     }
 
@@ -1494,17 +1556,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_create_drawable_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XF86Dri::DestroyDrawable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_xf86dri_destroy_drawable_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1520,14 +1579,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_destroy_drawable_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::DestroyDrawable` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_xf86dri_destroy_drawable(
         &self,
         c: *mut xcb_connection_t,
@@ -1543,6 +1596,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_destroy_drawable)
     }
 
+    /// Computes the size of a `xcb_xf86dri_get_drawable_info_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xf86dri_get_drawable_info_sizeof)(_buffer)
     }
@@ -1553,14 +1608,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::GetDrawableInfo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_get_drawable_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_get_drawable_info_reply`]: Self::xcb_xf86dri_get_drawable_info_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info(
         &self,
         c: *mut xcb_connection_t,
@@ -1576,17 +1631,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::GetDrawableInfo` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_get_drawable_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_get_drawable_info_reply`]: Self::xcb_xf86dri_get_drawable_info_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1602,6 +1654,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_unchecked)
     }
 
+    /// Returns a pointer to the `clip_rects` field of a `xcb_xf86dri_get_drawable_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_clip_rects(
         &self,
         r: *const xcb_xf86dri_get_drawable_info_reply_t,
@@ -1615,6 +1669,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_clip_rects)
     }
 
+    /// Returns the number of elements of the `clip_rects` field of a `xcb_xf86dri_get_drawable_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_clip_rects_length(
         &self,
         r: *const xcb_xf86dri_get_drawable_info_reply_t,
@@ -1628,6 +1684,9 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_clip_rects_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `clip_rects` field of a `xcb_xf86dri_get_drawable_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_clip_rects_iterator(
         &self,
         r: *const xcb_xf86dri_get_drawable_info_reply_t,
@@ -1641,6 +1700,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_clip_rects_iterator)
     }
 
+    /// Returns a pointer to the `back_clip_rects` field of a `xcb_xf86dri_get_drawable_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_back_clip_rects(
         &self,
         r: *const xcb_xf86dri_get_drawable_info_reply_t,
@@ -1654,6 +1715,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_back_clip_rects)
     }
 
+    /// Returns the number of elements of the `back_clip_rects` field of a `xcb_xf86dri_get_drawable_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_back_clip_rects_length(
         &self,
         r: *const xcb_xf86dri_get_drawable_info_reply_t,
@@ -1667,6 +1730,9 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_back_clip_rects_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `back_clip_rects` field of a `xcb_xf86dri_get_drawable_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_back_clip_rects_iterator(
         &self,
         r: *const xcb_xf86dri_get_drawable_info_reply_t,
@@ -1680,26 +1746,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_back_clip_rects_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_get_drawable_info_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::GetDrawableInfo` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_drawable_info_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_get_drawable_info_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_get_drawable_info_reply_t {
+    ) -> *mut xcb_xf86dri_get_drawable_info_reply_t {
         sym!(self, xcb_xf86dri_get_drawable_info_reply)(c, cookie, e)
     }
 
@@ -1709,6 +1763,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_drawable_info_reply)
     }
 
+    /// Computes the size of a `xcb_xf86dri_get_device_info_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_device_info_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xf86dri_get_device_info_sizeof)(_buffer)
     }
@@ -1719,14 +1775,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_device_info_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::GetDeviceInfo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_get_device_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_get_device_info_reply`]: Self::xcb_xf86dri_get_device_info_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_device_info(
         &self,
         c: *mut xcb_connection_t,
@@ -1741,17 +1797,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_device_info)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::GetDeviceInfo` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_get_device_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_get_device_info_reply`]: Self::xcb_xf86dri_get_device_info_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_device_info_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1766,6 +1819,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_device_info_unchecked)
     }
 
+    /// Returns a pointer to the `device_private` field of a `xcb_xf86dri_get_device_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_device_info_device_private(
         &self,
         r: *const xcb_xf86dri_get_device_info_reply_t,
@@ -1779,6 +1834,8 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_device_info_device_private)
     }
 
+    /// Returns the number of elements of the `device_private` field of a `xcb_xf86dri_get_device_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_device_info_device_private_length(
         &self,
         r: *const xcb_xf86dri_get_device_info_reply_t,
@@ -1792,6 +1849,9 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_device_info_device_private_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `device_private` field of a `xcb_xf86dri_get_device_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_device_info_device_private_end(
         &self,
         r: *const xcb_xf86dri_get_device_info_reply_t,
@@ -1805,26 +1865,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_device_info_device_private_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_get_device_info_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::GetDeviceInfo` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_get_device_info_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_get_device_info_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_get_device_info_reply_t {
+    ) -> *mut xcb_xf86dri_get_device_info_reply_t {
         sym!(self, xcb_xf86dri_get_device_info_reply)(c, cookie, e)
     }
 
@@ -1834,14 +1882,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_get_device_info_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XF86Dri::AuthConnection` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_auth_connection_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_auth_connection_reply`]: Self::xcb_xf86dri_auth_connection_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_auth_connection(
         &self,
         c: *mut xcb_connection_t,
@@ -1857,17 +1905,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_auth_connection)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XF86Dri::AuthConnection` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xf86dri_auth_connection_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xf86dri_auth_connection_reply`]: Self::xcb_xf86dri_auth_connection_reply
+    #[inline]
     pub unsafe fn xcb_xf86dri_auth_connection_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1883,26 +1928,14 @@ impl XcbXf86dri {
         has_sym!(self, xcb_xf86dri_auth_connection_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xf86dri_auth_connection_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XF86Dri::AuthConnection` request.
+    #[inline]
     pub unsafe fn xcb_xf86dri_auth_connection_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xf86dri_auth_connection_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xf86dri_auth_connection_reply_t {
+    ) -> *mut xcb_xf86dri_auth_connection_reply_t {
         sym!(self, xcb_xf86dri_auth_connection_reply)(c, cookie, e)
     }
 

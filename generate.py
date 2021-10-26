@@ -1,15 +1,9 @@
-#!/usr/bin/env python
-from __future__ import print_function
-import getopt
-import os
+#!/usr/bin/env python3
+
 import sys
-import errno
 import re
 
 # Jump to the bottom of this file for the main routine
-
-# config settings (can be changed with commandline options)
-config_server_side = False
 
 # Some hacks to make the API more readable, and to keep backwards compability
 _cname_re = re.compile('([A-Z0-9][a-z]+|[A-Z0-9]+(?![a-z])|[a-z]+)')
@@ -177,6 +171,7 @@ def add_sym(name, params, rv='()', fn=True):
         _h(f'    {name}: LazySymbol<{rv}>,')
 
     _h_setlevel(2)
+    _h('    #[inline]')
     _h(f'    pub {unsafe}fn {name}(&self, {params_str}){fnrv} {{ {body} }}')
     _h('')
     _h(f'    /// Returns `true` iff the symbol `{name}` could be loaded.')
@@ -204,9 +199,9 @@ def c_open(self):
     }
 
     if _ns.header in obj_names:
-        obj_name = obj_names[_ns.header]
+        _ns.rust_obj_name = obj_names[_ns.header]
     else:
-        obj_name = 'Xcb' + _ns.header.title()
+        _ns.rust_obj_name = 'Xcb' + _ns.header.title()
 
     no_feature = {'bigreq', 'xc_misc', 'xproto'}
     if _ns.header in no_feature:
@@ -214,13 +209,14 @@ def c_open(self):
     else:
         feature = f'#[cfg(feature = "xcb_{_ns.header.lower()}")]'
 
-    local_obj_name = f'{obj_name}{_ns.header.title()}'
+    local_obj_name = f'{_ns.rust_obj_name}{_ns.header.title()}'
 
     # Build the type-name collision avoidance table used by c_enum
     build_collision_table()
 
     _h_setlevel(0)
     _h('// This file was generated using generate.py. Do not edit.')
+    _h('#![allow(unused_macros)]')
     _h('')
     _h('use crate::ffi::*;')
     _h('use crate::*;')
@@ -252,7 +248,7 @@ def c_open(self):
     _h('')
     if feature:
         _h(feature)
-    _h(f'impl {obj_name} {{')
+    _h(f'impl {_ns.rust_obj_name} {{')
 
     _h_setlevel(3)
     _h('')
@@ -262,9 +258,11 @@ def c_open(self):
     _h('mod test {')
     _h('    #[test]')
     _h('    fn has_all() {')
-    _h(f'        let lib = unsafe {{ crate::{obj_name}::load().unwrap() }};')
+    _h(f'        let lib = unsafe {{ crate::{_ns.rust_obj_name}::load().unwrap() }};')
 
     if _ns.is_ext:
+        _h_setlevel(2)
+        _h(f'/// The libxcb identifier of the `{_ns.ext_name}` extension.')
         add_sym(_ns.c_ext_global_name, [], rv='*mut xcb_extension_t', fn=False)
 
 
@@ -314,6 +312,12 @@ def c_enum(self, name):
 
     _h_setlevel(0)
     _h('')
+    _h(f'/// The `{_opcode_name(name)}` enum.')
+    _h('///')
+    _h('/// This enum has the following variants:')
+    _h('///')
+    for (enam, eval) in self.values:
+        _h(f'/// - [`{_opcode_name(name)}::{enam}`]({_n(name + (enam,)).upper()})')
     _h(f'pub type {tname} = u32;')
 
     last_given = None
@@ -329,9 +333,9 @@ def c_enum(self, name):
         else:
             val = eval
             num_since_last_given = 1
-        if hasattr(self, "doc") and self.doc and enam in self.doc.fields:
-            doc = self.doc.fields[enam].strip().replace('\n', '\n/// ')
-            _h(f'/// {doc}')
+        _h(f'/// The `{_opcode_name(name)}::{enam}` enum variant.')
+        _h(f'///')
+        _h(f'/// This is a variant of [`{tname}`].')
         _h(f'pub const {_n(name + (enam,)).upper()}: {tname} = {val};')
 
 
@@ -463,7 +467,7 @@ def _c_type_setup(self, name, postfix):
         if self.c_type not in finished_switch:
             finished_switch.append(self.c_type)
             # special: switch C structs get pointer fields for variable-sized members
-            _c_complex(self)
+            _c_complex(self, _opcode_name(name), 'switch')
             for bitcase in self.bitcases:
                 bitcase_name = bitcase.type.name if bitcase.type.has_name else name
                 _c_accessors(bitcase.type, bitcase_name, bitcase_name)
@@ -826,24 +830,19 @@ def _c_serialize(context, self):
 
     _h_setlevel(2)
     _h('')
+    if context == 'serialize':
+        _h(f'/// Serializes a `{self.c_type}` object.')
+    elif context == 'unserialize':
+        _h(f'/// Deserializes a `{self.c_type}` object.')
+        _h(f'///')
+        _h(f'/// The object returned in `_aux` should be freed with `libc::free`.')
+    elif context == 'unpack':
+        _h(f'/// Unpacks a `{self.c_type}` object.')
+    elif context == 'sizeof':
+        _h(f'/// Computes the size of a `{self.c_type}` object.')
+    else:
+        raise
     add_sym(func_name, params, rv='c_int')
-
-
-def _c_iterator_get_end(field, accum):
-    '''
-    Figures out what C code is needed to find the end of a variable-length structure field.
-    For nested structures, recurses into its last variable-sized field.
-    For lists, calls the end function
-    '''
-    if field.type.is_container:
-        accum = field.c_accessor_name + '(' + accum + ')'
-        return _c_iterator_get_end(field.type.last_varsized_field, accum)
-    if field.type.is_list:
-        # XXX we can always use the first way
-        if field.type.member.is_simple:
-            return field.c_end_name + '(' + accum + ')'
-        else:
-            return field.type.member.c_end_name + '(' + field.c_iterator_name + '(' + accum + '))'
 
 
 def impl_default(name):
@@ -861,25 +860,31 @@ def _c_iterator(self, name):
     '''
     _h_setlevel(0)
     _h('')
+    _h(f'/// An iterator over `{_opcode_name(name)}` objects.')
     _h('#[derive(Copy, Clone, Debug)]')
     _h('#[repr(C)]')
     _h('pub struct %s {', self.c_iterator_type)
+    _h('    /// The value of the current iteration.')
     _h(f'    pub data: *mut {self.c_type},')
+    _h('    /// The number of elements remaining including this one.')
     _h('    pub rem: c_int,')
+    _h('    /// The offset of `data`, in bytes, from the start of the containing object.')
     _h('    pub index: c_int,')
     # add additional params of the type "self" as fields to the iterator struct
     # so that they can be passed to the sizeof-function by the iterator's next-function
     params = _c_get_additional_type_params(self)
     for name, ty in params:
-        _h(f'    {to_snake_case(name)}: {ty},')
+        _h(f'    pub {to_snake_case(name)}: {ty},')
     _h('}')
     impl_default(self.c_iterator_type)
 
     _h_setlevel(2)
     _h('')
+    _h(f'/// Advances a `{self.c_iterator_type}` iterator by 1 element.')
     add_sym(self.c_next_name, [('i', f'*mut {self.c_iterator_type}')])
     _h_setlevel(2)
     _h('')
+    _h(f'/// Returns a `xcb_generic_iterator_t` pointing just past the end of a `{self.c_iterator_type}`.')
     add_sym(self.c_end_name, [('i', f'{self.c_iterator_type}')], rv='xcb_generic_iterator_t')
 
 
@@ -897,9 +902,12 @@ def _c_accessors_field(self, field):
     else:
         c_type = switch_obj.c_type
 
+    pointer = ''
+
     if field.type.is_simple:
         return_type = field.c_field_type
     else:
+        pointer = ' a pointer to'
         if field.type.is_switch and switch_obj is None:
             return_type = '*mut c_void'
         else:
@@ -907,6 +915,7 @@ def _c_accessors_field(self, field):
 
     _h_setlevel(2)
     _h('')
+    _h(f'/// Returns{pointer} the `{field.c_field_name}` field of a `{c_type}` struct.')
     add_sym(field.c_accessor_name, [('r', f'*const {c_type}')], rv=return_type)
 
 
@@ -980,6 +989,7 @@ def _c_accessors_list(self, field):
         idx = 1 if switch_obj is not None else 0
         _h_setlevel(2)
         _h('')
+        _h(f'/// Returns a pointer to the `{field.c_field_name}` field of a `{self.c_type}` struct.')
         add_sym(field.c_accessor_name, [params[idx]], rv=f'*mut {field.c_field_type}')
 
     if switch_obj is not None:
@@ -993,13 +1003,18 @@ def _c_accessors_list(self, field):
                  ] + additional_params
     _h_setlevel(2)
     _h('')
+    _h(f'/// Returns the number of elements of the `{field.c_field_name}` field of a `{self.c_type}` struct.')
     add_sym(field.c_length_name, params, rv='c_int')
 
     _h_setlevel(2)
     _h('')
     if field.type.member.is_simple:
+        _h(f'/// Returns a `xcb_generic_iterator_t` pointing just past the end of the')
+        _h(f'/// `{field.c_field_name}` field of a `{self.c_type}` struct.')
         add_sym(field.c_end_name, params, rv='xcb_generic_iterator_t')
     else:
+        _h(f'/// Returns an iterator over the elements of the')
+        _h(f'/// `{field.c_field_name}` field of a `{self.c_type}` struct.')
         add_sym(field.c_iterator_name, params, rv=field.c_iterator_type)
 
 
@@ -1033,13 +1048,33 @@ def c_simple(self, name):
         _h_setlevel(0)
         my_name = _t(name)
         _h('')
+        _h(f'/// The `{_opcode_name(name)}` type.')
         _h(f'pub type {my_name} = {_t(self.name)};')
 
         # Iterator
         _c_iterator(self, name)
 
 
-def _c_complex(self, force_packed=False):
+def collect_accessors(ty):
+    ret = []
+    for field in ty.fields:
+        if not field.type.is_pad:
+            if _c_field_needs_list_accessor(field) or _c_field_needs_field_accessor(field):
+                ret.append(to_snake_case(field.c_field_name))
+    return ret
+
+
+def list_accessors(ty):
+    accessors = collect_accessors(ty)
+    if len(accessors) > 0:
+        _h('///')
+        _h('/// The following fields can be accessed via accessor functions:')
+        _h('///')
+        for accessor in accessors:
+            _h(f'/// - `{accessor}`')
+
+
+def _c_complex(self, opcode_name, kind, force_packed=False, has_fds=False):
     '''
     Helper function for handling all structure types.
     Called for all structs, requests, replies, events, errors.
@@ -1062,6 +1097,10 @@ def _c_complex(self, force_packed=False):
             if b.type.has_name:
                 name = f'{self.c_type}__{b.c_field_name}'
                 _h('')
+                _h(f'/// The type of [`{self.c_type}::{b.c_field_name}`].')
+                _h(f'///')
+                _h(f'/// In libxcb, this type is an anonymous struct.')
+                list_accessors(b.type)
                 _h('#[derive(Copy, Clone, Debug)]')
                 _h('#[repr(C)]')
                 _h(f'pub struct {name} {{')
@@ -1075,6 +1114,14 @@ def _c_complex(self, force_packed=False):
     debug = ', Debug' if self.c_container == 'struct' else ''
 
     _h('')
+    _h(f'/// The `{opcode_name}` {kind}.')
+    if has_fds:
+        _h('///')
+        _h(f'/// This reply contains file descriptors that can be accessed with [`{self.c_reply_fds_name}`].')
+        _h('///')
+        _h(f'/// [`{self.c_reply_fds_name}`]: {_ns.rust_obj_name}::{self.c_reply_fds_name}')
+    if not self.is_switch:
+        list_accessors(self)
     _h(f'#[derive(Copy, Clone{debug})]')
     _h(f'#[repr(C{packed})]')
     _h('pub %s %s {', self.c_container, self.c_type)
@@ -1100,7 +1147,7 @@ def c_struct(self, name):
     Exported function that handles structure declarations.
     '''
     _c_type_setup(self, name, ())
-    _c_complex(self)
+    _c_complex(self, _opcode_name(name), 'struct')
     _c_accessors(self, name, name)
     _c_iterator(self, name)
 
@@ -1110,11 +1157,11 @@ def c_union(self, name):
     Exported function that handles union declarations.
     '''
     _c_type_setup(self, name, ())
-    _c_complex(self)
+    _c_complex(self, _opcode_name(name), 'union')
     _c_iterator(self, name)
 
 
-def _c_request_helper(self, name, void, regular, aux=False, reply_fds=False):
+def _c_request_helper(self, name, void, regular, aux=False):
     '''
     Declares a request function.
     '''
@@ -1141,10 +1188,13 @@ def _c_request_helper(self, name, void, regular, aux=False, reply_fds=False):
 
     # What our function name is
     func_name = self.c_request_name if not aux else self.c_aux_name
+    aux_name = self.c_aux_name
     if checked:
         func_name = self.c_checked_name if not aux else self.c_aux_checked_name
+        aux_name = self.c_aux_checked_name
     if unchecked:
         func_name = self.c_unchecked_name if not aux else self.c_aux_unchecked_name
+        aux_name = self.c_aux_unchecked_name
 
     param_fields = []
     wire_fields = []
@@ -1160,71 +1210,31 @@ def _c_request_helper(self, name, void, regular, aux=False, reply_fds=False):
         if field.type.c_need_serialize or field.type.c_need_sizeof:
             serial_fields.append(field)
 
+    aux_h = ' (aux)' if aux else ''
+    checked_h = 'unchecked' if void == regular else 'checked'
+
     _h_setlevel(2)
     _h('')
-    _h('/**')
-    if hasattr(self, "doc") and self.doc:
-        if self.doc.brief:
-            _h(' * @brief ' + self.doc.brief)
-        else:
-            _h(' * No brief doc yet')
-
-    _h(' *')
-    _h(' * @param c The connection')
-    param_names = [f.c_field_name for f in param_fields]
-    if hasattr(self, "doc") and self.doc:
-        for field in param_fields:
-            # XXX: hard-coded until we fix xproto.xml
-            base_func_name = self.c_request_name if not aux else self.c_aux_name
-            if base_func_name == 'xcb_change_gc' and field.c_field_name == 'value_mask':
-                field.enum = 'GC'
-            elif base_func_name == 'xcb_change_window_attributes' and field.c_field_name == 'value_mask':
-                field.enum = 'CW'
-            elif base_func_name == 'xcb_create_window' and field.c_field_name == 'value_mask':
-                field.enum = 'CW'
-            if field.enum:
-                # XXX: why the 'xcb' prefix?
-                key = ('xcb', field.enum)
-
-                tname = _t(key)
-                if namecount[tname] > 1:
-                    tname = _t(key + ('enum',))
-                _h(' * @param %s A bitmask of #%s values.' % (field.c_field_name, tname))
-
-            if self.doc and field.field_name in self.doc.fields:
-                desc = self.doc.fields[field.field_name]
-                for name in param_names:
-                    desc = desc.replace('`%s`' % name, '\\a %s' % (name))
-                desc = desc.split("\n")
-                desc = [line if line != '' else '\\n' for line in desc]
-                _h(' * @param %s %s' % (field.c_field_name, "\n * ".join(desc)))
-            # If there is no documentation yet, we simply don't generate an
-            # @param tag. Doxygen will then warn about missing documentation.
-
-    _h(' * @return A cookie')
-    _h(' *')
-
-    if hasattr(self, "doc") and self.doc:
-        if self.doc.description:
-            desc = self.doc.description
-            for name in param_names:
-                desc = desc.replace('`%s`' % name, '\\a %s' % (name))
-            desc = desc.split("\n")
-            _h(' * ' + "\n * ".join(desc))
-        else:
-            _h(' * No description yet')
-    else:
-        _h(' * Delivers a request to the X server.')
-    _h(' *')
+    _h(f'/// Sends a `{_opcode_name(name)}` request ({checked_h}){aux_h}.')
+    if not void:
+        _h('///')
+        _h('/// This request generates a reply. You must either discard it with')
+        _h(f'/// [`discard_reply`] or retrieve it with [`{self.c_reply_name}`].')
+        _h('///')
+        _h('/// [`discard_reply`]: crate::Xcb::xcb_discard_reply')
+        _h(f'/// [`{self.c_reply_name}`]: Self::{self.c_reply_name}')
     if checked:
-        _h(' * This form can be used only if the request will not cause')
-        _h(' * a reply to be generated. Any returned error will be')
-        _h(' * saved for handling by xcb_request_check().')
-    if unchecked:
-        _h(' * This form can be used only if the request will cause')
-        _h(' * a reply to be generated. Any returned error will be')
-        _h(' * placed in the event queue.')
-    _h(' */')
+        _h('///')
+        _h('/// This request generates a reply. You must either discard it with')
+        _h('/// [`discard_reply`] or retrieve it with [`xcb_request_check`].')
+        _h('///')
+        _h('/// [`discard_reply`]: crate::Xcb::xcb_discard_reply')
+        _h('/// [`xcb_request_check`]: crate::Xcb::xcb_request_check')
+    if self.c_need_aux and not aux:
+        _h('///')
+        _h(f'/// There is an auxiliary version of this function: [`{aux_name}`].')
+        _h('///')
+        _h(f'/// [`{aux_name}`]: Self::{aux_name}')
 
     params = [('c', '*mut xcb_connection_t')]
     for field in param_fields:
@@ -1249,26 +1259,13 @@ def _c_reply(self, name):
 
     _h_setlevel(2)
     _h('')
-    _h('/**')
-    _h(' * Return the reply')
-    _h(' * @param c      The connection')
-    _h(' * @param cookie The cookie')
-    _h(' * @param e      The xcb_generic_error_t supplied')
-    _h(' *')
-    _h(' * Returns the reply of the request asked by')
-    _h(' *')
-    _h(' * The parameter @p e supplied to this function must be NULL if')
-    _h(' * %s(). is used.', self.c_unchecked_name)
-    _h(' * Otherwise, it stores the error if any.')
-    _h(' *')
-    _h(' * The returned value must be freed by the caller using free().')
-    _h(' */')
+    _h(f'/// Waits for the reply to a `{_opcode_name(name)}` request.')
     params = [
         ('c', '*mut xcb_connection_t'),
         ('cookie', self.c_cookie_type),
         ('e', '*mut *mut xcb_generic_error_t'),
     ]
-    add_sym(self.c_reply_name, params, rv=self.c_reply_type)
+    add_sym(self.c_reply_name, params, rv=f'*mut {self.c_reply_type}')
 
 
 def _c_reply_has_fds(self):
@@ -1279,18 +1276,9 @@ def _c_reply_fds(self, name):
     '''
     Declares the function that returns fds related to the reply.
     '''
-    spacing1 = ' ' * (len(self.c_reply_type) - len('xcb_connection_t'))
-    spacing3 = ' ' * (len(self.c_reply_fds_name) + 2)
+    _h_setlevel(2)
     _h('')
-    _h('/**')
-    _h(' * Return the reply fds')
-    _h(' * @param c      The connection')
-    _h(' * @param reply  The reply')
-    _h(' *')
-    _h(' * Returns the array of reply fds of the request asked by')
-    _h(' *')
-    _h(' * The returned value must be freed by the caller using free().')
-    _h(' */')
+    _h(f'/// Retrieves the file descriptors from the reply to a `{_opcode_name(name)}` request.')
     params = [
         ('c', '*mut xcb_connection_t'),
         ('reply', f'*mut {self.c_reply_type}'),
@@ -1298,14 +1286,54 @@ def _c_reply_fds(self, name):
     add_sym(self.c_reply_fds_name, params, rv='*mut c_int')
 
 
-def _c_opcode(name, opcode):
+def _opcode_name(name):
+    opcode_name = name[-1]
+    if _ns.is_ext:
+        opcode_name = f'{_ns.ext_name}::{opcode_name}'
+    return opcode_name
+
+
+def _c_opcode(name, opcode, kind, container, is_ge_event=False):
     '''
     Declares the opcode define for requests, events, and errors.
     '''
+    ty = 'u8'
+    opcode_name = _opcode_name(name)
     _h_setlevel(0)
     _h('')
-    _h('/// Opcode for %s.', _n(name))
-    _h('pub const %s: u8 = %si32 as u8;', _n(name).upper(), opcode)
+    _h(f'/// The opcode for `{opcode_name}` {kind}.')
+    _h(f'///')
+    if kind == 'requests':
+        ext = '[`ptr::null_mut()`](std::ptr::null_mut())'
+        if _ns.is_ext:
+            ext = f'[`{_ns.rust_obj_name}::{_ns.c_ext_global_name}()`]'
+        _h(f'/// If this value appears in [`xcb_protocol_request_t::opcode`], and')
+        _h(f'/// [`xcb_protocol_request_t::ext`] is {ext}, then the type of the request is')
+        _h(f'/// [`{container}`].')
+    elif kind == 'errors':
+        if _ns.is_ext:
+            _h(f'/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],')
+            _h(f'/// then the type of the error is [`{container}`].')
+        else:
+            _h(f'/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the')
+            _h(f'/// error is [`{container}`].')
+    elif kind == 'events':
+        if is_ge_event:
+            if not _ns.is_ext:
+                raise
+            ty = 'u16'
+            _h(f'/// If this value appears in [`xcb_ge_generic_event_t::event_type`], and')
+            _h(f'/// [`xcb_ge_generic_event_t::extension`] is the opcode of the `{_ns.ext_name}` extension,')
+            _h(f'/// then the type of the event is [`{container}`].')
+        elif _ns.is_ext:
+            _h(f'/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],')
+            _h(f'/// then the type of the event is [`{container}`].')
+        else:
+            _h(f'/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the')
+            _h(f'/// event is [`{container}`].')
+    else:
+        raise
+    _h(f'pub const {_n(name).upper()}: {ty} = {opcode}i32 as {ty};')
 
 
 def _c_cookie(self, name):
@@ -1314,9 +1342,15 @@ def _c_cookie(self, name):
     '''
     _h_setlevel(0)
     _h('')
+    _h(f'/// The cookie for the reply to a `{_opcode_name(name)}` request.')
+    _h(f'///')
+    _h(f'/// Pass this cookie to [`{self.c_reply_name}`] to retrieve the reply.')
+    _h(f'///')
+    _h(f'/// [`{self.c_reply_name}`]: {_ns.rust_obj_name}::{self.c_reply_name}')
     _h('#[derive(Copy, Clone, Debug)]')
     _h('#[repr(C)]')
     _h('pub struct %s {', self.c_cookie_type)
+    _h('    /// The sequence number of the request.')
     _h('    pub sequence: c_uint,')
     _h('}')
     impl_default(self.c_cookie_type)
@@ -1333,22 +1367,22 @@ def c_request(self, name):
         _c_cookie(self, name)
 
     # Opcode define
-    _c_opcode(name, self.opcode)
+    _c_opcode(name, self.opcode, 'requests', self.c_type)
 
     # Request structure declaration
-    _c_complex(self)
+    _c_complex(self, _opcode_name(name), 'request')
 
     if self.reply:
         _c_type_setup(self.reply, name, ('reply',))
-        # Reply structure definition
-        _c_complex(self.reply)
         # Request prototypes
         has_fds = _c_reply_has_fds(self.reply)
-        _c_request_helper(self, name, void=False, regular=True, aux=False, reply_fds=has_fds)
-        _c_request_helper(self, name, void=False, regular=False, aux=False, reply_fds=has_fds)
+        # Reply structure definition
+        _c_complex(self.reply, _opcode_name(name), 'reply', has_fds=has_fds)
+        _c_request_helper(self, name, void=False, regular=True, aux=False)
+        _c_request_helper(self, name, void=False, regular=False, aux=False)
         if self.c_need_aux:
-            _c_request_helper(self, name, void=False, regular=True, aux=True, reply_fs=has_fds)
-            _c_request_helper(self, name, void=False, regular=False, aux=True, reply_fs=has_fds)
+            _c_request_helper(self, name, void=False, regular=True, aux=True)
+            _c_request_helper(self, name, void=False, regular=False, aux=True)
         # Reply accessors
         _c_accessors(self.reply, name + ('reply',), name)
         _c_reply(self, name)
@@ -1383,7 +1417,7 @@ def c_eventstruct(self, name):
     for field in self.fields:
         field.c_field_name = _n_item(field.c_field_name).lower()
 
-    _c_complex(self)
+    _c_complex(self, _opcode_name(name), 'eventstruct')
     _c_iterator(self, name)
 
     if not self.fixed_size():
@@ -1431,20 +1465,35 @@ def c_event(self, name):
         # called undefined accessor functions)
         pass
 
-    # Opcode define
-    _c_opcode(name, self.opcodes[name])
+    is_ge_event = hasattr(self, 'is_ge_event') and self.is_ge_event and name[-1] != 'GeGeneric'
+    if self.name == name:
+        c_type = self.c_type
+    else:
+        c_type = _t(name + ("event",))
 
+    # Opcode define
+    _c_opcode(name, self.opcodes[name], 'events', c_type, is_ge_event=is_ge_event)
+
+    opcode_name = _opcode_name(name)
     if self.name == name:
         # Structure definition
-        _c_complex(self, force_packed)
+        _c_complex(self, opcode_name, 'event', force_packed=force_packed)
     else:
         # Typedef
         _h('')
-        _h(f'pub type {_t(name + ("event",))} = {_t(self.name + ("event",))};')
+        _h(f'/// The `{opcode_name}` event.')
+        _h(f'pub type {c_type} = {_t(self.name + ("event",))};')
 
         # Create sizeof-function for eventcopies for compatibility reasons
         if self.c_need_sizeof:
-            add_sym(_n(name + ('sizeof',)), [('buffer', '*const c_void')], rv='c_int')
+            _h_setlevel(2)
+            _h('')
+            _h(f'/// Computes the size of a `{c_type}` object.')
+            _h('///')
+            _h('/// Note: The libxcb function uses `const void*` as an argument because all pointers')
+            _h('/// implicitly coerce to `const void*`. This is not the case in Rust so we have to use')
+            _h('/// the correct pointer type to ensure backwards compatibility.')
+            add_sym(_n(name + ('sizeof',)), [('buffer', f'*const {c_type}')], rv='c_int')
 
 
 def c_error(self, name):
@@ -1453,16 +1502,24 @@ def c_error(self, name):
     '''
     _c_type_setup(self, name, ('error',))
 
-    # Opcode define
-    _c_opcode(name, self.opcodes[name])
+    if self.name == name:
+        c_type = self.c_type
+    else:
+        c_type = _t(name + ("error",))
 
+    # Opcode define
+    _c_opcode(name, self.opcodes[name], 'errors', c_type)
+
+    opcode_name = _opcode_name(name)
     if self.name == name:
         # Structure definition
-        _c_complex(self)
+        _c_complex(self, opcode_name, 'error')
     else:
         # Typedef
+        _h_setlevel(0)
         _h('')
-        _h(f'pub type {_t(name + ("error",))} = {_t(self.name + ("error",))};')
+        _h(f'/// The `{opcode_name}` error.')
+        _h(f'pub type {c_type} = {_t(self.name + ("error",))};')
 
 
 # Main routine starts here
@@ -1482,29 +1539,6 @@ output = {'open': c_open,
 
 # Boilerplate below this point
 
-# Check for the argument that specifies path to the xcbgen python package.
-try:
-    opts, args = getopt.getopt(sys.argv[1:], 'c:l:s:p:m', ["server-side"])
-except getopt.GetoptError as err:
-    print(err)
-    print('Usage: c_client.py -c center_footer -l left_footer -s section [-p path] file.xml')
-    sys.exit(1)
-
-for (opt, arg) in opts:
-    if opt == '-c':
-        center_footer = arg
-    if opt == '-l':
-        left_footer = arg
-    if opt == '-s':
-        section = arg
-    if opt == '-p':
-        sys.path.insert(1, arg)
-    if opt == '--server-side':
-        config_server_side = True
-    elif opt == '-m':
-        manpaths = True
-        sys.stdout.write('man_MANS = ')
-
 # Import the module class
 try:
     from xcbgen.state import Module
@@ -1523,7 +1557,7 @@ Refer to the README file in xcb/proto for more info.
 tevent = SimpleType(('xcb_raw_generic_event_t',), 32)
 
 # Parse the xml header
-module = Module(args[0], output)
+module = Module(sys.argv[1], output)
 
 # Build type-registry and resolve type dependencies
 module.register()

@@ -24,5 +24,8 @@ macro_rules! lib_entry {
                 Ok(slf.assume_init())
             }
         }
+
+        unsafe impl Send for $name {}
+        unsafe impl Sync for $name {}
     };
 }

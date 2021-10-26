@@ -1,7 +1,7 @@
 [package]
 name = "xcb-dl"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 license = "X11"
 description = "Rust bindings for libxcb"
 keywords = ["xcb", "window", "xlib", "x11"]
@@ -13,6 +13,7 @@ doctest = false
 
 [dependencies]
 libloading = "0.7.1"
+libc = "0.2.105"
 
 [features]
 has_symbol = []

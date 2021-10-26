@@ -1,28 +1,83 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `ScreenSaver::Kind` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ScreenSaver::Kind::Blanked`](XCB_SCREENSAVER_KIND_BLANKED)
+/// - [`ScreenSaver::Kind::Internal`](XCB_SCREENSAVER_KIND_INTERNAL)
+/// - [`ScreenSaver::Kind::External`](XCB_SCREENSAVER_KIND_EXTERNAL)
 pub type xcb_screensaver_kind_t = u32;
+/// The `ScreenSaver::Kind::Blanked` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_kind_t`].
 pub const XCB_SCREENSAVER_KIND_BLANKED: xcb_screensaver_kind_t = 0;
+/// The `ScreenSaver::Kind::Internal` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_kind_t`].
 pub const XCB_SCREENSAVER_KIND_INTERNAL: xcb_screensaver_kind_t = 1;
+/// The `ScreenSaver::Kind::External` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_kind_t`].
 pub const XCB_SCREENSAVER_KIND_EXTERNAL: xcb_screensaver_kind_t = 2;
 
+/// The `ScreenSaver::Event` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ScreenSaver::Event::NotifyMask`](XCB_SCREENSAVER_EVENT_NOTIFY_MASK)
+/// - [`ScreenSaver::Event::CycleMask`](XCB_SCREENSAVER_EVENT_CYCLE_MASK)
 pub type xcb_screensaver_event_t = u32;
+/// The `ScreenSaver::Event::NotifyMask` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_event_t`].
 pub const XCB_SCREENSAVER_EVENT_NOTIFY_MASK: xcb_screensaver_event_t = 1;
+/// The `ScreenSaver::Event::CycleMask` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_event_t`].
 pub const XCB_SCREENSAVER_EVENT_CYCLE_MASK: xcb_screensaver_event_t = 2;
 
+/// The `ScreenSaver::State` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ScreenSaver::State::Off`](XCB_SCREENSAVER_STATE_OFF)
+/// - [`ScreenSaver::State::On`](XCB_SCREENSAVER_STATE_ON)
+/// - [`ScreenSaver::State::Cycle`](XCB_SCREENSAVER_STATE_CYCLE)
+/// - [`ScreenSaver::State::Disabled`](XCB_SCREENSAVER_STATE_DISABLED)
 pub type xcb_screensaver_state_t = u32;
+/// The `ScreenSaver::State::Off` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_state_t`].
 pub const XCB_SCREENSAVER_STATE_OFF: xcb_screensaver_state_t = 0;
+/// The `ScreenSaver::State::On` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_state_t`].
 pub const XCB_SCREENSAVER_STATE_ON: xcb_screensaver_state_t = 1;
+/// The `ScreenSaver::State::Cycle` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_state_t`].
 pub const XCB_SCREENSAVER_STATE_CYCLE: xcb_screensaver_state_t = 2;
+/// The `ScreenSaver::State::Disabled` enum variant.
+///
+/// This is a variant of [`xcb_screensaver_state_t`].
 pub const XCB_SCREENSAVER_STATE_DISABLED: xcb_screensaver_state_t = 3;
 
+/// The cookie for the reply to a `ScreenSaver::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_screensaver_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_screensaver_query_version_reply`]: XcbScreensaver::xcb_screensaver_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -32,9 +87,14 @@ impl Default for xcb_screensaver_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_screensaver_query_version.
+/// The opcode for `ScreenSaver::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbScreensaver::xcb_screensaver_id()`], then the type of the request is
+/// [`xcb_screensaver_query_version_request_t`].
 pub const XCB_SCREENSAVER_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `ScreenSaver::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_query_version_request_t {
@@ -52,6 +112,7 @@ impl Default for xcb_screensaver_query_version_request_t {
     }
 }
 
+/// The `ScreenSaver::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_query_version_reply_t {
@@ -70,9 +131,15 @@ impl Default for xcb_screensaver_query_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `ScreenSaver::QueryInfo` request.
+///
+/// Pass this cookie to [`xcb_screensaver_query_info_reply`] to retrieve the reply.
+///
+/// [`xcb_screensaver_query_info_reply`]: XcbScreensaver::xcb_screensaver_query_info_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_query_info_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -82,9 +149,14 @@ impl Default for xcb_screensaver_query_info_cookie_t {
     }
 }
 
-/// Opcode for xcb_screensaver_query_info.
+/// The opcode for `ScreenSaver::QueryInfo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbScreensaver::xcb_screensaver_id()`], then the type of the request is
+/// [`xcb_screensaver_query_info_request_t`].
 pub const XCB_SCREENSAVER_QUERY_INFO: u8 = 1i32 as u8;
 
+/// The `ScreenSaver::QueryInfo` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_query_info_request_t {
@@ -100,6 +172,7 @@ impl Default for xcb_screensaver_query_info_request_t {
     }
 }
 
+/// The `ScreenSaver::QueryInfo` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_query_info_reply_t {
@@ -121,9 +194,14 @@ impl Default for xcb_screensaver_query_info_reply_t {
     }
 }
 
-/// Opcode for xcb_screensaver_select_input.
+/// The opcode for `ScreenSaver::SelectInput` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbScreensaver::xcb_screensaver_id()`], then the type of the request is
+/// [`xcb_screensaver_select_input_request_t`].
 pub const XCB_SCREENSAVER_SELECT_INPUT: u8 = 2i32 as u8;
 
+/// The `ScreenSaver::SelectInput` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_select_input_request_t {
@@ -140,6 +218,7 @@ impl Default for xcb_screensaver_select_input_request_t {
     }
 }
 
+/// The `ScreenSaver::value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_set_attributes_value_list_t {
@@ -166,9 +245,18 @@ impl Default for xcb_screensaver_set_attributes_value_list_t {
     }
 }
 
-/// Opcode for xcb_screensaver_set_attributes.
+/// The opcode for `ScreenSaver::SetAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbScreensaver::xcb_screensaver_id()`], then the type of the request is
+/// [`xcb_screensaver_set_attributes_request_t`].
 pub const XCB_SCREENSAVER_SET_ATTRIBUTES: u8 = 3i32 as u8;
 
+/// The `ScreenSaver::SetAttributes` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_set_attributes_request_t {
@@ -193,9 +281,14 @@ impl Default for xcb_screensaver_set_attributes_request_t {
     }
 }
 
-/// Opcode for xcb_screensaver_unset_attributes.
+/// The opcode for `ScreenSaver::UnsetAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbScreensaver::xcb_screensaver_id()`], then the type of the request is
+/// [`xcb_screensaver_unset_attributes_request_t`].
 pub const XCB_SCREENSAVER_UNSET_ATTRIBUTES: u8 = 4i32 as u8;
 
+/// The `ScreenSaver::UnsetAttributes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_unset_attributes_request_t {
@@ -211,9 +304,14 @@ impl Default for xcb_screensaver_unset_attributes_request_t {
     }
 }
 
-/// Opcode for xcb_screensaver_suspend.
+/// The opcode for `ScreenSaver::Suspend` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbScreensaver::xcb_screensaver_id()`], then the type of the request is
+/// [`xcb_screensaver_suspend_request_t`].
 pub const XCB_SCREENSAVER_SUSPEND: u8 = 5i32 as u8;
 
+/// The `ScreenSaver::Suspend` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_suspend_request_t {
@@ -229,9 +327,13 @@ impl Default for xcb_screensaver_suspend_request_t {
     }
 }
 
-/// Opcode for xcb_screensaver_notify.
+/// The opcode for `ScreenSaver::Notify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_screensaver_notify_event_t`].
 pub const XCB_SCREENSAVER_NOTIFY: u8 = 0i32 as u8;
 
+/// The `ScreenSaver::Notify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screensaver_notify_event_t {
@@ -274,7 +376,7 @@ pub(crate) struct XcbScreensaverScreensaver {
             c: *mut xcb_connection_t,
             cookie: xcb_screensaver_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_screensaver_query_version_reply_t,
+        ) -> *mut xcb_screensaver_query_version_reply_t,
     >,
     xcb_screensaver_query_info: LazySymbol<
         unsafe fn(
@@ -293,7 +395,7 @@ pub(crate) struct XcbScreensaverScreensaver {
             c: *mut xcb_connection_t,
             cookie: xcb_screensaver_query_info_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_screensaver_query_info_reply_t,
+        ) -> *mut xcb_screensaver_query_info_reply_t,
     >,
     xcb_screensaver_select_input_checked: LazySymbol<
         unsafe fn(
@@ -426,6 +528,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_screensaver")]
 impl XcbScreensaver {
+    /// The libxcb identifier of the `ScreenSaver` extension.
+    #[inline]
     pub fn xcb_screensaver_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_screensaver_id) }
     }
@@ -436,14 +540,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ScreenSaver::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_screensaver_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_screensaver_query_version_reply`]: Self::xcb_screensaver_query_version_reply
+    #[inline]
     pub unsafe fn xcb_screensaver_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -459,17 +563,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ScreenSaver::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_screensaver_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_screensaver_query_version_reply`]: Self::xcb_screensaver_query_version_reply
+    #[inline]
     pub unsafe fn xcb_screensaver_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -489,26 +590,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_screensaver_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ScreenSaver::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_screensaver_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_screensaver_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_screensaver_query_version_reply_t {
+    ) -> *mut xcb_screensaver_query_version_reply_t {
         sym!(self, xcb_screensaver_query_version_reply)(c, cookie, e)
     }
 
@@ -518,14 +607,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_query_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ScreenSaver::QueryInfo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_screensaver_query_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_screensaver_query_info_reply`]: Self::xcb_screensaver_query_info_reply
+    #[inline]
     pub unsafe fn xcb_screensaver_query_info(
         &self,
         c: *mut xcb_connection_t,
@@ -540,17 +629,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_query_info)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ScreenSaver::QueryInfo` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_screensaver_query_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_screensaver_query_info_reply`]: Self::xcb_screensaver_query_info_reply
+    #[inline]
     pub unsafe fn xcb_screensaver_query_info_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -565,26 +651,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_query_info_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_screensaver_query_info_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ScreenSaver::QueryInfo` request.
+    #[inline]
     pub unsafe fn xcb_screensaver_query_info_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_screensaver_query_info_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_screensaver_query_info_reply_t {
+    ) -> *mut xcb_screensaver_query_info_reply_t {
         sym!(self, xcb_screensaver_query_info_reply)(c, cookie, e)
     }
 
@@ -594,17 +668,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_query_info_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ScreenSaver::SelectInput` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_screensaver_select_input_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -620,14 +691,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_select_input_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ScreenSaver::SelectInput` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_screensaver_select_input(
         &self,
         c: *mut xcb_connection_t,
@@ -643,6 +708,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_select_input)
     }
 
+    /// Serializes a `xcb_screensaver_set_attributes_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -658,6 +725,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_screensaver_set_attributes_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -673,6 +742,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_screensaver_set_attributes_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -687,6 +758,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_screensaver_set_attributes_request_t` object.
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_screensaver_set_attributes_sizeof)(_buffer)
     }
@@ -697,17 +770,18 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ScreenSaver::SetAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_screensaver_set_attributes_aux_checked`].
+    ///
+    /// [`xcb_screensaver_set_attributes_aux_checked`]: Self::xcb_screensaver_set_attributes_aux_checked
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -745,14 +819,12 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ScreenSaver::SetAttributes` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_screensaver_set_attributes_aux`].
+    ///
+    /// [`xcb_screensaver_set_attributes_aux`]: Self::xcb_screensaver_set_attributes_aux
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -790,17 +862,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ScreenSaver::SetAttributes` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -838,14 +907,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_aux_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ScreenSaver::SetAttributes` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -883,6 +946,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_screensaver_set_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_screensaver_set_attributes_value_list(
         &self,
         r: *const xcb_screensaver_set_attributes_request_t,
@@ -896,17 +961,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_set_attributes_value_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ScreenSaver::UnsetAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_screensaver_unset_attributes_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -921,14 +983,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_unset_attributes_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ScreenSaver::UnsetAttributes` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_screensaver_unset_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -943,17 +999,14 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_unset_attributes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ScreenSaver::Suspend` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_screensaver_suspend_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -968,14 +1021,8 @@ impl XcbScreensaver {
         has_sym!(self, xcb_screensaver_suspend_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ScreenSaver::Suspend` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_screensaver_suspend(
         &self,
         c: *mut xcb_connection_t,

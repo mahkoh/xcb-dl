@@ -1,17 +1,23 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Glx::PIXMAP` type.
 pub type xcb_glx_pixmap_t = u32;
 
+/// An iterator over `Glx::PIXMAP` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_pixmap_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_pixmap_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -21,13 +27,18 @@ impl Default for xcb_glx_pixmap_iterator_t {
     }
 }
 
+/// The `Glx::CONTEXT` type.
 pub type xcb_glx_context_t = u32;
 
+/// An iterator over `Glx::CONTEXT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_context_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_context_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -37,13 +48,18 @@ impl Default for xcb_glx_context_iterator_t {
     }
 }
 
+/// The `Glx::PBUFFER` type.
 pub type xcb_glx_pbuffer_t = u32;
 
+/// An iterator over `Glx::PBUFFER` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_pbuffer_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_pbuffer_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -53,13 +69,18 @@ impl Default for xcb_glx_pbuffer_iterator_t {
     }
 }
 
+/// The `Glx::WINDOW` type.
 pub type xcb_glx_window_t = u32;
 
+/// An iterator over `Glx::WINDOW` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_window_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_window_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -69,13 +90,18 @@ impl Default for xcb_glx_window_iterator_t {
     }
 }
 
+/// The `Glx::FBCONFIG` type.
 pub type xcb_glx_fbconfig_t = u32;
 
+/// An iterator over `Glx::FBCONFIG` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_fbconfig_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_fbconfig_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -85,13 +111,18 @@ impl Default for xcb_glx_fbconfig_iterator_t {
     }
 }
 
+/// The `Glx::DRAWABLE` type.
 pub type xcb_glx_drawable_t = u32;
 
+/// An iterator over `Glx::DRAWABLE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_drawable_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_drawable_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -101,13 +132,18 @@ impl Default for xcb_glx_drawable_iterator_t {
     }
 }
 
+/// The `Glx::FLOAT32` type.
 pub type xcb_glx_float32_t = f32;
 
+/// An iterator over `Glx::FLOAT32` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_float32_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_float32_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -117,13 +153,18 @@ impl Default for xcb_glx_float32_iterator_t {
     }
 }
 
+/// The `Glx::FLOAT64` type.
 pub type xcb_glx_float64_t = f64;
 
+/// An iterator over `Glx::FLOAT64` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_float64_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_float64_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -133,13 +174,18 @@ impl Default for xcb_glx_float64_iterator_t {
     }
 }
 
+/// The `Glx::BOOL32` type.
 pub type xcb_glx_bool32_t = u32;
 
+/// An iterator over `Glx::BOOL32` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_bool32_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_bool32_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -149,13 +195,18 @@ impl Default for xcb_glx_bool32_iterator_t {
     }
 }
 
+/// The `Glx::CONTEXT_TAG` type.
 pub type xcb_glx_context_tag_t = u32;
 
+/// An iterator over `Glx::CONTEXT_TAG` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_context_tag_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_glx_context_tag_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -165,9 +216,13 @@ impl Default for xcb_glx_context_tag_iterator_t {
     }
 }
 
-/// Opcode for xcb_glx_generic.
+/// The opcode for `Glx::Generic` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_generic_error_t`].
 pub const XCB_GLX_GENERIC: u8 = -1i32 as u8;
 
+/// The `Glx::Generic` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_generic_error_t {
@@ -186,79 +241,139 @@ impl Default for xcb_glx_generic_error_t {
     }
 }
 
-/// Opcode for xcb_glx_bad_context.
+/// The opcode for `Glx::BadContext` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_context_error_t`].
 pub const XCB_GLX_BAD_CONTEXT: u8 = 0i32 as u8;
 
+/// The `Glx::BadContext` error.
 pub type xcb_glx_bad_context_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_context_state.
+/// The opcode for `Glx::BadContextState` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_context_state_error_t`].
 pub const XCB_GLX_BAD_CONTEXT_STATE: u8 = 1i32 as u8;
 
+/// The `Glx::BadContextState` error.
 pub type xcb_glx_bad_context_state_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_drawable.
+/// The opcode for `Glx::BadDrawable` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_drawable_error_t`].
 pub const XCB_GLX_BAD_DRAWABLE: u8 = 2i32 as u8;
 
+/// The `Glx::BadDrawable` error.
 pub type xcb_glx_bad_drawable_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_pixmap.
+/// The opcode for `Glx::BadPixmap` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_pixmap_error_t`].
 pub const XCB_GLX_BAD_PIXMAP: u8 = 3i32 as u8;
 
+/// The `Glx::BadPixmap` error.
 pub type xcb_glx_bad_pixmap_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_context_tag.
+/// The opcode for `Glx::BadContextTag` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_context_tag_error_t`].
 pub const XCB_GLX_BAD_CONTEXT_TAG: u8 = 4i32 as u8;
 
+/// The `Glx::BadContextTag` error.
 pub type xcb_glx_bad_context_tag_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_current_window.
+/// The opcode for `Glx::BadCurrentWindow` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_current_window_error_t`].
 pub const XCB_GLX_BAD_CURRENT_WINDOW: u8 = 5i32 as u8;
 
+/// The `Glx::BadCurrentWindow` error.
 pub type xcb_glx_bad_current_window_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_render_request.
+/// The opcode for `Glx::BadRenderRequest` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_render_request_error_t`].
 pub const XCB_GLX_BAD_RENDER_REQUEST: u8 = 6i32 as u8;
 
+/// The `Glx::BadRenderRequest` error.
 pub type xcb_glx_bad_render_request_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_large_request.
+/// The opcode for `Glx::BadLargeRequest` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_large_request_error_t`].
 pub const XCB_GLX_BAD_LARGE_REQUEST: u8 = 7i32 as u8;
 
+/// The `Glx::BadLargeRequest` error.
 pub type xcb_glx_bad_large_request_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_unsupported_private_request.
+/// The opcode for `Glx::UnsupportedPrivateRequest` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_unsupported_private_request_error_t`].
 pub const XCB_GLX_UNSUPPORTED_PRIVATE_REQUEST: u8 = 8i32 as u8;
 
+/// The `Glx::UnsupportedPrivateRequest` error.
 pub type xcb_glx_unsupported_private_request_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_fb_config.
+/// The opcode for `Glx::BadFBConfig` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_fb_config_error_t`].
 pub const XCB_GLX_BAD_FB_CONFIG: u8 = 9i32 as u8;
 
+/// The `Glx::BadFBConfig` error.
 pub type xcb_glx_bad_fb_config_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_pbuffer.
+/// The opcode for `Glx::BadPbuffer` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_pbuffer_error_t`].
 pub const XCB_GLX_BAD_PBUFFER: u8 = 10i32 as u8;
 
+/// The `Glx::BadPbuffer` error.
 pub type xcb_glx_bad_pbuffer_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_current_drawable.
+/// The opcode for `Glx::BadCurrentDrawable` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_current_drawable_error_t`].
 pub const XCB_GLX_BAD_CURRENT_DRAWABLE: u8 = 11i32 as u8;
 
+/// The `Glx::BadCurrentDrawable` error.
 pub type xcb_glx_bad_current_drawable_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_bad_window.
+/// The opcode for `Glx::BadWindow` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_bad_window_error_t`].
 pub const XCB_GLX_BAD_WINDOW: u8 = 12i32 as u8;
 
+/// The `Glx::BadWindow` error.
 pub type xcb_glx_bad_window_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_glx_bad_profile_arb.
+/// The opcode for `Glx::GLXBadProfileARB` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_glx_glx_bad_profile_arb_error_t`].
 pub const XCB_GLX_GLX_BAD_PROFILE_ARB: u8 = 13i32 as u8;
 
+/// The `Glx::GLXBadProfileARB` error.
 pub type xcb_glx_glx_bad_profile_arb_error_t = xcb_glx_generic_error_t;
 
-/// Opcode for xcb_glx_pbuffer_clobber.
+/// The opcode for `Glx::PbufferClobber` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_glx_pbuffer_clobber_event_t`].
 pub const XCB_GLX_PBUFFER_CLOBBER: u8 = 0i32 as u8;
 
+/// The `Glx::PbufferClobber` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_pbuffer_clobber_event_t {
@@ -284,9 +399,13 @@ impl Default for xcb_glx_pbuffer_clobber_event_t {
     }
 }
 
-/// Opcode for xcb_glx_buffer_swap_complete.
+/// The opcode for `Glx::BufferSwapComplete` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_glx_buffer_swap_complete_event_t`].
 pub const XCB_GLX_BUFFER_SWAP_COMPLETE: u8 = 1i32 as u8;
 
+/// The `Glx::BufferSwapComplete` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_buffer_swap_complete_event_t {
@@ -309,17 +428,50 @@ impl Default for xcb_glx_buffer_swap_complete_event_t {
     }
 }
 
+/// The `Glx::PBCET` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Glx::PBCET::Damaged`](XCB_GLX_PBCET_DAMAGED)
+/// - [`Glx::PBCET::Saved`](XCB_GLX_PBCET_SAVED)
 pub type xcb_glx_pbcet_t = u32;
+/// The `Glx::PBCET::Damaged` enum variant.
+///
+/// This is a variant of [`xcb_glx_pbcet_t`].
 pub const XCB_GLX_PBCET_DAMAGED: xcb_glx_pbcet_t = 32791;
+/// The `Glx::PBCET::Saved` enum variant.
+///
+/// This is a variant of [`xcb_glx_pbcet_t`].
 pub const XCB_GLX_PBCET_SAVED: xcb_glx_pbcet_t = 32792;
 
+/// The `Glx::PBCDT` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Glx::PBCDT::Window`](XCB_GLX_PBCDT_WINDOW)
+/// - [`Glx::PBCDT::Pbuffer`](XCB_GLX_PBCDT_PBUFFER)
 pub type xcb_glx_pbcdt_t = u32;
+/// The `Glx::PBCDT::Window` enum variant.
+///
+/// This is a variant of [`xcb_glx_pbcdt_t`].
 pub const XCB_GLX_PBCDT_WINDOW: xcb_glx_pbcdt_t = 32793;
+/// The `Glx::PBCDT::Pbuffer` enum variant.
+///
+/// This is a variant of [`xcb_glx_pbcdt_t`].
 pub const XCB_GLX_PBCDT_PBUFFER: xcb_glx_pbcdt_t = 32794;
 
-/// Opcode for xcb_glx_render.
+/// The opcode for `Glx::Render` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_render_request_t`].
 pub const XCB_GLX_RENDER: u8 = 1i32 as u8;
 
+/// The `Glx::Render` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_render_request_t {
@@ -335,9 +487,18 @@ impl Default for xcb_glx_render_request_t {
     }
 }
 
-/// Opcode for xcb_glx_render_large.
+/// The opcode for `Glx::RenderLarge` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_render_large_request_t`].
 pub const XCB_GLX_RENDER_LARGE: u8 = 2i32 as u8;
 
+/// The `Glx::RenderLarge` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_render_large_request_t {
@@ -356,9 +517,14 @@ impl Default for xcb_glx_render_large_request_t {
     }
 }
 
-/// Opcode for xcb_glx_create_context.
+/// The opcode for `Glx::CreateContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_create_context_request_t`].
 pub const XCB_GLX_CREATE_CONTEXT: u8 = 3i32 as u8;
 
+/// The `Glx::CreateContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_create_context_request_t {
@@ -379,9 +545,14 @@ impl Default for xcb_glx_create_context_request_t {
     }
 }
 
-/// Opcode for xcb_glx_destroy_context.
+/// The opcode for `Glx::DestroyContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_destroy_context_request_t`].
 pub const XCB_GLX_DESTROY_CONTEXT: u8 = 4i32 as u8;
 
+/// The `Glx::DestroyContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_destroy_context_request_t {
@@ -397,9 +568,15 @@ impl Default for xcb_glx_destroy_context_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::MakeCurrent` request.
+///
+/// Pass this cookie to [`xcb_glx_make_current_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_make_current_reply`]: XcbGlx::xcb_glx_make_current_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_make_current_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -409,9 +586,14 @@ impl Default for xcb_glx_make_current_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_make_current.
+/// The opcode for `Glx::MakeCurrent` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_make_current_request_t`].
 pub const XCB_GLX_MAKE_CURRENT: u8 = 5i32 as u8;
 
+/// The `Glx::MakeCurrent` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_make_current_request_t {
@@ -429,6 +611,7 @@ impl Default for xcb_glx_make_current_request_t {
     }
 }
 
+/// The `Glx::MakeCurrent` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_make_current_reply_t {
@@ -446,9 +629,15 @@ impl Default for xcb_glx_make_current_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::IsDirect` request.
+///
+/// Pass this cookie to [`xcb_glx_is_direct_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_is_direct_reply`]: XcbGlx::xcb_glx_is_direct_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_direct_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -458,9 +647,14 @@ impl Default for xcb_glx_is_direct_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_is_direct.
+/// The opcode for `Glx::IsDirect` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_is_direct_request_t`].
 pub const XCB_GLX_IS_DIRECT: u8 = 6i32 as u8;
 
+/// The `Glx::IsDirect` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_direct_request_t {
@@ -476,6 +670,7 @@ impl Default for xcb_glx_is_direct_request_t {
     }
 }
 
+/// The `Glx::IsDirect` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_direct_reply_t {
@@ -493,9 +688,15 @@ impl Default for xcb_glx_is_direct_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_glx_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_query_version_reply`]: XcbGlx::xcb_glx_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -505,9 +706,14 @@ impl Default for xcb_glx_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_query_version.
+/// The opcode for `Glx::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_query_version_request_t`].
 pub const XCB_GLX_QUERY_VERSION: u8 = 7i32 as u8;
 
+/// The `Glx::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_version_request_t {
@@ -524,6 +730,7 @@ impl Default for xcb_glx_query_version_request_t {
     }
 }
 
+/// The `Glx::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_version_reply_t {
@@ -542,9 +749,14 @@ impl Default for xcb_glx_query_version_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_wait_gl.
+/// The opcode for `Glx::WaitGL` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_wait_gl_request_t`].
 pub const XCB_GLX_WAIT_GL: u8 = 8i32 as u8;
 
+/// The `Glx::WaitGL` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_wait_gl_request_t {
@@ -560,9 +772,14 @@ impl Default for xcb_glx_wait_gl_request_t {
     }
 }
 
-/// Opcode for xcb_glx_wait_x.
+/// The opcode for `Glx::WaitX` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_wait_x_request_t`].
 pub const XCB_GLX_WAIT_X: u8 = 9i32 as u8;
 
+/// The `Glx::WaitX` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_wait_x_request_t {
@@ -578,9 +795,14 @@ impl Default for xcb_glx_wait_x_request_t {
     }
 }
 
-/// Opcode for xcb_glx_copy_context.
+/// The opcode for `Glx::CopyContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_copy_context_request_t`].
 pub const XCB_GLX_COPY_CONTEXT: u8 = 10i32 as u8;
 
+/// The `Glx::CopyContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_copy_context_request_t {
@@ -599,32 +821,125 @@ impl Default for xcb_glx_copy_context_request_t {
     }
 }
 
+/// The `Glx::GC` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Glx::GC::GL_CURRENT_BIT`](XCB_GLX_GC_GL_CURRENT_BIT)
+/// - [`Glx::GC::GL_POINT_BIT`](XCB_GLX_GC_GL_POINT_BIT)
+/// - [`Glx::GC::GL_LINE_BIT`](XCB_GLX_GC_GL_LINE_BIT)
+/// - [`Glx::GC::GL_POLYGON_BIT`](XCB_GLX_GC_GL_POLYGON_BIT)
+/// - [`Glx::GC::GL_POLYGON_STIPPLE_BIT`](XCB_GLX_GC_GL_POLYGON_STIPPLE_BIT)
+/// - [`Glx::GC::GL_PIXEL_MODE_BIT`](XCB_GLX_GC_GL_PIXEL_MODE_BIT)
+/// - [`Glx::GC::GL_LIGHTING_BIT`](XCB_GLX_GC_GL_LIGHTING_BIT)
+/// - [`Glx::GC::GL_FOG_BIT`](XCB_GLX_GC_GL_FOG_BIT)
+/// - [`Glx::GC::GL_DEPTH_BUFFER_BIT`](XCB_GLX_GC_GL_DEPTH_BUFFER_BIT)
+/// - [`Glx::GC::GL_ACCUM_BUFFER_BIT`](XCB_GLX_GC_GL_ACCUM_BUFFER_BIT)
+/// - [`Glx::GC::GL_STENCIL_BUFFER_BIT`](XCB_GLX_GC_GL_STENCIL_BUFFER_BIT)
+/// - [`Glx::GC::GL_VIEWPORT_BIT`](XCB_GLX_GC_GL_VIEWPORT_BIT)
+/// - [`Glx::GC::GL_TRANSFORM_BIT`](XCB_GLX_GC_GL_TRANSFORM_BIT)
+/// - [`Glx::GC::GL_ENABLE_BIT`](XCB_GLX_GC_GL_ENABLE_BIT)
+/// - [`Glx::GC::GL_COLOR_BUFFER_BIT`](XCB_GLX_GC_GL_COLOR_BUFFER_BIT)
+/// - [`Glx::GC::GL_HINT_BIT`](XCB_GLX_GC_GL_HINT_BIT)
+/// - [`Glx::GC::GL_EVAL_BIT`](XCB_GLX_GC_GL_EVAL_BIT)
+/// - [`Glx::GC::GL_LIST_BIT`](XCB_GLX_GC_GL_LIST_BIT)
+/// - [`Glx::GC::GL_TEXTURE_BIT`](XCB_GLX_GC_GL_TEXTURE_BIT)
+/// - [`Glx::GC::GL_SCISSOR_BIT`](XCB_GLX_GC_GL_SCISSOR_BIT)
+/// - [`Glx::GC::GL_ALL_ATTRIB_BITS`](XCB_GLX_GC_GL_ALL_ATTRIB_BITS)
 pub type xcb_glx_gc_t = u32;
+/// The `Glx::GC::GL_CURRENT_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_CURRENT_BIT: xcb_glx_gc_t = 1;
+/// The `Glx::GC::GL_POINT_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_POINT_BIT: xcb_glx_gc_t = 2;
+/// The `Glx::GC::GL_LINE_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_LINE_BIT: xcb_glx_gc_t = 4;
+/// The `Glx::GC::GL_POLYGON_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_POLYGON_BIT: xcb_glx_gc_t = 8;
+/// The `Glx::GC::GL_POLYGON_STIPPLE_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_POLYGON_STIPPLE_BIT: xcb_glx_gc_t = 16;
+/// The `Glx::GC::GL_PIXEL_MODE_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_PIXEL_MODE_BIT: xcb_glx_gc_t = 32;
+/// The `Glx::GC::GL_LIGHTING_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_LIGHTING_BIT: xcb_glx_gc_t = 64;
+/// The `Glx::GC::GL_FOG_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_FOG_BIT: xcb_glx_gc_t = 128;
+/// The `Glx::GC::GL_DEPTH_BUFFER_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_DEPTH_BUFFER_BIT: xcb_glx_gc_t = 256;
+/// The `Glx::GC::GL_ACCUM_BUFFER_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_ACCUM_BUFFER_BIT: xcb_glx_gc_t = 512;
+/// The `Glx::GC::GL_STENCIL_BUFFER_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_STENCIL_BUFFER_BIT: xcb_glx_gc_t = 1024;
+/// The `Glx::GC::GL_VIEWPORT_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_VIEWPORT_BIT: xcb_glx_gc_t = 2048;
+/// The `Glx::GC::GL_TRANSFORM_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_TRANSFORM_BIT: xcb_glx_gc_t = 4096;
+/// The `Glx::GC::GL_ENABLE_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_ENABLE_BIT: xcb_glx_gc_t = 8192;
+/// The `Glx::GC::GL_COLOR_BUFFER_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_COLOR_BUFFER_BIT: xcb_glx_gc_t = 16384;
+/// The `Glx::GC::GL_HINT_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_HINT_BIT: xcb_glx_gc_t = 32768;
+/// The `Glx::GC::GL_EVAL_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_EVAL_BIT: xcb_glx_gc_t = 65536;
+/// The `Glx::GC::GL_LIST_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_LIST_BIT: xcb_glx_gc_t = 131072;
+/// The `Glx::GC::GL_TEXTURE_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_TEXTURE_BIT: xcb_glx_gc_t = 262144;
+/// The `Glx::GC::GL_SCISSOR_BIT` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_SCISSOR_BIT: xcb_glx_gc_t = 524288;
+/// The `Glx::GC::GL_ALL_ATTRIB_BITS` enum variant.
+///
+/// This is a variant of [`xcb_glx_gc_t`].
 pub const XCB_GLX_GC_GL_ALL_ATTRIB_BITS: xcb_glx_gc_t = 16777215;
 
-/// Opcode for xcb_glx_swap_buffers.
+/// The opcode for `Glx::SwapBuffers` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_swap_buffers_request_t`].
 pub const XCB_GLX_SWAP_BUFFERS: u8 = 11i32 as u8;
 
+/// The `Glx::SwapBuffers` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_swap_buffers_request_t {
@@ -641,9 +956,14 @@ impl Default for xcb_glx_swap_buffers_request_t {
     }
 }
 
-/// Opcode for xcb_glx_use_x_font.
+/// The opcode for `Glx::UseXFont` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_use_x_font_request_t`].
 pub const XCB_GLX_USE_X_FONT: u8 = 12i32 as u8;
 
+/// The `Glx::UseXFont` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_use_x_font_request_t {
@@ -663,9 +983,14 @@ impl Default for xcb_glx_use_x_font_request_t {
     }
 }
 
-/// Opcode for xcb_glx_create_glx_pixmap.
+/// The opcode for `Glx::CreateGLXPixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_create_glx_pixmap_request_t`].
 pub const XCB_GLX_CREATE_GLX_PIXMAP: u8 = 13i32 as u8;
 
+/// The `Glx::CreateGLXPixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_create_glx_pixmap_request_t {
@@ -684,9 +1009,15 @@ impl Default for xcb_glx_create_glx_pixmap_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetVisualConfigs` request.
+///
+/// Pass this cookie to [`xcb_glx_get_visual_configs_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_visual_configs_reply`]: XcbGlx::xcb_glx_get_visual_configs_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_visual_configs_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -696,9 +1027,14 @@ impl Default for xcb_glx_get_visual_configs_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_visual_configs.
+/// The opcode for `Glx::GetVisualConfigs` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_visual_configs_request_t`].
 pub const XCB_GLX_GET_VISUAL_CONFIGS: u8 = 14i32 as u8;
 
+/// The `Glx::GetVisualConfigs` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_visual_configs_request_t {
@@ -714,6 +1050,11 @@ impl Default for xcb_glx_get_visual_configs_request_t {
     }
 }
 
+/// The `Glx::GetVisualConfigs` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `property_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_visual_configs_reply_t {
@@ -732,9 +1073,14 @@ impl Default for xcb_glx_get_visual_configs_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_destroy_glx_pixmap.
+/// The opcode for `Glx::DestroyGLXPixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_destroy_glx_pixmap_request_t`].
 pub const XCB_GLX_DESTROY_GLX_PIXMAP: u8 = 15i32 as u8;
 
+/// The `Glx::DestroyGLXPixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_destroy_glx_pixmap_request_t {
@@ -750,9 +1096,18 @@ impl Default for xcb_glx_destroy_glx_pixmap_request_t {
     }
 }
 
-/// Opcode for xcb_glx_vendor_private.
+/// The opcode for `Glx::VendorPrivate` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_vendor_private_request_t`].
 pub const XCB_GLX_VENDOR_PRIVATE: u8 = 16i32 as u8;
 
+/// The `Glx::VendorPrivate` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_vendor_private_request_t {
@@ -769,9 +1124,15 @@ impl Default for xcb_glx_vendor_private_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::VendorPrivateWithReply` request.
+///
+/// Pass this cookie to [`xcb_glx_vendor_private_with_reply_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_vendor_private_with_reply_reply`]: XcbGlx::xcb_glx_vendor_private_with_reply_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_vendor_private_with_reply_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -781,9 +1142,18 @@ impl Default for xcb_glx_vendor_private_with_reply_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_vendor_private_with_reply.
+/// The opcode for `Glx::VendorPrivateWithReply` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_vendor_private_with_reply_request_t`].
 pub const XCB_GLX_VENDOR_PRIVATE_WITH_REPLY: u8 = 17i32 as u8;
 
+/// The `Glx::VendorPrivateWithReply` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_vendor_private_with_reply_request_t {
@@ -800,6 +1170,11 @@ impl Default for xcb_glx_vendor_private_with_reply_request_t {
     }
 }
 
+/// The `Glx::VendorPrivateWithReply` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data2`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_vendor_private_with_reply_reply_t {
@@ -817,9 +1192,15 @@ impl Default for xcb_glx_vendor_private_with_reply_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::QueryExtensionsString` request.
+///
+/// Pass this cookie to [`xcb_glx_query_extensions_string_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_query_extensions_string_reply`]: XcbGlx::xcb_glx_query_extensions_string_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_extensions_string_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -829,9 +1210,14 @@ impl Default for xcb_glx_query_extensions_string_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_query_extensions_string.
+/// The opcode for `Glx::QueryExtensionsString` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_query_extensions_string_request_t`].
 pub const XCB_GLX_QUERY_EXTENSIONS_STRING: u8 = 18i32 as u8;
 
+/// The `Glx::QueryExtensionsString` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_extensions_string_request_t {
@@ -847,6 +1233,7 @@ impl Default for xcb_glx_query_extensions_string_request_t {
     }
 }
 
+/// The `Glx::QueryExtensionsString` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_extensions_string_reply_t {
@@ -865,9 +1252,15 @@ impl Default for xcb_glx_query_extensions_string_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::QueryServerString` request.
+///
+/// Pass this cookie to [`xcb_glx_query_server_string_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_query_server_string_reply`]: XcbGlx::xcb_glx_query_server_string_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_server_string_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -877,9 +1270,14 @@ impl Default for xcb_glx_query_server_string_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_query_server_string.
+/// The opcode for `Glx::QueryServerString` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_query_server_string_request_t`].
 pub const XCB_GLX_QUERY_SERVER_STRING: u8 = 19i32 as u8;
 
+/// The `Glx::QueryServerString` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_server_string_request_t {
@@ -896,6 +1294,11 @@ impl Default for xcb_glx_query_server_string_request_t {
     }
 }
 
+/// The `Glx::QueryServerString` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_server_string_reply_t {
@@ -914,9 +1317,18 @@ impl Default for xcb_glx_query_server_string_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_client_info.
+/// The opcode for `Glx::ClientInfo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_client_info_request_t`].
 pub const XCB_GLX_CLIENT_INFO: u8 = 20i32 as u8;
 
+/// The `Glx::ClientInfo` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_client_info_request_t {
@@ -934,9 +1346,15 @@ impl Default for xcb_glx_client_info_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetFBConfigs` request.
+///
+/// Pass this cookie to [`xcb_glx_get_fb_configs_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_fb_configs_reply`]: XcbGlx::xcb_glx_get_fb_configs_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_fb_configs_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -946,9 +1364,14 @@ impl Default for xcb_glx_get_fb_configs_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_fb_configs.
+/// The opcode for `Glx::GetFBConfigs` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_fb_configs_request_t`].
 pub const XCB_GLX_GET_FB_CONFIGS: u8 = 21i32 as u8;
 
+/// The `Glx::GetFBConfigs` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_fb_configs_request_t {
@@ -964,6 +1387,11 @@ impl Default for xcb_glx_get_fb_configs_request_t {
     }
 }
 
+/// The `Glx::GetFBConfigs` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `property_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_fb_configs_reply_t {
@@ -982,9 +1410,18 @@ impl Default for xcb_glx_get_fb_configs_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_create_pixmap.
+/// The opcode for `Glx::CreatePixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_create_pixmap_request_t`].
 pub const XCB_GLX_CREATE_PIXMAP: u8 = 22i32 as u8;
 
+/// The `Glx::CreatePixmap` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attribs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_create_pixmap_request_t {
@@ -1004,9 +1441,14 @@ impl Default for xcb_glx_create_pixmap_request_t {
     }
 }
 
-/// Opcode for xcb_glx_destroy_pixmap.
+/// The opcode for `Glx::DestroyPixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_destroy_pixmap_request_t`].
 pub const XCB_GLX_DESTROY_PIXMAP: u8 = 23i32 as u8;
 
+/// The `Glx::DestroyPixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_destroy_pixmap_request_t {
@@ -1022,9 +1464,14 @@ impl Default for xcb_glx_destroy_pixmap_request_t {
     }
 }
 
-/// Opcode for xcb_glx_create_new_context.
+/// The opcode for `Glx::CreateNewContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_create_new_context_request_t`].
 pub const XCB_GLX_CREATE_NEW_CONTEXT: u8 = 24i32 as u8;
 
+/// The `Glx::CreateNewContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_create_new_context_request_t {
@@ -1046,9 +1493,15 @@ impl Default for xcb_glx_create_new_context_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::QueryContext` request.
+///
+/// Pass this cookie to [`xcb_glx_query_context_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_query_context_reply`]: XcbGlx::xcb_glx_query_context_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_context_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1058,9 +1511,14 @@ impl Default for xcb_glx_query_context_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_query_context.
+/// The opcode for `Glx::QueryContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_query_context_request_t`].
 pub const XCB_GLX_QUERY_CONTEXT: u8 = 25i32 as u8;
 
+/// The `Glx::QueryContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_context_request_t {
@@ -1076,6 +1534,11 @@ impl Default for xcb_glx_query_context_request_t {
     }
 }
 
+/// The `Glx::QueryContext` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attribs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_query_context_reply_t {
@@ -1093,9 +1556,15 @@ impl Default for xcb_glx_query_context_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::MakeContextCurrent` request.
+///
+/// Pass this cookie to [`xcb_glx_make_context_current_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_make_context_current_reply`]: XcbGlx::xcb_glx_make_context_current_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_make_context_current_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1105,9 +1574,14 @@ impl Default for xcb_glx_make_context_current_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_make_context_current.
+/// The opcode for `Glx::MakeContextCurrent` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_make_context_current_request_t`].
 pub const XCB_GLX_MAKE_CONTEXT_CURRENT: u8 = 26i32 as u8;
 
+/// The `Glx::MakeContextCurrent` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_make_context_current_request_t {
@@ -1126,6 +1600,7 @@ impl Default for xcb_glx_make_context_current_request_t {
     }
 }
 
+/// The `Glx::MakeContextCurrent` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_make_context_current_reply_t {
@@ -1143,9 +1618,18 @@ impl Default for xcb_glx_make_context_current_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_create_pbuffer.
+/// The opcode for `Glx::CreatePbuffer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_create_pbuffer_request_t`].
 pub const XCB_GLX_CREATE_PBUFFER: u8 = 27i32 as u8;
 
+/// The `Glx::CreatePbuffer` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attribs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_create_pbuffer_request_t {
@@ -1164,9 +1648,14 @@ impl Default for xcb_glx_create_pbuffer_request_t {
     }
 }
 
-/// Opcode for xcb_glx_destroy_pbuffer.
+/// The opcode for `Glx::DestroyPbuffer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_destroy_pbuffer_request_t`].
 pub const XCB_GLX_DESTROY_PBUFFER: u8 = 28i32 as u8;
 
+/// The `Glx::DestroyPbuffer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_destroy_pbuffer_request_t {
@@ -1182,9 +1671,15 @@ impl Default for xcb_glx_destroy_pbuffer_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetDrawableAttributes` request.
+///
+/// Pass this cookie to [`xcb_glx_get_drawable_attributes_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_drawable_attributes_reply`]: XcbGlx::xcb_glx_get_drawable_attributes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_drawable_attributes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1194,9 +1689,14 @@ impl Default for xcb_glx_get_drawable_attributes_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_drawable_attributes.
+/// The opcode for `Glx::GetDrawableAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_drawable_attributes_request_t`].
 pub const XCB_GLX_GET_DRAWABLE_ATTRIBUTES: u8 = 29i32 as u8;
 
+/// The `Glx::GetDrawableAttributes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_drawable_attributes_request_t {
@@ -1212,6 +1712,11 @@ impl Default for xcb_glx_get_drawable_attributes_request_t {
     }
 }
 
+/// The `Glx::GetDrawableAttributes` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attribs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_drawable_attributes_reply_t {
@@ -1229,9 +1734,18 @@ impl Default for xcb_glx_get_drawable_attributes_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_change_drawable_attributes.
+/// The opcode for `Glx::ChangeDrawableAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_change_drawable_attributes_request_t`].
 pub const XCB_GLX_CHANGE_DRAWABLE_ATTRIBUTES: u8 = 30i32 as u8;
 
+/// The `Glx::ChangeDrawableAttributes` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attribs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_change_drawable_attributes_request_t {
@@ -1248,9 +1762,18 @@ impl Default for xcb_glx_change_drawable_attributes_request_t {
     }
 }
 
-/// Opcode for xcb_glx_create_window.
+/// The opcode for `Glx::CreateWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_create_window_request_t`].
 pub const XCB_GLX_CREATE_WINDOW: u8 = 31i32 as u8;
 
+/// The `Glx::CreateWindow` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attribs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_create_window_request_t {
@@ -1270,9 +1793,14 @@ impl Default for xcb_glx_create_window_request_t {
     }
 }
 
-/// Opcode for xcb_glx_delete_window.
+/// The opcode for `Glx::DeleteWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_delete_window_request_t`].
 pub const XCB_GLX_DELETE_WINDOW: u8 = 32i32 as u8;
 
+/// The `Glx::DeleteWindow` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_delete_window_request_t {
@@ -1288,9 +1816,20 @@ impl Default for xcb_glx_delete_window_request_t {
     }
 }
 
-/// Opcode for xcb_glx_set_client_info_arb.
+/// The opcode for `Glx::SetClientInfoARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_set_client_info_arb_request_t`].
 pub const XCB_GLX_SET_CLIENT_INFO_ARB: u8 = 33i32 as u8;
 
+/// The `Glx::SetClientInfoARB` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `gl_versions`
+/// - `gl_extension_string`
+/// - `glx_extension_string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_set_client_info_arb_request_t {
@@ -1310,9 +1849,18 @@ impl Default for xcb_glx_set_client_info_arb_request_t {
     }
 }
 
-/// Opcode for xcb_glx_create_context_attribs_arb.
+/// The opcode for `Glx::CreateContextAttribsARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_create_context_attribs_arb_request_t`].
 pub const XCB_GLX_CREATE_CONTEXT_ATTRIBS_ARB: u8 = 34i32 as u8;
 
+/// The `Glx::CreateContextAttribsARB` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attribs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_create_context_attribs_arb_request_t {
@@ -1334,9 +1882,20 @@ impl Default for xcb_glx_create_context_attribs_arb_request_t {
     }
 }
 
-/// Opcode for xcb_glx_set_client_info_2arb.
+/// The opcode for `Glx::SetClientInfo2ARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_set_client_info_2arb_request_t`].
 pub const XCB_GLX_SET_CLIENT_INFO_2ARB: u8 = 35i32 as u8;
 
+/// The `Glx::SetClientInfo2ARB` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `gl_versions`
+/// - `gl_extension_string`
+/// - `glx_extension_string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_set_client_info_2arb_request_t {
@@ -1356,9 +1915,14 @@ impl Default for xcb_glx_set_client_info_2arb_request_t {
     }
 }
 
-/// Opcode for xcb_glx_new_list.
+/// The opcode for `Glx::NewList` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_new_list_request_t`].
 pub const XCB_GLX_NEW_LIST: u8 = 101i32 as u8;
 
+/// The `Glx::NewList` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_new_list_request_t {
@@ -1376,9 +1940,14 @@ impl Default for xcb_glx_new_list_request_t {
     }
 }
 
-/// Opcode for xcb_glx_end_list.
+/// The opcode for `Glx::EndList` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_end_list_request_t`].
 pub const XCB_GLX_END_LIST: u8 = 102i32 as u8;
 
+/// The `Glx::EndList` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_end_list_request_t {
@@ -1394,9 +1963,14 @@ impl Default for xcb_glx_end_list_request_t {
     }
 }
 
-/// Opcode for xcb_glx_delete_lists.
+/// The opcode for `Glx::DeleteLists` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_delete_lists_request_t`].
 pub const XCB_GLX_DELETE_LISTS: u8 = 103i32 as u8;
 
+/// The `Glx::DeleteLists` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_delete_lists_request_t {
@@ -1414,9 +1988,15 @@ impl Default for xcb_glx_delete_lists_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GenLists` request.
+///
+/// Pass this cookie to [`xcb_glx_gen_lists_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_gen_lists_reply`]: XcbGlx::xcb_glx_gen_lists_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_lists_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1426,9 +2006,14 @@ impl Default for xcb_glx_gen_lists_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_gen_lists.
+/// The opcode for `Glx::GenLists` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_gen_lists_request_t`].
 pub const XCB_GLX_GEN_LISTS: u8 = 104i32 as u8;
 
+/// The `Glx::GenLists` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_lists_request_t {
@@ -1445,6 +2030,7 @@ impl Default for xcb_glx_gen_lists_request_t {
     }
 }
 
+/// The `Glx::GenLists` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_lists_reply_t {
@@ -1461,9 +2047,14 @@ impl Default for xcb_glx_gen_lists_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_feedback_buffer.
+/// The opcode for `Glx::FeedbackBuffer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_feedback_buffer_request_t`].
 pub const XCB_GLX_FEEDBACK_BUFFER: u8 = 105i32 as u8;
 
+/// The `Glx::FeedbackBuffer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_feedback_buffer_request_t {
@@ -1481,9 +2072,14 @@ impl Default for xcb_glx_feedback_buffer_request_t {
     }
 }
 
-/// Opcode for xcb_glx_select_buffer.
+/// The opcode for `Glx::SelectBuffer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_select_buffer_request_t`].
 pub const XCB_GLX_SELECT_BUFFER: u8 = 106i32 as u8;
 
+/// The `Glx::SelectBuffer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_select_buffer_request_t {
@@ -1500,9 +2096,15 @@ impl Default for xcb_glx_select_buffer_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::RenderMode` request.
+///
+/// Pass this cookie to [`xcb_glx_render_mode_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_render_mode_reply`]: XcbGlx::xcb_glx_render_mode_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_render_mode_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1512,9 +2114,14 @@ impl Default for xcb_glx_render_mode_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_render_mode.
+/// The opcode for `Glx::RenderMode` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_render_mode_request_t`].
 pub const XCB_GLX_RENDER_MODE: u8 = 107i32 as u8;
 
+/// The `Glx::RenderMode` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_render_mode_request_t {
@@ -1531,6 +2138,11 @@ impl Default for xcb_glx_render_mode_request_t {
     }
 }
 
+/// The `Glx::RenderMode` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_render_mode_reply_t {
@@ -1550,14 +2162,36 @@ impl Default for xcb_glx_render_mode_reply_t {
     }
 }
 
+/// The `Glx::RM` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Glx::RM::GL_RENDER`](XCB_GLX_RM_GL_RENDER)
+/// - [`Glx::RM::GL_FEEDBACK`](XCB_GLX_RM_GL_FEEDBACK)
+/// - [`Glx::RM::GL_SELECT`](XCB_GLX_RM_GL_SELECT)
 pub type xcb_glx_rm_t = u32;
+/// The `Glx::RM::GL_RENDER` enum variant.
+///
+/// This is a variant of [`xcb_glx_rm_t`].
 pub const XCB_GLX_RM_GL_RENDER: xcb_glx_rm_t = 7168;
+/// The `Glx::RM::GL_FEEDBACK` enum variant.
+///
+/// This is a variant of [`xcb_glx_rm_t`].
 pub const XCB_GLX_RM_GL_FEEDBACK: xcb_glx_rm_t = 7169;
+/// The `Glx::RM::GL_SELECT` enum variant.
+///
+/// This is a variant of [`xcb_glx_rm_t`].
 pub const XCB_GLX_RM_GL_SELECT: xcb_glx_rm_t = 7170;
 
+/// The cookie for the reply to a `Glx::Finish` request.
+///
+/// Pass this cookie to [`xcb_glx_finish_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_finish_reply`]: XcbGlx::xcb_glx_finish_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_finish_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1567,9 +2201,14 @@ impl Default for xcb_glx_finish_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_finish.
+/// The opcode for `Glx::Finish` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_finish_request_t`].
 pub const XCB_GLX_FINISH: u8 = 108i32 as u8;
 
+/// The `Glx::Finish` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_finish_request_t {
@@ -1585,6 +2224,7 @@ impl Default for xcb_glx_finish_request_t {
     }
 }
 
+/// The `Glx::Finish` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_finish_reply_t {
@@ -1600,9 +2240,14 @@ impl Default for xcb_glx_finish_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_pixel_storef.
+/// The opcode for `Glx::PixelStoref` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_pixel_storef_request_t`].
 pub const XCB_GLX_PIXEL_STOREF: u8 = 109i32 as u8;
 
+/// The `Glx::PixelStoref` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_pixel_storef_request_t {
@@ -1620,9 +2265,14 @@ impl Default for xcb_glx_pixel_storef_request_t {
     }
 }
 
-/// Opcode for xcb_glx_pixel_storei.
+/// The opcode for `Glx::PixelStorei` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_pixel_storei_request_t`].
 pub const XCB_GLX_PIXEL_STOREI: u8 = 110i32 as u8;
 
+/// The `Glx::PixelStorei` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_pixel_storei_request_t {
@@ -1640,9 +2290,15 @@ impl Default for xcb_glx_pixel_storei_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::ReadPixels` request.
+///
+/// Pass this cookie to [`xcb_glx_read_pixels_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_read_pixels_reply`]: XcbGlx::xcb_glx_read_pixels_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_read_pixels_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1652,9 +2308,14 @@ impl Default for xcb_glx_read_pixels_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_read_pixels.
+/// The opcode for `Glx::ReadPixels` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_read_pixels_request_t`].
 pub const XCB_GLX_READ_PIXELS: u8 = 111i32 as u8;
 
+/// The `Glx::ReadPixels` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_read_pixels_request_t {
@@ -1678,6 +2339,11 @@ impl Default for xcb_glx_read_pixels_request_t {
     }
 }
 
+/// The `Glx::ReadPixels` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_read_pixels_reply_t {
@@ -1694,9 +2360,15 @@ impl Default for xcb_glx_read_pixels_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetBooleanv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_booleanv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_booleanv_reply`]: XcbGlx::xcb_glx_get_booleanv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_booleanv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1706,9 +2378,14 @@ impl Default for xcb_glx_get_booleanv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_booleanv.
+/// The opcode for `Glx::GetBooleanv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_booleanv_request_t`].
 pub const XCB_GLX_GET_BOOLEANV: u8 = 112i32 as u8;
 
+/// The `Glx::GetBooleanv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_booleanv_request_t {
@@ -1725,6 +2402,11 @@ impl Default for xcb_glx_get_booleanv_request_t {
     }
 }
 
+/// The `Glx::GetBooleanv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_booleanv_reply_t {
@@ -1744,9 +2426,15 @@ impl Default for xcb_glx_get_booleanv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetClipPlane` request.
+///
+/// Pass this cookie to [`xcb_glx_get_clip_plane_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_clip_plane_reply`]: XcbGlx::xcb_glx_get_clip_plane_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_clip_plane_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1756,9 +2444,14 @@ impl Default for xcb_glx_get_clip_plane_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_clip_plane.
+/// The opcode for `Glx::GetClipPlane` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_clip_plane_request_t`].
 pub const XCB_GLX_GET_CLIP_PLANE: u8 = 113i32 as u8;
 
+/// The `Glx::GetClipPlane` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_clip_plane_request_t {
@@ -1775,6 +2468,11 @@ impl Default for xcb_glx_get_clip_plane_request_t {
     }
 }
 
+/// The `Glx::GetClipPlane` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_clip_plane_reply_t {
@@ -1791,9 +2489,15 @@ impl Default for xcb_glx_get_clip_plane_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetDoublev` request.
+///
+/// Pass this cookie to [`xcb_glx_get_doublev_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_doublev_reply`]: XcbGlx::xcb_glx_get_doublev_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_doublev_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1803,9 +2507,14 @@ impl Default for xcb_glx_get_doublev_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_doublev.
+/// The opcode for `Glx::GetDoublev` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_doublev_request_t`].
 pub const XCB_GLX_GET_DOUBLEV: u8 = 114i32 as u8;
 
+/// The `Glx::GetDoublev` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_doublev_request_t {
@@ -1822,6 +2531,11 @@ impl Default for xcb_glx_get_doublev_request_t {
     }
 }
 
+/// The `Glx::GetDoublev` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_doublev_reply_t {
@@ -1841,9 +2555,15 @@ impl Default for xcb_glx_get_doublev_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetError` request.
+///
+/// Pass this cookie to [`xcb_glx_get_error_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_error_reply`]: XcbGlx::xcb_glx_get_error_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_error_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1853,9 +2573,14 @@ impl Default for xcb_glx_get_error_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_error.
+/// The opcode for `Glx::GetError` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_error_request_t`].
 pub const XCB_GLX_GET_ERROR: u8 = 115i32 as u8;
 
+/// The `Glx::GetError` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_error_request_t {
@@ -1871,6 +2596,7 @@ impl Default for xcb_glx_get_error_request_t {
     }
 }
 
+/// The `Glx::GetError` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_error_reply_t {
@@ -1887,9 +2613,15 @@ impl Default for xcb_glx_get_error_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetFloatv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_floatv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_floatv_reply`]: XcbGlx::xcb_glx_get_floatv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_floatv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1899,9 +2631,14 @@ impl Default for xcb_glx_get_floatv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_floatv.
+/// The opcode for `Glx::GetFloatv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_floatv_request_t`].
 pub const XCB_GLX_GET_FLOATV: u8 = 116i32 as u8;
 
+/// The `Glx::GetFloatv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_floatv_request_t {
@@ -1918,6 +2655,11 @@ impl Default for xcb_glx_get_floatv_request_t {
     }
 }
 
+/// The `Glx::GetFloatv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_floatv_reply_t {
@@ -1937,9 +2679,15 @@ impl Default for xcb_glx_get_floatv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetIntegerv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_integerv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_integerv_reply`]: XcbGlx::xcb_glx_get_integerv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_integerv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1949,9 +2697,14 @@ impl Default for xcb_glx_get_integerv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_integerv.
+/// The opcode for `Glx::GetIntegerv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_integerv_request_t`].
 pub const XCB_GLX_GET_INTEGERV: u8 = 117i32 as u8;
 
+/// The `Glx::GetIntegerv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_integerv_request_t {
@@ -1968,6 +2721,11 @@ impl Default for xcb_glx_get_integerv_request_t {
     }
 }
 
+/// The `Glx::GetIntegerv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_integerv_reply_t {
@@ -1987,9 +2745,15 @@ impl Default for xcb_glx_get_integerv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetLightfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_lightfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_lightfv_reply`]: XcbGlx::xcb_glx_get_lightfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_lightfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1999,9 +2763,14 @@ impl Default for xcb_glx_get_lightfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_lightfv.
+/// The opcode for `Glx::GetLightfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_lightfv_request_t`].
 pub const XCB_GLX_GET_LIGHTFV: u8 = 118i32 as u8;
 
+/// The `Glx::GetLightfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_lightfv_request_t {
@@ -2019,6 +2788,11 @@ impl Default for xcb_glx_get_lightfv_request_t {
     }
 }
 
+/// The `Glx::GetLightfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_lightfv_reply_t {
@@ -2038,9 +2812,15 @@ impl Default for xcb_glx_get_lightfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetLightiv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_lightiv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_lightiv_reply`]: XcbGlx::xcb_glx_get_lightiv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_lightiv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2050,9 +2830,14 @@ impl Default for xcb_glx_get_lightiv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_lightiv.
+/// The opcode for `Glx::GetLightiv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_lightiv_request_t`].
 pub const XCB_GLX_GET_LIGHTIV: u8 = 119i32 as u8;
 
+/// The `Glx::GetLightiv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_lightiv_request_t {
@@ -2070,6 +2855,11 @@ impl Default for xcb_glx_get_lightiv_request_t {
     }
 }
 
+/// The `Glx::GetLightiv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_lightiv_reply_t {
@@ -2089,9 +2879,15 @@ impl Default for xcb_glx_get_lightiv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMapdv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_mapdv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_mapdv_reply`]: XcbGlx::xcb_glx_get_mapdv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapdv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2101,9 +2897,14 @@ impl Default for xcb_glx_get_mapdv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_mapdv.
+/// The opcode for `Glx::GetMapdv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_mapdv_request_t`].
 pub const XCB_GLX_GET_MAPDV: u8 = 120i32 as u8;
 
+/// The `Glx::GetMapdv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapdv_request_t {
@@ -2121,6 +2922,11 @@ impl Default for xcb_glx_get_mapdv_request_t {
     }
 }
 
+/// The `Glx::GetMapdv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapdv_reply_t {
@@ -2140,9 +2946,15 @@ impl Default for xcb_glx_get_mapdv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMapfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_mapfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_mapfv_reply`]: XcbGlx::xcb_glx_get_mapfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2152,9 +2964,14 @@ impl Default for xcb_glx_get_mapfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_mapfv.
+/// The opcode for `Glx::GetMapfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_mapfv_request_t`].
 pub const XCB_GLX_GET_MAPFV: u8 = 121i32 as u8;
 
+/// The `Glx::GetMapfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapfv_request_t {
@@ -2172,6 +2989,11 @@ impl Default for xcb_glx_get_mapfv_request_t {
     }
 }
 
+/// The `Glx::GetMapfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapfv_reply_t {
@@ -2191,9 +3013,15 @@ impl Default for xcb_glx_get_mapfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMapiv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_mapiv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_mapiv_reply`]: XcbGlx::xcb_glx_get_mapiv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapiv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2203,9 +3031,14 @@ impl Default for xcb_glx_get_mapiv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_mapiv.
+/// The opcode for `Glx::GetMapiv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_mapiv_request_t`].
 pub const XCB_GLX_GET_MAPIV: u8 = 122i32 as u8;
 
+/// The `Glx::GetMapiv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapiv_request_t {
@@ -2223,6 +3056,11 @@ impl Default for xcb_glx_get_mapiv_request_t {
     }
 }
 
+/// The `Glx::GetMapiv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_mapiv_reply_t {
@@ -2242,9 +3080,15 @@ impl Default for xcb_glx_get_mapiv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMaterialfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_materialfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_materialfv_reply`]: XcbGlx::xcb_glx_get_materialfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_materialfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2254,9 +3098,14 @@ impl Default for xcb_glx_get_materialfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_materialfv.
+/// The opcode for `Glx::GetMaterialfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_materialfv_request_t`].
 pub const XCB_GLX_GET_MATERIALFV: u8 = 123i32 as u8;
 
+/// The `Glx::GetMaterialfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_materialfv_request_t {
@@ -2274,6 +3123,11 @@ impl Default for xcb_glx_get_materialfv_request_t {
     }
 }
 
+/// The `Glx::GetMaterialfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_materialfv_reply_t {
@@ -2293,9 +3147,15 @@ impl Default for xcb_glx_get_materialfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMaterialiv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_materialiv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_materialiv_reply`]: XcbGlx::xcb_glx_get_materialiv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_materialiv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2305,9 +3165,14 @@ impl Default for xcb_glx_get_materialiv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_materialiv.
+/// The opcode for `Glx::GetMaterialiv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_materialiv_request_t`].
 pub const XCB_GLX_GET_MATERIALIV: u8 = 124i32 as u8;
 
+/// The `Glx::GetMaterialiv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_materialiv_request_t {
@@ -2325,6 +3190,11 @@ impl Default for xcb_glx_get_materialiv_request_t {
     }
 }
 
+/// The `Glx::GetMaterialiv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_materialiv_reply_t {
@@ -2344,9 +3214,15 @@ impl Default for xcb_glx_get_materialiv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetPixelMapfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_pixel_mapfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_pixel_mapfv_reply`]: XcbGlx::xcb_glx_get_pixel_mapfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2356,9 +3232,14 @@ impl Default for xcb_glx_get_pixel_mapfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_pixel_mapfv.
+/// The opcode for `Glx::GetPixelMapfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_pixel_mapfv_request_t`].
 pub const XCB_GLX_GET_PIXEL_MAPFV: u8 = 125i32 as u8;
 
+/// The `Glx::GetPixelMapfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapfv_request_t {
@@ -2375,6 +3256,11 @@ impl Default for xcb_glx_get_pixel_mapfv_request_t {
     }
 }
 
+/// The `Glx::GetPixelMapfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapfv_reply_t {
@@ -2394,9 +3280,15 @@ impl Default for xcb_glx_get_pixel_mapfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetPixelMapuiv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_pixel_mapuiv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_pixel_mapuiv_reply`]: XcbGlx::xcb_glx_get_pixel_mapuiv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapuiv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2406,9 +3298,14 @@ impl Default for xcb_glx_get_pixel_mapuiv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_pixel_mapuiv.
+/// The opcode for `Glx::GetPixelMapuiv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_pixel_mapuiv_request_t`].
 pub const XCB_GLX_GET_PIXEL_MAPUIV: u8 = 126i32 as u8;
 
+/// The `Glx::GetPixelMapuiv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapuiv_request_t {
@@ -2425,6 +3322,11 @@ impl Default for xcb_glx_get_pixel_mapuiv_request_t {
     }
 }
 
+/// The `Glx::GetPixelMapuiv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapuiv_reply_t {
@@ -2444,9 +3346,15 @@ impl Default for xcb_glx_get_pixel_mapuiv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetPixelMapusv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_pixel_mapusv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_pixel_mapusv_reply`]: XcbGlx::xcb_glx_get_pixel_mapusv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapusv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2456,9 +3364,14 @@ impl Default for xcb_glx_get_pixel_mapusv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_pixel_mapusv.
+/// The opcode for `Glx::GetPixelMapusv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_pixel_mapusv_request_t`].
 pub const XCB_GLX_GET_PIXEL_MAPUSV: u8 = 127i32 as u8;
 
+/// The `Glx::GetPixelMapusv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapusv_request_t {
@@ -2475,6 +3388,11 @@ impl Default for xcb_glx_get_pixel_mapusv_request_t {
     }
 }
 
+/// The `Glx::GetPixelMapusv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_pixel_mapusv_reply_t {
@@ -2494,9 +3412,15 @@ impl Default for xcb_glx_get_pixel_mapusv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetPolygonStipple` request.
+///
+/// Pass this cookie to [`xcb_glx_get_polygon_stipple_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_polygon_stipple_reply`]: XcbGlx::xcb_glx_get_polygon_stipple_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_polygon_stipple_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2506,9 +3430,14 @@ impl Default for xcb_glx_get_polygon_stipple_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_polygon_stipple.
+/// The opcode for `Glx::GetPolygonStipple` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_polygon_stipple_request_t`].
 pub const XCB_GLX_GET_POLYGON_STIPPLE: u8 = 128i32 as u8;
 
+/// The `Glx::GetPolygonStipple` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_polygon_stipple_request_t {
@@ -2525,6 +3454,11 @@ impl Default for xcb_glx_get_polygon_stipple_request_t {
     }
 }
 
+/// The `Glx::GetPolygonStipple` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_polygon_stipple_reply_t {
@@ -2541,9 +3475,15 @@ impl Default for xcb_glx_get_polygon_stipple_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetString` request.
+///
+/// Pass this cookie to [`xcb_glx_get_string_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_string_reply`]: XcbGlx::xcb_glx_get_string_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_string_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2553,9 +3493,14 @@ impl Default for xcb_glx_get_string_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_string.
+/// The opcode for `Glx::GetString` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_string_request_t`].
 pub const XCB_GLX_GET_STRING: u8 = 129i32 as u8;
 
+/// The `Glx::GetString` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_string_request_t {
@@ -2572,6 +3517,11 @@ impl Default for xcb_glx_get_string_request_t {
     }
 }
 
+/// The `Glx::GetString` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_string_reply_t {
@@ -2590,9 +3540,15 @@ impl Default for xcb_glx_get_string_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexEnvfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_envfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_envfv_reply`]: XcbGlx::xcb_glx_get_tex_envfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_envfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2602,9 +3558,14 @@ impl Default for xcb_glx_get_tex_envfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_envfv.
+/// The opcode for `Glx::GetTexEnvfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_envfv_request_t`].
 pub const XCB_GLX_GET_TEX_ENVFV: u8 = 130i32 as u8;
 
+/// The `Glx::GetTexEnvfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_envfv_request_t {
@@ -2622,6 +3583,11 @@ impl Default for xcb_glx_get_tex_envfv_request_t {
     }
 }
 
+/// The `Glx::GetTexEnvfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_envfv_reply_t {
@@ -2641,9 +3607,15 @@ impl Default for xcb_glx_get_tex_envfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexEnviv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_enviv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_enviv_reply`]: XcbGlx::xcb_glx_get_tex_enviv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_enviv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2653,9 +3625,14 @@ impl Default for xcb_glx_get_tex_enviv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_enviv.
+/// The opcode for `Glx::GetTexEnviv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_enviv_request_t`].
 pub const XCB_GLX_GET_TEX_ENVIV: u8 = 131i32 as u8;
 
+/// The `Glx::GetTexEnviv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_enviv_request_t {
@@ -2673,6 +3650,11 @@ impl Default for xcb_glx_get_tex_enviv_request_t {
     }
 }
 
+/// The `Glx::GetTexEnviv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_enviv_reply_t {
@@ -2692,9 +3674,15 @@ impl Default for xcb_glx_get_tex_enviv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexGendv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_gendv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_gendv_reply`]: XcbGlx::xcb_glx_get_tex_gendv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_gendv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2704,9 +3692,14 @@ impl Default for xcb_glx_get_tex_gendv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_gendv.
+/// The opcode for `Glx::GetTexGendv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_gendv_request_t`].
 pub const XCB_GLX_GET_TEX_GENDV: u8 = 132i32 as u8;
 
+/// The `Glx::GetTexGendv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_gendv_request_t {
@@ -2724,6 +3717,11 @@ impl Default for xcb_glx_get_tex_gendv_request_t {
     }
 }
 
+/// The `Glx::GetTexGendv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_gendv_reply_t {
@@ -2743,9 +3741,15 @@ impl Default for xcb_glx_get_tex_gendv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexGenfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_genfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_genfv_reply`]: XcbGlx::xcb_glx_get_tex_genfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_genfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2755,9 +3759,14 @@ impl Default for xcb_glx_get_tex_genfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_genfv.
+/// The opcode for `Glx::GetTexGenfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_genfv_request_t`].
 pub const XCB_GLX_GET_TEX_GENFV: u8 = 133i32 as u8;
 
+/// The `Glx::GetTexGenfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_genfv_request_t {
@@ -2775,6 +3784,11 @@ impl Default for xcb_glx_get_tex_genfv_request_t {
     }
 }
 
+/// The `Glx::GetTexGenfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_genfv_reply_t {
@@ -2794,9 +3808,15 @@ impl Default for xcb_glx_get_tex_genfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexGeniv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_geniv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_geniv_reply`]: XcbGlx::xcb_glx_get_tex_geniv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_geniv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2806,9 +3826,14 @@ impl Default for xcb_glx_get_tex_geniv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_geniv.
+/// The opcode for `Glx::GetTexGeniv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_geniv_request_t`].
 pub const XCB_GLX_GET_TEX_GENIV: u8 = 134i32 as u8;
 
+/// The `Glx::GetTexGeniv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_geniv_request_t {
@@ -2826,6 +3851,11 @@ impl Default for xcb_glx_get_tex_geniv_request_t {
     }
 }
 
+/// The `Glx::GetTexGeniv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_geniv_reply_t {
@@ -2845,9 +3875,15 @@ impl Default for xcb_glx_get_tex_geniv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexImage` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_image_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_image_reply`]: XcbGlx::xcb_glx_get_tex_image_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_image_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2857,9 +3893,14 @@ impl Default for xcb_glx_get_tex_image_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_image.
+/// The opcode for `Glx::GetTexImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_image_request_t`].
 pub const XCB_GLX_GET_TEX_IMAGE: u8 = 135i32 as u8;
 
+/// The `Glx::GetTexImage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_image_request_t {
@@ -2880,6 +3921,11 @@ impl Default for xcb_glx_get_tex_image_request_t {
     }
 }
 
+/// The `Glx::GetTexImage` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_image_reply_t {
@@ -2900,9 +3946,15 @@ impl Default for xcb_glx_get_tex_image_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexParameterfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_parameterfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_parameterfv_reply`]: XcbGlx::xcb_glx_get_tex_parameterfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_parameterfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2912,9 +3964,14 @@ impl Default for xcb_glx_get_tex_parameterfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_parameterfv.
+/// The opcode for `Glx::GetTexParameterfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_parameterfv_request_t`].
 pub const XCB_GLX_GET_TEX_PARAMETERFV: u8 = 136i32 as u8;
 
+/// The `Glx::GetTexParameterfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_parameterfv_request_t {
@@ -2932,6 +3989,11 @@ impl Default for xcb_glx_get_tex_parameterfv_request_t {
     }
 }
 
+/// The `Glx::GetTexParameterfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_parameterfv_reply_t {
@@ -2951,9 +4013,15 @@ impl Default for xcb_glx_get_tex_parameterfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexParameteriv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_parameteriv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_parameteriv_reply`]: XcbGlx::xcb_glx_get_tex_parameteriv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_parameteriv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2963,9 +4031,14 @@ impl Default for xcb_glx_get_tex_parameteriv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_parameteriv.
+/// The opcode for `Glx::GetTexParameteriv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_parameteriv_request_t`].
 pub const XCB_GLX_GET_TEX_PARAMETERIV: u8 = 137i32 as u8;
 
+/// The `Glx::GetTexParameteriv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_parameteriv_request_t {
@@ -2983,6 +4056,11 @@ impl Default for xcb_glx_get_tex_parameteriv_request_t {
     }
 }
 
+/// The `Glx::GetTexParameteriv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_parameteriv_reply_t {
@@ -3002,9 +4080,15 @@ impl Default for xcb_glx_get_tex_parameteriv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexLevelParameterfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_level_parameterfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_level_parameterfv_reply`]: XcbGlx::xcb_glx_get_tex_level_parameterfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_level_parameterfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3014,9 +4098,14 @@ impl Default for xcb_glx_get_tex_level_parameterfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_level_parameterfv.
+/// The opcode for `Glx::GetTexLevelParameterfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_level_parameterfv_request_t`].
 pub const XCB_GLX_GET_TEX_LEVEL_PARAMETERFV: u8 = 138i32 as u8;
 
+/// The `Glx::GetTexLevelParameterfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_level_parameterfv_request_t {
@@ -3035,6 +4124,11 @@ impl Default for xcb_glx_get_tex_level_parameterfv_request_t {
     }
 }
 
+/// The `Glx::GetTexLevelParameterfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_level_parameterfv_reply_t {
@@ -3054,9 +4148,15 @@ impl Default for xcb_glx_get_tex_level_parameterfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetTexLevelParameteriv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_tex_level_parameteriv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_tex_level_parameteriv_reply`]: XcbGlx::xcb_glx_get_tex_level_parameteriv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_level_parameteriv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3066,9 +4166,14 @@ impl Default for xcb_glx_get_tex_level_parameteriv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_tex_level_parameteriv.
+/// The opcode for `Glx::GetTexLevelParameteriv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_tex_level_parameteriv_request_t`].
 pub const XCB_GLX_GET_TEX_LEVEL_PARAMETERIV: u8 = 139i32 as u8;
 
+/// The `Glx::GetTexLevelParameteriv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_level_parameteriv_request_t {
@@ -3087,6 +4192,11 @@ impl Default for xcb_glx_get_tex_level_parameteriv_request_t {
     }
 }
 
+/// The `Glx::GetTexLevelParameteriv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_tex_level_parameteriv_reply_t {
@@ -3106,9 +4216,15 @@ impl Default for xcb_glx_get_tex_level_parameteriv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::IsEnabled` request.
+///
+/// Pass this cookie to [`xcb_glx_is_enabled_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_is_enabled_reply`]: XcbGlx::xcb_glx_is_enabled_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_enabled_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3118,9 +4234,14 @@ impl Default for xcb_glx_is_enabled_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_is_enabled.
+/// The opcode for `Glx::IsEnabled` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_is_enabled_request_t`].
 pub const XCB_GLX_IS_ENABLED: u8 = 140i32 as u8;
 
+/// The `Glx::IsEnabled` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_enabled_request_t {
@@ -3137,6 +4258,7 @@ impl Default for xcb_glx_is_enabled_request_t {
     }
 }
 
+/// The `Glx::IsEnabled` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_enabled_reply_t {
@@ -3153,9 +4275,15 @@ impl Default for xcb_glx_is_enabled_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::IsList` request.
+///
+/// Pass this cookie to [`xcb_glx_is_list_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_is_list_reply`]: XcbGlx::xcb_glx_is_list_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_list_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3165,9 +4293,14 @@ impl Default for xcb_glx_is_list_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_is_list.
+/// The opcode for `Glx::IsList` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_is_list_request_t`].
 pub const XCB_GLX_IS_LIST: u8 = 141i32 as u8;
 
+/// The `Glx::IsList` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_list_request_t {
@@ -3184,6 +4317,7 @@ impl Default for xcb_glx_is_list_request_t {
     }
 }
 
+/// The `Glx::IsList` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_list_reply_t {
@@ -3200,9 +4334,14 @@ impl Default for xcb_glx_is_list_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_flush.
+/// The opcode for `Glx::Flush` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_flush_request_t`].
 pub const XCB_GLX_FLUSH: u8 = 142i32 as u8;
 
+/// The `Glx::Flush` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_flush_request_t {
@@ -3218,9 +4357,15 @@ impl Default for xcb_glx_flush_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::AreTexturesResident` request.
+///
+/// Pass this cookie to [`xcb_glx_are_textures_resident_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_are_textures_resident_reply`]: XcbGlx::xcb_glx_are_textures_resident_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_are_textures_resident_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3230,9 +4375,18 @@ impl Default for xcb_glx_are_textures_resident_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_are_textures_resident.
+/// The opcode for `Glx::AreTexturesResident` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_are_textures_resident_request_t`].
 pub const XCB_GLX_ARE_TEXTURES_RESIDENT: u8 = 143i32 as u8;
 
+/// The `Glx::AreTexturesResident` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `textures`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_are_textures_resident_request_t {
@@ -3249,6 +4403,11 @@ impl Default for xcb_glx_are_textures_resident_request_t {
     }
 }
 
+/// The `Glx::AreTexturesResident` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_are_textures_resident_reply_t {
@@ -3266,9 +4425,18 @@ impl Default for xcb_glx_are_textures_resident_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_delete_textures.
+/// The opcode for `Glx::DeleteTextures` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_delete_textures_request_t`].
 pub const XCB_GLX_DELETE_TEXTURES: u8 = 144i32 as u8;
 
+/// The `Glx::DeleteTextures` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `textures`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_delete_textures_request_t {
@@ -3285,9 +4453,15 @@ impl Default for xcb_glx_delete_textures_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GenTextures` request.
+///
+/// Pass this cookie to [`xcb_glx_gen_textures_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_gen_textures_reply`]: XcbGlx::xcb_glx_gen_textures_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_textures_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3297,9 +4471,14 @@ impl Default for xcb_glx_gen_textures_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_gen_textures.
+/// The opcode for `Glx::GenTextures` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_gen_textures_request_t`].
 pub const XCB_GLX_GEN_TEXTURES: u8 = 145i32 as u8;
 
+/// The `Glx::GenTextures` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_textures_request_t {
@@ -3316,6 +4495,11 @@ impl Default for xcb_glx_gen_textures_request_t {
     }
 }
 
+/// The `Glx::GenTextures` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_textures_reply_t {
@@ -3332,9 +4516,15 @@ impl Default for xcb_glx_gen_textures_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::IsTexture` request.
+///
+/// Pass this cookie to [`xcb_glx_is_texture_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_is_texture_reply`]: XcbGlx::xcb_glx_is_texture_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_texture_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3344,9 +4534,14 @@ impl Default for xcb_glx_is_texture_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_is_texture.
+/// The opcode for `Glx::IsTexture` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_is_texture_request_t`].
 pub const XCB_GLX_IS_TEXTURE: u8 = 146i32 as u8;
 
+/// The `Glx::IsTexture` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_texture_request_t {
@@ -3363,6 +4558,7 @@ impl Default for xcb_glx_is_texture_request_t {
     }
 }
 
+/// The `Glx::IsTexture` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_texture_reply_t {
@@ -3379,9 +4575,15 @@ impl Default for xcb_glx_is_texture_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetColorTable` request.
+///
+/// Pass this cookie to [`xcb_glx_get_color_table_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_color_table_reply`]: XcbGlx::xcb_glx_get_color_table_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3391,9 +4593,14 @@ impl Default for xcb_glx_get_color_table_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_color_table.
+/// The opcode for `Glx::GetColorTable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_color_table_request_t`].
 pub const XCB_GLX_GET_COLOR_TABLE: u8 = 147i32 as u8;
 
+/// The `Glx::GetColorTable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_request_t {
@@ -3413,6 +4620,11 @@ impl Default for xcb_glx_get_color_table_request_t {
     }
 }
 
+/// The `Glx::GetColorTable` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_reply_t {
@@ -3431,9 +4643,15 @@ impl Default for xcb_glx_get_color_table_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetColorTableParameterfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_color_table_parameterfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_color_table_parameterfv_reply`]: XcbGlx::xcb_glx_get_color_table_parameterfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_parameterfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3443,9 +4661,14 @@ impl Default for xcb_glx_get_color_table_parameterfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_color_table_parameterfv.
+/// The opcode for `Glx::GetColorTableParameterfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_color_table_parameterfv_request_t`].
 pub const XCB_GLX_GET_COLOR_TABLE_PARAMETERFV: u8 = 148i32 as u8;
 
+/// The `Glx::GetColorTableParameterfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_parameterfv_request_t {
@@ -3463,6 +4686,11 @@ impl Default for xcb_glx_get_color_table_parameterfv_request_t {
     }
 }
 
+/// The `Glx::GetColorTableParameterfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_parameterfv_reply_t {
@@ -3482,9 +4710,15 @@ impl Default for xcb_glx_get_color_table_parameterfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetColorTableParameteriv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_color_table_parameteriv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_color_table_parameteriv_reply`]: XcbGlx::xcb_glx_get_color_table_parameteriv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_parameteriv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3494,9 +4728,14 @@ impl Default for xcb_glx_get_color_table_parameteriv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_color_table_parameteriv.
+/// The opcode for `Glx::GetColorTableParameteriv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_color_table_parameteriv_request_t`].
 pub const XCB_GLX_GET_COLOR_TABLE_PARAMETERIV: u8 = 149i32 as u8;
 
+/// The `Glx::GetColorTableParameteriv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_parameteriv_request_t {
@@ -3514,6 +4753,11 @@ impl Default for xcb_glx_get_color_table_parameteriv_request_t {
     }
 }
 
+/// The `Glx::GetColorTableParameteriv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_color_table_parameteriv_reply_t {
@@ -3533,9 +4777,15 @@ impl Default for xcb_glx_get_color_table_parameteriv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetConvolutionFilter` request.
+///
+/// Pass this cookie to [`xcb_glx_get_convolution_filter_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_convolution_filter_reply`]: XcbGlx::xcb_glx_get_convolution_filter_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_filter_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3545,9 +4795,14 @@ impl Default for xcb_glx_get_convolution_filter_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_convolution_filter.
+/// The opcode for `Glx::GetConvolutionFilter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_convolution_filter_request_t`].
 pub const XCB_GLX_GET_CONVOLUTION_FILTER: u8 = 150i32 as u8;
 
+/// The `Glx::GetConvolutionFilter` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_filter_request_t {
@@ -3567,6 +4822,11 @@ impl Default for xcb_glx_get_convolution_filter_request_t {
     }
 }
 
+/// The `Glx::GetConvolutionFilter` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_filter_reply_t {
@@ -3586,9 +4846,15 @@ impl Default for xcb_glx_get_convolution_filter_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetConvolutionParameterfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_convolution_parameterfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_convolution_parameterfv_reply`]: XcbGlx::xcb_glx_get_convolution_parameterfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_parameterfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3598,9 +4864,14 @@ impl Default for xcb_glx_get_convolution_parameterfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_convolution_parameterfv.
+/// The opcode for `Glx::GetConvolutionParameterfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_convolution_parameterfv_request_t`].
 pub const XCB_GLX_GET_CONVOLUTION_PARAMETERFV: u8 = 151i32 as u8;
 
+/// The `Glx::GetConvolutionParameterfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_parameterfv_request_t {
@@ -3618,6 +4889,11 @@ impl Default for xcb_glx_get_convolution_parameterfv_request_t {
     }
 }
 
+/// The `Glx::GetConvolutionParameterfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_parameterfv_reply_t {
@@ -3637,9 +4913,15 @@ impl Default for xcb_glx_get_convolution_parameterfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetConvolutionParameteriv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_convolution_parameteriv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_convolution_parameteriv_reply`]: XcbGlx::xcb_glx_get_convolution_parameteriv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_parameteriv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3649,9 +4931,14 @@ impl Default for xcb_glx_get_convolution_parameteriv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_convolution_parameteriv.
+/// The opcode for `Glx::GetConvolutionParameteriv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_convolution_parameteriv_request_t`].
 pub const XCB_GLX_GET_CONVOLUTION_PARAMETERIV: u8 = 152i32 as u8;
 
+/// The `Glx::GetConvolutionParameteriv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_parameteriv_request_t {
@@ -3669,6 +4956,11 @@ impl Default for xcb_glx_get_convolution_parameteriv_request_t {
     }
 }
 
+/// The `Glx::GetConvolutionParameteriv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_convolution_parameteriv_reply_t {
@@ -3688,9 +4980,15 @@ impl Default for xcb_glx_get_convolution_parameteriv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetSeparableFilter` request.
+///
+/// Pass this cookie to [`xcb_glx_get_separable_filter_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_separable_filter_reply`]: XcbGlx::xcb_glx_get_separable_filter_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_separable_filter_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3700,9 +4998,14 @@ impl Default for xcb_glx_get_separable_filter_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_separable_filter.
+/// The opcode for `Glx::GetSeparableFilter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_separable_filter_request_t`].
 pub const XCB_GLX_GET_SEPARABLE_FILTER: u8 = 153i32 as u8;
 
+/// The `Glx::GetSeparableFilter` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_separable_filter_request_t {
@@ -3722,6 +5025,11 @@ impl Default for xcb_glx_get_separable_filter_request_t {
     }
 }
 
+/// The `Glx::GetSeparableFilter` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rows_and_cols`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_separable_filter_reply_t {
@@ -3741,9 +5049,15 @@ impl Default for xcb_glx_get_separable_filter_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetHistogram` request.
+///
+/// Pass this cookie to [`xcb_glx_get_histogram_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_histogram_reply`]: XcbGlx::xcb_glx_get_histogram_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3753,9 +5067,14 @@ impl Default for xcb_glx_get_histogram_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_histogram.
+/// The opcode for `Glx::GetHistogram` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_histogram_request_t`].
 pub const XCB_GLX_GET_HISTOGRAM: u8 = 154i32 as u8;
 
+/// The `Glx::GetHistogram` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_request_t {
@@ -3776,6 +5095,11 @@ impl Default for xcb_glx_get_histogram_request_t {
     }
 }
 
+/// The `Glx::GetHistogram` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_reply_t {
@@ -3794,9 +5118,15 @@ impl Default for xcb_glx_get_histogram_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetHistogramParameterfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_histogram_parameterfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_histogram_parameterfv_reply`]: XcbGlx::xcb_glx_get_histogram_parameterfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_parameterfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3806,9 +5136,14 @@ impl Default for xcb_glx_get_histogram_parameterfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_histogram_parameterfv.
+/// The opcode for `Glx::GetHistogramParameterfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_histogram_parameterfv_request_t`].
 pub const XCB_GLX_GET_HISTOGRAM_PARAMETERFV: u8 = 155i32 as u8;
 
+/// The `Glx::GetHistogramParameterfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_parameterfv_request_t {
@@ -3826,6 +5161,11 @@ impl Default for xcb_glx_get_histogram_parameterfv_request_t {
     }
 }
 
+/// The `Glx::GetHistogramParameterfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_parameterfv_reply_t {
@@ -3845,9 +5185,15 @@ impl Default for xcb_glx_get_histogram_parameterfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetHistogramParameteriv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_histogram_parameteriv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_histogram_parameteriv_reply`]: XcbGlx::xcb_glx_get_histogram_parameteriv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_parameteriv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3857,9 +5203,14 @@ impl Default for xcb_glx_get_histogram_parameteriv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_histogram_parameteriv.
+/// The opcode for `Glx::GetHistogramParameteriv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_histogram_parameteriv_request_t`].
 pub const XCB_GLX_GET_HISTOGRAM_PARAMETERIV: u8 = 156i32 as u8;
 
+/// The `Glx::GetHistogramParameteriv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_parameteriv_request_t {
@@ -3877,6 +5228,11 @@ impl Default for xcb_glx_get_histogram_parameteriv_request_t {
     }
 }
 
+/// The `Glx::GetHistogramParameteriv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_histogram_parameteriv_reply_t {
@@ -3896,9 +5252,15 @@ impl Default for xcb_glx_get_histogram_parameteriv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMinmax` request.
+///
+/// Pass this cookie to [`xcb_glx_get_minmax_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_minmax_reply`]: XcbGlx::xcb_glx_get_minmax_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3908,9 +5270,14 @@ impl Default for xcb_glx_get_minmax_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_minmax.
+/// The opcode for `Glx::GetMinmax` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_minmax_request_t`].
 pub const XCB_GLX_GET_MINMAX: u8 = 157i32 as u8;
 
+/// The `Glx::GetMinmax` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_request_t {
@@ -3931,6 +5298,11 @@ impl Default for xcb_glx_get_minmax_request_t {
     }
 }
 
+/// The `Glx::GetMinmax` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_reply_t {
@@ -3947,9 +5319,15 @@ impl Default for xcb_glx_get_minmax_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMinmaxParameterfv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_minmax_parameterfv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_minmax_parameterfv_reply`]: XcbGlx::xcb_glx_get_minmax_parameterfv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_parameterfv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3959,9 +5337,14 @@ impl Default for xcb_glx_get_minmax_parameterfv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_minmax_parameterfv.
+/// The opcode for `Glx::GetMinmaxParameterfv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_minmax_parameterfv_request_t`].
 pub const XCB_GLX_GET_MINMAX_PARAMETERFV: u8 = 158i32 as u8;
 
+/// The `Glx::GetMinmaxParameterfv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_parameterfv_request_t {
@@ -3979,6 +5362,11 @@ impl Default for xcb_glx_get_minmax_parameterfv_request_t {
     }
 }
 
+/// The `Glx::GetMinmaxParameterfv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_parameterfv_reply_t {
@@ -3998,9 +5386,15 @@ impl Default for xcb_glx_get_minmax_parameterfv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetMinmaxParameteriv` request.
+///
+/// Pass this cookie to [`xcb_glx_get_minmax_parameteriv_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_minmax_parameteriv_reply`]: XcbGlx::xcb_glx_get_minmax_parameteriv_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_parameteriv_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4010,9 +5404,14 @@ impl Default for xcb_glx_get_minmax_parameteriv_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_minmax_parameteriv.
+/// The opcode for `Glx::GetMinmaxParameteriv` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_minmax_parameteriv_request_t`].
 pub const XCB_GLX_GET_MINMAX_PARAMETERIV: u8 = 159i32 as u8;
 
+/// The `Glx::GetMinmaxParameteriv` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_parameteriv_request_t {
@@ -4030,6 +5429,11 @@ impl Default for xcb_glx_get_minmax_parameteriv_request_t {
     }
 }
 
+/// The `Glx::GetMinmaxParameteriv` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_minmax_parameteriv_reply_t {
@@ -4049,9 +5453,15 @@ impl Default for xcb_glx_get_minmax_parameteriv_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetCompressedTexImageARB` request.
+///
+/// Pass this cookie to [`xcb_glx_get_compressed_tex_image_arb_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_compressed_tex_image_arb_reply`]: XcbGlx::xcb_glx_get_compressed_tex_image_arb_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_compressed_tex_image_arb_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4061,9 +5471,14 @@ impl Default for xcb_glx_get_compressed_tex_image_arb_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_compressed_tex_image_arb.
+/// The opcode for `Glx::GetCompressedTexImageARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_compressed_tex_image_arb_request_t`].
 pub const XCB_GLX_GET_COMPRESSED_TEX_IMAGE_ARB: u8 = 160i32 as u8;
 
+/// The `Glx::GetCompressedTexImageARB` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_compressed_tex_image_arb_request_t {
@@ -4081,6 +5496,11 @@ impl Default for xcb_glx_get_compressed_tex_image_arb_request_t {
     }
 }
 
+/// The `Glx::GetCompressedTexImageARB` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_compressed_tex_image_arb_reply_t {
@@ -4099,9 +5519,18 @@ impl Default for xcb_glx_get_compressed_tex_image_arb_reply_t {
     }
 }
 
-/// Opcode for xcb_glx_delete_queries_arb.
+/// The opcode for `Glx::DeleteQueriesARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_delete_queries_arb_request_t`].
 pub const XCB_GLX_DELETE_QUERIES_ARB: u8 = 161i32 as u8;
 
+/// The `Glx::DeleteQueriesARB` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `ids`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_delete_queries_arb_request_t {
@@ -4118,9 +5547,15 @@ impl Default for xcb_glx_delete_queries_arb_request_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GenQueriesARB` request.
+///
+/// Pass this cookie to [`xcb_glx_gen_queries_arb_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_gen_queries_arb_reply`]: XcbGlx::xcb_glx_gen_queries_arb_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_queries_arb_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4130,9 +5565,14 @@ impl Default for xcb_glx_gen_queries_arb_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_gen_queries_arb.
+/// The opcode for `Glx::GenQueriesARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_gen_queries_arb_request_t`].
 pub const XCB_GLX_GEN_QUERIES_ARB: u8 = 162i32 as u8;
 
+/// The `Glx::GenQueriesARB` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_queries_arb_request_t {
@@ -4149,6 +5589,11 @@ impl Default for xcb_glx_gen_queries_arb_request_t {
     }
 }
 
+/// The `Glx::GenQueriesARB` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_gen_queries_arb_reply_t {
@@ -4165,9 +5610,15 @@ impl Default for xcb_glx_gen_queries_arb_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::IsQueryARB` request.
+///
+/// Pass this cookie to [`xcb_glx_is_query_arb_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_is_query_arb_reply`]: XcbGlx::xcb_glx_is_query_arb_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_query_arb_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4177,9 +5628,14 @@ impl Default for xcb_glx_is_query_arb_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_is_query_arb.
+/// The opcode for `Glx::IsQueryARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_is_query_arb_request_t`].
 pub const XCB_GLX_IS_QUERY_ARB: u8 = 163i32 as u8;
 
+/// The `Glx::IsQueryARB` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_query_arb_request_t {
@@ -4196,6 +5652,7 @@ impl Default for xcb_glx_is_query_arb_request_t {
     }
 }
 
+/// The `Glx::IsQueryARB` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_is_query_arb_reply_t {
@@ -4212,9 +5669,15 @@ impl Default for xcb_glx_is_query_arb_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetQueryivARB` request.
+///
+/// Pass this cookie to [`xcb_glx_get_queryiv_arb_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_queryiv_arb_reply`]: XcbGlx::xcb_glx_get_queryiv_arb_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_queryiv_arb_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4224,9 +5687,14 @@ impl Default for xcb_glx_get_queryiv_arb_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_queryiv_arb.
+/// The opcode for `Glx::GetQueryivARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_queryiv_arb_request_t`].
 pub const XCB_GLX_GET_QUERYIV_ARB: u8 = 164i32 as u8;
 
+/// The `Glx::GetQueryivARB` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_queryiv_arb_request_t {
@@ -4244,6 +5712,11 @@ impl Default for xcb_glx_get_queryiv_arb_request_t {
     }
 }
 
+/// The `Glx::GetQueryivARB` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_queryiv_arb_reply_t {
@@ -4263,9 +5736,15 @@ impl Default for xcb_glx_get_queryiv_arb_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetQueryObjectivARB` request.
+///
+/// Pass this cookie to [`xcb_glx_get_query_objectiv_arb_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_query_objectiv_arb_reply`]: XcbGlx::xcb_glx_get_query_objectiv_arb_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_query_objectiv_arb_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4275,9 +5754,14 @@ impl Default for xcb_glx_get_query_objectiv_arb_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_query_objectiv_arb.
+/// The opcode for `Glx::GetQueryObjectivARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_query_objectiv_arb_request_t`].
 pub const XCB_GLX_GET_QUERY_OBJECTIV_ARB: u8 = 165i32 as u8;
 
+/// The `Glx::GetQueryObjectivARB` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_query_objectiv_arb_request_t {
@@ -4295,6 +5779,11 @@ impl Default for xcb_glx_get_query_objectiv_arb_request_t {
     }
 }
 
+/// The `Glx::GetQueryObjectivARB` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_query_objectiv_arb_reply_t {
@@ -4314,9 +5803,15 @@ impl Default for xcb_glx_get_query_objectiv_arb_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Glx::GetQueryObjectuivARB` request.
+///
+/// Pass this cookie to [`xcb_glx_get_query_objectuiv_arb_reply`] to retrieve the reply.
+///
+/// [`xcb_glx_get_query_objectuiv_arb_reply`]: XcbGlx::xcb_glx_get_query_objectuiv_arb_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_query_objectuiv_arb_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4326,9 +5821,14 @@ impl Default for xcb_glx_get_query_objectuiv_arb_cookie_t {
     }
 }
 
-/// Opcode for xcb_glx_get_query_objectuiv_arb.
+/// The opcode for `Glx::GetQueryObjectuivARB` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGlx::xcb_glx_id()`], then the type of the request is
+/// [`xcb_glx_get_query_objectuiv_arb_request_t`].
 pub const XCB_GLX_GET_QUERY_OBJECTUIV_ARB: u8 = 166i32 as u8;
 
+/// The `Glx::GetQueryObjectuivARB` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_query_objectuiv_arb_request_t {
@@ -4346,6 +5846,11 @@ impl Default for xcb_glx_get_query_objectuiv_arb_request_t {
     }
 }
 
+/// The `Glx::GetQueryObjectuivARB` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_glx_get_query_objectuiv_arb_reply_t {
@@ -4493,7 +5998,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_make_current_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_make_current_reply_t,
+        ) -> *mut xcb_glx_make_current_reply_t,
     >,
     xcb_glx_is_direct: LazySymbol<
         unsafe fn(
@@ -4512,7 +6017,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_is_direct_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_is_direct_reply_t,
+        ) -> *mut xcb_glx_is_direct_reply_t,
     >,
     xcb_glx_query_version: LazySymbol<
         unsafe fn(
@@ -4533,7 +6038,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_query_version_reply_t,
+        ) -> *mut xcb_glx_query_version_reply_t,
     >,
     xcb_glx_wait_gl_checked: LazySymbol<
         unsafe fn(
@@ -4648,7 +6153,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_visual_configs_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_visual_configs_reply_t,
+        ) -> *mut xcb_glx_get_visual_configs_reply_t,
     >,
     xcb_glx_destroy_glx_pixmap_checked: LazySymbol<
         unsafe fn(c: *mut xcb_connection_t, glx_pixmap: xcb_glx_pixmap_t) -> xcb_void_cookie_t,
@@ -4714,7 +6219,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_vendor_private_with_reply_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_vendor_private_with_reply_reply_t,
+        ) -> *mut xcb_glx_vendor_private_with_reply_reply_t,
     >,
     xcb_glx_query_extensions_string: LazySymbol<
         unsafe fn(
@@ -4733,7 +6238,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_query_extensions_string_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_query_extensions_string_reply_t,
+        ) -> *mut xcb_glx_query_extensions_string_reply_t,
     >,
     xcb_glx_query_server_string_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_query_server_string: LazySymbol<
@@ -4762,7 +6267,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_query_server_string_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_query_server_string_reply_t,
+        ) -> *mut xcb_glx_query_server_string_reply_t,
     >,
     xcb_glx_client_info_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_client_info_checked: LazySymbol<
@@ -4807,7 +6312,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_fb_configs_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_fb_configs_reply_t,
+        ) -> *mut xcb_glx_get_fb_configs_reply_t,
     >,
     xcb_glx_create_pixmap_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_create_pixmap_checked: LazySymbol<
@@ -4890,7 +6395,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_query_context_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_query_context_reply_t,
+        ) -> *mut xcb_glx_query_context_reply_t,
     >,
     xcb_glx_make_context_current: LazySymbol<
         unsafe fn(
@@ -4915,7 +6420,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_make_context_current_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_make_context_current_reply_t,
+        ) -> *mut xcb_glx_make_context_current_reply_t,
     >,
     xcb_glx_create_pbuffer_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_create_pbuffer_checked: LazySymbol<
@@ -4975,7 +6480,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_drawable_attributes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_drawable_attributes_reply_t,
+        ) -> *mut xcb_glx_get_drawable_attributes_reply_t,
     >,
     xcb_glx_change_drawable_attributes_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -5229,7 +6734,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_gen_lists_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_gen_lists_reply_t,
+        ) -> *mut xcb_glx_gen_lists_reply_t,
     >,
     xcb_glx_feedback_buffer_checked: LazySymbol<
         unsafe fn(
@@ -5287,7 +6792,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_render_mode_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_render_mode_reply_t,
+        ) -> *mut xcb_glx_render_mode_reply_t,
     >,
     xcb_glx_finish: LazySymbol<
         unsafe fn(
@@ -5306,7 +6811,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_finish_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_finish_reply_t,
+        ) -> *mut xcb_glx_finish_reply_t,
     >,
     xcb_glx_pixel_storef_checked: LazySymbol<
         unsafe fn(
@@ -5380,7 +6885,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_read_pixels_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_read_pixels_reply_t,
+        ) -> *mut xcb_glx_read_pixels_reply_t,
     >,
     xcb_glx_get_booleanv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_booleanv: LazySymbol<
@@ -5408,7 +6913,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_booleanv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_booleanv_reply_t,
+        ) -> *mut xcb_glx_get_booleanv_reply_t,
     >,
     xcb_glx_get_clip_plane_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_clip_plane: LazySymbol<
@@ -5436,7 +6941,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_clip_plane_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_clip_plane_reply_t,
+        ) -> *mut xcb_glx_get_clip_plane_reply_t,
     >,
     xcb_glx_get_doublev_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_doublev: LazySymbol<
@@ -5464,7 +6969,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_doublev_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_doublev_reply_t,
+        ) -> *mut xcb_glx_get_doublev_reply_t,
     >,
     xcb_glx_get_error: LazySymbol<
         unsafe fn(
@@ -5483,7 +6988,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_error_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_error_reply_t,
+        ) -> *mut xcb_glx_get_error_reply_t,
     >,
     xcb_glx_get_floatv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_floatv: LazySymbol<
@@ -5511,7 +7016,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_floatv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_floatv_reply_t,
+        ) -> *mut xcb_glx_get_floatv_reply_t,
     >,
     xcb_glx_get_integerv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_integerv: LazySymbol<
@@ -5539,7 +7044,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_integerv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_integerv_reply_t,
+        ) -> *mut xcb_glx_get_integerv_reply_t,
     >,
     xcb_glx_get_lightfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_lightfv: LazySymbol<
@@ -5569,7 +7074,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_lightfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_lightfv_reply_t,
+        ) -> *mut xcb_glx_get_lightfv_reply_t,
     >,
     xcb_glx_get_lightiv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_lightiv: LazySymbol<
@@ -5599,7 +7104,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_lightiv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_lightiv_reply_t,
+        ) -> *mut xcb_glx_get_lightiv_reply_t,
     >,
     xcb_glx_get_mapdv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_mapdv: LazySymbol<
@@ -5629,7 +7134,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_mapdv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_mapdv_reply_t,
+        ) -> *mut xcb_glx_get_mapdv_reply_t,
     >,
     xcb_glx_get_mapfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_mapfv: LazySymbol<
@@ -5659,7 +7164,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_mapfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_mapfv_reply_t,
+        ) -> *mut xcb_glx_get_mapfv_reply_t,
     >,
     xcb_glx_get_mapiv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_mapiv: LazySymbol<
@@ -5688,7 +7193,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_mapiv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_mapiv_reply_t,
+        ) -> *mut xcb_glx_get_mapiv_reply_t,
     >,
     xcb_glx_get_materialfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_materialfv: LazySymbol<
@@ -5718,7 +7223,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_materialfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_materialfv_reply_t,
+        ) -> *mut xcb_glx_get_materialfv_reply_t,
     >,
     xcb_glx_get_materialiv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_materialiv: LazySymbol<
@@ -5748,7 +7253,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_materialiv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_materialiv_reply_t,
+        ) -> *mut xcb_glx_get_materialiv_reply_t,
     >,
     xcb_glx_get_pixel_mapfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_pixel_mapfv: LazySymbol<
@@ -5776,7 +7281,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_pixel_mapfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_pixel_mapfv_reply_t,
+        ) -> *mut xcb_glx_get_pixel_mapfv_reply_t,
     >,
     xcb_glx_get_pixel_mapuiv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_pixel_mapuiv: LazySymbol<
@@ -5804,7 +7309,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_pixel_mapuiv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_pixel_mapuiv_reply_t,
+        ) -> *mut xcb_glx_get_pixel_mapuiv_reply_t,
     >,
     xcb_glx_get_pixel_mapusv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_pixel_mapusv: LazySymbol<
@@ -5832,7 +7337,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_pixel_mapusv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_pixel_mapusv_reply_t,
+        ) -> *mut xcb_glx_get_pixel_mapusv_reply_t,
     >,
     xcb_glx_get_polygon_stipple_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_polygon_stipple: LazySymbol<
@@ -5861,7 +7366,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_polygon_stipple_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_polygon_stipple_reply_t,
+        ) -> *mut xcb_glx_get_polygon_stipple_reply_t,
     >,
     xcb_glx_get_string_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_string: LazySymbol<
@@ -5889,7 +7394,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_string_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_string_reply_t,
+        ) -> *mut xcb_glx_get_string_reply_t,
     >,
     xcb_glx_get_tex_envfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_envfv: LazySymbol<
@@ -5919,7 +7424,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_envfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_envfv_reply_t,
+        ) -> *mut xcb_glx_get_tex_envfv_reply_t,
     >,
     xcb_glx_get_tex_enviv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_enviv: LazySymbol<
@@ -5949,7 +7454,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_enviv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_enviv_reply_t,
+        ) -> *mut xcb_glx_get_tex_enviv_reply_t,
     >,
     xcb_glx_get_tex_gendv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_gendv: LazySymbol<
@@ -5979,7 +7484,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_gendv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_gendv_reply_t,
+        ) -> *mut xcb_glx_get_tex_gendv_reply_t,
     >,
     xcb_glx_get_tex_genfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_genfv: LazySymbol<
@@ -6009,7 +7514,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_genfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_genfv_reply_t,
+        ) -> *mut xcb_glx_get_tex_genfv_reply_t,
     >,
     xcb_glx_get_tex_geniv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_geniv: LazySymbol<
@@ -6039,7 +7544,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_geniv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_geniv_reply_t,
+        ) -> *mut xcb_glx_get_tex_geniv_reply_t,
     >,
     xcb_glx_get_tex_image_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_image: LazySymbol<
@@ -6075,7 +7580,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_image_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_image_reply_t,
+        ) -> *mut xcb_glx_get_tex_image_reply_t,
     >,
     xcb_glx_get_tex_parameterfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_parameterfv: LazySymbol<
@@ -6107,7 +7612,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_parameterfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_parameterfv_reply_t,
+        ) -> *mut xcb_glx_get_tex_parameterfv_reply_t,
     >,
     xcb_glx_get_tex_parameteriv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_tex_parameteriv: LazySymbol<
@@ -6138,7 +7643,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_parameteriv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_parameteriv_reply_t,
+        ) -> *mut xcb_glx_get_tex_parameteriv_reply_t,
     >,
     xcb_glx_get_tex_level_parameterfv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6173,7 +7678,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_level_parameterfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_level_parameterfv_reply_t,
+        ) -> *mut xcb_glx_get_tex_level_parameterfv_reply_t,
     >,
     xcb_glx_get_tex_level_parameteriv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6207,7 +7712,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_tex_level_parameteriv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_tex_level_parameteriv_reply_t,
+        ) -> *mut xcb_glx_get_tex_level_parameteriv_reply_t,
     >,
     xcb_glx_is_enabled: LazySymbol<
         unsafe fn(
@@ -6228,7 +7733,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_is_enabled_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_is_enabled_reply_t,
+        ) -> *mut xcb_glx_is_enabled_reply_t,
     >,
     xcb_glx_is_list: LazySymbol<
         unsafe fn(
@@ -6249,7 +7754,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_is_list_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_is_list_reply_t,
+        ) -> *mut xcb_glx_is_list_reply_t,
     >,
     xcb_glx_flush_checked: LazySymbol<
         unsafe fn(
@@ -6292,7 +7797,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_are_textures_resident_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_are_textures_resident_reply_t,
+        ) -> *mut xcb_glx_are_textures_resident_reply_t,
     >,
     xcb_glx_delete_textures_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_delete_textures_checked: LazySymbol<
@@ -6344,7 +7849,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_gen_textures_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_gen_textures_reply_t,
+        ) -> *mut xcb_glx_gen_textures_reply_t,
     >,
     xcb_glx_is_texture: LazySymbol<
         unsafe fn(
@@ -6365,7 +7870,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_is_texture_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_is_texture_reply_t,
+        ) -> *mut xcb_glx_is_texture_reply_t,
     >,
     xcb_glx_get_color_table_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_color_table: LazySymbol<
@@ -6399,7 +7904,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_color_table_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_color_table_reply_t,
+        ) -> *mut xcb_glx_get_color_table_reply_t,
     >,
     xcb_glx_get_color_table_parameterfv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6432,7 +7937,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_color_table_parameterfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_color_table_parameterfv_reply_t,
+        ) -> *mut xcb_glx_get_color_table_parameterfv_reply_t,
     >,
     xcb_glx_get_color_table_parameteriv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6464,7 +7969,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_color_table_parameteriv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_color_table_parameteriv_reply_t,
+        ) -> *mut xcb_glx_get_color_table_parameteriv_reply_t,
     >,
     xcb_glx_get_convolution_filter_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_convolution_filter: LazySymbol<
@@ -6499,7 +8004,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_convolution_filter_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_convolution_filter_reply_t,
+        ) -> *mut xcb_glx_get_convolution_filter_reply_t,
     >,
     xcb_glx_get_convolution_parameterfv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6532,7 +8037,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_convolution_parameterfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_convolution_parameterfv_reply_t,
+        ) -> *mut xcb_glx_get_convolution_parameterfv_reply_t,
     >,
     xcb_glx_get_convolution_parameteriv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6564,7 +8069,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_convolution_parameteriv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_convolution_parameteriv_reply_t,
+        ) -> *mut xcb_glx_get_convolution_parameteriv_reply_t,
     >,
     xcb_glx_get_separable_filter_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_separable_filter: LazySymbol<
@@ -6599,7 +8104,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_separable_filter_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_separable_filter_reply_t,
+        ) -> *mut xcb_glx_get_separable_filter_reply_t,
     >,
     xcb_glx_get_histogram_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_histogram: LazySymbol<
@@ -6635,7 +8140,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_histogram_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_histogram_reply_t,
+        ) -> *mut xcb_glx_get_histogram_reply_t,
     >,
     xcb_glx_get_histogram_parameterfv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6668,7 +8173,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_histogram_parameterfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_histogram_parameterfv_reply_t,
+        ) -> *mut xcb_glx_get_histogram_parameterfv_reply_t,
     >,
     xcb_glx_get_histogram_parameteriv_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6700,7 +8205,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_histogram_parameteriv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_histogram_parameteriv_reply_t,
+        ) -> *mut xcb_glx_get_histogram_parameteriv_reply_t,
     >,
     xcb_glx_get_minmax_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_minmax: LazySymbol<
@@ -6735,7 +8240,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_minmax_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_minmax_reply_t,
+        ) -> *mut xcb_glx_get_minmax_reply_t,
     >,
     xcb_glx_get_minmax_parameterfv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_minmax_parameterfv: LazySymbol<
@@ -6767,7 +8272,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_minmax_parameterfv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_minmax_parameterfv_reply_t,
+        ) -> *mut xcb_glx_get_minmax_parameterfv_reply_t,
     >,
     xcb_glx_get_minmax_parameteriv_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_minmax_parameteriv: LazySymbol<
@@ -6798,7 +8303,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_minmax_parameteriv_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_minmax_parameteriv_reply_t,
+        ) -> *mut xcb_glx_get_minmax_parameteriv_reply_t,
     >,
     xcb_glx_get_compressed_tex_image_arb_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -6830,7 +8335,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_compressed_tex_image_arb_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_compressed_tex_image_arb_reply_t,
+        ) -> *mut xcb_glx_get_compressed_tex_image_arb_reply_t,
     >,
     xcb_glx_delete_queries_arb_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_delete_queries_arb_checked: LazySymbol<
@@ -6882,7 +8387,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_gen_queries_arb_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_gen_queries_arb_reply_t,
+        ) -> *mut xcb_glx_gen_queries_arb_reply_t,
     >,
     xcb_glx_is_query_arb: LazySymbol<
         unsafe fn(
@@ -6903,7 +8408,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_is_query_arb_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_is_query_arb_reply_t,
+        ) -> *mut xcb_glx_is_query_arb_reply_t,
     >,
     xcb_glx_get_queryiv_arb_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_queryiv_arb: LazySymbol<
@@ -6933,7 +8438,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_queryiv_arb_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_queryiv_arb_reply_t,
+        ) -> *mut xcb_glx_get_queryiv_arb_reply_t,
     >,
     xcb_glx_get_query_objectiv_arb_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_query_objectiv_arb: LazySymbol<
@@ -6964,7 +8469,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_query_objectiv_arb_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_query_objectiv_arb_reply_t,
+        ) -> *mut xcb_glx_get_query_objectiv_arb_reply_t,
     >,
     xcb_glx_get_query_objectuiv_arb_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_glx_get_query_objectuiv_arb: LazySymbol<
@@ -6995,7 +8500,7 @@ pub(crate) struct XcbGlxGlx {
             c: *mut xcb_connection_t,
             cookie: xcb_glx_get_query_objectuiv_arb_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_glx_get_query_objectuiv_arb_reply_t,
+        ) -> *mut xcb_glx_get_query_objectuiv_arb_reply_t,
     >,
 }
 
@@ -7018,6 +8523,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_glx")]
 impl XcbGlx {
+    /// The libxcb identifier of the `Glx` extension.
+    #[inline]
     pub fn xcb_glx_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_glx_id) }
     }
@@ -7028,6 +8535,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_id)
     }
 
+    /// Advances a `xcb_glx_pixmap_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_pixmap_next(&self, i: *mut xcb_glx_pixmap_iterator_t) {
         sym!(self, xcb_glx_pixmap_next)(i)
     }
@@ -7038,6 +8547,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pixmap_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_pixmap_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_pixmap_end(
         &self,
         i: xcb_glx_pixmap_iterator_t,
@@ -7051,6 +8562,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pixmap_end)
     }
 
+    /// Advances a `xcb_glx_context_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_context_next(&self, i: *mut xcb_glx_context_iterator_t) {
         sym!(self, xcb_glx_context_next)(i)
     }
@@ -7061,6 +8574,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_context_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_context_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_context_end(
         &self,
         i: xcb_glx_context_iterator_t,
@@ -7074,6 +8589,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_context_end)
     }
 
+    /// Advances a `xcb_glx_pbuffer_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_pbuffer_next(&self, i: *mut xcb_glx_pbuffer_iterator_t) {
         sym!(self, xcb_glx_pbuffer_next)(i)
     }
@@ -7084,6 +8601,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pbuffer_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_pbuffer_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_pbuffer_end(
         &self,
         i: xcb_glx_pbuffer_iterator_t,
@@ -7097,6 +8616,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pbuffer_end)
     }
 
+    /// Advances a `xcb_glx_window_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_window_next(&self, i: *mut xcb_glx_window_iterator_t) {
         sym!(self, xcb_glx_window_next)(i)
     }
@@ -7107,6 +8628,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_window_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_window_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_window_end(
         &self,
         i: xcb_glx_window_iterator_t,
@@ -7120,6 +8643,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_window_end)
     }
 
+    /// Advances a `xcb_glx_fbconfig_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_fbconfig_next(&self, i: *mut xcb_glx_fbconfig_iterator_t) {
         sym!(self, xcb_glx_fbconfig_next)(i)
     }
@@ -7130,6 +8655,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_fbconfig_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_fbconfig_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_fbconfig_end(
         &self,
         i: xcb_glx_fbconfig_iterator_t,
@@ -7143,6 +8670,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_fbconfig_end)
     }
 
+    /// Advances a `xcb_glx_drawable_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_drawable_next(&self, i: *mut xcb_glx_drawable_iterator_t) {
         sym!(self, xcb_glx_drawable_next)(i)
     }
@@ -7153,6 +8682,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_drawable_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_drawable_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_drawable_end(
         &self,
         i: xcb_glx_drawable_iterator_t,
@@ -7166,6 +8697,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_drawable_end)
     }
 
+    /// Advances a `xcb_glx_float32_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_float32_next(&self, i: *mut xcb_glx_float32_iterator_t) {
         sym!(self, xcb_glx_float32_next)(i)
     }
@@ -7176,6 +8709,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_float32_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_float32_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_float32_end(
         &self,
         i: xcb_glx_float32_iterator_t,
@@ -7189,6 +8724,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_float32_end)
     }
 
+    /// Advances a `xcb_glx_float64_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_float64_next(&self, i: *mut xcb_glx_float64_iterator_t) {
         sym!(self, xcb_glx_float64_next)(i)
     }
@@ -7199,6 +8736,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_float64_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_float64_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_float64_end(
         &self,
         i: xcb_glx_float64_iterator_t,
@@ -7212,6 +8751,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_float64_end)
     }
 
+    /// Advances a `xcb_glx_bool32_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_bool32_next(&self, i: *mut xcb_glx_bool32_iterator_t) {
         sym!(self, xcb_glx_bool32_next)(i)
     }
@@ -7222,6 +8763,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_bool32_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_bool32_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_bool32_end(
         &self,
         i: xcb_glx_bool32_iterator_t,
@@ -7235,6 +8778,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_bool32_end)
     }
 
+    /// Advances a `xcb_glx_context_tag_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_glx_context_tag_next(&self, i: *mut xcb_glx_context_tag_iterator_t) {
         sym!(self, xcb_glx_context_tag_next)(i)
     }
@@ -7245,6 +8790,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_context_tag_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_glx_context_tag_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_glx_context_tag_end(
         &self,
         i: xcb_glx_context_tag_iterator_t,
@@ -7258,6 +8805,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_context_tag_end)
     }
 
+    /// Computes the size of a `xcb_glx_render_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_render_sizeof(&self, _buffer: *const c_void, data_len: u32) -> c_int {
         sym!(self, xcb_glx_render_sizeof)(_buffer, data_len)
     }
@@ -7268,17 +8817,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::Render` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_render_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7295,14 +8841,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::Render` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_render(
         &self,
         c: *mut xcb_connection_t,
@@ -7319,6 +8859,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_render_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_data(&self, r: *const xcb_glx_render_request_t) -> *mut u8 {
         sym!(self, xcb_glx_render_data)(r)
     }
@@ -7329,6 +8871,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_render_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_data_length(&self, r: *const xcb_glx_render_request_t) -> c_int {
         sym!(self, xcb_glx_render_data_length)(r)
     }
@@ -7339,6 +8883,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_render_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_data_end(
         &self,
         r: *const xcb_glx_render_request_t,
@@ -7352,6 +8899,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_data_end)
     }
 
+    /// Computes the size of a `xcb_glx_render_large_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_render_large_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_render_large_sizeof)(_buffer)
     }
@@ -7362,17 +8911,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_large_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::RenderLarge` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_render_large_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7398,14 +8944,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_large_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::RenderLarge` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_render_large(
         &self,
         c: *mut xcb_connection_t,
@@ -7424,6 +8964,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_large)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_render_large_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_large_data(
         &self,
         r: *const xcb_glx_render_large_request_t,
@@ -7437,6 +8979,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_large_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_render_large_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_large_data_length(
         &self,
         r: *const xcb_glx_render_large_request_t,
@@ -7450,6 +8994,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_large_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_render_large_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_large_data_end(
         &self,
         r: *const xcb_glx_render_large_request_t,
@@ -7463,17 +9010,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_large_data_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CreateContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_create_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7494,14 +9038,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CreateContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_create_context(
         &self,
         c: *mut xcb_connection_t,
@@ -7520,17 +9058,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DestroyContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_destroy_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7545,14 +9080,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DestroyContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_destroy_context(
         &self,
         c: *mut xcb_connection_t,
@@ -7567,14 +9096,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::MakeCurrent` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_make_current_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_make_current_reply`]: Self::xcb_glx_make_current_reply
+    #[inline]
     pub unsafe fn xcb_glx_make_current(
         &self,
         c: *mut xcb_connection_t,
@@ -7591,17 +9120,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_make_current)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::MakeCurrent` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_make_current_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_make_current_reply`]: Self::xcb_glx_make_current_reply
+    #[inline]
     pub unsafe fn xcb_glx_make_current_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -7618,26 +9144,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_make_current_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_make_current_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::MakeCurrent` request.
+    #[inline]
     pub unsafe fn xcb_glx_make_current_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_make_current_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_make_current_reply_t {
+    ) -> *mut xcb_glx_make_current_reply_t {
         sym!(self, xcb_glx_make_current_reply)(c, cookie, e)
     }
 
@@ -7647,14 +9161,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_make_current_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::IsDirect` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_direct_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_direct_reply`]: Self::xcb_glx_is_direct_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_direct(
         &self,
         c: *mut xcb_connection_t,
@@ -7669,17 +9183,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_direct)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::IsDirect` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_direct_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_direct_reply`]: Self::xcb_glx_is_direct_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_direct_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -7694,26 +9205,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_direct_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_is_direct_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::IsDirect` request.
+    #[inline]
     pub unsafe fn xcb_glx_is_direct_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_is_direct_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_is_direct_reply_t {
+    ) -> *mut xcb_glx_is_direct_reply_t {
         sym!(self, xcb_glx_is_direct_reply)(c, cookie, e)
     }
 
@@ -7723,14 +9222,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_direct_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_version_reply`]: Self::xcb_glx_query_version_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -7746,17 +9245,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_version_reply`]: Self::xcb_glx_query_version_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -7772,26 +9268,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_glx_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_query_version_reply_t {
+    ) -> *mut xcb_glx_query_version_reply_t {
         sym!(self, xcb_glx_query_version_reply)(c, cookie, e)
     }
 
@@ -7801,17 +9285,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::WaitGL` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_wait_gl_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7826,14 +9307,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_wait_gl_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::WaitGL` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_wait_gl(
         &self,
         c: *mut xcb_connection_t,
@@ -7848,17 +9323,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_wait_gl)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::WaitX` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_wait_x_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7873,14 +9345,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_wait_x_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::WaitX` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_wait_x(
         &self,
         c: *mut xcb_connection_t,
@@ -7895,17 +9361,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_wait_x)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CopyContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_copy_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7923,14 +9386,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_copy_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CopyContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_copy_context(
         &self,
         c: *mut xcb_connection_t,
@@ -7948,17 +9405,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_copy_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::SwapBuffers` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_swap_buffers_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -7974,14 +9428,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_swap_buffers_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::SwapBuffers` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_swap_buffers(
         &self,
         c: *mut xcb_connection_t,
@@ -7997,17 +9445,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_swap_buffers)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::UseXFont` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_use_x_font_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -8026,14 +9471,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_use_x_font_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::UseXFont` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_use_x_font(
         &self,
         c: *mut xcb_connection_t,
@@ -8052,17 +9491,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_use_x_font)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CreateGLXPixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_create_glx_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -8080,14 +9516,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_glx_pixmap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CreateGLXPixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_create_glx_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -8105,6 +9535,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_glx_pixmap)
     }
 
+    /// Computes the size of a `xcb_glx_get_visual_configs_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_visual_configs_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_visual_configs_sizeof)(_buffer)
     }
@@ -8115,14 +9547,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_visual_configs_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetVisualConfigs` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_visual_configs_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_visual_configs_reply`]: Self::xcb_glx_get_visual_configs_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_visual_configs(
         &self,
         c: *mut xcb_connection_t,
@@ -8137,17 +9569,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_visual_configs)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetVisualConfigs` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_visual_configs_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_visual_configs_reply`]: Self::xcb_glx_get_visual_configs_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_visual_configs_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -8162,6 +9591,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_visual_configs_unchecked)
     }
 
+    /// Returns a pointer to the `property_list` field of a `xcb_glx_get_visual_configs_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_visual_configs_property_list(
         &self,
         r: *const xcb_glx_get_visual_configs_reply_t,
@@ -8175,6 +9606,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_visual_configs_property_list)
     }
 
+    /// Returns the number of elements of the `property_list` field of a `xcb_glx_get_visual_configs_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_visual_configs_property_list_length(
         &self,
         r: *const xcb_glx_get_visual_configs_reply_t,
@@ -8188,6 +9621,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_visual_configs_property_list_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `property_list` field of a `xcb_glx_get_visual_configs_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_visual_configs_property_list_end(
         &self,
         r: *const xcb_glx_get_visual_configs_reply_t,
@@ -8201,26 +9637,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_visual_configs_property_list_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_visual_configs_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetVisualConfigs` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_visual_configs_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_visual_configs_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_visual_configs_reply_t {
+    ) -> *mut xcb_glx_get_visual_configs_reply_t {
         sym!(self, xcb_glx_get_visual_configs_reply)(c, cookie, e)
     }
 
@@ -8230,17 +9654,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_visual_configs_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DestroyGLXPixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_destroy_glx_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -8255,14 +9676,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_glx_pixmap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DestroyGLXPixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_destroy_glx_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -8277,6 +9692,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_glx_pixmap)
     }
 
+    /// Computes the size of a `xcb_glx_vendor_private_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_sizeof(
         &self,
         _buffer: *const c_void,
@@ -8291,17 +9708,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::VendorPrivate` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -8319,14 +9733,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::VendorPrivate` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private(
         &self,
         c: *mut xcb_connection_t,
@@ -8344,6 +9752,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_vendor_private_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_data(
         &self,
         r: *const xcb_glx_vendor_private_request_t,
@@ -8357,6 +9767,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_vendor_private_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_data_length(
         &self,
         r: *const xcb_glx_vendor_private_request_t,
@@ -8370,6 +9782,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_vendor_private_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_data_end(
         &self,
         r: *const xcb_glx_vendor_private_request_t,
@@ -8383,6 +9798,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_data_end)
     }
 
+    /// Computes the size of a `xcb_glx_vendor_private_with_reply_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_with_reply_sizeof(
         &self,
         _buffer: *const c_void,
@@ -8397,14 +9814,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_with_reply_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::VendorPrivateWithReply` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_vendor_private_with_reply_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_vendor_private_with_reply_reply`]: Self::xcb_glx_vendor_private_with_reply_reply
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_with_reply(
         &self,
         c: *mut xcb_connection_t,
@@ -8422,17 +9839,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_with_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::VendorPrivateWithReply` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_vendor_private_with_reply_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_vendor_private_with_reply_reply`]: Self::xcb_glx_vendor_private_with_reply_reply
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_with_reply_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -8456,6 +9870,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_with_reply_unchecked)
     }
 
+    /// Returns a pointer to the `data2` field of a `xcb_glx_vendor_private_with_reply_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_with_reply_data_2(
         &self,
         r: *const xcb_glx_vendor_private_with_reply_reply_t,
@@ -8469,6 +9885,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_with_reply_data_2)
     }
 
+    /// Returns the number of elements of the `data2` field of a `xcb_glx_vendor_private_with_reply_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_with_reply_data_2_length(
         &self,
         r: *const xcb_glx_vendor_private_with_reply_reply_t,
@@ -8482,6 +9900,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_with_reply_data_2_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data2` field of a `xcb_glx_vendor_private_with_reply_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_with_reply_data_2_end(
         &self,
         r: *const xcb_glx_vendor_private_with_reply_reply_t,
@@ -8495,26 +9916,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_with_reply_data_2_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_vendor_private_with_reply_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::VendorPrivateWithReply` request.
+    #[inline]
     pub unsafe fn xcb_glx_vendor_private_with_reply_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_vendor_private_with_reply_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_vendor_private_with_reply_reply_t {
+    ) -> *mut xcb_glx_vendor_private_with_reply_reply_t {
         sym!(self, xcb_glx_vendor_private_with_reply_reply)(c, cookie, e)
     }
 
@@ -8524,14 +9933,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_vendor_private_with_reply_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::QueryExtensionsString` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_extensions_string_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_extensions_string_reply`]: Self::xcb_glx_query_extensions_string_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_extensions_string(
         &self,
         c: *mut xcb_connection_t,
@@ -8546,17 +9955,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_extensions_string)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::QueryExtensionsString` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_extensions_string_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_extensions_string_reply`]: Self::xcb_glx_query_extensions_string_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_extensions_string_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -8571,26 +9977,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_extensions_string_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_query_extensions_string_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::QueryExtensionsString` request.
+    #[inline]
     pub unsafe fn xcb_glx_query_extensions_string_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_query_extensions_string_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_query_extensions_string_reply_t {
+    ) -> *mut xcb_glx_query_extensions_string_reply_t {
         sym!(self, xcb_glx_query_extensions_string_reply)(c, cookie, e)
     }
 
@@ -8600,6 +9994,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_extensions_string_reply)
     }
 
+    /// Computes the size of a `xcb_glx_query_server_string_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_query_server_string_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_query_server_string_sizeof)(_buffer)
     }
@@ -8610,14 +10006,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_server_string_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::QueryServerString` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_server_string_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_server_string_reply`]: Self::xcb_glx_query_server_string_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_server_string(
         &self,
         c: *mut xcb_connection_t,
@@ -8633,17 +10029,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_server_string)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::QueryServerString` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_server_string_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_server_string_reply`]: Self::xcb_glx_query_server_string_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_server_string_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -8659,6 +10052,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_server_string_unchecked)
     }
 
+    /// Returns a pointer to the `string` field of a `xcb_glx_query_server_string_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_query_server_string_string(
         &self,
         r: *const xcb_glx_query_server_string_reply_t,
@@ -8672,6 +10067,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_server_string_string)
     }
 
+    /// Returns the number of elements of the `string` field of a `xcb_glx_query_server_string_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_query_server_string_string_length(
         &self,
         r: *const xcb_glx_query_server_string_reply_t,
@@ -8685,6 +10082,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_server_string_string_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `string` field of a `xcb_glx_query_server_string_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_query_server_string_string_end(
         &self,
         r: *const xcb_glx_query_server_string_reply_t,
@@ -8698,26 +10098,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_server_string_string_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_query_server_string_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::QueryServerString` request.
+    #[inline]
     pub unsafe fn xcb_glx_query_server_string_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_query_server_string_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_query_server_string_reply_t {
+    ) -> *mut xcb_glx_query_server_string_reply_t {
         sym!(self, xcb_glx_query_server_string_reply)(c, cookie, e)
     }
 
@@ -8727,6 +10115,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_server_string_reply)
     }
 
+    /// Computes the size of a `xcb_glx_client_info_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_client_info_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_client_info_sizeof)(_buffer)
     }
@@ -8737,17 +10127,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_client_info_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::ClientInfo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_client_info_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -8765,14 +10152,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_client_info_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::ClientInfo` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_client_info(
         &self,
         c: *mut xcb_connection_t,
@@ -8790,6 +10171,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_client_info)
     }
 
+    /// Returns a pointer to the `string` field of a `xcb_glx_client_info_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_client_info_string(
         &self,
         r: *const xcb_glx_client_info_request_t,
@@ -8803,6 +10186,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_client_info_string)
     }
 
+    /// Returns the number of elements of the `string` field of a `xcb_glx_client_info_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_client_info_string_length(
         &self,
         r: *const xcb_glx_client_info_request_t,
@@ -8816,6 +10201,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_client_info_string_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `string` field of a `xcb_glx_client_info_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_client_info_string_end(
         &self,
         r: *const xcb_glx_client_info_request_t,
@@ -8829,6 +10217,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_client_info_string_end)
     }
 
+    /// Computes the size of a `xcb_glx_get_fb_configs_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_fb_configs_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_fb_configs_sizeof)(_buffer)
     }
@@ -8839,14 +10229,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_fb_configs_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetFBConfigs` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_fb_configs_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_fb_configs_reply`]: Self::xcb_glx_get_fb_configs_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_fb_configs(
         &self,
         c: *mut xcb_connection_t,
@@ -8861,17 +10251,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_fb_configs)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetFBConfigs` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_fb_configs_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_fb_configs_reply`]: Self::xcb_glx_get_fb_configs_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_fb_configs_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -8886,6 +10273,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_fb_configs_unchecked)
     }
 
+    /// Returns a pointer to the `property_list` field of a `xcb_glx_get_fb_configs_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_fb_configs_property_list(
         &self,
         r: *const xcb_glx_get_fb_configs_reply_t,
@@ -8899,6 +10288,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_fb_configs_property_list)
     }
 
+    /// Returns the number of elements of the `property_list` field of a `xcb_glx_get_fb_configs_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_fb_configs_property_list_length(
         &self,
         r: *const xcb_glx_get_fb_configs_reply_t,
@@ -8912,6 +10303,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_fb_configs_property_list_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `property_list` field of a `xcb_glx_get_fb_configs_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_fb_configs_property_list_end(
         &self,
         r: *const xcb_glx_get_fb_configs_reply_t,
@@ -8925,26 +10319,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_fb_configs_property_list_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_fb_configs_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetFBConfigs` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_fb_configs_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_fb_configs_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_fb_configs_reply_t {
+    ) -> *mut xcb_glx_get_fb_configs_reply_t {
         sym!(self, xcb_glx_get_fb_configs_reply)(c, cookie, e)
     }
 
@@ -8954,6 +10336,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_fb_configs_reply)
     }
 
+    /// Computes the size of a `xcb_glx_create_pixmap_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_create_pixmap_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_create_pixmap_sizeof)(_buffer)
     }
@@ -8964,17 +10348,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pixmap_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CreatePixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_create_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9002,14 +10383,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pixmap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CreatePixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_create_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -9037,6 +10412,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pixmap)
     }
 
+    /// Returns a pointer to the `attribs` field of a `xcb_glx_create_pixmap_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_pixmap_attribs(
         &self,
         r: *const xcb_glx_create_pixmap_request_t,
@@ -9050,6 +10427,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pixmap_attribs)
     }
 
+    /// Returns the number of elements of the `attribs` field of a `xcb_glx_create_pixmap_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_pixmap_attribs_length(
         &self,
         r: *const xcb_glx_create_pixmap_request_t,
@@ -9063,6 +10442,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pixmap_attribs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attribs` field of a `xcb_glx_create_pixmap_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_pixmap_attribs_end(
         &self,
         r: *const xcb_glx_create_pixmap_request_t,
@@ -9076,17 +10458,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pixmap_attribs_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DestroyPixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_destroy_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9101,14 +10480,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_pixmap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DestroyPixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_destroy_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -9123,17 +10496,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_pixmap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CreateNewContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_create_new_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9161,14 +10531,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_new_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CreateNewContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_create_new_context(
         &self,
         c: *mut xcb_connection_t,
@@ -9196,6 +10560,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_new_context)
     }
 
+    /// Computes the size of a `xcb_glx_query_context_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_query_context_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_query_context_sizeof)(_buffer)
     }
@@ -9206,14 +10572,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_context_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::QueryContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_context_reply`]: Self::xcb_glx_query_context_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_context(
         &self,
         c: *mut xcb_connection_t,
@@ -9228,17 +10594,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::QueryContext` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_query_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_query_context_reply`]: Self::xcb_glx_query_context_reply
+    #[inline]
     pub unsafe fn xcb_glx_query_context_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -9253,6 +10616,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_context_unchecked)
     }
 
+    /// Returns a pointer to the `attribs` field of a `xcb_glx_query_context_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_query_context_attribs(
         &self,
         r: *const xcb_glx_query_context_reply_t,
@@ -9266,6 +10631,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_context_attribs)
     }
 
+    /// Returns the number of elements of the `attribs` field of a `xcb_glx_query_context_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_query_context_attribs_length(
         &self,
         r: *const xcb_glx_query_context_reply_t,
@@ -9279,6 +10646,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_context_attribs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attribs` field of a `xcb_glx_query_context_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_query_context_attribs_end(
         &self,
         r: *const xcb_glx_query_context_reply_t,
@@ -9292,26 +10662,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_context_attribs_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_query_context_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::QueryContext` request.
+    #[inline]
     pub unsafe fn xcb_glx_query_context_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_query_context_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_query_context_reply_t {
+    ) -> *mut xcb_glx_query_context_reply_t {
         sym!(self, xcb_glx_query_context_reply)(c, cookie, e)
     }
 
@@ -9321,14 +10679,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_query_context_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::MakeContextCurrent` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_make_context_current_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_make_context_current_reply`]: Self::xcb_glx_make_context_current_reply
+    #[inline]
     pub unsafe fn xcb_glx_make_context_current(
         &self,
         c: *mut xcb_connection_t,
@@ -9352,17 +10710,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_make_context_current)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::MakeContextCurrent` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_make_context_current_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_make_context_current_reply`]: Self::xcb_glx_make_context_current_reply
+    #[inline]
     pub unsafe fn xcb_glx_make_context_current_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -9386,26 +10741,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_make_context_current_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_make_context_current_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::MakeContextCurrent` request.
+    #[inline]
     pub unsafe fn xcb_glx_make_context_current_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_make_context_current_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_make_context_current_reply_t {
+    ) -> *mut xcb_glx_make_context_current_reply_t {
         sym!(self, xcb_glx_make_context_current_reply)(c, cookie, e)
     }
 
@@ -9415,6 +10758,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_make_context_current_reply)
     }
 
+    /// Computes the size of a `xcb_glx_create_pbuffer_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_create_pbuffer_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_create_pbuffer_sizeof)(_buffer)
     }
@@ -9425,17 +10770,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pbuffer_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CreatePbuffer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_create_pbuffer_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9461,14 +10803,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pbuffer_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CreatePbuffer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_create_pbuffer(
         &self,
         c: *mut xcb_connection_t,
@@ -9487,6 +10823,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pbuffer)
     }
 
+    /// Returns a pointer to the `attribs` field of a `xcb_glx_create_pbuffer_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_pbuffer_attribs(
         &self,
         r: *const xcb_glx_create_pbuffer_request_t,
@@ -9500,6 +10838,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pbuffer_attribs)
     }
 
+    /// Returns the number of elements of the `attribs` field of a `xcb_glx_create_pbuffer_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_pbuffer_attribs_length(
         &self,
         r: *const xcb_glx_create_pbuffer_request_t,
@@ -9513,6 +10853,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pbuffer_attribs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attribs` field of a `xcb_glx_create_pbuffer_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_pbuffer_attribs_end(
         &self,
         r: *const xcb_glx_create_pbuffer_request_t,
@@ -9526,17 +10869,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_pbuffer_attribs_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DestroyPbuffer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_destroy_pbuffer_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9551,14 +10891,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_pbuffer_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DestroyPbuffer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_destroy_pbuffer(
         &self,
         c: *mut xcb_connection_t,
@@ -9573,6 +10907,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_destroy_pbuffer)
     }
 
+    /// Computes the size of a `xcb_glx_get_drawable_attributes_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_drawable_attributes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_drawable_attributes_sizeof)(_buffer)
     }
@@ -9583,14 +10919,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_drawable_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetDrawableAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_drawable_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_drawable_attributes_reply`]: Self::xcb_glx_get_drawable_attributes_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_drawable_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -9605,17 +10941,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_drawable_attributes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetDrawableAttributes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_drawable_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_drawable_attributes_reply`]: Self::xcb_glx_get_drawable_attributes_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_drawable_attributes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -9630,6 +10963,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_drawable_attributes_unchecked)
     }
 
+    /// Returns a pointer to the `attribs` field of a `xcb_glx_get_drawable_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_drawable_attributes_attribs(
         &self,
         r: *const xcb_glx_get_drawable_attributes_reply_t,
@@ -9643,6 +10978,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_drawable_attributes_attribs)
     }
 
+    /// Returns the number of elements of the `attribs` field of a `xcb_glx_get_drawable_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_drawable_attributes_attribs_length(
         &self,
         r: *const xcb_glx_get_drawable_attributes_reply_t,
@@ -9656,6 +10993,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_drawable_attributes_attribs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attribs` field of a `xcb_glx_get_drawable_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_drawable_attributes_attribs_end(
         &self,
         r: *const xcb_glx_get_drawable_attributes_reply_t,
@@ -9669,26 +11009,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_drawable_attributes_attribs_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_drawable_attributes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetDrawableAttributes` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_drawable_attributes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_drawable_attributes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_drawable_attributes_reply_t {
+    ) -> *mut xcb_glx_get_drawable_attributes_reply_t {
         sym!(self, xcb_glx_get_drawable_attributes_reply)(c, cookie, e)
     }
 
@@ -9698,6 +11026,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_drawable_attributes_reply)
     }
 
+    /// Computes the size of a `xcb_glx_change_drawable_attributes_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_change_drawable_attributes_sizeof(
         &self,
         _buffer: *const c_void,
@@ -9711,17 +11041,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_change_drawable_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::ChangeDrawableAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_change_drawable_attributes_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9738,14 +11065,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_change_drawable_attributes_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::ChangeDrawableAttributes` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_change_drawable_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -9762,6 +11083,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_change_drawable_attributes)
     }
 
+    /// Returns a pointer to the `attribs` field of a `xcb_glx_change_drawable_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_change_drawable_attributes_attribs(
         &self,
         r: *const xcb_glx_change_drawable_attributes_request_t,
@@ -9775,6 +11098,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_change_drawable_attributes_attribs)
     }
 
+    /// Returns the number of elements of the `attribs` field of a `xcb_glx_change_drawable_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_change_drawable_attributes_attribs_length(
         &self,
         r: *const xcb_glx_change_drawable_attributes_request_t,
@@ -9788,6 +11113,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_change_drawable_attributes_attribs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attribs` field of a `xcb_glx_change_drawable_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_change_drawable_attributes_attribs_end(
         &self,
         r: *const xcb_glx_change_drawable_attributes_request_t,
@@ -9801,6 +11129,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_change_drawable_attributes_attribs_end)
     }
 
+    /// Computes the size of a `xcb_glx_create_window_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_create_window_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_create_window_sizeof)(_buffer)
     }
@@ -9811,17 +11141,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_window_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CreateWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_create_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9849,14 +11176,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_window_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CreateWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_create_window(
         &self,
         c: *mut xcb_connection_t,
@@ -9884,6 +11205,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_window)
     }
 
+    /// Returns a pointer to the `attribs` field of a `xcb_glx_create_window_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_window_attribs(
         &self,
         r: *const xcb_glx_create_window_request_t,
@@ -9897,6 +11220,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_window_attribs)
     }
 
+    /// Returns the number of elements of the `attribs` field of a `xcb_glx_create_window_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_window_attribs_length(
         &self,
         r: *const xcb_glx_create_window_request_t,
@@ -9910,6 +11235,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_window_attribs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attribs` field of a `xcb_glx_create_window_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_window_attribs_end(
         &self,
         r: *const xcb_glx_create_window_request_t,
@@ -9923,17 +11251,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_window_attribs_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DeleteWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_delete_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9948,14 +11273,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_window_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DeleteWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_delete_window(
         &self,
         c: *mut xcb_connection_t,
@@ -9970,6 +11289,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_window)
     }
 
+    /// Computes the size of a `xcb_glx_set_client_info_arb_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_set_client_info_arb_sizeof)(_buffer)
     }
@@ -9980,17 +11301,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::SetClientInfoARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10022,14 +11340,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::SetClientInfoARB` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -10061,6 +11373,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb)
     }
 
+    /// Returns a pointer to the `gl_versions` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_gl_versions(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10074,6 +11388,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_gl_versions)
     }
 
+    /// Returns the number of elements of the `gl_versions` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_gl_versions_length(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10087,6 +11403,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_gl_versions_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `gl_versions` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_gl_versions_end(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10100,6 +11419,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_gl_versions_end)
     }
 
+    /// Returns a pointer to the `gl_extension_string` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_gl_extension_string(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10113,6 +11434,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_gl_extension_string)
     }
 
+    /// Returns the number of elements of the `gl_extension_string` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_gl_extension_string_length(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10126,6 +11449,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_gl_extension_string_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `gl_extension_string` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_gl_extension_string_end(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10139,6 +11465,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_gl_extension_string_end)
     }
 
+    /// Returns a pointer to the `glx_extension_string` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_glx_extension_string(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10152,6 +11480,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_glx_extension_string)
     }
 
+    /// Returns the number of elements of the `glx_extension_string` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_glx_extension_string_length(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10171,6 +11501,9 @@ impl XcbGlx {
         )
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `glx_extension_string` field of a `xcb_glx_set_client_info_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_arb_glx_extension_string_end(
         &self,
         r: *const xcb_glx_set_client_info_arb_request_t,
@@ -10184,6 +11517,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_arb_glx_extension_string_end)
     }
 
+    /// Computes the size of a `xcb_glx_create_context_attribs_arb_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_create_context_attribs_arb_sizeof(
         &self,
         _buffer: *const c_void,
@@ -10197,17 +11532,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context_attribs_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::CreateContextAttribsARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_create_context_attribs_arb_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10237,14 +11569,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context_attribs_arb_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::CreateContextAttribsARB` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_create_context_attribs_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -10274,6 +11600,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context_attribs_arb)
     }
 
+    /// Returns a pointer to the `attribs` field of a `xcb_glx_create_context_attribs_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_context_attribs_arb_attribs(
         &self,
         r: *const xcb_glx_create_context_attribs_arb_request_t,
@@ -10287,6 +11615,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context_attribs_arb_attribs)
     }
 
+    /// Returns the number of elements of the `attribs` field of a `xcb_glx_create_context_attribs_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_context_attribs_arb_attribs_length(
         &self,
         r: *const xcb_glx_create_context_attribs_arb_request_t,
@@ -10300,6 +11630,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context_attribs_arb_attribs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attribs` field of a `xcb_glx_create_context_attribs_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_create_context_attribs_arb_attribs_end(
         &self,
         r: *const xcb_glx_create_context_attribs_arb_request_t,
@@ -10313,6 +11646,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_create_context_attribs_arb_attribs_end)
     }
 
+    /// Computes the size of a `xcb_glx_set_client_info_2arb_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_set_client_info_2arb_sizeof)(_buffer)
     }
@@ -10323,17 +11658,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::SetClientInfo2ARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10365,14 +11697,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::SetClientInfo2ARB` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb(
         &self,
         c: *mut xcb_connection_t,
@@ -10404,6 +11730,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb)
     }
 
+    /// Returns a pointer to the `gl_versions` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_gl_versions(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10417,6 +11745,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_gl_versions)
     }
 
+    /// Returns the number of elements of the `gl_versions` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_gl_versions_length(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10430,6 +11760,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_gl_versions_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `gl_versions` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_gl_versions_end(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10443,6 +11776,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_gl_versions_end)
     }
 
+    /// Returns a pointer to the `gl_extension_string` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_gl_extension_string(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10456,6 +11791,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_gl_extension_string)
     }
 
+    /// Returns the number of elements of the `gl_extension_string` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_gl_extension_string_length(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10475,6 +11812,9 @@ impl XcbGlx {
         )
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `gl_extension_string` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_gl_extension_string_end(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10488,6 +11828,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_gl_extension_string_end)
     }
 
+    /// Returns a pointer to the `glx_extension_string` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_glx_extension_string(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10501,6 +11843,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_glx_extension_string)
     }
 
+    /// Returns the number of elements of the `glx_extension_string` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_glx_extension_string_length(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10520,6 +11864,9 @@ impl XcbGlx {
         )
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `glx_extension_string` field of a `xcb_glx_set_client_info_2arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_set_client_info_2arb_glx_extension_string_end(
         &self,
         r: *const xcb_glx_set_client_info_2arb_request_t,
@@ -10533,17 +11880,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_set_client_info_2arb_glx_extension_string_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::NewList` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_new_list_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10560,14 +11904,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_new_list_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::NewList` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_new_list(
         &self,
         c: *mut xcb_connection_t,
@@ -10584,17 +11922,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_new_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::EndList` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_end_list_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10609,14 +11944,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_end_list_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::EndList` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_end_list(
         &self,
         c: *mut xcb_connection_t,
@@ -10631,17 +11960,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_end_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DeleteLists` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_delete_lists_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10658,14 +11984,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_lists_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DeleteLists` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_delete_lists(
         &self,
         c: *mut xcb_connection_t,
@@ -10682,14 +12002,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_lists)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GenLists` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_gen_lists_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_gen_lists_reply`]: Self::xcb_glx_gen_lists_reply
+    #[inline]
     pub unsafe fn xcb_glx_gen_lists(
         &self,
         c: *mut xcb_connection_t,
@@ -10705,17 +12025,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_lists)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GenLists` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_gen_lists_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_gen_lists_reply`]: Self::xcb_glx_gen_lists_reply
+    #[inline]
     pub unsafe fn xcb_glx_gen_lists_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -10731,26 +12048,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_lists_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_gen_lists_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GenLists` request.
+    #[inline]
     pub unsafe fn xcb_glx_gen_lists_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_gen_lists_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_gen_lists_reply_t {
+    ) -> *mut xcb_glx_gen_lists_reply_t {
         sym!(self, xcb_glx_gen_lists_reply)(c, cookie, e)
     }
 
@@ -10760,17 +12065,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_lists_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::FeedbackBuffer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_feedback_buffer_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10787,14 +12089,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_feedback_buffer_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::FeedbackBuffer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_feedback_buffer(
         &self,
         c: *mut xcb_connection_t,
@@ -10811,17 +12107,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_feedback_buffer)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::SelectBuffer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_select_buffer_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10837,14 +12130,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_select_buffer_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::SelectBuffer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_select_buffer(
         &self,
         c: *mut xcb_connection_t,
@@ -10860,6 +12147,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_select_buffer)
     }
 
+    /// Computes the size of a `xcb_glx_render_mode_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_render_mode_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_render_mode_sizeof)(_buffer)
     }
@@ -10870,14 +12159,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_mode_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::RenderMode` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_render_mode_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_render_mode_reply`]: Self::xcb_glx_render_mode_reply
+    #[inline]
     pub unsafe fn xcb_glx_render_mode(
         &self,
         c: *mut xcb_connection_t,
@@ -10893,17 +12182,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_mode)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::RenderMode` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_render_mode_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_render_mode_reply`]: Self::xcb_glx_render_mode_reply
+    #[inline]
     pub unsafe fn xcb_glx_render_mode_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -10919,6 +12205,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_mode_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_render_mode_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_mode_data(
         &self,
         r: *const xcb_glx_render_mode_reply_t,
@@ -10932,6 +12220,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_mode_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_render_mode_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_mode_data_length(
         &self,
         r: *const xcb_glx_render_mode_reply_t,
@@ -10945,6 +12235,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_mode_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_render_mode_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_render_mode_data_end(
         &self,
         r: *const xcb_glx_render_mode_reply_t,
@@ -10958,26 +12251,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_mode_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_render_mode_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::RenderMode` request.
+    #[inline]
     pub unsafe fn xcb_glx_render_mode_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_render_mode_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_render_mode_reply_t {
+    ) -> *mut xcb_glx_render_mode_reply_t {
         sym!(self, xcb_glx_render_mode_reply)(c, cookie, e)
     }
 
@@ -10987,14 +12268,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_render_mode_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::Finish` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_finish_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_finish_reply`]: Self::xcb_glx_finish_reply
+    #[inline]
     pub unsafe fn xcb_glx_finish(
         &self,
         c: *mut xcb_connection_t,
@@ -11009,17 +12290,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_finish)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::Finish` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_finish_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_finish_reply`]: Self::xcb_glx_finish_reply
+    #[inline]
     pub unsafe fn xcb_glx_finish_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11034,26 +12312,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_finish_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_finish_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::Finish` request.
+    #[inline]
     pub unsafe fn xcb_glx_finish_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_finish_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_finish_reply_t {
+    ) -> *mut xcb_glx_finish_reply_t {
         sym!(self, xcb_glx_finish_reply)(c, cookie, e)
     }
 
@@ -11063,17 +12329,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_finish_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::PixelStoref` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_pixel_storef_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -11090,14 +12353,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pixel_storef_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::PixelStoref` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_pixel_storef(
         &self,
         c: *mut xcb_connection_t,
@@ -11114,17 +12371,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pixel_storef)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::PixelStorei` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_pixel_storei_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -11141,14 +12395,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pixel_storei_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::PixelStorei` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_pixel_storei(
         &self,
         c: *mut xcb_connection_t,
@@ -11165,6 +12413,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_pixel_storei)
     }
 
+    /// Computes the size of a `xcb_glx_read_pixels_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_read_pixels_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_read_pixels_sizeof)(_buffer)
     }
@@ -11175,14 +12425,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_read_pixels_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::ReadPixels` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_read_pixels_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_read_pixels_reply`]: Self::xcb_glx_read_pixels_reply
+    #[inline]
     pub unsafe fn xcb_glx_read_pixels(
         &self,
         c: *mut xcb_connection_t,
@@ -11216,17 +12466,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_read_pixels)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::ReadPixels` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_read_pixels_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_read_pixels_reply`]: Self::xcb_glx_read_pixels_reply
+    #[inline]
     pub unsafe fn xcb_glx_read_pixels_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11260,6 +12507,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_read_pixels_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_read_pixels_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_read_pixels_data(
         &self,
         r: *const xcb_glx_read_pixels_reply_t,
@@ -11273,6 +12522,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_read_pixels_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_read_pixels_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_read_pixels_data_length(
         &self,
         r: *const xcb_glx_read_pixels_reply_t,
@@ -11286,6 +12537,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_read_pixels_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_read_pixels_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_read_pixels_data_end(
         &self,
         r: *const xcb_glx_read_pixels_reply_t,
@@ -11299,26 +12553,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_read_pixels_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_read_pixels_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::ReadPixels` request.
+    #[inline]
     pub unsafe fn xcb_glx_read_pixels_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_read_pixels_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_read_pixels_reply_t {
+    ) -> *mut xcb_glx_read_pixels_reply_t {
         sym!(self, xcb_glx_read_pixels_reply)(c, cookie, e)
     }
 
@@ -11328,6 +12570,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_read_pixels_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_booleanv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_booleanv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_booleanv_sizeof)(_buffer)
     }
@@ -11338,14 +12582,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_booleanv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetBooleanv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_booleanv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_booleanv_reply`]: Self::xcb_glx_get_booleanv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_booleanv(
         &self,
         c: *mut xcb_connection_t,
@@ -11361,17 +12605,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_booleanv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetBooleanv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_booleanv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_booleanv_reply`]: Self::xcb_glx_get_booleanv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_booleanv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11387,6 +12628,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_booleanv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_booleanv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_booleanv_data(
         &self,
         r: *const xcb_glx_get_booleanv_reply_t,
@@ -11400,6 +12643,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_booleanv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_booleanv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_booleanv_data_length(
         &self,
         r: *const xcb_glx_get_booleanv_reply_t,
@@ -11413,6 +12658,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_booleanv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_booleanv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_booleanv_data_end(
         &self,
         r: *const xcb_glx_get_booleanv_reply_t,
@@ -11426,26 +12674,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_booleanv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_booleanv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetBooleanv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_booleanv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_booleanv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_booleanv_reply_t {
+    ) -> *mut xcb_glx_get_booleanv_reply_t {
         sym!(self, xcb_glx_get_booleanv_reply)(c, cookie, e)
     }
 
@@ -11455,6 +12691,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_booleanv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_clip_plane_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_clip_plane_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_clip_plane_sizeof)(_buffer)
     }
@@ -11465,14 +12703,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_clip_plane_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetClipPlane` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_clip_plane_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_clip_plane_reply`]: Self::xcb_glx_get_clip_plane_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_clip_plane(
         &self,
         c: *mut xcb_connection_t,
@@ -11488,17 +12726,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_clip_plane)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetClipPlane` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_clip_plane_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_clip_plane_reply`]: Self::xcb_glx_get_clip_plane_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_clip_plane_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11514,6 +12749,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_clip_plane_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_clip_plane_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_clip_plane_data(
         &self,
         r: *const xcb_glx_get_clip_plane_reply_t,
@@ -11527,6 +12764,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_clip_plane_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_clip_plane_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_clip_plane_data_length(
         &self,
         r: *const xcb_glx_get_clip_plane_reply_t,
@@ -11540,6 +12779,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_clip_plane_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_clip_plane_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_clip_plane_data_end(
         &self,
         r: *const xcb_glx_get_clip_plane_reply_t,
@@ -11553,26 +12795,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_clip_plane_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_clip_plane_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetClipPlane` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_clip_plane_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_clip_plane_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_clip_plane_reply_t {
+    ) -> *mut xcb_glx_get_clip_plane_reply_t {
         sym!(self, xcb_glx_get_clip_plane_reply)(c, cookie, e)
     }
 
@@ -11582,6 +12812,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_clip_plane_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_doublev_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_doublev_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_doublev_sizeof)(_buffer)
     }
@@ -11592,14 +12824,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_doublev_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetDoublev` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_doublev_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_doublev_reply`]: Self::xcb_glx_get_doublev_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_doublev(
         &self,
         c: *mut xcb_connection_t,
@@ -11615,17 +12847,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_doublev)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetDoublev` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_doublev_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_doublev_reply`]: Self::xcb_glx_get_doublev_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_doublev_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11641,6 +12870,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_doublev_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_doublev_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_doublev_data(
         &self,
         r: *const xcb_glx_get_doublev_reply_t,
@@ -11654,6 +12885,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_doublev_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_doublev_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_doublev_data_length(
         &self,
         r: *const xcb_glx_get_doublev_reply_t,
@@ -11667,6 +12900,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_doublev_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_doublev_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_doublev_data_end(
         &self,
         r: *const xcb_glx_get_doublev_reply_t,
@@ -11680,26 +12916,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_doublev_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_doublev_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetDoublev` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_doublev_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_doublev_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_doublev_reply_t {
+    ) -> *mut xcb_glx_get_doublev_reply_t {
         sym!(self, xcb_glx_get_doublev_reply)(c, cookie, e)
     }
 
@@ -11709,14 +12933,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_doublev_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetError` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_error_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_error_reply`]: Self::xcb_glx_get_error_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_error(
         &self,
         c: *mut xcb_connection_t,
@@ -11731,17 +12955,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_error)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetError` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_error_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_error_reply`]: Self::xcb_glx_get_error_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_error_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11756,26 +12977,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_error_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_error_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetError` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_error_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_error_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_error_reply_t {
+    ) -> *mut xcb_glx_get_error_reply_t {
         sym!(self, xcb_glx_get_error_reply)(c, cookie, e)
     }
 
@@ -11785,6 +12994,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_error_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_floatv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_floatv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_floatv_sizeof)(_buffer)
     }
@@ -11795,14 +13006,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_floatv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetFloatv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_floatv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_floatv_reply`]: Self::xcb_glx_get_floatv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_floatv(
         &self,
         c: *mut xcb_connection_t,
@@ -11818,17 +13029,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_floatv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetFloatv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_floatv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_floatv_reply`]: Self::xcb_glx_get_floatv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_floatv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11844,6 +13052,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_floatv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_floatv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_floatv_data(
         &self,
         r: *const xcb_glx_get_floatv_reply_t,
@@ -11857,6 +13067,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_floatv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_floatv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_floatv_data_length(
         &self,
         r: *const xcb_glx_get_floatv_reply_t,
@@ -11870,6 +13082,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_floatv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_floatv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_floatv_data_end(
         &self,
         r: *const xcb_glx_get_floatv_reply_t,
@@ -11883,26 +13098,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_floatv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_floatv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetFloatv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_floatv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_floatv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_floatv_reply_t {
+    ) -> *mut xcb_glx_get_floatv_reply_t {
         sym!(self, xcb_glx_get_floatv_reply)(c, cookie, e)
     }
 
@@ -11912,6 +13115,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_floatv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_integerv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_integerv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_integerv_sizeof)(_buffer)
     }
@@ -11922,14 +13127,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_integerv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetIntegerv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_integerv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_integerv_reply`]: Self::xcb_glx_get_integerv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_integerv(
         &self,
         c: *mut xcb_connection_t,
@@ -11945,17 +13150,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_integerv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetIntegerv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_integerv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_integerv_reply`]: Self::xcb_glx_get_integerv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_integerv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11971,6 +13173,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_integerv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_integerv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_integerv_data(
         &self,
         r: *const xcb_glx_get_integerv_reply_t,
@@ -11984,6 +13188,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_integerv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_integerv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_integerv_data_length(
         &self,
         r: *const xcb_glx_get_integerv_reply_t,
@@ -11997,6 +13203,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_integerv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_integerv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_integerv_data_end(
         &self,
         r: *const xcb_glx_get_integerv_reply_t,
@@ -12010,26 +13219,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_integerv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_integerv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetIntegerv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_integerv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_integerv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_integerv_reply_t {
+    ) -> *mut xcb_glx_get_integerv_reply_t {
         sym!(self, xcb_glx_get_integerv_reply)(c, cookie, e)
     }
 
@@ -12039,6 +13236,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_integerv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_lightfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_lightfv_sizeof)(_buffer)
     }
@@ -12049,14 +13248,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetLightfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_lightfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_lightfv_reply`]: Self::xcb_glx_get_lightfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_lightfv(
         &self,
         c: *mut xcb_connection_t,
@@ -12073,17 +13272,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetLightfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_lightfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_lightfv_reply`]: Self::xcb_glx_get_lightfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_lightfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12100,6 +13296,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_lightfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightfv_data(
         &self,
         r: *const xcb_glx_get_lightfv_reply_t,
@@ -12113,6 +13311,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_lightfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightfv_data_length(
         &self,
         r: *const xcb_glx_get_lightfv_reply_t,
@@ -12126,6 +13326,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_lightfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightfv_data_end(
         &self,
         r: *const xcb_glx_get_lightfv_reply_t,
@@ -12139,26 +13342,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_lightfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetLightfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_lightfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_lightfv_reply_t {
+    ) -> *mut xcb_glx_get_lightfv_reply_t {
         sym!(self, xcb_glx_get_lightfv_reply)(c, cookie, e)
     }
 
@@ -12168,6 +13359,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_lightiv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightiv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_lightiv_sizeof)(_buffer)
     }
@@ -12178,14 +13371,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightiv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetLightiv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_lightiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_lightiv_reply`]: Self::xcb_glx_get_lightiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_lightiv(
         &self,
         c: *mut xcb_connection_t,
@@ -12202,17 +13395,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightiv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetLightiv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_lightiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_lightiv_reply`]: Self::xcb_glx_get_lightiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_lightiv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12229,6 +13419,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightiv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_lightiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightiv_data(
         &self,
         r: *const xcb_glx_get_lightiv_reply_t,
@@ -12242,6 +13434,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightiv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_lightiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightiv_data_length(
         &self,
         r: *const xcb_glx_get_lightiv_reply_t,
@@ -12255,6 +13449,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightiv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_lightiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightiv_data_end(
         &self,
         r: *const xcb_glx_get_lightiv_reply_t,
@@ -12268,26 +13465,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightiv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_lightiv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetLightiv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_lightiv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_lightiv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_lightiv_reply_t {
+    ) -> *mut xcb_glx_get_lightiv_reply_t {
         sym!(self, xcb_glx_get_lightiv_reply)(c, cookie, e)
     }
 
@@ -12297,6 +13482,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_lightiv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_mapdv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapdv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_mapdv_sizeof)(_buffer)
     }
@@ -12307,14 +13494,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapdv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMapdv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_mapdv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_mapdv_reply`]: Self::xcb_glx_get_mapdv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_mapdv(
         &self,
         c: *mut xcb_connection_t,
@@ -12331,17 +13518,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapdv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMapdv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_mapdv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_mapdv_reply`]: Self::xcb_glx_get_mapdv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_mapdv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12358,6 +13542,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapdv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_mapdv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapdv_data(
         &self,
         r: *const xcb_glx_get_mapdv_reply_t,
@@ -12371,6 +13557,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapdv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_mapdv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapdv_data_length(
         &self,
         r: *const xcb_glx_get_mapdv_reply_t,
@@ -12384,6 +13572,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapdv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_mapdv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapdv_data_end(
         &self,
         r: *const xcb_glx_get_mapdv_reply_t,
@@ -12397,26 +13588,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapdv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_mapdv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMapdv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapdv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_mapdv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_mapdv_reply_t {
+    ) -> *mut xcb_glx_get_mapdv_reply_t {
         sym!(self, xcb_glx_get_mapdv_reply)(c, cookie, e)
     }
 
@@ -12426,6 +13605,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapdv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_mapfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_mapfv_sizeof)(_buffer)
     }
@@ -12436,14 +13617,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMapfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_mapfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_mapfv_reply`]: Self::xcb_glx_get_mapfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_mapfv(
         &self,
         c: *mut xcb_connection_t,
@@ -12460,17 +13641,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMapfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_mapfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_mapfv_reply`]: Self::xcb_glx_get_mapfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_mapfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12487,6 +13665,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_mapfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapfv_data(
         &self,
         r: *const xcb_glx_get_mapfv_reply_t,
@@ -12500,6 +13680,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_mapfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapfv_data_length(
         &self,
         r: *const xcb_glx_get_mapfv_reply_t,
@@ -12513,6 +13695,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_mapfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapfv_data_end(
         &self,
         r: *const xcb_glx_get_mapfv_reply_t,
@@ -12526,26 +13711,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_mapfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMapfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_mapfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_mapfv_reply_t {
+    ) -> *mut xcb_glx_get_mapfv_reply_t {
         sym!(self, xcb_glx_get_mapfv_reply)(c, cookie, e)
     }
 
@@ -12555,6 +13728,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_mapiv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapiv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_mapiv_sizeof)(_buffer)
     }
@@ -12565,14 +13740,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapiv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMapiv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_mapiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_mapiv_reply`]: Self::xcb_glx_get_mapiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_mapiv(
         &self,
         c: *mut xcb_connection_t,
@@ -12589,17 +13764,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapiv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMapiv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_mapiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_mapiv_reply`]: Self::xcb_glx_get_mapiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_mapiv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12616,6 +13788,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapiv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_mapiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapiv_data(&self, r: *const xcb_glx_get_mapiv_reply_t) -> *mut i32 {
         sym!(self, xcb_glx_get_mapiv_data)(r)
     }
@@ -12626,6 +13800,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapiv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_mapiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapiv_data_length(
         &self,
         r: *const xcb_glx_get_mapiv_reply_t,
@@ -12639,6 +13815,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapiv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_mapiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapiv_data_end(
         &self,
         r: *const xcb_glx_get_mapiv_reply_t,
@@ -12652,26 +13831,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapiv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_mapiv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMapiv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_mapiv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_mapiv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_mapiv_reply_t {
+    ) -> *mut xcb_glx_get_mapiv_reply_t {
         sym!(self, xcb_glx_get_mapiv_reply)(c, cookie, e)
     }
 
@@ -12681,6 +13848,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_mapiv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_materialfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_materialfv_sizeof)(_buffer)
     }
@@ -12691,14 +13860,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMaterialfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_materialfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_materialfv_reply`]: Self::xcb_glx_get_materialfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_materialfv(
         &self,
         c: *mut xcb_connection_t,
@@ -12715,17 +13884,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMaterialfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_materialfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_materialfv_reply`]: Self::xcb_glx_get_materialfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_materialfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12742,6 +13908,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_materialfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialfv_data(
         &self,
         r: *const xcb_glx_get_materialfv_reply_t,
@@ -12755,6 +13923,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_materialfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialfv_data_length(
         &self,
         r: *const xcb_glx_get_materialfv_reply_t,
@@ -12768,6 +13938,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_materialfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialfv_data_end(
         &self,
         r: *const xcb_glx_get_materialfv_reply_t,
@@ -12781,26 +13954,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_materialfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMaterialfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_materialfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_materialfv_reply_t {
+    ) -> *mut xcb_glx_get_materialfv_reply_t {
         sym!(self, xcb_glx_get_materialfv_reply)(c, cookie, e)
     }
 
@@ -12810,6 +13971,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_materialiv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialiv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_materialiv_sizeof)(_buffer)
     }
@@ -12820,14 +13983,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialiv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMaterialiv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_materialiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_materialiv_reply`]: Self::xcb_glx_get_materialiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_materialiv(
         &self,
         c: *mut xcb_connection_t,
@@ -12844,17 +14007,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialiv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMaterialiv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_materialiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_materialiv_reply`]: Self::xcb_glx_get_materialiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_materialiv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12871,6 +14031,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialiv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_materialiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialiv_data(
         &self,
         r: *const xcb_glx_get_materialiv_reply_t,
@@ -12884,6 +14046,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialiv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_materialiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialiv_data_length(
         &self,
         r: *const xcb_glx_get_materialiv_reply_t,
@@ -12897,6 +14061,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialiv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_materialiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialiv_data_end(
         &self,
         r: *const xcb_glx_get_materialiv_reply_t,
@@ -12910,26 +14077,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialiv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_materialiv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMaterialiv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_materialiv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_materialiv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_materialiv_reply_t {
+    ) -> *mut xcb_glx_get_materialiv_reply_t {
         sym!(self, xcb_glx_get_materialiv_reply)(c, cookie, e)
     }
 
@@ -12939,6 +14094,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_materialiv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_pixel_mapfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_pixel_mapfv_sizeof)(_buffer)
     }
@@ -12949,14 +14106,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetPixelMapfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_pixel_mapfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_pixel_mapfv_reply`]: Self::xcb_glx_get_pixel_mapfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapfv(
         &self,
         c: *mut xcb_connection_t,
@@ -12972,17 +14129,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetPixelMapfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_pixel_mapfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_pixel_mapfv_reply`]: Self::xcb_glx_get_pixel_mapfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12998,6 +14152,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_pixel_mapfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapfv_data(
         &self,
         r: *const xcb_glx_get_pixel_mapfv_reply_t,
@@ -13011,6 +14167,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_pixel_mapfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapfv_data_length(
         &self,
         r: *const xcb_glx_get_pixel_mapfv_reply_t,
@@ -13024,6 +14182,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_pixel_mapfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapfv_data_end(
         &self,
         r: *const xcb_glx_get_pixel_mapfv_reply_t,
@@ -13037,26 +14198,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_pixel_mapfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetPixelMapfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_pixel_mapfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_pixel_mapfv_reply_t {
+    ) -> *mut xcb_glx_get_pixel_mapfv_reply_t {
         sym!(self, xcb_glx_get_pixel_mapfv_reply)(c, cookie, e)
     }
 
@@ -13066,6 +14215,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_pixel_mapuiv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapuiv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_pixel_mapuiv_sizeof)(_buffer)
     }
@@ -13076,14 +14227,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapuiv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetPixelMapuiv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_pixel_mapuiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_pixel_mapuiv_reply`]: Self::xcb_glx_get_pixel_mapuiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapuiv(
         &self,
         c: *mut xcb_connection_t,
@@ -13099,17 +14250,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapuiv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetPixelMapuiv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_pixel_mapuiv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_pixel_mapuiv_reply`]: Self::xcb_glx_get_pixel_mapuiv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapuiv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13125,6 +14273,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapuiv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_pixel_mapuiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapuiv_data(
         &self,
         r: *const xcb_glx_get_pixel_mapuiv_reply_t,
@@ -13138,6 +14288,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapuiv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_pixel_mapuiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapuiv_data_length(
         &self,
         r: *const xcb_glx_get_pixel_mapuiv_reply_t,
@@ -13151,6 +14303,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapuiv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_pixel_mapuiv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapuiv_data_end(
         &self,
         r: *const xcb_glx_get_pixel_mapuiv_reply_t,
@@ -13164,26 +14319,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapuiv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_pixel_mapuiv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetPixelMapuiv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapuiv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_pixel_mapuiv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_pixel_mapuiv_reply_t {
+    ) -> *mut xcb_glx_get_pixel_mapuiv_reply_t {
         sym!(self, xcb_glx_get_pixel_mapuiv_reply)(c, cookie, e)
     }
 
@@ -13193,6 +14336,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapuiv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_pixel_mapusv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapusv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_pixel_mapusv_sizeof)(_buffer)
     }
@@ -13203,14 +14348,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapusv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetPixelMapusv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_pixel_mapusv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_pixel_mapusv_reply`]: Self::xcb_glx_get_pixel_mapusv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapusv(
         &self,
         c: *mut xcb_connection_t,
@@ -13226,17 +14371,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapusv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetPixelMapusv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_pixel_mapusv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_pixel_mapusv_reply`]: Self::xcb_glx_get_pixel_mapusv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapusv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13252,6 +14394,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapusv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_pixel_mapusv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapusv_data(
         &self,
         r: *const xcb_glx_get_pixel_mapusv_reply_t,
@@ -13265,6 +14409,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapusv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_pixel_mapusv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapusv_data_length(
         &self,
         r: *const xcb_glx_get_pixel_mapusv_reply_t,
@@ -13278,6 +14424,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapusv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_pixel_mapusv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapusv_data_end(
         &self,
         r: *const xcb_glx_get_pixel_mapusv_reply_t,
@@ -13291,26 +14440,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapusv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_pixel_mapusv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetPixelMapusv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_pixel_mapusv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_pixel_mapusv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_pixel_mapusv_reply_t {
+    ) -> *mut xcb_glx_get_pixel_mapusv_reply_t {
         sym!(self, xcb_glx_get_pixel_mapusv_reply)(c, cookie, e)
     }
 
@@ -13320,6 +14457,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_pixel_mapusv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_polygon_stipple_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_polygon_stipple_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_polygon_stipple_sizeof)(_buffer)
     }
@@ -13330,14 +14469,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_polygon_stipple_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetPolygonStipple` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_polygon_stipple_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_polygon_stipple_reply`]: Self::xcb_glx_get_polygon_stipple_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_polygon_stipple(
         &self,
         c: *mut xcb_connection_t,
@@ -13353,17 +14492,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_polygon_stipple)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetPolygonStipple` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_polygon_stipple_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_polygon_stipple_reply`]: Self::xcb_glx_get_polygon_stipple_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_polygon_stipple_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13379,6 +14515,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_polygon_stipple_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_polygon_stipple_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_polygon_stipple_data(
         &self,
         r: *const xcb_glx_get_polygon_stipple_reply_t,
@@ -13392,6 +14530,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_polygon_stipple_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_polygon_stipple_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_polygon_stipple_data_length(
         &self,
         r: *const xcb_glx_get_polygon_stipple_reply_t,
@@ -13405,6 +14545,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_polygon_stipple_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_polygon_stipple_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_polygon_stipple_data_end(
         &self,
         r: *const xcb_glx_get_polygon_stipple_reply_t,
@@ -13418,26 +14561,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_polygon_stipple_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_polygon_stipple_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetPolygonStipple` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_polygon_stipple_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_polygon_stipple_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_polygon_stipple_reply_t {
+    ) -> *mut xcb_glx_get_polygon_stipple_reply_t {
         sym!(self, xcb_glx_get_polygon_stipple_reply)(c, cookie, e)
     }
 
@@ -13447,6 +14578,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_polygon_stipple_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_string_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_string_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_string_sizeof)(_buffer)
     }
@@ -13457,14 +14590,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_string_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetString` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_string_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_string_reply`]: Self::xcb_glx_get_string_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_string(
         &self,
         c: *mut xcb_connection_t,
@@ -13480,17 +14613,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_string)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetString` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_string_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_string_reply`]: Self::xcb_glx_get_string_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_string_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13506,6 +14636,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_string_unchecked)
     }
 
+    /// Returns a pointer to the `string` field of a `xcb_glx_get_string_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_string_string(
         &self,
         r: *const xcb_glx_get_string_reply_t,
@@ -13519,6 +14651,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_string_string)
     }
 
+    /// Returns the number of elements of the `string` field of a `xcb_glx_get_string_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_string_string_length(
         &self,
         r: *const xcb_glx_get_string_reply_t,
@@ -13532,6 +14666,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_string_string_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `string` field of a `xcb_glx_get_string_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_string_string_end(
         &self,
         r: *const xcb_glx_get_string_reply_t,
@@ -13545,26 +14682,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_string_string_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_string_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetString` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_string_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_string_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_string_reply_t {
+    ) -> *mut xcb_glx_get_string_reply_t {
         sym!(self, xcb_glx_get_string_reply)(c, cookie, e)
     }
 
@@ -13574,6 +14699,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_string_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_envfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_envfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_envfv_sizeof)(_buffer)
     }
@@ -13584,14 +14711,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_envfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexEnvfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_envfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_envfv_reply`]: Self::xcb_glx_get_tex_envfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_envfv(
         &self,
         c: *mut xcb_connection_t,
@@ -13608,17 +14735,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_envfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexEnvfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_envfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_envfv_reply`]: Self::xcb_glx_get_tex_envfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_envfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13635,6 +14759,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_envfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_envfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_envfv_data(
         &self,
         r: *const xcb_glx_get_tex_envfv_reply_t,
@@ -13648,6 +14774,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_envfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_envfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_envfv_data_length(
         &self,
         r: *const xcb_glx_get_tex_envfv_reply_t,
@@ -13661,6 +14789,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_envfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_envfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_envfv_data_end(
         &self,
         r: *const xcb_glx_get_tex_envfv_reply_t,
@@ -13674,26 +14805,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_envfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_envfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexEnvfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_envfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_envfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_envfv_reply_t {
+    ) -> *mut xcb_glx_get_tex_envfv_reply_t {
         sym!(self, xcb_glx_get_tex_envfv_reply)(c, cookie, e)
     }
 
@@ -13703,6 +14822,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_envfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_enviv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_enviv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_enviv_sizeof)(_buffer)
     }
@@ -13713,14 +14834,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_enviv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexEnviv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_enviv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_enviv_reply`]: Self::xcb_glx_get_tex_enviv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_enviv(
         &self,
         c: *mut xcb_connection_t,
@@ -13737,17 +14858,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_enviv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexEnviv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_enviv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_enviv_reply`]: Self::xcb_glx_get_tex_enviv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_enviv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13764,6 +14882,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_enviv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_enviv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_enviv_data(
         &self,
         r: *const xcb_glx_get_tex_enviv_reply_t,
@@ -13777,6 +14897,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_enviv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_enviv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_enviv_data_length(
         &self,
         r: *const xcb_glx_get_tex_enviv_reply_t,
@@ -13790,6 +14912,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_enviv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_enviv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_enviv_data_end(
         &self,
         r: *const xcb_glx_get_tex_enviv_reply_t,
@@ -13803,26 +14928,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_enviv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_enviv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexEnviv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_enviv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_enviv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_enviv_reply_t {
+    ) -> *mut xcb_glx_get_tex_enviv_reply_t {
         sym!(self, xcb_glx_get_tex_enviv_reply)(c, cookie, e)
     }
 
@@ -13832,6 +14945,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_enviv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_gendv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_gendv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_gendv_sizeof)(_buffer)
     }
@@ -13842,14 +14957,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_gendv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexGendv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_gendv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_gendv_reply`]: Self::xcb_glx_get_tex_gendv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_gendv(
         &self,
         c: *mut xcb_connection_t,
@@ -13866,17 +14981,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_gendv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexGendv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_gendv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_gendv_reply`]: Self::xcb_glx_get_tex_gendv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_gendv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13893,6 +15005,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_gendv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_gendv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_gendv_data(
         &self,
         r: *const xcb_glx_get_tex_gendv_reply_t,
@@ -13906,6 +15020,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_gendv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_gendv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_gendv_data_length(
         &self,
         r: *const xcb_glx_get_tex_gendv_reply_t,
@@ -13919,6 +15035,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_gendv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_gendv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_gendv_data_end(
         &self,
         r: *const xcb_glx_get_tex_gendv_reply_t,
@@ -13932,26 +15051,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_gendv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_gendv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexGendv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_gendv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_gendv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_gendv_reply_t {
+    ) -> *mut xcb_glx_get_tex_gendv_reply_t {
         sym!(self, xcb_glx_get_tex_gendv_reply)(c, cookie, e)
     }
 
@@ -13961,6 +15068,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_gendv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_genfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_genfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_genfv_sizeof)(_buffer)
     }
@@ -13971,14 +15080,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_genfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexGenfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_genfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_genfv_reply`]: Self::xcb_glx_get_tex_genfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_genfv(
         &self,
         c: *mut xcb_connection_t,
@@ -13995,17 +15104,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_genfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexGenfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_genfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_genfv_reply`]: Self::xcb_glx_get_tex_genfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_genfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14022,6 +15128,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_genfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_genfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_genfv_data(
         &self,
         r: *const xcb_glx_get_tex_genfv_reply_t,
@@ -14035,6 +15143,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_genfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_genfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_genfv_data_length(
         &self,
         r: *const xcb_glx_get_tex_genfv_reply_t,
@@ -14048,6 +15158,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_genfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_genfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_genfv_data_end(
         &self,
         r: *const xcb_glx_get_tex_genfv_reply_t,
@@ -14061,26 +15174,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_genfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_genfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexGenfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_genfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_genfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_genfv_reply_t {
+    ) -> *mut xcb_glx_get_tex_genfv_reply_t {
         sym!(self, xcb_glx_get_tex_genfv_reply)(c, cookie, e)
     }
 
@@ -14090,6 +15191,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_genfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_geniv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_geniv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_geniv_sizeof)(_buffer)
     }
@@ -14100,14 +15203,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_geniv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexGeniv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_geniv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_geniv_reply`]: Self::xcb_glx_get_tex_geniv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_geniv(
         &self,
         c: *mut xcb_connection_t,
@@ -14124,17 +15227,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_geniv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexGeniv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_geniv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_geniv_reply`]: Self::xcb_glx_get_tex_geniv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_geniv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14151,6 +15251,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_geniv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_geniv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_geniv_data(
         &self,
         r: *const xcb_glx_get_tex_geniv_reply_t,
@@ -14164,6 +15266,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_geniv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_geniv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_geniv_data_length(
         &self,
         r: *const xcb_glx_get_tex_geniv_reply_t,
@@ -14177,6 +15281,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_geniv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_geniv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_geniv_data_end(
         &self,
         r: *const xcb_glx_get_tex_geniv_reply_t,
@@ -14190,26 +15297,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_geniv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_geniv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexGeniv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_geniv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_geniv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_geniv_reply_t {
+    ) -> *mut xcb_glx_get_tex_geniv_reply_t {
         sym!(self, xcb_glx_get_tex_geniv_reply)(c, cookie, e)
     }
 
@@ -14219,6 +15314,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_geniv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_image_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_image_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_image_sizeof)(_buffer)
     }
@@ -14229,14 +15326,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_image_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_image_reply`]: Self::xcb_glx_get_tex_image_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_image(
         &self,
         c: *mut xcb_connection_t,
@@ -14256,17 +15353,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_image)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexImage` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_image_reply`]: Self::xcb_glx_get_tex_image_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_image_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14294,6 +15388,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_image_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_image_data(
         &self,
         r: *const xcb_glx_get_tex_image_reply_t,
@@ -14307,6 +15403,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_image_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_image_data_length(
         &self,
         r: *const xcb_glx_get_tex_image_reply_t,
@@ -14320,6 +15418,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_image_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_image_data_end(
         &self,
         r: *const xcb_glx_get_tex_image_reply_t,
@@ -14333,26 +15434,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_image_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_image_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexImage` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_image_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_image_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_image_reply_t {
+    ) -> *mut xcb_glx_get_tex_image_reply_t {
         sym!(self, xcb_glx_get_tex_image_reply)(c, cookie, e)
     }
 
@@ -14362,6 +15451,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_image_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_parameterfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameterfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_parameterfv_sizeof)(_buffer)
     }
@@ -14372,14 +15463,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameterfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexParameterfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_parameterfv_reply`]: Self::xcb_glx_get_tex_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameterfv(
         &self,
         c: *mut xcb_connection_t,
@@ -14396,17 +15487,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameterfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexParameterfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_parameterfv_reply`]: Self::xcb_glx_get_tex_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameterfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14423,6 +15511,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameterfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameterfv_data(
         &self,
         r: *const xcb_glx_get_tex_parameterfv_reply_t,
@@ -14436,6 +15526,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameterfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameterfv_data_length(
         &self,
         r: *const xcb_glx_get_tex_parameterfv_reply_t,
@@ -14449,6 +15541,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameterfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameterfv_data_end(
         &self,
         r: *const xcb_glx_get_tex_parameterfv_reply_t,
@@ -14462,26 +15557,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameterfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_parameterfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexParameterfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameterfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_parameterfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_parameterfv_reply_t {
+    ) -> *mut xcb_glx_get_tex_parameterfv_reply_t {
         sym!(self, xcb_glx_get_tex_parameterfv_reply)(c, cookie, e)
     }
 
@@ -14491,6 +15574,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameterfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_parameteriv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameteriv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_parameteriv_sizeof)(_buffer)
     }
@@ -14501,14 +15586,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameteriv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexParameteriv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_parameteriv_reply`]: Self::xcb_glx_get_tex_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameteriv(
         &self,
         c: *mut xcb_connection_t,
@@ -14525,17 +15610,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameteriv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexParameteriv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_parameteriv_reply`]: Self::xcb_glx_get_tex_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameteriv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14552,6 +15634,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameteriv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameteriv_data(
         &self,
         r: *const xcb_glx_get_tex_parameteriv_reply_t,
@@ -14565,6 +15649,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameteriv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameteriv_data_length(
         &self,
         r: *const xcb_glx_get_tex_parameteriv_reply_t,
@@ -14578,6 +15664,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameteriv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameteriv_data_end(
         &self,
         r: *const xcb_glx_get_tex_parameteriv_reply_t,
@@ -14591,26 +15680,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameteriv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_parameteriv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexParameteriv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_parameteriv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_parameteriv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_parameteriv_reply_t {
+    ) -> *mut xcb_glx_get_tex_parameteriv_reply_t {
         sym!(self, xcb_glx_get_tex_parameteriv_reply)(c, cookie, e)
     }
 
@@ -14620,6 +15697,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_parameteriv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_level_parameterfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameterfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_level_parameterfv_sizeof)(_buffer)
     }
@@ -14630,14 +15709,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameterfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexLevelParameterfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_level_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_level_parameterfv_reply`]: Self::xcb_glx_get_tex_level_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameterfv(
         &self,
         c: *mut xcb_connection_t,
@@ -14655,17 +15734,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameterfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexLevelParameterfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_level_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_level_parameterfv_reply`]: Self::xcb_glx_get_tex_level_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameterfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14689,6 +15765,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameterfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_level_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameterfv_data(
         &self,
         r: *const xcb_glx_get_tex_level_parameterfv_reply_t,
@@ -14702,6 +15780,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameterfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_level_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameterfv_data_length(
         &self,
         r: *const xcb_glx_get_tex_level_parameterfv_reply_t,
@@ -14715,6 +15795,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameterfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_level_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameterfv_data_end(
         &self,
         r: *const xcb_glx_get_tex_level_parameterfv_reply_t,
@@ -14728,26 +15811,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameterfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_level_parameterfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexLevelParameterfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameterfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_level_parameterfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_level_parameterfv_reply_t {
+    ) -> *mut xcb_glx_get_tex_level_parameterfv_reply_t {
         sym!(self, xcb_glx_get_tex_level_parameterfv_reply)(c, cookie, e)
     }
 
@@ -14757,6 +15828,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameterfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_tex_level_parameteriv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameteriv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_tex_level_parameteriv_sizeof)(_buffer)
     }
@@ -14767,14 +15840,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameteriv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetTexLevelParameteriv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_level_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_level_parameteriv_reply`]: Self::xcb_glx_get_tex_level_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameteriv(
         &self,
         c: *mut xcb_connection_t,
@@ -14792,17 +15865,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameteriv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetTexLevelParameteriv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_tex_level_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_tex_level_parameteriv_reply`]: Self::xcb_glx_get_tex_level_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameteriv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14826,6 +15896,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameteriv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_tex_level_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameteriv_data(
         &self,
         r: *const xcb_glx_get_tex_level_parameteriv_reply_t,
@@ -14839,6 +15911,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameteriv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_tex_level_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameteriv_data_length(
         &self,
         r: *const xcb_glx_get_tex_level_parameteriv_reply_t,
@@ -14852,6 +15926,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameteriv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_tex_level_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameteriv_data_end(
         &self,
         r: *const xcb_glx_get_tex_level_parameteriv_reply_t,
@@ -14865,26 +15942,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameteriv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_tex_level_parameteriv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetTexLevelParameteriv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_tex_level_parameteriv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_tex_level_parameteriv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_tex_level_parameteriv_reply_t {
+    ) -> *mut xcb_glx_get_tex_level_parameteriv_reply_t {
         sym!(self, xcb_glx_get_tex_level_parameteriv_reply)(c, cookie, e)
     }
 
@@ -14894,14 +15959,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_tex_level_parameteriv_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::IsEnabled` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_enabled_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_enabled_reply`]: Self::xcb_glx_is_enabled_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_enabled(
         &self,
         c: *mut xcb_connection_t,
@@ -14917,17 +15982,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_enabled)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::IsEnabled` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_enabled_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_enabled_reply`]: Self::xcb_glx_is_enabled_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_enabled_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14943,26 +16005,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_enabled_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_is_enabled_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::IsEnabled` request.
+    #[inline]
     pub unsafe fn xcb_glx_is_enabled_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_is_enabled_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_is_enabled_reply_t {
+    ) -> *mut xcb_glx_is_enabled_reply_t {
         sym!(self, xcb_glx_is_enabled_reply)(c, cookie, e)
     }
 
@@ -14972,14 +16022,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_enabled_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::IsList` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_list_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_list_reply`]: Self::xcb_glx_is_list_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_list(
         &self,
         c: *mut xcb_connection_t,
@@ -14995,17 +16045,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::IsList` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_list_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_list_reply`]: Self::xcb_glx_is_list_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_list_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15021,26 +16068,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_list_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_is_list_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::IsList` request.
+    #[inline]
     pub unsafe fn xcb_glx_is_list_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_is_list_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_is_list_reply_t {
+    ) -> *mut xcb_glx_is_list_reply_t {
         sym!(self, xcb_glx_is_list_reply)(c, cookie, e)
     }
 
@@ -15050,17 +16085,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_list_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::Flush` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_flush_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15075,14 +16107,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_flush_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::Flush` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_flush(
         &self,
         c: *mut xcb_connection_t,
@@ -15097,6 +16123,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_flush)
     }
 
+    /// Computes the size of a `xcb_glx_are_textures_resident_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_are_textures_resident_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_are_textures_resident_sizeof)(_buffer)
     }
@@ -15107,14 +16135,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_are_textures_resident_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::AreTexturesResident` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_are_textures_resident_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_are_textures_resident_reply`]: Self::xcb_glx_are_textures_resident_reply
+    #[inline]
     pub unsafe fn xcb_glx_are_textures_resident(
         &self,
         c: *mut xcb_connection_t,
@@ -15131,17 +16159,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_are_textures_resident)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::AreTexturesResident` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_are_textures_resident_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_are_textures_resident_reply`]: Self::xcb_glx_are_textures_resident_reply
+    #[inline]
     pub unsafe fn xcb_glx_are_textures_resident_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15158,6 +16183,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_are_textures_resident_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_are_textures_resident_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_are_textures_resident_data(
         &self,
         r: *const xcb_glx_are_textures_resident_reply_t,
@@ -15171,6 +16198,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_are_textures_resident_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_are_textures_resident_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_are_textures_resident_data_length(
         &self,
         r: *const xcb_glx_are_textures_resident_reply_t,
@@ -15184,6 +16213,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_are_textures_resident_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_are_textures_resident_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_are_textures_resident_data_end(
         &self,
         r: *const xcb_glx_are_textures_resident_reply_t,
@@ -15197,26 +16229,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_are_textures_resident_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_are_textures_resident_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::AreTexturesResident` request.
+    #[inline]
     pub unsafe fn xcb_glx_are_textures_resident_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_are_textures_resident_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_are_textures_resident_reply_t {
+    ) -> *mut xcb_glx_are_textures_resident_reply_t {
         sym!(self, xcb_glx_are_textures_resident_reply)(c, cookie, e)
     }
 
@@ -15226,6 +16246,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_are_textures_resident_reply)
     }
 
+    /// Computes the size of a `xcb_glx_delete_textures_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_delete_textures_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_delete_textures_sizeof)(_buffer)
     }
@@ -15236,17 +16258,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_textures_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DeleteTextures` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_delete_textures_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15263,14 +16282,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_textures_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DeleteTextures` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_delete_textures(
         &self,
         c: *mut xcb_connection_t,
@@ -15287,6 +16300,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_textures)
     }
 
+    /// Returns a pointer to the `textures` field of a `xcb_glx_delete_textures_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_delete_textures_textures(
         &self,
         r: *const xcb_glx_delete_textures_request_t,
@@ -15300,6 +16315,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_textures_textures)
     }
 
+    /// Returns the number of elements of the `textures` field of a `xcb_glx_delete_textures_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_delete_textures_textures_length(
         &self,
         r: *const xcb_glx_delete_textures_request_t,
@@ -15313,6 +16330,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_textures_textures_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `textures` field of a `xcb_glx_delete_textures_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_delete_textures_textures_end(
         &self,
         r: *const xcb_glx_delete_textures_request_t,
@@ -15326,6 +16346,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_textures_textures_end)
     }
 
+    /// Computes the size of a `xcb_glx_gen_textures_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_gen_textures_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_gen_textures_sizeof)(_buffer)
     }
@@ -15336,14 +16358,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_textures_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GenTextures` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_gen_textures_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_gen_textures_reply`]: Self::xcb_glx_gen_textures_reply
+    #[inline]
     pub unsafe fn xcb_glx_gen_textures(
         &self,
         c: *mut xcb_connection_t,
@@ -15359,17 +16381,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_textures)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GenTextures` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_gen_textures_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_gen_textures_reply`]: Self::xcb_glx_gen_textures_reply
+    #[inline]
     pub unsafe fn xcb_glx_gen_textures_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15385,6 +16404,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_textures_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_gen_textures_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_gen_textures_data(
         &self,
         r: *const xcb_glx_gen_textures_reply_t,
@@ -15398,6 +16419,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_textures_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_gen_textures_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_gen_textures_data_length(
         &self,
         r: *const xcb_glx_gen_textures_reply_t,
@@ -15411,6 +16434,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_textures_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_gen_textures_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_gen_textures_data_end(
         &self,
         r: *const xcb_glx_gen_textures_reply_t,
@@ -15424,26 +16450,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_textures_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_gen_textures_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GenTextures` request.
+    #[inline]
     pub unsafe fn xcb_glx_gen_textures_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_gen_textures_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_gen_textures_reply_t {
+    ) -> *mut xcb_glx_gen_textures_reply_t {
         sym!(self, xcb_glx_gen_textures_reply)(c, cookie, e)
     }
 
@@ -15453,14 +16467,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_textures_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::IsTexture` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_texture_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_texture_reply`]: Self::xcb_glx_is_texture_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_texture(
         &self,
         c: *mut xcb_connection_t,
@@ -15476,17 +16490,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_texture)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::IsTexture` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_texture_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_texture_reply`]: Self::xcb_glx_is_texture_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_texture_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15502,26 +16513,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_texture_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_is_texture_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::IsTexture` request.
+    #[inline]
     pub unsafe fn xcb_glx_is_texture_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_is_texture_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_is_texture_reply_t {
+    ) -> *mut xcb_glx_is_texture_reply_t {
         sym!(self, xcb_glx_is_texture_reply)(c, cookie, e)
     }
 
@@ -15531,6 +16530,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_texture_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_color_table_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_color_table_sizeof)(_buffer)
     }
@@ -15541,14 +16542,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetColorTable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_color_table_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_color_table_reply`]: Self::xcb_glx_get_color_table_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table(
         &self,
         c: *mut xcb_connection_t,
@@ -15567,17 +16568,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetColorTable` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_color_table_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_color_table_reply`]: Self::xcb_glx_get_color_table_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15603,6 +16601,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_color_table_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_data(
         &self,
         r: *const xcb_glx_get_color_table_reply_t,
@@ -15616,6 +16616,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_color_table_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_data_length(
         &self,
         r: *const xcb_glx_get_color_table_reply_t,
@@ -15629,6 +16631,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_color_table_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_data_end(
         &self,
         r: *const xcb_glx_get_color_table_reply_t,
@@ -15642,26 +16647,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_color_table_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetColorTable` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_color_table_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_color_table_reply_t {
+    ) -> *mut xcb_glx_get_color_table_reply_t {
         sym!(self, xcb_glx_get_color_table_reply)(c, cookie, e)
     }
 
@@ -15671,6 +16664,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_color_table_parameterfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameterfv_sizeof(
         &self,
         _buffer: *const c_void,
@@ -15684,14 +16679,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameterfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetColorTableParameterfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_color_table_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_color_table_parameterfv_reply`]: Self::xcb_glx_get_color_table_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameterfv(
         &self,
         c: *mut xcb_connection_t,
@@ -15708,17 +16703,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameterfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetColorTableParameterfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_color_table_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_color_table_parameterfv_reply`]: Self::xcb_glx_get_color_table_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameterfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15735,6 +16727,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameterfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_color_table_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameterfv_data(
         &self,
         r: *const xcb_glx_get_color_table_parameterfv_reply_t,
@@ -15748,6 +16742,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameterfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_color_table_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameterfv_data_length(
         &self,
         r: *const xcb_glx_get_color_table_parameterfv_reply_t,
@@ -15761,6 +16757,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameterfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_color_table_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameterfv_data_end(
         &self,
         r: *const xcb_glx_get_color_table_parameterfv_reply_t,
@@ -15774,26 +16773,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameterfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_color_table_parameterfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetColorTableParameterfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameterfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_color_table_parameterfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_color_table_parameterfv_reply_t {
+    ) -> *mut xcb_glx_get_color_table_parameterfv_reply_t {
         sym!(self, xcb_glx_get_color_table_parameterfv_reply)(c, cookie, e)
     }
 
@@ -15803,6 +16790,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameterfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_color_table_parameteriv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameteriv_sizeof(
         &self,
         _buffer: *const c_void,
@@ -15816,14 +16805,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameteriv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetColorTableParameteriv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_color_table_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_color_table_parameteriv_reply`]: Self::xcb_glx_get_color_table_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameteriv(
         &self,
         c: *mut xcb_connection_t,
@@ -15840,17 +16829,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameteriv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetColorTableParameteriv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_color_table_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_color_table_parameteriv_reply`]: Self::xcb_glx_get_color_table_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameteriv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15867,6 +16853,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameteriv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_color_table_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameteriv_data(
         &self,
         r: *const xcb_glx_get_color_table_parameteriv_reply_t,
@@ -15880,6 +16868,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameteriv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_color_table_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameteriv_data_length(
         &self,
         r: *const xcb_glx_get_color_table_parameteriv_reply_t,
@@ -15893,6 +16883,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameteriv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_color_table_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameteriv_data_end(
         &self,
         r: *const xcb_glx_get_color_table_parameteriv_reply_t,
@@ -15906,26 +16899,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameteriv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_color_table_parameteriv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetColorTableParameteriv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_color_table_parameteriv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_color_table_parameteriv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_color_table_parameteriv_reply_t {
+    ) -> *mut xcb_glx_get_color_table_parameteriv_reply_t {
         sym!(self, xcb_glx_get_color_table_parameteriv_reply)(c, cookie, e)
     }
 
@@ -15935,6 +16916,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_color_table_parameteriv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_convolution_filter_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_filter_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_convolution_filter_sizeof)(_buffer)
     }
@@ -15945,14 +16928,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_filter_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetConvolutionFilter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_convolution_filter_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_convolution_filter_reply`]: Self::xcb_glx_get_convolution_filter_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_filter(
         &self,
         c: *mut xcb_connection_t,
@@ -15978,17 +16961,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_filter)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetConvolutionFilter` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_convolution_filter_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_convolution_filter_reply`]: Self::xcb_glx_get_convolution_filter_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_filter_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16014,6 +16994,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_filter_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_convolution_filter_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_filter_data(
         &self,
         r: *const xcb_glx_get_convolution_filter_reply_t,
@@ -16027,6 +17009,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_filter_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_convolution_filter_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_filter_data_length(
         &self,
         r: *const xcb_glx_get_convolution_filter_reply_t,
@@ -16040,6 +17024,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_filter_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_convolution_filter_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_filter_data_end(
         &self,
         r: *const xcb_glx_get_convolution_filter_reply_t,
@@ -16053,26 +17040,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_filter_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_convolution_filter_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetConvolutionFilter` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_filter_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_convolution_filter_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_convolution_filter_reply_t {
+    ) -> *mut xcb_glx_get_convolution_filter_reply_t {
         sym!(self, xcb_glx_get_convolution_filter_reply)(c, cookie, e)
     }
 
@@ -16082,6 +17057,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_filter_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_convolution_parameterfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameterfv_sizeof(
         &self,
         _buffer: *const c_void,
@@ -16095,14 +17072,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameterfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetConvolutionParameterfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_convolution_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_convolution_parameterfv_reply`]: Self::xcb_glx_get_convolution_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameterfv(
         &self,
         c: *mut xcb_connection_t,
@@ -16119,17 +17096,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameterfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetConvolutionParameterfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_convolution_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_convolution_parameterfv_reply`]: Self::xcb_glx_get_convolution_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameterfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16146,6 +17120,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameterfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_convolution_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameterfv_data(
         &self,
         r: *const xcb_glx_get_convolution_parameterfv_reply_t,
@@ -16159,6 +17135,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameterfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_convolution_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameterfv_data_length(
         &self,
         r: *const xcb_glx_get_convolution_parameterfv_reply_t,
@@ -16172,6 +17150,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameterfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_convolution_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameterfv_data_end(
         &self,
         r: *const xcb_glx_get_convolution_parameterfv_reply_t,
@@ -16185,26 +17166,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameterfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_convolution_parameterfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetConvolutionParameterfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameterfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_convolution_parameterfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_convolution_parameterfv_reply_t {
+    ) -> *mut xcb_glx_get_convolution_parameterfv_reply_t {
         sym!(self, xcb_glx_get_convolution_parameterfv_reply)(c, cookie, e)
     }
 
@@ -16214,6 +17183,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameterfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_convolution_parameteriv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameteriv_sizeof(
         &self,
         _buffer: *const c_void,
@@ -16227,14 +17198,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameteriv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetConvolutionParameteriv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_convolution_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_convolution_parameteriv_reply`]: Self::xcb_glx_get_convolution_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameteriv(
         &self,
         c: *mut xcb_connection_t,
@@ -16251,17 +17222,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameteriv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetConvolutionParameteriv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_convolution_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_convolution_parameteriv_reply`]: Self::xcb_glx_get_convolution_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameteriv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16278,6 +17246,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameteriv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_convolution_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameteriv_data(
         &self,
         r: *const xcb_glx_get_convolution_parameteriv_reply_t,
@@ -16291,6 +17261,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameteriv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_convolution_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameteriv_data_length(
         &self,
         r: *const xcb_glx_get_convolution_parameteriv_reply_t,
@@ -16304,6 +17276,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameteriv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_convolution_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameteriv_data_end(
         &self,
         r: *const xcb_glx_get_convolution_parameteriv_reply_t,
@@ -16317,26 +17292,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameteriv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_convolution_parameteriv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetConvolutionParameteriv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_convolution_parameteriv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_convolution_parameteriv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_convolution_parameteriv_reply_t {
+    ) -> *mut xcb_glx_get_convolution_parameteriv_reply_t {
         sym!(self, xcb_glx_get_convolution_parameteriv_reply)(c, cookie, e)
     }
 
@@ -16346,6 +17309,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_convolution_parameteriv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_separable_filter_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_separable_filter_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_separable_filter_sizeof)(_buffer)
     }
@@ -16356,14 +17321,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_separable_filter_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetSeparableFilter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_separable_filter_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_separable_filter_reply`]: Self::xcb_glx_get_separable_filter_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_separable_filter(
         &self,
         c: *mut xcb_connection_t,
@@ -16382,17 +17347,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_separable_filter)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetSeparableFilter` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_separable_filter_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_separable_filter_reply`]: Self::xcb_glx_get_separable_filter_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_separable_filter_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16418,6 +17380,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_separable_filter_unchecked)
     }
 
+    /// Returns a pointer to the `rows_and_cols` field of a `xcb_glx_get_separable_filter_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_separable_filter_rows_and_cols(
         &self,
         r: *const xcb_glx_get_separable_filter_reply_t,
@@ -16431,6 +17395,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_separable_filter_rows_and_cols)
     }
 
+    /// Returns the number of elements of the `rows_and_cols` field of a `xcb_glx_get_separable_filter_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_separable_filter_rows_and_cols_length(
         &self,
         r: *const xcb_glx_get_separable_filter_reply_t,
@@ -16444,6 +17410,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_separable_filter_rows_and_cols_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `rows_and_cols` field of a `xcb_glx_get_separable_filter_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_separable_filter_rows_and_cols_end(
         &self,
         r: *const xcb_glx_get_separable_filter_reply_t,
@@ -16457,26 +17426,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_separable_filter_rows_and_cols_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_separable_filter_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetSeparableFilter` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_separable_filter_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_separable_filter_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_separable_filter_reply_t {
+    ) -> *mut xcb_glx_get_separable_filter_reply_t {
         sym!(self, xcb_glx_get_separable_filter_reply)(c, cookie, e)
     }
 
@@ -16486,6 +17443,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_separable_filter_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_histogram_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_histogram_sizeof)(_buffer)
     }
@@ -16496,14 +17455,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetHistogram` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_histogram_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_histogram_reply`]: Self::xcb_glx_get_histogram_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram(
         &self,
         c: *mut xcb_connection_t,
@@ -16523,17 +17482,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetHistogram` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_histogram_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_histogram_reply`]: Self::xcb_glx_get_histogram_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16561,6 +17517,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_histogram_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_data(
         &self,
         r: *const xcb_glx_get_histogram_reply_t,
@@ -16574,6 +17532,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_histogram_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_data_length(
         &self,
         r: *const xcb_glx_get_histogram_reply_t,
@@ -16587,6 +17547,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_histogram_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_data_end(
         &self,
         r: *const xcb_glx_get_histogram_reply_t,
@@ -16600,26 +17563,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_histogram_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetHistogram` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_histogram_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_histogram_reply_t {
+    ) -> *mut xcb_glx_get_histogram_reply_t {
         sym!(self, xcb_glx_get_histogram_reply)(c, cookie, e)
     }
 
@@ -16629,6 +17580,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_histogram_parameterfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameterfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_histogram_parameterfv_sizeof)(_buffer)
     }
@@ -16639,14 +17592,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameterfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetHistogramParameterfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_histogram_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_histogram_parameterfv_reply`]: Self::xcb_glx_get_histogram_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameterfv(
         &self,
         c: *mut xcb_connection_t,
@@ -16663,17 +17616,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameterfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetHistogramParameterfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_histogram_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_histogram_parameterfv_reply`]: Self::xcb_glx_get_histogram_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameterfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16690,6 +17640,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameterfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_histogram_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameterfv_data(
         &self,
         r: *const xcb_glx_get_histogram_parameterfv_reply_t,
@@ -16703,6 +17655,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameterfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_histogram_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameterfv_data_length(
         &self,
         r: *const xcb_glx_get_histogram_parameterfv_reply_t,
@@ -16716,6 +17670,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameterfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_histogram_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameterfv_data_end(
         &self,
         r: *const xcb_glx_get_histogram_parameterfv_reply_t,
@@ -16729,26 +17686,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameterfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_histogram_parameterfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetHistogramParameterfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameterfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_histogram_parameterfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_histogram_parameterfv_reply_t {
+    ) -> *mut xcb_glx_get_histogram_parameterfv_reply_t {
         sym!(self, xcb_glx_get_histogram_parameterfv_reply)(c, cookie, e)
     }
 
@@ -16758,6 +17703,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameterfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_histogram_parameteriv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameteriv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_histogram_parameteriv_sizeof)(_buffer)
     }
@@ -16768,14 +17715,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameteriv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetHistogramParameteriv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_histogram_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_histogram_parameteriv_reply`]: Self::xcb_glx_get_histogram_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameteriv(
         &self,
         c: *mut xcb_connection_t,
@@ -16792,17 +17739,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameteriv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetHistogramParameteriv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_histogram_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_histogram_parameteriv_reply`]: Self::xcb_glx_get_histogram_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameteriv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16819,6 +17763,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameteriv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_histogram_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameteriv_data(
         &self,
         r: *const xcb_glx_get_histogram_parameteriv_reply_t,
@@ -16832,6 +17778,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameteriv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_histogram_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameteriv_data_length(
         &self,
         r: *const xcb_glx_get_histogram_parameteriv_reply_t,
@@ -16845,6 +17793,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameteriv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_histogram_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameteriv_data_end(
         &self,
         r: *const xcb_glx_get_histogram_parameteriv_reply_t,
@@ -16858,26 +17809,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameteriv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_histogram_parameteriv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetHistogramParameteriv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_histogram_parameteriv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_histogram_parameteriv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_histogram_parameteriv_reply_t {
+    ) -> *mut xcb_glx_get_histogram_parameteriv_reply_t {
         sym!(self, xcb_glx_get_histogram_parameteriv_reply)(c, cookie, e)
     }
 
@@ -16887,6 +17826,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_histogram_parameteriv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_minmax_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_minmax_sizeof)(_buffer)
     }
@@ -16897,14 +17838,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMinmax` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_minmax_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_minmax_reply`]: Self::xcb_glx_get_minmax_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax(
         &self,
         c: *mut xcb_connection_t,
@@ -16924,17 +17865,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMinmax` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_minmax_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_minmax_reply`]: Self::xcb_glx_get_minmax_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -16962,6 +17900,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_minmax_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_data(&self, r: *const xcb_glx_get_minmax_reply_t) -> *mut u8 {
         sym!(self, xcb_glx_get_minmax_data)(r)
     }
@@ -16972,6 +17912,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_minmax_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_data_length(
         &self,
         r: *const xcb_glx_get_minmax_reply_t,
@@ -16985,6 +17927,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_minmax_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_data_end(
         &self,
         r: *const xcb_glx_get_minmax_reply_t,
@@ -16998,26 +17943,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_minmax_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMinmax` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_minmax_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_minmax_reply_t {
+    ) -> *mut xcb_glx_get_minmax_reply_t {
         sym!(self, xcb_glx_get_minmax_reply)(c, cookie, e)
     }
 
@@ -17027,6 +17960,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_minmax_parameterfv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameterfv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_minmax_parameterfv_sizeof)(_buffer)
     }
@@ -17037,14 +17972,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameterfv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMinmaxParameterfv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_minmax_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_minmax_parameterfv_reply`]: Self::xcb_glx_get_minmax_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameterfv(
         &self,
         c: *mut xcb_connection_t,
@@ -17061,17 +17996,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameterfv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMinmaxParameterfv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_minmax_parameterfv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_minmax_parameterfv_reply`]: Self::xcb_glx_get_minmax_parameterfv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameterfv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17088,6 +18020,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameterfv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_minmax_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameterfv_data(
         &self,
         r: *const xcb_glx_get_minmax_parameterfv_reply_t,
@@ -17101,6 +18035,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameterfv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_minmax_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameterfv_data_length(
         &self,
         r: *const xcb_glx_get_minmax_parameterfv_reply_t,
@@ -17114,6 +18050,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameterfv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_minmax_parameterfv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameterfv_data_end(
         &self,
         r: *const xcb_glx_get_minmax_parameterfv_reply_t,
@@ -17127,26 +18066,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameterfv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_minmax_parameterfv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMinmaxParameterfv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameterfv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_minmax_parameterfv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_minmax_parameterfv_reply_t {
+    ) -> *mut xcb_glx_get_minmax_parameterfv_reply_t {
         sym!(self, xcb_glx_get_minmax_parameterfv_reply)(c, cookie, e)
     }
 
@@ -17156,6 +18083,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameterfv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_minmax_parameteriv_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameteriv_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_minmax_parameteriv_sizeof)(_buffer)
     }
@@ -17166,14 +18095,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameteriv_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetMinmaxParameteriv` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_minmax_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_minmax_parameteriv_reply`]: Self::xcb_glx_get_minmax_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameteriv(
         &self,
         c: *mut xcb_connection_t,
@@ -17190,17 +18119,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameteriv)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetMinmaxParameteriv` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_minmax_parameteriv_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_minmax_parameteriv_reply`]: Self::xcb_glx_get_minmax_parameteriv_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameteriv_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17217,6 +18143,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameteriv_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_minmax_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameteriv_data(
         &self,
         r: *const xcb_glx_get_minmax_parameteriv_reply_t,
@@ -17230,6 +18158,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameteriv_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_minmax_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameteriv_data_length(
         &self,
         r: *const xcb_glx_get_minmax_parameteriv_reply_t,
@@ -17243,6 +18173,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameteriv_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_minmax_parameteriv_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameteriv_data_end(
         &self,
         r: *const xcb_glx_get_minmax_parameteriv_reply_t,
@@ -17256,26 +18189,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameteriv_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_minmax_parameteriv_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetMinmaxParameteriv` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_minmax_parameteriv_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_minmax_parameteriv_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_minmax_parameteriv_reply_t {
+    ) -> *mut xcb_glx_get_minmax_parameteriv_reply_t {
         sym!(self, xcb_glx_get_minmax_parameteriv_reply)(c, cookie, e)
     }
 
@@ -17285,6 +18206,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_minmax_parameteriv_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_compressed_tex_image_arb_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_compressed_tex_image_arb_sizeof(
         &self,
         _buffer: *const c_void,
@@ -17298,14 +18221,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_compressed_tex_image_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetCompressedTexImageARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_compressed_tex_image_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_compressed_tex_image_arb_reply`]: Self::xcb_glx_get_compressed_tex_image_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_compressed_tex_image_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -17322,17 +18245,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_compressed_tex_image_arb)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetCompressedTexImageARB` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_compressed_tex_image_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_compressed_tex_image_arb_reply`]: Self::xcb_glx_get_compressed_tex_image_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_compressed_tex_image_arb_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17349,6 +18269,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_compressed_tex_image_arb_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_compressed_tex_image_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_compressed_tex_image_arb_data(
         &self,
         r: *const xcb_glx_get_compressed_tex_image_arb_reply_t,
@@ -17362,6 +18284,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_compressed_tex_image_arb_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_compressed_tex_image_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_compressed_tex_image_arb_data_length(
         &self,
         r: *const xcb_glx_get_compressed_tex_image_arb_reply_t,
@@ -17375,6 +18299,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_compressed_tex_image_arb_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_compressed_tex_image_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_compressed_tex_image_arb_data_end(
         &self,
         r: *const xcb_glx_get_compressed_tex_image_arb_reply_t,
@@ -17388,26 +18315,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_compressed_tex_image_arb_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_compressed_tex_image_arb_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetCompressedTexImageARB` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_compressed_tex_image_arb_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_compressed_tex_image_arb_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_compressed_tex_image_arb_reply_t {
+    ) -> *mut xcb_glx_get_compressed_tex_image_arb_reply_t {
         sym!(self, xcb_glx_get_compressed_tex_image_arb_reply)(c, cookie, e)
     }
 
@@ -17417,6 +18332,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_compressed_tex_image_arb_reply)
     }
 
+    /// Computes the size of a `xcb_glx_delete_queries_arb_request_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_delete_queries_arb_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_delete_queries_arb_sizeof)(_buffer)
     }
@@ -17427,17 +18344,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_queries_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Glx::DeleteQueriesARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_glx_delete_queries_arb_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17454,14 +18368,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_queries_arb_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::DeleteQueriesARB` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_glx_delete_queries_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -17478,6 +18386,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_queries_arb)
     }
 
+    /// Returns a pointer to the `ids` field of a `xcb_glx_delete_queries_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_delete_queries_arb_ids(
         &self,
         r: *const xcb_glx_delete_queries_arb_request_t,
@@ -17491,6 +18401,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_queries_arb_ids)
     }
 
+    /// Returns the number of elements of the `ids` field of a `xcb_glx_delete_queries_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_delete_queries_arb_ids_length(
         &self,
         r: *const xcb_glx_delete_queries_arb_request_t,
@@ -17504,6 +18416,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_queries_arb_ids_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `ids` field of a `xcb_glx_delete_queries_arb_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_delete_queries_arb_ids_end(
         &self,
         r: *const xcb_glx_delete_queries_arb_request_t,
@@ -17517,6 +18432,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_delete_queries_arb_ids_end)
     }
 
+    /// Computes the size of a `xcb_glx_gen_queries_arb_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_gen_queries_arb_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_gen_queries_arb_sizeof)(_buffer)
     }
@@ -17527,14 +18444,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_queries_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GenQueriesARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_gen_queries_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_gen_queries_arb_reply`]: Self::xcb_glx_gen_queries_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_gen_queries_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -17550,17 +18467,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_queries_arb)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GenQueriesARB` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_gen_queries_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_gen_queries_arb_reply`]: Self::xcb_glx_gen_queries_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_gen_queries_arb_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17576,6 +18490,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_queries_arb_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_gen_queries_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_gen_queries_arb_data(
         &self,
         r: *const xcb_glx_gen_queries_arb_reply_t,
@@ -17589,6 +18505,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_queries_arb_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_gen_queries_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_gen_queries_arb_data_length(
         &self,
         r: *const xcb_glx_gen_queries_arb_reply_t,
@@ -17602,6 +18520,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_queries_arb_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_gen_queries_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_gen_queries_arb_data_end(
         &self,
         r: *const xcb_glx_gen_queries_arb_reply_t,
@@ -17615,26 +18536,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_queries_arb_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_gen_queries_arb_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GenQueriesARB` request.
+    #[inline]
     pub unsafe fn xcb_glx_gen_queries_arb_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_gen_queries_arb_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_gen_queries_arb_reply_t {
+    ) -> *mut xcb_glx_gen_queries_arb_reply_t {
         sym!(self, xcb_glx_gen_queries_arb_reply)(c, cookie, e)
     }
 
@@ -17644,14 +18553,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_gen_queries_arb_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::IsQueryARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_query_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_query_arb_reply`]: Self::xcb_glx_is_query_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_query_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -17667,17 +18576,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_query_arb)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::IsQueryARB` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_is_query_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_is_query_arb_reply`]: Self::xcb_glx_is_query_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_is_query_arb_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17693,26 +18599,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_query_arb_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_is_query_arb_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::IsQueryARB` request.
+    #[inline]
     pub unsafe fn xcb_glx_is_query_arb_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_is_query_arb_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_is_query_arb_reply_t {
+    ) -> *mut xcb_glx_is_query_arb_reply_t {
         sym!(self, xcb_glx_is_query_arb_reply)(c, cookie, e)
     }
 
@@ -17722,6 +18616,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_is_query_arb_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_queryiv_arb_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_queryiv_arb_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_queryiv_arb_sizeof)(_buffer)
     }
@@ -17732,14 +18628,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_queryiv_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetQueryivARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_queryiv_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_queryiv_arb_reply`]: Self::xcb_glx_get_queryiv_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_queryiv_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -17756,17 +18652,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_queryiv_arb)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetQueryivARB` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_queryiv_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_queryiv_arb_reply`]: Self::xcb_glx_get_queryiv_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_queryiv_arb_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17783,6 +18676,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_queryiv_arb_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_queryiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_queryiv_arb_data(
         &self,
         r: *const xcb_glx_get_queryiv_arb_reply_t,
@@ -17796,6 +18691,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_queryiv_arb_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_queryiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_queryiv_arb_data_length(
         &self,
         r: *const xcb_glx_get_queryiv_arb_reply_t,
@@ -17809,6 +18706,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_queryiv_arb_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_queryiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_queryiv_arb_data_end(
         &self,
         r: *const xcb_glx_get_queryiv_arb_reply_t,
@@ -17822,26 +18722,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_queryiv_arb_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_queryiv_arb_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetQueryivARB` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_queryiv_arb_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_queryiv_arb_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_queryiv_arb_reply_t {
+    ) -> *mut xcb_glx_get_queryiv_arb_reply_t {
         sym!(self, xcb_glx_get_queryiv_arb_reply)(c, cookie, e)
     }
 
@@ -17851,6 +18739,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_queryiv_arb_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_query_objectiv_arb_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectiv_arb_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_query_objectiv_arb_sizeof)(_buffer)
     }
@@ -17861,14 +18751,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectiv_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetQueryObjectivARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_query_objectiv_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_query_objectiv_arb_reply`]: Self::xcb_glx_get_query_objectiv_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectiv_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -17885,17 +18775,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectiv_arb)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetQueryObjectivARB` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_query_objectiv_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_query_objectiv_arb_reply`]: Self::xcb_glx_get_query_objectiv_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectiv_arb_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17912,6 +18799,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectiv_arb_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_query_objectiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectiv_arb_data(
         &self,
         r: *const xcb_glx_get_query_objectiv_arb_reply_t,
@@ -17925,6 +18814,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectiv_arb_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_query_objectiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectiv_arb_data_length(
         &self,
         r: *const xcb_glx_get_query_objectiv_arb_reply_t,
@@ -17938,6 +18829,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectiv_arb_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_query_objectiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectiv_arb_data_end(
         &self,
         r: *const xcb_glx_get_query_objectiv_arb_reply_t,
@@ -17951,26 +18845,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectiv_arb_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_query_objectiv_arb_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetQueryObjectivARB` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectiv_arb_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_query_objectiv_arb_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_query_objectiv_arb_reply_t {
+    ) -> *mut xcb_glx_get_query_objectiv_arb_reply_t {
         sym!(self, xcb_glx_get_query_objectiv_arb_reply)(c, cookie, e)
     }
 
@@ -17980,6 +18862,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectiv_arb_reply)
     }
 
+    /// Computes the size of a `xcb_glx_get_query_objectuiv_arb_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectuiv_arb_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_glx_get_query_objectuiv_arb_sizeof)(_buffer)
     }
@@ -17990,14 +18874,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectuiv_arb_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Glx::GetQueryObjectuivARB` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_query_objectuiv_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_query_objectuiv_arb_reply`]: Self::xcb_glx_get_query_objectuiv_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectuiv_arb(
         &self,
         c: *mut xcb_connection_t,
@@ -18014,17 +18898,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectuiv_arb)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Glx::GetQueryObjectuivARB` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_glx_get_query_objectuiv_arb_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_glx_get_query_objectuiv_arb_reply`]: Self::xcb_glx_get_query_objectuiv_arb_reply
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectuiv_arb_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -18041,6 +18922,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectuiv_arb_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_glx_get_query_objectuiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectuiv_arb_data(
         &self,
         r: *const xcb_glx_get_query_objectuiv_arb_reply_t,
@@ -18054,6 +18937,8 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectuiv_arb_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_glx_get_query_objectuiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectuiv_arb_data_length(
         &self,
         r: *const xcb_glx_get_query_objectuiv_arb_reply_t,
@@ -18067,6 +18952,9 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectuiv_arb_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_glx_get_query_objectuiv_arb_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectuiv_arb_data_end(
         &self,
         r: *const xcb_glx_get_query_objectuiv_arb_reply_t,
@@ -18080,26 +18968,14 @@ impl XcbGlx {
         has_sym!(self, xcb_glx_get_query_objectuiv_arb_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_glx_get_query_objectuiv_arb_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Glx::GetQueryObjectuivARB` request.
+    #[inline]
     pub unsafe fn xcb_glx_get_query_objectuiv_arb_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_glx_get_query_objectuiv_arb_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_glx_get_query_objectuiv_arb_reply_t {
+    ) -> *mut xcb_glx_get_query_objectuiv_arb_reply_t {
         sym!(self, xcb_glx_get_query_objectuiv_arb_reply)(c, cookie, e)
     }
 

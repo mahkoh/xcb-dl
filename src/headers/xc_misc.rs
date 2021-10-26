@@ -1,13 +1,20 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The cookie for the reply to a `XCMisc::GetVersion` request.
+///
+/// Pass this cookie to [`xcb_xc_misc_get_version_reply`] to retrieve the reply.
+///
+/// [`xcb_xc_misc_get_version_reply`]: Xcb::xcb_xc_misc_get_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -17,9 +24,14 @@ impl Default for xcb_xc_misc_get_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_xc_misc_get_version.
+/// The opcode for `XCMisc::GetVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`Xcb::xcb_xc_misc_id()`], then the type of the request is
+/// [`xcb_xc_misc_get_version_request_t`].
 pub const XCB_XC_MISC_GET_VERSION: u8 = 0i32 as u8;
 
+/// The `XCMisc::GetVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_version_request_t {
@@ -36,6 +48,7 @@ impl Default for xcb_xc_misc_get_version_request_t {
     }
 }
 
+/// The `XCMisc::GetVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_version_reply_t {
@@ -53,9 +66,15 @@ impl Default for xcb_xc_misc_get_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XCMisc::GetXIDRange` request.
+///
+/// Pass this cookie to [`xcb_xc_misc_get_xid_range_reply`] to retrieve the reply.
+///
+/// [`xcb_xc_misc_get_xid_range_reply`]: Xcb::xcb_xc_misc_get_xid_range_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_xid_range_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -65,9 +84,14 @@ impl Default for xcb_xc_misc_get_xid_range_cookie_t {
     }
 }
 
-/// Opcode for xcb_xc_misc_get_xid_range.
+/// The opcode for `XCMisc::GetXIDRange` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`Xcb::xcb_xc_misc_id()`], then the type of the request is
+/// [`xcb_xc_misc_get_xid_range_request_t`].
 pub const XCB_XC_MISC_GET_XID_RANGE: u8 = 1i32 as u8;
 
+/// The `XCMisc::GetXIDRange` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_xid_range_request_t {
@@ -82,6 +106,7 @@ impl Default for xcb_xc_misc_get_xid_range_request_t {
     }
 }
 
+/// The `XCMisc::GetXIDRange` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_xid_range_reply_t {
@@ -99,9 +124,15 @@ impl Default for xcb_xc_misc_get_xid_range_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XCMisc::GetXIDList` request.
+///
+/// Pass this cookie to [`xcb_xc_misc_get_xid_list_reply`] to retrieve the reply.
+///
+/// [`xcb_xc_misc_get_xid_list_reply`]: Xcb::xcb_xc_misc_get_xid_list_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_xid_list_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -111,9 +142,14 @@ impl Default for xcb_xc_misc_get_xid_list_cookie_t {
     }
 }
 
-/// Opcode for xcb_xc_misc_get_xid_list.
+/// The opcode for `XCMisc::GetXIDList` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`Xcb::xcb_xc_misc_id()`], then the type of the request is
+/// [`xcb_xc_misc_get_xid_list_request_t`].
 pub const XCB_XC_MISC_GET_XID_LIST: u8 = 2i32 as u8;
 
+/// The `XCMisc::GetXIDList` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_xid_list_request_t {
@@ -129,6 +165,11 @@ impl Default for xcb_xc_misc_get_xid_list_request_t {
     }
 }
 
+/// The `XCMisc::GetXIDList` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `ids`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_xc_misc_get_xid_list_reply_t {
@@ -167,7 +208,7 @@ pub(crate) struct XcbXc_Misc {
             c: *mut xcb_connection_t,
             cookie: xcb_xc_misc_get_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xc_misc_get_version_reply_t,
+        ) -> *mut xcb_xc_misc_get_version_reply_t,
     >,
     xcb_xc_misc_get_xid_range:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_xc_misc_get_xid_range_cookie_t>,
@@ -178,7 +219,7 @@ pub(crate) struct XcbXc_Misc {
             c: *mut xcb_connection_t,
             cookie: xcb_xc_misc_get_xid_range_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xc_misc_get_xid_range_reply_t,
+        ) -> *mut xcb_xc_misc_get_xid_range_reply_t,
     >,
     xcb_xc_misc_get_xid_list_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_xc_misc_get_xid_list: LazySymbol<
@@ -198,7 +239,7 @@ pub(crate) struct XcbXc_Misc {
             c: *mut xcb_connection_t,
             cookie: xcb_xc_misc_get_xid_list_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_xc_misc_get_xid_list_reply_t,
+        ) -> *mut xcb_xc_misc_get_xid_list_reply_t,
     >,
 }
 
@@ -223,6 +264,8 @@ macro_rules! has_sym {
 }
 
 impl Xcb {
+    /// The libxcb identifier of the `XCMisc` extension.
+    #[inline]
     pub fn xcb_xc_misc_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_xc_misc_id) }
     }
@@ -233,14 +276,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XCMisc::GetVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xc_misc_get_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xc_misc_get_version_reply`]: Self::xcb_xc_misc_get_version_reply
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_version(
         &self,
         c: *mut xcb_connection_t,
@@ -256,17 +299,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XCMisc::GetVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xc_misc_get_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xc_misc_get_version_reply`]: Self::xcb_xc_misc_get_version_reply
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -282,26 +322,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xc_misc_get_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XCMisc::GetVersion` request.
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xc_misc_get_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xc_misc_get_version_reply_t {
+    ) -> *mut xcb_xc_misc_get_version_reply_t {
         sym!(self, xcb_xc_misc_get_version_reply)(c, cookie, e)
     }
 
@@ -311,14 +339,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XCMisc::GetXIDRange` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xc_misc_get_xid_range_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xc_misc_get_xid_range_reply`]: Self::xcb_xc_misc_get_xid_range_reply
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_range(
         &self,
         c: *mut xcb_connection_t,
@@ -332,17 +360,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_range)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XCMisc::GetXIDRange` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xc_misc_get_xid_range_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xc_misc_get_xid_range_reply`]: Self::xcb_xc_misc_get_xid_range_reply
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_range_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -356,26 +381,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_range_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xc_misc_get_xid_range_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XCMisc::GetXIDRange` request.
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_range_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xc_misc_get_xid_range_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xc_misc_get_xid_range_reply_t {
+    ) -> *mut xcb_xc_misc_get_xid_range_reply_t {
         sym!(self, xcb_xc_misc_get_xid_range_reply)(c, cookie, e)
     }
 
@@ -385,6 +398,8 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_range_reply)
     }
 
+    /// Computes the size of a `xcb_xc_misc_get_xid_list_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_list_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_xc_misc_get_xid_list_sizeof)(_buffer)
     }
@@ -395,14 +410,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_list_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XCMisc::GetXIDList` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xc_misc_get_xid_list_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xc_misc_get_xid_list_reply`]: Self::xcb_xc_misc_get_xid_list_reply
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_list(
         &self,
         c: *mut xcb_connection_t,
@@ -417,17 +432,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XCMisc::GetXIDList` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_xc_misc_get_xid_list_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_xc_misc_get_xid_list_reply`]: Self::xcb_xc_misc_get_xid_list_reply
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_list_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -442,6 +454,8 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_list_unchecked)
     }
 
+    /// Returns a pointer to the `ids` field of a `xcb_xc_misc_get_xid_list_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_list_ids(
         &self,
         r: *const xcb_xc_misc_get_xid_list_reply_t,
@@ -455,6 +469,8 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_list_ids)
     }
 
+    /// Returns the number of elements of the `ids` field of a `xcb_xc_misc_get_xid_list_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_list_ids_length(
         &self,
         r: *const xcb_xc_misc_get_xid_list_reply_t,
@@ -468,6 +484,9 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_list_ids_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `ids` field of a `xcb_xc_misc_get_xid_list_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_list_ids_end(
         &self,
         r: *const xcb_xc_misc_get_xid_list_reply_t,
@@ -481,26 +500,14 @@ impl Xcb {
         has_sym!(self, xcb_xc_misc_get_xid_list_ids_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_xc_misc_get_xid_list_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XCMisc::GetXIDList` request.
+    #[inline]
     pub unsafe fn xcb_xc_misc_get_xid_list_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_xc_misc_get_xid_list_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_xc_misc_get_xid_list_reply_t {
+    ) -> *mut xcb_xc_misc_get_xid_list_reply_t {
         sym!(self, xcb_xc_misc_get_xid_list_reply)(c, cookie, e)
     }
 

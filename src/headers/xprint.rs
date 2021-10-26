@@ -1,17 +1,23 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `XPrint::STRING8` type.
 pub type xcb_x_print_string8_t = c_char;
 
+/// An iterator over `XPrint::STRING8` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_string8_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_x_print_string8_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -21,6 +27,12 @@ impl Default for xcb_x_print_string8_iterator_t {
     }
 }
 
+/// The `XPrint::PRINTER` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
+/// - `description`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_printer_t {
@@ -34,11 +46,15 @@ impl Default for xcb_x_print_printer_t {
     }
 }
 
+/// An iterator over `XPrint::PRINTER` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_printer_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_x_print_printer_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -48,13 +64,18 @@ impl Default for xcb_x_print_printer_iterator_t {
     }
 }
 
+/// The `XPrint::PCONTEXT` type.
 pub type xcb_x_print_pcontext_t = u32;
 
+/// An iterator over `XPrint::PCONTEXT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_pcontext_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_x_print_pcontext_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -64,35 +85,129 @@ impl Default for xcb_x_print_pcontext_iterator_t {
     }
 }
 
+/// The `XPrint::GetDoc` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XPrint::GetDoc::Finished`](XCB_X_PRINT_GET_DOC_FINISHED)
+/// - [`XPrint::GetDoc::SecondConsumer`](XCB_X_PRINT_GET_DOC_SECOND_CONSUMER)
 pub type xcb_x_print_get_doc_t = u32;
+/// The `XPrint::GetDoc::Finished` enum variant.
+///
+/// This is a variant of [`xcb_x_print_get_doc_t`].
 pub const XCB_X_PRINT_GET_DOC_FINISHED: xcb_x_print_get_doc_t = 0;
+/// The `XPrint::GetDoc::SecondConsumer` enum variant.
+///
+/// This is a variant of [`xcb_x_print_get_doc_t`].
 pub const XCB_X_PRINT_GET_DOC_SECOND_CONSUMER: xcb_x_print_get_doc_t = 1;
 
+/// The `XPrint::EvMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XPrint::EvMask::NoEventMask`](XCB_X_PRINT_EV_MASK_NO_EVENT_MASK)
+/// - [`XPrint::EvMask::PrintMask`](XCB_X_PRINT_EV_MASK_PRINT_MASK)
+/// - [`XPrint::EvMask::AttributeMask`](XCB_X_PRINT_EV_MASK_ATTRIBUTE_MASK)
 pub type xcb_x_print_ev_mask_t = u32;
+/// The `XPrint::EvMask::NoEventMask` enum variant.
+///
+/// This is a variant of [`xcb_x_print_ev_mask_t`].
 pub const XCB_X_PRINT_EV_MASK_NO_EVENT_MASK: xcb_x_print_ev_mask_t = 0;
+/// The `XPrint::EvMask::PrintMask` enum variant.
+///
+/// This is a variant of [`xcb_x_print_ev_mask_t`].
 pub const XCB_X_PRINT_EV_MASK_PRINT_MASK: xcb_x_print_ev_mask_t = 1;
+/// The `XPrint::EvMask::AttributeMask` enum variant.
+///
+/// This is a variant of [`xcb_x_print_ev_mask_t`].
 pub const XCB_X_PRINT_EV_MASK_ATTRIBUTE_MASK: xcb_x_print_ev_mask_t = 2;
 
+/// The `XPrint::Detail` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XPrint::Detail::StartJobNotify`](XCB_X_PRINT_DETAIL_START_JOB_NOTIFY)
+/// - [`XPrint::Detail::EndJobNotify`](XCB_X_PRINT_DETAIL_END_JOB_NOTIFY)
+/// - [`XPrint::Detail::StartDocNotify`](XCB_X_PRINT_DETAIL_START_DOC_NOTIFY)
+/// - [`XPrint::Detail::EndDocNotify`](XCB_X_PRINT_DETAIL_END_DOC_NOTIFY)
+/// - [`XPrint::Detail::StartPageNotify`](XCB_X_PRINT_DETAIL_START_PAGE_NOTIFY)
+/// - [`XPrint::Detail::EndPageNotify`](XCB_X_PRINT_DETAIL_END_PAGE_NOTIFY)
 pub type xcb_x_print_detail_t = u32;
+/// The `XPrint::Detail::StartJobNotify` enum variant.
+///
+/// This is a variant of [`xcb_x_print_detail_t`].
 pub const XCB_X_PRINT_DETAIL_START_JOB_NOTIFY: xcb_x_print_detail_t = 1;
+/// The `XPrint::Detail::EndJobNotify` enum variant.
+///
+/// This is a variant of [`xcb_x_print_detail_t`].
 pub const XCB_X_PRINT_DETAIL_END_JOB_NOTIFY: xcb_x_print_detail_t = 2;
+/// The `XPrint::Detail::StartDocNotify` enum variant.
+///
+/// This is a variant of [`xcb_x_print_detail_t`].
 pub const XCB_X_PRINT_DETAIL_START_DOC_NOTIFY: xcb_x_print_detail_t = 3;
+/// The `XPrint::Detail::EndDocNotify` enum variant.
+///
+/// This is a variant of [`xcb_x_print_detail_t`].
 pub const XCB_X_PRINT_DETAIL_END_DOC_NOTIFY: xcb_x_print_detail_t = 4;
+/// The `XPrint::Detail::StartPageNotify` enum variant.
+///
+/// This is a variant of [`xcb_x_print_detail_t`].
 pub const XCB_X_PRINT_DETAIL_START_PAGE_NOTIFY: xcb_x_print_detail_t = 5;
+/// The `XPrint::Detail::EndPageNotify` enum variant.
+///
+/// This is a variant of [`xcb_x_print_detail_t`].
 pub const XCB_X_PRINT_DETAIL_END_PAGE_NOTIFY: xcb_x_print_detail_t = 6;
 
+/// The `XPrint::Attr` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`XPrint::Attr::JobAttr`](XCB_X_PRINT_ATTR_JOB_ATTR)
+/// - [`XPrint::Attr::DocAttr`](XCB_X_PRINT_ATTR_DOC_ATTR)
+/// - [`XPrint::Attr::PageAttr`](XCB_X_PRINT_ATTR_PAGE_ATTR)
+/// - [`XPrint::Attr::PrinterAttr`](XCB_X_PRINT_ATTR_PRINTER_ATTR)
+/// - [`XPrint::Attr::ServerAttr`](XCB_X_PRINT_ATTR_SERVER_ATTR)
+/// - [`XPrint::Attr::MediumAttr`](XCB_X_PRINT_ATTR_MEDIUM_ATTR)
+/// - [`XPrint::Attr::SpoolerAttr`](XCB_X_PRINT_ATTR_SPOOLER_ATTR)
 pub type xcb_x_print_attr_t = u32;
+/// The `XPrint::Attr::JobAttr` enum variant.
+///
+/// This is a variant of [`xcb_x_print_attr_t`].
 pub const XCB_X_PRINT_ATTR_JOB_ATTR: xcb_x_print_attr_t = 1;
+/// The `XPrint::Attr::DocAttr` enum variant.
+///
+/// This is a variant of [`xcb_x_print_attr_t`].
 pub const XCB_X_PRINT_ATTR_DOC_ATTR: xcb_x_print_attr_t = 2;
+/// The `XPrint::Attr::PageAttr` enum variant.
+///
+/// This is a variant of [`xcb_x_print_attr_t`].
 pub const XCB_X_PRINT_ATTR_PAGE_ATTR: xcb_x_print_attr_t = 3;
+/// The `XPrint::Attr::PrinterAttr` enum variant.
+///
+/// This is a variant of [`xcb_x_print_attr_t`].
 pub const XCB_X_PRINT_ATTR_PRINTER_ATTR: xcb_x_print_attr_t = 4;
+/// The `XPrint::Attr::ServerAttr` enum variant.
+///
+/// This is a variant of [`xcb_x_print_attr_t`].
 pub const XCB_X_PRINT_ATTR_SERVER_ATTR: xcb_x_print_attr_t = 5;
+/// The `XPrint::Attr::MediumAttr` enum variant.
+///
+/// This is a variant of [`xcb_x_print_attr_t`].
 pub const XCB_X_PRINT_ATTR_MEDIUM_ATTR: xcb_x_print_attr_t = 6;
+/// The `XPrint::Attr::SpoolerAttr` enum variant.
+///
+/// This is a variant of [`xcb_x_print_attr_t`].
 pub const XCB_X_PRINT_ATTR_SPOOLER_ATTR: xcb_x_print_attr_t = 7;
 
+/// The cookie for the reply to a `XPrint::PrintQueryVersion` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_query_version_reply`]: XcbXprint::xcb_x_print_print_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -102,9 +217,14 @@ impl Default for xcb_x_print_print_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_query_version.
+/// The opcode for `XPrint::PrintQueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_query_version_request_t`].
 pub const XCB_X_PRINT_PRINT_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `XPrint::PrintQueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_query_version_request_t {
@@ -119,6 +239,7 @@ impl Default for xcb_x_print_print_query_version_request_t {
     }
 }
 
+/// The `XPrint::PrintQueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_query_version_reply_t {
@@ -136,9 +257,15 @@ impl Default for xcb_x_print_print_query_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetPrinterList` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_printer_list_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_printer_list_reply`]: XcbXprint::xcb_x_print_print_get_printer_list_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_printer_list_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -148,9 +275,19 @@ impl Default for xcb_x_print_print_get_printer_list_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_printer_list.
+/// The opcode for `XPrint::PrintGetPrinterList` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_printer_list_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_PRINTER_LIST: u8 = 1i32 as u8;
 
+/// The `XPrint::PrintGetPrinterList` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `printer_name`
+/// - `locale`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_printer_list_request_t {
@@ -167,6 +304,11 @@ impl Default for xcb_x_print_print_get_printer_list_request_t {
     }
 }
 
+/// The `XPrint::PrintGetPrinterList` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `printers`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_printer_list_reply_t {
@@ -184,9 +326,14 @@ impl Default for xcb_x_print_print_get_printer_list_reply_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_rehash_printer_list.
+/// The opcode for `XPrint::PrintRehashPrinterList` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_rehash_printer_list_request_t`].
 pub const XCB_X_PRINT_PRINT_REHASH_PRINTER_LIST: u8 = 20i32 as u8;
 
+/// The `XPrint::PrintRehashPrinterList` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_rehash_printer_list_request_t {
@@ -201,9 +348,19 @@ impl Default for xcb_x_print_print_rehash_printer_list_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_create_context.
+/// The opcode for `XPrint::CreateContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_create_context_request_t`].
 pub const XCB_X_PRINT_CREATE_CONTEXT: u8 = 2i32 as u8;
 
+/// The `XPrint::CreateContext` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `printer_name`
+/// - `locale`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_create_context_request_t {
@@ -221,9 +378,14 @@ impl Default for xcb_x_print_create_context_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_set_context.
+/// The opcode for `XPrint::PrintSetContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_set_context_request_t`].
 pub const XCB_X_PRINT_PRINT_SET_CONTEXT: u8 = 3i32 as u8;
 
+/// The `XPrint::PrintSetContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_set_context_request_t {
@@ -239,9 +401,15 @@ impl Default for xcb_x_print_print_set_context_request_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetContext` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_context_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_context_reply`]: XcbXprint::xcb_x_print_print_get_context_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_context_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -251,9 +419,14 @@ impl Default for xcb_x_print_print_get_context_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_context.
+/// The opcode for `XPrint::PrintGetContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_context_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_CONTEXT: u8 = 4i32 as u8;
 
+/// The `XPrint::PrintGetContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_context_request_t {
@@ -268,6 +441,7 @@ impl Default for xcb_x_print_print_get_context_request_t {
     }
 }
 
+/// The `XPrint::PrintGetContext` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_context_reply_t {
@@ -284,9 +458,14 @@ impl Default for xcb_x_print_print_get_context_reply_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_destroy_context.
+/// The opcode for `XPrint::PrintDestroyContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_destroy_context_request_t`].
 pub const XCB_X_PRINT_PRINT_DESTROY_CONTEXT: u8 = 5i32 as u8;
 
+/// The `XPrint::PrintDestroyContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_destroy_context_request_t {
@@ -302,9 +481,15 @@ impl Default for xcb_x_print_print_destroy_context_request_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetScreenOfContext` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_screen_of_context_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_screen_of_context_reply`]: XcbXprint::xcb_x_print_print_get_screen_of_context_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_screen_of_context_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -314,9 +499,14 @@ impl Default for xcb_x_print_print_get_screen_of_context_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_screen_of_context.
+/// The opcode for `XPrint::PrintGetScreenOfContext` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_screen_of_context_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_SCREEN_OF_CONTEXT: u8 = 6i32 as u8;
 
+/// The `XPrint::PrintGetScreenOfContext` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_screen_of_context_request_t {
@@ -331,6 +521,7 @@ impl Default for xcb_x_print_print_get_screen_of_context_request_t {
     }
 }
 
+/// The `XPrint::PrintGetScreenOfContext` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_screen_of_context_reply_t {
@@ -347,9 +538,14 @@ impl Default for xcb_x_print_print_get_screen_of_context_reply_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_start_job.
+/// The opcode for `XPrint::PrintStartJob` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_start_job_request_t`].
 pub const XCB_X_PRINT_PRINT_START_JOB: u8 = 7i32 as u8;
 
+/// The `XPrint::PrintStartJob` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_start_job_request_t {
@@ -365,9 +561,14 @@ impl Default for xcb_x_print_print_start_job_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_end_job.
+/// The opcode for `XPrint::PrintEndJob` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_end_job_request_t`].
 pub const XCB_X_PRINT_PRINT_END_JOB: u8 = 8i32 as u8;
 
+/// The `XPrint::PrintEndJob` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_end_job_request_t {
@@ -383,9 +584,14 @@ impl Default for xcb_x_print_print_end_job_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_start_doc.
+/// The opcode for `XPrint::PrintStartDoc` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_start_doc_request_t`].
 pub const XCB_X_PRINT_PRINT_START_DOC: u8 = 9i32 as u8;
 
+/// The `XPrint::PrintStartDoc` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_start_doc_request_t {
@@ -401,9 +607,14 @@ impl Default for xcb_x_print_print_start_doc_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_end_doc.
+/// The opcode for `XPrint::PrintEndDoc` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_end_doc_request_t`].
 pub const XCB_X_PRINT_PRINT_END_DOC: u8 = 10i32 as u8;
 
+/// The `XPrint::PrintEndDoc` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_end_doc_request_t {
@@ -419,9 +630,20 @@ impl Default for xcb_x_print_print_end_doc_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_put_document_data.
+/// The opcode for `XPrint::PrintPutDocumentData` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_put_document_data_request_t`].
 pub const XCB_X_PRINT_PRINT_PUT_DOCUMENT_DATA: u8 = 11i32 as u8;
 
+/// The `XPrint::PrintPutDocumentData` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
+/// - `doc_format`
+/// - `options`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_put_document_data_request_t {
@@ -440,9 +662,15 @@ impl Default for xcb_x_print_print_put_document_data_request_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetDocumentData` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_document_data_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_document_data_reply`]: XcbXprint::xcb_x_print_print_get_document_data_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_document_data_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -452,9 +680,14 @@ impl Default for xcb_x_print_print_get_document_data_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_document_data.
+/// The opcode for `XPrint::PrintGetDocumentData` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_document_data_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_DOCUMENT_DATA: u8 = 12i32 as u8;
 
+/// The `XPrint::PrintGetDocumentData` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_document_data_request_t {
@@ -471,6 +704,11 @@ impl Default for xcb_x_print_print_get_document_data_request_t {
     }
 }
 
+/// The `XPrint::PrintGetDocumentData` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_document_data_reply_t {
@@ -490,9 +728,14 @@ impl Default for xcb_x_print_print_get_document_data_reply_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_start_page.
+/// The opcode for `XPrint::PrintStartPage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_start_page_request_t`].
 pub const XCB_X_PRINT_PRINT_START_PAGE: u8 = 13i32 as u8;
 
+/// The `XPrint::PrintStartPage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_start_page_request_t {
@@ -508,9 +751,14 @@ impl Default for xcb_x_print_print_start_page_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_end_page.
+/// The opcode for `XPrint::PrintEndPage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_end_page_request_t`].
 pub const XCB_X_PRINT_PRINT_END_PAGE: u8 = 14i32 as u8;
 
+/// The `XPrint::PrintEndPage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_end_page_request_t {
@@ -527,9 +775,14 @@ impl Default for xcb_x_print_print_end_page_request_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_select_input.
+/// The opcode for `XPrint::PrintSelectInput` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_select_input_request_t`].
 pub const XCB_X_PRINT_PRINT_SELECT_INPUT: u8 = 15i32 as u8;
 
+/// The `XPrint::PrintSelectInput` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_select_input_request_t {
@@ -546,9 +799,15 @@ impl Default for xcb_x_print_print_select_input_request_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintInputSelected` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_input_selected_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_input_selected_reply`]: XcbXprint::xcb_x_print_print_input_selected_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_input_selected_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -558,9 +817,14 @@ impl Default for xcb_x_print_print_input_selected_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_input_selected.
+/// The opcode for `XPrint::PrintInputSelected` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_input_selected_request_t`].
 pub const XCB_X_PRINT_PRINT_INPUT_SELECTED: u8 = 16i32 as u8;
 
+/// The `XPrint::PrintInputSelected` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_input_selected_request_t {
@@ -576,6 +840,7 @@ impl Default for xcb_x_print_print_input_selected_request_t {
     }
 }
 
+/// The `XPrint::PrintInputSelected` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_input_selected_reply_t {
@@ -593,9 +858,15 @@ impl Default for xcb_x_print_print_input_selected_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetAttributes` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_attributes_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_attributes_reply`]: XcbXprint::xcb_x_print_print_get_attributes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_attributes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -605,9 +876,14 @@ impl Default for xcb_x_print_print_get_attributes_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_attributes.
+/// The opcode for `XPrint::PrintGetAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_attributes_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_ATTRIBUTES: u8 = 17i32 as u8;
 
+/// The `XPrint::PrintGetAttributes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_attributes_request_t {
@@ -625,6 +901,11 @@ impl Default for xcb_x_print_print_get_attributes_request_t {
     }
 }
 
+/// The `XPrint::PrintGetAttributes` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attributes`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_attributes_reply_t {
@@ -642,9 +923,15 @@ impl Default for xcb_x_print_print_get_attributes_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetOneAttributes` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_one_attributes_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_one_attributes_reply`]: XcbXprint::xcb_x_print_print_get_one_attributes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_one_attributes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -654,9 +941,18 @@ impl Default for xcb_x_print_print_get_one_attributes_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_one_attributes.
+/// The opcode for `XPrint::PrintGetOneAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_one_attributes_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_ONE_ATTRIBUTES: u8 = 19i32 as u8;
 
+/// The `XPrint::PrintGetOneAttributes` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_one_attributes_request_t {
@@ -675,6 +971,11 @@ impl Default for xcb_x_print_print_get_one_attributes_request_t {
     }
 }
 
+/// The `XPrint::PrintGetOneAttributes` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_one_attributes_reply_t {
@@ -692,9 +993,18 @@ impl Default for xcb_x_print_print_get_one_attributes_reply_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_set_attributes.
+/// The opcode for `XPrint::PrintSetAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_set_attributes_request_t`].
 pub const XCB_X_PRINT_PRINT_SET_ATTRIBUTES: u8 = 18i32 as u8;
 
+/// The `XPrint::PrintSetAttributes` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `attributes`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_set_attributes_request_t {
@@ -714,9 +1024,15 @@ impl Default for xcb_x_print_print_set_attributes_request_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetPageDimensions` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_page_dimensions_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_page_dimensions_reply`]: XcbXprint::xcb_x_print_print_get_page_dimensions_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_page_dimensions_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -726,9 +1042,14 @@ impl Default for xcb_x_print_print_get_page_dimensions_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_page_dimensions.
+/// The opcode for `XPrint::PrintGetPageDimensions` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_page_dimensions_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_PAGE_DIMENSIONS: u8 = 21i32 as u8;
 
+/// The `XPrint::PrintGetPageDimensions` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_page_dimensions_request_t {
@@ -744,6 +1065,7 @@ impl Default for xcb_x_print_print_get_page_dimensions_request_t {
     }
 }
 
+/// The `XPrint::PrintGetPageDimensions` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_page_dimensions_reply_t {
@@ -765,9 +1087,15 @@ impl Default for xcb_x_print_print_get_page_dimensions_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintQueryScreens` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_query_screens_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_query_screens_reply`]: XcbXprint::xcb_x_print_print_query_screens_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_query_screens_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -777,9 +1105,14 @@ impl Default for xcb_x_print_print_query_screens_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_query_screens.
+/// The opcode for `XPrint::PrintQueryScreens` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_query_screens_request_t`].
 pub const XCB_X_PRINT_PRINT_QUERY_SCREENS: u8 = 22i32 as u8;
 
+/// The `XPrint::PrintQueryScreens` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_query_screens_request_t {
@@ -794,6 +1127,11 @@ impl Default for xcb_x_print_print_query_screens_request_t {
     }
 }
 
+/// The `XPrint::PrintQueryScreens` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `roots`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_query_screens_reply_t {
@@ -811,9 +1149,15 @@ impl Default for xcb_x_print_print_query_screens_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintSetImageResolution` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_set_image_resolution_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_set_image_resolution_reply`]: XcbXprint::xcb_x_print_print_set_image_resolution_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_set_image_resolution_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -823,9 +1167,14 @@ impl Default for xcb_x_print_print_set_image_resolution_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_set_image_resolution.
+/// The opcode for `XPrint::PrintSetImageResolution` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_set_image_resolution_request_t`].
 pub const XCB_X_PRINT_PRINT_SET_IMAGE_RESOLUTION: u8 = 23i32 as u8;
 
+/// The `XPrint::PrintSetImageResolution` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_set_image_resolution_request_t {
@@ -842,6 +1191,7 @@ impl Default for xcb_x_print_print_set_image_resolution_request_t {
     }
 }
 
+/// The `XPrint::PrintSetImageResolution` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_set_image_resolution_reply_t {
@@ -858,9 +1208,15 @@ impl Default for xcb_x_print_print_set_image_resolution_reply_t {
     }
 }
 
+/// The cookie for the reply to a `XPrint::PrintGetImageResolution` request.
+///
+/// Pass this cookie to [`xcb_x_print_print_get_image_resolution_reply`] to retrieve the reply.
+///
+/// [`xcb_x_print_print_get_image_resolution_reply`]: XcbXprint::xcb_x_print_print_get_image_resolution_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_image_resolution_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -870,9 +1226,14 @@ impl Default for xcb_x_print_print_get_image_resolution_cookie_t {
     }
 }
 
-/// Opcode for xcb_x_print_print_get_image_resolution.
+/// The opcode for `XPrint::PrintGetImageResolution` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbXprint::xcb_x_print_id()`], then the type of the request is
+/// [`xcb_x_print_print_get_image_resolution_request_t`].
 pub const XCB_X_PRINT_PRINT_GET_IMAGE_RESOLUTION: u8 = 24i32 as u8;
 
+/// The `XPrint::PrintGetImageResolution` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_image_resolution_request_t {
@@ -888,6 +1249,7 @@ impl Default for xcb_x_print_print_get_image_resolution_request_t {
     }
 }
 
+/// The `XPrint::PrintGetImageResolution` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_print_get_image_resolution_reply_t {
@@ -904,9 +1266,13 @@ impl Default for xcb_x_print_print_get_image_resolution_reply_t {
     }
 }
 
-/// Opcode for xcb_x_print_notify.
+/// The opcode for `XPrint::Notify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_x_print_notify_event_t`].
 pub const XCB_X_PRINT_NOTIFY: u8 = 0i32 as u8;
 
+/// The `XPrint::Notify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_notify_event_t {
@@ -923,9 +1289,13 @@ impl Default for xcb_x_print_notify_event_t {
     }
 }
 
-/// Opcode for xcb_x_print_attribut_notify.
+/// The opcode for `XPrint::AttributNotify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_x_print_attribut_notify_event_t`].
 pub const XCB_X_PRINT_ATTRIBUT_NOTIFY: u8 = 1i32 as u8;
 
+/// The `XPrint::AttributNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_attribut_notify_event_t {
@@ -941,9 +1311,13 @@ impl Default for xcb_x_print_attribut_notify_event_t {
     }
 }
 
-/// Opcode for xcb_x_print_bad_context.
+/// The opcode for `XPrint::BadContext` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_x_print_bad_context_error_t`].
 pub const XCB_X_PRINT_BAD_CONTEXT: u8 = 0i32 as u8;
 
+/// The `XPrint::BadContext` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_bad_context_error_t {
@@ -958,9 +1332,13 @@ impl Default for xcb_x_print_bad_context_error_t {
     }
 }
 
-/// Opcode for xcb_x_print_bad_sequence.
+/// The opcode for `XPrint::BadSequence` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_x_print_bad_sequence_error_t`].
 pub const XCB_X_PRINT_BAD_SEQUENCE: u8 = 1i32 as u8;
 
+/// The `XPrint::BadSequence` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_x_print_bad_sequence_error_t {
@@ -1020,7 +1398,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_query_version_reply_t,
+        ) -> *mut xcb_x_print_print_query_version_reply_t,
     >,
     xcb_x_print_print_get_printer_list_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -1054,7 +1432,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_printer_list_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_printer_list_reply_t,
+        ) -> *mut xcb_x_print_print_get_printer_list_reply_t,
     >,
     xcb_x_print_print_rehash_printer_list_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
@@ -1110,7 +1488,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_context_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_context_reply_t,
+        ) -> *mut xcb_x_print_print_get_context_reply_t,
     >,
     xcb_x_print_print_destroy_context_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, context: u32) -> xcb_void_cookie_t>,
@@ -1127,7 +1505,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_screen_of_context_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_screen_of_context_reply_t,
+        ) -> *mut xcb_x_print_print_get_screen_of_context_reply_t,
     >,
     xcb_x_print_print_start_job_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, output_mode: u8) -> xcb_void_cookie_t>,
@@ -1232,7 +1610,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_document_data_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_document_data_reply_t,
+        ) -> *mut xcb_x_print_print_get_document_data_reply_t,
     >,
     xcb_x_print_print_start_page_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
@@ -1273,7 +1651,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_input_selected_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_input_selected_reply_t,
+        ) -> *mut xcb_x_print_print_input_selected_reply_t,
     >,
     xcb_x_print_print_get_attributes_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_x_print_print_get_attributes: LazySymbol<
@@ -1303,7 +1681,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_attributes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_attributes_reply_t,
+        ) -> *mut xcb_x_print_print_get_attributes_reply_t,
     >,
     xcb_x_print_print_get_one_attributes_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -1340,7 +1718,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_one_attributes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_one_attributes_reply_t,
+        ) -> *mut xcb_x_print_print_get_one_attributes_reply_t,
     >,
     xcb_x_print_print_set_attributes_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, attributes_len: u32) -> c_int>,
@@ -1393,7 +1771,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_page_dimensions_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_page_dimensions_reply_t,
+        ) -> *mut xcb_x_print_print_get_page_dimensions_reply_t,
     >,
     xcb_x_print_print_query_screens_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_x_print_print_query_screens:
@@ -1413,7 +1791,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_query_screens_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_query_screens_reply_t,
+        ) -> *mut xcb_x_print_print_query_screens_reply_t,
     >,
     xcb_x_print_print_set_image_resolution: LazySymbol<
         unsafe fn(
@@ -1434,7 +1812,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_set_image_resolution_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_set_image_resolution_reply_t,
+        ) -> *mut xcb_x_print_print_set_image_resolution_reply_t,
     >,
     xcb_x_print_print_get_image_resolution: LazySymbol<
         unsafe fn(
@@ -1453,7 +1831,7 @@ pub(crate) struct XcbXprintXprint {
             c: *mut xcb_connection_t,
             cookie: xcb_x_print_print_get_image_resolution_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_x_print_print_get_image_resolution_reply_t,
+        ) -> *mut xcb_x_print_print_get_image_resolution_reply_t,
     >,
 }
 
@@ -1479,6 +1857,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_xprint")]
 impl XcbXprint {
+    /// The libxcb identifier of the `XPrint` extension.
+    #[inline]
     pub fn xcb_x_print_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_x_print_id) }
     }
@@ -1489,6 +1869,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_id)
     }
 
+    /// Advances a `xcb_x_print_string8_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_x_print_string8_next(&self, i: *mut xcb_x_print_string8_iterator_t) {
         sym!(self, xcb_x_print_string8_next)(i)
     }
@@ -1499,6 +1881,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_string8_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_x_print_string8_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_x_print_string8_end(
         &self,
         i: xcb_x_print_string8_iterator_t,
@@ -1512,6 +1896,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_string8_end)
     }
 
+    /// Serializes a `xcb_x_print_printer_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -1528,6 +1914,10 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_serialize)
     }
 
+    /// Deserializes a `xcb_x_print_printer_t` object.
+    ///
+    /// The object returned in `_aux` should be freed with `libc::free`.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_unserialize(
         &self,
         _buffer: *const c_void,
@@ -1542,6 +1932,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_unserialize)
     }
 
+    /// Computes the size of a `xcb_x_print_printer_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_x_print_printer_sizeof)(_buffer)
     }
@@ -1552,6 +1944,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_sizeof)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_x_print_printer_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_name(
         &self,
         r: *const xcb_x_print_printer_t,
@@ -1565,6 +1959,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_x_print_printer_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_name_length(&self, r: *const xcb_x_print_printer_t) -> c_int {
         sym!(self, xcb_x_print_printer_name_length)(r)
     }
@@ -1575,6 +1971,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_x_print_printer_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_name_end(
         &self,
         r: *const xcb_x_print_printer_t,
@@ -1588,6 +1987,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_name_end)
     }
 
+    /// Returns a pointer to the `description` field of a `xcb_x_print_printer_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_description(
         &self,
         r: *const xcb_x_print_printer_t,
@@ -1601,6 +2002,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_description)
     }
 
+    /// Returns the number of elements of the `description` field of a `xcb_x_print_printer_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_description_length(
         &self,
         r: *const xcb_x_print_printer_t,
@@ -1614,6 +2017,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_description_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `description` field of a `xcb_x_print_printer_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_description_end(
         &self,
         r: *const xcb_x_print_printer_t,
@@ -1627,6 +2033,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_description_end)
     }
 
+    /// Advances a `xcb_x_print_printer_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_next(&self, i: *mut xcb_x_print_printer_iterator_t) {
         sym!(self, xcb_x_print_printer_next)(i)
     }
@@ -1637,6 +2045,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_x_print_printer_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_x_print_printer_end(
         &self,
         i: xcb_x_print_printer_iterator_t,
@@ -1650,6 +2060,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_printer_end)
     }
 
+    /// Advances a `xcb_x_print_pcontext_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_x_print_pcontext_next(&self, i: *mut xcb_x_print_pcontext_iterator_t) {
         sym!(self, xcb_x_print_pcontext_next)(i)
     }
@@ -1660,6 +2072,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_pcontext_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_x_print_pcontext_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_x_print_pcontext_end(
         &self,
         i: xcb_x_print_pcontext_iterator_t,
@@ -1673,14 +2087,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_pcontext_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintQueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_query_version_reply`]: Self::xcb_x_print_print_query_version_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -1694,17 +2108,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintQueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_query_version_reply`]: Self::xcb_x_print_print_query_version_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1718,26 +2129,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintQueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_query_version_reply_t {
+    ) -> *mut xcb_x_print_print_query_version_reply_t {
         sym!(self, xcb_x_print_print_query_version_reply)(c, cookie, e)
     }
 
@@ -1747,6 +2146,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_version_reply)
     }
 
+    /// Computes the size of a `xcb_x_print_print_get_printer_list_request_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_printer_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -1760,14 +2161,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_printer_list_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetPrinterList` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_printer_list_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_printer_list_reply`]: Self::xcb_x_print_print_get_printer_list_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_printer_list(
         &self,
         c: *mut xcb_connection_t,
@@ -1791,17 +2192,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_printer_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetPrinterList` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_printer_list_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_printer_list_reply`]: Self::xcb_x_print_print_get_printer_list_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_printer_list_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1825,6 +2223,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_printer_list_unchecked)
     }
 
+    /// Returns the number of elements of the `printers` field of a `xcb_x_print_print_get_printer_list_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_printer_list_printers_length(
         &self,
         r: *const xcb_x_print_print_get_printer_list_reply_t,
@@ -1838,6 +2238,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_printer_list_printers_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `printers` field of a `xcb_x_print_print_get_printer_list_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_printer_list_printers_iterator(
         &self,
         r: *const xcb_x_print_print_get_printer_list_reply_t,
@@ -1851,26 +2254,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_printer_list_printers_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_printer_list_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetPrinterList` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_printer_list_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_printer_list_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_printer_list_reply_t {
+    ) -> *mut xcb_x_print_print_get_printer_list_reply_t {
         sym!(self, xcb_x_print_print_get_printer_list_reply)(c, cookie, e)
     }
 
@@ -1880,17 +2271,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_printer_list_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintRehashPrinterList` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_rehash_printer_list_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1904,14 +2292,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_rehash_printer_list_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintRehashPrinterList` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_rehash_printer_list(
         &self,
         c: *mut xcb_connection_t,
@@ -1925,6 +2307,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_rehash_printer_list)
     }
 
+    /// Computes the size of a `xcb_x_print_create_context_request_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_x_print_create_context_sizeof)(_buffer)
     }
@@ -1935,17 +2319,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::CreateContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1971,14 +2352,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::CreateContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_create_context(
         &self,
         c: *mut xcb_connection_t,
@@ -2004,6 +2379,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context)
     }
 
+    /// Returns a pointer to the `printerName` field of a `xcb_x_print_create_context_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_printer_name(
         &self,
         r: *const xcb_x_print_create_context_request_t,
@@ -2017,6 +2394,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_printer_name)
     }
 
+    /// Returns the number of elements of the `printerName` field of a `xcb_x_print_create_context_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_printer_name_length(
         &self,
         r: *const xcb_x_print_create_context_request_t,
@@ -2030,6 +2409,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_printer_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `printerName` field of a `xcb_x_print_create_context_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_printer_name_end(
         &self,
         r: *const xcb_x_print_create_context_request_t,
@@ -2043,6 +2425,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_printer_name_end)
     }
 
+    /// Returns a pointer to the `locale` field of a `xcb_x_print_create_context_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_locale(
         &self,
         r: *const xcb_x_print_create_context_request_t,
@@ -2056,6 +2440,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_locale)
     }
 
+    /// Returns the number of elements of the `locale` field of a `xcb_x_print_create_context_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_locale_length(
         &self,
         r: *const xcb_x_print_create_context_request_t,
@@ -2069,6 +2455,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_locale_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `locale` field of a `xcb_x_print_create_context_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_create_context_locale_end(
         &self,
         r: *const xcb_x_print_create_context_request_t,
@@ -2082,17 +2471,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_create_context_locale_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintSetContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2107,14 +2493,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintSetContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_context(
         &self,
         c: *mut xcb_connection_t,
@@ -2129,14 +2509,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_context_reply`]: Self::xcb_x_print_print_get_context_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_context(
         &self,
         c: *mut xcb_connection_t,
@@ -2150,17 +2530,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetContext` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_context_reply`]: Self::xcb_x_print_print_get_context_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_context_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2174,26 +2551,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_context_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_context_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetContext` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_context_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_context_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_context_reply_t {
+    ) -> *mut xcb_x_print_print_get_context_reply_t {
         sym!(self, xcb_x_print_print_get_context_reply)(c, cookie, e)
     }
 
@@ -2203,17 +2568,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_context_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintDestroyContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_destroy_context_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2228,14 +2590,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_destroy_context_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintDestroyContext` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_destroy_context(
         &self,
         c: *mut xcb_connection_t,
@@ -2250,14 +2606,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_destroy_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetScreenOfContext` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_screen_of_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_screen_of_context_reply`]: Self::xcb_x_print_print_get_screen_of_context_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_screen_of_context(
         &self,
         c: *mut xcb_connection_t,
@@ -2271,17 +2627,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_screen_of_context)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetScreenOfContext` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_screen_of_context_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_screen_of_context_reply`]: Self::xcb_x_print_print_get_screen_of_context_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_screen_of_context_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2295,26 +2648,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_screen_of_context_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_screen_of_context_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetScreenOfContext` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_screen_of_context_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_screen_of_context_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_screen_of_context_reply_t {
+    ) -> *mut xcb_x_print_print_get_screen_of_context_reply_t {
         sym!(self, xcb_x_print_print_get_screen_of_context_reply)(c, cookie, e)
     }
 
@@ -2324,17 +2665,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_screen_of_context_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintStartJob` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_start_job_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2349,14 +2687,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_start_job_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintStartJob` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_start_job(
         &self,
         c: *mut xcb_connection_t,
@@ -2371,17 +2703,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_start_job)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintEndJob` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_end_job_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2396,14 +2725,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_end_job_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintEndJob` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_end_job(
         &self,
         c: *mut xcb_connection_t,
@@ -2418,17 +2741,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_end_job)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintStartDoc` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_start_doc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2443,14 +2763,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_start_doc_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintStartDoc` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_start_doc(
         &self,
         c: *mut xcb_connection_t,
@@ -2465,17 +2779,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_start_doc)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintEndDoc` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_end_doc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2490,14 +2801,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_end_doc_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintEndDoc` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_end_doc(
         &self,
         c: *mut xcb_connection_t,
@@ -2512,6 +2817,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_end_doc)
     }
 
+    /// Computes the size of a `xcb_x_print_print_put_document_data_request_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_sizeof(
         &self,
         _buffer: *const c_void,
@@ -2525,17 +2832,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintPutDocumentData` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2565,14 +2869,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintPutDocumentData` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data(
         &self,
         c: *mut xcb_connection_t,
@@ -2602,6 +2900,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_data(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2615,6 +2915,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_data_length(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2628,6 +2930,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_data_end(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2641,6 +2946,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_data_end)
     }
 
+    /// Returns a pointer to the `doc_format` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_doc_format(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2654,6 +2961,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_doc_format)
     }
 
+    /// Returns the number of elements of the `doc_format` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_doc_format_length(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2667,6 +2976,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_doc_format_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `doc_format` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_doc_format_end(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2680,6 +2992,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_doc_format_end)
     }
 
+    /// Returns a pointer to the `options` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_options(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2693,6 +3007,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_options)
     }
 
+    /// Returns the number of elements of the `options` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_options_length(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2706,6 +3022,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_options_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `options` field of a `xcb_x_print_print_put_document_data_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_put_document_data_options_end(
         &self,
         r: *const xcb_x_print_print_put_document_data_request_t,
@@ -2719,6 +3038,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_put_document_data_options_end)
     }
 
+    /// Computes the size of a `xcb_x_print_print_get_document_data_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_document_data_sizeof(
         &self,
         _buffer: *const c_void,
@@ -2732,14 +3053,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_document_data_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetDocumentData` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_document_data_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_document_data_reply`]: Self::xcb_x_print_print_get_document_data_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_document_data(
         &self,
         c: *mut xcb_connection_t,
@@ -2755,17 +3076,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_document_data)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetDocumentData` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_document_data_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_document_data_reply`]: Self::xcb_x_print_print_get_document_data_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_document_data_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -2781,6 +3099,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_document_data_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_x_print_print_get_document_data_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_document_data_data(
         &self,
         r: *const xcb_x_print_print_get_document_data_reply_t,
@@ -2794,6 +3114,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_document_data_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_x_print_print_get_document_data_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_document_data_data_length(
         &self,
         r: *const xcb_x_print_print_get_document_data_reply_t,
@@ -2807,6 +3129,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_document_data_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_x_print_print_get_document_data_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_document_data_data_end(
         &self,
         r: *const xcb_x_print_print_get_document_data_reply_t,
@@ -2820,26 +3145,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_document_data_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_document_data_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetDocumentData` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_document_data_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_document_data_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_document_data_reply_t {
+    ) -> *mut xcb_x_print_print_get_document_data_reply_t {
         sym!(self, xcb_x_print_print_get_document_data_reply)(c, cookie, e)
     }
 
@@ -2849,17 +3162,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_document_data_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintStartPage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_start_page_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2874,14 +3184,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_start_page_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintStartPage` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_start_page(
         &self,
         c: *mut xcb_connection_t,
@@ -2896,17 +3200,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_start_page)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintEndPage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_end_page_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2921,14 +3222,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_end_page_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintEndPage` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_end_page(
         &self,
         c: *mut xcb_connection_t,
@@ -2943,17 +3238,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_end_page)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintSelectInput` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_select_input_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -2969,14 +3261,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_select_input_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintSelectInput` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_select_input(
         &self,
         c: *mut xcb_connection_t,
@@ -2992,14 +3278,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_select_input)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintInputSelected` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_input_selected_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_input_selected_reply`]: Self::xcb_x_print_print_input_selected_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_input_selected(
         &self,
         c: *mut xcb_connection_t,
@@ -3014,17 +3300,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_input_selected)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintInputSelected` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_input_selected_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_input_selected_reply`]: Self::xcb_x_print_print_input_selected_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_input_selected_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3039,26 +3322,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_input_selected_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_input_selected_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintInputSelected` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_input_selected_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_input_selected_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_input_selected_reply_t {
+    ) -> *mut xcb_x_print_print_input_selected_reply_t {
         sym!(self, xcb_x_print_print_input_selected_reply)(c, cookie, e)
     }
 
@@ -3068,6 +3339,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_input_selected_reply)
     }
 
+    /// Computes the size of a `xcb_x_print_print_get_attributes_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_attributes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_x_print_print_get_attributes_sizeof)(_buffer)
     }
@@ -3078,14 +3351,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_attributes_reply`]: Self::xcb_x_print_print_get_attributes_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -3101,17 +3374,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_attributes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetAttributes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_attributes_reply`]: Self::xcb_x_print_print_get_attributes_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_attributes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3127,6 +3397,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_attributes_unchecked)
     }
 
+    /// Returns a pointer to the `attributes` field of a `xcb_x_print_print_get_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_attributes_attributes(
         &self,
         r: *const xcb_x_print_print_get_attributes_reply_t,
@@ -3140,6 +3412,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_attributes_attributes)
     }
 
+    /// Returns the number of elements of the `attributes` field of a `xcb_x_print_print_get_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_attributes_attributes_length(
         &self,
         r: *const xcb_x_print_print_get_attributes_reply_t,
@@ -3153,6 +3427,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_attributes_attributes_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attributes` field of a `xcb_x_print_print_get_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_attributes_attributes_end(
         &self,
         r: *const xcb_x_print_print_get_attributes_reply_t,
@@ -3166,26 +3443,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_attributes_attributes_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_attributes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetAttributes` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_attributes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_attributes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_attributes_reply_t {
+    ) -> *mut xcb_x_print_print_get_attributes_reply_t {
         sym!(self, xcb_x_print_print_get_attributes_reply)(c, cookie, e)
     }
 
@@ -3195,6 +3460,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_attributes_reply)
     }
 
+    /// Computes the size of a `xcb_x_print_print_get_one_attributes_request_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_one_attributes_sizeof(
         &self,
         _buffer: *const c_void,
@@ -3208,14 +3475,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_one_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetOneAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_one_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_one_attributes_reply`]: Self::xcb_x_print_print_get_one_attributes_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_one_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -3233,17 +3500,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_one_attributes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetOneAttributes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_one_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_one_attributes_reply`]: Self::xcb_x_print_print_get_one_attributes_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_one_attributes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3261,6 +3525,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_one_attributes_unchecked)
     }
 
+    /// Returns a pointer to the `value` field of a `xcb_x_print_print_get_one_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_one_attributes_value(
         &self,
         r: *const xcb_x_print_print_get_one_attributes_reply_t,
@@ -3274,6 +3540,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_one_attributes_value)
     }
 
+    /// Returns the number of elements of the `value` field of a `xcb_x_print_print_get_one_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_one_attributes_value_length(
         &self,
         r: *const xcb_x_print_print_get_one_attributes_reply_t,
@@ -3287,6 +3555,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_one_attributes_value_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `value` field of a `xcb_x_print_print_get_one_attributes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_one_attributes_value_end(
         &self,
         r: *const xcb_x_print_print_get_one_attributes_reply_t,
@@ -3300,26 +3571,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_one_attributes_value_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_one_attributes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetOneAttributes` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_one_attributes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_one_attributes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_one_attributes_reply_t {
+    ) -> *mut xcb_x_print_print_get_one_attributes_reply_t {
         sym!(self, xcb_x_print_print_get_one_attributes_reply)(c, cookie, e)
     }
 
@@ -3329,6 +3588,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_one_attributes_reply)
     }
 
+    /// Computes the size of a `xcb_x_print_print_set_attributes_request_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_attributes_sizeof(
         &self,
         _buffer: *const c_void,
@@ -3343,17 +3604,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_attributes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `XPrint::PrintSetAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_attributes_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3381,14 +3639,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_attributes_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintSetAttributes` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -3416,6 +3668,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_attributes)
     }
 
+    /// Returns a pointer to the `attributes` field of a `xcb_x_print_print_set_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_attributes_attributes(
         &self,
         r: *const xcb_x_print_print_set_attributes_request_t,
@@ -3429,6 +3683,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_attributes_attributes)
     }
 
+    /// Returns the number of elements of the `attributes` field of a `xcb_x_print_print_set_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_attributes_attributes_length(
         &self,
         r: *const xcb_x_print_print_set_attributes_request_t,
@@ -3442,6 +3698,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_attributes_attributes_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `attributes` field of a `xcb_x_print_print_set_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_attributes_attributes_end(
         &self,
         r: *const xcb_x_print_print_set_attributes_request_t,
@@ -3455,14 +3714,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_attributes_attributes_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetPageDimensions` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_page_dimensions_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_page_dimensions_reply`]: Self::xcb_x_print_print_get_page_dimensions_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_page_dimensions(
         &self,
         c: *mut xcb_connection_t,
@@ -3477,17 +3736,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_page_dimensions)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetPageDimensions` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_page_dimensions_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_page_dimensions_reply`]: Self::xcb_x_print_print_get_page_dimensions_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_page_dimensions_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3502,26 +3758,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_page_dimensions_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_page_dimensions_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetPageDimensions` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_page_dimensions_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_page_dimensions_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_page_dimensions_reply_t {
+    ) -> *mut xcb_x_print_print_get_page_dimensions_reply_t {
         sym!(self, xcb_x_print_print_get_page_dimensions_reply)(c, cookie, e)
     }
 
@@ -3531,6 +3775,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_page_dimensions_reply)
     }
 
+    /// Computes the size of a `xcb_x_print_print_query_screens_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_screens_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_x_print_print_query_screens_sizeof)(_buffer)
     }
@@ -3541,14 +3787,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_screens_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintQueryScreens` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_query_screens_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_query_screens_reply`]: Self::xcb_x_print_print_query_screens_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_screens(
         &self,
         c: *mut xcb_connection_t,
@@ -3562,17 +3808,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_screens)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintQueryScreens` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_query_screens_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_query_screens_reply`]: Self::xcb_x_print_print_query_screens_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_screens_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3586,6 +3829,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_screens_unchecked)
     }
 
+    /// Returns a pointer to the `roots` field of a `xcb_x_print_print_query_screens_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_screens_roots(
         &self,
         r: *const xcb_x_print_print_query_screens_reply_t,
@@ -3599,6 +3844,8 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_screens_roots)
     }
 
+    /// Returns the number of elements of the `roots` field of a `xcb_x_print_print_query_screens_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_screens_roots_length(
         &self,
         r: *const xcb_x_print_print_query_screens_reply_t,
@@ -3612,6 +3859,9 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_screens_roots_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `roots` field of a `xcb_x_print_print_query_screens_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_screens_roots_end(
         &self,
         r: *const xcb_x_print_print_query_screens_reply_t,
@@ -3625,26 +3875,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_screens_roots_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_query_screens_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintQueryScreens` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_query_screens_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_query_screens_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_query_screens_reply_t {
+    ) -> *mut xcb_x_print_print_query_screens_reply_t {
         sym!(self, xcb_x_print_print_query_screens_reply)(c, cookie, e)
     }
 
@@ -3654,14 +3892,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_query_screens_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintSetImageResolution` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_set_image_resolution_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_set_image_resolution_reply`]: Self::xcb_x_print_print_set_image_resolution_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_image_resolution(
         &self,
         c: *mut xcb_connection_t,
@@ -3677,17 +3915,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_image_resolution)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintSetImageResolution` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_set_image_resolution_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_set_image_resolution_reply`]: Self::xcb_x_print_print_set_image_resolution_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_image_resolution_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3703,26 +3938,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_image_resolution_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_set_image_resolution_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintSetImageResolution` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_set_image_resolution_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_set_image_resolution_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_set_image_resolution_reply_t {
+    ) -> *mut xcb_x_print_print_set_image_resolution_reply_t {
         sym!(self, xcb_x_print_print_set_image_resolution_reply)(c, cookie, e)
     }
 
@@ -3732,14 +3955,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_set_image_resolution_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `XPrint::PrintGetImageResolution` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_image_resolution_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_image_resolution_reply`]: Self::xcb_x_print_print_get_image_resolution_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_image_resolution(
         &self,
         c: *mut xcb_connection_t,
@@ -3754,17 +3977,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_image_resolution)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `XPrint::PrintGetImageResolution` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_x_print_print_get_image_resolution_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_x_print_print_get_image_resolution_reply`]: Self::xcb_x_print_print_get_image_resolution_reply
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_image_resolution_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3779,26 +3999,14 @@ impl XcbXprint {
         has_sym!(self, xcb_x_print_print_get_image_resolution_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_x_print_print_get_image_resolution_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `XPrint::PrintGetImageResolution` request.
+    #[inline]
     pub unsafe fn xcb_x_print_print_get_image_resolution_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_x_print_print_get_image_resolution_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_x_print_print_get_image_resolution_reply_t {
+    ) -> *mut xcb_x_print_print_get_image_resolution_reply_t {
         sym!(self, xcb_x_print_print_get_image_resolution_reply)(c, cookie, e)
     }
 

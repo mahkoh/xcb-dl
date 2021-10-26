@@ -1,10 +1,12 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Res::Client` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_client_t {
@@ -18,11 +20,15 @@ impl Default for xcb_res_client_t {
     }
 }
 
+/// An iterator over `Res::Client` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_client_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_res_client_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -32,6 +38,7 @@ impl Default for xcb_res_client_iterator_t {
     }
 }
 
+/// The `Res::Type` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_type_t {
@@ -45,11 +52,15 @@ impl Default for xcb_res_type_t {
     }
 }
 
+/// An iterator over `Res::Type` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_type_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_res_type_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -59,10 +70,23 @@ impl Default for xcb_res_type_iterator_t {
     }
 }
 
+/// The `Res::ClientIdMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Res::ClientIdMask::ClientXID`](XCB_RES_CLIENT_ID_MASK_CLIENT_XID)
+/// - [`Res::ClientIdMask::LocalClientPID`](XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID)
 pub type xcb_res_client_id_mask_t = u32;
+/// The `Res::ClientIdMask::ClientXID` enum variant.
+///
+/// This is a variant of [`xcb_res_client_id_mask_t`].
 pub const XCB_RES_CLIENT_ID_MASK_CLIENT_XID: xcb_res_client_id_mask_t = 1;
+/// The `Res::ClientIdMask::LocalClientPID` enum variant.
+///
+/// This is a variant of [`xcb_res_client_id_mask_t`].
 pub const XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID: xcb_res_client_id_mask_t = 2;
 
+/// The `Res::ClientIdSpec` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_client_id_spec_t {
@@ -76,11 +100,15 @@ impl Default for xcb_res_client_id_spec_t {
     }
 }
 
+/// An iterator over `Res::ClientIdSpec` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_client_id_spec_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_res_client_id_spec_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -90,6 +118,11 @@ impl Default for xcb_res_client_id_spec_iterator_t {
     }
 }
 
+/// The `Res::ClientIdValue` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_client_id_value_t {
@@ -103,11 +136,15 @@ impl Default for xcb_res_client_id_value_t {
     }
 }
 
+/// An iterator over `Res::ClientIdValue` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_client_id_value_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_res_client_id_value_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -117,6 +154,7 @@ impl Default for xcb_res_client_id_value_iterator_t {
     }
 }
 
+/// The `Res::ResourceIdSpec` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_resource_id_spec_t {
@@ -130,11 +168,15 @@ impl Default for xcb_res_resource_id_spec_t {
     }
 }
 
+/// An iterator over `Res::ResourceIdSpec` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_resource_id_spec_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_res_resource_id_spec_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -144,6 +186,7 @@ impl Default for xcb_res_resource_id_spec_iterator_t {
     }
 }
 
+/// The `Res::ResourceSizeSpec` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_resource_size_spec_t {
@@ -159,11 +202,15 @@ impl Default for xcb_res_resource_size_spec_t {
     }
 }
 
+/// An iterator over `Res::ResourceSizeSpec` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_resource_size_spec_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_res_resource_size_spec_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -173,6 +220,11 @@ impl Default for xcb_res_resource_size_spec_iterator_t {
     }
 }
 
+/// The `Res::ResourceSizeValue` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `cross_references`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_resource_size_value_t {
@@ -186,11 +238,15 @@ impl Default for xcb_res_resource_size_value_t {
     }
 }
 
+/// An iterator over `Res::ResourceSizeValue` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_resource_size_value_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_res_resource_size_value_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -200,9 +256,15 @@ impl Default for xcb_res_resource_size_value_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `Res::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_res_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_res_query_version_reply`]: XcbRes::xcb_res_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -212,9 +274,14 @@ impl Default for xcb_res_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_res_query_version.
+/// The opcode for `Res::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRes::xcb_res_id()`], then the type of the request is
+/// [`xcb_res_query_version_request_t`].
 pub const XCB_RES_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `Res::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_version_request_t {
@@ -231,6 +298,7 @@ impl Default for xcb_res_query_version_request_t {
     }
 }
 
+/// The `Res::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_version_reply_t {
@@ -248,9 +316,15 @@ impl Default for xcb_res_query_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Res::QueryClients` request.
+///
+/// Pass this cookie to [`xcb_res_query_clients_reply`] to retrieve the reply.
+///
+/// [`xcb_res_query_clients_reply`]: XcbRes::xcb_res_query_clients_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_clients_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -260,9 +334,14 @@ impl Default for xcb_res_query_clients_cookie_t {
     }
 }
 
-/// Opcode for xcb_res_query_clients.
+/// The opcode for `Res::QueryClients` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRes::xcb_res_id()`], then the type of the request is
+/// [`xcb_res_query_clients_request_t`].
 pub const XCB_RES_QUERY_CLIENTS: u8 = 1i32 as u8;
 
+/// The `Res::QueryClients` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_clients_request_t {
@@ -277,6 +356,11 @@ impl Default for xcb_res_query_clients_request_t {
     }
 }
 
+/// The `Res::QueryClients` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `clients`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_clients_reply_t {
@@ -294,9 +378,15 @@ impl Default for xcb_res_query_clients_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Res::QueryClientResources` request.
+///
+/// Pass this cookie to [`xcb_res_query_client_resources_reply`] to retrieve the reply.
+///
+/// [`xcb_res_query_client_resources_reply`]: XcbRes::xcb_res_query_client_resources_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_resources_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -306,9 +396,14 @@ impl Default for xcb_res_query_client_resources_cookie_t {
     }
 }
 
-/// Opcode for xcb_res_query_client_resources.
+/// The opcode for `Res::QueryClientResources` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRes::xcb_res_id()`], then the type of the request is
+/// [`xcb_res_query_client_resources_request_t`].
 pub const XCB_RES_QUERY_CLIENT_RESOURCES: u8 = 2i32 as u8;
 
+/// The `Res::QueryClientResources` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_resources_request_t {
@@ -324,6 +419,11 @@ impl Default for xcb_res_query_client_resources_request_t {
     }
 }
 
+/// The `Res::QueryClientResources` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `types`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_resources_reply_t {
@@ -341,9 +441,15 @@ impl Default for xcb_res_query_client_resources_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Res::QueryClientPixmapBytes` request.
+///
+/// Pass this cookie to [`xcb_res_query_client_pixmap_bytes_reply`] to retrieve the reply.
+///
+/// [`xcb_res_query_client_pixmap_bytes_reply`]: XcbRes::xcb_res_query_client_pixmap_bytes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_pixmap_bytes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -353,9 +459,14 @@ impl Default for xcb_res_query_client_pixmap_bytes_cookie_t {
     }
 }
 
-/// Opcode for xcb_res_query_client_pixmap_bytes.
+/// The opcode for `Res::QueryClientPixmapBytes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRes::xcb_res_id()`], then the type of the request is
+/// [`xcb_res_query_client_pixmap_bytes_request_t`].
 pub const XCB_RES_QUERY_CLIENT_PIXMAP_BYTES: u8 = 3i32 as u8;
 
+/// The `Res::QueryClientPixmapBytes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_pixmap_bytes_request_t {
@@ -371,6 +482,7 @@ impl Default for xcb_res_query_client_pixmap_bytes_request_t {
     }
 }
 
+/// The `Res::QueryClientPixmapBytes` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_pixmap_bytes_reply_t {
@@ -388,9 +500,15 @@ impl Default for xcb_res_query_client_pixmap_bytes_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Res::QueryClientIds` request.
+///
+/// Pass this cookie to [`xcb_res_query_client_ids_reply`] to retrieve the reply.
+///
+/// [`xcb_res_query_client_ids_reply`]: XcbRes::xcb_res_query_client_ids_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_ids_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -400,9 +518,18 @@ impl Default for xcb_res_query_client_ids_cookie_t {
     }
 }
 
-/// Opcode for xcb_res_query_client_ids.
+/// The opcode for `Res::QueryClientIds` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRes::xcb_res_id()`], then the type of the request is
+/// [`xcb_res_query_client_ids_request_t`].
 pub const XCB_RES_QUERY_CLIENT_IDS: u8 = 4i32 as u8;
 
+/// The `Res::QueryClientIds` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `specs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_ids_request_t {
@@ -418,6 +545,11 @@ impl Default for xcb_res_query_client_ids_request_t {
     }
 }
 
+/// The `Res::QueryClientIds` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `ids`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_client_ids_reply_t {
@@ -435,9 +567,15 @@ impl Default for xcb_res_query_client_ids_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Res::QueryResourceBytes` request.
+///
+/// Pass this cookie to [`xcb_res_query_resource_bytes_reply`] to retrieve the reply.
+///
+/// [`xcb_res_query_resource_bytes_reply`]: XcbRes::xcb_res_query_resource_bytes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_resource_bytes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -447,9 +585,18 @@ impl Default for xcb_res_query_resource_bytes_cookie_t {
     }
 }
 
-/// Opcode for xcb_res_query_resource_bytes.
+/// The opcode for `Res::QueryResourceBytes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRes::xcb_res_id()`], then the type of the request is
+/// [`xcb_res_query_resource_bytes_request_t`].
 pub const XCB_RES_QUERY_RESOURCE_BYTES: u8 = 5i32 as u8;
 
+/// The `Res::QueryResourceBytes` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `specs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_resource_bytes_request_t {
@@ -466,6 +613,11 @@ impl Default for xcb_res_query_resource_bytes_request_t {
     }
 }
 
+/// The `Res::QueryResourceBytes` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `sizes`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_res_query_resource_bytes_reply_t {
@@ -544,7 +696,7 @@ pub(crate) struct XcbResRes {
             c: *mut xcb_connection_t,
             cookie: xcb_res_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_res_query_version_reply_t,
+        ) -> *mut xcb_res_query_version_reply_t,
     >,
     xcb_res_query_clients_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_res_query_clients:
@@ -562,7 +714,7 @@ pub(crate) struct XcbResRes {
             c: *mut xcb_connection_t,
             cookie: xcb_res_query_clients_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_res_query_clients_reply_t,
+        ) -> *mut xcb_res_query_clients_reply_t,
     >,
     xcb_res_query_client_resources_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_res_query_client_resources: LazySymbol<
@@ -584,7 +736,7 @@ pub(crate) struct XcbResRes {
             c: *mut xcb_connection_t,
             cookie: xcb_res_query_client_resources_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_res_query_client_resources_reply_t,
+        ) -> *mut xcb_res_query_client_resources_reply_t,
     >,
     xcb_res_query_client_pixmap_bytes: LazySymbol<
         unsafe fn(c: *mut xcb_connection_t, xid: u32) -> xcb_res_query_client_pixmap_bytes_cookie_t,
@@ -597,7 +749,7 @@ pub(crate) struct XcbResRes {
             c: *mut xcb_connection_t,
             cookie: xcb_res_query_client_pixmap_bytes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_res_query_client_pixmap_bytes_reply_t,
+        ) -> *mut xcb_res_query_client_pixmap_bytes_reply_t,
     >,
     xcb_res_query_client_ids_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_res_query_client_ids: LazySymbol<
@@ -624,7 +776,7 @@ pub(crate) struct XcbResRes {
             c: *mut xcb_connection_t,
             cookie: xcb_res_query_client_ids_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_res_query_client_ids_reply_t,
+        ) -> *mut xcb_res_query_client_ids_reply_t,
     >,
     xcb_res_query_resource_bytes_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_res_query_resource_bytes: LazySymbol<
@@ -655,7 +807,7 @@ pub(crate) struct XcbResRes {
             c: *mut xcb_connection_t,
             cookie: xcb_res_query_resource_bytes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_res_query_resource_bytes_reply_t,
+        ) -> *mut xcb_res_query_resource_bytes_reply_t,
     >,
 }
 
@@ -678,6 +830,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_res")]
 impl XcbRes {
+    /// The libxcb identifier of the `Res` extension.
+    #[inline]
     pub fn xcb_res_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_res_id) }
     }
@@ -688,6 +842,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_id)
     }
 
+    /// Advances a `xcb_res_client_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_res_client_next(&self, i: *mut xcb_res_client_iterator_t) {
         sym!(self, xcb_res_client_next)(i)
     }
@@ -698,6 +854,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_res_client_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_res_client_end(
         &self,
         i: xcb_res_client_iterator_t,
@@ -711,6 +869,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_end)
     }
 
+    /// Advances a `xcb_res_type_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_res_type_next(&self, i: *mut xcb_res_type_iterator_t) {
         sym!(self, xcb_res_type_next)(i)
     }
@@ -721,6 +881,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_type_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_res_type_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_res_type_end(&self, i: xcb_res_type_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_res_type_end)(i)
     }
@@ -731,6 +893,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_type_end)
     }
 
+    /// Advances a `xcb_res_client_id_spec_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_res_client_id_spec_next(&self, i: *mut xcb_res_client_id_spec_iterator_t) {
         sym!(self, xcb_res_client_id_spec_next)(i)
     }
@@ -741,6 +905,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_spec_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_res_client_id_spec_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_res_client_id_spec_end(
         &self,
         i: xcb_res_client_id_spec_iterator_t,
@@ -754,6 +920,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_spec_end)
     }
 
+    /// Computes the size of a `xcb_res_client_id_value_t` object.
+    #[inline]
     pub unsafe fn xcb_res_client_id_value_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_res_client_id_value_sizeof)(_buffer)
     }
@@ -764,6 +932,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_value_sizeof)
     }
 
+    /// Returns a pointer to the `value` field of a `xcb_res_client_id_value_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_client_id_value_value(
         &self,
         r: *const xcb_res_client_id_value_t,
@@ -777,6 +947,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_value_value)
     }
 
+    /// Returns the number of elements of the `value` field of a `xcb_res_client_id_value_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_client_id_value_value_length(
         &self,
         r: *const xcb_res_client_id_value_t,
@@ -790,6 +962,9 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_value_value_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `value` field of a `xcb_res_client_id_value_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_client_id_value_value_end(
         &self,
         r: *const xcb_res_client_id_value_t,
@@ -803,6 +978,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_value_value_end)
     }
 
+    /// Advances a `xcb_res_client_id_value_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_res_client_id_value_next(&self, i: *mut xcb_res_client_id_value_iterator_t) {
         sym!(self, xcb_res_client_id_value_next)(i)
     }
@@ -813,6 +990,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_value_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_res_client_id_value_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_res_client_id_value_end(
         &self,
         i: xcb_res_client_id_value_iterator_t,
@@ -826,6 +1005,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_client_id_value_end)
     }
 
+    /// Advances a `xcb_res_resource_id_spec_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_res_resource_id_spec_next(
         &self,
         i: *mut xcb_res_resource_id_spec_iterator_t,
@@ -839,6 +1020,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_id_spec_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_res_resource_id_spec_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_res_resource_id_spec_end(
         &self,
         i: xcb_res_resource_id_spec_iterator_t,
@@ -852,6 +1035,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_id_spec_end)
     }
 
+    /// Advances a `xcb_res_resource_size_spec_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_spec_next(
         &self,
         i: *mut xcb_res_resource_size_spec_iterator_t,
@@ -865,6 +1050,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_spec_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_res_resource_size_spec_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_spec_end(
         &self,
         i: xcb_res_resource_size_spec_iterator_t,
@@ -878,6 +1065,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_spec_end)
     }
 
+    /// Computes the size of a `xcb_res_resource_size_value_t` object.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_value_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_res_resource_size_value_sizeof)(_buffer)
     }
@@ -888,6 +1077,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_value_sizeof)
     }
 
+    /// Returns a pointer to the `cross_references` field of a `xcb_res_resource_size_value_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_value_cross_references(
         &self,
         r: *const xcb_res_resource_size_value_t,
@@ -901,6 +1092,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_value_cross_references)
     }
 
+    /// Returns the number of elements of the `cross_references` field of a `xcb_res_resource_size_value_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_value_cross_references_length(
         &self,
         r: *const xcb_res_resource_size_value_t,
@@ -914,6 +1107,9 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_value_cross_references_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `cross_references` field of a `xcb_res_resource_size_value_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_value_cross_references_iterator(
         &self,
         r: *const xcb_res_resource_size_value_t,
@@ -927,6 +1123,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_value_cross_references_iterator)
     }
 
+    /// Advances a `xcb_res_resource_size_value_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_value_next(
         &self,
         i: *mut xcb_res_resource_size_value_iterator_t,
@@ -940,6 +1138,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_value_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_res_resource_size_value_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_res_resource_size_value_end(
         &self,
         i: xcb_res_resource_size_value_iterator_t,
@@ -953,14 +1153,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_resource_size_value_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Res::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_version_reply`]: Self::xcb_res_query_version_reply
+    #[inline]
     pub unsafe fn xcb_res_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -976,17 +1176,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Res::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_version_reply`]: Self::xcb_res_query_version_reply
+    #[inline]
     pub unsafe fn xcb_res_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1002,26 +1199,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_res_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Res::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_res_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_res_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_res_query_version_reply_t {
+    ) -> *mut xcb_res_query_version_reply_t {
         sym!(self, xcb_res_query_version_reply)(c, cookie, e)
     }
 
@@ -1031,6 +1216,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_version_reply)
     }
 
+    /// Computes the size of a `xcb_res_query_clients_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_res_query_clients_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_res_query_clients_sizeof)(_buffer)
     }
@@ -1041,14 +1228,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_clients_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Res::QueryClients` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_clients_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_clients_reply`]: Self::xcb_res_query_clients_reply
+    #[inline]
     pub unsafe fn xcb_res_query_clients(
         &self,
         c: *mut xcb_connection_t,
@@ -1062,17 +1249,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_clients)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Res::QueryClients` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_clients_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_clients_reply`]: Self::xcb_res_query_clients_reply
+    #[inline]
     pub unsafe fn xcb_res_query_clients_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1086,6 +1270,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_clients_unchecked)
     }
 
+    /// Returns a pointer to the `clients` field of a `xcb_res_query_clients_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_clients_clients(
         &self,
         r: *const xcb_res_query_clients_reply_t,
@@ -1099,6 +1285,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_clients_clients)
     }
 
+    /// Returns the number of elements of the `clients` field of a `xcb_res_query_clients_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_clients_clients_length(
         &self,
         r: *const xcb_res_query_clients_reply_t,
@@ -1112,6 +1300,9 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_clients_clients_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `clients` field of a `xcb_res_query_clients_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_clients_clients_iterator(
         &self,
         r: *const xcb_res_query_clients_reply_t,
@@ -1125,26 +1316,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_clients_clients_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_res_query_clients_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Res::QueryClients` request.
+    #[inline]
     pub unsafe fn xcb_res_query_clients_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_res_query_clients_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_res_query_clients_reply_t {
+    ) -> *mut xcb_res_query_clients_reply_t {
         sym!(self, xcb_res_query_clients_reply)(c, cookie, e)
     }
 
@@ -1154,6 +1333,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_clients_reply)
     }
 
+    /// Computes the size of a `xcb_res_query_client_resources_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_res_query_client_resources_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_res_query_client_resources_sizeof)(_buffer)
     }
@@ -1164,14 +1345,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_resources_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Res::QueryClientResources` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_client_resources_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_client_resources_reply`]: Self::xcb_res_query_client_resources_reply
+    #[inline]
     pub unsafe fn xcb_res_query_client_resources(
         &self,
         c: *mut xcb_connection_t,
@@ -1186,17 +1367,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_resources)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Res::QueryClientResources` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_client_resources_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_client_resources_reply`]: Self::xcb_res_query_client_resources_reply
+    #[inline]
     pub unsafe fn xcb_res_query_client_resources_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1211,6 +1389,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_resources_unchecked)
     }
 
+    /// Returns a pointer to the `types` field of a `xcb_res_query_client_resources_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_client_resources_types(
         &self,
         r: *const xcb_res_query_client_resources_reply_t,
@@ -1224,6 +1404,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_resources_types)
     }
 
+    /// Returns the number of elements of the `types` field of a `xcb_res_query_client_resources_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_client_resources_types_length(
         &self,
         r: *const xcb_res_query_client_resources_reply_t,
@@ -1237,6 +1419,9 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_resources_types_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `types` field of a `xcb_res_query_client_resources_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_client_resources_types_iterator(
         &self,
         r: *const xcb_res_query_client_resources_reply_t,
@@ -1250,26 +1435,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_resources_types_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_res_query_client_resources_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Res::QueryClientResources` request.
+    #[inline]
     pub unsafe fn xcb_res_query_client_resources_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_res_query_client_resources_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_res_query_client_resources_reply_t {
+    ) -> *mut xcb_res_query_client_resources_reply_t {
         sym!(self, xcb_res_query_client_resources_reply)(c, cookie, e)
     }
 
@@ -1279,14 +1452,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_resources_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Res::QueryClientPixmapBytes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_client_pixmap_bytes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_client_pixmap_bytes_reply`]: Self::xcb_res_query_client_pixmap_bytes_reply
+    #[inline]
     pub unsafe fn xcb_res_query_client_pixmap_bytes(
         &self,
         c: *mut xcb_connection_t,
@@ -1301,17 +1474,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_pixmap_bytes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Res::QueryClientPixmapBytes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_client_pixmap_bytes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_client_pixmap_bytes_reply`]: Self::xcb_res_query_client_pixmap_bytes_reply
+    #[inline]
     pub unsafe fn xcb_res_query_client_pixmap_bytes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1326,26 +1496,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_pixmap_bytes_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_res_query_client_pixmap_bytes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Res::QueryClientPixmapBytes` request.
+    #[inline]
     pub unsafe fn xcb_res_query_client_pixmap_bytes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_res_query_client_pixmap_bytes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_res_query_client_pixmap_bytes_reply_t {
+    ) -> *mut xcb_res_query_client_pixmap_bytes_reply_t {
         sym!(self, xcb_res_query_client_pixmap_bytes_reply)(c, cookie, e)
     }
 
@@ -1355,6 +1513,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_pixmap_bytes_reply)
     }
 
+    /// Computes the size of a `xcb_res_query_client_ids_request_t` object.
+    #[inline]
     pub unsafe fn xcb_res_query_client_ids_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_res_query_client_ids_sizeof)(_buffer)
     }
@@ -1365,14 +1525,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_ids_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Res::QueryClientIds` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_client_ids_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_client_ids_reply`]: Self::xcb_res_query_client_ids_reply
+    #[inline]
     pub unsafe fn xcb_res_query_client_ids(
         &self,
         c: *mut xcb_connection_t,
@@ -1388,17 +1548,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_ids)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Res::QueryClientIds` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_client_ids_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_client_ids_reply`]: Self::xcb_res_query_client_ids_reply
+    #[inline]
     pub unsafe fn xcb_res_query_client_ids_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1414,6 +1571,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_ids_unchecked)
     }
 
+    /// Returns the number of elements of the `ids` field of a `xcb_res_query_client_ids_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_client_ids_ids_length(
         &self,
         r: *const xcb_res_query_client_ids_reply_t,
@@ -1427,6 +1586,9 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_ids_ids_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `ids` field of a `xcb_res_query_client_ids_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_client_ids_ids_iterator(
         &self,
         r: *const xcb_res_query_client_ids_reply_t,
@@ -1440,26 +1602,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_ids_ids_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_res_query_client_ids_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Res::QueryClientIds` request.
+    #[inline]
     pub unsafe fn xcb_res_query_client_ids_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_res_query_client_ids_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_res_query_client_ids_reply_t {
+    ) -> *mut xcb_res_query_client_ids_reply_t {
         sym!(self, xcb_res_query_client_ids_reply)(c, cookie, e)
     }
 
@@ -1469,6 +1619,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_client_ids_reply)
     }
 
+    /// Computes the size of a `xcb_res_query_resource_bytes_request_t` object.
+    #[inline]
     pub unsafe fn xcb_res_query_resource_bytes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_res_query_resource_bytes_sizeof)(_buffer)
     }
@@ -1479,14 +1631,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_resource_bytes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Res::QueryResourceBytes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_resource_bytes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_resource_bytes_reply`]: Self::xcb_res_query_resource_bytes_reply
+    #[inline]
     pub unsafe fn xcb_res_query_resource_bytes(
         &self,
         c: *mut xcb_connection_t,
@@ -1503,17 +1655,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_resource_bytes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Res::QueryResourceBytes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_res_query_resource_bytes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_res_query_resource_bytes_reply`]: Self::xcb_res_query_resource_bytes_reply
+    #[inline]
     pub unsafe fn xcb_res_query_resource_bytes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1530,6 +1679,8 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_resource_bytes_unchecked)
     }
 
+    /// Returns the number of elements of the `sizes` field of a `xcb_res_query_resource_bytes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_resource_bytes_sizes_length(
         &self,
         r: *const xcb_res_query_resource_bytes_reply_t,
@@ -1543,6 +1694,9 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_resource_bytes_sizes_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `sizes` field of a `xcb_res_query_resource_bytes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_res_query_resource_bytes_sizes_iterator(
         &self,
         r: *const xcb_res_query_resource_bytes_reply_t,
@@ -1556,26 +1710,14 @@ impl XcbRes {
         has_sym!(self, xcb_res_query_resource_bytes_sizes_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_res_query_resource_bytes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Res::QueryResourceBytes` request.
+    #[inline]
     pub unsafe fn xcb_res_query_resource_bytes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_res_query_resource_bytes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_res_query_resource_bytes_reply_t {
+    ) -> *mut xcb_res_query_resource_bytes_reply_t {
         sym!(self, xcb_res_query_resource_bytes_reply)(c, cookie, e)
     }
 

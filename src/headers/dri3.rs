@@ -1,13 +1,20 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The cookie for the reply to a `DRI3::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_dri3_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_dri3_query_version_reply`]: XcbDri3::xcb_dri3_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -17,9 +24,14 @@ impl Default for xcb_dri3_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_dri3_query_version.
+/// The opcode for `DRI3::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_query_version_request_t`].
 pub const XCB_DRI3_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `DRI3::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_query_version_request_t {
@@ -36,6 +48,7 @@ impl Default for xcb_dri3_query_version_request_t {
     }
 }
 
+/// The `DRI3::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_query_version_reply_t {
@@ -53,9 +66,15 @@ impl Default for xcb_dri3_query_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `DRI3::Open` request.
+///
+/// Pass this cookie to [`xcb_dri3_open_reply`] to retrieve the reply.
+///
+/// [`xcb_dri3_open_reply`]: XcbDri3::xcb_dri3_open_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_open_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -65,9 +84,14 @@ impl Default for xcb_dri3_open_cookie_t {
     }
 }
 
-/// Opcode for xcb_dri3_open.
+/// The opcode for `DRI3::Open` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_open_request_t`].
 pub const XCB_DRI3_OPEN: u8 = 1i32 as u8;
 
+/// The `DRI3::Open` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_open_request_t {
@@ -84,6 +108,11 @@ impl Default for xcb_dri3_open_request_t {
     }
 }
 
+/// The `DRI3::Open` reply.
+///
+/// This reply contains file descriptors that can be accessed with [`xcb_dri3_open_reply_fds`].
+///
+/// [`xcb_dri3_open_reply_fds`]: XcbDri3::xcb_dri3_open_reply_fds
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_open_reply_t {
@@ -100,9 +129,14 @@ impl Default for xcb_dri3_open_reply_t {
     }
 }
 
-/// Opcode for xcb_dri3_pixmap_from_buffer.
+/// The opcode for `DRI3::PixmapFromBuffer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_pixmap_from_buffer_request_t`].
 pub const XCB_DRI3_PIXMAP_FROM_BUFFER: u8 = 2i32 as u8;
 
+/// The `DRI3::PixmapFromBuffer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_pixmap_from_buffer_request_t {
@@ -125,9 +159,15 @@ impl Default for xcb_dri3_pixmap_from_buffer_request_t {
     }
 }
 
+/// The cookie for the reply to a `DRI3::BufferFromPixmap` request.
+///
+/// Pass this cookie to [`xcb_dri3_buffer_from_pixmap_reply`] to retrieve the reply.
+///
+/// [`xcb_dri3_buffer_from_pixmap_reply`]: XcbDri3::xcb_dri3_buffer_from_pixmap_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_buffer_from_pixmap_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -137,9 +177,14 @@ impl Default for xcb_dri3_buffer_from_pixmap_cookie_t {
     }
 }
 
-/// Opcode for xcb_dri3_buffer_from_pixmap.
+/// The opcode for `DRI3::BufferFromPixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_buffer_from_pixmap_request_t`].
 pub const XCB_DRI3_BUFFER_FROM_PIXMAP: u8 = 3i32 as u8;
 
+/// The `DRI3::BufferFromPixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_buffer_from_pixmap_request_t {
@@ -155,6 +200,11 @@ impl Default for xcb_dri3_buffer_from_pixmap_request_t {
     }
 }
 
+/// The `DRI3::BufferFromPixmap` reply.
+///
+/// This reply contains file descriptors that can be accessed with [`xcb_dri3_buffer_from_pixmap_reply_fds`].
+///
+/// [`xcb_dri3_buffer_from_pixmap_reply_fds`]: XcbDri3::xcb_dri3_buffer_from_pixmap_reply_fds
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_buffer_from_pixmap_reply_t {
@@ -177,9 +227,14 @@ impl Default for xcb_dri3_buffer_from_pixmap_reply_t {
     }
 }
 
-/// Opcode for xcb_dri3_fence_from_fd.
+/// The opcode for `DRI3::FenceFromFD` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_fence_from_fd_request_t`].
 pub const XCB_DRI3_FENCE_FROM_FD: u8 = 4i32 as u8;
 
+/// The `DRI3::FenceFromFD` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_fence_from_fd_request_t {
@@ -198,9 +253,15 @@ impl Default for xcb_dri3_fence_from_fd_request_t {
     }
 }
 
+/// The cookie for the reply to a `DRI3::FDFromFence` request.
+///
+/// Pass this cookie to [`xcb_dri3_fd_from_fence_reply`] to retrieve the reply.
+///
+/// [`xcb_dri3_fd_from_fence_reply`]: XcbDri3::xcb_dri3_fd_from_fence_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_fd_from_fence_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -210,9 +271,14 @@ impl Default for xcb_dri3_fd_from_fence_cookie_t {
     }
 }
 
-/// Opcode for xcb_dri3_fd_from_fence.
+/// The opcode for `DRI3::FDFromFence` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_fd_from_fence_request_t`].
 pub const XCB_DRI3_FD_FROM_FENCE: u8 = 5i32 as u8;
 
+/// The `DRI3::FDFromFence` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_fd_from_fence_request_t {
@@ -229,6 +295,11 @@ impl Default for xcb_dri3_fd_from_fence_request_t {
     }
 }
 
+/// The `DRI3::FDFromFence` reply.
+///
+/// This reply contains file descriptors that can be accessed with [`xcb_dri3_fd_from_fence_reply_fds`].
+///
+/// [`xcb_dri3_fd_from_fence_reply_fds`]: XcbDri3::xcb_dri3_fd_from_fence_reply_fds
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_fd_from_fence_reply_t {
@@ -245,9 +316,15 @@ impl Default for xcb_dri3_fd_from_fence_reply_t {
     }
 }
 
+/// The cookie for the reply to a `DRI3::GetSupportedModifiers` request.
+///
+/// Pass this cookie to [`xcb_dri3_get_supported_modifiers_reply`] to retrieve the reply.
+///
+/// [`xcb_dri3_get_supported_modifiers_reply`]: XcbDri3::xcb_dri3_get_supported_modifiers_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_get_supported_modifiers_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -257,9 +334,14 @@ impl Default for xcb_dri3_get_supported_modifiers_cookie_t {
     }
 }
 
-/// Opcode for xcb_dri3_get_supported_modifiers.
+/// The opcode for `DRI3::GetSupportedModifiers` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_get_supported_modifiers_request_t`].
 pub const XCB_DRI3_GET_SUPPORTED_MODIFIERS: u8 = 6i32 as u8;
 
+/// The `DRI3::GetSupportedModifiers` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_get_supported_modifiers_request_t {
@@ -278,6 +360,12 @@ impl Default for xcb_dri3_get_supported_modifiers_request_t {
     }
 }
 
+/// The `DRI3::GetSupportedModifiers` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `window_modifiers`
+/// - `screen_modifiers`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_get_supported_modifiers_reply_t {
@@ -296,9 +384,18 @@ impl Default for xcb_dri3_get_supported_modifiers_reply_t {
     }
 }
 
-/// Opcode for xcb_dri3_pixmap_from_buffers.
+/// The opcode for `DRI3::PixmapFromBuffers` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_pixmap_from_buffers_request_t`].
 pub const XCB_DRI3_PIXMAP_FROM_BUFFERS: u8 = 7i32 as u8;
 
+/// The `DRI3::PixmapFromBuffers` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `buffers`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_pixmap_from_buffers_request_t {
@@ -331,9 +428,15 @@ impl Default for xcb_dri3_pixmap_from_buffers_request_t {
     }
 }
 
+/// The cookie for the reply to a `DRI3::BuffersFromPixmap` request.
+///
+/// Pass this cookie to [`xcb_dri3_buffers_from_pixmap_reply`] to retrieve the reply.
+///
+/// [`xcb_dri3_buffers_from_pixmap_reply`]: XcbDri3::xcb_dri3_buffers_from_pixmap_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_buffers_from_pixmap_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -343,9 +446,14 @@ impl Default for xcb_dri3_buffers_from_pixmap_cookie_t {
     }
 }
 
-/// Opcode for xcb_dri3_buffers_from_pixmap.
+/// The opcode for `DRI3::BuffersFromPixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbDri3::xcb_dri3_id()`], then the type of the request is
+/// [`xcb_dri3_buffers_from_pixmap_request_t`].
 pub const XCB_DRI3_BUFFERS_FROM_PIXMAP: u8 = 8i32 as u8;
 
+/// The `DRI3::BuffersFromPixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_buffers_from_pixmap_request_t {
@@ -361,6 +469,17 @@ impl Default for xcb_dri3_buffers_from_pixmap_request_t {
     }
 }
 
+/// The `DRI3::BuffersFromPixmap` reply.
+///
+/// This reply contains file descriptors that can be accessed with [`xcb_dri3_buffers_from_pixmap_reply_fds`].
+///
+/// [`xcb_dri3_buffers_from_pixmap_reply_fds`]: XcbDri3::xcb_dri3_buffers_from_pixmap_reply_fds
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `strides`
+/// - `offsets`
+/// - `buffers`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_dri3_buffers_from_pixmap_reply_t {
@@ -405,7 +524,7 @@ pub(crate) struct XcbDri3Dri3 {
             c: *mut xcb_connection_t,
             cookie: xcb_dri3_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dri3_query_version_reply_t,
+        ) -> *mut xcb_dri3_query_version_reply_t,
     >,
     xcb_dri3_open: LazySymbol<
         unsafe fn(
@@ -426,7 +545,7 @@ pub(crate) struct XcbDri3Dri3 {
             c: *mut xcb_connection_t,
             cookie: xcb_dri3_open_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dri3_open_reply_t,
+        ) -> *mut xcb_dri3_open_reply_t,
     >,
     xcb_dri3_open_reply_fds: LazySymbol<
         unsafe fn(c: *mut xcb_connection_t, reply: *mut xcb_dri3_open_reply_t) -> *mut c_int,
@@ -476,7 +595,7 @@ pub(crate) struct XcbDri3Dri3 {
             c: *mut xcb_connection_t,
             cookie: xcb_dri3_buffer_from_pixmap_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dri3_buffer_from_pixmap_reply_t,
+        ) -> *mut xcb_dri3_buffer_from_pixmap_reply_t,
     >,
     xcb_dri3_buffer_from_pixmap_reply_fds: LazySymbol<
         unsafe fn(
@@ -521,7 +640,7 @@ pub(crate) struct XcbDri3Dri3 {
             c: *mut xcb_connection_t,
             cookie: xcb_dri3_fd_from_fence_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dri3_fd_from_fence_reply_t,
+        ) -> *mut xcb_dri3_fd_from_fence_reply_t,
     >,
     xcb_dri3_fd_from_fence_reply_fds: LazySymbol<
         unsafe fn(
@@ -565,7 +684,7 @@ pub(crate) struct XcbDri3Dri3 {
             c: *mut xcb_connection_t,
             cookie: xcb_dri3_get_supported_modifiers_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dri3_get_supported_modifiers_reply_t,
+        ) -> *mut xcb_dri3_get_supported_modifiers_reply_t,
     >,
     xcb_dri3_pixmap_from_buffers_checked: LazySymbol<
         unsafe fn(
@@ -651,7 +770,7 @@ pub(crate) struct XcbDri3Dri3 {
             c: *mut xcb_connection_t,
             cookie: xcb_dri3_buffers_from_pixmap_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_dri3_buffers_from_pixmap_reply_t,
+        ) -> *mut xcb_dri3_buffers_from_pixmap_reply_t,
     >,
     xcb_dri3_buffers_from_pixmap_reply_fds: LazySymbol<
         unsafe fn(
@@ -680,6 +799,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_dri3")]
 impl XcbDri3 {
+    /// The libxcb identifier of the `DRI3` extension.
+    #[inline]
     pub fn xcb_dri3_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_dri3_id) }
     }
@@ -690,14 +811,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_query_version_reply`]: Self::xcb_dri3_query_version_reply
+    #[inline]
     pub unsafe fn xcb_dri3_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -713,17 +834,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DRI3::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_query_version_reply`]: Self::xcb_dri3_query_version_reply
+    #[inline]
     pub unsafe fn xcb_dri3_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -739,26 +857,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dri3_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DRI3::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_dri3_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dri3_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dri3_query_version_reply_t {
+    ) -> *mut xcb_dri3_query_version_reply_t {
         sym!(self, xcb_dri3_query_version_reply)(c, cookie, e)
     }
 
@@ -768,14 +874,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_query_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::Open` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_open_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_open_reply`]: Self::xcb_dri3_open_reply
+    #[inline]
     pub unsafe fn xcb_dri3_open(
         &self,
         c: *mut xcb_connection_t,
@@ -791,17 +897,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_open)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DRI3::Open` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_open_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_open_reply`]: Self::xcb_dri3_open_reply
+    #[inline]
     pub unsafe fn xcb_dri3_open_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -817,26 +920,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_open_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dri3_open_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DRI3::Open` request.
+    #[inline]
     pub unsafe fn xcb_dri3_open_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dri3_open_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dri3_open_reply_t {
+    ) -> *mut xcb_dri3_open_reply_t {
         sym!(self, xcb_dri3_open_reply)(c, cookie, e)
     }
 
@@ -845,6 +936,9 @@ impl XcbDri3 {
     pub fn has_xcb_dri3_open_reply(&self) -> bool {
         has_sym!(self, xcb_dri3_open_reply)
     }
+
+    /// Retrieves the file descriptors from the reply to a `DRI3::Open` request.
+    #[inline]
     pub unsafe fn xcb_dri3_open_reply_fds(
         &self,
         c: *mut xcb_connection_t,
@@ -859,17 +953,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_open_reply_fds)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DRI3::PixmapFromBuffer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_dri3_pixmap_from_buffer_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -894,14 +985,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_pixmap_from_buffer_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::PixmapFromBuffer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_dri3_pixmap_from_buffer(
         &self,
         c: *mut xcb_connection_t,
@@ -926,14 +1011,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_pixmap_from_buffer)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::BufferFromPixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_buffer_from_pixmap_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_buffer_from_pixmap_reply`]: Self::xcb_dri3_buffer_from_pixmap_reply
+    #[inline]
     pub unsafe fn xcb_dri3_buffer_from_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -948,17 +1033,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffer_from_pixmap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DRI3::BufferFromPixmap` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_buffer_from_pixmap_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_buffer_from_pixmap_reply`]: Self::xcb_dri3_buffer_from_pixmap_reply
+    #[inline]
     pub unsafe fn xcb_dri3_buffer_from_pixmap_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -973,26 +1055,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffer_from_pixmap_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dri3_buffer_from_pixmap_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DRI3::BufferFromPixmap` request.
+    #[inline]
     pub unsafe fn xcb_dri3_buffer_from_pixmap_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dri3_buffer_from_pixmap_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dri3_buffer_from_pixmap_reply_t {
+    ) -> *mut xcb_dri3_buffer_from_pixmap_reply_t {
         sym!(self, xcb_dri3_buffer_from_pixmap_reply)(c, cookie, e)
     }
 
@@ -1001,6 +1071,9 @@ impl XcbDri3 {
     pub fn has_xcb_dri3_buffer_from_pixmap_reply(&self) -> bool {
         has_sym!(self, xcb_dri3_buffer_from_pixmap_reply)
     }
+
+    /// Retrieves the file descriptors from the reply to a `DRI3::BufferFromPixmap` request.
+    #[inline]
     pub unsafe fn xcb_dri3_buffer_from_pixmap_reply_fds(
         &self,
         c: *mut xcb_connection_t,
@@ -1015,17 +1088,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffer_from_pixmap_reply_fds)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DRI3::FenceFromFD` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_dri3_fence_from_fd_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1049,14 +1119,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_fence_from_fd_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::FenceFromFD` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_dri3_fence_from_fd(
         &self,
         c: *mut xcb_connection_t,
@@ -1074,14 +1138,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_fence_from_fd)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::FDFromFence` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_fd_from_fence_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_fd_from_fence_reply`]: Self::xcb_dri3_fd_from_fence_reply
+    #[inline]
     pub unsafe fn xcb_dri3_fd_from_fence(
         &self,
         c: *mut xcb_connection_t,
@@ -1097,17 +1161,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_fd_from_fence)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DRI3::FDFromFence` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_fd_from_fence_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_fd_from_fence_reply`]: Self::xcb_dri3_fd_from_fence_reply
+    #[inline]
     pub unsafe fn xcb_dri3_fd_from_fence_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1123,26 +1184,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_fd_from_fence_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dri3_fd_from_fence_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DRI3::FDFromFence` request.
+    #[inline]
     pub unsafe fn xcb_dri3_fd_from_fence_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dri3_fd_from_fence_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dri3_fd_from_fence_reply_t {
+    ) -> *mut xcb_dri3_fd_from_fence_reply_t {
         sym!(self, xcb_dri3_fd_from_fence_reply)(c, cookie, e)
     }
 
@@ -1151,6 +1200,9 @@ impl XcbDri3 {
     pub fn has_xcb_dri3_fd_from_fence_reply(&self) -> bool {
         has_sym!(self, xcb_dri3_fd_from_fence_reply)
     }
+
+    /// Retrieves the file descriptors from the reply to a `DRI3::FDFromFence` request.
+    #[inline]
     pub unsafe fn xcb_dri3_fd_from_fence_reply_fds(
         &self,
         c: *mut xcb_connection_t,
@@ -1165,6 +1217,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_fd_from_fence_reply_fds)
     }
 
+    /// Computes the size of a `xcb_dri3_get_supported_modifiers_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_dri3_get_supported_modifiers_sizeof)(_buffer)
     }
@@ -1175,14 +1229,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::GetSupportedModifiers` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_get_supported_modifiers_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_get_supported_modifiers_reply`]: Self::xcb_dri3_get_supported_modifiers_reply
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers(
         &self,
         c: *mut xcb_connection_t,
@@ -1199,17 +1253,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DRI3::GetSupportedModifiers` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_get_supported_modifiers_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_get_supported_modifiers_reply`]: Self::xcb_dri3_get_supported_modifiers_reply
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1226,6 +1277,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers_unchecked)
     }
 
+    /// Returns a pointer to the `window_modifiers` field of a `xcb_dri3_get_supported_modifiers_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_window_modifiers(
         &self,
         r: *const xcb_dri3_get_supported_modifiers_reply_t,
@@ -1239,6 +1292,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers_window_modifiers)
     }
 
+    /// Returns the number of elements of the `window_modifiers` field of a `xcb_dri3_get_supported_modifiers_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_window_modifiers_length(
         &self,
         r: *const xcb_dri3_get_supported_modifiers_reply_t,
@@ -1258,6 +1313,9 @@ impl XcbDri3 {
         )
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `window_modifiers` field of a `xcb_dri3_get_supported_modifiers_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_window_modifiers_end(
         &self,
         r: *const xcb_dri3_get_supported_modifiers_reply_t,
@@ -1271,6 +1329,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers_window_modifiers_end)
     }
 
+    /// Returns a pointer to the `screen_modifiers` field of a `xcb_dri3_get_supported_modifiers_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_screen_modifiers(
         &self,
         r: *const xcb_dri3_get_supported_modifiers_reply_t,
@@ -1284,6 +1344,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers_screen_modifiers)
     }
 
+    /// Returns the number of elements of the `screen_modifiers` field of a `xcb_dri3_get_supported_modifiers_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_screen_modifiers_length(
         &self,
         r: *const xcb_dri3_get_supported_modifiers_reply_t,
@@ -1303,6 +1365,9 @@ impl XcbDri3 {
         )
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `screen_modifiers` field of a `xcb_dri3_get_supported_modifiers_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_screen_modifiers_end(
         &self,
         r: *const xcb_dri3_get_supported_modifiers_reply_t,
@@ -1316,26 +1381,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers_screen_modifiers_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dri3_get_supported_modifiers_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DRI3::GetSupportedModifiers` request.
+    #[inline]
     pub unsafe fn xcb_dri3_get_supported_modifiers_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dri3_get_supported_modifiers_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dri3_get_supported_modifiers_reply_t {
+    ) -> *mut xcb_dri3_get_supported_modifiers_reply_t {
         sym!(self, xcb_dri3_get_supported_modifiers_reply)(c, cookie, e)
     }
 
@@ -1345,17 +1398,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_get_supported_modifiers_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DRI3::PixmapFromBuffers` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_dri3_pixmap_from_buffers_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1405,14 +1455,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_pixmap_from_buffers_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::PixmapFromBuffers` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_dri3_pixmap_from_buffers(
         &self,
         c: *mut xcb_connection_t,
@@ -1462,6 +1506,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_pixmap_from_buffers)
     }
 
+    /// Computes the size of a `xcb_dri3_buffers_from_pixmap_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_sizeof(
         &self,
         _buffer: *const c_void,
@@ -1476,14 +1522,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DRI3::BuffersFromPixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_buffers_from_pixmap_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_buffers_from_pixmap_reply`]: Self::xcb_dri3_buffers_from_pixmap_reply
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -1498,17 +1544,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `DRI3::BuffersFromPixmap` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_dri3_buffers_from_pixmap_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_dri3_buffers_from_pixmap_reply`]: Self::xcb_dri3_buffers_from_pixmap_reply
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1523,6 +1566,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_unchecked)
     }
 
+    /// Returns a pointer to the `strides` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_strides(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1536,6 +1581,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_strides)
     }
 
+    /// Returns the number of elements of the `strides` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_strides_length(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1549,6 +1596,9 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_strides_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `strides` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_strides_end(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1562,6 +1612,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_strides_end)
     }
 
+    /// Returns a pointer to the `offsets` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_offsets(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1575,6 +1627,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_offsets)
     }
 
+    /// Returns the number of elements of the `offsets` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_offsets_length(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1588,6 +1642,9 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_offsets_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `offsets` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_offsets_end(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1601,6 +1658,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_offsets_end)
     }
 
+    /// Returns a pointer to the `buffers` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_buffers(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1614,6 +1673,8 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_buffers)
     }
 
+    /// Returns the number of elements of the `buffers` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_buffers_length(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1627,6 +1688,9 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_buffers_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `buffers` field of a `xcb_dri3_buffers_from_pixmap_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_buffers_end(
         &self,
         r: *const xcb_dri3_buffers_from_pixmap_reply_t,
@@ -1640,26 +1704,14 @@ impl XcbDri3 {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_buffers_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_dri3_buffers_from_pixmap_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `DRI3::BuffersFromPixmap` request.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_dri3_buffers_from_pixmap_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_dri3_buffers_from_pixmap_reply_t {
+    ) -> *mut xcb_dri3_buffers_from_pixmap_reply_t {
         sym!(self, xcb_dri3_buffers_from_pixmap_reply)(c, cookie, e)
     }
 
@@ -1668,6 +1720,9 @@ impl XcbDri3 {
     pub fn has_xcb_dri3_buffers_from_pixmap_reply(&self) -> bool {
         has_sym!(self, xcb_dri3_buffers_from_pixmap_reply)
     }
+
+    /// Retrieves the file descriptors from the reply to a `DRI3::BuffersFromPixmap` request.
+    #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_reply_fds(
         &self,
         c: *mut xcb_connection_t,
@@ -1696,48 +1751,18 @@ mod test {
         assert!(lib.has_xcb_dri3_open());
         assert!(lib.has_xcb_dri3_open_unchecked());
         assert!(lib.has_xcb_dri3_open_reply());
-
-        /**
-         * Return the reply fds
-         * @param c      The connection
-         * @param reply  The reply
-         *
-         * Returns the array of reply fds of the request asked by
-         *
-         * The returned value must be freed by the caller using free().
-         */
         assert!(lib.has_xcb_dri3_open_reply_fds());
         assert!(lib.has_xcb_dri3_pixmap_from_buffer_checked());
         assert!(lib.has_xcb_dri3_pixmap_from_buffer());
         assert!(lib.has_xcb_dri3_buffer_from_pixmap());
         assert!(lib.has_xcb_dri3_buffer_from_pixmap_unchecked());
         assert!(lib.has_xcb_dri3_buffer_from_pixmap_reply());
-
-        /**
-         * Return the reply fds
-         * @param c      The connection
-         * @param reply  The reply
-         *
-         * Returns the array of reply fds of the request asked by
-         *
-         * The returned value must be freed by the caller using free().
-         */
         assert!(lib.has_xcb_dri3_buffer_from_pixmap_reply_fds());
         assert!(lib.has_xcb_dri3_fence_from_fd_checked());
         assert!(lib.has_xcb_dri3_fence_from_fd());
         assert!(lib.has_xcb_dri3_fd_from_fence());
         assert!(lib.has_xcb_dri3_fd_from_fence_unchecked());
         assert!(lib.has_xcb_dri3_fd_from_fence_reply());
-
-        /**
-         * Return the reply fds
-         * @param c      The connection
-         * @param reply  The reply
-         *
-         * Returns the array of reply fds of the request asked by
-         *
-         * The returned value must be freed by the caller using free().
-         */
         assert!(lib.has_xcb_dri3_fd_from_fence_reply_fds());
         assert!(lib.has_xcb_dri3_get_supported_modifiers_sizeof());
         assert!(lib.has_xcb_dri3_get_supported_modifiers());
@@ -1764,16 +1789,6 @@ mod test {
         assert!(lib.has_xcb_dri3_buffers_from_pixmap_buffers_length());
         assert!(lib.has_xcb_dri3_buffers_from_pixmap_buffers_end());
         assert!(lib.has_xcb_dri3_buffers_from_pixmap_reply());
-
-        /**
-         * Return the reply fds
-         * @param c      The connection
-         * @param reply  The reply
-         *
-         * Returns the array of reply fds of the request asked by
-         *
-         * The returned value must be freed by the caller using free().
-         */
         assert!(lib.has_xcb_dri3_buffers_from_pixmap_reply_fds());
     }
 }

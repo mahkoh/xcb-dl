@@ -1,4 +1,10 @@
-#![allow(non_camel_case_types, non_snake_case)]
+#![allow(
+    non_camel_case_types,
+    non_snake_case,
+    clippy::missing_safety_doc,
+    clippy::type_complexity,
+    clippy::too_many_arguments
+)]
 
 pub use libs::*;
 

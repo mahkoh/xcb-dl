@@ -1,10 +1,12 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `CHAR2B` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_char2b_t {
@@ -18,11 +20,15 @@ impl Default for xcb_char2b_t {
     }
 }
 
+/// An iterator over `CHAR2B` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_char2b_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_char2b_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -32,13 +38,18 @@ impl Default for xcb_char2b_iterator_t {
     }
 }
 
+/// The `WINDOW` type.
 pub type xcb_window_t = u32;
 
+/// An iterator over `WINDOW` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_window_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_window_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -48,13 +59,18 @@ impl Default for xcb_window_iterator_t {
     }
 }
 
+/// The `PIXMAP` type.
 pub type xcb_pixmap_t = u32;
 
+/// An iterator over `PIXMAP` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_pixmap_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_pixmap_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -64,13 +80,18 @@ impl Default for xcb_pixmap_iterator_t {
     }
 }
 
+/// The `CURSOR` type.
 pub type xcb_cursor_t = u32;
 
+/// An iterator over `CURSOR` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_cursor_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_cursor_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -80,13 +101,18 @@ impl Default for xcb_cursor_iterator_t {
     }
 }
 
+/// The `FONT` type.
 pub type xcb_font_t = u32;
 
+/// An iterator over `FONT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_font_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_font_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -96,13 +122,18 @@ impl Default for xcb_font_iterator_t {
     }
 }
 
+/// The `GCONTEXT` type.
 pub type xcb_gcontext_t = u32;
 
+/// An iterator over `GCONTEXT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_gcontext_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_gcontext_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -112,13 +143,18 @@ impl Default for xcb_gcontext_iterator_t {
     }
 }
 
+/// The `COLORMAP` type.
 pub type xcb_colormap_t = u32;
 
+/// An iterator over `COLORMAP` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_colormap_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_colormap_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -128,13 +164,18 @@ impl Default for xcb_colormap_iterator_t {
     }
 }
 
+/// The `ATOM` type.
 pub type xcb_atom_t = u32;
 
+/// An iterator over `ATOM` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_atom_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_atom_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -144,13 +185,18 @@ impl Default for xcb_atom_iterator_t {
     }
 }
 
+/// The `DRAWABLE` type.
 pub type xcb_drawable_t = u32;
 
+/// An iterator over `DRAWABLE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_drawable_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_drawable_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -160,13 +206,18 @@ impl Default for xcb_drawable_iterator_t {
     }
 }
 
+/// The `FONTABLE` type.
 pub type xcb_fontable_t = u32;
 
+/// An iterator over `FONTABLE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_fontable_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_fontable_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -176,13 +227,18 @@ impl Default for xcb_fontable_iterator_t {
     }
 }
 
+/// The `BOOL32` type.
 pub type xcb_bool32_t = u32;
 
+/// An iterator over `BOOL32` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_bool32_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_bool32_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -192,13 +248,18 @@ impl Default for xcb_bool32_iterator_t {
     }
 }
 
+/// The `VISUALID` type.
 pub type xcb_visualid_t = u32;
 
+/// An iterator over `VISUALID` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_visualid_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_visualid_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -208,13 +269,18 @@ impl Default for xcb_visualid_iterator_t {
     }
 }
 
+/// The `TIMESTAMP` type.
 pub type xcb_timestamp_t = u32;
 
+/// An iterator over `TIMESTAMP` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_timestamp_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_timestamp_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -224,13 +290,18 @@ impl Default for xcb_timestamp_iterator_t {
     }
 }
 
+/// The `KEYSYM` type.
 pub type xcb_keysym_t = u32;
 
+/// An iterator over `KEYSYM` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_keysym_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_keysym_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -240,13 +311,18 @@ impl Default for xcb_keysym_iterator_t {
     }
 }
 
+/// The `KEYCODE` type.
 pub type xcb_keycode_t = u8;
 
+/// An iterator over `KEYCODE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_keycode_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_keycode_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -256,13 +332,18 @@ impl Default for xcb_keycode_iterator_t {
     }
 }
 
+/// The `KEYCODE32` type.
 pub type xcb_keycode32_t = u32;
 
+/// An iterator over `KEYCODE32` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_keycode32_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_keycode32_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -272,13 +353,18 @@ impl Default for xcb_keycode32_iterator_t {
     }
 }
 
+/// The `BUTTON` type.
 pub type xcb_button_t = u8;
 
+/// An iterator over `BUTTON` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_button_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_button_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -288,6 +374,7 @@ impl Default for xcb_button_iterator_t {
     }
 }
 
+/// The `POINT` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_point_t {
@@ -301,11 +388,15 @@ impl Default for xcb_point_t {
     }
 }
 
+/// An iterator over `POINT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_point_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_point_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -315,6 +406,7 @@ impl Default for xcb_point_iterator_t {
     }
 }
 
+/// The `RECTANGLE` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_rectangle_t {
@@ -330,11 +422,15 @@ impl Default for xcb_rectangle_t {
     }
 }
 
+/// An iterator over `RECTANGLE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_rectangle_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_rectangle_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -344,6 +440,7 @@ impl Default for xcb_rectangle_iterator_t {
     }
 }
 
+/// The `ARC` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_arc_t {
@@ -361,11 +458,15 @@ impl Default for xcb_arc_t {
     }
 }
 
+/// An iterator over `ARC` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_arc_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_arc_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -375,6 +476,7 @@ impl Default for xcb_arc_iterator_t {
     }
 }
 
+/// The `FORMAT` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_format_t {
@@ -390,11 +492,15 @@ impl Default for xcb_format_t {
     }
 }
 
+/// An iterator over `FORMAT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_format_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_format_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -404,14 +510,43 @@ impl Default for xcb_format_iterator_t {
     }
 }
 
+/// The `VisualClass` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`VisualClass::StaticGray`](XCB_VISUAL_CLASS_STATIC_GRAY)
+/// - [`VisualClass::GrayScale`](XCB_VISUAL_CLASS_GRAY_SCALE)
+/// - [`VisualClass::StaticColor`](XCB_VISUAL_CLASS_STATIC_COLOR)
+/// - [`VisualClass::PseudoColor`](XCB_VISUAL_CLASS_PSEUDO_COLOR)
+/// - [`VisualClass::TrueColor`](XCB_VISUAL_CLASS_TRUE_COLOR)
+/// - [`VisualClass::DirectColor`](XCB_VISUAL_CLASS_DIRECT_COLOR)
 pub type xcb_visual_class_t = u32;
+/// The `VisualClass::StaticGray` enum variant.
+///
+/// This is a variant of [`xcb_visual_class_t`].
 pub const XCB_VISUAL_CLASS_STATIC_GRAY: xcb_visual_class_t = 0;
+/// The `VisualClass::GrayScale` enum variant.
+///
+/// This is a variant of [`xcb_visual_class_t`].
 pub const XCB_VISUAL_CLASS_GRAY_SCALE: xcb_visual_class_t = 1;
+/// The `VisualClass::StaticColor` enum variant.
+///
+/// This is a variant of [`xcb_visual_class_t`].
 pub const XCB_VISUAL_CLASS_STATIC_COLOR: xcb_visual_class_t = 2;
+/// The `VisualClass::PseudoColor` enum variant.
+///
+/// This is a variant of [`xcb_visual_class_t`].
 pub const XCB_VISUAL_CLASS_PSEUDO_COLOR: xcb_visual_class_t = 3;
+/// The `VisualClass::TrueColor` enum variant.
+///
+/// This is a variant of [`xcb_visual_class_t`].
 pub const XCB_VISUAL_CLASS_TRUE_COLOR: xcb_visual_class_t = 4;
+/// The `VisualClass::DirectColor` enum variant.
+///
+/// This is a variant of [`xcb_visual_class_t`].
 pub const XCB_VISUAL_CLASS_DIRECT_COLOR: xcb_visual_class_t = 5;
 
+/// The `VISUALTYPE` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_visualtype_t {
@@ -431,11 +566,15 @@ impl Default for xcb_visualtype_t {
     }
 }
 
+/// An iterator over `VISUALTYPE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_visualtype_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_visualtype_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -445,6 +584,11 @@ impl Default for xcb_visualtype_iterator_t {
     }
 }
 
+/// The `DEPTH` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `visuals`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_depth_t {
@@ -460,11 +604,15 @@ impl Default for xcb_depth_t {
     }
 }
 
+/// An iterator over `DEPTH` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_depth_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_depth_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -474,39 +622,168 @@ impl Default for xcb_depth_iterator_t {
     }
 }
 
+/// The `EventMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`EventMask::NoEvent`](XCB_EVENT_MASK_NO_EVENT)
+/// - [`EventMask::KeyPress`](XCB_EVENT_MASK_KEY_PRESS)
+/// - [`EventMask::KeyRelease`](XCB_EVENT_MASK_KEY_RELEASE)
+/// - [`EventMask::ButtonPress`](XCB_EVENT_MASK_BUTTON_PRESS)
+/// - [`EventMask::ButtonRelease`](XCB_EVENT_MASK_BUTTON_RELEASE)
+/// - [`EventMask::EnterWindow`](XCB_EVENT_MASK_ENTER_WINDOW)
+/// - [`EventMask::LeaveWindow`](XCB_EVENT_MASK_LEAVE_WINDOW)
+/// - [`EventMask::PointerMotion`](XCB_EVENT_MASK_POINTER_MOTION)
+/// - [`EventMask::PointerMotionHint`](XCB_EVENT_MASK_POINTER_MOTION_HINT)
+/// - [`EventMask::Button1Motion`](XCB_EVENT_MASK_BUTTON_1_MOTION)
+/// - [`EventMask::Button2Motion`](XCB_EVENT_MASK_BUTTON_2_MOTION)
+/// - [`EventMask::Button3Motion`](XCB_EVENT_MASK_BUTTON_3_MOTION)
+/// - [`EventMask::Button4Motion`](XCB_EVENT_MASK_BUTTON_4_MOTION)
+/// - [`EventMask::Button5Motion`](XCB_EVENT_MASK_BUTTON_5_MOTION)
+/// - [`EventMask::ButtonMotion`](XCB_EVENT_MASK_BUTTON_MOTION)
+/// - [`EventMask::KeymapState`](XCB_EVENT_MASK_KEYMAP_STATE)
+/// - [`EventMask::Exposure`](XCB_EVENT_MASK_EXPOSURE)
+/// - [`EventMask::VisibilityChange`](XCB_EVENT_MASK_VISIBILITY_CHANGE)
+/// - [`EventMask::StructureNotify`](XCB_EVENT_MASK_STRUCTURE_NOTIFY)
+/// - [`EventMask::ResizeRedirect`](XCB_EVENT_MASK_RESIZE_REDIRECT)
+/// - [`EventMask::SubstructureNotify`](XCB_EVENT_MASK_SUBSTRUCTURE_NOTIFY)
+/// - [`EventMask::SubstructureRedirect`](XCB_EVENT_MASK_SUBSTRUCTURE_REDIRECT)
+/// - [`EventMask::FocusChange`](XCB_EVENT_MASK_FOCUS_CHANGE)
+/// - [`EventMask::PropertyChange`](XCB_EVENT_MASK_PROPERTY_CHANGE)
+/// - [`EventMask::ColorMapChange`](XCB_EVENT_MASK_COLOR_MAP_CHANGE)
+/// - [`EventMask::OwnerGrabButton`](XCB_EVENT_MASK_OWNER_GRAB_BUTTON)
 pub type xcb_event_mask_t = u32;
+/// The `EventMask::NoEvent` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_NO_EVENT: xcb_event_mask_t = 0;
+/// The `EventMask::KeyPress` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_KEY_PRESS: xcb_event_mask_t = 1;
+/// The `EventMask::KeyRelease` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_KEY_RELEASE: xcb_event_mask_t = 2;
+/// The `EventMask::ButtonPress` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_PRESS: xcb_event_mask_t = 4;
+/// The `EventMask::ButtonRelease` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_RELEASE: xcb_event_mask_t = 8;
+/// The `EventMask::EnterWindow` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_ENTER_WINDOW: xcb_event_mask_t = 16;
+/// The `EventMask::LeaveWindow` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_LEAVE_WINDOW: xcb_event_mask_t = 32;
+/// The `EventMask::PointerMotion` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_POINTER_MOTION: xcb_event_mask_t = 64;
+/// The `EventMask::PointerMotionHint` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_POINTER_MOTION_HINT: xcb_event_mask_t = 128;
+/// The `EventMask::Button1Motion` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_1_MOTION: xcb_event_mask_t = 256;
+/// The `EventMask::Button2Motion` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_2_MOTION: xcb_event_mask_t = 512;
+/// The `EventMask::Button3Motion` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_3_MOTION: xcb_event_mask_t = 1024;
+/// The `EventMask::Button4Motion` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_4_MOTION: xcb_event_mask_t = 2048;
+/// The `EventMask::Button5Motion` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_5_MOTION: xcb_event_mask_t = 4096;
+/// The `EventMask::ButtonMotion` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_BUTTON_MOTION: xcb_event_mask_t = 8192;
+/// The `EventMask::KeymapState` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_KEYMAP_STATE: xcb_event_mask_t = 16384;
+/// The `EventMask::Exposure` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_EXPOSURE: xcb_event_mask_t = 32768;
+/// The `EventMask::VisibilityChange` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_VISIBILITY_CHANGE: xcb_event_mask_t = 65536;
+/// The `EventMask::StructureNotify` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_STRUCTURE_NOTIFY: xcb_event_mask_t = 131072;
+/// The `EventMask::ResizeRedirect` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_RESIZE_REDIRECT: xcb_event_mask_t = 262144;
+/// The `EventMask::SubstructureNotify` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_SUBSTRUCTURE_NOTIFY: xcb_event_mask_t = 524288;
+/// The `EventMask::SubstructureRedirect` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_SUBSTRUCTURE_REDIRECT: xcb_event_mask_t = 1048576;
+/// The `EventMask::FocusChange` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_FOCUS_CHANGE: xcb_event_mask_t = 2097152;
+/// The `EventMask::PropertyChange` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_PROPERTY_CHANGE: xcb_event_mask_t = 4194304;
+/// The `EventMask::ColorMapChange` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_COLOR_MAP_CHANGE: xcb_event_mask_t = 8388608;
+/// The `EventMask::OwnerGrabButton` enum variant.
+///
+/// This is a variant of [`xcb_event_mask_t`].
 pub const XCB_EVENT_MASK_OWNER_GRAB_BUTTON: xcb_event_mask_t = 16777216;
 
+/// The `BackingStore` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`BackingStore::NotUseful`](XCB_BACKING_STORE_NOT_USEFUL)
+/// - [`BackingStore::WhenMapped`](XCB_BACKING_STORE_WHEN_MAPPED)
+/// - [`BackingStore::Always`](XCB_BACKING_STORE_ALWAYS)
 pub type xcb_backing_store_t = u32;
+/// The `BackingStore::NotUseful` enum variant.
+///
+/// This is a variant of [`xcb_backing_store_t`].
 pub const XCB_BACKING_STORE_NOT_USEFUL: xcb_backing_store_t = 0;
+/// The `BackingStore::WhenMapped` enum variant.
+///
+/// This is a variant of [`xcb_backing_store_t`].
 pub const XCB_BACKING_STORE_WHEN_MAPPED: xcb_backing_store_t = 1;
+/// The `BackingStore::Always` enum variant.
+///
+/// This is a variant of [`xcb_backing_store_t`].
 pub const XCB_BACKING_STORE_ALWAYS: xcb_backing_store_t = 2;
 
+/// The `SCREEN` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `allowed_depths`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screen_t {
@@ -534,11 +811,15 @@ impl Default for xcb_screen_t {
     }
 }
 
+/// An iterator over `SCREEN` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_screen_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_screen_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -548,6 +829,12 @@ impl Default for xcb_screen_iterator_t {
     }
 }
 
+/// The `SetupRequest` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `authorization_protocol_name`
+/// - `authorization_protocol_data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_request_t {
@@ -566,11 +853,15 @@ impl Default for xcb_setup_request_t {
     }
 }
 
+/// An iterator over `SetupRequest` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_request_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_setup_request_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -580,6 +871,11 @@ impl Default for xcb_setup_request_iterator_t {
     }
 }
 
+/// The `SetupFailed` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `reason`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_failed_t {
@@ -596,11 +892,15 @@ impl Default for xcb_setup_failed_t {
     }
 }
 
+/// An iterator over `SetupFailed` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_failed_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_setup_failed_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -610,6 +910,11 @@ impl Default for xcb_setup_failed_iterator_t {
     }
 }
 
+/// The `SetupAuthenticate` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `reason`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_authenticate_t {
@@ -624,11 +929,15 @@ impl Default for xcb_setup_authenticate_t {
     }
 }
 
+/// An iterator over `SetupAuthenticate` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_authenticate_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_setup_authenticate_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -638,10 +947,29 @@ impl Default for xcb_setup_authenticate_iterator_t {
     }
 }
 
+/// The `ImageOrder` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ImageOrder::LSBFirst`](XCB_IMAGE_ORDER_LSB_FIRST)
+/// - [`ImageOrder::MSBFirst`](XCB_IMAGE_ORDER_MSB_FIRST)
 pub type xcb_image_order_t = u32;
+/// The `ImageOrder::LSBFirst` enum variant.
+///
+/// This is a variant of [`xcb_image_order_t`].
 pub const XCB_IMAGE_ORDER_LSB_FIRST: xcb_image_order_t = 0;
+/// The `ImageOrder::MSBFirst` enum variant.
+///
+/// This is a variant of [`xcb_image_order_t`].
 pub const XCB_IMAGE_ORDER_MSB_FIRST: xcb_image_order_t = 1;
 
+/// The `Setup` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `vendor`
+/// - `pixmap_formats`
+/// - `roots`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_t {
@@ -673,11 +1001,15 @@ impl Default for xcb_setup_t {
     }
 }
 
+/// An iterator over `Setup` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_setup_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_setup_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -687,38 +1019,146 @@ impl Default for xcb_setup_iterator_t {
     }
 }
 
+/// The `ModMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ModMask::Shift`](XCB_MOD_MASK_SHIFT)
+/// - [`ModMask::Lock`](XCB_MOD_MASK_LOCK)
+/// - [`ModMask::Control`](XCB_MOD_MASK_CONTROL)
+/// - [`ModMask::1`](XCB_MOD_MASK_1)
+/// - [`ModMask::2`](XCB_MOD_MASK_2)
+/// - [`ModMask::3`](XCB_MOD_MASK_3)
+/// - [`ModMask::4`](XCB_MOD_MASK_4)
+/// - [`ModMask::5`](XCB_MOD_MASK_5)
+/// - [`ModMask::Any`](XCB_MOD_MASK_ANY)
 pub type xcb_mod_mask_t = u32;
+/// The `ModMask::Shift` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_SHIFT: xcb_mod_mask_t = 1;
+/// The `ModMask::Lock` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_LOCK: xcb_mod_mask_t = 2;
+/// The `ModMask::Control` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_CONTROL: xcb_mod_mask_t = 4;
+/// The `ModMask::1` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_1: xcb_mod_mask_t = 8;
+/// The `ModMask::2` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_2: xcb_mod_mask_t = 16;
+/// The `ModMask::3` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_3: xcb_mod_mask_t = 32;
+/// The `ModMask::4` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_4: xcb_mod_mask_t = 64;
+/// The `ModMask::5` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_5: xcb_mod_mask_t = 128;
+/// The `ModMask::Any` enum variant.
+///
+/// This is a variant of [`xcb_mod_mask_t`].
 pub const XCB_MOD_MASK_ANY: xcb_mod_mask_t = 32768;
 
+/// The `KeyButMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`KeyButMask::Shift`](XCB_KEY_BUT_MASK_SHIFT)
+/// - [`KeyButMask::Lock`](XCB_KEY_BUT_MASK_LOCK)
+/// - [`KeyButMask::Control`](XCB_KEY_BUT_MASK_CONTROL)
+/// - [`KeyButMask::Mod1`](XCB_KEY_BUT_MASK_MOD_1)
+/// - [`KeyButMask::Mod2`](XCB_KEY_BUT_MASK_MOD_2)
+/// - [`KeyButMask::Mod3`](XCB_KEY_BUT_MASK_MOD_3)
+/// - [`KeyButMask::Mod4`](XCB_KEY_BUT_MASK_MOD_4)
+/// - [`KeyButMask::Mod5`](XCB_KEY_BUT_MASK_MOD_5)
+/// - [`KeyButMask::Button1`](XCB_KEY_BUT_MASK_BUTTON_1)
+/// - [`KeyButMask::Button2`](XCB_KEY_BUT_MASK_BUTTON_2)
+/// - [`KeyButMask::Button3`](XCB_KEY_BUT_MASK_BUTTON_3)
+/// - [`KeyButMask::Button4`](XCB_KEY_BUT_MASK_BUTTON_4)
+/// - [`KeyButMask::Button5`](XCB_KEY_BUT_MASK_BUTTON_5)
 pub type xcb_key_but_mask_t = u32;
+/// The `KeyButMask::Shift` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_SHIFT: xcb_key_but_mask_t = 1;
+/// The `KeyButMask::Lock` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_LOCK: xcb_key_but_mask_t = 2;
+/// The `KeyButMask::Control` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_CONTROL: xcb_key_but_mask_t = 4;
+/// The `KeyButMask::Mod1` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_MOD_1: xcb_key_but_mask_t = 8;
+/// The `KeyButMask::Mod2` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_MOD_2: xcb_key_but_mask_t = 16;
+/// The `KeyButMask::Mod3` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_MOD_3: xcb_key_but_mask_t = 32;
+/// The `KeyButMask::Mod4` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_MOD_4: xcb_key_but_mask_t = 64;
+/// The `KeyButMask::Mod5` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_MOD_5: xcb_key_but_mask_t = 128;
+/// The `KeyButMask::Button1` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_BUTTON_1: xcb_key_but_mask_t = 256;
+/// The `KeyButMask::Button2` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_BUTTON_2: xcb_key_but_mask_t = 512;
+/// The `KeyButMask::Button3` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_BUTTON_3: xcb_key_but_mask_t = 1024;
+/// The `KeyButMask::Button4` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_BUTTON_4: xcb_key_but_mask_t = 2048;
+/// The `KeyButMask::Button5` enum variant.
+///
+/// This is a variant of [`xcb_key_but_mask_t`].
 pub const XCB_KEY_BUT_MASK_BUTTON_5: xcb_key_but_mask_t = 4096;
 
+/// The `Window` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Window::None`](XCB_WINDOW_NONE)
 pub type xcb_window_enum_t = u32;
+/// The `Window::None` enum variant.
+///
+/// This is a variant of [`xcb_window_enum_t`].
 pub const XCB_WINDOW_NONE: xcb_window_enum_t = 0;
 
-/// Opcode for xcb_key_press.
+/// The opcode for `KeyPress` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_key_press_event_t`].
 pub const XCB_KEY_PRESS: u8 = 2i32 as u8;
 
+/// The `KeyPress` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_key_press_event_t {
@@ -744,22 +1184,58 @@ impl Default for xcb_key_press_event_t {
     }
 }
 
-/// Opcode for xcb_key_release.
+/// The opcode for `KeyRelease` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_key_release_event_t`].
 pub const XCB_KEY_RELEASE: u8 = 3i32 as u8;
 
+/// The `KeyRelease` event.
 pub type xcb_key_release_event_t = xcb_key_press_event_t;
 
+/// The `ButtonMask` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ButtonMask::1`](XCB_BUTTON_MASK_1)
+/// - [`ButtonMask::2`](XCB_BUTTON_MASK_2)
+/// - [`ButtonMask::3`](XCB_BUTTON_MASK_3)
+/// - [`ButtonMask::4`](XCB_BUTTON_MASK_4)
+/// - [`ButtonMask::5`](XCB_BUTTON_MASK_5)
+/// - [`ButtonMask::Any`](XCB_BUTTON_MASK_ANY)
 pub type xcb_button_mask_t = u32;
+/// The `ButtonMask::1` enum variant.
+///
+/// This is a variant of [`xcb_button_mask_t`].
 pub const XCB_BUTTON_MASK_1: xcb_button_mask_t = 256;
+/// The `ButtonMask::2` enum variant.
+///
+/// This is a variant of [`xcb_button_mask_t`].
 pub const XCB_BUTTON_MASK_2: xcb_button_mask_t = 512;
+/// The `ButtonMask::3` enum variant.
+///
+/// This is a variant of [`xcb_button_mask_t`].
 pub const XCB_BUTTON_MASK_3: xcb_button_mask_t = 1024;
+/// The `ButtonMask::4` enum variant.
+///
+/// This is a variant of [`xcb_button_mask_t`].
 pub const XCB_BUTTON_MASK_4: xcb_button_mask_t = 2048;
+/// The `ButtonMask::5` enum variant.
+///
+/// This is a variant of [`xcb_button_mask_t`].
 pub const XCB_BUTTON_MASK_5: xcb_button_mask_t = 4096;
+/// The `ButtonMask::Any` enum variant.
+///
+/// This is a variant of [`xcb_button_mask_t`].
 pub const XCB_BUTTON_MASK_ANY: xcb_button_mask_t = 32768;
 
-/// Opcode for xcb_button_press.
+/// The opcode for `ButtonPress` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_button_press_event_t`].
 pub const XCB_BUTTON_PRESS: u8 = 4i32 as u8;
 
+/// The `ButtonPress` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_button_press_event_t {
@@ -785,18 +1261,38 @@ impl Default for xcb_button_press_event_t {
     }
 }
 
-/// Opcode for xcb_button_release.
+/// The opcode for `ButtonRelease` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_button_release_event_t`].
 pub const XCB_BUTTON_RELEASE: u8 = 5i32 as u8;
 
+/// The `ButtonRelease` event.
 pub type xcb_button_release_event_t = xcb_button_press_event_t;
 
+/// The `Motion` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Motion::Normal`](XCB_MOTION_NORMAL)
+/// - [`Motion::Hint`](XCB_MOTION_HINT)
 pub type xcb_motion_t = u32;
+/// The `Motion::Normal` enum variant.
+///
+/// This is a variant of [`xcb_motion_t`].
 pub const XCB_MOTION_NORMAL: xcb_motion_t = 0;
+/// The `Motion::Hint` enum variant.
+///
+/// This is a variant of [`xcb_motion_t`].
 pub const XCB_MOTION_HINT: xcb_motion_t = 1;
 
-/// Opcode for xcb_motion_notify.
+/// The opcode for `MotionNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_motion_notify_event_t`].
 pub const XCB_MOTION_NOTIFY: u8 = 6i32 as u8;
 
+/// The `MotionNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_motion_notify_event_t {
@@ -822,25 +1318,85 @@ impl Default for xcb_motion_notify_event_t {
     }
 }
 
+/// The `NotifyDetail` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`NotifyDetail::Ancestor`](XCB_NOTIFY_DETAIL_ANCESTOR)
+/// - [`NotifyDetail::Virtual`](XCB_NOTIFY_DETAIL_VIRTUAL)
+/// - [`NotifyDetail::Inferior`](XCB_NOTIFY_DETAIL_INFERIOR)
+/// - [`NotifyDetail::Nonlinear`](XCB_NOTIFY_DETAIL_NONLINEAR)
+/// - [`NotifyDetail::NonlinearVirtual`](XCB_NOTIFY_DETAIL_NONLINEAR_VIRTUAL)
+/// - [`NotifyDetail::Pointer`](XCB_NOTIFY_DETAIL_POINTER)
+/// - [`NotifyDetail::PointerRoot`](XCB_NOTIFY_DETAIL_POINTER_ROOT)
+/// - [`NotifyDetail::None`](XCB_NOTIFY_DETAIL_NONE)
 pub type xcb_notify_detail_t = u32;
+/// The `NotifyDetail::Ancestor` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_ANCESTOR: xcb_notify_detail_t = 0;
+/// The `NotifyDetail::Virtual` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_VIRTUAL: xcb_notify_detail_t = 1;
+/// The `NotifyDetail::Inferior` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_INFERIOR: xcb_notify_detail_t = 2;
+/// The `NotifyDetail::Nonlinear` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_NONLINEAR: xcb_notify_detail_t = 3;
+/// The `NotifyDetail::NonlinearVirtual` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_NONLINEAR_VIRTUAL: xcb_notify_detail_t = 4;
+/// The `NotifyDetail::Pointer` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_POINTER: xcb_notify_detail_t = 5;
+/// The `NotifyDetail::PointerRoot` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_POINTER_ROOT: xcb_notify_detail_t = 6;
+/// The `NotifyDetail::None` enum variant.
+///
+/// This is a variant of [`xcb_notify_detail_t`].
 pub const XCB_NOTIFY_DETAIL_NONE: xcb_notify_detail_t = 7;
 
+/// The `NotifyMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`NotifyMode::Normal`](XCB_NOTIFY_MODE_NORMAL)
+/// - [`NotifyMode::Grab`](XCB_NOTIFY_MODE_GRAB)
+/// - [`NotifyMode::Ungrab`](XCB_NOTIFY_MODE_UNGRAB)
+/// - [`NotifyMode::WhileGrabbed`](XCB_NOTIFY_MODE_WHILE_GRABBED)
 pub type xcb_notify_mode_t = u32;
+/// The `NotifyMode::Normal` enum variant.
+///
+/// This is a variant of [`xcb_notify_mode_t`].
 pub const XCB_NOTIFY_MODE_NORMAL: xcb_notify_mode_t = 0;
+/// The `NotifyMode::Grab` enum variant.
+///
+/// This is a variant of [`xcb_notify_mode_t`].
 pub const XCB_NOTIFY_MODE_GRAB: xcb_notify_mode_t = 1;
+/// The `NotifyMode::Ungrab` enum variant.
+///
+/// This is a variant of [`xcb_notify_mode_t`].
 pub const XCB_NOTIFY_MODE_UNGRAB: xcb_notify_mode_t = 2;
+/// The `NotifyMode::WhileGrabbed` enum variant.
+///
+/// This is a variant of [`xcb_notify_mode_t`].
 pub const XCB_NOTIFY_MODE_WHILE_GRABBED: xcb_notify_mode_t = 3;
 
-/// Opcode for xcb_enter_notify.
+/// The opcode for `EnterNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_enter_notify_event_t`].
 pub const XCB_ENTER_NOTIFY: u8 = 7i32 as u8;
 
+/// The `EnterNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_enter_notify_event_t {
@@ -866,14 +1422,22 @@ impl Default for xcb_enter_notify_event_t {
     }
 }
 
-/// Opcode for xcb_leave_notify.
+/// The opcode for `LeaveNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_leave_notify_event_t`].
 pub const XCB_LEAVE_NOTIFY: u8 = 8i32 as u8;
 
+/// The `LeaveNotify` event.
 pub type xcb_leave_notify_event_t = xcb_enter_notify_event_t;
 
-/// Opcode for xcb_focus_in.
+/// The opcode for `FocusIn` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_focus_in_event_t`].
 pub const XCB_FOCUS_IN: u8 = 9i32 as u8;
 
+/// The `FocusIn` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_focus_in_event_t {
@@ -891,14 +1455,22 @@ impl Default for xcb_focus_in_event_t {
     }
 }
 
-/// Opcode for xcb_focus_out.
+/// The opcode for `FocusOut` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_focus_out_event_t`].
 pub const XCB_FOCUS_OUT: u8 = 10i32 as u8;
 
+/// The `FocusOut` event.
 pub type xcb_focus_out_event_t = xcb_focus_in_event_t;
 
-/// Opcode for xcb_keymap_notify.
+/// The opcode for `KeymapNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_keymap_notify_event_t`].
 pub const XCB_KEYMAP_NOTIFY: u8 = 11i32 as u8;
 
+/// The `KeymapNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_keymap_notify_event_t {
@@ -912,9 +1484,13 @@ impl Default for xcb_keymap_notify_event_t {
     }
 }
 
-/// Opcode for xcb_expose.
+/// The opcode for `Expose` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_expose_event_t`].
 pub const XCB_EXPOSE: u8 = 12i32 as u8;
 
+/// The `Expose` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_expose_event_t {
@@ -936,9 +1512,13 @@ impl Default for xcb_expose_event_t {
     }
 }
 
-/// Opcode for xcb_graphics_exposure.
+/// The opcode for `GraphicsExposure` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_graphics_exposure_event_t`].
 pub const XCB_GRAPHICS_EXPOSURE: u8 = 13i32 as u8;
 
+/// The `GraphicsExposure` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_graphics_exposure_event_t {
@@ -962,9 +1542,13 @@ impl Default for xcb_graphics_exposure_event_t {
     }
 }
 
-/// Opcode for xcb_no_exposure.
+/// The opcode for `NoExposure` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_no_exposure_event_t`].
 pub const XCB_NO_EXPOSURE: u8 = 14i32 as u8;
 
+/// The `NoExposure` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_no_exposure_event_t {
@@ -983,14 +1567,34 @@ impl Default for xcb_no_exposure_event_t {
     }
 }
 
+/// The `Visibility` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Visibility::Unobscured`](XCB_VISIBILITY_UNOBSCURED)
+/// - [`Visibility::PartiallyObscured`](XCB_VISIBILITY_PARTIALLY_OBSCURED)
+/// - [`Visibility::FullyObscured`](XCB_VISIBILITY_FULLY_OBSCURED)
 pub type xcb_visibility_t = u32;
+/// The `Visibility::Unobscured` enum variant.
+///
+/// This is a variant of [`xcb_visibility_t`].
 pub const XCB_VISIBILITY_UNOBSCURED: xcb_visibility_t = 0;
+/// The `Visibility::PartiallyObscured` enum variant.
+///
+/// This is a variant of [`xcb_visibility_t`].
 pub const XCB_VISIBILITY_PARTIALLY_OBSCURED: xcb_visibility_t = 1;
+/// The `Visibility::FullyObscured` enum variant.
+///
+/// This is a variant of [`xcb_visibility_t`].
 pub const XCB_VISIBILITY_FULLY_OBSCURED: xcb_visibility_t = 2;
 
-/// Opcode for xcb_visibility_notify.
+/// The opcode for `VisibilityNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_visibility_notify_event_t`].
 pub const XCB_VISIBILITY_NOTIFY: u8 = 15i32 as u8;
 
+/// The `VisibilityNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_visibility_notify_event_t {
@@ -1008,9 +1612,13 @@ impl Default for xcb_visibility_notify_event_t {
     }
 }
 
-/// Opcode for xcb_create_notify.
+/// The opcode for `CreateNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_create_notify_event_t`].
 pub const XCB_CREATE_NOTIFY: u8 = 16i32 as u8;
 
+/// The `CreateNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_notify_event_t {
@@ -1034,9 +1642,13 @@ impl Default for xcb_create_notify_event_t {
     }
 }
 
-/// Opcode for xcb_destroy_notify.
+/// The opcode for `DestroyNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_destroy_notify_event_t`].
 pub const XCB_DESTROY_NOTIFY: u8 = 17i32 as u8;
 
+/// The `DestroyNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_destroy_notify_event_t {
@@ -1053,9 +1665,13 @@ impl Default for xcb_destroy_notify_event_t {
     }
 }
 
-/// Opcode for xcb_unmap_notify.
+/// The opcode for `UnmapNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_unmap_notify_event_t`].
 pub const XCB_UNMAP_NOTIFY: u8 = 18i32 as u8;
 
+/// The `UnmapNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_unmap_notify_event_t {
@@ -1074,9 +1690,13 @@ impl Default for xcb_unmap_notify_event_t {
     }
 }
 
-/// Opcode for xcb_map_notify.
+/// The opcode for `MapNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_map_notify_event_t`].
 pub const XCB_MAP_NOTIFY: u8 = 19i32 as u8;
 
+/// The `MapNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_map_notify_event_t {
@@ -1095,9 +1715,13 @@ impl Default for xcb_map_notify_event_t {
     }
 }
 
-/// Opcode for xcb_map_request.
+/// The opcode for `MapRequest` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_map_request_event_t`].
 pub const XCB_MAP_REQUEST: u8 = 20i32 as u8;
 
+/// The `MapRequest` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_map_request_event_t {
@@ -1114,9 +1738,13 @@ impl Default for xcb_map_request_event_t {
     }
 }
 
-/// Opcode for xcb_reparent_notify.
+/// The opcode for `ReparentNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_reparent_notify_event_t`].
 pub const XCB_REPARENT_NOTIFY: u8 = 21i32 as u8;
 
+/// The `ReparentNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_reparent_notify_event_t {
@@ -1138,9 +1766,13 @@ impl Default for xcb_reparent_notify_event_t {
     }
 }
 
-/// Opcode for xcb_configure_notify.
+/// The opcode for `ConfigureNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_configure_notify_event_t`].
 pub const XCB_CONFIGURE_NOTIFY: u8 = 22i32 as u8;
 
+/// The `ConfigureNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_configure_notify_event_t {
@@ -1165,9 +1797,13 @@ impl Default for xcb_configure_notify_event_t {
     }
 }
 
-/// Opcode for xcb_configure_request.
+/// The opcode for `ConfigureRequest` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_configure_request_event_t`].
 pub const XCB_CONFIGURE_REQUEST: u8 = 23i32 as u8;
 
+/// The `ConfigureRequest` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_configure_request_event_t {
@@ -1191,9 +1827,13 @@ impl Default for xcb_configure_request_event_t {
     }
 }
 
-/// Opcode for xcb_gravity_notify.
+/// The opcode for `GravityNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_gravity_notify_event_t`].
 pub const XCB_GRAVITY_NOTIFY: u8 = 24i32 as u8;
 
+/// The `GravityNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_gravity_notify_event_t {
@@ -1212,9 +1852,13 @@ impl Default for xcb_gravity_notify_event_t {
     }
 }
 
-/// Opcode for xcb_resize_request.
+/// The opcode for `ResizeRequest` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_resize_request_event_t`].
 pub const XCB_RESIZE_REQUEST: u8 = 25i32 as u8;
 
+/// The `ResizeRequest` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_resize_request_event_t {
@@ -1232,15 +1876,29 @@ impl Default for xcb_resize_request_event_t {
     }
 }
 
+/// The `Place` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Place::OnTop`](XCB_PLACE_ON_TOP)
+/// - [`Place::OnBottom`](XCB_PLACE_ON_BOTTOM)
 pub type xcb_place_t = u32;
-/// The window is now on top of all siblings.
+/// The `Place::OnTop` enum variant.
+///
+/// This is a variant of [`xcb_place_t`].
 pub const XCB_PLACE_ON_TOP: xcb_place_t = 0;
-/// The window is now below all siblings.
+/// The `Place::OnBottom` enum variant.
+///
+/// This is a variant of [`xcb_place_t`].
 pub const XCB_PLACE_ON_BOTTOM: xcb_place_t = 1;
 
-/// Opcode for xcb_circulate_notify.
+/// The opcode for `CirculateNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_circulate_notify_event_t`].
 pub const XCB_CIRCULATE_NOTIFY: u8 = 26i32 as u8;
 
+/// The `CirculateNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_circulate_notify_event_t {
@@ -1260,18 +1918,38 @@ impl Default for xcb_circulate_notify_event_t {
     }
 }
 
-/// Opcode for xcb_circulate_request.
+/// The opcode for `CirculateRequest` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_circulate_request_event_t`].
 pub const XCB_CIRCULATE_REQUEST: u8 = 27i32 as u8;
 
+/// The `CirculateRequest` event.
 pub type xcb_circulate_request_event_t = xcb_circulate_notify_event_t;
 
+/// The `Property` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Property::NewValue`](XCB_PROPERTY_NEW_VALUE)
+/// - [`Property::Delete`](XCB_PROPERTY_DELETE)
 pub type xcb_property_t = u32;
+/// The `Property::NewValue` enum variant.
+///
+/// This is a variant of [`xcb_property_t`].
 pub const XCB_PROPERTY_NEW_VALUE: xcb_property_t = 0;
+/// The `Property::Delete` enum variant.
+///
+/// This is a variant of [`xcb_property_t`].
 pub const XCB_PROPERTY_DELETE: xcb_property_t = 1;
 
-/// Opcode for xcb_property_notify.
+/// The opcode for `PropertyNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_property_notify_event_t`].
 pub const XCB_PROPERTY_NOTIFY: u8 = 28i32 as u8;
 
+/// The `PropertyNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_property_notify_event_t {
@@ -1291,9 +1969,13 @@ impl Default for xcb_property_notify_event_t {
     }
 }
 
-/// Opcode for xcb_selection_clear.
+/// The opcode for `SelectionClear` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_selection_clear_event_t`].
 pub const XCB_SELECTION_CLEAR: u8 = 29i32 as u8;
 
+/// The `SelectionClear` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_selection_clear_event_t {
@@ -1311,84 +1993,380 @@ impl Default for xcb_selection_clear_event_t {
     }
 }
 
+/// The `Time` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Time::CurrentTime`](XCB_TIME_CURRENT_TIME)
 pub type xcb_time_t = u32;
+/// The `Time::CurrentTime` enum variant.
+///
+/// This is a variant of [`xcb_time_t`].
 pub const XCB_TIME_CURRENT_TIME: xcb_time_t = 0;
 
+/// The `Atom` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Atom::None`](XCB_ATOM_NONE)
+/// - [`Atom::Any`](XCB_ATOM_ANY)
+/// - [`Atom::PRIMARY`](XCB_ATOM_PRIMARY)
+/// - [`Atom::SECONDARY`](XCB_ATOM_SECONDARY)
+/// - [`Atom::ARC`](XCB_ATOM_ARC)
+/// - [`Atom::ATOM`](XCB_ATOM_ATOM)
+/// - [`Atom::BITMAP`](XCB_ATOM_BITMAP)
+/// - [`Atom::CARDINAL`](XCB_ATOM_CARDINAL)
+/// - [`Atom::COLORMAP`](XCB_ATOM_COLORMAP)
+/// - [`Atom::CURSOR`](XCB_ATOM_CURSOR)
+/// - [`Atom::CUT_BUFFER0`](XCB_ATOM_CUT_BUFFER0)
+/// - [`Atom::CUT_BUFFER1`](XCB_ATOM_CUT_BUFFER1)
+/// - [`Atom::CUT_BUFFER2`](XCB_ATOM_CUT_BUFFER2)
+/// - [`Atom::CUT_BUFFER3`](XCB_ATOM_CUT_BUFFER3)
+/// - [`Atom::CUT_BUFFER4`](XCB_ATOM_CUT_BUFFER4)
+/// - [`Atom::CUT_BUFFER5`](XCB_ATOM_CUT_BUFFER5)
+/// - [`Atom::CUT_BUFFER6`](XCB_ATOM_CUT_BUFFER6)
+/// - [`Atom::CUT_BUFFER7`](XCB_ATOM_CUT_BUFFER7)
+/// - [`Atom::DRAWABLE`](XCB_ATOM_DRAWABLE)
+/// - [`Atom::FONT`](XCB_ATOM_FONT)
+/// - [`Atom::INTEGER`](XCB_ATOM_INTEGER)
+/// - [`Atom::PIXMAP`](XCB_ATOM_PIXMAP)
+/// - [`Atom::POINT`](XCB_ATOM_POINT)
+/// - [`Atom::RECTANGLE`](XCB_ATOM_RECTANGLE)
+/// - [`Atom::RESOURCE_MANAGER`](XCB_ATOM_RESOURCE_MANAGER)
+/// - [`Atom::RGB_COLOR_MAP`](XCB_ATOM_RGB_COLOR_MAP)
+/// - [`Atom::RGB_BEST_MAP`](XCB_ATOM_RGB_BEST_MAP)
+/// - [`Atom::RGB_BLUE_MAP`](XCB_ATOM_RGB_BLUE_MAP)
+/// - [`Atom::RGB_DEFAULT_MAP`](XCB_ATOM_RGB_DEFAULT_MAP)
+/// - [`Atom::RGB_GRAY_MAP`](XCB_ATOM_RGB_GRAY_MAP)
+/// - [`Atom::RGB_GREEN_MAP`](XCB_ATOM_RGB_GREEN_MAP)
+/// - [`Atom::RGB_RED_MAP`](XCB_ATOM_RGB_RED_MAP)
+/// - [`Atom::STRING`](XCB_ATOM_STRING)
+/// - [`Atom::VISUALID`](XCB_ATOM_VISUALID)
+/// - [`Atom::WINDOW`](XCB_ATOM_WINDOW)
+/// - [`Atom::WM_COMMAND`](XCB_ATOM_WM_COMMAND)
+/// - [`Atom::WM_HINTS`](XCB_ATOM_WM_HINTS)
+/// - [`Atom::WM_CLIENT_MACHINE`](XCB_ATOM_WM_CLIENT_MACHINE)
+/// - [`Atom::WM_ICON_NAME`](XCB_ATOM_WM_ICON_NAME)
+/// - [`Atom::WM_ICON_SIZE`](XCB_ATOM_WM_ICON_SIZE)
+/// - [`Atom::WM_NAME`](XCB_ATOM_WM_NAME)
+/// - [`Atom::WM_NORMAL_HINTS`](XCB_ATOM_WM_NORMAL_HINTS)
+/// - [`Atom::WM_SIZE_HINTS`](XCB_ATOM_WM_SIZE_HINTS)
+/// - [`Atom::WM_ZOOM_HINTS`](XCB_ATOM_WM_ZOOM_HINTS)
+/// - [`Atom::MIN_SPACE`](XCB_ATOM_MIN_SPACE)
+/// - [`Atom::NORM_SPACE`](XCB_ATOM_NORM_SPACE)
+/// - [`Atom::MAX_SPACE`](XCB_ATOM_MAX_SPACE)
+/// - [`Atom::END_SPACE`](XCB_ATOM_END_SPACE)
+/// - [`Atom::SUPERSCRIPT_X`](XCB_ATOM_SUPERSCRIPT_X)
+/// - [`Atom::SUPERSCRIPT_Y`](XCB_ATOM_SUPERSCRIPT_Y)
+/// - [`Atom::SUBSCRIPT_X`](XCB_ATOM_SUBSCRIPT_X)
+/// - [`Atom::SUBSCRIPT_Y`](XCB_ATOM_SUBSCRIPT_Y)
+/// - [`Atom::UNDERLINE_POSITION`](XCB_ATOM_UNDERLINE_POSITION)
+/// - [`Atom::UNDERLINE_THICKNESS`](XCB_ATOM_UNDERLINE_THICKNESS)
+/// - [`Atom::STRIKEOUT_ASCENT`](XCB_ATOM_STRIKEOUT_ASCENT)
+/// - [`Atom::STRIKEOUT_DESCENT`](XCB_ATOM_STRIKEOUT_DESCENT)
+/// - [`Atom::ITALIC_ANGLE`](XCB_ATOM_ITALIC_ANGLE)
+/// - [`Atom::X_HEIGHT`](XCB_ATOM_X_HEIGHT)
+/// - [`Atom::QUAD_WIDTH`](XCB_ATOM_QUAD_WIDTH)
+/// - [`Atom::WEIGHT`](XCB_ATOM_WEIGHT)
+/// - [`Atom::POINT_SIZE`](XCB_ATOM_POINT_SIZE)
+/// - [`Atom::RESOLUTION`](XCB_ATOM_RESOLUTION)
+/// - [`Atom::COPYRIGHT`](XCB_ATOM_COPYRIGHT)
+/// - [`Atom::NOTICE`](XCB_ATOM_NOTICE)
+/// - [`Atom::FONT_NAME`](XCB_ATOM_FONT_NAME)
+/// - [`Atom::FAMILY_NAME`](XCB_ATOM_FAMILY_NAME)
+/// - [`Atom::FULL_NAME`](XCB_ATOM_FULL_NAME)
+/// - [`Atom::CAP_HEIGHT`](XCB_ATOM_CAP_HEIGHT)
+/// - [`Atom::WM_CLASS`](XCB_ATOM_WM_CLASS)
+/// - [`Atom::WM_TRANSIENT_FOR`](XCB_ATOM_WM_TRANSIENT_FOR)
 pub type xcb_atom_enum_t = u32;
+/// The `Atom::None` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_NONE: xcb_atom_enum_t = 0;
+/// The `Atom::Any` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_ANY: xcb_atom_enum_t = 0;
+/// The `Atom::PRIMARY` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_PRIMARY: xcb_atom_enum_t = 1;
+/// The `Atom::SECONDARY` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_SECONDARY: xcb_atom_enum_t = 2;
+/// The `Atom::ARC` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_ARC: xcb_atom_enum_t = 3;
+/// The `Atom::ATOM` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_ATOM: xcb_atom_enum_t = 4;
+/// The `Atom::BITMAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_BITMAP: xcb_atom_enum_t = 5;
+/// The `Atom::CARDINAL` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CARDINAL: xcb_atom_enum_t = 6;
+/// The `Atom::COLORMAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_COLORMAP: xcb_atom_enum_t = 7;
+/// The `Atom::CURSOR` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CURSOR: xcb_atom_enum_t = 8;
+/// The `Atom::CUT_BUFFER0` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER0: xcb_atom_enum_t = 9;
+/// The `Atom::CUT_BUFFER1` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER1: xcb_atom_enum_t = 10;
+/// The `Atom::CUT_BUFFER2` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER2: xcb_atom_enum_t = 11;
+/// The `Atom::CUT_BUFFER3` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER3: xcb_atom_enum_t = 12;
+/// The `Atom::CUT_BUFFER4` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER4: xcb_atom_enum_t = 13;
+/// The `Atom::CUT_BUFFER5` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER5: xcb_atom_enum_t = 14;
+/// The `Atom::CUT_BUFFER6` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER6: xcb_atom_enum_t = 15;
+/// The `Atom::CUT_BUFFER7` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CUT_BUFFER7: xcb_atom_enum_t = 16;
+/// The `Atom::DRAWABLE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_DRAWABLE: xcb_atom_enum_t = 17;
+/// The `Atom::FONT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_FONT: xcb_atom_enum_t = 18;
+/// The `Atom::INTEGER` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_INTEGER: xcb_atom_enum_t = 19;
+/// The `Atom::PIXMAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_PIXMAP: xcb_atom_enum_t = 20;
+/// The `Atom::POINT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_POINT: xcb_atom_enum_t = 21;
+/// The `Atom::RECTANGLE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RECTANGLE: xcb_atom_enum_t = 22;
+/// The `Atom::RESOURCE_MANAGER` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RESOURCE_MANAGER: xcb_atom_enum_t = 23;
+/// The `Atom::RGB_COLOR_MAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RGB_COLOR_MAP: xcb_atom_enum_t = 24;
+/// The `Atom::RGB_BEST_MAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RGB_BEST_MAP: xcb_atom_enum_t = 25;
+/// The `Atom::RGB_BLUE_MAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RGB_BLUE_MAP: xcb_atom_enum_t = 26;
+/// The `Atom::RGB_DEFAULT_MAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RGB_DEFAULT_MAP: xcb_atom_enum_t = 27;
+/// The `Atom::RGB_GRAY_MAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RGB_GRAY_MAP: xcb_atom_enum_t = 28;
+/// The `Atom::RGB_GREEN_MAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RGB_GREEN_MAP: xcb_atom_enum_t = 29;
+/// The `Atom::RGB_RED_MAP` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RGB_RED_MAP: xcb_atom_enum_t = 30;
+/// The `Atom::STRING` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_STRING: xcb_atom_enum_t = 31;
+/// The `Atom::VISUALID` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_VISUALID: xcb_atom_enum_t = 32;
+/// The `Atom::WINDOW` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WINDOW: xcb_atom_enum_t = 33;
+/// The `Atom::WM_COMMAND` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_COMMAND: xcb_atom_enum_t = 34;
+/// The `Atom::WM_HINTS` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_HINTS: xcb_atom_enum_t = 35;
+/// The `Atom::WM_CLIENT_MACHINE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_CLIENT_MACHINE: xcb_atom_enum_t = 36;
+/// The `Atom::WM_ICON_NAME` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_ICON_NAME: xcb_atom_enum_t = 37;
+/// The `Atom::WM_ICON_SIZE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_ICON_SIZE: xcb_atom_enum_t = 38;
+/// The `Atom::WM_NAME` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_NAME: xcb_atom_enum_t = 39;
+/// The `Atom::WM_NORMAL_HINTS` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_NORMAL_HINTS: xcb_atom_enum_t = 40;
+/// The `Atom::WM_SIZE_HINTS` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_SIZE_HINTS: xcb_atom_enum_t = 41;
+/// The `Atom::WM_ZOOM_HINTS` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_ZOOM_HINTS: xcb_atom_enum_t = 42;
+/// The `Atom::MIN_SPACE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_MIN_SPACE: xcb_atom_enum_t = 43;
+/// The `Atom::NORM_SPACE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_NORM_SPACE: xcb_atom_enum_t = 44;
+/// The `Atom::MAX_SPACE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_MAX_SPACE: xcb_atom_enum_t = 45;
+/// The `Atom::END_SPACE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_END_SPACE: xcb_atom_enum_t = 46;
+/// The `Atom::SUPERSCRIPT_X` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_SUPERSCRIPT_X: xcb_atom_enum_t = 47;
+/// The `Atom::SUPERSCRIPT_Y` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_SUPERSCRIPT_Y: xcb_atom_enum_t = 48;
+/// The `Atom::SUBSCRIPT_X` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_SUBSCRIPT_X: xcb_atom_enum_t = 49;
+/// The `Atom::SUBSCRIPT_Y` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_SUBSCRIPT_Y: xcb_atom_enum_t = 50;
+/// The `Atom::UNDERLINE_POSITION` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_UNDERLINE_POSITION: xcb_atom_enum_t = 51;
+/// The `Atom::UNDERLINE_THICKNESS` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_UNDERLINE_THICKNESS: xcb_atom_enum_t = 52;
+/// The `Atom::STRIKEOUT_ASCENT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_STRIKEOUT_ASCENT: xcb_atom_enum_t = 53;
+/// The `Atom::STRIKEOUT_DESCENT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_STRIKEOUT_DESCENT: xcb_atom_enum_t = 54;
+/// The `Atom::ITALIC_ANGLE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_ITALIC_ANGLE: xcb_atom_enum_t = 55;
+/// The `Atom::X_HEIGHT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_X_HEIGHT: xcb_atom_enum_t = 56;
+/// The `Atom::QUAD_WIDTH` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_QUAD_WIDTH: xcb_atom_enum_t = 57;
+/// The `Atom::WEIGHT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WEIGHT: xcb_atom_enum_t = 58;
+/// The `Atom::POINT_SIZE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_POINT_SIZE: xcb_atom_enum_t = 59;
+/// The `Atom::RESOLUTION` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_RESOLUTION: xcb_atom_enum_t = 60;
+/// The `Atom::COPYRIGHT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_COPYRIGHT: xcb_atom_enum_t = 61;
+/// The `Atom::NOTICE` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_NOTICE: xcb_atom_enum_t = 62;
+/// The `Atom::FONT_NAME` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_FONT_NAME: xcb_atom_enum_t = 63;
+/// The `Atom::FAMILY_NAME` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_FAMILY_NAME: xcb_atom_enum_t = 64;
+/// The `Atom::FULL_NAME` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_FULL_NAME: xcb_atom_enum_t = 65;
+/// The `Atom::CAP_HEIGHT` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_CAP_HEIGHT: xcb_atom_enum_t = 66;
+/// The `Atom::WM_CLASS` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_CLASS: xcb_atom_enum_t = 67;
+/// The `Atom::WM_TRANSIENT_FOR` enum variant.
+///
+/// This is a variant of [`xcb_atom_enum_t`].
 pub const XCB_ATOM_WM_TRANSIENT_FOR: xcb_atom_enum_t = 68;
 
-/// Opcode for xcb_selection_request.
+/// The opcode for `SelectionRequest` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_selection_request_event_t`].
 pub const XCB_SELECTION_REQUEST: u8 = 30i32 as u8;
 
+/// The `SelectionRequest` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_selection_request_event_t {
@@ -1409,9 +2387,13 @@ impl Default for xcb_selection_request_event_t {
     }
 }
 
-/// Opcode for xcb_selection_notify.
+/// The opcode for `SelectionNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_selection_notify_event_t`].
 pub const XCB_SELECTION_NOTIFY: u8 = 31i32 as u8;
 
+/// The `SelectionNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_selection_notify_event_t {
@@ -1431,18 +2413,40 @@ impl Default for xcb_selection_notify_event_t {
     }
 }
 
+/// The `ColormapState` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ColormapState::Uninstalled`](XCB_COLORMAP_STATE_UNINSTALLED)
+/// - [`ColormapState::Installed`](XCB_COLORMAP_STATE_INSTALLED)
 pub type xcb_colormap_state_t = u32;
-/// The colormap was uninstalled.
+/// The `ColormapState::Uninstalled` enum variant.
+///
+/// This is a variant of [`xcb_colormap_state_t`].
 pub const XCB_COLORMAP_STATE_UNINSTALLED: xcb_colormap_state_t = 0;
-/// The colormap was installed.
+/// The `ColormapState::Installed` enum variant.
+///
+/// This is a variant of [`xcb_colormap_state_t`].
 pub const XCB_COLORMAP_STATE_INSTALLED: xcb_colormap_state_t = 1;
 
+/// The `Colormap` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Colormap::None`](XCB_COLORMAP_NONE)
 pub type xcb_colormap_enum_t = u32;
+/// The `Colormap::None` enum variant.
+///
+/// This is a variant of [`xcb_colormap_enum_t`].
 pub const XCB_COLORMAP_NONE: xcb_colormap_enum_t = 0;
 
-/// Opcode for xcb_colormap_notify.
+/// The opcode for `ColormapNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_colormap_notify_event_t`].
 pub const XCB_COLORMAP_NOTIFY: u8 = 32i32 as u8;
 
+/// The `ColormapNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_colormap_notify_event_t {
@@ -1462,6 +2466,7 @@ impl Default for xcb_colormap_notify_event_t {
     }
 }
 
+/// The `ClientMessageData` union.
 #[derive(Copy, Clone)]
 #[repr(C)]
 pub union xcb_client_message_data_t {
@@ -1476,11 +2481,15 @@ impl Default for xcb_client_message_data_t {
     }
 }
 
+/// An iterator over `ClientMessageData` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_client_message_data_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_client_message_data_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -1490,9 +2499,13 @@ impl Default for xcb_client_message_data_iterator_t {
     }
 }
 
-/// Opcode for xcb_client_message.
+/// The opcode for `ClientMessage` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_client_message_event_t`].
 pub const XCB_CLIENT_MESSAGE: u8 = 33i32 as u8;
 
+/// The `ClientMessage` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_client_message_event_t {
@@ -1510,14 +2523,34 @@ impl Default for xcb_client_message_event_t {
     }
 }
 
+/// The `Mapping` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Mapping::Modifier`](XCB_MAPPING_MODIFIER)
+/// - [`Mapping::Keyboard`](XCB_MAPPING_KEYBOARD)
+/// - [`Mapping::Pointer`](XCB_MAPPING_POINTER)
 pub type xcb_mapping_t = u32;
+/// The `Mapping::Modifier` enum variant.
+///
+/// This is a variant of [`xcb_mapping_t`].
 pub const XCB_MAPPING_MODIFIER: xcb_mapping_t = 0;
+/// The `Mapping::Keyboard` enum variant.
+///
+/// This is a variant of [`xcb_mapping_t`].
 pub const XCB_MAPPING_KEYBOARD: xcb_mapping_t = 1;
+/// The `Mapping::Pointer` enum variant.
+///
+/// This is a variant of [`xcb_mapping_t`].
 pub const XCB_MAPPING_POINTER: xcb_mapping_t = 2;
 
-/// Opcode for xcb_mapping_notify.
+/// The opcode for `MappingNotify` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_mapping_notify_event_t`].
 pub const XCB_MAPPING_NOTIFY: u8 = 34i32 as u8;
 
+/// The `MappingNotify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_mapping_notify_event_t {
@@ -1536,9 +2569,13 @@ impl Default for xcb_mapping_notify_event_t {
     }
 }
 
-/// Opcode for xcb_ge_generic.
+/// The opcode for `GeGeneric` events.
+///
+/// If this value appears in [`xcb_generic_event_t::response_type`], then the type of the
+/// event is [`xcb_ge_generic_event_t`].
 pub const XCB_GE_GENERIC: u8 = 35i32 as u8;
 
+/// The `GeGeneric` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_ge_generic_event_t {
@@ -1557,9 +2594,13 @@ impl Default for xcb_ge_generic_event_t {
     }
 }
 
-/// Opcode for xcb_request.
+/// The opcode for `Request` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_request_error_t`].
 pub const XCB_REQUEST: u8 = 1i32 as u8;
 
+/// The `Request` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_request_error_t {
@@ -1578,9 +2619,13 @@ impl Default for xcb_request_error_t {
     }
 }
 
-/// Opcode for xcb_value.
+/// The opcode for `Value` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_value_error_t`].
 pub const XCB_VALUE: u8 = 2i32 as u8;
 
+/// The `Value` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_value_error_t {
@@ -1599,189 +2644,326 @@ impl Default for xcb_value_error_t {
     }
 }
 
-/// Opcode for xcb_window.
+/// The opcode for `Window` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_window_error_t`].
 pub const XCB_WINDOW: u8 = 3i32 as u8;
 
+/// The `Window` error.
 pub type xcb_window_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_pixmap.
+/// The opcode for `Pixmap` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_pixmap_error_t`].
 pub const XCB_PIXMAP: u8 = 4i32 as u8;
 
+/// The `Pixmap` error.
 pub type xcb_pixmap_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_atom.
+/// The opcode for `Atom` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_atom_error_t`].
 pub const XCB_ATOM: u8 = 5i32 as u8;
 
+/// The `Atom` error.
 pub type xcb_atom_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_cursor.
+/// The opcode for `Cursor` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_cursor_error_t`].
 pub const XCB_CURSOR: u8 = 6i32 as u8;
 
+/// The `Cursor` error.
 pub type xcb_cursor_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_font.
+/// The opcode for `Font` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_font_error_t`].
 pub const XCB_FONT: u8 = 7i32 as u8;
 
+/// The `Font` error.
 pub type xcb_font_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_match.
+/// The opcode for `Match` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_match_error_t`].
 pub const XCB_MATCH: u8 = 8i32 as u8;
 
+/// The `Match` error.
 pub type xcb_match_error_t = xcb_request_error_t;
 
-/// Opcode for xcb_drawable.
+/// The opcode for `Drawable` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_drawable_error_t`].
 pub const XCB_DRAWABLE: u8 = 9i32 as u8;
 
+/// The `Drawable` error.
 pub type xcb_drawable_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_access.
+/// The opcode for `Access` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_access_error_t`].
 pub const XCB_ACCESS: u8 = 10i32 as u8;
 
+/// The `Access` error.
 pub type xcb_access_error_t = xcb_request_error_t;
 
-/// Opcode for xcb_alloc.
+/// The opcode for `Alloc` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_alloc_error_t`].
 pub const XCB_ALLOC: u8 = 11i32 as u8;
 
+/// The `Alloc` error.
 pub type xcb_alloc_error_t = xcb_request_error_t;
 
-/// Opcode for xcb_colormap.
+/// The opcode for `Colormap` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_colormap_error_t`].
 pub const XCB_COLORMAP: u8 = 12i32 as u8;
 
+/// The `Colormap` error.
 pub type xcb_colormap_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_g_context.
+/// The opcode for `GContext` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_g_context_error_t`].
 pub const XCB_G_CONTEXT: u8 = 13i32 as u8;
 
+/// The `GContext` error.
 pub type xcb_g_context_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_id_choice.
+/// The opcode for `IDChoice` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_id_choice_error_t`].
 pub const XCB_ID_CHOICE: u8 = 14i32 as u8;
 
+/// The `IDChoice` error.
 pub type xcb_id_choice_error_t = xcb_value_error_t;
 
-/// Opcode for xcb_name.
+/// The opcode for `Name` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_name_error_t`].
 pub const XCB_NAME: u8 = 15i32 as u8;
 
+/// The `Name` error.
 pub type xcb_name_error_t = xcb_request_error_t;
 
-/// Opcode for xcb_length.
+/// The opcode for `Length` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_length_error_t`].
 pub const XCB_LENGTH: u8 = 16i32 as u8;
 
+/// The `Length` error.
 pub type xcb_length_error_t = xcb_request_error_t;
 
-/// Opcode for xcb_implementation.
+/// The opcode for `Implementation` errors.
+///
+/// If this value appears in [`xcb_generic_error_t::error_code`], then the type of the
+/// error is [`xcb_implementation_error_t`].
 pub const XCB_IMPLEMENTATION: u8 = 17i32 as u8;
 
+/// The `Implementation` error.
 pub type xcb_implementation_error_t = xcb_request_error_t;
 
+/// The `WindowClass` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`WindowClass::CopyFromParent`](XCB_WINDOW_CLASS_COPY_FROM_PARENT)
+/// - [`WindowClass::InputOutput`](XCB_WINDOW_CLASS_INPUT_OUTPUT)
+/// - [`WindowClass::InputOnly`](XCB_WINDOW_CLASS_INPUT_ONLY)
 pub type xcb_window_class_t = u32;
+/// The `WindowClass::CopyFromParent` enum variant.
+///
+/// This is a variant of [`xcb_window_class_t`].
 pub const XCB_WINDOW_CLASS_COPY_FROM_PARENT: xcb_window_class_t = 0;
+/// The `WindowClass::InputOutput` enum variant.
+///
+/// This is a variant of [`xcb_window_class_t`].
 pub const XCB_WINDOW_CLASS_INPUT_OUTPUT: xcb_window_class_t = 1;
+/// The `WindowClass::InputOnly` enum variant.
+///
+/// This is a variant of [`xcb_window_class_t`].
 pub const XCB_WINDOW_CLASS_INPUT_ONLY: xcb_window_class_t = 2;
 
+/// The `CW` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`CW::BackPixmap`](XCB_CW_BACK_PIXMAP)
+/// - [`CW::BackPixel`](XCB_CW_BACK_PIXEL)
+/// - [`CW::BorderPixmap`](XCB_CW_BORDER_PIXMAP)
+/// - [`CW::BorderPixel`](XCB_CW_BORDER_PIXEL)
+/// - [`CW::BitGravity`](XCB_CW_BIT_GRAVITY)
+/// - [`CW::WinGravity`](XCB_CW_WIN_GRAVITY)
+/// - [`CW::BackingStore`](XCB_CW_BACKING_STORE)
+/// - [`CW::BackingPlanes`](XCB_CW_BACKING_PLANES)
+/// - [`CW::BackingPixel`](XCB_CW_BACKING_PIXEL)
+/// - [`CW::OverrideRedirect`](XCB_CW_OVERRIDE_REDIRECT)
+/// - [`CW::SaveUnder`](XCB_CW_SAVE_UNDER)
+/// - [`CW::EventMask`](XCB_CW_EVENT_MASK)
+/// - [`CW::DontPropagate`](XCB_CW_DONT_PROPAGATE)
+/// - [`CW::Colormap`](XCB_CW_COLORMAP)
+/// - [`CW::Cursor`](XCB_CW_CURSOR)
 pub type xcb_cw_t = u32;
-/// Overrides the default background-pixmap. The background pixmap and window must
-/// have the same root and same depth. Any size pixmap can be used, although some
-/// sizes may be faster than others.
+/// The `CW::BackPixmap` enum variant.
 ///
-/// If `XCB_BACK_PIXMAP_NONE` is specified, the window has no defined background.
-/// The server may fill the contents with the previous screen contents or with
-/// contents of its own choosing.
-///
-/// If `XCB_BACK_PIXMAP_PARENT_RELATIVE` is specified, the parent's background is
-/// used, but the window must have the same depth as the parent (or a Match error
-/// results).   The parent's background is tracked, and the current version is
-/// used each time the window background is required.
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_BACK_PIXMAP: xcb_cw_t = 1;
-/// Overrides `BackPixmap`. A pixmap of undefined size filled with the specified
-/// background pixel is used for the background. Range-checking is not performed,
-/// the background pixel is truncated to the appropriate number of bits.
-pub const XCB_CW_BACK_PIXEL: xcb_cw_t = 2;
-/// Overrides the default border-pixmap. The border pixmap and window must have the
-/// same root and the same depth. Any size pixmap can be used, although some sizes
-/// may be faster than others.
+/// The `CW::BackPixel` enum variant.
 ///
-/// The special value `XCB_COPY_FROM_PARENT` means the parent's border pixmap is
-/// copied (subsequent changes to the parent's border attribute do not affect the
-/// child), but the window must have the same depth as the parent.
+/// This is a variant of [`xcb_cw_t`].
+pub const XCB_CW_BACK_PIXEL: xcb_cw_t = 2;
+/// The `CW::BorderPixmap` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_BORDER_PIXMAP: xcb_cw_t = 4;
-/// Overrides `BorderPixmap`. A pixmap of undefined size filled with the specified
-/// border pixel is used for the border. Range checking is not performed on the
-/// border-pixel value, it is truncated to the appropriate number of bits.
+/// The `CW::BorderPixel` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_BORDER_PIXEL: xcb_cw_t = 8;
-/// Defines which region of the window should be retained if the window is resized.
+/// The `CW::BitGravity` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_BIT_GRAVITY: xcb_cw_t = 16;
-/// Defines how the window should be repositioned if the parent is resized (see
-/// `ConfigureWindow`).
+/// The `CW::WinGravity` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_WIN_GRAVITY: xcb_cw_t = 32;
-/// A backing-store of `WhenMapped` advises the server that maintaining contents of
-/// obscured regions when the window is mapped would be beneficial. A backing-store
-/// of `Always` advises the server that maintaining contents even when the window
-/// is unmapped would be beneficial. In this case, the server may generate an
-/// exposure event when the window is created. A value of `NotUseful` advises the
-/// server that maintaining contents is unnecessary, although a server may still
-/// choose to maintain contents while the window is mapped. Note that if the server
-/// maintains contents, then the server should maintain complete contents not just
-/// the region within the parent boundaries, even if the window is larger than its
-/// parent. While the server maintains contents, exposure events will not normally
-/// be generated, but the server may stop maintaining contents at any time.
+/// The `CW::BackingStore` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_BACKING_STORE: xcb_cw_t = 64;
-/// The backing-planes indicates (with bits set to 1) which bit planes of the
-/// window hold dynamic data that must be preserved in backing-stores and during
-/// save-unders.
+/// The `CW::BackingPlanes` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_BACKING_PLANES: xcb_cw_t = 128;
-/// The backing-pixel specifies what value to use in planes not covered by
-/// backing-planes. The server is free to save only the specified bit planes in the
-/// backing-store or save-under and regenerate the remaining planes with the
-/// specified pixel value. Any bits beyond the specified depth of the window in
-/// these values are simply ignored.
+/// The `CW::BackingPixel` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_BACKING_PIXEL: xcb_cw_t = 256;
-/// The override-redirect specifies whether map and configure requests on this
-/// window should override a SubstructureRedirect on the parent, typically to
-/// inform a window manager not to tamper with the window.
+/// The `CW::OverrideRedirect` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_OVERRIDE_REDIRECT: xcb_cw_t = 512;
-/// If 1, the server is advised that when this window is mapped, saving the
-/// contents of windows it obscures would be beneficial.
+/// The `CW::SaveUnder` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_SAVE_UNDER: xcb_cw_t = 1024;
-/// The event-mask defines which events the client is interested in for this window
-/// (or for some event types, inferiors of the window).
+/// The `CW::EventMask` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_EVENT_MASK: xcb_cw_t = 2048;
-/// The do-not-propagate-mask defines which events should not be propagated to
-/// ancestor windows when no client has the event type selected in this window.
+/// The `CW::DontPropagate` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_DONT_PROPAGATE: xcb_cw_t = 4096;
-/// The colormap specifies the colormap that best reflects the true colors of the window. Servers
-/// capable of supporting multiple hardware colormaps may use this information, and window man-
-/// agers may use it for InstallColormap requests. The colormap must have the same visual type
-/// and root as the window (or a Match error results). If CopyFromParent is specified, the parent's
-/// colormap is copied (subsequent changes to the parent's colormap attribute do not affect the child).
-/// However, the window must have the same visual type as the parent (or a Match error results),
-/// and the parent must not have a colormap of None (or a Match error results). For an explanation
-/// of None, see FreeColormap request. The colormap is copied by sharing the colormap object
-/// between the child and the parent, not by making a complete copy of the colormap contents.
+/// The `CW::Colormap` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_COLORMAP: xcb_cw_t = 8192;
-/// If a cursor is specified, it will be used whenever the pointer is in the window. If None is speci-
-/// fied, the parent's cursor will be used when the pointer is in the window, and any change in the
-/// parent's cursor will cause an immediate change in the displayed cursor.
+/// The `CW::Cursor` enum variant.
+///
+/// This is a variant of [`xcb_cw_t`].
 pub const XCB_CW_CURSOR: xcb_cw_t = 16384;
 
+/// The `BackPixmap` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`BackPixmap::None`](XCB_BACK_PIXMAP_NONE)
+/// - [`BackPixmap::ParentRelative`](XCB_BACK_PIXMAP_PARENT_RELATIVE)
 pub type xcb_back_pixmap_t = u32;
+/// The `BackPixmap::None` enum variant.
+///
+/// This is a variant of [`xcb_back_pixmap_t`].
 pub const XCB_BACK_PIXMAP_NONE: xcb_back_pixmap_t = 0;
+/// The `BackPixmap::ParentRelative` enum variant.
+///
+/// This is a variant of [`xcb_back_pixmap_t`].
 pub const XCB_BACK_PIXMAP_PARENT_RELATIVE: xcb_back_pixmap_t = 1;
 
+/// The `Gravity` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Gravity::BitForget`](XCB_GRAVITY_BIT_FORGET)
+/// - [`Gravity::WinUnmap`](XCB_GRAVITY_WIN_UNMAP)
+/// - [`Gravity::NorthWest`](XCB_GRAVITY_NORTH_WEST)
+/// - [`Gravity::North`](XCB_GRAVITY_NORTH)
+/// - [`Gravity::NorthEast`](XCB_GRAVITY_NORTH_EAST)
+/// - [`Gravity::West`](XCB_GRAVITY_WEST)
+/// - [`Gravity::Center`](XCB_GRAVITY_CENTER)
+/// - [`Gravity::East`](XCB_GRAVITY_EAST)
+/// - [`Gravity::SouthWest`](XCB_GRAVITY_SOUTH_WEST)
+/// - [`Gravity::South`](XCB_GRAVITY_SOUTH)
+/// - [`Gravity::SouthEast`](XCB_GRAVITY_SOUTH_EAST)
+/// - [`Gravity::Static`](XCB_GRAVITY_STATIC)
 pub type xcb_gravity_t = u32;
+/// The `Gravity::BitForget` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_BIT_FORGET: xcb_gravity_t = 0;
+/// The `Gravity::WinUnmap` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_WIN_UNMAP: xcb_gravity_t = 0;
+/// The `Gravity::NorthWest` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_NORTH_WEST: xcb_gravity_t = 1;
+/// The `Gravity::North` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_NORTH: xcb_gravity_t = 2;
+/// The `Gravity::NorthEast` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_NORTH_EAST: xcb_gravity_t = 3;
+/// The `Gravity::West` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_WEST: xcb_gravity_t = 4;
+/// The `Gravity::Center` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_CENTER: xcb_gravity_t = 5;
+/// The `Gravity::East` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_EAST: xcb_gravity_t = 6;
+/// The `Gravity::SouthWest` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_SOUTH_WEST: xcb_gravity_t = 7;
+/// The `Gravity::South` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_SOUTH: xcb_gravity_t = 8;
+/// The `Gravity::SouthEast` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_SOUTH_EAST: xcb_gravity_t = 9;
+/// The `Gravity::Static` enum variant.
+///
+/// This is a variant of [`xcb_gravity_t`].
 pub const XCB_GRAVITY_STATIC: xcb_gravity_t = 10;
 
+/// The `value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_window_value_list_t {
@@ -1808,9 +2990,18 @@ impl Default for xcb_create_window_value_list_t {
     }
 }
 
-/// Opcode for xcb_create_window.
+/// The opcode for `CreateWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_create_window_request_t`].
 pub const XCB_CREATE_WINDOW: u8 = 1i32 as u8;
 
+/// The `CreateWindow` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_window_request_t {
@@ -1835,6 +3026,7 @@ impl Default for xcb_create_window_request_t {
     }
 }
 
+/// The `value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_window_attributes_value_list_t {
@@ -1861,9 +3053,18 @@ impl Default for xcb_change_window_attributes_value_list_t {
     }
 }
 
-/// Opcode for xcb_change_window_attributes.
+/// The opcode for `ChangeWindowAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_window_attributes_request_t`].
 pub const XCB_CHANGE_WINDOW_ATTRIBUTES: u8 = 2i32 as u8;
 
+/// The `ChangeWindowAttributes` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_window_attributes_request_t {
@@ -1880,14 +3081,36 @@ impl Default for xcb_change_window_attributes_request_t {
     }
 }
 
+/// The `MapState` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`MapState::Unmapped`](XCB_MAP_STATE_UNMAPPED)
+/// - [`MapState::Unviewable`](XCB_MAP_STATE_UNVIEWABLE)
+/// - [`MapState::Viewable`](XCB_MAP_STATE_VIEWABLE)
 pub type xcb_map_state_t = u32;
+/// The `MapState::Unmapped` enum variant.
+///
+/// This is a variant of [`xcb_map_state_t`].
 pub const XCB_MAP_STATE_UNMAPPED: xcb_map_state_t = 0;
+/// The `MapState::Unviewable` enum variant.
+///
+/// This is a variant of [`xcb_map_state_t`].
 pub const XCB_MAP_STATE_UNVIEWABLE: xcb_map_state_t = 1;
+/// The `MapState::Viewable` enum variant.
+///
+/// This is a variant of [`xcb_map_state_t`].
 pub const XCB_MAP_STATE_VIEWABLE: xcb_map_state_t = 2;
 
+/// The cookie for the reply to a `GetWindowAttributes` request.
+///
+/// Pass this cookie to [`xcb_get_window_attributes_reply`] to retrieve the reply.
+///
+/// [`xcb_get_window_attributes_reply`]: Xcb::xcb_get_window_attributes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_window_attributes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1897,9 +3120,14 @@ impl Default for xcb_get_window_attributes_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_window_attributes.
+/// The opcode for `GetWindowAttributes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_window_attributes_request_t`].
 pub const XCB_GET_WINDOW_ATTRIBUTES: u8 = 3i32 as u8;
 
+/// The `GetWindowAttributes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_window_attributes_request_t {
@@ -1915,6 +3143,7 @@ impl Default for xcb_get_window_attributes_request_t {
     }
 }
 
+/// The `GetWindowAttributes` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_window_attributes_reply_t {
@@ -1945,9 +3174,14 @@ impl Default for xcb_get_window_attributes_reply_t {
     }
 }
 
-/// Opcode for xcb_destroy_window.
+/// The opcode for `DestroyWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_destroy_window_request_t`].
 pub const XCB_DESTROY_WINDOW: u8 = 4i32 as u8;
 
+/// The `DestroyWindow` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_destroy_window_request_t {
@@ -1963,9 +3197,14 @@ impl Default for xcb_destroy_window_request_t {
     }
 }
 
-/// Opcode for xcb_destroy_subwindows.
+/// The opcode for `DestroySubwindows` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_destroy_subwindows_request_t`].
 pub const XCB_DESTROY_SUBWINDOWS: u8 = 5i32 as u8;
 
+/// The `DestroySubwindows` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_destroy_subwindows_request_t {
@@ -1981,13 +3220,30 @@ impl Default for xcb_destroy_subwindows_request_t {
     }
 }
 
+/// The `SetMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`SetMode::Insert`](XCB_SET_MODE_INSERT)
+/// - [`SetMode::Delete`](XCB_SET_MODE_DELETE)
 pub type xcb_set_mode_t = u32;
+/// The `SetMode::Insert` enum variant.
+///
+/// This is a variant of [`xcb_set_mode_t`].
 pub const XCB_SET_MODE_INSERT: xcb_set_mode_t = 0;
+/// The `SetMode::Delete` enum variant.
+///
+/// This is a variant of [`xcb_set_mode_t`].
 pub const XCB_SET_MODE_DELETE: xcb_set_mode_t = 1;
 
-/// Opcode for xcb_change_save_set.
+/// The opcode for `ChangeSaveSet` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_save_set_request_t`].
 pub const XCB_CHANGE_SAVE_SET: u8 = 6i32 as u8;
 
+/// The `ChangeSaveSet` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_save_set_request_t {
@@ -2003,9 +3259,14 @@ impl Default for xcb_change_save_set_request_t {
     }
 }
 
-/// Opcode for xcb_reparent_window.
+/// The opcode for `ReparentWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_reparent_window_request_t`].
 pub const XCB_REPARENT_WINDOW: u8 = 7i32 as u8;
 
+/// The `ReparentWindow` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_reparent_window_request_t {
@@ -2024,9 +3285,14 @@ impl Default for xcb_reparent_window_request_t {
     }
 }
 
-/// Opcode for xcb_map_window.
+/// The opcode for `MapWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_map_window_request_t`].
 pub const XCB_MAP_WINDOW: u8 = 8i32 as u8;
 
+/// The `MapWindow` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_map_window_request_t {
@@ -2042,9 +3308,14 @@ impl Default for xcb_map_window_request_t {
     }
 }
 
-/// Opcode for xcb_map_subwindows.
+/// The opcode for `MapSubwindows` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_map_subwindows_request_t`].
 pub const XCB_MAP_SUBWINDOWS: u8 = 9i32 as u8;
 
+/// The `MapSubwindows` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_map_subwindows_request_t {
@@ -2060,9 +3331,14 @@ impl Default for xcb_map_subwindows_request_t {
     }
 }
 
-/// Opcode for xcb_unmap_window.
+/// The opcode for `UnmapWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_unmap_window_request_t`].
 pub const XCB_UNMAP_WINDOW: u8 = 10i32 as u8;
 
+/// The `UnmapWindow` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_unmap_window_request_t {
@@ -2078,9 +3354,14 @@ impl Default for xcb_unmap_window_request_t {
     }
 }
 
-/// Opcode for xcb_unmap_subwindows.
+/// The opcode for `UnmapSubwindows` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_unmap_subwindows_request_t`].
 pub const XCB_UNMAP_SUBWINDOWS: u8 = 11i32 as u8;
 
+/// The `UnmapSubwindows` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_unmap_subwindows_request_t {
@@ -2096,22 +3377,79 @@ impl Default for xcb_unmap_subwindows_request_t {
     }
 }
 
+/// The `ConfigWindow` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ConfigWindow::X`](XCB_CONFIG_WINDOW_X)
+/// - [`ConfigWindow::Y`](XCB_CONFIG_WINDOW_Y)
+/// - [`ConfigWindow::Width`](XCB_CONFIG_WINDOW_WIDTH)
+/// - [`ConfigWindow::Height`](XCB_CONFIG_WINDOW_HEIGHT)
+/// - [`ConfigWindow::BorderWidth`](XCB_CONFIG_WINDOW_BORDER_WIDTH)
+/// - [`ConfigWindow::Sibling`](XCB_CONFIG_WINDOW_SIBLING)
+/// - [`ConfigWindow::StackMode`](XCB_CONFIG_WINDOW_STACK_MODE)
 pub type xcb_config_window_t = u32;
+/// The `ConfigWindow::X` enum variant.
+///
+/// This is a variant of [`xcb_config_window_t`].
 pub const XCB_CONFIG_WINDOW_X: xcb_config_window_t = 1;
+/// The `ConfigWindow::Y` enum variant.
+///
+/// This is a variant of [`xcb_config_window_t`].
 pub const XCB_CONFIG_WINDOW_Y: xcb_config_window_t = 2;
+/// The `ConfigWindow::Width` enum variant.
+///
+/// This is a variant of [`xcb_config_window_t`].
 pub const XCB_CONFIG_WINDOW_WIDTH: xcb_config_window_t = 4;
+/// The `ConfigWindow::Height` enum variant.
+///
+/// This is a variant of [`xcb_config_window_t`].
 pub const XCB_CONFIG_WINDOW_HEIGHT: xcb_config_window_t = 8;
+/// The `ConfigWindow::BorderWidth` enum variant.
+///
+/// This is a variant of [`xcb_config_window_t`].
 pub const XCB_CONFIG_WINDOW_BORDER_WIDTH: xcb_config_window_t = 16;
+/// The `ConfigWindow::Sibling` enum variant.
+///
+/// This is a variant of [`xcb_config_window_t`].
 pub const XCB_CONFIG_WINDOW_SIBLING: xcb_config_window_t = 32;
+/// The `ConfigWindow::StackMode` enum variant.
+///
+/// This is a variant of [`xcb_config_window_t`].
 pub const XCB_CONFIG_WINDOW_STACK_MODE: xcb_config_window_t = 64;
 
+/// The `StackMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`StackMode::Above`](XCB_STACK_MODE_ABOVE)
+/// - [`StackMode::Below`](XCB_STACK_MODE_BELOW)
+/// - [`StackMode::TopIf`](XCB_STACK_MODE_TOP_IF)
+/// - [`StackMode::BottomIf`](XCB_STACK_MODE_BOTTOM_IF)
+/// - [`StackMode::Opposite`](XCB_STACK_MODE_OPPOSITE)
 pub type xcb_stack_mode_t = u32;
+/// The `StackMode::Above` enum variant.
+///
+/// This is a variant of [`xcb_stack_mode_t`].
 pub const XCB_STACK_MODE_ABOVE: xcb_stack_mode_t = 0;
+/// The `StackMode::Below` enum variant.
+///
+/// This is a variant of [`xcb_stack_mode_t`].
 pub const XCB_STACK_MODE_BELOW: xcb_stack_mode_t = 1;
+/// The `StackMode::TopIf` enum variant.
+///
+/// This is a variant of [`xcb_stack_mode_t`].
 pub const XCB_STACK_MODE_TOP_IF: xcb_stack_mode_t = 2;
+/// The `StackMode::BottomIf` enum variant.
+///
+/// This is a variant of [`xcb_stack_mode_t`].
 pub const XCB_STACK_MODE_BOTTOM_IF: xcb_stack_mode_t = 3;
+/// The `StackMode::Opposite` enum variant.
+///
+/// This is a variant of [`xcb_stack_mode_t`].
 pub const XCB_STACK_MODE_OPPOSITE: xcb_stack_mode_t = 4;
 
+/// The `value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_configure_window_value_list_t {
@@ -2130,9 +3468,18 @@ impl Default for xcb_configure_window_value_list_t {
     }
 }
 
-/// Opcode for xcb_configure_window.
+/// The opcode for `ConfigureWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_configure_window_request_t`].
 pub const XCB_CONFIGURE_WINDOW: u8 = 12i32 as u8;
 
+/// The `ConfigureWindow` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_configure_window_request_t {
@@ -2150,13 +3497,30 @@ impl Default for xcb_configure_window_request_t {
     }
 }
 
+/// The `Circulate` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Circulate::RaiseLowest`](XCB_CIRCULATE_RAISE_LOWEST)
+/// - [`Circulate::LowerHighest`](XCB_CIRCULATE_LOWER_HIGHEST)
 pub type xcb_circulate_t = u32;
+/// The `Circulate::RaiseLowest` enum variant.
+///
+/// This is a variant of [`xcb_circulate_t`].
 pub const XCB_CIRCULATE_RAISE_LOWEST: xcb_circulate_t = 0;
+/// The `Circulate::LowerHighest` enum variant.
+///
+/// This is a variant of [`xcb_circulate_t`].
 pub const XCB_CIRCULATE_LOWER_HIGHEST: xcb_circulate_t = 1;
 
-/// Opcode for xcb_circulate_window.
+/// The opcode for `CirculateWindow` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_circulate_window_request_t`].
 pub const XCB_CIRCULATE_WINDOW: u8 = 13i32 as u8;
 
+/// The `CirculateWindow` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_circulate_window_request_t {
@@ -2172,9 +3536,15 @@ impl Default for xcb_circulate_window_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetGeometry` request.
+///
+/// Pass this cookie to [`xcb_get_geometry_reply`] to retrieve the reply.
+///
+/// [`xcb_get_geometry_reply`]: Xcb::xcb_get_geometry_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_geometry_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2184,9 +3554,14 @@ impl Default for xcb_get_geometry_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_geometry.
+/// The opcode for `GetGeometry` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_geometry_request_t`].
 pub const XCB_GET_GEOMETRY: u8 = 14i32 as u8;
 
+/// The `GetGeometry` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_geometry_request_t {
@@ -2202,6 +3577,7 @@ impl Default for xcb_get_geometry_request_t {
     }
 }
 
+/// The `GetGeometry` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_geometry_reply_t {
@@ -2224,9 +3600,15 @@ impl Default for xcb_get_geometry_reply_t {
     }
 }
 
+/// The cookie for the reply to a `QueryTree` request.
+///
+/// Pass this cookie to [`xcb_query_tree_reply`] to retrieve the reply.
+///
+/// [`xcb_query_tree_reply`]: Xcb::xcb_query_tree_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_tree_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2236,9 +3618,14 @@ impl Default for xcb_query_tree_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_tree.
+/// The opcode for `QueryTree` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_tree_request_t`].
 pub const XCB_QUERY_TREE: u8 = 15i32 as u8;
 
+/// The `QueryTree` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_tree_request_t {
@@ -2254,6 +3641,11 @@ impl Default for xcb_query_tree_request_t {
     }
 }
 
+/// The `QueryTree` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `children`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_tree_reply_t {
@@ -2273,9 +3665,15 @@ impl Default for xcb_query_tree_reply_t {
     }
 }
 
+/// The cookie for the reply to a `InternAtom` request.
+///
+/// Pass this cookie to [`xcb_intern_atom_reply`] to retrieve the reply.
+///
+/// [`xcb_intern_atom_reply`]: Xcb::xcb_intern_atom_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_intern_atom_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2285,9 +3683,18 @@ impl Default for xcb_intern_atom_cookie_t {
     }
 }
 
-/// Opcode for xcb_intern_atom.
+/// The opcode for `InternAtom` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_intern_atom_request_t`].
 pub const XCB_INTERN_ATOM: u8 = 16i32 as u8;
 
+/// The `InternAtom` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_intern_atom_request_t {
@@ -2304,6 +3711,7 @@ impl Default for xcb_intern_atom_request_t {
     }
 }
 
+/// The `InternAtom` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_intern_atom_reply_t {
@@ -2320,9 +3728,15 @@ impl Default for xcb_intern_atom_reply_t {
     }
 }
 
+/// The cookie for the reply to a `GetAtomName` request.
+///
+/// Pass this cookie to [`xcb_get_atom_name_reply`] to retrieve the reply.
+///
+/// [`xcb_get_atom_name_reply`]: Xcb::xcb_get_atom_name_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_atom_name_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2332,9 +3746,14 @@ impl Default for xcb_get_atom_name_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_atom_name.
+/// The opcode for `GetAtomName` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_atom_name_request_t`].
 pub const XCB_GET_ATOM_NAME: u8 = 17i32 as u8;
 
+/// The `GetAtomName` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_atom_name_request_t {
@@ -2350,6 +3769,11 @@ impl Default for xcb_get_atom_name_request_t {
     }
 }
 
+/// The `GetAtomName` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_atom_name_reply_t {
@@ -2367,21 +3791,39 @@ impl Default for xcb_get_atom_name_reply_t {
     }
 }
 
+/// The `PropMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`PropMode::Replace`](XCB_PROP_MODE_REPLACE)
+/// - [`PropMode::Prepend`](XCB_PROP_MODE_PREPEND)
+/// - [`PropMode::Append`](XCB_PROP_MODE_APPEND)
 pub type xcb_prop_mode_t = u32;
-/// Discard the previous property value and store the new data.
+/// The `PropMode::Replace` enum variant.
+///
+/// This is a variant of [`xcb_prop_mode_t`].
 pub const XCB_PROP_MODE_REPLACE: xcb_prop_mode_t = 0;
-/// Insert the new data before the beginning of existing data. The `format` must
-/// match existing property value. If the property is undefined, it is treated as
-/// defined with the correct type and format with zero-length data.
+/// The `PropMode::Prepend` enum variant.
+///
+/// This is a variant of [`xcb_prop_mode_t`].
 pub const XCB_PROP_MODE_PREPEND: xcb_prop_mode_t = 1;
-/// Insert the new data after the beginning of existing data. The `format` must
-/// match existing property value. If the property is undefined, it is treated as
-/// defined with the correct type and format with zero-length data.
+/// The `PropMode::Append` enum variant.
+///
+/// This is a variant of [`xcb_prop_mode_t`].
 pub const XCB_PROP_MODE_APPEND: xcb_prop_mode_t = 2;
 
-/// Opcode for xcb_change_property.
+/// The opcode for `ChangeProperty` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_property_request_t`].
 pub const XCB_CHANGE_PROPERTY: u8 = 18i32 as u8;
 
+/// The `ChangeProperty` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_property_request_t {
@@ -2402,9 +3844,14 @@ impl Default for xcb_change_property_request_t {
     }
 }
 
-/// Opcode for xcb_delete_property.
+/// The opcode for `DeleteProperty` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_delete_property_request_t`].
 pub const XCB_DELETE_PROPERTY: u8 = 19i32 as u8;
 
+/// The `DeleteProperty` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_delete_property_request_t {
@@ -2421,12 +3868,26 @@ impl Default for xcb_delete_property_request_t {
     }
 }
 
+/// The `GetPropertyType` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`GetPropertyType::Any`](XCB_GET_PROPERTY_TYPE_ANY)
 pub type xcb_get_property_type_t = u32;
+/// The `GetPropertyType::Any` enum variant.
+///
+/// This is a variant of [`xcb_get_property_type_t`].
 pub const XCB_GET_PROPERTY_TYPE_ANY: xcb_get_property_type_t = 0;
 
+/// The cookie for the reply to a `GetProperty` request.
+///
+/// Pass this cookie to [`xcb_get_property_reply`] to retrieve the reply.
+///
+/// [`xcb_get_property_reply`]: Xcb::xcb_get_property_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_property_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2436,9 +3897,14 @@ impl Default for xcb_get_property_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_property.
+/// The opcode for `GetProperty` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_property_request_t`].
 pub const XCB_GET_PROPERTY: u8 = 20i32 as u8;
 
+/// The `GetProperty` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_property_request_t {
@@ -2458,6 +3924,11 @@ impl Default for xcb_get_property_request_t {
     }
 }
 
+/// The `GetProperty` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_property_reply_t {
@@ -2477,9 +3948,15 @@ impl Default for xcb_get_property_reply_t {
     }
 }
 
+/// The cookie for the reply to a `ListProperties` request.
+///
+/// Pass this cookie to [`xcb_list_properties_reply`] to retrieve the reply.
+///
+/// [`xcb_list_properties_reply`]: Xcb::xcb_list_properties_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_properties_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2489,9 +3966,14 @@ impl Default for xcb_list_properties_cookie_t {
     }
 }
 
-/// Opcode for xcb_list_properties.
+/// The opcode for `ListProperties` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_list_properties_request_t`].
 pub const XCB_LIST_PROPERTIES: u8 = 21i32 as u8;
 
+/// The `ListProperties` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_properties_request_t {
@@ -2507,6 +3989,11 @@ impl Default for xcb_list_properties_request_t {
     }
 }
 
+/// The `ListProperties` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `atoms`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_properties_reply_t {
@@ -2524,9 +4011,14 @@ impl Default for xcb_list_properties_reply_t {
     }
 }
 
-/// Opcode for xcb_set_selection_owner.
+/// The opcode for `SetSelectionOwner` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_selection_owner_request_t`].
 pub const XCB_SET_SELECTION_OWNER: u8 = 22i32 as u8;
 
+/// The `SetSelectionOwner` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_selection_owner_request_t {
@@ -2544,9 +4036,15 @@ impl Default for xcb_set_selection_owner_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetSelectionOwner` request.
+///
+/// Pass this cookie to [`xcb_get_selection_owner_reply`] to retrieve the reply.
+///
+/// [`xcb_get_selection_owner_reply`]: Xcb::xcb_get_selection_owner_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_selection_owner_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2556,9 +4054,14 @@ impl Default for xcb_get_selection_owner_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_selection_owner.
+/// The opcode for `GetSelectionOwner` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_selection_owner_request_t`].
 pub const XCB_GET_SELECTION_OWNER: u8 = 23i32 as u8;
 
+/// The `GetSelectionOwner` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_selection_owner_request_t {
@@ -2574,6 +4077,7 @@ impl Default for xcb_get_selection_owner_request_t {
     }
 }
 
+/// The `GetSelectionOwner` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_selection_owner_reply_t {
@@ -2590,9 +4094,14 @@ impl Default for xcb_get_selection_owner_reply_t {
     }
 }
 
-/// Opcode for xcb_convert_selection.
+/// The opcode for `ConvertSelection` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_convert_selection_request_t`].
 pub const XCB_CONVERT_SELECTION: u8 = 24i32 as u8;
 
+/// The `ConvertSelection` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_convert_selection_request_t {
@@ -2612,13 +4121,30 @@ impl Default for xcb_convert_selection_request_t {
     }
 }
 
+/// The `SendEventDest` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`SendEventDest::PointerWindow`](XCB_SEND_EVENT_DEST_POINTER_WINDOW)
+/// - [`SendEventDest::ItemFocus`](XCB_SEND_EVENT_DEST_ITEM_FOCUS)
 pub type xcb_send_event_dest_t = u32;
+/// The `SendEventDest::PointerWindow` enum variant.
+///
+/// This is a variant of [`xcb_send_event_dest_t`].
 pub const XCB_SEND_EVENT_DEST_POINTER_WINDOW: xcb_send_event_dest_t = 0;
+/// The `SendEventDest::ItemFocus` enum variant.
+///
+/// This is a variant of [`xcb_send_event_dest_t`].
 pub const XCB_SEND_EVENT_DEST_ITEM_FOCUS: xcb_send_event_dest_t = 1;
 
-/// Opcode for xcb_send_event.
+/// The opcode for `SendEvent` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_send_event_request_t`].
 pub const XCB_SEND_EVENT: u8 = 25i32 as u8;
 
+/// The `SendEvent` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_send_event_request_t {
@@ -2636,27 +4162,73 @@ impl Default for xcb_send_event_request_t {
     }
 }
 
+/// The `GrabMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`GrabMode::Sync`](XCB_GRAB_MODE_SYNC)
+/// - [`GrabMode::Async`](XCB_GRAB_MODE_ASYNC)
 pub type xcb_grab_mode_t = u32;
-/// The state of the keyboard appears to freeze: No further keyboard events are
-/// generated by the server until the grabbing client issues a releasing
-/// `AllowEvents` request or until the keyboard grab is released.
+/// The `GrabMode::Sync` enum variant.
+///
+/// This is a variant of [`xcb_grab_mode_t`].
 pub const XCB_GRAB_MODE_SYNC: xcb_grab_mode_t = 0;
-/// Keyboard event processing continues normally.
+/// The `GrabMode::Async` enum variant.
+///
+/// This is a variant of [`xcb_grab_mode_t`].
 pub const XCB_GRAB_MODE_ASYNC: xcb_grab_mode_t = 1;
 
+/// The `GrabStatus` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`GrabStatus::Success`](XCB_GRAB_STATUS_SUCCESS)
+/// - [`GrabStatus::AlreadyGrabbed`](XCB_GRAB_STATUS_ALREADY_GRABBED)
+/// - [`GrabStatus::InvalidTime`](XCB_GRAB_STATUS_INVALID_TIME)
+/// - [`GrabStatus::NotViewable`](XCB_GRAB_STATUS_NOT_VIEWABLE)
+/// - [`GrabStatus::Frozen`](XCB_GRAB_STATUS_FROZEN)
 pub type xcb_grab_status_t = u32;
+/// The `GrabStatus::Success` enum variant.
+///
+/// This is a variant of [`xcb_grab_status_t`].
 pub const XCB_GRAB_STATUS_SUCCESS: xcb_grab_status_t = 0;
+/// The `GrabStatus::AlreadyGrabbed` enum variant.
+///
+/// This is a variant of [`xcb_grab_status_t`].
 pub const XCB_GRAB_STATUS_ALREADY_GRABBED: xcb_grab_status_t = 1;
+/// The `GrabStatus::InvalidTime` enum variant.
+///
+/// This is a variant of [`xcb_grab_status_t`].
 pub const XCB_GRAB_STATUS_INVALID_TIME: xcb_grab_status_t = 2;
+/// The `GrabStatus::NotViewable` enum variant.
+///
+/// This is a variant of [`xcb_grab_status_t`].
 pub const XCB_GRAB_STATUS_NOT_VIEWABLE: xcb_grab_status_t = 3;
+/// The `GrabStatus::Frozen` enum variant.
+///
+/// This is a variant of [`xcb_grab_status_t`].
 pub const XCB_GRAB_STATUS_FROZEN: xcb_grab_status_t = 4;
 
+/// The `Cursor` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Cursor::None`](XCB_CURSOR_NONE)
 pub type xcb_cursor_enum_t = u32;
+/// The `Cursor::None` enum variant.
+///
+/// This is a variant of [`xcb_cursor_enum_t`].
 pub const XCB_CURSOR_NONE: xcb_cursor_enum_t = 0;
 
+/// The cookie for the reply to a `GrabPointer` request.
+///
+/// Pass this cookie to [`xcb_grab_pointer_reply`] to retrieve the reply.
+///
+/// [`xcb_grab_pointer_reply`]: Xcb::xcb_grab_pointer_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_pointer_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2666,9 +4238,14 @@ impl Default for xcb_grab_pointer_cookie_t {
     }
 }
 
-/// Opcode for xcb_grab_pointer.
+/// The opcode for `GrabPointer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_grab_pointer_request_t`].
 pub const XCB_GRAB_POINTER: u8 = 26i32 as u8;
 
+/// The `GrabPointer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_pointer_request_t {
@@ -2690,6 +4267,7 @@ impl Default for xcb_grab_pointer_request_t {
     }
 }
 
+/// The `GrabPointer` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_pointer_reply_t {
@@ -2705,9 +4283,14 @@ impl Default for xcb_grab_pointer_reply_t {
     }
 }
 
-/// Opcode for xcb_ungrab_pointer.
+/// The opcode for `UngrabPointer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_ungrab_pointer_request_t`].
 pub const XCB_UNGRAB_POINTER: u8 = 27i32 as u8;
 
+/// The `UngrabPointer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_ungrab_pointer_request_t {
@@ -2723,23 +4306,50 @@ impl Default for xcb_ungrab_pointer_request_t {
     }
 }
 
+/// The `ButtonIndex` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ButtonIndex::Any`](XCB_BUTTON_INDEX_ANY)
+/// - [`ButtonIndex::1`](XCB_BUTTON_INDEX_1)
+/// - [`ButtonIndex::2`](XCB_BUTTON_INDEX_2)
+/// - [`ButtonIndex::3`](XCB_BUTTON_INDEX_3)
+/// - [`ButtonIndex::4`](XCB_BUTTON_INDEX_4)
+/// - [`ButtonIndex::5`](XCB_BUTTON_INDEX_5)
 pub type xcb_button_index_t = u32;
-/// Any of the following (or none):
+/// The `ButtonIndex::Any` enum variant.
+///
+/// This is a variant of [`xcb_button_index_t`].
 pub const XCB_BUTTON_INDEX_ANY: xcb_button_index_t = 0;
-/// The left mouse button.
+/// The `ButtonIndex::1` enum variant.
+///
+/// This is a variant of [`xcb_button_index_t`].
 pub const XCB_BUTTON_INDEX_1: xcb_button_index_t = 1;
-/// The right mouse button.
+/// The `ButtonIndex::2` enum variant.
+///
+/// This is a variant of [`xcb_button_index_t`].
 pub const XCB_BUTTON_INDEX_2: xcb_button_index_t = 2;
-/// The middle mouse button.
+/// The `ButtonIndex::3` enum variant.
+///
+/// This is a variant of [`xcb_button_index_t`].
 pub const XCB_BUTTON_INDEX_3: xcb_button_index_t = 3;
-/// Scroll wheel. TODO: direction?
+/// The `ButtonIndex::4` enum variant.
+///
+/// This is a variant of [`xcb_button_index_t`].
 pub const XCB_BUTTON_INDEX_4: xcb_button_index_t = 4;
-/// Scroll wheel. TODO: direction?
+/// The `ButtonIndex::5` enum variant.
+///
+/// This is a variant of [`xcb_button_index_t`].
 pub const XCB_BUTTON_INDEX_5: xcb_button_index_t = 5;
 
-/// Opcode for xcb_grab_button.
+/// The opcode for `GrabButton` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_grab_button_request_t`].
 pub const XCB_GRAB_BUTTON: u8 = 28i32 as u8;
 
+/// The `GrabButton` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_button_request_t {
@@ -2763,9 +4373,14 @@ impl Default for xcb_grab_button_request_t {
     }
 }
 
-/// Opcode for xcb_ungrab_button.
+/// The opcode for `UngrabButton` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_ungrab_button_request_t`].
 pub const XCB_UNGRAB_BUTTON: u8 = 29i32 as u8;
 
+/// The `UngrabButton` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_ungrab_button_request_t {
@@ -2783,9 +4398,14 @@ impl Default for xcb_ungrab_button_request_t {
     }
 }
 
-/// Opcode for xcb_change_active_pointer_grab.
+/// The opcode for `ChangeActivePointerGrab` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_active_pointer_grab_request_t`].
 pub const XCB_CHANGE_ACTIVE_POINTER_GRAB: u8 = 30i32 as u8;
 
+/// The `ChangeActivePointerGrab` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_active_pointer_grab_request_t {
@@ -2804,9 +4424,15 @@ impl Default for xcb_change_active_pointer_grab_request_t {
     }
 }
 
+/// The cookie for the reply to a `GrabKeyboard` request.
+///
+/// Pass this cookie to [`xcb_grab_keyboard_reply`] to retrieve the reply.
+///
+/// [`xcb_grab_keyboard_reply`]: Xcb::xcb_grab_keyboard_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_keyboard_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -2816,9 +4442,14 @@ impl Default for xcb_grab_keyboard_cookie_t {
     }
 }
 
-/// Opcode for xcb_grab_keyboard.
+/// The opcode for `GrabKeyboard` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_grab_keyboard_request_t`].
 pub const XCB_GRAB_KEYBOARD: u8 = 31i32 as u8;
 
+/// The `GrabKeyboard` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_keyboard_request_t {
@@ -2838,6 +4469,7 @@ impl Default for xcb_grab_keyboard_request_t {
     }
 }
 
+/// The `GrabKeyboard` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_keyboard_reply_t {
@@ -2853,9 +4485,14 @@ impl Default for xcb_grab_keyboard_reply_t {
     }
 }
 
-/// Opcode for xcb_ungrab_keyboard.
+/// The opcode for `UngrabKeyboard` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_ungrab_keyboard_request_t`].
 pub const XCB_UNGRAB_KEYBOARD: u8 = 32i32 as u8;
 
+/// The `UngrabKeyboard` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_ungrab_keyboard_request_t {
@@ -2871,12 +4508,25 @@ impl Default for xcb_ungrab_keyboard_request_t {
     }
 }
 
+/// The `Grab` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Grab::Any`](XCB_GRAB_ANY)
 pub type xcb_grab_t = u32;
+/// The `Grab::Any` enum variant.
+///
+/// This is a variant of [`xcb_grab_t`].
 pub const XCB_GRAB_ANY: xcb_grab_t = 0;
 
-/// Opcode for xcb_grab_key.
+/// The opcode for `GrabKey` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_grab_key_request_t`].
 pub const XCB_GRAB_KEY: u8 = 33i32 as u8;
 
+/// The `GrabKey` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_key_request_t {
@@ -2897,9 +4547,14 @@ impl Default for xcb_grab_key_request_t {
     }
 }
 
-/// Opcode for xcb_ungrab_key.
+/// The opcode for `UngrabKey` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_ungrab_key_request_t`].
 pub const XCB_UNGRAB_KEY: u8 = 34i32 as u8;
 
+/// The `UngrabKey` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_ungrab_key_request_t {
@@ -2917,76 +4572,60 @@ impl Default for xcb_ungrab_key_request_t {
     }
 }
 
-pub type xcb_allow_t = u32;
-/// For AsyncPointer, if the pointer is frozen by the client, pointer event
-/// processing continues normally. If the pointer is frozen twice by the client on
-/// behalf of two separate grabs, AsyncPointer thaws for both. AsyncPointer has no
-/// effect if the pointer is not frozen by the client, but the pointer need not be
-/// grabbed by the client.
+/// The `Allow` enum.
 ///
-/// TODO: rewrite this in more understandable terms.
+/// This enum has the following variants:
+///
+/// - [`Allow::AsyncPointer`](XCB_ALLOW_ASYNC_POINTER)
+/// - [`Allow::SyncPointer`](XCB_ALLOW_SYNC_POINTER)
+/// - [`Allow::ReplayPointer`](XCB_ALLOW_REPLAY_POINTER)
+/// - [`Allow::AsyncKeyboard`](XCB_ALLOW_ASYNC_KEYBOARD)
+/// - [`Allow::SyncKeyboard`](XCB_ALLOW_SYNC_KEYBOARD)
+/// - [`Allow::ReplayKeyboard`](XCB_ALLOW_REPLAY_KEYBOARD)
+/// - [`Allow::AsyncBoth`](XCB_ALLOW_ASYNC_BOTH)
+/// - [`Allow::SyncBoth`](XCB_ALLOW_SYNC_BOTH)
+pub type xcb_allow_t = u32;
+/// The `Allow::AsyncPointer` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_ASYNC_POINTER: xcb_allow_t = 0;
-/// For SyncPointer, if the pointer is frozen and actively grabbed by the client,
-/// pointer event processing continues normally until the next ButtonPress or
-/// ButtonRelease event is reported to the client, at which time the pointer again
-/// appears to freeze. However, if the reported event causes the pointer grab to be
-/// released, then the pointer does not freeze. SyncPointer has no effect if the
-/// pointer is not frozen by the client or if the pointer is not grabbed by the
-/// client.
+/// The `Allow::SyncPointer` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_SYNC_POINTER: xcb_allow_t = 1;
-/// For ReplayPointer, if the pointer is actively grabbed by the client and is
-/// frozen as the result of an event having been sent to the client (either from
-/// the activation of a GrabButton or from a previous AllowEvents with mode
-/// SyncPointer but not from a GrabPointer), then the pointer grab is released and
-/// that event is completely reprocessed, this time ignoring any passive grabs at
-/// or above (towards the root) the grab-window of the grab just released. The
-/// request has no effect if the pointer is not grabbed by the client or if the
-/// pointer is not frozen as the result of an event.
+/// The `Allow::ReplayPointer` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_REPLAY_POINTER: xcb_allow_t = 2;
-/// For AsyncKeyboard, if the keyboard is frozen by the client, keyboard event
-/// processing continues normally. If the keyboard is frozen twice by the client on
-/// behalf of two separate grabs, AsyncKeyboard thaws for both. AsyncKeyboard has
-/// no effect if the keyboard is not frozen by the client, but the keyboard need
-/// not be grabbed by the client.
+/// The `Allow::AsyncKeyboard` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_ASYNC_KEYBOARD: xcb_allow_t = 3;
-/// For SyncKeyboard, if the keyboard is frozen and actively grabbed by the client,
-/// keyboard event processing continues normally until the next KeyPress or
-/// KeyRelease event is reported to the client, at which time the keyboard again
-/// appears to freeze. However, if the reported event causes the keyboard grab to
-/// be released, then the keyboard does not freeze. SyncKeyboard has no effect if
-/// the keyboard is not frozen by the client or if the keyboard is not grabbed by
-/// the client.
+/// The `Allow::SyncKeyboard` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_SYNC_KEYBOARD: xcb_allow_t = 4;
-/// For ReplayKeyboard, if the keyboard is actively grabbed by the client and is
-/// frozen as the result of an event having been sent to the client (either from
-/// the activation of a GrabKey or from a previous AllowEvents with mode
-/// SyncKeyboard but not from a GrabKeyboard), then the keyboard grab is released
-/// and that event is completely reprocessed, this time ignoring any passive grabs
-/// at or above (towards the root) the grab-window of the grab just released. The
-/// request has no effect if the keyboard is not grabbed by the client or if the
-/// keyboard is not frozen as the result of an event.
+/// The `Allow::ReplayKeyboard` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_REPLAY_KEYBOARD: xcb_allow_t = 5;
-/// For AsyncBoth, if the pointer and the keyboard are frozen by the client, event
-/// processing for both devices continues normally. If a device is frozen twice by
-/// the client on behalf of two separate grabs, AsyncBoth thaws for both. AsyncBoth
-/// has no effect unless both pointer and keyboard are frozen by the client.
+/// The `Allow::AsyncBoth` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_ASYNC_BOTH: xcb_allow_t = 6;
-/// For SyncBoth, if both pointer and keyboard are frozen by the client, event
-/// processing (for both devices) continues normally until the next ButtonPress,
-/// ButtonRelease, KeyPress, or KeyRelease event is reported to the client for a
-/// grabbed device (button event for the pointer, key event for the keyboard), at
-/// which time the devices again appear to freeze. However, if the reported event
-/// causes the grab to be released, then the devices do not freeze (but if the
-/// other device is still grabbed, then a subsequent event for it will still cause
-/// both devices to freeze). SyncBoth has no effect unless both pointer and
-/// keyboard are frozen by the client. If the pointer or keyboard is frozen twice
-/// by the client on behalf of two separate grabs, SyncBoth thaws for both (but a
-/// subsequent freeze for SyncBoth will only freeze each device once).
+/// The `Allow::SyncBoth` enum variant.
+///
+/// This is a variant of [`xcb_allow_t`].
 pub const XCB_ALLOW_SYNC_BOTH: xcb_allow_t = 7;
 
-/// Opcode for xcb_allow_events.
+/// The opcode for `AllowEvents` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_allow_events_request_t`].
 pub const XCB_ALLOW_EVENTS: u8 = 35i32 as u8;
 
+/// The `AllowEvents` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_allow_events_request_t {
@@ -3002,9 +4641,14 @@ impl Default for xcb_allow_events_request_t {
     }
 }
 
-/// Opcode for xcb_grab_server.
+/// The opcode for `GrabServer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_grab_server_request_t`].
 pub const XCB_GRAB_SERVER: u8 = 36i32 as u8;
 
+/// The `GrabServer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_grab_server_request_t {
@@ -3019,9 +4663,14 @@ impl Default for xcb_grab_server_request_t {
     }
 }
 
-/// Opcode for xcb_ungrab_server.
+/// The opcode for `UngrabServer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_ungrab_server_request_t`].
 pub const XCB_UNGRAB_SERVER: u8 = 37i32 as u8;
 
+/// The `UngrabServer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_ungrab_server_request_t {
@@ -3036,9 +4685,15 @@ impl Default for xcb_ungrab_server_request_t {
     }
 }
 
+/// The cookie for the reply to a `QueryPointer` request.
+///
+/// Pass this cookie to [`xcb_query_pointer_reply`] to retrieve the reply.
+///
+/// [`xcb_query_pointer_reply`]: Xcb::xcb_query_pointer_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_pointer_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3048,9 +4703,14 @@ impl Default for xcb_query_pointer_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_pointer.
+/// The opcode for `QueryPointer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_pointer_request_t`].
 pub const XCB_QUERY_POINTER: u8 = 38i32 as u8;
 
+/// The `QueryPointer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_pointer_request_t {
@@ -3066,6 +4726,7 @@ impl Default for xcb_query_pointer_request_t {
     }
 }
 
+/// The `QueryPointer` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_pointer_reply_t {
@@ -3089,6 +4750,7 @@ impl Default for xcb_query_pointer_reply_t {
     }
 }
 
+/// The `TIMECOORD` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_timecoord_t {
@@ -3103,11 +4765,15 @@ impl Default for xcb_timecoord_t {
     }
 }
 
+/// An iterator over `TIMECOORD` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_timecoord_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_timecoord_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -3117,9 +4783,15 @@ impl Default for xcb_timecoord_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `GetMotionEvents` request.
+///
+/// Pass this cookie to [`xcb_get_motion_events_reply`] to retrieve the reply.
+///
+/// [`xcb_get_motion_events_reply`]: Xcb::xcb_get_motion_events_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_motion_events_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3129,9 +4801,14 @@ impl Default for xcb_get_motion_events_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_motion_events.
+/// The opcode for `GetMotionEvents` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_motion_events_request_t`].
 pub const XCB_GET_MOTION_EVENTS: u8 = 39i32 as u8;
 
+/// The `GetMotionEvents` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_motion_events_request_t {
@@ -3149,6 +4826,11 @@ impl Default for xcb_get_motion_events_request_t {
     }
 }
 
+/// The `GetMotionEvents` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `events`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_motion_events_reply_t {
@@ -3166,9 +4848,15 @@ impl Default for xcb_get_motion_events_reply_t {
     }
 }
 
+/// The cookie for the reply to a `TranslateCoordinates` request.
+///
+/// Pass this cookie to [`xcb_translate_coordinates_reply`] to retrieve the reply.
+///
+/// [`xcb_translate_coordinates_reply`]: Xcb::xcb_translate_coordinates_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_translate_coordinates_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3178,9 +4866,14 @@ impl Default for xcb_translate_coordinates_cookie_t {
     }
 }
 
-/// Opcode for xcb_translate_coordinates.
+/// The opcode for `TranslateCoordinates` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_translate_coordinates_request_t`].
 pub const XCB_TRANSLATE_COORDINATES: u8 = 40i32 as u8;
 
+/// The `TranslateCoordinates` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_translate_coordinates_request_t {
@@ -3199,6 +4892,7 @@ impl Default for xcb_translate_coordinates_request_t {
     }
 }
 
+/// The `TranslateCoordinates` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_translate_coordinates_reply_t {
@@ -3217,9 +4911,14 @@ impl Default for xcb_translate_coordinates_reply_t {
     }
 }
 
-/// Opcode for xcb_warp_pointer.
+/// The opcode for `WarpPointer` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_warp_pointer_request_t`].
 pub const XCB_WARP_POINTER: u8 = 41i32 as u8;
 
+/// The `WarpPointer` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_warp_pointer_request_t {
@@ -3242,22 +4941,40 @@ impl Default for xcb_warp_pointer_request_t {
     }
 }
 
+/// The `InputFocus` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`InputFocus::None`](XCB_INPUT_FOCUS_NONE)
+/// - [`InputFocus::PointerRoot`](XCB_INPUT_FOCUS_POINTER_ROOT)
+/// - [`InputFocus::Parent`](XCB_INPUT_FOCUS_PARENT)
+/// - [`InputFocus::FollowKeyboard`](XCB_INPUT_FOCUS_FOLLOW_KEYBOARD)
 pub type xcb_input_focus_t = u32;
-/// The focus reverts to `XCB_NONE`, so no window will have the input focus.
+/// The `InputFocus::None` enum variant.
+///
+/// This is a variant of [`xcb_input_focus_t`].
 pub const XCB_INPUT_FOCUS_NONE: xcb_input_focus_t = 0;
-/// The focus reverts to `XCB_POINTER_ROOT` respectively. When the focus reverts,
-/// FocusIn and FocusOut events are generated, but the last-focus-change time is
-/// not changed.
+/// The `InputFocus::PointerRoot` enum variant.
+///
+/// This is a variant of [`xcb_input_focus_t`].
 pub const XCB_INPUT_FOCUS_POINTER_ROOT: xcb_input_focus_t = 1;
-/// The focus reverts to the parent (or closest viewable ancestor) and the new
-/// revert_to value is `XCB_INPUT_FOCUS_NONE`.
+/// The `InputFocus::Parent` enum variant.
+///
+/// This is a variant of [`xcb_input_focus_t`].
 pub const XCB_INPUT_FOCUS_PARENT: xcb_input_focus_t = 2;
-/// NOT YET DOCUMENTED. Only relevant for the xinput extension.
+/// The `InputFocus::FollowKeyboard` enum variant.
+///
+/// This is a variant of [`xcb_input_focus_t`].
 pub const XCB_INPUT_FOCUS_FOLLOW_KEYBOARD: xcb_input_focus_t = 3;
 
-/// Opcode for xcb_set_input_focus.
+/// The opcode for `SetInputFocus` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_input_focus_request_t`].
 pub const XCB_SET_INPUT_FOCUS: u8 = 42i32 as u8;
 
+/// The `SetInputFocus` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_input_focus_request_t {
@@ -3274,9 +4991,15 @@ impl Default for xcb_set_input_focus_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetInputFocus` request.
+///
+/// Pass this cookie to [`xcb_get_input_focus_reply`] to retrieve the reply.
+///
+/// [`xcb_get_input_focus_reply`]: Xcb::xcb_get_input_focus_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_input_focus_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3286,9 +5009,14 @@ impl Default for xcb_get_input_focus_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_input_focus.
+/// The opcode for `GetInputFocus` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_input_focus_request_t`].
 pub const XCB_GET_INPUT_FOCUS: u8 = 43i32 as u8;
 
+/// The `GetInputFocus` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_input_focus_request_t {
@@ -3303,6 +5031,7 @@ impl Default for xcb_get_input_focus_request_t {
     }
 }
 
+/// The `GetInputFocus` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_input_focus_reply_t {
@@ -3319,9 +5048,15 @@ impl Default for xcb_get_input_focus_reply_t {
     }
 }
 
+/// The cookie for the reply to a `QueryKeymap` request.
+///
+/// Pass this cookie to [`xcb_query_keymap_reply`] to retrieve the reply.
+///
+/// [`xcb_query_keymap_reply`]: Xcb::xcb_query_keymap_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_keymap_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3331,9 +5066,14 @@ impl Default for xcb_query_keymap_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_keymap.
+/// The opcode for `QueryKeymap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_keymap_request_t`].
 pub const XCB_QUERY_KEYMAP: u8 = 44i32 as u8;
 
+/// The `QueryKeymap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_keymap_request_t {
@@ -3348,6 +5088,7 @@ impl Default for xcb_query_keymap_request_t {
     }
 }
 
+/// The `QueryKeymap` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_keymap_reply_t {
@@ -3364,9 +5105,18 @@ impl Default for xcb_query_keymap_reply_t {
     }
 }
 
-/// Opcode for xcb_open_font.
+/// The opcode for `OpenFont` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_open_font_request_t`].
 pub const XCB_OPEN_FONT: u8 = 45i32 as u8;
 
+/// The `OpenFont` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_open_font_request_t {
@@ -3384,9 +5134,14 @@ impl Default for xcb_open_font_request_t {
     }
 }
 
-/// Opcode for xcb_close_font.
+/// The opcode for `CloseFont` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_close_font_request_t`].
 pub const XCB_CLOSE_FONT: u8 = 46i32 as u8;
 
+/// The `CloseFont` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_close_font_request_t {
@@ -3402,10 +5157,23 @@ impl Default for xcb_close_font_request_t {
     }
 }
 
+/// The `FontDraw` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`FontDraw::LeftToRight`](XCB_FONT_DRAW_LEFT_TO_RIGHT)
+/// - [`FontDraw::RightToLeft`](XCB_FONT_DRAW_RIGHT_TO_LEFT)
 pub type xcb_font_draw_t = u32;
+/// The `FontDraw::LeftToRight` enum variant.
+///
+/// This is a variant of [`xcb_font_draw_t`].
 pub const XCB_FONT_DRAW_LEFT_TO_RIGHT: xcb_font_draw_t = 0;
+/// The `FontDraw::RightToLeft` enum variant.
+///
+/// This is a variant of [`xcb_font_draw_t`].
 pub const XCB_FONT_DRAW_RIGHT_TO_LEFT: xcb_font_draw_t = 1;
 
+/// The `FONTPROP` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_fontprop_t {
@@ -3419,11 +5187,15 @@ impl Default for xcb_fontprop_t {
     }
 }
 
+/// An iterator over `FONTPROP` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_fontprop_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_fontprop_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -3433,6 +5205,7 @@ impl Default for xcb_fontprop_iterator_t {
     }
 }
 
+/// The `CHARINFO` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_charinfo_t {
@@ -3450,11 +5223,15 @@ impl Default for xcb_charinfo_t {
     }
 }
 
+/// An iterator over `CHARINFO` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_charinfo_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_charinfo_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -3464,9 +5241,15 @@ impl Default for xcb_charinfo_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `QueryFont` request.
+///
+/// Pass this cookie to [`xcb_query_font_reply`] to retrieve the reply.
+///
+/// [`xcb_query_font_reply`]: Xcb::xcb_query_font_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_font_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3476,9 +5259,14 @@ impl Default for xcb_query_font_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_font.
+/// The opcode for `QueryFont` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_font_request_t`].
 pub const XCB_QUERY_FONT: u8 = 47i32 as u8;
 
+/// The `QueryFont` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_font_request_t {
@@ -3494,6 +5282,12 @@ impl Default for xcb_query_font_request_t {
     }
 }
 
+/// The `QueryFont` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `properties`
+/// - `char_infos`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_font_reply_t {
@@ -3524,9 +5318,15 @@ impl Default for xcb_query_font_reply_t {
     }
 }
 
+/// The cookie for the reply to a `QueryTextExtents` request.
+///
+/// Pass this cookie to [`xcb_query_text_extents_reply`] to retrieve the reply.
+///
+/// [`xcb_query_text_extents_reply`]: Xcb::xcb_query_text_extents_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_text_extents_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3536,9 +5336,18 @@ impl Default for xcb_query_text_extents_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_text_extents.
+/// The opcode for `QueryTextExtents` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_text_extents_request_t`].
 pub const XCB_QUERY_TEXT_EXTENTS: u8 = 48i32 as u8;
 
+/// The `QueryTextExtents` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_text_extents_request_t {
@@ -3554,6 +5363,7 @@ impl Default for xcb_query_text_extents_request_t {
     }
 }
 
+/// The `QueryTextExtents` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_text_extents_reply_t {
@@ -3576,6 +5386,11 @@ impl Default for xcb_query_text_extents_reply_t {
     }
 }
 
+/// The `STR` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_str_t {
@@ -3588,11 +5403,15 @@ impl Default for xcb_str_t {
     }
 }
 
+/// An iterator over `STR` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_str_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_str_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -3602,9 +5421,15 @@ impl Default for xcb_str_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `ListFonts` request.
+///
+/// Pass this cookie to [`xcb_list_fonts_reply`] to retrieve the reply.
+///
+/// [`xcb_list_fonts_reply`]: Xcb::xcb_list_fonts_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_fonts_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3614,9 +5439,18 @@ impl Default for xcb_list_fonts_cookie_t {
     }
 }
 
-/// Opcode for xcb_list_fonts.
+/// The opcode for `ListFonts` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_list_fonts_request_t`].
 pub const XCB_LIST_FONTS: u8 = 49i32 as u8;
 
+/// The `ListFonts` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pattern`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_fonts_request_t {
@@ -3633,6 +5467,11 @@ impl Default for xcb_list_fonts_request_t {
     }
 }
 
+/// The `ListFonts` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `names`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_fonts_reply_t {
@@ -3650,9 +5489,15 @@ impl Default for xcb_list_fonts_reply_t {
     }
 }
 
+/// The cookie for the reply to a `ListFontsWithInfo` request.
+///
+/// Pass this cookie to [`xcb_list_fonts_with_info_reply`] to retrieve the reply.
+///
+/// [`xcb_list_fonts_with_info_reply`]: Xcb::xcb_list_fonts_with_info_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_fonts_with_info_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3662,9 +5507,18 @@ impl Default for xcb_list_fonts_with_info_cookie_t {
     }
 }
 
-/// Opcode for xcb_list_fonts_with_info.
+/// The opcode for `ListFontsWithInfo` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_list_fonts_with_info_request_t`].
 pub const XCB_LIST_FONTS_WITH_INFO: u8 = 50i32 as u8;
 
+/// The `ListFontsWithInfo` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pattern`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_fonts_with_info_request_t {
@@ -3681,6 +5535,12 @@ impl Default for xcb_list_fonts_with_info_request_t {
     }
 }
 
+/// The `ListFontsWithInfo` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `properties`
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_fonts_with_info_reply_t {
@@ -3711,9 +5571,18 @@ impl Default for xcb_list_fonts_with_info_reply_t {
     }
 }
 
-/// Opcode for xcb_set_font_path.
+/// The opcode for `SetFontPath` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_font_path_request_t`].
 pub const XCB_SET_FONT_PATH: u8 = 51i32 as u8;
 
+/// The `SetFontPath` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `font`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_font_path_request_t {
@@ -3730,9 +5599,15 @@ impl Default for xcb_set_font_path_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetFontPath` request.
+///
+/// Pass this cookie to [`xcb_get_font_path_reply`] to retrieve the reply.
+///
+/// [`xcb_get_font_path_reply`]: Xcb::xcb_get_font_path_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_font_path_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -3742,9 +5617,14 @@ impl Default for xcb_get_font_path_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_font_path.
+/// The opcode for `GetFontPath` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_font_path_request_t`].
 pub const XCB_GET_FONT_PATH: u8 = 52i32 as u8;
 
+/// The `GetFontPath` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_font_path_request_t {
@@ -3759,6 +5639,11 @@ impl Default for xcb_get_font_path_request_t {
     }
 }
 
+/// The `GetFontPath` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `path`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_font_path_reply_t {
@@ -3776,9 +5661,14 @@ impl Default for xcb_get_font_path_reply_t {
     }
 }
 
-/// Opcode for xcb_create_pixmap.
+/// The opcode for `CreatePixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_create_pixmap_request_t`].
 pub const XCB_CREATE_PIXMAP: u8 = 53i32 as u8;
 
+/// The `CreatePixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_pixmap_request_t {
@@ -3797,9 +5687,14 @@ impl Default for xcb_create_pixmap_request_t {
     }
 }
 
-/// Opcode for xcb_free_pixmap.
+/// The opcode for `FreePixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_free_pixmap_request_t`].
 pub const XCB_FREE_PIXMAP: u8 = 54i32 as u8;
 
+/// The `FreePixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_free_pixmap_request_t {
@@ -3815,183 +5710,356 @@ impl Default for xcb_free_pixmap_request_t {
     }
 }
 
+/// The `GC` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`GC::Function`](XCB_GC_FUNCTION)
+/// - [`GC::PlaneMask`](XCB_GC_PLANE_MASK)
+/// - [`GC::Foreground`](XCB_GC_FOREGROUND)
+/// - [`GC::Background`](XCB_GC_BACKGROUND)
+/// - [`GC::LineWidth`](XCB_GC_LINE_WIDTH)
+/// - [`GC::LineStyle`](XCB_GC_LINE_STYLE)
+/// - [`GC::CapStyle`](XCB_GC_CAP_STYLE)
+/// - [`GC::JoinStyle`](XCB_GC_JOIN_STYLE)
+/// - [`GC::FillStyle`](XCB_GC_FILL_STYLE)
+/// - [`GC::FillRule`](XCB_GC_FILL_RULE)
+/// - [`GC::Tile`](XCB_GC_TILE)
+/// - [`GC::Stipple`](XCB_GC_STIPPLE)
+/// - [`GC::TileStippleOriginX`](XCB_GC_TILE_STIPPLE_ORIGIN_X)
+/// - [`GC::TileStippleOriginY`](XCB_GC_TILE_STIPPLE_ORIGIN_Y)
+/// - [`GC::Font`](XCB_GC_FONT)
+/// - [`GC::SubwindowMode`](XCB_GC_SUBWINDOW_MODE)
+/// - [`GC::GraphicsExposures`](XCB_GC_GRAPHICS_EXPOSURES)
+/// - [`GC::ClipOriginX`](XCB_GC_CLIP_ORIGIN_X)
+/// - [`GC::ClipOriginY`](XCB_GC_CLIP_ORIGIN_Y)
+/// - [`GC::ClipMask`](XCB_GC_CLIP_MASK)
+/// - [`GC::DashOffset`](XCB_GC_DASH_OFFSET)
+/// - [`GC::DashList`](XCB_GC_DASH_LIST)
+/// - [`GC::ArcMode`](XCB_GC_ARC_MODE)
 pub type xcb_gc_t = u32;
-/// TODO: Refer to GX
+/// The `GC::Function` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_FUNCTION: xcb_gc_t = 1;
-/// In graphics operations, given a source and destination pixel, the result is
-/// computed bitwise on corresponding bits of the pixels; that is, a Boolean
-/// operation is performed in each bit plane. The plane-mask restricts the
-/// operation to a subset of planes, so the result is:
+/// The `GC::PlaneMask` enum variant.
 ///
-///         ((src FUNC dst) AND plane-mask) OR (dst AND (NOT plane-mask))
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_PLANE_MASK: xcb_gc_t = 2;
-/// Foreground colorpixel.
+/// The `GC::Foreground` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_FOREGROUND: xcb_gc_t = 4;
-/// Background colorpixel.
+/// The `GC::Background` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_BACKGROUND: xcb_gc_t = 8;
-/// The line-width is measured in pixels and can be greater than or equal to one, a wide line, or the
-/// special value zero, a thin line.
+/// The `GC::LineWidth` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_LINE_WIDTH: xcb_gc_t = 16;
-/// The line-style defines which sections of a line are drawn:
-/// Solid                The full path of the line is drawn.
-/// DoubleDash           The full path of the line is drawn, but the even dashes are filled differently
-///                      than the odd dashes (see fill-style), with Butt cap-style used where even and
-///                      odd dashes meet.
-/// OnOffDash            Only the even dashes are drawn, and cap-style applies to all internal ends of
-///                      the individual dashes (except NotLast is treated as Butt).
+/// The `GC::LineStyle` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_LINE_STYLE: xcb_gc_t = 32;
-/// The cap-style defines how the endpoints of a path are drawn:
-/// NotLast    The result is equivalent to Butt, except that for a line-width of zero the final
-///            endpoint is not drawn.
-/// Butt       The result is square at the endpoint (perpendicular to the slope of the line)
-///            with no projection beyond.
-/// Round      The result is a circular arc with its diameter equal to the line-width, centered
-///            on the endpoint; it is equivalent to Butt for line-width zero.
-/// Projecting The result is square at the end, but the path continues beyond the endpoint for
-///            a distance equal to half the line-width; it is equivalent to Butt for line-width
-///            zero.
+/// The `GC::CapStyle` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_CAP_STYLE: xcb_gc_t = 64;
-/// The join-style defines how corners are drawn for wide lines:
-/// Miter               The outer edges of the two lines extend to meet at an angle. However, if the
-///                     angle is less than 11 degrees, a Bevel join-style is used instead.
-/// Round               The result is a circular arc with a diameter equal to the line-width, centered
-///                     on the joinpoint.
-/// Bevel               The result is Butt endpoint styles, and then the triangular notch is filled.
+/// The `GC::JoinStyle` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_JOIN_STYLE: xcb_gc_t = 128;
-/// The fill-style defines the contents of the source for line, text, and fill requests. For all text and fill
-/// requests (for example, PolyText8, PolyText16, PolyFillRectangle, FillPoly, and PolyFillArc)
-/// as well as for line requests with line-style Solid, (for example, PolyLine, PolySegment,
-/// PolyRectangle, PolyArc) and for the even dashes for line requests with line-style OnOffDash
-/// or DoubleDash:
-/// Solid                     Foreground
-/// Tiled                     Tile
-/// OpaqueStippled            A tile with the same width and height as stipple but with background
-///                           everywhere stipple has a zero and with foreground everywhere stipple
-///                           has a one
-/// Stippled                  Foreground masked by stipple
-/// For the odd dashes for line requests with line-style DoubleDash:
-/// Solid                     Background
-/// Tiled                     Same as for even dashes
-/// OpaqueStippled            Same as for even dashes
-/// Stippled                  Background masked by stipple
+/// The `GC::FillStyle` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_FILL_STYLE: xcb_gc_t = 256;
+/// The `GC::FillRule` enum variant.
 ///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_FILL_RULE: xcb_gc_t = 512;
-/// The tile/stipple represents an infinite two-dimensional plane with the tile/stipple replicated in all
-/// dimensions. When that plane is superimposed on the drawable for use in a graphics operation,
-/// the upper-left corner of some instance of the tile/stipple is at the coordinates within the drawable
-/// specified by the tile/stipple origin. The tile/stipple and clip origins are interpreted relative to the
-/// origin of whatever destination drawable is specified in a graphics request.
-/// The tile pixmap must have the same root and depth as the gcontext (or a Match error results).
-/// The stipple pixmap must have depth one and must have the same root as the gcontext (or a
-/// Match error results). For fill-style Stippled (but not fill-style
-/// OpaqueStippled), the stipple pattern is tiled in a single plane and acts as an
-/// additional clip mask to be ANDed with the clip-mask.
-/// Any size pixmap can be used for tiling or stippling, although some sizes may be faster to use than
-/// others.
-pub const XCB_GC_TILE: xcb_gc_t = 1024;
-/// The tile/stipple represents an infinite two-dimensional plane with the tile/stipple replicated in all
-/// dimensions. When that plane is superimposed on the drawable for use in a graphics operation,
-/// the upper-left corner of some instance of the tile/stipple is at the coordinates within the drawable
-/// specified by the tile/stipple origin. The tile/stipple and clip origins are interpreted relative to the
-/// origin of whatever destination drawable is specified in a graphics request.
-/// The tile pixmap must have the same root and depth as the gcontext (or a Match error results).
-/// The stipple pixmap must have depth one and must have the same root as the gcontext (or a
-/// Match error results). For fill-style Stippled (but not fill-style
-/// OpaqueStippled), the stipple pattern is tiled in a single plane and acts as an
-/// additional clip mask to be ANDed with the clip-mask.
-/// Any size pixmap can be used for tiling or stippling, although some sizes may be faster to use than
-/// others.
-pub const XCB_GC_STIPPLE: xcb_gc_t = 2048;
-/// TODO
-pub const XCB_GC_TILE_STIPPLE_ORIGIN_X: xcb_gc_t = 4096;
-/// TODO
-pub const XCB_GC_TILE_STIPPLE_ORIGIN_Y: xcb_gc_t = 8192;
-/// Which font to use for the `ImageText8` and `ImageText16` requests.
-pub const XCB_GC_FONT: xcb_gc_t = 16384;
-/// For ClipByChildren, both source and destination windows are additionally
-/// clipped by all viewable InputOutput children. For IncludeInferiors, neither
-/// source nor destination window is
-/// clipped by inferiors. This will result in including subwindow contents in the source and drawing
-/// through subwindow boundaries of the destination. The use of IncludeInferiors with a source or
-/// destination window of one depth with mapped inferiors of differing depth is not illegal, but the
-/// semantics is undefined by the core protocol.
-pub const XCB_GC_SUBWINDOW_MODE: xcb_gc_t = 32768;
-/// Whether ExposureEvents should be generated (1) or not (0).
+/// The `GC::Tile` enum variant.
 ///
-/// The default is 1.
+/// This is a variant of [`xcb_gc_t`].
+pub const XCB_GC_TILE: xcb_gc_t = 1024;
+/// The `GC::Stipple` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
+pub const XCB_GC_STIPPLE: xcb_gc_t = 2048;
+/// The `GC::TileStippleOriginX` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
+pub const XCB_GC_TILE_STIPPLE_ORIGIN_X: xcb_gc_t = 4096;
+/// The `GC::TileStippleOriginY` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
+pub const XCB_GC_TILE_STIPPLE_ORIGIN_Y: xcb_gc_t = 8192;
+/// The `GC::Font` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
+pub const XCB_GC_FONT: xcb_gc_t = 16384;
+/// The `GC::SubwindowMode` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
+pub const XCB_GC_SUBWINDOW_MODE: xcb_gc_t = 32768;
+/// The `GC::GraphicsExposures` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_GRAPHICS_EXPOSURES: xcb_gc_t = 65536;
-/// TODO
+/// The `GC::ClipOriginX` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_CLIP_ORIGIN_X: xcb_gc_t = 131072;
-/// TODO
+/// The `GC::ClipOriginY` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_CLIP_ORIGIN_Y: xcb_gc_t = 262144;
-/// The clip-mask restricts writes to the destination drawable. Only pixels where the clip-mask has
-/// bits set to 1 are drawn. Pixels are not drawn outside the area covered by the clip-mask or where
-/// the clip-mask has bits set to 0. The clip-mask affects all graphics requests, but it does not clip
-/// sources. The clip-mask origin is interpreted relative to the origin of whatever destination drawable is specified in a graphics request. If a pixmap is specified as the clip-mask, it must have
-/// depth 1 and have the same root as the gcontext (or a Match error results). If clip-mask is None,
-/// then pixels are always drawn, regardless of the clip origin. The clip-mask can also be set with the
-/// SetClipRectangles request.
+/// The `GC::ClipMask` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_CLIP_MASK: xcb_gc_t = 524288;
-/// TODO
+/// The `GC::DashOffset` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_DASH_OFFSET: xcb_gc_t = 1048576;
-/// TODO
+/// The `GC::DashList` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_DASH_LIST: xcb_gc_t = 2097152;
-/// TODO
+/// The `GC::ArcMode` enum variant.
+///
+/// This is a variant of [`xcb_gc_t`].
 pub const XCB_GC_ARC_MODE: xcb_gc_t = 4194304;
 
+/// The `GX` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`GX::clear`](XCB_GX_CLEAR)
+/// - [`GX::and`](XCB_GX_AND)
+/// - [`GX::andReverse`](XCB_GX_AND_REVERSE)
+/// - [`GX::copy`](XCB_GX_COPY)
+/// - [`GX::andInverted`](XCB_GX_AND_INVERTED)
+/// - [`GX::noop`](XCB_GX_NOOP)
+/// - [`GX::xor`](XCB_GX_XOR)
+/// - [`GX::or`](XCB_GX_OR)
+/// - [`GX::nor`](XCB_GX_NOR)
+/// - [`GX::equiv`](XCB_GX_EQUIV)
+/// - [`GX::invert`](XCB_GX_INVERT)
+/// - [`GX::orReverse`](XCB_GX_OR_REVERSE)
+/// - [`GX::copyInverted`](XCB_GX_COPY_INVERTED)
+/// - [`GX::orInverted`](XCB_GX_OR_INVERTED)
+/// - [`GX::nand`](XCB_GX_NAND)
+/// - [`GX::set`](XCB_GX_SET)
 pub type xcb_gx_t = u32;
+/// The `GX::clear` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_CLEAR: xcb_gx_t = 0;
+/// The `GX::and` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_AND: xcb_gx_t = 1;
+/// The `GX::andReverse` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_AND_REVERSE: xcb_gx_t = 2;
+/// The `GX::copy` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_COPY: xcb_gx_t = 3;
+/// The `GX::andInverted` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_AND_INVERTED: xcb_gx_t = 4;
+/// The `GX::noop` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_NOOP: xcb_gx_t = 5;
+/// The `GX::xor` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_XOR: xcb_gx_t = 6;
+/// The `GX::or` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_OR: xcb_gx_t = 7;
+/// The `GX::nor` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_NOR: xcb_gx_t = 8;
+/// The `GX::equiv` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_EQUIV: xcb_gx_t = 9;
+/// The `GX::invert` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_INVERT: xcb_gx_t = 10;
+/// The `GX::orReverse` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_OR_REVERSE: xcb_gx_t = 11;
+/// The `GX::copyInverted` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_COPY_INVERTED: xcb_gx_t = 12;
+/// The `GX::orInverted` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_OR_INVERTED: xcb_gx_t = 13;
+/// The `GX::nand` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_NAND: xcb_gx_t = 14;
+/// The `GX::set` enum variant.
+///
+/// This is a variant of [`xcb_gx_t`].
 pub const XCB_GX_SET: xcb_gx_t = 15;
 
+/// The `LineStyle` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`LineStyle::Solid`](XCB_LINE_STYLE_SOLID)
+/// - [`LineStyle::OnOffDash`](XCB_LINE_STYLE_ON_OFF_DASH)
+/// - [`LineStyle::DoubleDash`](XCB_LINE_STYLE_DOUBLE_DASH)
 pub type xcb_line_style_t = u32;
+/// The `LineStyle::Solid` enum variant.
+///
+/// This is a variant of [`xcb_line_style_t`].
 pub const XCB_LINE_STYLE_SOLID: xcb_line_style_t = 0;
+/// The `LineStyle::OnOffDash` enum variant.
+///
+/// This is a variant of [`xcb_line_style_t`].
 pub const XCB_LINE_STYLE_ON_OFF_DASH: xcb_line_style_t = 1;
+/// The `LineStyle::DoubleDash` enum variant.
+///
+/// This is a variant of [`xcb_line_style_t`].
 pub const XCB_LINE_STYLE_DOUBLE_DASH: xcb_line_style_t = 2;
 
+/// The `CapStyle` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`CapStyle::NotLast`](XCB_CAP_STYLE_NOT_LAST)
+/// - [`CapStyle::Butt`](XCB_CAP_STYLE_BUTT)
+/// - [`CapStyle::Round`](XCB_CAP_STYLE_ROUND)
+/// - [`CapStyle::Projecting`](XCB_CAP_STYLE_PROJECTING)
 pub type xcb_cap_style_t = u32;
+/// The `CapStyle::NotLast` enum variant.
+///
+/// This is a variant of [`xcb_cap_style_t`].
 pub const XCB_CAP_STYLE_NOT_LAST: xcb_cap_style_t = 0;
+/// The `CapStyle::Butt` enum variant.
+///
+/// This is a variant of [`xcb_cap_style_t`].
 pub const XCB_CAP_STYLE_BUTT: xcb_cap_style_t = 1;
+/// The `CapStyle::Round` enum variant.
+///
+/// This is a variant of [`xcb_cap_style_t`].
 pub const XCB_CAP_STYLE_ROUND: xcb_cap_style_t = 2;
+/// The `CapStyle::Projecting` enum variant.
+///
+/// This is a variant of [`xcb_cap_style_t`].
 pub const XCB_CAP_STYLE_PROJECTING: xcb_cap_style_t = 3;
 
+/// The `JoinStyle` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`JoinStyle::Miter`](XCB_JOIN_STYLE_MITER)
+/// - [`JoinStyle::Round`](XCB_JOIN_STYLE_ROUND)
+/// - [`JoinStyle::Bevel`](XCB_JOIN_STYLE_BEVEL)
 pub type xcb_join_style_t = u32;
+/// The `JoinStyle::Miter` enum variant.
+///
+/// This is a variant of [`xcb_join_style_t`].
 pub const XCB_JOIN_STYLE_MITER: xcb_join_style_t = 0;
+/// The `JoinStyle::Round` enum variant.
+///
+/// This is a variant of [`xcb_join_style_t`].
 pub const XCB_JOIN_STYLE_ROUND: xcb_join_style_t = 1;
+/// The `JoinStyle::Bevel` enum variant.
+///
+/// This is a variant of [`xcb_join_style_t`].
 pub const XCB_JOIN_STYLE_BEVEL: xcb_join_style_t = 2;
 
+/// The `FillStyle` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`FillStyle::Solid`](XCB_FILL_STYLE_SOLID)
+/// - [`FillStyle::Tiled`](XCB_FILL_STYLE_TILED)
+/// - [`FillStyle::Stippled`](XCB_FILL_STYLE_STIPPLED)
+/// - [`FillStyle::OpaqueStippled`](XCB_FILL_STYLE_OPAQUE_STIPPLED)
 pub type xcb_fill_style_t = u32;
+/// The `FillStyle::Solid` enum variant.
+///
+/// This is a variant of [`xcb_fill_style_t`].
 pub const XCB_FILL_STYLE_SOLID: xcb_fill_style_t = 0;
+/// The `FillStyle::Tiled` enum variant.
+///
+/// This is a variant of [`xcb_fill_style_t`].
 pub const XCB_FILL_STYLE_TILED: xcb_fill_style_t = 1;
+/// The `FillStyle::Stippled` enum variant.
+///
+/// This is a variant of [`xcb_fill_style_t`].
 pub const XCB_FILL_STYLE_STIPPLED: xcb_fill_style_t = 2;
+/// The `FillStyle::OpaqueStippled` enum variant.
+///
+/// This is a variant of [`xcb_fill_style_t`].
 pub const XCB_FILL_STYLE_OPAQUE_STIPPLED: xcb_fill_style_t = 3;
 
+/// The `FillRule` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`FillRule::EvenOdd`](XCB_FILL_RULE_EVEN_ODD)
+/// - [`FillRule::Winding`](XCB_FILL_RULE_WINDING)
 pub type xcb_fill_rule_t = u32;
+/// The `FillRule::EvenOdd` enum variant.
+///
+/// This is a variant of [`xcb_fill_rule_t`].
 pub const XCB_FILL_RULE_EVEN_ODD: xcb_fill_rule_t = 0;
+/// The `FillRule::Winding` enum variant.
+///
+/// This is a variant of [`xcb_fill_rule_t`].
 pub const XCB_FILL_RULE_WINDING: xcb_fill_rule_t = 1;
 
+/// The `SubwindowMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`SubwindowMode::ClipByChildren`](XCB_SUBWINDOW_MODE_CLIP_BY_CHILDREN)
+/// - [`SubwindowMode::IncludeInferiors`](XCB_SUBWINDOW_MODE_INCLUDE_INFERIORS)
 pub type xcb_subwindow_mode_t = u32;
+/// The `SubwindowMode::ClipByChildren` enum variant.
+///
+/// This is a variant of [`xcb_subwindow_mode_t`].
 pub const XCB_SUBWINDOW_MODE_CLIP_BY_CHILDREN: xcb_subwindow_mode_t = 0;
+/// The `SubwindowMode::IncludeInferiors` enum variant.
+///
+/// This is a variant of [`xcb_subwindow_mode_t`].
 pub const XCB_SUBWINDOW_MODE_INCLUDE_INFERIORS: xcb_subwindow_mode_t = 1;
 
+/// The `ArcMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ArcMode::Chord`](XCB_ARC_MODE_CHORD)
+/// - [`ArcMode::PieSlice`](XCB_ARC_MODE_PIE_SLICE)
 pub type xcb_arc_mode_t = u32;
+/// The `ArcMode::Chord` enum variant.
+///
+/// This is a variant of [`xcb_arc_mode_t`].
 pub const XCB_ARC_MODE_CHORD: xcb_arc_mode_t = 0;
+/// The `ArcMode::PieSlice` enum variant.
+///
+/// This is a variant of [`xcb_arc_mode_t`].
 pub const XCB_ARC_MODE_PIE_SLICE: xcb_arc_mode_t = 1;
 
+/// The `value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_gc_value_list_t {
@@ -4026,9 +6094,18 @@ impl Default for xcb_create_gc_value_list_t {
     }
 }
 
-/// Opcode for xcb_create_gc.
+/// The opcode for `CreateGC` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_create_gc_request_t`].
 pub const XCB_CREATE_GC: u8 = 55i32 as u8;
 
+/// The `CreateGC` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_gc_request_t {
@@ -4046,6 +6123,7 @@ impl Default for xcb_create_gc_request_t {
     }
 }
 
+/// The `value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_gc_value_list_t {
@@ -4080,9 +6158,18 @@ impl Default for xcb_change_gc_value_list_t {
     }
 }
 
-/// Opcode for xcb_change_gc.
+/// The opcode for `ChangeGC` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_gc_request_t`].
 pub const XCB_CHANGE_GC: u8 = 56i32 as u8;
 
+/// The `ChangeGC` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_gc_request_t {
@@ -4099,9 +6186,14 @@ impl Default for xcb_change_gc_request_t {
     }
 }
 
-/// Opcode for xcb_copy_gc.
+/// The opcode for `CopyGC` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_copy_gc_request_t`].
 pub const XCB_COPY_GC: u8 = 57i32 as u8;
 
+/// The `CopyGC` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_copy_gc_request_t {
@@ -4119,9 +6211,18 @@ impl Default for xcb_copy_gc_request_t {
     }
 }
 
-/// Opcode for xcb_set_dashes.
+/// The opcode for `SetDashes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_dashes_request_t`].
 pub const XCB_SET_DASHES: u8 = 58i32 as u8;
 
+/// The `SetDashes` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `dashes`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_dashes_request_t {
@@ -4139,15 +6240,44 @@ impl Default for xcb_set_dashes_request_t {
     }
 }
 
+/// The `ClipOrdering` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ClipOrdering::Unsorted`](XCB_CLIP_ORDERING_UNSORTED)
+/// - [`ClipOrdering::YSorted`](XCB_CLIP_ORDERING_Y_SORTED)
+/// - [`ClipOrdering::YXSorted`](XCB_CLIP_ORDERING_YX_SORTED)
+/// - [`ClipOrdering::YXBanded`](XCB_CLIP_ORDERING_YX_BANDED)
 pub type xcb_clip_ordering_t = u32;
+/// The `ClipOrdering::Unsorted` enum variant.
+///
+/// This is a variant of [`xcb_clip_ordering_t`].
 pub const XCB_CLIP_ORDERING_UNSORTED: xcb_clip_ordering_t = 0;
+/// The `ClipOrdering::YSorted` enum variant.
+///
+/// This is a variant of [`xcb_clip_ordering_t`].
 pub const XCB_CLIP_ORDERING_Y_SORTED: xcb_clip_ordering_t = 1;
+/// The `ClipOrdering::YXSorted` enum variant.
+///
+/// This is a variant of [`xcb_clip_ordering_t`].
 pub const XCB_CLIP_ORDERING_YX_SORTED: xcb_clip_ordering_t = 2;
+/// The `ClipOrdering::YXBanded` enum variant.
+///
+/// This is a variant of [`xcb_clip_ordering_t`].
 pub const XCB_CLIP_ORDERING_YX_BANDED: xcb_clip_ordering_t = 3;
 
-/// Opcode for xcb_set_clip_rectangles.
+/// The opcode for `SetClipRectangles` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_clip_rectangles_request_t`].
 pub const XCB_SET_CLIP_RECTANGLES: u8 = 59i32 as u8;
 
+/// The `SetClipRectangles` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_clip_rectangles_request_t {
@@ -4165,9 +6295,14 @@ impl Default for xcb_set_clip_rectangles_request_t {
     }
 }
 
-/// Opcode for xcb_free_gc.
+/// The opcode for `FreeGC` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_free_gc_request_t`].
 pub const XCB_FREE_GC: u8 = 60i32 as u8;
 
+/// The `FreeGC` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_free_gc_request_t {
@@ -4183,9 +6318,14 @@ impl Default for xcb_free_gc_request_t {
     }
 }
 
-/// Opcode for xcb_clear_area.
+/// The opcode for `ClearArea` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_clear_area_request_t`].
 pub const XCB_CLEAR_AREA: u8 = 61i32 as u8;
 
+/// The `ClearArea` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_clear_area_request_t {
@@ -4205,9 +6345,14 @@ impl Default for xcb_clear_area_request_t {
     }
 }
 
-/// Opcode for xcb_copy_area.
+/// The opcode for `CopyArea` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_copy_area_request_t`].
 pub const XCB_COPY_AREA: u8 = 62i32 as u8;
 
+/// The `CopyArea` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_copy_area_request_t {
@@ -4231,9 +6376,14 @@ impl Default for xcb_copy_area_request_t {
     }
 }
 
-/// Opcode for xcb_copy_plane.
+/// The opcode for `CopyPlane` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_copy_plane_request_t`].
 pub const XCB_COPY_PLANE: u8 = 63i32 as u8;
 
+/// The `CopyPlane` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_copy_plane_request_t {
@@ -4258,15 +6408,34 @@ impl Default for xcb_copy_plane_request_t {
     }
 }
 
+/// The `CoordMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`CoordMode::Origin`](XCB_COORD_MODE_ORIGIN)
+/// - [`CoordMode::Previous`](XCB_COORD_MODE_PREVIOUS)
 pub type xcb_coord_mode_t = u32;
-/// Treats all coordinates as relative to the origin.
+/// The `CoordMode::Origin` enum variant.
+///
+/// This is a variant of [`xcb_coord_mode_t`].
 pub const XCB_COORD_MODE_ORIGIN: xcb_coord_mode_t = 0;
-/// Treats all coordinates after the first as relative to the previous coordinate.
+/// The `CoordMode::Previous` enum variant.
+///
+/// This is a variant of [`xcb_coord_mode_t`].
 pub const XCB_COORD_MODE_PREVIOUS: xcb_coord_mode_t = 1;
 
-/// Opcode for xcb_poly_point.
+/// The opcode for `PolyPoint` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_point_request_t`].
 pub const XCB_POLY_POINT: u8 = 64i32 as u8;
 
+/// The `PolyPoint` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `points`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_point_request_t {
@@ -4283,9 +6452,18 @@ impl Default for xcb_poly_point_request_t {
     }
 }
 
-/// Opcode for xcb_poly_line.
+/// The opcode for `PolyLine` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_line_request_t`].
 pub const XCB_POLY_LINE: u8 = 65i32 as u8;
 
+/// The `PolyLine` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `points`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_line_request_t {
@@ -4302,6 +6480,7 @@ impl Default for xcb_poly_line_request_t {
     }
 }
 
+/// The `SEGMENT` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_segment_t {
@@ -4317,11 +6496,15 @@ impl Default for xcb_segment_t {
     }
 }
 
+/// An iterator over `SEGMENT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_segment_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_segment_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -4331,9 +6514,18 @@ impl Default for xcb_segment_iterator_t {
     }
 }
 
-/// Opcode for xcb_poly_segment.
+/// The opcode for `PolySegment` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_segment_request_t`].
 pub const XCB_POLY_SEGMENT: u8 = 66i32 as u8;
 
+/// The `PolySegment` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `segments`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_segment_request_t {
@@ -4350,9 +6542,18 @@ impl Default for xcb_poly_segment_request_t {
     }
 }
 
-/// Opcode for xcb_poly_rectangle.
+/// The opcode for `PolyRectangle` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_rectangle_request_t`].
 pub const XCB_POLY_RECTANGLE: u8 = 67i32 as u8;
 
+/// The `PolyRectangle` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_rectangle_request_t {
@@ -4369,9 +6570,18 @@ impl Default for xcb_poly_rectangle_request_t {
     }
 }
 
-/// Opcode for xcb_poly_arc.
+/// The opcode for `PolyArc` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_arc_request_t`].
 pub const XCB_POLY_ARC: u8 = 68i32 as u8;
 
+/// The `PolyArc` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `arcs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_arc_request_t {
@@ -4388,14 +6598,39 @@ impl Default for xcb_poly_arc_request_t {
     }
 }
 
+/// The `PolyShape` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`PolyShape::Complex`](XCB_POLY_SHAPE_COMPLEX)
+/// - [`PolyShape::Nonconvex`](XCB_POLY_SHAPE_NONCONVEX)
+/// - [`PolyShape::Convex`](XCB_POLY_SHAPE_CONVEX)
 pub type xcb_poly_shape_t = u32;
+/// The `PolyShape::Complex` enum variant.
+///
+/// This is a variant of [`xcb_poly_shape_t`].
 pub const XCB_POLY_SHAPE_COMPLEX: xcb_poly_shape_t = 0;
+/// The `PolyShape::Nonconvex` enum variant.
+///
+/// This is a variant of [`xcb_poly_shape_t`].
 pub const XCB_POLY_SHAPE_NONCONVEX: xcb_poly_shape_t = 1;
+/// The `PolyShape::Convex` enum variant.
+///
+/// This is a variant of [`xcb_poly_shape_t`].
 pub const XCB_POLY_SHAPE_CONVEX: xcb_poly_shape_t = 2;
 
-/// Opcode for xcb_fill_poly.
+/// The opcode for `FillPoly` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_fill_poly_request_t`].
 pub const XCB_FILL_POLY: u8 = 69i32 as u8;
 
+/// The `FillPoly` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `points`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_fill_poly_request_t {
@@ -4415,9 +6650,18 @@ impl Default for xcb_fill_poly_request_t {
     }
 }
 
-/// Opcode for xcb_poly_fill_rectangle.
+/// The opcode for `PolyFillRectangle` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_fill_rectangle_request_t`].
 pub const XCB_POLY_FILL_RECTANGLE: u8 = 70i32 as u8;
 
+/// The `PolyFillRectangle` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_fill_rectangle_request_t {
@@ -4434,9 +6678,18 @@ impl Default for xcb_poly_fill_rectangle_request_t {
     }
 }
 
-/// Opcode for xcb_poly_fill_arc.
+/// The opcode for `PolyFillArc` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_fill_arc_request_t`].
 pub const XCB_POLY_FILL_ARC: u8 = 71i32 as u8;
 
+/// The `PolyFillArc` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `arcs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_fill_arc_request_t {
@@ -4453,14 +6706,39 @@ impl Default for xcb_poly_fill_arc_request_t {
     }
 }
 
+/// The `ImageFormat` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ImageFormat::XYBitmap`](XCB_IMAGE_FORMAT_XY_BITMAP)
+/// - [`ImageFormat::XYPixmap`](XCB_IMAGE_FORMAT_XY_PIXMAP)
+/// - [`ImageFormat::ZPixmap`](XCB_IMAGE_FORMAT_Z_PIXMAP)
 pub type xcb_image_format_t = u32;
+/// The `ImageFormat::XYBitmap` enum variant.
+///
+/// This is a variant of [`xcb_image_format_t`].
 pub const XCB_IMAGE_FORMAT_XY_BITMAP: xcb_image_format_t = 0;
+/// The `ImageFormat::XYPixmap` enum variant.
+///
+/// This is a variant of [`xcb_image_format_t`].
 pub const XCB_IMAGE_FORMAT_XY_PIXMAP: xcb_image_format_t = 1;
+/// The `ImageFormat::ZPixmap` enum variant.
+///
+/// This is a variant of [`xcb_image_format_t`].
 pub const XCB_IMAGE_FORMAT_Z_PIXMAP: xcb_image_format_t = 2;
 
-/// Opcode for xcb_put_image.
+/// The opcode for `PutImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_put_image_request_t`].
 pub const XCB_PUT_IMAGE: u8 = 72i32 as u8;
 
+/// The `PutImage` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_put_image_request_t {
@@ -4484,9 +6762,15 @@ impl Default for xcb_put_image_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetImage` request.
+///
+/// Pass this cookie to [`xcb_get_image_reply`] to retrieve the reply.
+///
+/// [`xcb_get_image_reply`]: Xcb::xcb_get_image_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_image_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4496,9 +6780,14 @@ impl Default for xcb_get_image_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_image.
+/// The opcode for `GetImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_image_request_t`].
 pub const XCB_GET_IMAGE: u8 = 73i32 as u8;
 
+/// The `GetImage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_image_request_t {
@@ -4519,6 +6808,11 @@ impl Default for xcb_get_image_request_t {
     }
 }
 
+/// The `GetImage` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_image_reply_t {
@@ -4536,9 +6830,18 @@ impl Default for xcb_get_image_reply_t {
     }
 }
 
-/// Opcode for xcb_poly_text_8.
+/// The opcode for `PolyText8` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_text_8_request_t`].
 pub const XCB_POLY_TEXT_8: u8 = 74i32 as u8;
 
+/// The `PolyText8` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `items`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_text_8_request_t {
@@ -4557,9 +6860,18 @@ impl Default for xcb_poly_text_8_request_t {
     }
 }
 
-/// Opcode for xcb_poly_text_16.
+/// The opcode for `PolyText16` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_poly_text_16_request_t`].
 pub const XCB_POLY_TEXT_16: u8 = 75i32 as u8;
 
+/// The `PolyText16` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `items`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_poly_text_16_request_t {
@@ -4578,9 +6890,18 @@ impl Default for xcb_poly_text_16_request_t {
     }
 }
 
-/// Opcode for xcb_image_text_8.
+/// The opcode for `ImageText8` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_image_text_8_request_t`].
 pub const XCB_IMAGE_TEXT_8: u8 = 76i32 as u8;
 
+/// The `ImageText8` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_image_text_8_request_t {
@@ -4599,9 +6920,18 @@ impl Default for xcb_image_text_8_request_t {
     }
 }
 
-/// Opcode for xcb_image_text_16.
+/// The opcode for `ImageText16` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_image_text_16_request_t`].
 pub const XCB_IMAGE_TEXT_16: u8 = 77i32 as u8;
 
+/// The `ImageText16` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `string`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_image_text_16_request_t {
@@ -4620,13 +6950,30 @@ impl Default for xcb_image_text_16_request_t {
     }
 }
 
+/// The `ColormapAlloc` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ColormapAlloc::None`](XCB_COLORMAP_ALLOC_NONE)
+/// - [`ColormapAlloc::All`](XCB_COLORMAP_ALLOC_ALL)
 pub type xcb_colormap_alloc_t = u32;
+/// The `ColormapAlloc::None` enum variant.
+///
+/// This is a variant of [`xcb_colormap_alloc_t`].
 pub const XCB_COLORMAP_ALLOC_NONE: xcb_colormap_alloc_t = 0;
+/// The `ColormapAlloc::All` enum variant.
+///
+/// This is a variant of [`xcb_colormap_alloc_t`].
 pub const XCB_COLORMAP_ALLOC_ALL: xcb_colormap_alloc_t = 1;
 
-/// Opcode for xcb_create_colormap.
+/// The opcode for `CreateColormap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_create_colormap_request_t`].
 pub const XCB_CREATE_COLORMAP: u8 = 78i32 as u8;
 
+/// The `CreateColormap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_colormap_request_t {
@@ -4644,9 +6991,14 @@ impl Default for xcb_create_colormap_request_t {
     }
 }
 
-/// Opcode for xcb_free_colormap.
+/// The opcode for `FreeColormap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_free_colormap_request_t`].
 pub const XCB_FREE_COLORMAP: u8 = 79i32 as u8;
 
+/// The `FreeColormap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_free_colormap_request_t {
@@ -4662,9 +7014,14 @@ impl Default for xcb_free_colormap_request_t {
     }
 }
 
-/// Opcode for xcb_copy_colormap_and_free.
+/// The opcode for `CopyColormapAndFree` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_copy_colormap_and_free_request_t`].
 pub const XCB_COPY_COLORMAP_AND_FREE: u8 = 80i32 as u8;
 
+/// The `CopyColormapAndFree` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_copy_colormap_and_free_request_t {
@@ -4681,9 +7038,14 @@ impl Default for xcb_copy_colormap_and_free_request_t {
     }
 }
 
-/// Opcode for xcb_install_colormap.
+/// The opcode for `InstallColormap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_install_colormap_request_t`].
 pub const XCB_INSTALL_COLORMAP: u8 = 81i32 as u8;
 
+/// The `InstallColormap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_install_colormap_request_t {
@@ -4699,9 +7061,14 @@ impl Default for xcb_install_colormap_request_t {
     }
 }
 
-/// Opcode for xcb_uninstall_colormap.
+/// The opcode for `UninstallColormap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_uninstall_colormap_request_t`].
 pub const XCB_UNINSTALL_COLORMAP: u8 = 82i32 as u8;
 
+/// The `UninstallColormap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_uninstall_colormap_request_t {
@@ -4717,9 +7084,15 @@ impl Default for xcb_uninstall_colormap_request_t {
     }
 }
 
+/// The cookie for the reply to a `ListInstalledColormaps` request.
+///
+/// Pass this cookie to [`xcb_list_installed_colormaps_reply`] to retrieve the reply.
+///
+/// [`xcb_list_installed_colormaps_reply`]: Xcb::xcb_list_installed_colormaps_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_installed_colormaps_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4729,9 +7102,14 @@ impl Default for xcb_list_installed_colormaps_cookie_t {
     }
 }
 
-/// Opcode for xcb_list_installed_colormaps.
+/// The opcode for `ListInstalledColormaps` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_list_installed_colormaps_request_t`].
 pub const XCB_LIST_INSTALLED_COLORMAPS: u8 = 83i32 as u8;
 
+/// The `ListInstalledColormaps` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_installed_colormaps_request_t {
@@ -4747,6 +7125,11 @@ impl Default for xcb_list_installed_colormaps_request_t {
     }
 }
 
+/// The `ListInstalledColormaps` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `cmaps`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_installed_colormaps_reply_t {
@@ -4764,9 +7147,15 @@ impl Default for xcb_list_installed_colormaps_reply_t {
     }
 }
 
+/// The cookie for the reply to a `AllocColor` request.
+///
+/// Pass this cookie to [`xcb_alloc_color_reply`] to retrieve the reply.
+///
+/// [`xcb_alloc_color_reply`]: Xcb::xcb_alloc_color_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4776,9 +7165,14 @@ impl Default for xcb_alloc_color_cookie_t {
     }
 }
 
-/// Opcode for xcb_alloc_color.
+/// The opcode for `AllocColor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_alloc_color_request_t`].
 pub const XCB_ALLOC_COLOR: u8 = 84i32 as u8;
 
+/// The `AllocColor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_request_t {
@@ -4798,6 +7192,7 @@ impl Default for xcb_alloc_color_request_t {
     }
 }
 
+/// The `AllocColor` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_reply_t {
@@ -4818,9 +7213,15 @@ impl Default for xcb_alloc_color_reply_t {
     }
 }
 
+/// The cookie for the reply to a `AllocNamedColor` request.
+///
+/// Pass this cookie to [`xcb_alloc_named_color_reply`] to retrieve the reply.
+///
+/// [`xcb_alloc_named_color_reply`]: Xcb::xcb_alloc_named_color_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_named_color_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4830,9 +7231,18 @@ impl Default for xcb_alloc_named_color_cookie_t {
     }
 }
 
-/// Opcode for xcb_alloc_named_color.
+/// The opcode for `AllocNamedColor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_alloc_named_color_request_t`].
 pub const XCB_ALLOC_NAMED_COLOR: u8 = 85i32 as u8;
 
+/// The `AllocNamedColor` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_named_color_request_t {
@@ -4850,6 +7260,7 @@ impl Default for xcb_alloc_named_color_request_t {
     }
 }
 
+/// The `AllocNamedColor` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_named_color_reply_t {
@@ -4872,9 +7283,15 @@ impl Default for xcb_alloc_named_color_reply_t {
     }
 }
 
+/// The cookie for the reply to a `AllocColorCells` request.
+///
+/// Pass this cookie to [`xcb_alloc_color_cells_reply`] to retrieve the reply.
+///
+/// [`xcb_alloc_color_cells_reply`]: Xcb::xcb_alloc_color_cells_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_cells_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4884,9 +7301,14 @@ impl Default for xcb_alloc_color_cells_cookie_t {
     }
 }
 
-/// Opcode for xcb_alloc_color_cells.
+/// The opcode for `AllocColorCells` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_alloc_color_cells_request_t`].
 pub const XCB_ALLOC_COLOR_CELLS: u8 = 86i32 as u8;
 
+/// The `AllocColorCells` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_cells_request_t {
@@ -4904,6 +7326,12 @@ impl Default for xcb_alloc_color_cells_request_t {
     }
 }
 
+/// The `AllocColorCells` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pixels`
+/// - `masks`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_cells_reply_t {
@@ -4922,9 +7350,15 @@ impl Default for xcb_alloc_color_cells_reply_t {
     }
 }
 
+/// The cookie for the reply to a `AllocColorPlanes` request.
+///
+/// Pass this cookie to [`xcb_alloc_color_planes_reply`] to retrieve the reply.
+///
+/// [`xcb_alloc_color_planes_reply`]: Xcb::xcb_alloc_color_planes_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_planes_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -4934,9 +7368,14 @@ impl Default for xcb_alloc_color_planes_cookie_t {
     }
 }
 
-/// Opcode for xcb_alloc_color_planes.
+/// The opcode for `AllocColorPlanes` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_alloc_color_planes_request_t`].
 pub const XCB_ALLOC_COLOR_PLANES: u8 = 87i32 as u8;
 
+/// The `AllocColorPlanes` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_planes_request_t {
@@ -4956,6 +7395,11 @@ impl Default for xcb_alloc_color_planes_request_t {
     }
 }
 
+/// The `AllocColorPlanes` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pixels`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_alloc_color_planes_reply_t {
@@ -4977,9 +7421,18 @@ impl Default for xcb_alloc_color_planes_reply_t {
     }
 }
 
-/// Opcode for xcb_free_colors.
+/// The opcode for `FreeColors` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_free_colors_request_t`].
 pub const XCB_FREE_COLORS: u8 = 88i32 as u8;
 
+/// The `FreeColors` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pixels`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_free_colors_request_t {
@@ -4996,11 +7449,28 @@ impl Default for xcb_free_colors_request_t {
     }
 }
 
+/// The `ColorFlag` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ColorFlag::Red`](XCB_COLOR_FLAG_RED)
+/// - [`ColorFlag::Green`](XCB_COLOR_FLAG_GREEN)
+/// - [`ColorFlag::Blue`](XCB_COLOR_FLAG_BLUE)
 pub type xcb_color_flag_t = u32;
+/// The `ColorFlag::Red` enum variant.
+///
+/// This is a variant of [`xcb_color_flag_t`].
 pub const XCB_COLOR_FLAG_RED: xcb_color_flag_t = 1;
+/// The `ColorFlag::Green` enum variant.
+///
+/// This is a variant of [`xcb_color_flag_t`].
 pub const XCB_COLOR_FLAG_GREEN: xcb_color_flag_t = 2;
+/// The `ColorFlag::Blue` enum variant.
+///
+/// This is a variant of [`xcb_color_flag_t`].
 pub const XCB_COLOR_FLAG_BLUE: xcb_color_flag_t = 4;
 
+/// The `COLORITEM` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_coloritem_t {
@@ -5018,11 +7488,15 @@ impl Default for xcb_coloritem_t {
     }
 }
 
+/// An iterator over `COLORITEM` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_coloritem_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_coloritem_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -5032,9 +7506,18 @@ impl Default for xcb_coloritem_iterator_t {
     }
 }
 
-/// Opcode for xcb_store_colors.
+/// The opcode for `StoreColors` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_store_colors_request_t`].
 pub const XCB_STORE_COLORS: u8 = 89i32 as u8;
 
+/// The `StoreColors` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `items`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_store_colors_request_t {
@@ -5050,9 +7533,18 @@ impl Default for xcb_store_colors_request_t {
     }
 }
 
-/// Opcode for xcb_store_named_color.
+/// The opcode for `StoreNamedColor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_store_named_color_request_t`].
 pub const XCB_STORE_NAMED_COLOR: u8 = 90i32 as u8;
 
+/// The `StoreNamedColor` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_store_named_color_request_t {
@@ -5071,6 +7563,7 @@ impl Default for xcb_store_named_color_request_t {
     }
 }
 
+/// The `RGB` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_rgb_t {
@@ -5086,11 +7579,15 @@ impl Default for xcb_rgb_t {
     }
 }
 
+/// An iterator over `RGB` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_rgb_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_rgb_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -5100,9 +7597,15 @@ impl Default for xcb_rgb_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `QueryColors` request.
+///
+/// Pass this cookie to [`xcb_query_colors_reply`] to retrieve the reply.
+///
+/// [`xcb_query_colors_reply`]: Xcb::xcb_query_colors_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_colors_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5112,9 +7615,18 @@ impl Default for xcb_query_colors_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_colors.
+/// The opcode for `QueryColors` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_colors_request_t`].
 pub const XCB_QUERY_COLORS: u8 = 91i32 as u8;
 
+/// The `QueryColors` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `pixels`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_colors_request_t {
@@ -5130,6 +7642,11 @@ impl Default for xcb_query_colors_request_t {
     }
 }
 
+/// The `QueryColors` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `colors`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_colors_reply_t {
@@ -5147,9 +7664,15 @@ impl Default for xcb_query_colors_reply_t {
     }
 }
 
+/// The cookie for the reply to a `LookupColor` request.
+///
+/// Pass this cookie to [`xcb_lookup_color_reply`] to retrieve the reply.
+///
+/// [`xcb_lookup_color_reply`]: Xcb::xcb_lookup_color_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_lookup_color_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5159,9 +7682,18 @@ impl Default for xcb_lookup_color_cookie_t {
     }
 }
 
-/// Opcode for xcb_lookup_color.
+/// The opcode for `LookupColor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_lookup_color_request_t`].
 pub const XCB_LOOKUP_COLOR: u8 = 92i32 as u8;
 
+/// The `LookupColor` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_lookup_color_request_t {
@@ -5179,6 +7711,7 @@ impl Default for xcb_lookup_color_request_t {
     }
 }
 
+/// The `LookupColor` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_lookup_color_reply_t {
@@ -5200,12 +7733,25 @@ impl Default for xcb_lookup_color_reply_t {
     }
 }
 
+/// The `Pixmap` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Pixmap::None`](XCB_PIXMAP_NONE)
 pub type xcb_pixmap_enum_t = u32;
+/// The `Pixmap::None` enum variant.
+///
+/// This is a variant of [`xcb_pixmap_enum_t`].
 pub const XCB_PIXMAP_NONE: xcb_pixmap_enum_t = 0;
 
-/// Opcode for xcb_create_cursor.
+/// The opcode for `CreateCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_create_cursor_request_t`].
 pub const XCB_CREATE_CURSOR: u8 = 93i32 as u8;
 
+/// The `CreateCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_cursor_request_t {
@@ -5231,12 +7777,25 @@ impl Default for xcb_create_cursor_request_t {
     }
 }
 
+/// The `Font` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Font::None`](XCB_FONT_NONE)
 pub type xcb_font_enum_t = u32;
+/// The `Font::None` enum variant.
+///
+/// This is a variant of [`xcb_font_enum_t`].
 pub const XCB_FONT_NONE: xcb_font_enum_t = 0;
 
-/// Opcode for xcb_create_glyph_cursor.
+/// The opcode for `CreateGlyphCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_create_glyph_cursor_request_t`].
 pub const XCB_CREATE_GLYPH_CURSOR: u8 = 94i32 as u8;
 
+/// The `CreateGlyphCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_create_glyph_cursor_request_t {
@@ -5262,9 +7821,14 @@ impl Default for xcb_create_glyph_cursor_request_t {
     }
 }
 
-/// Opcode for xcb_free_cursor.
+/// The opcode for `FreeCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_free_cursor_request_t`].
 pub const XCB_FREE_CURSOR: u8 = 95i32 as u8;
 
+/// The `FreeCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_free_cursor_request_t {
@@ -5280,9 +7844,14 @@ impl Default for xcb_free_cursor_request_t {
     }
 }
 
-/// Opcode for xcb_recolor_cursor.
+/// The opcode for `RecolorCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_recolor_cursor_request_t`].
 pub const XCB_RECOLOR_CURSOR: u8 = 96i32 as u8;
 
+/// The `RecolorCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_recolor_cursor_request_t {
@@ -5304,14 +7873,36 @@ impl Default for xcb_recolor_cursor_request_t {
     }
 }
 
+/// The `QueryShapeOf` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`QueryShapeOf::LargestCursor`](XCB_QUERY_SHAPE_OF_LARGEST_CURSOR)
+/// - [`QueryShapeOf::FastestTile`](XCB_QUERY_SHAPE_OF_FASTEST_TILE)
+/// - [`QueryShapeOf::FastestStipple`](XCB_QUERY_SHAPE_OF_FASTEST_STIPPLE)
 pub type xcb_query_shape_of_t = u32;
+/// The `QueryShapeOf::LargestCursor` enum variant.
+///
+/// This is a variant of [`xcb_query_shape_of_t`].
 pub const XCB_QUERY_SHAPE_OF_LARGEST_CURSOR: xcb_query_shape_of_t = 0;
+/// The `QueryShapeOf::FastestTile` enum variant.
+///
+/// This is a variant of [`xcb_query_shape_of_t`].
 pub const XCB_QUERY_SHAPE_OF_FASTEST_TILE: xcb_query_shape_of_t = 1;
+/// The `QueryShapeOf::FastestStipple` enum variant.
+///
+/// This is a variant of [`xcb_query_shape_of_t`].
 pub const XCB_QUERY_SHAPE_OF_FASTEST_STIPPLE: xcb_query_shape_of_t = 2;
 
+/// The cookie for the reply to a `QueryBestSize` request.
+///
+/// Pass this cookie to [`xcb_query_best_size_reply`] to retrieve the reply.
+///
+/// [`xcb_query_best_size_reply`]: Xcb::xcb_query_best_size_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_best_size_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5321,9 +7912,14 @@ impl Default for xcb_query_best_size_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_best_size.
+/// The opcode for `QueryBestSize` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_best_size_request_t`].
 pub const XCB_QUERY_BEST_SIZE: u8 = 97i32 as u8;
 
+/// The `QueryBestSize` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_best_size_request_t {
@@ -5341,6 +7937,7 @@ impl Default for xcb_query_best_size_request_t {
     }
 }
 
+/// The `QueryBestSize` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_best_size_reply_t {
@@ -5358,9 +7955,15 @@ impl Default for xcb_query_best_size_reply_t {
     }
 }
 
+/// The cookie for the reply to a `QueryExtension` request.
+///
+/// Pass this cookie to [`xcb_query_extension_reply`] to retrieve the reply.
+///
+/// [`xcb_query_extension_reply`]: Xcb::xcb_query_extension_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_extension_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5370,9 +7973,18 @@ impl Default for xcb_query_extension_cookie_t {
     }
 }
 
-/// Opcode for xcb_query_extension.
+/// The opcode for `QueryExtension` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_query_extension_request_t`].
 pub const XCB_QUERY_EXTENSION: u8 = 98i32 as u8;
 
+/// The `QueryExtension` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `name`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_extension_request_t {
@@ -5389,6 +8001,7 @@ impl Default for xcb_query_extension_request_t {
     }
 }
 
+/// The `QueryExtension` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_query_extension_reply_t {
@@ -5408,9 +8021,15 @@ impl Default for xcb_query_extension_reply_t {
     }
 }
 
+/// The cookie for the reply to a `ListExtensions` request.
+///
+/// Pass this cookie to [`xcb_list_extensions_reply`] to retrieve the reply.
+///
+/// [`xcb_list_extensions_reply`]: Xcb::xcb_list_extensions_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_extensions_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5420,9 +8039,14 @@ impl Default for xcb_list_extensions_cookie_t {
     }
 }
 
-/// Opcode for xcb_list_extensions.
+/// The opcode for `ListExtensions` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_list_extensions_request_t`].
 pub const XCB_LIST_EXTENSIONS: u8 = 99i32 as u8;
 
+/// The `ListExtensions` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_extensions_request_t {
@@ -5437,6 +8061,11 @@ impl Default for xcb_list_extensions_request_t {
     }
 }
 
+/// The `ListExtensions` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `names`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_extensions_reply_t {
@@ -5453,9 +8082,18 @@ impl Default for xcb_list_extensions_reply_t {
     }
 }
 
-/// Opcode for xcb_change_keyboard_mapping.
+/// The opcode for `ChangeKeyboardMapping` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_keyboard_mapping_request_t`].
 pub const XCB_CHANGE_KEYBOARD_MAPPING: u8 = 100i32 as u8;
 
+/// The `ChangeKeyboardMapping` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `keysyms`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_keyboard_mapping_request_t {
@@ -5473,9 +8111,15 @@ impl Default for xcb_change_keyboard_mapping_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetKeyboardMapping` request.
+///
+/// Pass this cookie to [`xcb_get_keyboard_mapping_reply`] to retrieve the reply.
+///
+/// [`xcb_get_keyboard_mapping_reply`]: Xcb::xcb_get_keyboard_mapping_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_keyboard_mapping_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5485,9 +8129,14 @@ impl Default for xcb_get_keyboard_mapping_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_keyboard_mapping.
+/// The opcode for `GetKeyboardMapping` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_keyboard_mapping_request_t`].
 pub const XCB_GET_KEYBOARD_MAPPING: u8 = 101i32 as u8;
 
+/// The `GetKeyboardMapping` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_keyboard_mapping_request_t {
@@ -5504,6 +8153,11 @@ impl Default for xcb_get_keyboard_mapping_request_t {
     }
 }
 
+/// The `GetKeyboardMapping` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `keysyms`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_keyboard_mapping_reply_t {
@@ -5520,25 +8174,90 @@ impl Default for xcb_get_keyboard_mapping_reply_t {
     }
 }
 
+/// The `KB` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`KB::KeyClickPercent`](XCB_KB_KEY_CLICK_PERCENT)
+/// - [`KB::BellPercent`](XCB_KB_BELL_PERCENT)
+/// - [`KB::BellPitch`](XCB_KB_BELL_PITCH)
+/// - [`KB::BellDuration`](XCB_KB_BELL_DURATION)
+/// - [`KB::Led`](XCB_KB_LED)
+/// - [`KB::LedMode`](XCB_KB_LED_MODE)
+/// - [`KB::Key`](XCB_KB_KEY)
+/// - [`KB::AutoRepeatMode`](XCB_KB_AUTO_REPEAT_MODE)
 pub type xcb_kb_t = u32;
+/// The `KB::KeyClickPercent` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_KEY_CLICK_PERCENT: xcb_kb_t = 1;
+/// The `KB::BellPercent` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_BELL_PERCENT: xcb_kb_t = 2;
+/// The `KB::BellPitch` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_BELL_PITCH: xcb_kb_t = 4;
+/// The `KB::BellDuration` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_BELL_DURATION: xcb_kb_t = 8;
+/// The `KB::Led` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_LED: xcb_kb_t = 16;
+/// The `KB::LedMode` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_LED_MODE: xcb_kb_t = 32;
+/// The `KB::Key` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_KEY: xcb_kb_t = 64;
+/// The `KB::AutoRepeatMode` enum variant.
+///
+/// This is a variant of [`xcb_kb_t`].
 pub const XCB_KB_AUTO_REPEAT_MODE: xcb_kb_t = 128;
 
+/// The `LedMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`LedMode::Off`](XCB_LED_MODE_OFF)
+/// - [`LedMode::On`](XCB_LED_MODE_ON)
 pub type xcb_led_mode_t = u32;
+/// The `LedMode::Off` enum variant.
+///
+/// This is a variant of [`xcb_led_mode_t`].
 pub const XCB_LED_MODE_OFF: xcb_led_mode_t = 0;
+/// The `LedMode::On` enum variant.
+///
+/// This is a variant of [`xcb_led_mode_t`].
 pub const XCB_LED_MODE_ON: xcb_led_mode_t = 1;
 
+/// The `AutoRepeatMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`AutoRepeatMode::Off`](XCB_AUTO_REPEAT_MODE_OFF)
+/// - [`AutoRepeatMode::On`](XCB_AUTO_REPEAT_MODE_ON)
+/// - [`AutoRepeatMode::Default`](XCB_AUTO_REPEAT_MODE_DEFAULT)
 pub type xcb_auto_repeat_mode_t = u32;
+/// The `AutoRepeatMode::Off` enum variant.
+///
+/// This is a variant of [`xcb_auto_repeat_mode_t`].
 pub const XCB_AUTO_REPEAT_MODE_OFF: xcb_auto_repeat_mode_t = 0;
+/// The `AutoRepeatMode::On` enum variant.
+///
+/// This is a variant of [`xcb_auto_repeat_mode_t`].
 pub const XCB_AUTO_REPEAT_MODE_ON: xcb_auto_repeat_mode_t = 1;
+/// The `AutoRepeatMode::Default` enum variant.
+///
+/// This is a variant of [`xcb_auto_repeat_mode_t`].
 pub const XCB_AUTO_REPEAT_MODE_DEFAULT: xcb_auto_repeat_mode_t = 2;
 
+/// The `value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_keyboard_control_value_list_t {
@@ -5558,9 +8277,18 @@ impl Default for xcb_change_keyboard_control_value_list_t {
     }
 }
 
-/// Opcode for xcb_change_keyboard_control.
+/// The opcode for `ChangeKeyboardControl` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_keyboard_control_request_t`].
 pub const XCB_CHANGE_KEYBOARD_CONTROL: u8 = 102i32 as u8;
 
+/// The `ChangeKeyboardControl` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_keyboard_control_request_t {
@@ -5576,9 +8304,15 @@ impl Default for xcb_change_keyboard_control_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetKeyboardControl` request.
+///
+/// Pass this cookie to [`xcb_get_keyboard_control_reply`] to retrieve the reply.
+///
+/// [`xcb_get_keyboard_control_reply`]: Xcb::xcb_get_keyboard_control_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_keyboard_control_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5588,9 +8322,14 @@ impl Default for xcb_get_keyboard_control_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_keyboard_control.
+/// The opcode for `GetKeyboardControl` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_keyboard_control_request_t`].
 pub const XCB_GET_KEYBOARD_CONTROL: u8 = 103i32 as u8;
 
+/// The `GetKeyboardControl` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_keyboard_control_request_t {
@@ -5605,6 +8344,7 @@ impl Default for xcb_get_keyboard_control_request_t {
     }
 }
 
+/// The `GetKeyboardControl` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_keyboard_control_reply_t {
@@ -5627,9 +8367,14 @@ impl Default for xcb_get_keyboard_control_reply_t {
     }
 }
 
-/// Opcode for xcb_bell.
+/// The opcode for `Bell` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_bell_request_t`].
 pub const XCB_BELL: u8 = 104i32 as u8;
 
+/// The `Bell` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_bell_request_t {
@@ -5644,9 +8389,14 @@ impl Default for xcb_bell_request_t {
     }
 }
 
-/// Opcode for xcb_change_pointer_control.
+/// The opcode for `ChangePointerControl` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_pointer_control_request_t`].
 pub const XCB_CHANGE_POINTER_CONTROL: u8 = 105i32 as u8;
 
+/// The `ChangePointerControl` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_pointer_control_request_t {
@@ -5666,9 +8416,15 @@ impl Default for xcb_change_pointer_control_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetPointerControl` request.
+///
+/// Pass this cookie to [`xcb_get_pointer_control_reply`] to retrieve the reply.
+///
+/// [`xcb_get_pointer_control_reply`]: Xcb::xcb_get_pointer_control_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_pointer_control_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5678,9 +8434,14 @@ impl Default for xcb_get_pointer_control_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_pointer_control.
+/// The opcode for `GetPointerControl` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_pointer_control_request_t`].
 pub const XCB_GET_POINTER_CONTROL: u8 = 106i32 as u8;
 
+/// The `GetPointerControl` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_pointer_control_request_t {
@@ -5695,6 +8456,7 @@ impl Default for xcb_get_pointer_control_request_t {
     }
 }
 
+/// The `GetPointerControl` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_pointer_control_reply_t {
@@ -5714,19 +8476,56 @@ impl Default for xcb_get_pointer_control_reply_t {
     }
 }
 
+/// The `Blanking` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Blanking::NotPreferred`](XCB_BLANKING_NOT_PREFERRED)
+/// - [`Blanking::Preferred`](XCB_BLANKING_PREFERRED)
+/// - [`Blanking::Default`](XCB_BLANKING_DEFAULT)
 pub type xcb_blanking_t = u32;
+/// The `Blanking::NotPreferred` enum variant.
+///
+/// This is a variant of [`xcb_blanking_t`].
 pub const XCB_BLANKING_NOT_PREFERRED: xcb_blanking_t = 0;
+/// The `Blanking::Preferred` enum variant.
+///
+/// This is a variant of [`xcb_blanking_t`].
 pub const XCB_BLANKING_PREFERRED: xcb_blanking_t = 1;
+/// The `Blanking::Default` enum variant.
+///
+/// This is a variant of [`xcb_blanking_t`].
 pub const XCB_BLANKING_DEFAULT: xcb_blanking_t = 2;
 
+/// The `Exposures` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Exposures::NotAllowed`](XCB_EXPOSURES_NOT_ALLOWED)
+/// - [`Exposures::Allowed`](XCB_EXPOSURES_ALLOWED)
+/// - [`Exposures::Default`](XCB_EXPOSURES_DEFAULT)
 pub type xcb_exposures_t = u32;
+/// The `Exposures::NotAllowed` enum variant.
+///
+/// This is a variant of [`xcb_exposures_t`].
 pub const XCB_EXPOSURES_NOT_ALLOWED: xcb_exposures_t = 0;
+/// The `Exposures::Allowed` enum variant.
+///
+/// This is a variant of [`xcb_exposures_t`].
 pub const XCB_EXPOSURES_ALLOWED: xcb_exposures_t = 1;
+/// The `Exposures::Default` enum variant.
+///
+/// This is a variant of [`xcb_exposures_t`].
 pub const XCB_EXPOSURES_DEFAULT: xcb_exposures_t = 2;
 
-/// Opcode for xcb_set_screen_saver.
+/// The opcode for `SetScreenSaver` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_screen_saver_request_t`].
 pub const XCB_SET_SCREEN_SAVER: u8 = 107i32 as u8;
 
+/// The `SetScreenSaver` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_screen_saver_request_t {
@@ -5745,9 +8544,15 @@ impl Default for xcb_set_screen_saver_request_t {
     }
 }
 
+/// The cookie for the reply to a `GetScreenSaver` request.
+///
+/// Pass this cookie to [`xcb_get_screen_saver_reply`] to retrieve the reply.
+///
+/// [`xcb_get_screen_saver_reply`]: Xcb::xcb_get_screen_saver_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_screen_saver_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5757,9 +8562,14 @@ impl Default for xcb_get_screen_saver_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_screen_saver.
+/// The opcode for `GetScreenSaver` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_screen_saver_request_t`].
 pub const XCB_GET_SCREEN_SAVER: u8 = 108i32 as u8;
 
+/// The `GetScreenSaver` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_screen_saver_request_t {
@@ -5774,6 +8584,7 @@ impl Default for xcb_get_screen_saver_request_t {
     }
 }
 
+/// The `GetScreenSaver` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_screen_saver_reply_t {
@@ -5794,20 +8605,65 @@ impl Default for xcb_get_screen_saver_reply_t {
     }
 }
 
+/// The `HostMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`HostMode::Insert`](XCB_HOST_MODE_INSERT)
+/// - [`HostMode::Delete`](XCB_HOST_MODE_DELETE)
 pub type xcb_host_mode_t = u32;
+/// The `HostMode::Insert` enum variant.
+///
+/// This is a variant of [`xcb_host_mode_t`].
 pub const XCB_HOST_MODE_INSERT: xcb_host_mode_t = 0;
+/// The `HostMode::Delete` enum variant.
+///
+/// This is a variant of [`xcb_host_mode_t`].
 pub const XCB_HOST_MODE_DELETE: xcb_host_mode_t = 1;
 
+/// The `Family` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Family::Internet`](XCB_FAMILY_INTERNET)
+/// - [`Family::DECnet`](XCB_FAMILY_DECNET)
+/// - [`Family::Chaos`](XCB_FAMILY_CHAOS)
+/// - [`Family::ServerInterpreted`](XCB_FAMILY_SERVER_INTERPRETED)
+/// - [`Family::Internet6`](XCB_FAMILY_INTERNET_6)
 pub type xcb_family_t = u32;
+/// The `Family::Internet` enum variant.
+///
+/// This is a variant of [`xcb_family_t`].
 pub const XCB_FAMILY_INTERNET: xcb_family_t = 0;
+/// The `Family::DECnet` enum variant.
+///
+/// This is a variant of [`xcb_family_t`].
 pub const XCB_FAMILY_DECNET: xcb_family_t = 1;
+/// The `Family::Chaos` enum variant.
+///
+/// This is a variant of [`xcb_family_t`].
 pub const XCB_FAMILY_CHAOS: xcb_family_t = 2;
+/// The `Family::ServerInterpreted` enum variant.
+///
+/// This is a variant of [`xcb_family_t`].
 pub const XCB_FAMILY_SERVER_INTERPRETED: xcb_family_t = 5;
+/// The `Family::Internet6` enum variant.
+///
+/// This is a variant of [`xcb_family_t`].
 pub const XCB_FAMILY_INTERNET_6: xcb_family_t = 6;
 
-/// Opcode for xcb_change_hosts.
+/// The opcode for `ChangeHosts` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_change_hosts_request_t`].
 pub const XCB_CHANGE_HOSTS: u8 = 109i32 as u8;
 
+/// The `ChangeHosts` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `address`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_change_hosts_request_t {
@@ -5825,6 +8681,11 @@ impl Default for xcb_change_hosts_request_t {
     }
 }
 
+/// The `HOST` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `address`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_host_t {
@@ -5839,11 +8700,15 @@ impl Default for xcb_host_t {
     }
 }
 
+/// An iterator over `HOST` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_host_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_host_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -5853,9 +8718,15 @@ impl Default for xcb_host_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `ListHosts` request.
+///
+/// Pass this cookie to [`xcb_list_hosts_reply`] to retrieve the reply.
+///
+/// [`xcb_list_hosts_reply`]: Xcb::xcb_list_hosts_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_hosts_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -5865,9 +8736,14 @@ impl Default for xcb_list_hosts_cookie_t {
     }
 }
 
-/// Opcode for xcb_list_hosts.
+/// The opcode for `ListHosts` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_list_hosts_request_t`].
 pub const XCB_LIST_HOSTS: u8 = 110i32 as u8;
 
+/// The `ListHosts` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_hosts_request_t {
@@ -5882,6 +8758,11 @@ impl Default for xcb_list_hosts_request_t {
     }
 }
 
+/// The `ListHosts` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `hosts`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_list_hosts_reply_t {
@@ -5899,13 +8780,30 @@ impl Default for xcb_list_hosts_reply_t {
     }
 }
 
+/// The `AccessControl` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`AccessControl::Disable`](XCB_ACCESS_CONTROL_DISABLE)
+/// - [`AccessControl::Enable`](XCB_ACCESS_CONTROL_ENABLE)
 pub type xcb_access_control_t = u32;
+/// The `AccessControl::Disable` enum variant.
+///
+/// This is a variant of [`xcb_access_control_t`].
 pub const XCB_ACCESS_CONTROL_DISABLE: xcb_access_control_t = 0;
+/// The `AccessControl::Enable` enum variant.
+///
+/// This is a variant of [`xcb_access_control_t`].
 pub const XCB_ACCESS_CONTROL_ENABLE: xcb_access_control_t = 1;
 
-/// Opcode for xcb_set_access_control.
+/// The opcode for `SetAccessControl` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_access_control_request_t`].
 pub const XCB_SET_ACCESS_CONTROL: u8 = 111i32 as u8;
 
+/// The `SetAccessControl` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_access_control_request_t {
@@ -5920,14 +8818,35 @@ impl Default for xcb_set_access_control_request_t {
     }
 }
 
+/// The `CloseDown` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`CloseDown::DestroyAll`](XCB_CLOSE_DOWN_DESTROY_ALL)
+/// - [`CloseDown::RetainPermanent`](XCB_CLOSE_DOWN_RETAIN_PERMANENT)
+/// - [`CloseDown::RetainTemporary`](XCB_CLOSE_DOWN_RETAIN_TEMPORARY)
 pub type xcb_close_down_t = u32;
+/// The `CloseDown::DestroyAll` enum variant.
+///
+/// This is a variant of [`xcb_close_down_t`].
 pub const XCB_CLOSE_DOWN_DESTROY_ALL: xcb_close_down_t = 0;
+/// The `CloseDown::RetainPermanent` enum variant.
+///
+/// This is a variant of [`xcb_close_down_t`].
 pub const XCB_CLOSE_DOWN_RETAIN_PERMANENT: xcb_close_down_t = 1;
+/// The `CloseDown::RetainTemporary` enum variant.
+///
+/// This is a variant of [`xcb_close_down_t`].
 pub const XCB_CLOSE_DOWN_RETAIN_TEMPORARY: xcb_close_down_t = 2;
 
-/// Opcode for xcb_set_close_down_mode.
+/// The opcode for `SetCloseDownMode` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_close_down_mode_request_t`].
 pub const XCB_SET_CLOSE_DOWN_MODE: u8 = 112i32 as u8;
 
+/// The `SetCloseDownMode` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_close_down_mode_request_t {
@@ -5942,12 +8861,25 @@ impl Default for xcb_set_close_down_mode_request_t {
     }
 }
 
+/// The `Kill` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Kill::AllTemporary`](XCB_KILL_ALL_TEMPORARY)
 pub type xcb_kill_t = u32;
+/// The `Kill::AllTemporary` enum variant.
+///
+/// This is a variant of [`xcb_kill_t`].
 pub const XCB_KILL_ALL_TEMPORARY: xcb_kill_t = 0;
 
-/// Opcode for xcb_kill_client.
+/// The opcode for `KillClient` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_kill_client_request_t`].
 pub const XCB_KILL_CLIENT: u8 = 113i32 as u8;
 
+/// The `KillClient` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_kill_client_request_t {
@@ -5963,9 +8895,18 @@ impl Default for xcb_kill_client_request_t {
     }
 }
 
-/// Opcode for xcb_rotate_properties.
+/// The opcode for `RotateProperties` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_rotate_properties_request_t`].
 pub const XCB_ROTATE_PROPERTIES: u8 = 114i32 as u8;
 
+/// The `RotateProperties` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `atoms`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_rotate_properties_request_t {
@@ -5983,13 +8924,30 @@ impl Default for xcb_rotate_properties_request_t {
     }
 }
 
+/// The `ScreenSaver` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`ScreenSaver::Reset`](XCB_SCREEN_SAVER_RESET)
+/// - [`ScreenSaver::Active`](XCB_SCREEN_SAVER_ACTIVE)
 pub type xcb_screen_saver_t = u32;
+/// The `ScreenSaver::Reset` enum variant.
+///
+/// This is a variant of [`xcb_screen_saver_t`].
 pub const XCB_SCREEN_SAVER_RESET: xcb_screen_saver_t = 0;
+/// The `ScreenSaver::Active` enum variant.
+///
+/// This is a variant of [`xcb_screen_saver_t`].
 pub const XCB_SCREEN_SAVER_ACTIVE: xcb_screen_saver_t = 1;
 
-/// Opcode for xcb_force_screen_saver.
+/// The opcode for `ForceScreenSaver` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_force_screen_saver_request_t`].
 pub const XCB_FORCE_SCREEN_SAVER: u8 = 115i32 as u8;
 
+/// The `ForceScreenSaver` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_force_screen_saver_request_t {
@@ -6004,14 +8962,36 @@ impl Default for xcb_force_screen_saver_request_t {
     }
 }
 
+/// The `MappingStatus` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`MappingStatus::Success`](XCB_MAPPING_STATUS_SUCCESS)
+/// - [`MappingStatus::Busy`](XCB_MAPPING_STATUS_BUSY)
+/// - [`MappingStatus::Failure`](XCB_MAPPING_STATUS_FAILURE)
 pub type xcb_mapping_status_t = u32;
+/// The `MappingStatus::Success` enum variant.
+///
+/// This is a variant of [`xcb_mapping_status_t`].
 pub const XCB_MAPPING_STATUS_SUCCESS: xcb_mapping_status_t = 0;
+/// The `MappingStatus::Busy` enum variant.
+///
+/// This is a variant of [`xcb_mapping_status_t`].
 pub const XCB_MAPPING_STATUS_BUSY: xcb_mapping_status_t = 1;
+/// The `MappingStatus::Failure` enum variant.
+///
+/// This is a variant of [`xcb_mapping_status_t`].
 pub const XCB_MAPPING_STATUS_FAILURE: xcb_mapping_status_t = 2;
 
+/// The cookie for the reply to a `SetPointerMapping` request.
+///
+/// Pass this cookie to [`xcb_set_pointer_mapping_reply`] to retrieve the reply.
+///
+/// [`xcb_set_pointer_mapping_reply`]: Xcb::xcb_set_pointer_mapping_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_pointer_mapping_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -6021,9 +9001,18 @@ impl Default for xcb_set_pointer_mapping_cookie_t {
     }
 }
 
-/// Opcode for xcb_set_pointer_mapping.
+/// The opcode for `SetPointerMapping` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_pointer_mapping_request_t`].
 pub const XCB_SET_POINTER_MAPPING: u8 = 116i32 as u8;
 
+/// The `SetPointerMapping` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `map`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_pointer_mapping_request_t {
@@ -6038,6 +9027,7 @@ impl Default for xcb_set_pointer_mapping_request_t {
     }
 }
 
+/// The `SetPointerMapping` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_pointer_mapping_reply_t {
@@ -6053,9 +9043,15 @@ impl Default for xcb_set_pointer_mapping_reply_t {
     }
 }
 
+/// The cookie for the reply to a `GetPointerMapping` request.
+///
+/// Pass this cookie to [`xcb_get_pointer_mapping_reply`] to retrieve the reply.
+///
+/// [`xcb_get_pointer_mapping_reply`]: Xcb::xcb_get_pointer_mapping_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_pointer_mapping_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -6065,9 +9061,14 @@ impl Default for xcb_get_pointer_mapping_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_pointer_mapping.
+/// The opcode for `GetPointerMapping` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_pointer_mapping_request_t`].
 pub const XCB_GET_POINTER_MAPPING: u8 = 117i32 as u8;
 
+/// The `GetPointerMapping` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_pointer_mapping_request_t {
@@ -6082,6 +9083,11 @@ impl Default for xcb_get_pointer_mapping_request_t {
     }
 }
 
+/// The `GetPointerMapping` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `map`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_pointer_mapping_reply_t {
@@ -6098,19 +9104,61 @@ impl Default for xcb_get_pointer_mapping_reply_t {
     }
 }
 
+/// The `MapIndex` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`MapIndex::Shift`](XCB_MAP_INDEX_SHIFT)
+/// - [`MapIndex::Lock`](XCB_MAP_INDEX_LOCK)
+/// - [`MapIndex::Control`](XCB_MAP_INDEX_CONTROL)
+/// - [`MapIndex::1`](XCB_MAP_INDEX_1)
+/// - [`MapIndex::2`](XCB_MAP_INDEX_2)
+/// - [`MapIndex::3`](XCB_MAP_INDEX_3)
+/// - [`MapIndex::4`](XCB_MAP_INDEX_4)
+/// - [`MapIndex::5`](XCB_MAP_INDEX_5)
 pub type xcb_map_index_t = u32;
+/// The `MapIndex::Shift` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_SHIFT: xcb_map_index_t = 0;
+/// The `MapIndex::Lock` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_LOCK: xcb_map_index_t = 1;
+/// The `MapIndex::Control` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_CONTROL: xcb_map_index_t = 2;
+/// The `MapIndex::1` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_1: xcb_map_index_t = 3;
+/// The `MapIndex::2` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_2: xcb_map_index_t = 4;
+/// The `MapIndex::3` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_3: xcb_map_index_t = 5;
+/// The `MapIndex::4` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_4: xcb_map_index_t = 6;
+/// The `MapIndex::5` enum variant.
+///
+/// This is a variant of [`xcb_map_index_t`].
 pub const XCB_MAP_INDEX_5: xcb_map_index_t = 7;
 
+/// The cookie for the reply to a `SetModifierMapping` request.
+///
+/// Pass this cookie to [`xcb_set_modifier_mapping_reply`] to retrieve the reply.
+///
+/// [`xcb_set_modifier_mapping_reply`]: Xcb::xcb_set_modifier_mapping_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_modifier_mapping_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -6120,9 +9168,18 @@ impl Default for xcb_set_modifier_mapping_cookie_t {
     }
 }
 
-/// Opcode for xcb_set_modifier_mapping.
+/// The opcode for `SetModifierMapping` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_set_modifier_mapping_request_t`].
 pub const XCB_SET_MODIFIER_MAPPING: u8 = 118i32 as u8;
 
+/// The `SetModifierMapping` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `keycodes`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_modifier_mapping_request_t {
@@ -6137,6 +9194,7 @@ impl Default for xcb_set_modifier_mapping_request_t {
     }
 }
 
+/// The `SetModifierMapping` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_set_modifier_mapping_reply_t {
@@ -6152,9 +9210,15 @@ impl Default for xcb_set_modifier_mapping_reply_t {
     }
 }
 
+/// The cookie for the reply to a `GetModifierMapping` request.
+///
+/// Pass this cookie to [`xcb_get_modifier_mapping_reply`] to retrieve the reply.
+///
+/// [`xcb_get_modifier_mapping_reply`]: Xcb::xcb_get_modifier_mapping_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_modifier_mapping_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -6164,9 +9228,14 @@ impl Default for xcb_get_modifier_mapping_cookie_t {
     }
 }
 
-/// Opcode for xcb_get_modifier_mapping.
+/// The opcode for `GetModifierMapping` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_get_modifier_mapping_request_t`].
 pub const XCB_GET_MODIFIER_MAPPING: u8 = 119i32 as u8;
 
+/// The `GetModifierMapping` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_modifier_mapping_request_t {
@@ -6181,6 +9250,11 @@ impl Default for xcb_get_modifier_mapping_request_t {
     }
 }
 
+/// The `GetModifierMapping` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `keycodes`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_get_modifier_mapping_reply_t {
@@ -6197,9 +9271,14 @@ impl Default for xcb_get_modifier_mapping_reply_t {
     }
 }
 
-/// Opcode for xcb_no_operation.
+/// The opcode for `NoOperation` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`ptr::null_mut()`](std::ptr::null_mut()), then the type of the request is
+/// [`xcb_no_operation_request_t`].
 pub const XCB_NO_OPERATION: u8 = 127i32 as u8;
 
+/// The `NoOperation` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_no_operation_request_t {
@@ -6477,7 +9556,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_window_attributes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_window_attributes_reply_t,
+        ) -> *mut xcb_get_window_attributes_reply_t,
     >,
     xcb_destroy_window_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, window: xcb_window_t) -> xcb_void_cookie_t>,
@@ -6603,7 +9682,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_geometry_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_geometry_reply_t,
+        ) -> *mut xcb_get_geometry_reply_t,
     >,
     xcb_query_tree_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_query_tree: LazySymbol<
@@ -6623,7 +9702,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_tree_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_tree_reply_t,
+        ) -> *mut xcb_query_tree_reply_t,
     >,
     xcb_intern_atom_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_intern_atom: LazySymbol<
@@ -6647,7 +9726,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_intern_atom_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_intern_atom_reply_t,
+        ) -> *mut xcb_intern_atom_reply_t,
     >,
     xcb_get_atom_name_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_get_atom_name: LazySymbol<
@@ -6667,7 +9746,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_atom_name_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_atom_name_reply_t,
+        ) -> *mut xcb_get_atom_name_reply_t,
     >,
     xcb_change_property_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_change_property_checked: LazySymbol<
@@ -6748,7 +9827,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_property_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_property_reply_t,
+        ) -> *mut xcb_get_property_reply_t,
     >,
     xcb_list_properties_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_list_properties: LazySymbol<
@@ -6768,7 +9847,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_list_properties_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_list_properties_reply_t,
+        ) -> *mut xcb_list_properties_reply_t,
     >,
     xcb_set_selection_owner_checked: LazySymbol<
         unsafe fn(
@@ -6803,7 +9882,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_selection_owner_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_selection_owner_reply_t,
+        ) -> *mut xcb_get_selection_owner_reply_t,
     >,
     xcb_convert_selection_checked: LazySymbol<
         unsafe fn(
@@ -6874,7 +9953,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_grab_pointer_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_grab_pointer_reply_t,
+        ) -> *mut xcb_grab_pointer_reply_t,
     >,
     xcb_ungrab_pointer_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, time: xcb_timestamp_t) -> xcb_void_cookie_t>,
@@ -6965,7 +10044,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_grab_keyboard_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_grab_keyboard_reply_t,
+        ) -> *mut xcb_grab_keyboard_reply_t,
     >,
     xcb_ungrab_keyboard_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, time: xcb_timestamp_t) -> xcb_void_cookie_t>,
@@ -7030,7 +10109,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_pointer_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_pointer_reply_t,
+        ) -> *mut xcb_query_pointer_reply_t,
     >,
     xcb_timecoord_next: LazySymbol<unsafe fn(i: *mut xcb_timecoord_iterator_t)>,
     xcb_timecoord_end: LazySymbol<unsafe fn(i: xcb_timecoord_iterator_t) -> xcb_generic_iterator_t>,
@@ -7062,7 +10141,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_motion_events_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_motion_events_reply_t,
+        ) -> *mut xcb_get_motion_events_reply_t,
     >,
     xcb_translate_coordinates: LazySymbol<
         unsafe fn(
@@ -7087,7 +10166,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_translate_coordinates_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_translate_coordinates_reply_t,
+        ) -> *mut xcb_translate_coordinates_reply_t,
     >,
     xcb_warp_pointer_checked: LazySymbol<
         unsafe fn(
@@ -7140,7 +10219,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_input_focus_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_input_focus_reply_t,
+        ) -> *mut xcb_get_input_focus_reply_t,
     >,
     xcb_query_keymap: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_query_keymap_cookie_t>,
     xcb_query_keymap_unchecked:
@@ -7150,7 +10229,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_keymap_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_keymap_reply_t,
+        ) -> *mut xcb_query_keymap_reply_t,
     >,
     xcb_open_font_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_open_font_checked: LazySymbol<
@@ -7205,7 +10284,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_font_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_font_reply_t,
+        ) -> *mut xcb_query_font_reply_t,
     >,
     xcb_query_text_extents_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, string_len: u32) -> c_int>,
@@ -7230,7 +10309,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_text_extents_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_text_extents_reply_t,
+        ) -> *mut xcb_query_text_extents_reply_t,
     >,
     xcb_str_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_str_name: LazySymbol<unsafe fn(r: *const xcb_str_t) -> *mut c_char>,
@@ -7263,7 +10342,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_list_fonts_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_list_fonts_reply_t,
+        ) -> *mut xcb_list_fonts_reply_t,
     >,
     xcb_list_fonts_with_info_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_list_fonts_with_info: LazySymbol<
@@ -7300,7 +10379,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_list_fonts_with_info_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_list_fonts_with_info_reply_t,
+        ) -> *mut xcb_list_fonts_with_info_reply_t,
     >,
     xcb_set_font_path_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_set_font_path_checked: LazySymbol<
@@ -7335,7 +10414,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_font_path_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_font_path_reply_t,
+        ) -> *mut xcb_get_font_path_reply_t,
     >,
     xcb_create_pixmap_checked: LazySymbol<
         unsafe fn(
@@ -7903,7 +10982,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_image_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_image_reply_t,
+        ) -> *mut xcb_get_image_reply_t,
     >,
     xcb_poly_text_8_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void, items_len: u32) -> c_int>,
     xcb_poly_text_8_checked: LazySymbol<
@@ -8089,7 +11168,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_list_installed_colormaps_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_list_installed_colormaps_reply_t,
+        ) -> *mut xcb_list_installed_colormaps_reply_t,
     >,
     xcb_alloc_color: LazySymbol<
         unsafe fn(
@@ -8114,7 +11193,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_alloc_color_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_alloc_color_reply_t,
+        ) -> *mut xcb_alloc_color_reply_t,
     >,
     xcb_alloc_named_color_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_alloc_named_color: LazySymbol<
@@ -8138,7 +11217,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_alloc_named_color_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_alloc_named_color_reply_t,
+        ) -> *mut xcb_alloc_named_color_reply_t,
     >,
     xcb_alloc_color_cells_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_alloc_color_cells: LazySymbol<
@@ -8176,7 +11255,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_alloc_color_cells_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_alloc_color_cells_reply_t,
+        ) -> *mut xcb_alloc_color_cells_reply_t,
     >,
     xcb_alloc_color_planes_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_alloc_color_planes: LazySymbol<
@@ -8212,7 +11291,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_alloc_color_planes_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_alloc_color_planes_reply_t,
+        ) -> *mut xcb_alloc_color_planes_reply_t,
     >,
     xcb_free_colors_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void, pixels_len: u32) -> c_int>,
     xcb_free_colors_checked: LazySymbol<
@@ -8321,7 +11400,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_colors_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_colors_reply_t,
+        ) -> *mut xcb_query_colors_reply_t,
     >,
     xcb_lookup_color_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_lookup_color: LazySymbol<
@@ -8345,7 +11424,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_lookup_color_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_lookup_color_reply_t,
+        ) -> *mut xcb_lookup_color_reply_t,
     >,
     xcb_create_cursor_checked: LazySymbol<
         unsafe fn(
@@ -8462,7 +11541,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_best_size_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_best_size_reply_t,
+        ) -> *mut xcb_query_best_size_reply_t,
     >,
     xcb_query_extension_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_query_extension: LazySymbol<
@@ -8484,7 +11563,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_query_extension_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_query_extension_reply_t,
+        ) -> *mut xcb_query_extension_reply_t,
     >,
     xcb_list_extensions_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_list_extensions:
@@ -8500,7 +11579,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_list_extensions_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_list_extensions_reply_t,
+        ) -> *mut xcb_list_extensions_reply_t,
     >,
     xcb_change_keyboard_mapping_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_change_keyboard_mapping_checked: LazySymbol<
@@ -8554,7 +11633,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_keyboard_mapping_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_keyboard_mapping_reply_t,
+        ) -> *mut xcb_get_keyboard_mapping_reply_t,
     >,
     xcb_change_keyboard_control_value_list_serialize: LazySymbol<
         unsafe fn(
@@ -8612,7 +11691,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_keyboard_control_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_keyboard_control_reply_t,
+        ) -> *mut xcb_get_keyboard_control_reply_t,
     >,
     xcb_bell_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, percent: i8) -> xcb_void_cookie_t>,
@@ -8646,7 +11725,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_pointer_control_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_pointer_control_reply_t,
+        ) -> *mut xcb_get_pointer_control_reply_t,
     >,
     xcb_set_screen_saver_checked: LazySymbol<
         unsafe fn(
@@ -8675,7 +11754,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_screen_saver_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_screen_saver_reply_t,
+        ) -> *mut xcb_get_screen_saver_reply_t,
     >,
     xcb_change_hosts_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_change_hosts_checked: LazySymbol<
@@ -8720,7 +11799,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_list_hosts_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_list_hosts_reply_t,
+        ) -> *mut xcb_list_hosts_reply_t,
     >,
     xcb_set_access_control_checked:
         LazySymbol<unsafe fn(c: *mut xcb_connection_t, mode: u8) -> xcb_void_cookie_t>,
@@ -8783,7 +11862,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_set_pointer_mapping_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_set_pointer_mapping_reply_t,
+        ) -> *mut xcb_set_pointer_mapping_reply_t,
     >,
     xcb_get_pointer_mapping_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_get_pointer_mapping:
@@ -8801,7 +11880,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_pointer_mapping_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_pointer_mapping_reply_t,
+        ) -> *mut xcb_get_pointer_mapping_reply_t,
     >,
     xcb_set_modifier_mapping_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_set_modifier_mapping: LazySymbol<
@@ -8823,7 +11902,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_set_modifier_mapping_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_set_modifier_mapping_reply_t,
+        ) -> *mut xcb_set_modifier_mapping_reply_t,
     >,
     xcb_get_modifier_mapping_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_get_modifier_mapping:
@@ -8841,7 +11920,7 @@ pub(crate) struct XcbXproto {
             c: *mut xcb_connection_t,
             cookie: xcb_get_modifier_mapping_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_get_modifier_mapping_reply_t,
+        ) -> *mut xcb_get_modifier_mapping_reply_t,
     >,
     xcb_no_operation_checked: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
     xcb_no_operation: LazySymbol<unsafe fn(c: *mut xcb_connection_t) -> xcb_void_cookie_t>,
@@ -8868,6 +11947,8 @@ macro_rules! has_sym {
 }
 
 impl Xcb {
+    /// Advances a `xcb_char2b_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_char2b_next(&self, i: *mut xcb_char2b_iterator_t) {
         sym!(self, xcb_char2b_next)(i)
     }
@@ -8878,6 +11959,8 @@ impl Xcb {
         has_sym!(self, xcb_char2b_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_char2b_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_char2b_end(&self, i: xcb_char2b_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_char2b_end)(i)
     }
@@ -8888,6 +11971,8 @@ impl Xcb {
         has_sym!(self, xcb_char2b_end)
     }
 
+    /// Advances a `xcb_window_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_window_next(&self, i: *mut xcb_window_iterator_t) {
         sym!(self, xcb_window_next)(i)
     }
@@ -8898,6 +11983,8 @@ impl Xcb {
         has_sym!(self, xcb_window_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_window_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_window_end(&self, i: xcb_window_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_window_end)(i)
     }
@@ -8908,6 +11995,8 @@ impl Xcb {
         has_sym!(self, xcb_window_end)
     }
 
+    /// Advances a `xcb_pixmap_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_pixmap_next(&self, i: *mut xcb_pixmap_iterator_t) {
         sym!(self, xcb_pixmap_next)(i)
     }
@@ -8918,6 +12007,8 @@ impl Xcb {
         has_sym!(self, xcb_pixmap_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_pixmap_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_pixmap_end(&self, i: xcb_pixmap_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_pixmap_end)(i)
     }
@@ -8928,6 +12019,8 @@ impl Xcb {
         has_sym!(self, xcb_pixmap_end)
     }
 
+    /// Advances a `xcb_cursor_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_cursor_next(&self, i: *mut xcb_cursor_iterator_t) {
         sym!(self, xcb_cursor_next)(i)
     }
@@ -8938,6 +12031,8 @@ impl Xcb {
         has_sym!(self, xcb_cursor_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_cursor_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_cursor_end(&self, i: xcb_cursor_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_cursor_end)(i)
     }
@@ -8948,6 +12043,8 @@ impl Xcb {
         has_sym!(self, xcb_cursor_end)
     }
 
+    /// Advances a `xcb_font_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_font_next(&self, i: *mut xcb_font_iterator_t) {
         sym!(self, xcb_font_next)(i)
     }
@@ -8958,6 +12055,8 @@ impl Xcb {
         has_sym!(self, xcb_font_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_font_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_font_end(&self, i: xcb_font_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_font_end)(i)
     }
@@ -8968,6 +12067,8 @@ impl Xcb {
         has_sym!(self, xcb_font_end)
     }
 
+    /// Advances a `xcb_gcontext_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_gcontext_next(&self, i: *mut xcb_gcontext_iterator_t) {
         sym!(self, xcb_gcontext_next)(i)
     }
@@ -8978,6 +12079,8 @@ impl Xcb {
         has_sym!(self, xcb_gcontext_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_gcontext_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_gcontext_end(&self, i: xcb_gcontext_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_gcontext_end)(i)
     }
@@ -8988,6 +12091,8 @@ impl Xcb {
         has_sym!(self, xcb_gcontext_end)
     }
 
+    /// Advances a `xcb_colormap_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_colormap_next(&self, i: *mut xcb_colormap_iterator_t) {
         sym!(self, xcb_colormap_next)(i)
     }
@@ -8998,6 +12103,8 @@ impl Xcb {
         has_sym!(self, xcb_colormap_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_colormap_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_colormap_end(&self, i: xcb_colormap_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_colormap_end)(i)
     }
@@ -9008,6 +12115,8 @@ impl Xcb {
         has_sym!(self, xcb_colormap_end)
     }
 
+    /// Advances a `xcb_atom_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_atom_next(&self, i: *mut xcb_atom_iterator_t) {
         sym!(self, xcb_atom_next)(i)
     }
@@ -9018,6 +12127,8 @@ impl Xcb {
         has_sym!(self, xcb_atom_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_atom_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_atom_end(&self, i: xcb_atom_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_atom_end)(i)
     }
@@ -9028,6 +12139,8 @@ impl Xcb {
         has_sym!(self, xcb_atom_end)
     }
 
+    /// Advances a `xcb_drawable_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_drawable_next(&self, i: *mut xcb_drawable_iterator_t) {
         sym!(self, xcb_drawable_next)(i)
     }
@@ -9038,6 +12151,8 @@ impl Xcb {
         has_sym!(self, xcb_drawable_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_drawable_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_drawable_end(&self, i: xcb_drawable_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_drawable_end)(i)
     }
@@ -9048,6 +12163,8 @@ impl Xcb {
         has_sym!(self, xcb_drawable_end)
     }
 
+    /// Advances a `xcb_fontable_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_fontable_next(&self, i: *mut xcb_fontable_iterator_t) {
         sym!(self, xcb_fontable_next)(i)
     }
@@ -9058,6 +12175,8 @@ impl Xcb {
         has_sym!(self, xcb_fontable_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_fontable_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_fontable_end(&self, i: xcb_fontable_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_fontable_end)(i)
     }
@@ -9068,6 +12187,8 @@ impl Xcb {
         has_sym!(self, xcb_fontable_end)
     }
 
+    /// Advances a `xcb_bool32_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_bool32_next(&self, i: *mut xcb_bool32_iterator_t) {
         sym!(self, xcb_bool32_next)(i)
     }
@@ -9078,6 +12199,8 @@ impl Xcb {
         has_sym!(self, xcb_bool32_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_bool32_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_bool32_end(&self, i: xcb_bool32_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_bool32_end)(i)
     }
@@ -9088,6 +12211,8 @@ impl Xcb {
         has_sym!(self, xcb_bool32_end)
     }
 
+    /// Advances a `xcb_visualid_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_visualid_next(&self, i: *mut xcb_visualid_iterator_t) {
         sym!(self, xcb_visualid_next)(i)
     }
@@ -9098,6 +12223,8 @@ impl Xcb {
         has_sym!(self, xcb_visualid_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_visualid_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_visualid_end(&self, i: xcb_visualid_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_visualid_end)(i)
     }
@@ -9108,6 +12235,8 @@ impl Xcb {
         has_sym!(self, xcb_visualid_end)
     }
 
+    /// Advances a `xcb_timestamp_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_timestamp_next(&self, i: *mut xcb_timestamp_iterator_t) {
         sym!(self, xcb_timestamp_next)(i)
     }
@@ -9118,6 +12247,8 @@ impl Xcb {
         has_sym!(self, xcb_timestamp_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_timestamp_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_timestamp_end(&self, i: xcb_timestamp_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_timestamp_end)(i)
     }
@@ -9128,6 +12259,8 @@ impl Xcb {
         has_sym!(self, xcb_timestamp_end)
     }
 
+    /// Advances a `xcb_keysym_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_keysym_next(&self, i: *mut xcb_keysym_iterator_t) {
         sym!(self, xcb_keysym_next)(i)
     }
@@ -9138,6 +12271,8 @@ impl Xcb {
         has_sym!(self, xcb_keysym_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_keysym_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_keysym_end(&self, i: xcb_keysym_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_keysym_end)(i)
     }
@@ -9148,6 +12283,8 @@ impl Xcb {
         has_sym!(self, xcb_keysym_end)
     }
 
+    /// Advances a `xcb_keycode_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_keycode_next(&self, i: *mut xcb_keycode_iterator_t) {
         sym!(self, xcb_keycode_next)(i)
     }
@@ -9158,6 +12295,8 @@ impl Xcb {
         has_sym!(self, xcb_keycode_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_keycode_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_keycode_end(&self, i: xcb_keycode_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_keycode_end)(i)
     }
@@ -9168,6 +12307,8 @@ impl Xcb {
         has_sym!(self, xcb_keycode_end)
     }
 
+    /// Advances a `xcb_keycode32_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_keycode32_next(&self, i: *mut xcb_keycode32_iterator_t) {
         sym!(self, xcb_keycode32_next)(i)
     }
@@ -9178,6 +12319,8 @@ impl Xcb {
         has_sym!(self, xcb_keycode32_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_keycode32_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_keycode32_end(&self, i: xcb_keycode32_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_keycode32_end)(i)
     }
@@ -9188,6 +12331,8 @@ impl Xcb {
         has_sym!(self, xcb_keycode32_end)
     }
 
+    /// Advances a `xcb_button_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_button_next(&self, i: *mut xcb_button_iterator_t) {
         sym!(self, xcb_button_next)(i)
     }
@@ -9198,6 +12343,8 @@ impl Xcb {
         has_sym!(self, xcb_button_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_button_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_button_end(&self, i: xcb_button_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_button_end)(i)
     }
@@ -9208,6 +12355,8 @@ impl Xcb {
         has_sym!(self, xcb_button_end)
     }
 
+    /// Advances a `xcb_point_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_point_next(&self, i: *mut xcb_point_iterator_t) {
         sym!(self, xcb_point_next)(i)
     }
@@ -9218,6 +12367,8 @@ impl Xcb {
         has_sym!(self, xcb_point_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_point_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_point_end(&self, i: xcb_point_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_point_end)(i)
     }
@@ -9228,6 +12379,8 @@ impl Xcb {
         has_sym!(self, xcb_point_end)
     }
 
+    /// Advances a `xcb_rectangle_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_rectangle_next(&self, i: *mut xcb_rectangle_iterator_t) {
         sym!(self, xcb_rectangle_next)(i)
     }
@@ -9238,6 +12391,8 @@ impl Xcb {
         has_sym!(self, xcb_rectangle_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_rectangle_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_rectangle_end(&self, i: xcb_rectangle_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_rectangle_end)(i)
     }
@@ -9248,6 +12403,8 @@ impl Xcb {
         has_sym!(self, xcb_rectangle_end)
     }
 
+    /// Advances a `xcb_arc_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_arc_next(&self, i: *mut xcb_arc_iterator_t) {
         sym!(self, xcb_arc_next)(i)
     }
@@ -9258,6 +12415,8 @@ impl Xcb {
         has_sym!(self, xcb_arc_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_arc_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_arc_end(&self, i: xcb_arc_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_arc_end)(i)
     }
@@ -9268,6 +12427,8 @@ impl Xcb {
         has_sym!(self, xcb_arc_end)
     }
 
+    /// Advances a `xcb_format_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_format_next(&self, i: *mut xcb_format_iterator_t) {
         sym!(self, xcb_format_next)(i)
     }
@@ -9278,6 +12439,8 @@ impl Xcb {
         has_sym!(self, xcb_format_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_format_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_format_end(&self, i: xcb_format_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_format_end)(i)
     }
@@ -9288,6 +12451,8 @@ impl Xcb {
         has_sym!(self, xcb_format_end)
     }
 
+    /// Advances a `xcb_visualtype_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_visualtype_next(&self, i: *mut xcb_visualtype_iterator_t) {
         sym!(self, xcb_visualtype_next)(i)
     }
@@ -9298,6 +12463,8 @@ impl Xcb {
         has_sym!(self, xcb_visualtype_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_visualtype_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_visualtype_end(
         &self,
         i: xcb_visualtype_iterator_t,
@@ -9311,6 +12478,8 @@ impl Xcb {
         has_sym!(self, xcb_visualtype_end)
     }
 
+    /// Computes the size of a `xcb_depth_t` object.
+    #[inline]
     pub unsafe fn xcb_depth_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_depth_sizeof)(_buffer)
     }
@@ -9321,6 +12490,8 @@ impl Xcb {
         has_sym!(self, xcb_depth_sizeof)
     }
 
+    /// Returns a pointer to the `visuals` field of a `xcb_depth_t` struct.
+    #[inline]
     pub unsafe fn xcb_depth_visuals(&self, r: *const xcb_depth_t) -> *mut xcb_visualtype_t {
         sym!(self, xcb_depth_visuals)(r)
     }
@@ -9331,6 +12502,8 @@ impl Xcb {
         has_sym!(self, xcb_depth_visuals)
     }
 
+    /// Returns the number of elements of the `visuals` field of a `xcb_depth_t` struct.
+    #[inline]
     pub unsafe fn xcb_depth_visuals_length(&self, r: *const xcb_depth_t) -> c_int {
         sym!(self, xcb_depth_visuals_length)(r)
     }
@@ -9341,6 +12514,9 @@ impl Xcb {
         has_sym!(self, xcb_depth_visuals_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `visuals` field of a `xcb_depth_t` struct.
+    #[inline]
     pub unsafe fn xcb_depth_visuals_iterator(
         &self,
         r: *const xcb_depth_t,
@@ -9354,6 +12530,8 @@ impl Xcb {
         has_sym!(self, xcb_depth_visuals_iterator)
     }
 
+    /// Advances a `xcb_depth_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_depth_next(&self, i: *mut xcb_depth_iterator_t) {
         sym!(self, xcb_depth_next)(i)
     }
@@ -9364,6 +12542,8 @@ impl Xcb {
         has_sym!(self, xcb_depth_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_depth_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_depth_end(&self, i: xcb_depth_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_depth_end)(i)
     }
@@ -9374,6 +12554,8 @@ impl Xcb {
         has_sym!(self, xcb_depth_end)
     }
 
+    /// Computes the size of a `xcb_screen_t` object.
+    #[inline]
     pub unsafe fn xcb_screen_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_screen_sizeof)(_buffer)
     }
@@ -9384,6 +12566,8 @@ impl Xcb {
         has_sym!(self, xcb_screen_sizeof)
     }
 
+    /// Returns the number of elements of the `allowed_depths` field of a `xcb_screen_t` struct.
+    #[inline]
     pub unsafe fn xcb_screen_allowed_depths_length(&self, r: *const xcb_screen_t) -> c_int {
         sym!(self, xcb_screen_allowed_depths_length)(r)
     }
@@ -9394,6 +12578,9 @@ impl Xcb {
         has_sym!(self, xcb_screen_allowed_depths_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `allowed_depths` field of a `xcb_screen_t` struct.
+    #[inline]
     pub unsafe fn xcb_screen_allowed_depths_iterator(
         &self,
         r: *const xcb_screen_t,
@@ -9407,6 +12594,8 @@ impl Xcb {
         has_sym!(self, xcb_screen_allowed_depths_iterator)
     }
 
+    /// Advances a `xcb_screen_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_screen_next(&self, i: *mut xcb_screen_iterator_t) {
         sym!(self, xcb_screen_next)(i)
     }
@@ -9417,6 +12606,8 @@ impl Xcb {
         has_sym!(self, xcb_screen_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_screen_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_screen_end(&self, i: xcb_screen_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_screen_end)(i)
     }
@@ -9427,6 +12618,8 @@ impl Xcb {
         has_sym!(self, xcb_screen_end)
     }
 
+    /// Computes the size of a `xcb_setup_request_t` object.
+    #[inline]
     pub unsafe fn xcb_setup_request_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_setup_request_sizeof)(_buffer)
     }
@@ -9437,6 +12630,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_sizeof)
     }
 
+    /// Returns a pointer to the `authorization_protocol_name` field of a `xcb_setup_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_request_authorization_protocol_name(
         &self,
         r: *const xcb_setup_request_t,
@@ -9450,6 +12645,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_authorization_protocol_name)
     }
 
+    /// Returns the number of elements of the `authorization_protocol_name` field of a `xcb_setup_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_request_authorization_protocol_name_length(
         &self,
         r: *const xcb_setup_request_t,
@@ -9463,6 +12660,9 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_authorization_protocol_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `authorization_protocol_name` field of a `xcb_setup_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_request_authorization_protocol_name_end(
         &self,
         r: *const xcb_setup_request_t,
@@ -9476,6 +12676,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_authorization_protocol_name_end)
     }
 
+    /// Returns a pointer to the `authorization_protocol_data` field of a `xcb_setup_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_request_authorization_protocol_data(
         &self,
         r: *const xcb_setup_request_t,
@@ -9489,6 +12691,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_authorization_protocol_data)
     }
 
+    /// Returns the number of elements of the `authorization_protocol_data` field of a `xcb_setup_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_request_authorization_protocol_data_length(
         &self,
         r: *const xcb_setup_request_t,
@@ -9502,6 +12706,9 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_authorization_protocol_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `authorization_protocol_data` field of a `xcb_setup_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_request_authorization_protocol_data_end(
         &self,
         r: *const xcb_setup_request_t,
@@ -9515,6 +12722,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_authorization_protocol_data_end)
     }
 
+    /// Advances a `xcb_setup_request_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_setup_request_next(&self, i: *mut xcb_setup_request_iterator_t) {
         sym!(self, xcb_setup_request_next)(i)
     }
@@ -9525,6 +12734,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_setup_request_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_setup_request_end(
         &self,
         i: xcb_setup_request_iterator_t,
@@ -9538,6 +12749,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_request_end)
     }
 
+    /// Computes the size of a `xcb_setup_failed_t` object.
+    #[inline]
     pub unsafe fn xcb_setup_failed_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_setup_failed_sizeof)(_buffer)
     }
@@ -9548,6 +12761,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_failed_sizeof)
     }
 
+    /// Returns a pointer to the `reason` field of a `xcb_setup_failed_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_failed_reason(&self, r: *const xcb_setup_failed_t) -> *mut c_char {
         sym!(self, xcb_setup_failed_reason)(r)
     }
@@ -9558,6 +12773,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_failed_reason)
     }
 
+    /// Returns the number of elements of the `reason` field of a `xcb_setup_failed_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_failed_reason_length(&self, r: *const xcb_setup_failed_t) -> c_int {
         sym!(self, xcb_setup_failed_reason_length)(r)
     }
@@ -9568,6 +12785,9 @@ impl Xcb {
         has_sym!(self, xcb_setup_failed_reason_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `reason` field of a `xcb_setup_failed_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_failed_reason_end(
         &self,
         r: *const xcb_setup_failed_t,
@@ -9581,6 +12801,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_failed_reason_end)
     }
 
+    /// Advances a `xcb_setup_failed_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_setup_failed_next(&self, i: *mut xcb_setup_failed_iterator_t) {
         sym!(self, xcb_setup_failed_next)(i)
     }
@@ -9591,6 +12813,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_failed_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_setup_failed_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_setup_failed_end(
         &self,
         i: xcb_setup_failed_iterator_t,
@@ -9604,6 +12828,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_failed_end)
     }
 
+    /// Computes the size of a `xcb_setup_authenticate_t` object.
+    #[inline]
     pub unsafe fn xcb_setup_authenticate_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_setup_authenticate_sizeof)(_buffer)
     }
@@ -9614,6 +12840,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_authenticate_sizeof)
     }
 
+    /// Returns a pointer to the `reason` field of a `xcb_setup_authenticate_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_authenticate_reason(
         &self,
         r: *const xcb_setup_authenticate_t,
@@ -9627,6 +12855,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_authenticate_reason)
     }
 
+    /// Returns the number of elements of the `reason` field of a `xcb_setup_authenticate_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_authenticate_reason_length(
         &self,
         r: *const xcb_setup_authenticate_t,
@@ -9640,6 +12870,9 @@ impl Xcb {
         has_sym!(self, xcb_setup_authenticate_reason_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `reason` field of a `xcb_setup_authenticate_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_authenticate_reason_end(
         &self,
         r: *const xcb_setup_authenticate_t,
@@ -9653,6 +12886,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_authenticate_reason_end)
     }
 
+    /// Advances a `xcb_setup_authenticate_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_setup_authenticate_next(&self, i: *mut xcb_setup_authenticate_iterator_t) {
         sym!(self, xcb_setup_authenticate_next)(i)
     }
@@ -9663,6 +12898,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_authenticate_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_setup_authenticate_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_setup_authenticate_end(
         &self,
         i: xcb_setup_authenticate_iterator_t,
@@ -9676,6 +12913,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_authenticate_end)
     }
 
+    /// Computes the size of a `xcb_setup_t` object.
+    #[inline]
     pub unsafe fn xcb_setup_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_setup_sizeof)(_buffer)
     }
@@ -9686,6 +12925,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_sizeof)
     }
 
+    /// Returns a pointer to the `vendor` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_vendor(&self, r: *const xcb_setup_t) -> *mut c_char {
         sym!(self, xcb_setup_vendor)(r)
     }
@@ -9696,6 +12937,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_vendor)
     }
 
+    /// Returns the number of elements of the `vendor` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_vendor_length(&self, r: *const xcb_setup_t) -> c_int {
         sym!(self, xcb_setup_vendor_length)(r)
     }
@@ -9706,6 +12949,9 @@ impl Xcb {
         has_sym!(self, xcb_setup_vendor_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `vendor` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_vendor_end(&self, r: *const xcb_setup_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_setup_vendor_end)(r)
     }
@@ -9716,6 +12962,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_vendor_end)
     }
 
+    /// Returns a pointer to the `pixmap_formats` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_pixmap_formats(&self, r: *const xcb_setup_t) -> *mut xcb_format_t {
         sym!(self, xcb_setup_pixmap_formats)(r)
     }
@@ -9726,6 +12974,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_pixmap_formats)
     }
 
+    /// Returns the number of elements of the `pixmap_formats` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_pixmap_formats_length(&self, r: *const xcb_setup_t) -> c_int {
         sym!(self, xcb_setup_pixmap_formats_length)(r)
     }
@@ -9736,6 +12986,9 @@ impl Xcb {
         has_sym!(self, xcb_setup_pixmap_formats_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `pixmap_formats` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_pixmap_formats_iterator(
         &self,
         r: *const xcb_setup_t,
@@ -9749,6 +13002,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_pixmap_formats_iterator)
     }
 
+    /// Returns the number of elements of the `roots` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_roots_length(&self, r: *const xcb_setup_t) -> c_int {
         sym!(self, xcb_setup_roots_length)(r)
     }
@@ -9759,6 +13014,9 @@ impl Xcb {
         has_sym!(self, xcb_setup_roots_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `roots` field of a `xcb_setup_t` struct.
+    #[inline]
     pub unsafe fn xcb_setup_roots_iterator(&self, r: *const xcb_setup_t) -> xcb_screen_iterator_t {
         sym!(self, xcb_setup_roots_iterator)(r)
     }
@@ -9769,6 +13027,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_roots_iterator)
     }
 
+    /// Advances a `xcb_setup_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_setup_next(&self, i: *mut xcb_setup_iterator_t) {
         sym!(self, xcb_setup_next)(i)
     }
@@ -9779,6 +13039,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_setup_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_setup_end(&self, i: xcb_setup_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_setup_end)(i)
     }
@@ -9789,6 +13051,8 @@ impl Xcb {
         has_sym!(self, xcb_setup_end)
     }
 
+    /// Advances a `xcb_client_message_data_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_client_message_data_next(&self, i: *mut xcb_client_message_data_iterator_t) {
         sym!(self, xcb_client_message_data_next)(i)
     }
@@ -9799,6 +13063,8 @@ impl Xcb {
         has_sym!(self, xcb_client_message_data_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_client_message_data_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_client_message_data_end(
         &self,
         i: xcb_client_message_data_iterator_t,
@@ -9812,6 +13078,8 @@ impl Xcb {
         has_sym!(self, xcb_client_message_data_end)
     }
 
+    /// Serializes a `xcb_create_window_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_create_window_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -9827,6 +13095,8 @@ impl Xcb {
         has_sym!(self, xcb_create_window_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_create_window_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_create_window_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -9842,6 +13112,8 @@ impl Xcb {
         has_sym!(self, xcb_create_window_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_create_window_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_create_window_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -9856,6 +13128,8 @@ impl Xcb {
         has_sym!(self, xcb_create_window_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_create_window_request_t` object.
+    #[inline]
     pub unsafe fn xcb_create_window_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_create_window_sizeof)(_buffer)
     }
@@ -9866,52 +13140,18 @@ impl Xcb {
         has_sym!(self, xcb_create_window_sizeof)
     }
 
-    /**
-     * @brief Creates a window
-     *
-     * @param c The connection
-     * @param depth Specifies the new window's depth (TODO: what unit?).
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the depth is taken from the
-     * \a parent window.
-     * @param wid The ID with which you will refer to the new window, created by
-     * `xcb_generate_id`.
-     * @param parent The parent window of the new window.
-     * @param x The X coordinate of the new window.
-     * @param y The Y coordinate of the new window.
-     * @param width The width of the new window.
-     * @param height The height of the new window.
-     * @param border_width TODO:
-     * \n
-     * Must be zero if the \a class is `InputOnly` or a `xcb_match_error_t` occurs.
-     * @param class A bitmask of #xcb_window_class_t values.
-     * @param class \n
-     * @param visual Specifies the id for the new window's visual.
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the visual is taken from the
-     * \a parent window.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @return A cookie
-     *
-     * Creates an unmapped window as child of the specified \a parent window. A
-     * CreateNotify event will be generated. The new window is placed on top in the
-     * stacking order with respect to siblings.
-     *
-     * The coordinate system has the X axis horizontal and the Y axis vertical with
-     * the origin [0, 0] at the upper-left corner. Coordinates are integral, in terms
-     * of pixels, and coincide with pixel centers. Each window and pixmap has its own
-     * coordinate system. For a window, the origin is inside the border at the inside,
-     * upper-left corner.
-     *
-     * The created window is not yet displayed (mapped), call `xcb_map_window` to
-     * display it.
-     *
-     * The created window will initially use the same cursor as its parent.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreateWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_create_window_aux_checked`].
+    ///
+    /// [`xcb_create_window_aux_checked`]: Self::xcb_create_window_aux_checked
+    #[inline]
     pub unsafe fn xcb_create_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -9951,49 +13191,12 @@ impl Xcb {
         has_sym!(self, xcb_create_window_checked)
     }
 
-    /**
-     * @brief Creates a window
-     *
-     * @param c The connection
-     * @param depth Specifies the new window's depth (TODO: what unit?).
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the depth is taken from the
-     * \a parent window.
-     * @param wid The ID with which you will refer to the new window, created by
-     * `xcb_generate_id`.
-     * @param parent The parent window of the new window.
-     * @param x The X coordinate of the new window.
-     * @param y The Y coordinate of the new window.
-     * @param width The width of the new window.
-     * @param height The height of the new window.
-     * @param border_width TODO:
-     * \n
-     * Must be zero if the \a class is `InputOnly` or a `xcb_match_error_t` occurs.
-     * @param class A bitmask of #xcb_window_class_t values.
-     * @param class \n
-     * @param visual Specifies the id for the new window's visual.
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the visual is taken from the
-     * \a parent window.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @return A cookie
-     *
-     * Creates an unmapped window as child of the specified \a parent window. A
-     * CreateNotify event will be generated. The new window is placed on top in the
-     * stacking order with respect to siblings.
-     *
-     * The coordinate system has the X axis horizontal and the Y axis vertical with
-     * the origin [0, 0] at the upper-left corner. Coordinates are integral, in terms
-     * of pixels, and coincide with pixel centers. Each window and pixmap has its own
-     * coordinate system. For a window, the origin is inside the border at the inside,
-     * upper-left corner.
-     *
-     * The created window is not yet displayed (mapped), call `xcb_map_window` to
-     * display it.
-     *
-     * The created window will initially use the same cursor as its parent.
-     *
-     */
+    /// Sends a `CreateWindow` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_create_window_aux`].
+    ///
+    /// [`xcb_create_window_aux`]: Self::xcb_create_window_aux
+    #[inline]
     pub unsafe fn xcb_create_window(
         &self,
         c: *mut xcb_connection_t,
@@ -10033,52 +13236,14 @@ impl Xcb {
         has_sym!(self, xcb_create_window)
     }
 
-    /**
-     * @brief Creates a window
-     *
-     * @param c The connection
-     * @param depth Specifies the new window's depth (TODO: what unit?).
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the depth is taken from the
-     * \a parent window.
-     * @param wid The ID with which you will refer to the new window, created by
-     * `xcb_generate_id`.
-     * @param parent The parent window of the new window.
-     * @param x The X coordinate of the new window.
-     * @param y The Y coordinate of the new window.
-     * @param width The width of the new window.
-     * @param height The height of the new window.
-     * @param border_width TODO:
-     * \n
-     * Must be zero if the \a class is `InputOnly` or a `xcb_match_error_t` occurs.
-     * @param class A bitmask of #xcb_window_class_t values.
-     * @param class \n
-     * @param visual Specifies the id for the new window's visual.
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the visual is taken from the
-     * \a parent window.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @return A cookie
-     *
-     * Creates an unmapped window as child of the specified \a parent window. A
-     * CreateNotify event will be generated. The new window is placed on top in the
-     * stacking order with respect to siblings.
-     *
-     * The coordinate system has the X axis horizontal and the Y axis vertical with
-     * the origin [0, 0] at the upper-left corner. Coordinates are integral, in terms
-     * of pixels, and coincide with pixel centers. Each window and pixmap has its own
-     * coordinate system. For a window, the origin is inside the border at the inside,
-     * upper-left corner.
-     *
-     * The created window is not yet displayed (mapped), call `xcb_map_window` to
-     * display it.
-     *
-     * The created window will initially use the same cursor as its parent.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreateWindow` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_create_window_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10118,49 +13283,8 @@ impl Xcb {
         has_sym!(self, xcb_create_window_aux_checked)
     }
 
-    /**
-     * @brief Creates a window
-     *
-     * @param c The connection
-     * @param depth Specifies the new window's depth (TODO: what unit?).
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the depth is taken from the
-     * \a parent window.
-     * @param wid The ID with which you will refer to the new window, created by
-     * `xcb_generate_id`.
-     * @param parent The parent window of the new window.
-     * @param x The X coordinate of the new window.
-     * @param y The Y coordinate of the new window.
-     * @param width The width of the new window.
-     * @param height The height of the new window.
-     * @param border_width TODO:
-     * \n
-     * Must be zero if the \a class is `InputOnly` or a `xcb_match_error_t` occurs.
-     * @param class A bitmask of #xcb_window_class_t values.
-     * @param class \n
-     * @param visual Specifies the id for the new window's visual.
-     * \n
-     * The special value `XCB_COPY_FROM_PARENT` means the visual is taken from the
-     * \a parent window.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @return A cookie
-     *
-     * Creates an unmapped window as child of the specified \a parent window. A
-     * CreateNotify event will be generated. The new window is placed on top in the
-     * stacking order with respect to siblings.
-     *
-     * The coordinate system has the X axis horizontal and the Y axis vertical with
-     * the origin [0, 0] at the upper-left corner. Coordinates are integral, in terms
-     * of pixels, and coincide with pixel centers. Each window and pixmap has its own
-     * coordinate system. For a window, the origin is inside the border at the inside,
-     * upper-left corner.
-     *
-     * The created window is not yet displayed (mapped), call `xcb_map_window` to
-     * display it.
-     *
-     * The created window will initially use the same cursor as its parent.
-     *
-     */
+    /// Sends a `CreateWindow` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_create_window_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -10200,6 +13324,8 @@ impl Xcb {
         has_sym!(self, xcb_create_window_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_create_window_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_create_window_value_list(
         &self,
         r: *const xcb_create_window_request_t,
@@ -10213,6 +13339,8 @@ impl Xcb {
         has_sym!(self, xcb_create_window_value_list)
     }
 
+    /// Serializes a `xcb_change_window_attributes_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -10228,6 +13356,8 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_change_window_attributes_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -10243,6 +13373,8 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_change_window_attributes_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -10257,6 +13389,8 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_change_window_attributes_request_t` object.
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_change_window_attributes_sizeof)(_buffer)
     }
@@ -10267,24 +13401,18 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_sizeof)
     }
 
-    /**
-     * @brief change window attributes
-     *
-     * @param c The connection
-     * @param window The window to change.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the attributes specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the attributes specified by \a value_mask for the specified \a window.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeWindowAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_change_window_attributes_aux_checked`].
+    ///
+    /// [`xcb_change_window_attributes_aux_checked`]: Self::xcb_change_window_attributes_aux_checked
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10301,21 +13429,12 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_checked)
     }
 
-    /**
-     * @brief change window attributes
-     *
-     * @param c The connection
-     * @param window The window to change.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the attributes specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the attributes specified by \a value_mask for the specified \a window.
-     *
-     */
+    /// Sends a `ChangeWindowAttributes` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_change_window_attributes_aux`].
+    ///
+    /// [`xcb_change_window_attributes_aux`]: Self::xcb_change_window_attributes_aux
+    #[inline]
     pub unsafe fn xcb_change_window_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -10332,24 +13451,14 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes)
     }
 
-    /**
-     * @brief change window attributes
-     *
-     * @param c The connection
-     * @param window The window to change.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the attributes specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the attributes specified by \a value_mask for the specified \a window.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeWindowAttributes` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10366,21 +13475,8 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_aux_checked)
     }
 
-    /**
-     * @brief change window attributes
-     *
-     * @param c The connection
-     * @param window The window to change.
-     * @param value_mask A bitmask of #xcb_cw_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the attributes specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the attributes specified by \a value_mask for the specified \a window.
-     *
-     */
+    /// Sends a `ChangeWindowAttributes` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -10397,6 +13493,8 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_change_window_attributes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_window_attributes_value_list(
         &self,
         r: *const xcb_change_window_attributes_request_t,
@@ -10410,16 +13508,14 @@ impl Xcb {
         has_sym!(self, xcb_change_window_attributes_value_list)
     }
 
-    /**
-     * @brief Gets window attributes
-     *
-     * @param c The connection
-     * @param window The window to get the attributes from.
-     * @return A cookie
-     *
-     * Gets the current attributes for the specified \a window.
-     *
-     */
+    /// Sends a `GetWindowAttributes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_window_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_window_attributes_reply`]: Self::xcb_get_window_attributes_reply
+    #[inline]
     pub unsafe fn xcb_get_window_attributes(
         &self,
         c: *mut xcb_connection_t,
@@ -10434,19 +13530,14 @@ impl Xcb {
         has_sym!(self, xcb_get_window_attributes)
     }
 
-    /**
-     * @brief Gets window attributes
-     *
-     * @param c The connection
-     * @param window The window to get the attributes from.
-     * @return A cookie
-     *
-     * Gets the current attributes for the specified \a window.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetWindowAttributes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_window_attributes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_window_attributes_reply`]: Self::xcb_get_window_attributes_reply
+    #[inline]
     pub unsafe fn xcb_get_window_attributes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -10461,26 +13552,14 @@ impl Xcb {
         has_sym!(self, xcb_get_window_attributes_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_window_attributes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetWindowAttributes` request.
+    #[inline]
     pub unsafe fn xcb_get_window_attributes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_window_attributes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_window_attributes_reply_t {
+    ) -> *mut xcb_get_window_attributes_reply_t {
         sym!(self, xcb_get_window_attributes_reply)(c, cookie, e)
     }
 
@@ -10490,24 +13569,14 @@ impl Xcb {
         has_sym!(self, xcb_get_window_attributes_reply)
     }
 
-    /**
-     * @brief Destroys a window
-     *
-     * @param c The connection
-     * @param window The window to destroy.
-     * @return A cookie
-     *
-     * Destroys the specified window and all of its subwindows. A DestroyNotify event
-     * is generated for each destroyed window (a DestroyNotify event is first generated
-     * for any given window's inferiors). If the window was mapped, it will be
-     * automatically unmapped before destroying.
-     *
-     * Calling DestroyWindow on the root window will do nothing.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DestroyWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_destroy_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10522,21 +13591,8 @@ impl Xcb {
         has_sym!(self, xcb_destroy_window_checked)
     }
 
-    /**
-     * @brief Destroys a window
-     *
-     * @param c The connection
-     * @param window The window to destroy.
-     * @return A cookie
-     *
-     * Destroys the specified window and all of its subwindows. A DestroyNotify event
-     * is generated for each destroyed window (a DestroyNotify event is first generated
-     * for any given window's inferiors). If the window was mapped, it will be
-     * automatically unmapped before destroying.
-     *
-     * Calling DestroyWindow on the root window will do nothing.
-     *
-     */
+    /// Sends a `DestroyWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_destroy_window(
         &self,
         c: *mut xcb_connection_t,
@@ -10551,17 +13607,14 @@ impl Xcb {
         has_sym!(self, xcb_destroy_window)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DestroySubwindows` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_destroy_subwindows_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10576,14 +13629,8 @@ impl Xcb {
         has_sym!(self, xcb_destroy_subwindows_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DestroySubwindows` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_destroy_subwindows(
         &self,
         c: *mut xcb_connection_t,
@@ -10598,24 +13645,14 @@ impl Xcb {
         has_sym!(self, xcb_destroy_subwindows)
     }
 
-    /**
-     * @brief Changes a client's save set
-     *
-     * @param c The connection
-     * @param mode A bitmask of #xcb_set_mode_t values.
-     * @param mode Insert to add the specified window to the save set or Delete to delete it from the save set.
-     * @param window The window to add or delete to/from your save set.
-     * @return A cookie
-     *
-     * TODO: explain what the save set is for.
-     *
-     * This function either adds or removes the specified window to the client's (your
-     * application's) save set.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeSaveSet` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_save_set_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10631,21 +13668,8 @@ impl Xcb {
         has_sym!(self, xcb_change_save_set_checked)
     }
 
-    /**
-     * @brief Changes a client's save set
-     *
-     * @param c The connection
-     * @param mode A bitmask of #xcb_set_mode_t values.
-     * @param mode Insert to add the specified window to the save set or Delete to delete it from the save set.
-     * @param window The window to add or delete to/from your save set.
-     * @return A cookie
-     *
-     * TODO: explain what the save set is for.
-     *
-     * This function either adds or removes the specified window to the client's (your
-     * application's) save set.
-     *
-     */
+    /// Sends a `ChangeSaveSet` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_change_save_set(
         &self,
         c: *mut xcb_connection_t,
@@ -10661,27 +13685,14 @@ impl Xcb {
         has_sym!(self, xcb_change_save_set)
     }
 
-    /**
-     * @brief Reparents a window
-     *
-     * @param c The connection
-     * @param window The window to reparent.
-     * @param parent The new parent of the window.
-     * @param x The X position of the window within its new parent.
-     * @param y The Y position of the window within its new parent.
-     * @return A cookie
-     *
-     * Makes the specified window a child of the specified parent window. If the
-     * window is mapped, it will automatically be unmapped before reparenting and
-     * re-mapped after reparenting. The window is placed in the stacking order on top
-     * with respect to sibling windows.
-     *
-     * After reparenting, a ReparentNotify event is generated.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ReparentWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_reparent_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10699,24 +13710,8 @@ impl Xcb {
         has_sym!(self, xcb_reparent_window_checked)
     }
 
-    /**
-     * @brief Reparents a window
-     *
-     * @param c The connection
-     * @param window The window to reparent.
-     * @param parent The new parent of the window.
-     * @param x The X position of the window within its new parent.
-     * @param y The Y position of the window within its new parent.
-     * @return A cookie
-     *
-     * Makes the specified window a child of the specified parent window. If the
-     * window is mapped, it will automatically be unmapped before reparenting and
-     * re-mapped after reparenting. The window is placed in the stacking order on top
-     * with respect to sibling windows.
-     *
-     * After reparenting, a ReparentNotify event is generated.
-     *
-     */
+    /// Sends a `ReparentWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_reparent_window(
         &self,
         c: *mut xcb_connection_t,
@@ -10734,37 +13729,14 @@ impl Xcb {
         has_sym!(self, xcb_reparent_window)
     }
 
-    /**
-     * @brief Makes a window visible
-     *
-     * @param c The connection
-     * @param window The window to make visible.
-     * @return A cookie
-     *
-     * Maps the specified window. This means making the window visible (as long as its
-     * parent is visible).
-     *
-     * This MapWindow request will be translated to a MapRequest request if a window
-     * manager is running. The window manager then decides to either map the window or
-     * not. Set the override-redirect window attribute to true if you want to bypass
-     * this mechanism.
-     *
-     * If the window manager decides to map the window (or if no window manager is
-     * running), a MapNotify event is generated.
-     *
-     * If the window becomes viewable and no earlier contents for it are remembered,
-     * the X server tiles the window with its background. If the window's background
-     * is undefined, the existing screen contents are not altered, and the X server
-     * generates zero or more Expose events.
-     *
-     * If the window type is InputOutput, an Expose event will be generated when the
-     * window becomes visible. The normal response to an Expose event should be to
-     * repaint the window.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `MapWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_map_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10779,34 +13751,8 @@ impl Xcb {
         has_sym!(self, xcb_map_window_checked)
     }
 
-    /**
-     * @brief Makes a window visible
-     *
-     * @param c The connection
-     * @param window The window to make visible.
-     * @return A cookie
-     *
-     * Maps the specified window. This means making the window visible (as long as its
-     * parent is visible).
-     *
-     * This MapWindow request will be translated to a MapRequest request if a window
-     * manager is running. The window manager then decides to either map the window or
-     * not. Set the override-redirect window attribute to true if you want to bypass
-     * this mechanism.
-     *
-     * If the window manager decides to map the window (or if no window manager is
-     * running), a MapNotify event is generated.
-     *
-     * If the window becomes viewable and no earlier contents for it are remembered,
-     * the X server tiles the window with its background. If the window's background
-     * is undefined, the existing screen contents are not altered, and the X server
-     * generates zero or more Expose events.
-     *
-     * If the window type is InputOutput, an Expose event will be generated when the
-     * window becomes visible. The normal response to an Expose event should be to
-     * repaint the window.
-     *
-     */
+    /// Sends a `MapWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_map_window(
         &self,
         c: *mut xcb_connection_t,
@@ -10821,17 +13767,14 @@ impl Xcb {
         has_sym!(self, xcb_map_window)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `MapSubwindows` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_map_subwindows_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10846,14 +13789,8 @@ impl Xcb {
         has_sym!(self, xcb_map_subwindows_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `MapSubwindows` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_map_subwindows(
         &self,
         c: *mut xcb_connection_t,
@@ -10868,23 +13805,14 @@ impl Xcb {
         has_sym!(self, xcb_map_subwindows)
     }
 
-    /**
-     * @brief Makes a window invisible
-     *
-     * @param c The connection
-     * @param window The window to make invisible.
-     * @return A cookie
-     *
-     * Unmaps the specified window. This means making the window invisible (and all
-     * its child windows).
-     *
-     * Unmapping a window leads to the `UnmapNotify` event being generated. Also,
-     * `Expose` events are generated for formerly obscured windows.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UnmapWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_unmap_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10899,20 +13827,8 @@ impl Xcb {
         has_sym!(self, xcb_unmap_window_checked)
     }
 
-    /**
-     * @brief Makes a window invisible
-     *
-     * @param c The connection
-     * @param window The window to make invisible.
-     * @return A cookie
-     *
-     * Unmaps the specified window. This means making the window invisible (and all
-     * its child windows).
-     *
-     * Unmapping a window leads to the `UnmapNotify` event being generated. Also,
-     * `Expose` events are generated for formerly obscured windows.
-     *
-     */
+    /// Sends a `UnmapWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_unmap_window(
         &self,
         c: *mut xcb_connection_t,
@@ -10927,17 +13843,14 @@ impl Xcb {
         has_sym!(self, xcb_unmap_window)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UnmapSubwindows` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_unmap_subwindows_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -10952,14 +13865,8 @@ impl Xcb {
         has_sym!(self, xcb_unmap_subwindows_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `UnmapSubwindows` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_unmap_subwindows(
         &self,
         c: *mut xcb_connection_t,
@@ -10974,6 +13881,8 @@ impl Xcb {
         has_sym!(self, xcb_unmap_subwindows)
     }
 
+    /// Serializes a `xcb_configure_window_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_configure_window_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -10989,6 +13898,8 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_configure_window_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_configure_window_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -11004,6 +13915,8 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_configure_window_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_configure_window_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -11018,6 +13931,8 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_configure_window_request_t` object.
+    #[inline]
     pub unsafe fn xcb_configure_window_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_configure_window_sizeof)(_buffer)
     }
@@ -11028,22 +13943,18 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_sizeof)
     }
 
-    /**
-     * @brief Configures window attributes
-     *
-     * @param c The connection
-     * @param window The window to configure.
-     * @param value_mask Bitmask of attributes to change.
-     * @param value_list New values, corresponding to the attributes in value_mask. The order has to
-     * correspond to the order of possible \a value_mask bits. See the example.
-     * @return A cookie
-     *
-     * Configures a window's size, position, border width and stacking order.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ConfigureWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_configure_window_aux_checked`].
+    ///
+    /// [`xcb_configure_window_aux_checked`]: Self::xcb_configure_window_aux_checked
+    #[inline]
     pub unsafe fn xcb_configure_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -11060,19 +13971,12 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_checked)
     }
 
-    /**
-     * @brief Configures window attributes
-     *
-     * @param c The connection
-     * @param window The window to configure.
-     * @param value_mask Bitmask of attributes to change.
-     * @param value_list New values, corresponding to the attributes in value_mask. The order has to
-     * correspond to the order of possible \a value_mask bits. See the example.
-     * @return A cookie
-     *
-     * Configures a window's size, position, border width and stacking order.
-     *
-     */
+    /// Sends a `ConfigureWindow` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_configure_window_aux`].
+    ///
+    /// [`xcb_configure_window_aux`]: Self::xcb_configure_window_aux
+    #[inline]
     pub unsafe fn xcb_configure_window(
         &self,
         c: *mut xcb_connection_t,
@@ -11089,22 +13993,14 @@ impl Xcb {
         has_sym!(self, xcb_configure_window)
     }
 
-    /**
-     * @brief Configures window attributes
-     *
-     * @param c The connection
-     * @param window The window to configure.
-     * @param value_mask Bitmask of attributes to change.
-     * @param value_list New values, corresponding to the attributes in value_mask. The order has to
-     * correspond to the order of possible \a value_mask bits. See the example.
-     * @return A cookie
-     *
-     * Configures a window's size, position, border width and stacking order.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ConfigureWindow` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_configure_window_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -11121,19 +14017,8 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_aux_checked)
     }
 
-    /**
-     * @brief Configures window attributes
-     *
-     * @param c The connection
-     * @param window The window to configure.
-     * @param value_mask Bitmask of attributes to change.
-     * @param value_list New values, corresponding to the attributes in value_mask. The order has to
-     * correspond to the order of possible \a value_mask bits. See the example.
-     * @return A cookie
-     *
-     * Configures a window's size, position, border width and stacking order.
-     *
-     */
+    /// Sends a `ConfigureWindow` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_configure_window_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -11150,6 +14035,8 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_configure_window_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_configure_window_value_list(
         &self,
         r: *const xcb_configure_window_request_t,
@@ -11163,25 +14050,14 @@ impl Xcb {
         has_sym!(self, xcb_configure_window_value_list)
     }
 
-    /**
-     * @brief Change window stacking order
-     *
-     * @param c The connection
-     * @param direction A bitmask of #xcb_circulate_t values.
-     * @param direction \n
-     * @param window The window to raise/lower (depending on \a direction).
-     * @return A cookie
-     *
-     * If \a direction is `XCB_CIRCULATE_RAISE_LOWEST`, the lowest mapped child (if
-     * any) will be raised to the top of the stack.
-     *
-     * If \a direction is `XCB_CIRCULATE_LOWER_HIGHEST`, the highest mapped child will
-     * be lowered to the bottom of the stack.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CirculateWindow` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_circulate_window_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -11197,22 +14073,8 @@ impl Xcb {
         has_sym!(self, xcb_circulate_window_checked)
     }
 
-    /**
-     * @brief Change window stacking order
-     *
-     * @param c The connection
-     * @param direction A bitmask of #xcb_circulate_t values.
-     * @param direction \n
-     * @param window The window to raise/lower (depending on \a direction).
-     * @return A cookie
-     *
-     * If \a direction is `XCB_CIRCULATE_RAISE_LOWEST`, the lowest mapped child (if
-     * any) will be raised to the top of the stack.
-     *
-     * If \a direction is `XCB_CIRCULATE_LOWER_HIGHEST`, the highest mapped child will
-     * be lowered to the bottom of the stack.
-     *
-     */
+    /// Sends a `CirculateWindow` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_circulate_window(
         &self,
         c: *mut xcb_connection_t,
@@ -11228,16 +14090,14 @@ impl Xcb {
         has_sym!(self, xcb_circulate_window)
     }
 
-    /**
-     * @brief Get current window geometry
-     *
-     * @param c The connection
-     * @param drawable The drawable (`Window` or `Pixmap`) of which the geometry will be received.
-     * @return A cookie
-     *
-     * Gets the current geometry of the specified drawable (either `Window` or `Pixmap`).
-     *
-     */
+    /// Sends a `GetGeometry` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_geometry_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_geometry_reply`]: Self::xcb_get_geometry_reply
+    #[inline]
     pub unsafe fn xcb_get_geometry(
         &self,
         c: *mut xcb_connection_t,
@@ -11252,19 +14112,14 @@ impl Xcb {
         has_sym!(self, xcb_get_geometry)
     }
 
-    /**
-     * @brief Get current window geometry
-     *
-     * @param c The connection
-     * @param drawable The drawable (`Window` or `Pixmap`) of which the geometry will be received.
-     * @return A cookie
-     *
-     * Gets the current geometry of the specified drawable (either `Window` or `Pixmap`).
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetGeometry` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_geometry_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_geometry_reply`]: Self::xcb_get_geometry_reply
+    #[inline]
     pub unsafe fn xcb_get_geometry_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11279,26 +14134,14 @@ impl Xcb {
         has_sym!(self, xcb_get_geometry_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_geometry_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetGeometry` request.
+    #[inline]
     pub unsafe fn xcb_get_geometry_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_geometry_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_geometry_reply_t {
+    ) -> *mut xcb_get_geometry_reply_t {
         sym!(self, xcb_get_geometry_reply)(c, cookie, e)
     }
 
@@ -11308,6 +14151,8 @@ impl Xcb {
         has_sym!(self, xcb_get_geometry_reply)
     }
 
+    /// Computes the size of a `xcb_query_tree_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_query_tree_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_query_tree_sizeof)(_buffer)
     }
@@ -11318,17 +14163,14 @@ impl Xcb {
         has_sym!(self, xcb_query_tree_sizeof)
     }
 
-    /**
-     * @brief query the window tree
-     *
-     * @param c The connection
-     * @param window The \a window to query.
-     * @return A cookie
-     *
-     * Gets the root window ID, parent window ID and list of children windows for the
-     * specified \a window. The children are listed in bottom-to-top stacking order.
-     *
-     */
+    /// Sends a `QueryTree` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_tree_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_tree_reply`]: Self::xcb_query_tree_reply
+    #[inline]
     pub unsafe fn xcb_query_tree(
         &self,
         c: *mut xcb_connection_t,
@@ -11343,20 +14185,14 @@ impl Xcb {
         has_sym!(self, xcb_query_tree)
     }
 
-    /**
-     * @brief query the window tree
-     *
-     * @param c The connection
-     * @param window The \a window to query.
-     * @return A cookie
-     *
-     * Gets the root window ID, parent window ID and list of children windows for the
-     * specified \a window. The children are listed in bottom-to-top stacking order.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryTree` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_tree_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_tree_reply`]: Self::xcb_query_tree_reply
+    #[inline]
     pub unsafe fn xcb_query_tree_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11371,6 +14207,8 @@ impl Xcb {
         has_sym!(self, xcb_query_tree_unchecked)
     }
 
+    /// Returns a pointer to the `children` field of a `xcb_query_tree_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_tree_children(
         &self,
         r: *const xcb_query_tree_reply_t,
@@ -11384,6 +14222,8 @@ impl Xcb {
         has_sym!(self, xcb_query_tree_children)
     }
 
+    /// Returns the number of elements of the `children` field of a `xcb_query_tree_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_tree_children_length(&self, r: *const xcb_query_tree_reply_t) -> c_int {
         sym!(self, xcb_query_tree_children_length)(r)
     }
@@ -11394,6 +14234,9 @@ impl Xcb {
         has_sym!(self, xcb_query_tree_children_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `children` field of a `xcb_query_tree_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_tree_children_end(
         &self,
         r: *const xcb_query_tree_reply_t,
@@ -11407,26 +14250,14 @@ impl Xcb {
         has_sym!(self, xcb_query_tree_children_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_tree_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryTree` request.
+    #[inline]
     pub unsafe fn xcb_query_tree_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_tree_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_tree_reply_t {
+    ) -> *mut xcb_query_tree_reply_t {
         sym!(self, xcb_query_tree_reply)(c, cookie, e)
     }
 
@@ -11436,6 +14267,8 @@ impl Xcb {
         has_sym!(self, xcb_query_tree_reply)
     }
 
+    /// Computes the size of a `xcb_intern_atom_request_t` object.
+    #[inline]
     pub unsafe fn xcb_intern_atom_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_intern_atom_sizeof)(_buffer)
     }
@@ -11446,24 +14279,14 @@ impl Xcb {
         has_sym!(self, xcb_intern_atom_sizeof)
     }
 
-    /**
-     * @brief Get atom identifier by name
-     *
-     * @param c The connection
-     * @param only_if_exists Return a valid atom id only if the atom already exists.
-     * @param name_len The length of the following \a name.
-     * @param name The name of the atom.
-     * @return A cookie
-     *
-     * Retrieves the identifier (xcb_atom_t TODO) for the atom with the specified
-     * name. Atoms are used in protocols like EWMH, for example to store window titles
-     * (`_NET_WM_NAME` atom) as property of a window.
-     *
-     * If \a only_if_exists is 0, the atom will be created if it does not already exist.
-     * If \a only_if_exists is 1, `XCB_ATOM_NONE` will be returned if the atom does
-     * not yet exist.
-     *
-     */
+    /// Sends a `InternAtom` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_intern_atom_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_intern_atom_reply`]: Self::xcb_intern_atom_reply
+    #[inline]
     pub unsafe fn xcb_intern_atom(
         &self,
         c: *mut xcb_connection_t,
@@ -11480,27 +14303,14 @@ impl Xcb {
         has_sym!(self, xcb_intern_atom)
     }
 
-    /**
-     * @brief Get atom identifier by name
-     *
-     * @param c The connection
-     * @param only_if_exists Return a valid atom id only if the atom already exists.
-     * @param name_len The length of the following \a name.
-     * @param name The name of the atom.
-     * @return A cookie
-     *
-     * Retrieves the identifier (xcb_atom_t TODO) for the atom with the specified
-     * name. Atoms are used in protocols like EWMH, for example to store window titles
-     * (`_NET_WM_NAME` atom) as property of a window.
-     *
-     * If \a only_if_exists is 0, the atom will be created if it does not already exist.
-     * If \a only_if_exists is 1, `XCB_ATOM_NONE` will be returned if the atom does
-     * not yet exist.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `InternAtom` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_intern_atom_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_intern_atom_reply`]: Self::xcb_intern_atom_reply
+    #[inline]
     pub unsafe fn xcb_intern_atom_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11517,26 +14327,14 @@ impl Xcb {
         has_sym!(self, xcb_intern_atom_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_intern_atom_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `InternAtom` request.
+    #[inline]
     pub unsafe fn xcb_intern_atom_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_intern_atom_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_intern_atom_reply_t {
+    ) -> *mut xcb_intern_atom_reply_t {
         sym!(self, xcb_intern_atom_reply)(c, cookie, e)
     }
 
@@ -11546,6 +14344,8 @@ impl Xcb {
         has_sym!(self, xcb_intern_atom_reply)
     }
 
+    /// Computes the size of a `xcb_get_atom_name_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_atom_name_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_atom_name_sizeof)(_buffer)
     }
@@ -11556,14 +14356,14 @@ impl Xcb {
         has_sym!(self, xcb_get_atom_name_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetAtomName` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_atom_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_atom_name_reply`]: Self::xcb_get_atom_name_reply
+    #[inline]
     pub unsafe fn xcb_get_atom_name(
         &self,
         c: *mut xcb_connection_t,
@@ -11578,17 +14378,14 @@ impl Xcb {
         has_sym!(self, xcb_get_atom_name)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetAtomName` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_atom_name_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_atom_name_reply`]: Self::xcb_get_atom_name_reply
+    #[inline]
     pub unsafe fn xcb_get_atom_name_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11603,6 +14400,8 @@ impl Xcb {
         has_sym!(self, xcb_get_atom_name_unchecked)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_get_atom_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_atom_name_name(
         &self,
         r: *const xcb_get_atom_name_reply_t,
@@ -11616,6 +14415,8 @@ impl Xcb {
         has_sym!(self, xcb_get_atom_name_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_get_atom_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_atom_name_name_length(
         &self,
         r: *const xcb_get_atom_name_reply_t,
@@ -11629,6 +14430,9 @@ impl Xcb {
         has_sym!(self, xcb_get_atom_name_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_get_atom_name_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_atom_name_name_end(
         &self,
         r: *const xcb_get_atom_name_reply_t,
@@ -11642,26 +14446,14 @@ impl Xcb {
         has_sym!(self, xcb_get_atom_name_name_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_atom_name_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetAtomName` request.
+    #[inline]
     pub unsafe fn xcb_get_atom_name_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_atom_name_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_atom_name_reply_t {
+    ) -> *mut xcb_get_atom_name_reply_t {
         sym!(self, xcb_get_atom_name_reply)(c, cookie, e)
     }
 
@@ -11671,6 +14463,8 @@ impl Xcb {
         has_sym!(self, xcb_get_atom_name_reply)
     }
 
+    /// Computes the size of a `xcb_change_property_request_t` object.
+    #[inline]
     pub unsafe fn xcb_change_property_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_change_property_sizeof)(_buffer)
     }
@@ -11681,31 +14475,14 @@ impl Xcb {
         has_sym!(self, xcb_change_property_sizeof)
     }
 
-    /**
-     * @brief Changes a window property
-     *
-     * @param c The connection
-     * @param mode A bitmask of #xcb_prop_mode_t values.
-     * @param mode \n
-     * @param window The window whose property you want to change.
-     * @param property The property you want to change (an atom).
-     * @param type_ The type of the property you want to change (an atom).
-     * @param format Specifies whether the data should be viewed as a list of 8-bit, 16-bit or
-     * 32-bit quantities. Possible values are 8, 16 and 32. This information allows
-     * the X server to correctly perform byte-swap operations as necessary.
-     * @param data_len Specifies the number of elements (see \a format).
-     * @param data The property data.
-     * @return A cookie
-     *
-     * Sets or updates a property on the specified \a window. Properties are for
-     * example the window title (`WM_NAME`) or its minimum size (`WM_NORMAL_HINTS`).
-     * Protocols such as EWMH also use properties - for example EWMH defines the
-     * window title, encoded as UTF-8 string, in the `_NET_WM_NAME` property.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeProperty` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_property_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -11728,28 +14505,8 @@ impl Xcb {
         has_sym!(self, xcb_change_property_checked)
     }
 
-    /**
-     * @brief Changes a window property
-     *
-     * @param c The connection
-     * @param mode A bitmask of #xcb_prop_mode_t values.
-     * @param mode \n
-     * @param window The window whose property you want to change.
-     * @param property The property you want to change (an atom).
-     * @param type_ The type of the property you want to change (an atom).
-     * @param format Specifies whether the data should be viewed as a list of 8-bit, 16-bit or
-     * 32-bit quantities. Possible values are 8, 16 and 32. This information allows
-     * the X server to correctly perform byte-swap operations as necessary.
-     * @param data_len Specifies the number of elements (see \a format).
-     * @param data The property data.
-     * @return A cookie
-     *
-     * Sets or updates a property on the specified \a window. Properties are for
-     * example the window title (`WM_NAME`) or its minimum size (`WM_NORMAL_HINTS`).
-     * Protocols such as EWMH also use properties - for example EWMH defines the
-     * window title, encoded as UTF-8 string, in the `_NET_WM_NAME` property.
-     *
-     */
+    /// Sends a `ChangeProperty` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_change_property(
         &self,
         c: *mut xcb_connection_t,
@@ -11770,6 +14527,8 @@ impl Xcb {
         has_sym!(self, xcb_change_property)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_change_property_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_property_data(
         &self,
         r: *const xcb_change_property_request_t,
@@ -11783,6 +14542,8 @@ impl Xcb {
         has_sym!(self, xcb_change_property_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_change_property_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_property_data_length(
         &self,
         r: *const xcb_change_property_request_t,
@@ -11796,6 +14557,9 @@ impl Xcb {
         has_sym!(self, xcb_change_property_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_change_property_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_property_data_end(
         &self,
         r: *const xcb_change_property_request_t,
@@ -11809,17 +14573,14 @@ impl Xcb {
         has_sym!(self, xcb_change_property_data_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `DeleteProperty` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_delete_property_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -11835,14 +14596,8 @@ impl Xcb {
         has_sym!(self, xcb_delete_property_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `DeleteProperty` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_delete_property(
         &self,
         c: *mut xcb_connection_t,
@@ -11858,6 +14613,8 @@ impl Xcb {
         has_sym!(self, xcb_delete_property)
     }
 
+    /// Computes the size of a `xcb_get_property_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_property_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_property_sizeof)(_buffer)
     }
@@ -11868,33 +14625,14 @@ impl Xcb {
         has_sym!(self, xcb_get_property_sizeof)
     }
 
-    /**
-     * @brief Gets a window property
-     *
-     * @param c The connection
-     * @param delete Whether the property should actually be deleted. For deleting a property, the
-     * specified `type` has to match the actual property type.
-     * @param window The window whose property you want to get.
-     * @param property The property you want to get (an atom).
-     * @param type_ The type of the property you want to get (an atom).
-     * @param long_offset Specifies the offset (in 32-bit multiples) in the specified property where the
-     * data is to be retrieved.
-     * @param long_length Specifies how many 32-bit multiples of data should be retrieved (e.g. if you
-     * set \a long_length to 4, you will receive 16 bytes of data).
-     * @return A cookie
-     *
-     * Gets the specified \a property from the specified \a window. Properties are for
-     * example the window title (`WM_NAME`) or its minimum size (`WM_NORMAL_HINTS`).
-     * Protocols such as EWMH also use properties - for example EWMH defines the
-     * window title, encoded as UTF-8 string, in the `_NET_WM_NAME` property.
-     *
-     * TODO: talk about `type`
-     *
-     * TODO: talk about \a delete
-     *
-     * TODO: talk about the offset/length thing. what's a valid use case?
-     *
-     */
+    /// Sends a `GetProperty` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_property_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_property_reply`]: Self::xcb_get_property_reply
+    #[inline]
     pub unsafe fn xcb_get_property(
         &self,
         c: *mut xcb_connection_t,
@@ -11914,36 +14652,14 @@ impl Xcb {
         has_sym!(self, xcb_get_property)
     }
 
-    /**
-     * @brief Gets a window property
-     *
-     * @param c The connection
-     * @param delete Whether the property should actually be deleted. For deleting a property, the
-     * specified `type` has to match the actual property type.
-     * @param window The window whose property you want to get.
-     * @param property The property you want to get (an atom).
-     * @param type_ The type of the property you want to get (an atom).
-     * @param long_offset Specifies the offset (in 32-bit multiples) in the specified property where the
-     * data is to be retrieved.
-     * @param long_length Specifies how many 32-bit multiples of data should be retrieved (e.g. if you
-     * set \a long_length to 4, you will receive 16 bytes of data).
-     * @return A cookie
-     *
-     * Gets the specified \a property from the specified \a window. Properties are for
-     * example the window title (`WM_NAME`) or its minimum size (`WM_NORMAL_HINTS`).
-     * Protocols such as EWMH also use properties - for example EWMH defines the
-     * window title, encoded as UTF-8 string, in the `_NET_WM_NAME` property.
-     *
-     * TODO: talk about `type`
-     *
-     * TODO: talk about \a delete
-     *
-     * TODO: talk about the offset/length thing. what's a valid use case?
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetProperty` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_property_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_property_reply`]: Self::xcb_get_property_reply
+    #[inline]
     pub unsafe fn xcb_get_property_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -11971,6 +14687,8 @@ impl Xcb {
         has_sym!(self, xcb_get_property_unchecked)
     }
 
+    /// Returns a pointer to the `value` field of a `xcb_get_property_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_property_value(&self, r: *const xcb_get_property_reply_t) -> *mut c_void {
         sym!(self, xcb_get_property_value)(r)
     }
@@ -11981,6 +14699,8 @@ impl Xcb {
         has_sym!(self, xcb_get_property_value)
     }
 
+    /// Returns the number of elements of the `value` field of a `xcb_get_property_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_property_value_length(
         &self,
         r: *const xcb_get_property_reply_t,
@@ -11994,6 +14714,9 @@ impl Xcb {
         has_sym!(self, xcb_get_property_value_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `value` field of a `xcb_get_property_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_property_value_end(
         &self,
         r: *const xcb_get_property_reply_t,
@@ -12007,26 +14730,14 @@ impl Xcb {
         has_sym!(self, xcb_get_property_value_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_property_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetProperty` request.
+    #[inline]
     pub unsafe fn xcb_get_property_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_property_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_property_reply_t {
+    ) -> *mut xcb_get_property_reply_t {
         sym!(self, xcb_get_property_reply)(c, cookie, e)
     }
 
@@ -12036,6 +14747,8 @@ impl Xcb {
         has_sym!(self, xcb_get_property_reply)
     }
 
+    /// Computes the size of a `xcb_list_properties_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_list_properties_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_list_properties_sizeof)(_buffer)
     }
@@ -12046,14 +14759,14 @@ impl Xcb {
         has_sym!(self, xcb_list_properties_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ListProperties` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_properties_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_properties_reply`]: Self::xcb_list_properties_reply
+    #[inline]
     pub unsafe fn xcb_list_properties(
         &self,
         c: *mut xcb_connection_t,
@@ -12068,17 +14781,14 @@ impl Xcb {
         has_sym!(self, xcb_list_properties)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ListProperties` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_properties_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_properties_reply`]: Self::xcb_list_properties_reply
+    #[inline]
     pub unsafe fn xcb_list_properties_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12093,6 +14803,8 @@ impl Xcb {
         has_sym!(self, xcb_list_properties_unchecked)
     }
 
+    /// Returns a pointer to the `atoms` field of a `xcb_list_properties_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_properties_atoms(
         &self,
         r: *const xcb_list_properties_reply_t,
@@ -12106,6 +14818,8 @@ impl Xcb {
         has_sym!(self, xcb_list_properties_atoms)
     }
 
+    /// Returns the number of elements of the `atoms` field of a `xcb_list_properties_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_properties_atoms_length(
         &self,
         r: *const xcb_list_properties_reply_t,
@@ -12119,6 +14833,9 @@ impl Xcb {
         has_sym!(self, xcb_list_properties_atoms_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `atoms` field of a `xcb_list_properties_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_properties_atoms_end(
         &self,
         r: *const xcb_list_properties_reply_t,
@@ -12132,26 +14849,14 @@ impl Xcb {
         has_sym!(self, xcb_list_properties_atoms_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_list_properties_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ListProperties` request.
+    #[inline]
     pub unsafe fn xcb_list_properties_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_list_properties_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_list_properties_reply_t {
+    ) -> *mut xcb_list_properties_reply_t {
         sym!(self, xcb_list_properties_reply)(c, cookie, e)
     }
 
@@ -12161,33 +14866,14 @@ impl Xcb {
         has_sym!(self, xcb_list_properties_reply)
     }
 
-    /**
-     * @brief Sets the owner of a selection
-     *
-     * @param c The connection
-     * @param owner The new owner of the selection.
-     * \n
-     * The special value `XCB_NONE` means that the selection will have no owner.
-     * @param selection The selection.
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The selection will not be changed if \a time is earlier than the current
-     * last-change time of the \a selection or is later than the current X server time.
-     * Otherwise, the last-change time is set to the specified time.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Makes `window` the owner of the selection \a selection and updates the
-     * last-change time of the specified selection.
-     *
-     * TODO: briefly explain what a selection is.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetSelectionOwner` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_selection_owner_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -12204,30 +14890,8 @@ impl Xcb {
         has_sym!(self, xcb_set_selection_owner_checked)
     }
 
-    /**
-     * @brief Sets the owner of a selection
-     *
-     * @param c The connection
-     * @param owner The new owner of the selection.
-     * \n
-     * The special value `XCB_NONE` means that the selection will have no owner.
-     * @param selection The selection.
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The selection will not be changed if \a time is earlier than the current
-     * last-change time of the \a selection or is later than the current X server time.
-     * Otherwise, the last-change time is set to the specified time.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Makes `window` the owner of the selection \a selection and updates the
-     * last-change time of the specified selection.
-     *
-     * TODO: briefly explain what a selection is.
-     *
-     */
+    /// Sends a `SetSelectionOwner` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_selection_owner(
         &self,
         c: *mut xcb_connection_t,
@@ -12244,18 +14908,14 @@ impl Xcb {
         has_sym!(self, xcb_set_selection_owner)
     }
 
-    /**
-     * @brief Gets the owner of a selection
-     *
-     * @param c The connection
-     * @param selection The selection.
-     * @return A cookie
-     *
-     * Gets the owner of the specified selection.
-     *
-     * TODO: briefly explain what a selection is.
-     *
-     */
+    /// Sends a `GetSelectionOwner` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_selection_owner_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_selection_owner_reply`]: Self::xcb_get_selection_owner_reply
+    #[inline]
     pub unsafe fn xcb_get_selection_owner(
         &self,
         c: *mut xcb_connection_t,
@@ -12270,21 +14930,14 @@ impl Xcb {
         has_sym!(self, xcb_get_selection_owner)
     }
 
-    /**
-     * @brief Gets the owner of a selection
-     *
-     * @param c The connection
-     * @param selection The selection.
-     * @return A cookie
-     *
-     * Gets the owner of the specified selection.
-     *
-     * TODO: briefly explain what a selection is.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetSelectionOwner` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_selection_owner_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_selection_owner_reply`]: Self::xcb_get_selection_owner_reply
+    #[inline]
     pub unsafe fn xcb_get_selection_owner_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12299,26 +14952,14 @@ impl Xcb {
         has_sym!(self, xcb_get_selection_owner_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_selection_owner_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetSelectionOwner` request.
+    #[inline]
     pub unsafe fn xcb_get_selection_owner_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_selection_owner_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_selection_owner_reply_t {
+    ) -> *mut xcb_get_selection_owner_reply_t {
         sym!(self, xcb_get_selection_owner_reply)(c, cookie, e)
     }
 
@@ -12328,17 +14969,14 @@ impl Xcb {
         has_sym!(self, xcb_get_selection_owner_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ConvertSelection` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_convert_selection_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -12357,14 +14995,8 @@ impl Xcb {
         has_sym!(self, xcb_convert_selection_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ConvertSelection` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_convert_selection(
         &self,
         c: *mut xcb_connection_t,
@@ -12383,43 +15015,14 @@ impl Xcb {
         has_sym!(self, xcb_convert_selection)
     }
 
-    /**
-     * @brief send an event
-     *
-     * @param c The connection
-     * @param propagate If \a propagate is true and no clients have selected any event on \a destination,
-     * the destination is replaced with the closest ancestor of \a destination for
-     * which some client has selected a type in \a event_mask and for which no
-     * intervening window has that type in its do-not-propagate-mask. If no such
-     * window exists or if the window is an ancestor of the focus window and
-     * `InputFocus` was originally specified as the destination, the event is not sent
-     * to any clients. Otherwise, the event is reported to every client selecting on
-     * the final destination any of the types specified in \a event_mask.
-     * @param destination The window to send this event to. Every client which selects any event within
-     * \a event_mask on \a destination will get the event.
-     * \n
-     * The special value `XCB_SEND_EVENT_DEST_POINTER_WINDOW` refers to the window
-     * that contains the mouse pointer.
-     * \n
-     * The special value `XCB_SEND_EVENT_DEST_ITEM_FOCUS` refers to the window which
-     * has the keyboard focus.
-     * @param event_mask Event_mask for determining which clients should receive the specified event.
-     * See \a destination and \a propagate.
-     * @param event The event to send to the specified \a destination.
-     * @return A cookie
-     *
-     * Identifies the \a destination window, determines which clients should receive
-     * the specified event and ignores any active grabs.
-     *
-     * The \a event must be one of the core events or an event defined by an extension,
-     * so that the X server can correctly byte-swap the contents as necessary. The
-     * contents of \a event are otherwise unaltered and unchecked except for the
-     * `send_event` field which is forced to 'true'.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SendEvent` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_send_event_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -12437,40 +15040,8 @@ impl Xcb {
         has_sym!(self, xcb_send_event_checked)
     }
 
-    /**
-     * @brief send an event
-     *
-     * @param c The connection
-     * @param propagate If \a propagate is true and no clients have selected any event on \a destination,
-     * the destination is replaced with the closest ancestor of \a destination for
-     * which some client has selected a type in \a event_mask and for which no
-     * intervening window has that type in its do-not-propagate-mask. If no such
-     * window exists or if the window is an ancestor of the focus window and
-     * `InputFocus` was originally specified as the destination, the event is not sent
-     * to any clients. Otherwise, the event is reported to every client selecting on
-     * the final destination any of the types specified in \a event_mask.
-     * @param destination The window to send this event to. Every client which selects any event within
-     * \a event_mask on \a destination will get the event.
-     * \n
-     * The special value `XCB_SEND_EVENT_DEST_POINTER_WINDOW` refers to the window
-     * that contains the mouse pointer.
-     * \n
-     * The special value `XCB_SEND_EVENT_DEST_ITEM_FOCUS` refers to the window which
-     * has the keyboard focus.
-     * @param event_mask Event_mask for determining which clients should receive the specified event.
-     * See \a destination and \a propagate.
-     * @param event The event to send to the specified \a destination.
-     * @return A cookie
-     *
-     * Identifies the \a destination window, determines which clients should receive
-     * the specified event and ignores any active grabs.
-     *
-     * The \a event must be one of the core events or an event defined by an extension,
-     * so that the X server can correctly byte-swap the contents as necessary. The
-     * contents of \a event are otherwise unaltered and unchecked except for the
-     * `send_event` field which is forced to 'true'.
-     *
-     */
+    /// Sends a `SendEvent` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_send_event(
         &self,
         c: *mut xcb_connection_t,
@@ -12488,42 +15059,14 @@ impl Xcb {
         has_sym!(self, xcb_send_event)
     }
 
-    /**
-     * @brief Grab the pointer
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param event_mask Specifies which pointer events are reported to the client.
-     * \n
-     * TODO: which values?
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @param confine_to Specifies the window to confine the pointer in (the user will not be able to
-     * move the pointer out of that window).
-     * \n
-     * The special value `XCB_NONE` means don't confine the pointer.
-     * @param cursor Specifies the cursor that should be displayed or `XCB_NONE` to not change the
-     * cursor.
-     * @param time The time argument allows you to avoid certain circumstances that come up if
-     * applications take a long time to respond or if there are long network delays.
-     * Consider a situation where you have two applications, both of which normally
-     * grab the pointer when clicked on. If both applications specify the timestamp
-     * from the event, the second application may wake up faster and successfully grab
-     * the pointer before the first application. The first application then will get
-     * an indication that the other application grabbed the pointer before its request
-     * was processed.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Actively grabs control of the pointer. Further pointer events are reported only to the grabbing client. Overrides any active pointer grab by this client.
-     *
-     */
+    /// Sends a `GrabPointer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_grab_pointer_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_grab_pointer_reply`]: Self::xcb_grab_pointer_reply
+    #[inline]
     pub unsafe fn xcb_grab_pointer(
         &self,
         c: *mut xcb_connection_t,
@@ -12555,45 +15098,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_pointer)
     }
 
-    /**
-     * @brief Grab the pointer
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param event_mask Specifies which pointer events are reported to the client.
-     * \n
-     * TODO: which values?
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @param confine_to Specifies the window to confine the pointer in (the user will not be able to
-     * move the pointer out of that window).
-     * \n
-     * The special value `XCB_NONE` means don't confine the pointer.
-     * @param cursor Specifies the cursor that should be displayed or `XCB_NONE` to not change the
-     * cursor.
-     * @param time The time argument allows you to avoid certain circumstances that come up if
-     * applications take a long time to respond or if there are long network delays.
-     * Consider a situation where you have two applications, both of which normally
-     * grab the pointer when clicked on. If both applications specify the timestamp
-     * from the event, the second application may wake up faster and successfully grab
-     * the pointer before the first application. The first application then will get
-     * an indication that the other application grabbed the pointer before its request
-     * was processed.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Actively grabs control of the pointer. Further pointer events are reported only to the grabbing client. Overrides any active pointer grab by this client.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GrabPointer` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_grab_pointer_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_grab_pointer_reply`]: Self::xcb_grab_pointer_reply
+    #[inline]
     pub unsafe fn xcb_grab_pointer_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -12625,26 +15137,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_pointer_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_grab_pointer_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GrabPointer` request.
+    #[inline]
     pub unsafe fn xcb_grab_pointer_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_grab_pointer_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_grab_pointer_reply_t {
+    ) -> *mut xcb_grab_pointer_reply_t {
         sym!(self, xcb_grab_pointer_reply)(c, cookie, e)
     }
 
@@ -12654,26 +15154,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_pointer_reply)
     }
 
-    /**
-     * @brief release the pointer
-     *
-     * @param c The connection
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The pointer will not be released if \a time is earlier than the
-     * last-pointer-grab time or later than the current X server time.
-     * @return A cookie
-     *
-     * Releases the pointer and any queued events if you actively grabbed the pointer
-     * before using `xcb_grab_pointer`, `xcb_grab_button` or within a normal button
-     * press.
-     *
-     * EnterNotify and LeaveNotify events are generated.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UngrabPointer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_ungrab_pointer_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -12688,23 +15176,8 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_pointer_checked)
     }
 
-    /**
-     * @brief release the pointer
-     *
-     * @param c The connection
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The pointer will not be released if \a time is earlier than the
-     * last-pointer-grab time or later than the current X server time.
-     * @return A cookie
-     *
-     * Releases the pointer and any queued events if you actively grabbed the pointer
-     * before using `xcb_grab_pointer`, `xcb_grab_button` or within a normal button
-     * press.
-     *
-     * EnterNotify and LeaveNotify events are generated.
-     *
-     */
+    /// Sends a `UngrabPointer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_ungrab_pointer(
         &self,
         c: *mut xcb_connection_t,
@@ -12719,74 +15192,14 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_pointer)
     }
 
-    /**
-     * @brief Grab pointer button(s)
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param event_mask Specifies which pointer events are reported to the client.
-     * \n
-     * TODO: which values?
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @param confine_to Specifies the window to confine the pointer in (the user will not be able to
-     * move the pointer out of that window).
-     * \n
-     * The special value `XCB_NONE` means don't confine the pointer.
-     * @param cursor Specifies the cursor that should be displayed or `XCB_NONE` to not change the
-     * cursor.
-     * @param button A bitmask of #xcb_button_index_t values.
-     * @param button \n
-     * @param modifiers The modifiers to grab.
-     * \n
-     * Using the special value `XCB_MOD_MASK_ANY` means grab the pointer with all
-     * possible modifier combinations.
-     * @return A cookie
-     *
-     * This request establishes a passive grab. The pointer is actively grabbed as
-     * described in GrabPointer, the last-pointer-grab time is set to the time at
-     * which the button was pressed (as transmitted in the ButtonPress event), and the
-     * ButtonPress event is reported if all of the following conditions are true:
-     *
-     * The pointer is not grabbed and the specified button is logically pressed when
-     * the specified modifier keys are logically down, and no other buttons or
-     * modifier keys are logically down.
-     *
-     * The grab-window contains the pointer.
-     *
-     * The confine-to window (if any) is viewable.
-     *
-     * A passive grab on the same button/key combination does not exist on any
-     * ancestor of grab-window.
-     *
-     * The interpretation of the remaining arguments is the same as for GrabPointer.
-     * The active grab is terminated automatically when the logical state of the
-     * pointer has all buttons released, independent of the logical state of modifier
-     * keys. Note that the logical state of a device (as seen by means of the
-     * protocol) may lag the physical state if device event processing is frozen. This
-     * request overrides all previous passive grabs by the same client on the same
-     * button/key combinations on the same window. A modifier of AnyModifier is
-     * equivalent to issuing the request for all possible modifier combinations
-     * (including the combination of no modifiers). It is not required that all
-     * specified modifiers have currently assigned keycodes. A button of AnyButton is
-     * equivalent to issuing the request for all possible buttons. Otherwise, it is
-     * not required that the button specified currently be assigned to a physical
-     * button.
-     *
-     * An Access error is generated if some other client has already issued a
-     * GrabButton request with the same button/key combination on the same window.
-     * When using AnyModifier or AnyButton, the request fails completely (no grabs are
-     * established), and an Access error is generated if there is a conflicting grab
-     * for any combination. The request has no effect on an active grab.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `GrabButton` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_grab_button_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -12820,71 +15233,8 @@ impl Xcb {
         has_sym!(self, xcb_grab_button_checked)
     }
 
-    /**
-     * @brief Grab pointer button(s)
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param event_mask Specifies which pointer events are reported to the client.
-     * \n
-     * TODO: which values?
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @param confine_to Specifies the window to confine the pointer in (the user will not be able to
-     * move the pointer out of that window).
-     * \n
-     * The special value `XCB_NONE` means don't confine the pointer.
-     * @param cursor Specifies the cursor that should be displayed or `XCB_NONE` to not change the
-     * cursor.
-     * @param button A bitmask of #xcb_button_index_t values.
-     * @param button \n
-     * @param modifiers The modifiers to grab.
-     * \n
-     * Using the special value `XCB_MOD_MASK_ANY` means grab the pointer with all
-     * possible modifier combinations.
-     * @return A cookie
-     *
-     * This request establishes a passive grab. The pointer is actively grabbed as
-     * described in GrabPointer, the last-pointer-grab time is set to the time at
-     * which the button was pressed (as transmitted in the ButtonPress event), and the
-     * ButtonPress event is reported if all of the following conditions are true:
-     *
-     * The pointer is not grabbed and the specified button is logically pressed when
-     * the specified modifier keys are logically down, and no other buttons or
-     * modifier keys are logically down.
-     *
-     * The grab-window contains the pointer.
-     *
-     * The confine-to window (if any) is viewable.
-     *
-     * A passive grab on the same button/key combination does not exist on any
-     * ancestor of grab-window.
-     *
-     * The interpretation of the remaining arguments is the same as for GrabPointer.
-     * The active grab is terminated automatically when the logical state of the
-     * pointer has all buttons released, independent of the logical state of modifier
-     * keys. Note that the logical state of a device (as seen by means of the
-     * protocol) may lag the physical state if device event processing is frozen. This
-     * request overrides all previous passive grabs by the same client on the same
-     * button/key combinations on the same window. A modifier of AnyModifier is
-     * equivalent to issuing the request for all possible modifier combinations
-     * (including the combination of no modifiers). It is not required that all
-     * specified modifiers have currently assigned keycodes. A button of AnyButton is
-     * equivalent to issuing the request for all possible buttons. Otherwise, it is
-     * not required that the button specified currently be assigned to a physical
-     * button.
-     *
-     * An Access error is generated if some other client has already issued a
-     * GrabButton request with the same button/key combination on the same window.
-     * When using AnyModifier or AnyButton, the request fails completely (no grabs are
-     * established), and an Access error is generated if there is a conflicting grab
-     * for any combination. The request has no effect on an active grab.
-     *
-     */
+    /// Sends a `GrabButton` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_grab_button(
         &self,
         c: *mut xcb_connection_t,
@@ -12918,17 +15268,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_button)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UngrabButton` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_ungrab_button_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -12945,14 +15292,8 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_button_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `UngrabButton` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_ungrab_button(
         &self,
         c: *mut xcb_connection_t,
@@ -12969,17 +15310,14 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_button)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeActivePointerGrab` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_active_pointer_grab_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -12996,14 +15334,8 @@ impl Xcb {
         has_sym!(self, xcb_change_active_pointer_grab_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ChangeActivePointerGrab` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_change_active_pointer_grab(
         &self,
         c: *mut xcb_connection_t,
@@ -13020,35 +15352,14 @@ impl Xcb {
         has_sym!(self, xcb_change_active_pointer_grab)
     }
 
-    /**
-     * @brief Grab the keyboard
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @return A cookie
-     *
-     * Actively grabs control of the keyboard and generates FocusIn and FocusOut
-     * events. Further key events are reported only to the grabbing client.
-     *
-     * Any active keyboard grab by this client is overridden. If the keyboard is
-     * actively grabbed by some other client, `AlreadyGrabbed` is returned. If
-     * \a grab_window is not viewable, `GrabNotViewable` is returned. If the keyboard
-     * is frozen by an active grab of another client, `GrabFrozen` is returned. If the
-     * specified \a time is earlier than the last-keyboard-grab time or later than the
-     * current X server time, `GrabInvalidTime` is returned. Otherwise, the
-     * last-keyboard-grab time is set to the specified time.
-     *
-     */
+    /// Sends a `GrabKeyboard` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_grab_keyboard_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_grab_keyboard_reply`]: Self::xcb_grab_keyboard_reply
+    #[inline]
     pub unsafe fn xcb_grab_keyboard(
         &self,
         c: *mut xcb_connection_t,
@@ -13074,38 +15385,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_keyboard)
     }
 
-    /**
-     * @brief Grab the keyboard
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @return A cookie
-     *
-     * Actively grabs control of the keyboard and generates FocusIn and FocusOut
-     * events. Further key events are reported only to the grabbing client.
-     *
-     * Any active keyboard grab by this client is overridden. If the keyboard is
-     * actively grabbed by some other client, `AlreadyGrabbed` is returned. If
-     * \a grab_window is not viewable, `GrabNotViewable` is returned. If the keyboard
-     * is frozen by an active grab of another client, `GrabFrozen` is returned. If the
-     * specified \a time is earlier than the last-keyboard-grab time or later than the
-     * current X server time, `GrabInvalidTime` is returned. Otherwise, the
-     * last-keyboard-grab time is set to the specified time.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GrabKeyboard` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_grab_keyboard_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_grab_keyboard_reply`]: Self::xcb_grab_keyboard_reply
+    #[inline]
     pub unsafe fn xcb_grab_keyboard_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13131,26 +15418,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_keyboard_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_grab_keyboard_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GrabKeyboard` request.
+    #[inline]
     pub unsafe fn xcb_grab_keyboard_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_grab_keyboard_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_grab_keyboard_reply_t {
+    ) -> *mut xcb_grab_keyboard_reply_t {
         sym!(self, xcb_grab_keyboard_reply)(c, cookie, e)
     }
 
@@ -13160,17 +15435,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_keyboard_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UngrabKeyboard` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_ungrab_keyboard_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -13185,14 +15457,8 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_keyboard_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `UngrabKeyboard` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_ungrab_keyboard(
         &self,
         c: *mut xcb_connection_t,
@@ -13207,61 +15473,14 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_keyboard)
     }
 
-    /**
-     * @brief Grab keyboard key(s)
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param modifiers The modifiers to grab.
-     * \n
-     * Using the special value `XCB_MOD_MASK_ANY` means grab the pointer with all
-     * possible modifier combinations.
-     * @param key The keycode of the key to grab.
-     * \n
-     * The special value `XCB_GRAB_ANY` means grab any key.
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @return A cookie
-     *
-     * Establishes a passive grab on the keyboard. In the future, the keyboard is
-     * actively grabbed (as for `GrabKeyboard`), the last-keyboard-grab time is set to
-     * the time at which the key was pressed (as transmitted in the KeyPress event),
-     * and the KeyPress event is reported if all of the following conditions are true:
-     *
-     * The keyboard is not grabbed and the specified key (which can itself be a
-     * modifier key) is logically pressed when the specified modifier keys are
-     * logically down, and no other modifier keys are logically down.
-     *
-     * Either the grab_window is an ancestor of (or is) the focus window, or the
-     * grab_window is a descendant of the focus window and contains the pointer.
-     *
-     * A passive grab on the same key combination does not exist on any ancestor of
-     * grab_window.
-     *
-     * The interpretation of the remaining arguments is as for XGrabKeyboard.  The active grab is terminated
-     * automatically when the logical state of the keyboard has the specified key released (independent of the
-     * logical state of the modifier keys), at which point a KeyRelease event is reported to the grabbing window.
-     *
-     * Note that the logical state of a device (as seen by client applications) may lag the physical state if
-     * device event processing is frozen.
-     *
-     * A modifiers argument of AnyModifier is equivalent to issuing the request for all possible modifier combinations (including the combination of no modifiers).  It is not required that all modifiers specified
-     * have currently assigned KeyCodes.  A keycode argument of AnyKey is equivalent to issuing the request for
-     * all possible KeyCodes.  Otherwise, the specified keycode must be in the range specified by min_keycode
-     * and max_keycode in the connection setup, or a BadValue error results.
-     *
-     * If some other client has issued a XGrabKey with the same key combination on the same window, a BadAccess
-     * error results.  When using AnyModifier or AnyKey, the request fails completely, and a BadAccess error
-     * results (no grabs are established) if there is a conflicting grab for any combination.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `GrabKey` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_grab_key_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -13289,58 +15508,8 @@ impl Xcb {
         has_sym!(self, xcb_grab_key_checked)
     }
 
-    /**
-     * @brief Grab keyboard key(s)
-     *
-     * @param c The connection
-     * @param owner_events If 1, the \a grab_window will still get the pointer events. If 0, events are not
-     * reported to the \a grab_window.
-     * @param grab_window Specifies the window on which the pointer should be grabbed.
-     * @param modifiers The modifiers to grab.
-     * \n
-     * Using the special value `XCB_MOD_MASK_ANY` means grab the pointer with all
-     * possible modifier combinations.
-     * @param key The keycode of the key to grab.
-     * \n
-     * The special value `XCB_GRAB_ANY` means grab any key.
-     * @param pointer_mode A bitmask of #xcb_grab_mode_t values.
-     * @param pointer_mode \n
-     * @param keyboard_mode A bitmask of #xcb_grab_mode_t values.
-     * @param keyboard_mode \n
-     * @return A cookie
-     *
-     * Establishes a passive grab on the keyboard. In the future, the keyboard is
-     * actively grabbed (as for `GrabKeyboard`), the last-keyboard-grab time is set to
-     * the time at which the key was pressed (as transmitted in the KeyPress event),
-     * and the KeyPress event is reported if all of the following conditions are true:
-     *
-     * The keyboard is not grabbed and the specified key (which can itself be a
-     * modifier key) is logically pressed when the specified modifier keys are
-     * logically down, and no other modifier keys are logically down.
-     *
-     * Either the grab_window is an ancestor of (or is) the focus window, or the
-     * grab_window is a descendant of the focus window and contains the pointer.
-     *
-     * A passive grab on the same key combination does not exist on any ancestor of
-     * grab_window.
-     *
-     * The interpretation of the remaining arguments is as for XGrabKeyboard.  The active grab is terminated
-     * automatically when the logical state of the keyboard has the specified key released (independent of the
-     * logical state of the modifier keys), at which point a KeyRelease event is reported to the grabbing window.
-     *
-     * Note that the logical state of a device (as seen by client applications) may lag the physical state if
-     * device event processing is frozen.
-     *
-     * A modifiers argument of AnyModifier is equivalent to issuing the request for all possible modifier combinations (including the combination of no modifiers).  It is not required that all modifiers specified
-     * have currently assigned KeyCodes.  A keycode argument of AnyKey is equivalent to issuing the request for
-     * all possible KeyCodes.  Otherwise, the specified keycode must be in the range specified by min_keycode
-     * and max_keycode in the connection setup, or a BadValue error results.
-     *
-     * If some other client has issued a XGrabKey with the same key combination on the same window, a BadAccess
-     * error results.  When using AnyModifier or AnyKey, the request fails completely, and a BadAccess error
-     * results (no grabs are established) if there is a conflicting grab for any combination.
-     *
-     */
+    /// Sends a `GrabKey` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_grab_key(
         &self,
         c: *mut xcb_connection_t,
@@ -13368,27 +15537,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_key)
     }
 
-    /**
-     * @brief release a key combination
-     *
-     * @param c The connection
-     * @param key The keycode of the specified key combination.
-     * \n
-     * Using the special value `XCB_GRAB_ANY` means releasing all possible key codes.
-     * @param grab_window The window on which the grabbed key combination will be released.
-     * @param modifiers The modifiers of the specified key combination.
-     * \n
-     * Using the special value `XCB_MOD_MASK_ANY` means releasing the key combination
-     * with every possible modifier combination.
-     * @return A cookie
-     *
-     * Releases the key combination on \a grab_window if you grabbed it using
-     * `xcb_grab_key` before.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UngrabKey` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_ungrab_key_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -13405,24 +15561,8 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_key_checked)
     }
 
-    /**
-     * @brief release a key combination
-     *
-     * @param c The connection
-     * @param key The keycode of the specified key combination.
-     * \n
-     * Using the special value `XCB_GRAB_ANY` means releasing all possible key codes.
-     * @param grab_window The window on which the grabbed key combination will be released.
-     * @param modifiers The modifiers of the specified key combination.
-     * \n
-     * Using the special value `XCB_MOD_MASK_ANY` means releasing the key combination
-     * with every possible modifier combination.
-     * @return A cookie
-     *
-     * Releases the key combination on \a grab_window if you grabbed it using
-     * `xcb_grab_key` before.
-     *
-     */
+    /// Sends a `UngrabKey` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_ungrab_key(
         &self,
         c: *mut xcb_connection_t,
@@ -13439,27 +15579,14 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_key)
     }
 
-    /**
-     * @brief release queued events
-     *
-     * @param c The connection
-     * @param mode A bitmask of #xcb_allow_t values.
-     * @param mode \n
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Releases queued events if the client has caused a device (pointer/keyboard) to
-     * freeze due to grabbing it actively. This request has no effect if \a time is
-     * earlier than the last-grab time of the most recent active grab for this client
-     * or if \a time is later than the current X server time.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `AllowEvents` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_allow_events_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -13475,24 +15602,8 @@ impl Xcb {
         has_sym!(self, xcb_allow_events_checked)
     }
 
-    /**
-     * @brief release queued events
-     *
-     * @param c The connection
-     * @param mode A bitmask of #xcb_allow_t values.
-     * @param mode \n
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Releases queued events if the client has caused a device (pointer/keyboard) to
-     * freeze due to grabbing it actively. This request has no effect if \a time is
-     * earlier than the last-grab time of the most recent active grab for this client
-     * or if \a time is later than the current X server time.
-     *
-     */
+    /// Sends a `AllowEvents` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_allow_events(
         &self,
         c: *mut xcb_connection_t,
@@ -13508,17 +15619,14 @@ impl Xcb {
         has_sym!(self, xcb_allow_events)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `GrabServer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_grab_server_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_grab_server_checked)(c)
     }
@@ -13529,14 +15637,8 @@ impl Xcb {
         has_sym!(self, xcb_grab_server_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GrabServer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_grab_server(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_grab_server)(c)
     }
@@ -13547,17 +15649,14 @@ impl Xcb {
         has_sym!(self, xcb_grab_server)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UngrabServer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_ungrab_server_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_ungrab_server_checked)(c)
     }
@@ -13568,14 +15667,8 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_server_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `UngrabServer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_ungrab_server(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_ungrab_server)(c)
     }
@@ -13586,18 +15679,14 @@ impl Xcb {
         has_sym!(self, xcb_ungrab_server)
     }
 
-    /**
-     * @brief get pointer coordinates
-     *
-     * @param c The connection
-     * @param window A window to check if the pointer is on the same screen as \a window (see the
-     * `same_screen` field in the reply).
-     * @return A cookie
-     *
-     * Gets the root window the pointer is logically on and the pointer coordinates
-     * relative to the root window's origin.
-     *
-     */
+    /// Sends a `QueryPointer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_pointer_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_pointer_reply`]: Self::xcb_query_pointer_reply
+    #[inline]
     pub unsafe fn xcb_query_pointer(
         &self,
         c: *mut xcb_connection_t,
@@ -13612,21 +15701,14 @@ impl Xcb {
         has_sym!(self, xcb_query_pointer)
     }
 
-    /**
-     * @brief get pointer coordinates
-     *
-     * @param c The connection
-     * @param window A window to check if the pointer is on the same screen as \a window (see the
-     * `same_screen` field in the reply).
-     * @return A cookie
-     *
-     * Gets the root window the pointer is logically on and the pointer coordinates
-     * relative to the root window's origin.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryPointer` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_pointer_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_pointer_reply`]: Self::xcb_query_pointer_reply
+    #[inline]
     pub unsafe fn xcb_query_pointer_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13641,26 +15723,14 @@ impl Xcb {
         has_sym!(self, xcb_query_pointer_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_pointer_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryPointer` request.
+    #[inline]
     pub unsafe fn xcb_query_pointer_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_pointer_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_pointer_reply_t {
+    ) -> *mut xcb_query_pointer_reply_t {
         sym!(self, xcb_query_pointer_reply)(c, cookie, e)
     }
 
@@ -13670,6 +15740,8 @@ impl Xcb {
         has_sym!(self, xcb_query_pointer_reply)
     }
 
+    /// Advances a `xcb_timecoord_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_timecoord_next(&self, i: *mut xcb_timecoord_iterator_t) {
         sym!(self, xcb_timecoord_next)(i)
     }
@@ -13680,6 +15752,8 @@ impl Xcb {
         has_sym!(self, xcb_timecoord_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_timecoord_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_timecoord_end(&self, i: xcb_timecoord_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_timecoord_end)(i)
     }
@@ -13690,6 +15764,8 @@ impl Xcb {
         has_sym!(self, xcb_timecoord_end)
     }
 
+    /// Computes the size of a `xcb_get_motion_events_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_motion_events_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_motion_events_sizeof)(_buffer)
     }
@@ -13700,14 +15776,14 @@ impl Xcb {
         has_sym!(self, xcb_get_motion_events_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetMotionEvents` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_motion_events_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_motion_events_reply`]: Self::xcb_get_motion_events_reply
+    #[inline]
     pub unsafe fn xcb_get_motion_events(
         &self,
         c: *mut xcb_connection_t,
@@ -13724,17 +15800,14 @@ impl Xcb {
         has_sym!(self, xcb_get_motion_events)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetMotionEvents` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_motion_events_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_motion_events_reply`]: Self::xcb_get_motion_events_reply
+    #[inline]
     pub unsafe fn xcb_get_motion_events_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13751,6 +15824,8 @@ impl Xcb {
         has_sym!(self, xcb_get_motion_events_unchecked)
     }
 
+    /// Returns a pointer to the `events` field of a `xcb_get_motion_events_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_motion_events_events(
         &self,
         r: *const xcb_get_motion_events_reply_t,
@@ -13764,6 +15839,8 @@ impl Xcb {
         has_sym!(self, xcb_get_motion_events_events)
     }
 
+    /// Returns the number of elements of the `events` field of a `xcb_get_motion_events_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_motion_events_events_length(
         &self,
         r: *const xcb_get_motion_events_reply_t,
@@ -13777,6 +15854,9 @@ impl Xcb {
         has_sym!(self, xcb_get_motion_events_events_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `events` field of a `xcb_get_motion_events_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_motion_events_events_iterator(
         &self,
         r: *const xcb_get_motion_events_reply_t,
@@ -13790,26 +15870,14 @@ impl Xcb {
         has_sym!(self, xcb_get_motion_events_events_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_motion_events_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetMotionEvents` request.
+    #[inline]
     pub unsafe fn xcb_get_motion_events_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_motion_events_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_motion_events_reply_t {
+    ) -> *mut xcb_get_motion_events_reply_t {
         sym!(self, xcb_get_motion_events_reply)(c, cookie, e)
     }
 
@@ -13819,14 +15887,14 @@ impl Xcb {
         has_sym!(self, xcb_get_motion_events_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `TranslateCoordinates` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_translate_coordinates_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_translate_coordinates_reply`]: Self::xcb_translate_coordinates_reply
+    #[inline]
     pub unsafe fn xcb_translate_coordinates(
         &self,
         c: *mut xcb_connection_t,
@@ -13844,17 +15912,14 @@ impl Xcb {
         has_sym!(self, xcb_translate_coordinates)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `TranslateCoordinates` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_translate_coordinates_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_translate_coordinates_reply`]: Self::xcb_translate_coordinates_reply
+    #[inline]
     pub unsafe fn xcb_translate_coordinates_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -13872,26 +15937,14 @@ impl Xcb {
         has_sym!(self, xcb_translate_coordinates_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_translate_coordinates_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `TranslateCoordinates` request.
+    #[inline]
     pub unsafe fn xcb_translate_coordinates_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_translate_coordinates_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_translate_coordinates_reply_t {
+    ) -> *mut xcb_translate_coordinates_reply_t {
         sym!(self, xcb_translate_coordinates_reply)(c, cookie, e)
     }
 
@@ -13901,36 +15954,14 @@ impl Xcb {
         has_sym!(self, xcb_translate_coordinates_reply)
     }
 
-    /**
-     * @brief move mouse pointer
-     *
-     * @param c The connection
-     * @param src_window If \a src_window is not `XCB_NONE` (TODO), the move will only take place if the
-     * pointer is inside \a src_window and within the rectangle specified by (\a src_x,
-     * \a src_y, \a src_width, \a src_height). The rectangle coordinates are relative to
-     * \a src_window.
-     * @param dst_window If \a dst_window is not `XCB_NONE` (TODO), the pointer will be moved to the
-     * offsets (\a dst_x, \a dst_y) relative to \a dst_window. If \a dst_window is
-     * `XCB_NONE` (TODO), the pointer will be moved by the offsets (\a dst_x, \a dst_y)
-     * relative to the current position of the pointer.
-     * @return A cookie
-     *
-     * Moves the mouse pointer to the specified position.
-     *
-     * If \a src_window is not `XCB_NONE` (TODO), the move will only take place if the
-     * pointer is inside \a src_window and within the rectangle specified by (\a src_x,
-     * \a src_y, \a src_width, \a src_height). The rectangle coordinates are relative to
-     * \a src_window.
-     *
-     * If \a dst_window is not `XCB_NONE` (TODO), the pointer will be moved to the
-     * offsets (\a dst_x, \a dst_y) relative to \a dst_window. If \a dst_window is
-     * `XCB_NONE` (TODO), the pointer will be moved by the offsets (\a dst_x, \a dst_y)
-     * relative to the current position of the pointer.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `WarpPointer` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_warp_pointer_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -13954,33 +15985,8 @@ impl Xcb {
         has_sym!(self, xcb_warp_pointer_checked)
     }
 
-    /**
-     * @brief move mouse pointer
-     *
-     * @param c The connection
-     * @param src_window If \a src_window is not `XCB_NONE` (TODO), the move will only take place if the
-     * pointer is inside \a src_window and within the rectangle specified by (\a src_x,
-     * \a src_y, \a src_width, \a src_height). The rectangle coordinates are relative to
-     * \a src_window.
-     * @param dst_window If \a dst_window is not `XCB_NONE` (TODO), the pointer will be moved to the
-     * offsets (\a dst_x, \a dst_y) relative to \a dst_window. If \a dst_window is
-     * `XCB_NONE` (TODO), the pointer will be moved by the offsets (\a dst_x, \a dst_y)
-     * relative to the current position of the pointer.
-     * @return A cookie
-     *
-     * Moves the mouse pointer to the specified position.
-     *
-     * If \a src_window is not `XCB_NONE` (TODO), the move will only take place if the
-     * pointer is inside \a src_window and within the rectangle specified by (\a src_x,
-     * \a src_y, \a src_width, \a src_height). The rectangle coordinates are relative to
-     * \a src_window.
-     *
-     * If \a dst_window is not `XCB_NONE` (TODO), the pointer will be moved to the
-     * offsets (\a dst_x, \a dst_y) relative to \a dst_window. If \a dst_window is
-     * `XCB_NONE` (TODO), the pointer will be moved by the offsets (\a dst_x, \a dst_y)
-     * relative to the current position of the pointer.
-     *
-     */
+    /// Sends a `WarpPointer` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_warp_pointer(
         &self,
         c: *mut xcb_connection_t,
@@ -14004,37 +16010,14 @@ impl Xcb {
         has_sym!(self, xcb_warp_pointer)
     }
 
-    /**
-     * @brief Sets input focus
-     *
-     * @param c The connection
-     * @param revert_to A bitmask of #xcb_input_focus_t values.
-     * @param revert_to Specifies what happens when the \a focus window becomes unviewable (if \a focus
-     * is neither `XCB_NONE` nor `XCB_POINTER_ROOT`).
-     * @param focus The window to focus. All keyboard events will be reported to this window. The
-     * window must be viewable (TODO), or a `xcb_match_error_t` occurs (TODO).
-     * \n
-     * If \a focus is `XCB_NONE` (TODO), all keyboard events are
-     * discarded until a new focus window is set.
-     * \n
-     * If \a focus is `XCB_POINTER_ROOT` (TODO), focus is on the root window of the
-     * screen on which the pointer is on currently.
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Changes the input focus and the last-focus-change time. If the specified \a time
-     * is earlier than the current last-focus-change time, the request is ignored (to
-     * avoid race conditions when running X over the network).
-     *
-     * A FocusIn and FocusOut event is generated when focus is changed.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetInputFocus` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_input_focus_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -14051,34 +16034,8 @@ impl Xcb {
         has_sym!(self, xcb_set_input_focus_checked)
     }
 
-    /**
-     * @brief Sets input focus
-     *
-     * @param c The connection
-     * @param revert_to A bitmask of #xcb_input_focus_t values.
-     * @param revert_to Specifies what happens when the \a focus window becomes unviewable (if \a focus
-     * is neither `XCB_NONE` nor `XCB_POINTER_ROOT`).
-     * @param focus The window to focus. All keyboard events will be reported to this window. The
-     * window must be viewable (TODO), or a `xcb_match_error_t` occurs (TODO).
-     * \n
-     * If \a focus is `XCB_NONE` (TODO), all keyboard events are
-     * discarded until a new focus window is set.
-     * \n
-     * If \a focus is `XCB_POINTER_ROOT` (TODO), focus is on the root window of the
-     * screen on which the pointer is on currently.
-     * @param time Timestamp to avoid race conditions when running X over the network.
-     * \n
-     * The special value `XCB_CURRENT_TIME` will be replaced with the current server
-     * time.
-     * @return A cookie
-     *
-     * Changes the input focus and the last-focus-change time. If the specified \a time
-     * is earlier than the current last-focus-change time, the request is ignored (to
-     * avoid race conditions when running X over the network).
-     *
-     * A FocusIn and FocusOut event is generated when focus is changed.
-     *
-     */
+    /// Sends a `SetInputFocus` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_input_focus(
         &self,
         c: *mut xcb_connection_t,
@@ -14095,14 +16052,14 @@ impl Xcb {
         has_sym!(self, xcb_set_input_focus)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetInputFocus` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_input_focus_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_input_focus_reply`]: Self::xcb_get_input_focus_reply
+    #[inline]
     pub unsafe fn xcb_get_input_focus(
         &self,
         c: *mut xcb_connection_t,
@@ -14116,17 +16073,14 @@ impl Xcb {
         has_sym!(self, xcb_get_input_focus)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetInputFocus` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_input_focus_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_input_focus_reply`]: Self::xcb_get_input_focus_reply
+    #[inline]
     pub unsafe fn xcb_get_input_focus_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14140,26 +16094,14 @@ impl Xcb {
         has_sym!(self, xcb_get_input_focus_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_input_focus_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetInputFocus` request.
+    #[inline]
     pub unsafe fn xcb_get_input_focus_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_input_focus_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_input_focus_reply_t {
+    ) -> *mut xcb_get_input_focus_reply_t {
         sym!(self, xcb_get_input_focus_reply)(c, cookie, e)
     }
 
@@ -14169,14 +16111,14 @@ impl Xcb {
         has_sym!(self, xcb_get_input_focus_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `QueryKeymap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_keymap_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_keymap_reply`]: Self::xcb_query_keymap_reply
+    #[inline]
     pub unsafe fn xcb_query_keymap(&self, c: *mut xcb_connection_t) -> xcb_query_keymap_cookie_t {
         sym!(self, xcb_query_keymap)(c)
     }
@@ -14187,17 +16129,14 @@ impl Xcb {
         has_sym!(self, xcb_query_keymap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryKeymap` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_keymap_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_keymap_reply`]: Self::xcb_query_keymap_reply
+    #[inline]
     pub unsafe fn xcb_query_keymap_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14211,26 +16150,14 @@ impl Xcb {
         has_sym!(self, xcb_query_keymap_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_keymap_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryKeymap` request.
+    #[inline]
     pub unsafe fn xcb_query_keymap_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_keymap_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_keymap_reply_t {
+    ) -> *mut xcb_query_keymap_reply_t {
         sym!(self, xcb_query_keymap_reply)(c, cookie, e)
     }
 
@@ -14240,6 +16167,8 @@ impl Xcb {
         has_sym!(self, xcb_query_keymap_reply)
     }
 
+    /// Computes the size of a `xcb_open_font_request_t` object.
+    #[inline]
     pub unsafe fn xcb_open_font_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_open_font_sizeof)(_buffer)
     }
@@ -14250,24 +16179,14 @@ impl Xcb {
         has_sym!(self, xcb_open_font_sizeof)
     }
 
-    /**
-     * @brief opens a font
-     *
-     * @param c The connection
-     * @param fid The ID with which you will refer to the font, created by `xcb_generate_id`.
-     * @param name_len Length (in bytes) of \a name.
-     * @param name A pattern describing an X core font.
-     * @return A cookie
-     *
-     * Opens any X core font matching the given \a name (for example "-misc-fixed-*").
-     *
-     * Note that X core fonts are deprecated (but still supported) in favor of
-     * client-side rendering using Xft.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `OpenFont` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_open_font_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -14284,21 +16203,8 @@ impl Xcb {
         has_sym!(self, xcb_open_font_checked)
     }
 
-    /**
-     * @brief opens a font
-     *
-     * @param c The connection
-     * @param fid The ID with which you will refer to the font, created by `xcb_generate_id`.
-     * @param name_len Length (in bytes) of \a name.
-     * @param name A pattern describing an X core font.
-     * @return A cookie
-     *
-     * Opens any X core font matching the given \a name (for example "-misc-fixed-*").
-     *
-     * Note that X core fonts are deprecated (but still supported) in favor of
-     * client-side rendering using Xft.
-     *
-     */
+    /// Sends a `OpenFont` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_open_font(
         &self,
         c: *mut xcb_connection_t,
@@ -14315,6 +16221,8 @@ impl Xcb {
         has_sym!(self, xcb_open_font)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_open_font_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_open_font_name(&self, r: *const xcb_open_font_request_t) -> *mut c_char {
         sym!(self, xcb_open_font_name)(r)
     }
@@ -14325,6 +16233,8 @@ impl Xcb {
         has_sym!(self, xcb_open_font_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_open_font_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_open_font_name_length(&self, r: *const xcb_open_font_request_t) -> c_int {
         sym!(self, xcb_open_font_name_length)(r)
     }
@@ -14335,6 +16245,9 @@ impl Xcb {
         has_sym!(self, xcb_open_font_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_open_font_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_open_font_name_end(
         &self,
         r: *const xcb_open_font_request_t,
@@ -14348,17 +16261,14 @@ impl Xcb {
         has_sym!(self, xcb_open_font_name_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CloseFont` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_close_font_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -14373,14 +16283,8 @@ impl Xcb {
         has_sym!(self, xcb_close_font_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `CloseFont` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_close_font(
         &self,
         c: *mut xcb_connection_t,
@@ -14395,6 +16299,8 @@ impl Xcb {
         has_sym!(self, xcb_close_font)
     }
 
+    /// Advances a `xcb_fontprop_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_fontprop_next(&self, i: *mut xcb_fontprop_iterator_t) {
         sym!(self, xcb_fontprop_next)(i)
     }
@@ -14405,6 +16311,8 @@ impl Xcb {
         has_sym!(self, xcb_fontprop_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_fontprop_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_fontprop_end(&self, i: xcb_fontprop_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_fontprop_end)(i)
     }
@@ -14415,6 +16323,8 @@ impl Xcb {
         has_sym!(self, xcb_fontprop_end)
     }
 
+    /// Advances a `xcb_charinfo_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_charinfo_next(&self, i: *mut xcb_charinfo_iterator_t) {
         sym!(self, xcb_charinfo_next)(i)
     }
@@ -14425,6 +16335,8 @@ impl Xcb {
         has_sym!(self, xcb_charinfo_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_charinfo_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_charinfo_end(&self, i: xcb_charinfo_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_charinfo_end)(i)
     }
@@ -14435,6 +16347,8 @@ impl Xcb {
         has_sym!(self, xcb_charinfo_end)
     }
 
+    /// Computes the size of a `xcb_query_font_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_query_font_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_query_font_sizeof)(_buffer)
     }
@@ -14445,16 +16359,14 @@ impl Xcb {
         has_sym!(self, xcb_query_font_sizeof)
     }
 
-    /**
-     * @brief query font metrics
-     *
-     * @param c The connection
-     * @param font The fontable (Font or Graphics Context) to query.
-     * @return A cookie
-     *
-     * Queries information associated with the font.
-     *
-     */
+    /// Sends a `QueryFont` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_font_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_font_reply`]: Self::xcb_query_font_reply
+    #[inline]
     pub unsafe fn xcb_query_font(
         &self,
         c: *mut xcb_connection_t,
@@ -14469,19 +16381,14 @@ impl Xcb {
         has_sym!(self, xcb_query_font)
     }
 
-    /**
-     * @brief query font metrics
-     *
-     * @param c The connection
-     * @param font The fontable (Font or Graphics Context) to query.
-     * @return A cookie
-     *
-     * Queries information associated with the font.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryFont` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_font_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_font_reply`]: Self::xcb_query_font_reply
+    #[inline]
     pub unsafe fn xcb_query_font_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14496,6 +16403,8 @@ impl Xcb {
         has_sym!(self, xcb_query_font_unchecked)
     }
 
+    /// Returns a pointer to the `properties` field of a `xcb_query_font_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_font_properties(
         &self,
         r: *const xcb_query_font_reply_t,
@@ -14509,6 +16418,8 @@ impl Xcb {
         has_sym!(self, xcb_query_font_properties)
     }
 
+    /// Returns the number of elements of the `properties` field of a `xcb_query_font_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_font_properties_length(
         &self,
         r: *const xcb_query_font_reply_t,
@@ -14522,6 +16433,9 @@ impl Xcb {
         has_sym!(self, xcb_query_font_properties_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `properties` field of a `xcb_query_font_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_font_properties_iterator(
         &self,
         r: *const xcb_query_font_reply_t,
@@ -14535,6 +16449,8 @@ impl Xcb {
         has_sym!(self, xcb_query_font_properties_iterator)
     }
 
+    /// Returns a pointer to the `char_infos` field of a `xcb_query_font_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_font_char_infos(
         &self,
         r: *const xcb_query_font_reply_t,
@@ -14548,6 +16464,8 @@ impl Xcb {
         has_sym!(self, xcb_query_font_char_infos)
     }
 
+    /// Returns the number of elements of the `char_infos` field of a `xcb_query_font_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_font_char_infos_length(
         &self,
         r: *const xcb_query_font_reply_t,
@@ -14561,6 +16479,9 @@ impl Xcb {
         has_sym!(self, xcb_query_font_char_infos_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `char_infos` field of a `xcb_query_font_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_font_char_infos_iterator(
         &self,
         r: *const xcb_query_font_reply_t,
@@ -14574,26 +16495,14 @@ impl Xcb {
         has_sym!(self, xcb_query_font_char_infos_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_font_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryFont` request.
+    #[inline]
     pub unsafe fn xcb_query_font_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_font_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_font_reply_t {
+    ) -> *mut xcb_query_font_reply_t {
         sym!(self, xcb_query_font_reply)(c, cookie, e)
     }
 
@@ -14603,6 +16512,8 @@ impl Xcb {
         has_sym!(self, xcb_query_font_reply)
     }
 
+    /// Computes the size of a `xcb_query_text_extents_request_t` object.
+    #[inline]
     pub unsafe fn xcb_query_text_extents_sizeof(
         &self,
         _buffer: *const c_void,
@@ -14617,38 +16528,14 @@ impl Xcb {
         has_sym!(self, xcb_query_text_extents_sizeof)
     }
 
-    /**
-     * @brief get text extents
-     *
-     * @param c The connection
-     * @param font The \a font to calculate text extents in. You can also pass a graphics context.
-     * @param string_len The number of characters in \a string.
-     * @param string The text to get text extents for.
-     * @return A cookie
-     *
-     * Query text extents from the X11 server. This request returns the bounding box
-     * of the specified 16-bit character string in the specified \a font or the font
-     * contained in the specified graphics context.
-     *
-     * `font_ascent` is set to the maximum of the ascent metrics of all characters in
-     * the string. `font_descent` is set to the maximum of the descent metrics.
-     * `overall_width` is set to the sum of the character-width metrics of all
-     * characters in the string. For each character in the string, let W be the sum of
-     * the character-width metrics of all characters preceding it in the string. Let L
-     * be the left-side-bearing metric of the character plus W. Let R be the
-     * right-side-bearing metric of the character plus W. The lbearing member is set
-     * to the minimum L of all characters in the string. The rbearing member is set to
-     * the maximum R.
-     *
-     * For fonts defined with linear indexing rather than 2-byte matrix indexing, each
-     * `xcb_char2b_t` structure is interpreted as a 16-bit number with byte1 as the
-     * most significant byte. If the font has no defined default character, undefined
-     * characters in the string are taken to have all zero metrics.
-     *
-     * Characters with all zero metrics are ignored. If the font has no defined
-     * default_char, the undefined characters in the string are also ignored.
-     *
-     */
+    /// Sends a `QueryTextExtents` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_text_extents_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_text_extents_reply`]: Self::xcb_query_text_extents_reply
+    #[inline]
     pub unsafe fn xcb_query_text_extents(
         &self,
         c: *mut xcb_connection_t,
@@ -14665,41 +16552,14 @@ impl Xcb {
         has_sym!(self, xcb_query_text_extents)
     }
 
-    /**
-     * @brief get text extents
-     *
-     * @param c The connection
-     * @param font The \a font to calculate text extents in. You can also pass a graphics context.
-     * @param string_len The number of characters in \a string.
-     * @param string The text to get text extents for.
-     * @return A cookie
-     *
-     * Query text extents from the X11 server. This request returns the bounding box
-     * of the specified 16-bit character string in the specified \a font or the font
-     * contained in the specified graphics context.
-     *
-     * `font_ascent` is set to the maximum of the ascent metrics of all characters in
-     * the string. `font_descent` is set to the maximum of the descent metrics.
-     * `overall_width` is set to the sum of the character-width metrics of all
-     * characters in the string. For each character in the string, let W be the sum of
-     * the character-width metrics of all characters preceding it in the string. Let L
-     * be the left-side-bearing metric of the character plus W. Let R be the
-     * right-side-bearing metric of the character plus W. The lbearing member is set
-     * to the minimum L of all characters in the string. The rbearing member is set to
-     * the maximum R.
-     *
-     * For fonts defined with linear indexing rather than 2-byte matrix indexing, each
-     * `xcb_char2b_t` structure is interpreted as a 16-bit number with byte1 as the
-     * most significant byte. If the font has no defined default character, undefined
-     * characters in the string are taken to have all zero metrics.
-     *
-     * Characters with all zero metrics are ignored. If the font has no defined
-     * default_char, the undefined characters in the string are also ignored.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryTextExtents` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_text_extents_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_text_extents_reply`]: Self::xcb_query_text_extents_reply
+    #[inline]
     pub unsafe fn xcb_query_text_extents_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14716,26 +16576,14 @@ impl Xcb {
         has_sym!(self, xcb_query_text_extents_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_text_extents_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryTextExtents` request.
+    #[inline]
     pub unsafe fn xcb_query_text_extents_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_text_extents_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_text_extents_reply_t {
+    ) -> *mut xcb_query_text_extents_reply_t {
         sym!(self, xcb_query_text_extents_reply)(c, cookie, e)
     }
 
@@ -14745,6 +16593,8 @@ impl Xcb {
         has_sym!(self, xcb_query_text_extents_reply)
     }
 
+    /// Computes the size of a `xcb_str_t` object.
+    #[inline]
     pub unsafe fn xcb_str_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_str_sizeof)(_buffer)
     }
@@ -14755,6 +16605,8 @@ impl Xcb {
         has_sym!(self, xcb_str_sizeof)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_str_t` struct.
+    #[inline]
     pub unsafe fn xcb_str_name(&self, r: *const xcb_str_t) -> *mut c_char {
         sym!(self, xcb_str_name)(r)
     }
@@ -14765,6 +16617,8 @@ impl Xcb {
         has_sym!(self, xcb_str_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_str_t` struct.
+    #[inline]
     pub unsafe fn xcb_str_name_length(&self, r: *const xcb_str_t) -> c_int {
         sym!(self, xcb_str_name_length)(r)
     }
@@ -14775,6 +16629,9 @@ impl Xcb {
         has_sym!(self, xcb_str_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_str_t` struct.
+    #[inline]
     pub unsafe fn xcb_str_name_end(&self, r: *const xcb_str_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_str_name_end)(r)
     }
@@ -14785,6 +16642,8 @@ impl Xcb {
         has_sym!(self, xcb_str_name_end)
     }
 
+    /// Advances a `xcb_str_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_str_next(&self, i: *mut xcb_str_iterator_t) {
         sym!(self, xcb_str_next)(i)
     }
@@ -14795,6 +16654,8 @@ impl Xcb {
         has_sym!(self, xcb_str_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_str_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_str_end(&self, i: xcb_str_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_str_end)(i)
     }
@@ -14805,6 +16666,8 @@ impl Xcb {
         has_sym!(self, xcb_str_end)
     }
 
+    /// Computes the size of a `xcb_list_fonts_request_t` object.
+    #[inline]
     pub unsafe fn xcb_list_fonts_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_list_fonts_sizeof)(_buffer)
     }
@@ -14815,22 +16678,14 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_sizeof)
     }
 
-    /**
-     * @brief get matching font names
-     *
-     * @param c The connection
-     * @param max_names The maximum number of fonts to be returned.
-     * @param pattern_len The length (in bytes) of \a pattern.
-     * @param pattern A font pattern, for example "-misc-fixed-*".
-     * \n
-     * The asterisk (*) is a wildcard for any number of characters. The question mark
-     * (?) is a wildcard for a single character. Use of uppercase or lowercase does
-     * not matter.
-     * @return A cookie
-     *
-     * Gets a list of available font names which match the given \a pattern.
-     *
-     */
+    /// Sends a `ListFonts` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_fonts_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_fonts_reply`]: Self::xcb_list_fonts_reply
+    #[inline]
     pub unsafe fn xcb_list_fonts(
         &self,
         c: *mut xcb_connection_t,
@@ -14847,25 +16702,14 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts)
     }
 
-    /**
-     * @brief get matching font names
-     *
-     * @param c The connection
-     * @param max_names The maximum number of fonts to be returned.
-     * @param pattern_len The length (in bytes) of \a pattern.
-     * @param pattern A font pattern, for example "-misc-fixed-*".
-     * \n
-     * The asterisk (*) is a wildcard for any number of characters. The question mark
-     * (?) is a wildcard for a single character. Use of uppercase or lowercase does
-     * not matter.
-     * @return A cookie
-     *
-     * Gets a list of available font names which match the given \a pattern.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ListFonts` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_fonts_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_fonts_reply`]: Self::xcb_list_fonts_reply
+    #[inline]
     pub unsafe fn xcb_list_fonts_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -14882,6 +16726,8 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_unchecked)
     }
 
+    /// Returns the number of elements of the `names` field of a `xcb_list_fonts_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_names_length(&self, r: *const xcb_list_fonts_reply_t) -> c_int {
         sym!(self, xcb_list_fonts_names_length)(r)
     }
@@ -14892,6 +16738,9 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_names_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `names` field of a `xcb_list_fonts_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_names_iterator(
         &self,
         r: *const xcb_list_fonts_reply_t,
@@ -14905,26 +16754,14 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_names_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_list_fonts_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ListFonts` request.
+    #[inline]
     pub unsafe fn xcb_list_fonts_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_list_fonts_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_list_fonts_reply_t {
+    ) -> *mut xcb_list_fonts_reply_t {
         sym!(self, xcb_list_fonts_reply)(c, cookie, e)
     }
 
@@ -14934,6 +16771,8 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_reply)
     }
 
+    /// Computes the size of a `xcb_list_fonts_with_info_request_t` object.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_list_fonts_with_info_sizeof)(_buffer)
     }
@@ -14944,22 +16783,14 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_sizeof)
     }
 
-    /**
-     * @brief get matching font names and information
-     *
-     * @param c The connection
-     * @param max_names The maximum number of fonts to be returned.
-     * @param pattern_len The length (in bytes) of \a pattern.
-     * @param pattern A font pattern, for example "-misc-fixed-*".
-     * \n
-     * The asterisk (*) is a wildcard for any number of characters. The question mark
-     * (?) is a wildcard for a single character. Use of uppercase or lowercase does
-     * not matter.
-     * @return A cookie
-     *
-     * Gets a list of available font names which match the given \a pattern.
-     *
-     */
+    /// Sends a `ListFontsWithInfo` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_fonts_with_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_fonts_with_info_reply`]: Self::xcb_list_fonts_with_info_reply
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info(
         &self,
         c: *mut xcb_connection_t,
@@ -14976,25 +16807,14 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info)
     }
 
-    /**
-     * @brief get matching font names and information
-     *
-     * @param c The connection
-     * @param max_names The maximum number of fonts to be returned.
-     * @param pattern_len The length (in bytes) of \a pattern.
-     * @param pattern A font pattern, for example "-misc-fixed-*".
-     * \n
-     * The asterisk (*) is a wildcard for any number of characters. The question mark
-     * (?) is a wildcard for a single character. Use of uppercase or lowercase does
-     * not matter.
-     * @return A cookie
-     *
-     * Gets a list of available font names which match the given \a pattern.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ListFontsWithInfo` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_fonts_with_info_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_fonts_with_info_reply`]: Self::xcb_list_fonts_with_info_reply
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15011,6 +16831,8 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_unchecked)
     }
 
+    /// Returns a pointer to the `properties` field of a `xcb_list_fonts_with_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_properties(
         &self,
         r: *const xcb_list_fonts_with_info_reply_t,
@@ -15024,6 +16846,8 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_properties)
     }
 
+    /// Returns the number of elements of the `properties` field of a `xcb_list_fonts_with_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_properties_length(
         &self,
         r: *const xcb_list_fonts_with_info_reply_t,
@@ -15037,6 +16861,9 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_properties_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `properties` field of a `xcb_list_fonts_with_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_properties_iterator(
         &self,
         r: *const xcb_list_fonts_with_info_reply_t,
@@ -15050,6 +16877,8 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_properties_iterator)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_list_fonts_with_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_name(
         &self,
         r: *const xcb_list_fonts_with_info_reply_t,
@@ -15063,6 +16892,8 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_list_fonts_with_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_name_length(
         &self,
         r: *const xcb_list_fonts_with_info_reply_t,
@@ -15076,6 +16907,9 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_list_fonts_with_info_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_name_end(
         &self,
         r: *const xcb_list_fonts_with_info_reply_t,
@@ -15089,26 +16923,14 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_name_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_list_fonts_with_info_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ListFontsWithInfo` request.
+    #[inline]
     pub unsafe fn xcb_list_fonts_with_info_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_list_fonts_with_info_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_list_fonts_with_info_reply_t {
+    ) -> *mut xcb_list_fonts_with_info_reply_t {
         sym!(self, xcb_list_fonts_with_info_reply)(c, cookie, e)
     }
 
@@ -15118,6 +16940,8 @@ impl Xcb {
         has_sym!(self, xcb_list_fonts_with_info_reply)
     }
 
+    /// Computes the size of a `xcb_set_font_path_request_t` object.
+    #[inline]
     pub unsafe fn xcb_set_font_path_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_set_font_path_sizeof)(_buffer)
     }
@@ -15128,17 +16952,14 @@ impl Xcb {
         has_sym!(self, xcb_set_font_path_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetFontPath` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_font_path_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15154,14 +16975,8 @@ impl Xcb {
         has_sym!(self, xcb_set_font_path_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetFontPath` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_font_path(
         &self,
         c: *mut xcb_connection_t,
@@ -15177,6 +16992,8 @@ impl Xcb {
         has_sym!(self, xcb_set_font_path)
     }
 
+    /// Returns the number of elements of the `font` field of a `xcb_set_font_path_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_font_path_font_length(
         &self,
         r: *const xcb_set_font_path_request_t,
@@ -15190,6 +17007,9 @@ impl Xcb {
         has_sym!(self, xcb_set_font_path_font_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `font` field of a `xcb_set_font_path_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_font_path_font_iterator(
         &self,
         r: *const xcb_set_font_path_request_t,
@@ -15203,6 +17023,8 @@ impl Xcb {
         has_sym!(self, xcb_set_font_path_font_iterator)
     }
 
+    /// Computes the size of a `xcb_get_font_path_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_font_path_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_font_path_sizeof)(_buffer)
     }
@@ -15213,14 +17035,14 @@ impl Xcb {
         has_sym!(self, xcb_get_font_path_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetFontPath` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_font_path_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_font_path_reply`]: Self::xcb_get_font_path_reply
+    #[inline]
     pub unsafe fn xcb_get_font_path(&self, c: *mut xcb_connection_t) -> xcb_get_font_path_cookie_t {
         sym!(self, xcb_get_font_path)(c)
     }
@@ -15231,17 +17053,14 @@ impl Xcb {
         has_sym!(self, xcb_get_font_path)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetFontPath` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_font_path_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_font_path_reply`]: Self::xcb_get_font_path_reply
+    #[inline]
     pub unsafe fn xcb_get_font_path_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -15255,6 +17074,8 @@ impl Xcb {
         has_sym!(self, xcb_get_font_path_unchecked)
     }
 
+    /// Returns the number of elements of the `path` field of a `xcb_get_font_path_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_font_path_path_length(
         &self,
         r: *const xcb_get_font_path_reply_t,
@@ -15268,6 +17089,9 @@ impl Xcb {
         has_sym!(self, xcb_get_font_path_path_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `path` field of a `xcb_get_font_path_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_font_path_path_iterator(
         &self,
         r: *const xcb_get_font_path_reply_t,
@@ -15281,26 +17105,14 @@ impl Xcb {
         has_sym!(self, xcb_get_font_path_path_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_font_path_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetFontPath` request.
+    #[inline]
     pub unsafe fn xcb_get_font_path_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_font_path_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_font_path_reply_t {
+    ) -> *mut xcb_get_font_path_reply_t {
         sym!(self, xcb_get_font_path_reply)(c, cookie, e)
     }
 
@@ -15310,25 +17122,14 @@ impl Xcb {
         has_sym!(self, xcb_get_font_path_reply)
     }
 
-    /**
-     * @brief Creates a pixmap
-     *
-     * @param c The connection
-     * @param depth TODO
-     * @param pid The ID with which you will refer to the new pixmap, created by
-     * `xcb_generate_id`.
-     * @param drawable Drawable to get the screen from.
-     * @param width The width of the new pixmap.
-     * @param height The height of the new pixmap.
-     * @return A cookie
-     *
-     * Creates a pixmap. The pixmap can only be used on the same screen as \a drawable
-     * is on and only with drawables of the same \a depth.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreatePixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_create_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15347,22 +17148,8 @@ impl Xcb {
         has_sym!(self, xcb_create_pixmap_checked)
     }
 
-    /**
-     * @brief Creates a pixmap
-     *
-     * @param c The connection
-     * @param depth TODO
-     * @param pid The ID with which you will refer to the new pixmap, created by
-     * `xcb_generate_id`.
-     * @param drawable Drawable to get the screen from.
-     * @param width The width of the new pixmap.
-     * @param height The height of the new pixmap.
-     * @return A cookie
-     *
-     * Creates a pixmap. The pixmap can only be used on the same screen as \a drawable
-     * is on and only with drawables of the same \a depth.
-     *
-     */
+    /// Sends a `CreatePixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_create_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -15381,20 +17168,14 @@ impl Xcb {
         has_sym!(self, xcb_create_pixmap)
     }
 
-    /**
-     * @brief Destroys a pixmap
-     *
-     * @param c The connection
-     * @param pixmap The pixmap to destroy.
-     * @return A cookie
-     *
-     * Deletes the association between the pixmap ID and the pixmap. The pixmap
-     * storage will be freed when there are no more references to it.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `FreePixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_free_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15409,17 +17190,8 @@ impl Xcb {
         has_sym!(self, xcb_free_pixmap_checked)
     }
 
-    /**
-     * @brief Destroys a pixmap
-     *
-     * @param c The connection
-     * @param pixmap The pixmap to destroy.
-     * @return A cookie
-     *
-     * Deletes the association between the pixmap ID and the pixmap. The pixmap
-     * storage will be freed when there are no more references to it.
-     *
-     */
+    /// Sends a `FreePixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_free_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -15434,6 +17206,8 @@ impl Xcb {
         has_sym!(self, xcb_free_pixmap)
     }
 
+    /// Serializes a `xcb_create_gc_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_create_gc_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -15449,6 +17223,8 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_create_gc_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_create_gc_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -15464,6 +17240,8 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_create_gc_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_create_gc_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -15478,6 +17256,8 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_create_gc_request_t` object.
+    #[inline]
     pub unsafe fn xcb_create_gc_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_create_gc_sizeof)(_buffer)
     }
@@ -15488,22 +17268,18 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_sizeof)
     }
 
-    /**
-     * @brief Creates a graphics context
-     *
-     * @param c The connection
-     * @param cid The ID with which you will refer to the graphics context, created by
-     * `xcb_generate_id`.
-     * @param drawable Drawable to get the root/depth from.
-     * @return A cookie
-     *
-     * Creates a graphics context. The graphics context can be used with any drawable
-     * that has the same root and depth as the specified drawable.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreateGC` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_create_gc_aux_checked`].
+    ///
+    /// [`xcb_create_gc_aux_checked`]: Self::xcb_create_gc_aux_checked
+    #[inline]
     pub unsafe fn xcb_create_gc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15521,19 +17297,12 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_checked)
     }
 
-    /**
-     * @brief Creates a graphics context
-     *
-     * @param c The connection
-     * @param cid The ID with which you will refer to the graphics context, created by
-     * `xcb_generate_id`.
-     * @param drawable Drawable to get the root/depth from.
-     * @return A cookie
-     *
-     * Creates a graphics context. The graphics context can be used with any drawable
-     * that has the same root and depth as the specified drawable.
-     *
-     */
+    /// Sends a `CreateGC` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_create_gc_aux`].
+    ///
+    /// [`xcb_create_gc_aux`]: Self::xcb_create_gc_aux
+    #[inline]
     pub unsafe fn xcb_create_gc(
         &self,
         c: *mut xcb_connection_t,
@@ -15551,22 +17320,14 @@ impl Xcb {
         has_sym!(self, xcb_create_gc)
     }
 
-    /**
-     * @brief Creates a graphics context
-     *
-     * @param c The connection
-     * @param cid The ID with which you will refer to the graphics context, created by
-     * `xcb_generate_id`.
-     * @param drawable Drawable to get the root/depth from.
-     * @return A cookie
-     *
-     * Creates a graphics context. The graphics context can be used with any drawable
-     * that has the same root and depth as the specified drawable.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreateGC` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_create_gc_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15584,19 +17345,8 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_aux_checked)
     }
 
-    /**
-     * @brief Creates a graphics context
-     *
-     * @param c The connection
-     * @param cid The ID with which you will refer to the graphics context, created by
-     * `xcb_generate_id`.
-     * @param drawable Drawable to get the root/depth from.
-     * @return A cookie
-     *
-     * Creates a graphics context. The graphics context can be used with any drawable
-     * that has the same root and depth as the specified drawable.
-     *
-     */
+    /// Sends a `CreateGC` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_create_gc_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -15614,6 +17364,8 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_create_gc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_create_gc_value_list(
         &self,
         r: *const xcb_create_gc_request_t,
@@ -15627,6 +17379,8 @@ impl Xcb {
         has_sym!(self, xcb_create_gc_value_list)
     }
 
+    /// Serializes a `xcb_change_gc_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_gc_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -15642,6 +17396,8 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_change_gc_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_gc_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -15657,6 +17413,8 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_change_gc_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_gc_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -15671,6 +17429,8 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_change_gc_request_t` object.
+    #[inline]
     pub unsafe fn xcb_change_gc_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_change_gc_sizeof)(_buffer)
     }
@@ -15681,24 +17441,18 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_sizeof)
     }
 
-    /**
-     * @brief change graphics context components
-     *
-     * @param c The connection
-     * @param gc The graphics context to change.
-     * @param value_mask A bitmask of #xcb_gc_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the components specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the components specified by \a value_mask for the specified graphics context.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeGC` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_change_gc_aux_checked`].
+    ///
+    /// [`xcb_change_gc_aux_checked`]: Self::xcb_change_gc_aux_checked
+    #[inline]
     pub unsafe fn xcb_change_gc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15715,21 +17469,12 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_checked)
     }
 
-    /**
-     * @brief change graphics context components
-     *
-     * @param c The connection
-     * @param gc The graphics context to change.
-     * @param value_mask A bitmask of #xcb_gc_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the components specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the components specified by \a value_mask for the specified graphics context.
-     *
-     */
+    /// Sends a `ChangeGC` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_change_gc_aux`].
+    ///
+    /// [`xcb_change_gc_aux`]: Self::xcb_change_gc_aux
+    #[inline]
     pub unsafe fn xcb_change_gc(
         &self,
         c: *mut xcb_connection_t,
@@ -15746,24 +17491,14 @@ impl Xcb {
         has_sym!(self, xcb_change_gc)
     }
 
-    /**
-     * @brief change graphics context components
-     *
-     * @param c The connection
-     * @param gc The graphics context to change.
-     * @param value_mask A bitmask of #xcb_gc_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the components specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the components specified by \a value_mask for the specified graphics context.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeGC` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_gc_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15780,21 +17515,8 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_aux_checked)
     }
 
-    /**
-     * @brief change graphics context components
-     *
-     * @param c The connection
-     * @param gc The graphics context to change.
-     * @param value_mask A bitmask of #xcb_gc_t values.
-     * @param value_mask \n
-     * @param value_list Values for each of the components specified in the bitmask \a value_mask. The
-     * order has to correspond to the order of possible \a value_mask bits. See the
-     * example.
-     * @return A cookie
-     *
-     * Changes the components specified by \a value_mask for the specified graphics context.
-     *
-     */
+    /// Sends a `ChangeGC` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_change_gc_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -15811,6 +17533,8 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_change_gc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_gc_value_list(
         &self,
         r: *const xcb_change_gc_request_t,
@@ -15824,17 +17548,14 @@ impl Xcb {
         has_sym!(self, xcb_change_gc_value_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CopyGC` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_copy_gc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15851,14 +17572,8 @@ impl Xcb {
         has_sym!(self, xcb_copy_gc_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `CopyGC` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_copy_gc(
         &self,
         c: *mut xcb_connection_t,
@@ -15875,6 +17590,8 @@ impl Xcb {
         has_sym!(self, xcb_copy_gc)
     }
 
+    /// Computes the size of a `xcb_set_dashes_request_t` object.
+    #[inline]
     pub unsafe fn xcb_set_dashes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_set_dashes_sizeof)(_buffer)
     }
@@ -15885,17 +17602,14 @@ impl Xcb {
         has_sym!(self, xcb_set_dashes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetDashes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_dashes_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -15913,14 +17627,8 @@ impl Xcb {
         has_sym!(self, xcb_set_dashes_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetDashes` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_dashes(
         &self,
         c: *mut xcb_connection_t,
@@ -15938,6 +17646,8 @@ impl Xcb {
         has_sym!(self, xcb_set_dashes)
     }
 
+    /// Returns a pointer to the `dashes` field of a `xcb_set_dashes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_dashes_dashes(&self, r: *const xcb_set_dashes_request_t) -> *mut u8 {
         sym!(self, xcb_set_dashes_dashes)(r)
     }
@@ -15948,6 +17658,8 @@ impl Xcb {
         has_sym!(self, xcb_set_dashes_dashes)
     }
 
+    /// Returns the number of elements of the `dashes` field of a `xcb_set_dashes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_dashes_dashes_length(&self, r: *const xcb_set_dashes_request_t) -> c_int {
         sym!(self, xcb_set_dashes_dashes_length)(r)
     }
@@ -15958,6 +17670,9 @@ impl Xcb {
         has_sym!(self, xcb_set_dashes_dashes_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `dashes` field of a `xcb_set_dashes_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_dashes_dashes_end(
         &self,
         r: *const xcb_set_dashes_request_t,
@@ -15971,6 +17686,8 @@ impl Xcb {
         has_sym!(self, xcb_set_dashes_dashes_end)
     }
 
+    /// Computes the size of a `xcb_set_clip_rectangles_request_t` object.
+    #[inline]
     pub unsafe fn xcb_set_clip_rectangles_sizeof(
         &self,
         _buffer: *const c_void,
@@ -15985,17 +17702,14 @@ impl Xcb {
         has_sym!(self, xcb_set_clip_rectangles_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetClipRectangles` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_clip_rectangles_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16023,14 +17737,8 @@ impl Xcb {
         has_sym!(self, xcb_set_clip_rectangles_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetClipRectangles` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_clip_rectangles(
         &self,
         c: *mut xcb_connection_t,
@@ -16058,6 +17766,8 @@ impl Xcb {
         has_sym!(self, xcb_set_clip_rectangles)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_set_clip_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_clip_rectangles_rectangles(
         &self,
         r: *const xcb_set_clip_rectangles_request_t,
@@ -16071,6 +17781,8 @@ impl Xcb {
         has_sym!(self, xcb_set_clip_rectangles_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_set_clip_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_clip_rectangles_rectangles_length(
         &self,
         r: *const xcb_set_clip_rectangles_request_t,
@@ -16084,6 +17796,9 @@ impl Xcb {
         has_sym!(self, xcb_set_clip_rectangles_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_set_clip_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_set_clip_rectangles_rectangles_iterator(
         &self,
         r: *const xcb_set_clip_rectangles_request_t,
@@ -16097,19 +17812,14 @@ impl Xcb {
         has_sym!(self, xcb_set_clip_rectangles_rectangles_iterator)
     }
 
-    /**
-     * @brief Destroys a graphics context
-     *
-     * @param c The connection
-     * @param gc The graphics context to destroy.
-     * @return A cookie
-     *
-     * Destroys the specified \a gc and all associated storage.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `FreeGC` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_free_gc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16124,16 +17834,8 @@ impl Xcb {
         has_sym!(self, xcb_free_gc_checked)
     }
 
-    /**
-     * @brief Destroys a graphics context
-     *
-     * @param c The connection
-     * @param gc The graphics context to destroy.
-     * @return A cookie
-     *
-     * Destroys the specified \a gc and all associated storage.
-     *
-     */
+    /// Sends a `FreeGC` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_free_gc(
         &self,
         c: *mut xcb_connection_t,
@@ -16148,17 +17850,14 @@ impl Xcb {
         has_sym!(self, xcb_free_gc)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ClearArea` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_clear_area_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16178,14 +17877,8 @@ impl Xcb {
         has_sym!(self, xcb_clear_area_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ClearArea` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_clear_area(
         &self,
         c: *mut xcb_connection_t,
@@ -16205,27 +17898,14 @@ impl Xcb {
         has_sym!(self, xcb_clear_area)
     }
 
-    /**
-     * @brief copy areas
-     *
-     * @param c The connection
-     * @param src_drawable The source drawable (Window or Pixmap).
-     * @param dst_drawable The destination drawable (Window or Pixmap).
-     * @param gc The graphics context to use.
-     * @param src_x The source X coordinate.
-     * @param src_y The source Y coordinate.
-     * @param dst_x The destination X coordinate.
-     * @param dst_y The destination Y coordinate.
-     * @param width The width of the area to copy (in pixels).
-     * @param height The height of the area to copy (in pixels).
-     * @return A cookie
-     *
-     * Copies the specified rectangle from \a src_drawable to \a dst_drawable.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CopyArea` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_copy_area_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16259,24 +17939,8 @@ impl Xcb {
         has_sym!(self, xcb_copy_area_checked)
     }
 
-    /**
-     * @brief copy areas
-     *
-     * @param c The connection
-     * @param src_drawable The source drawable (Window or Pixmap).
-     * @param dst_drawable The destination drawable (Window or Pixmap).
-     * @param gc The graphics context to use.
-     * @param src_x The source X coordinate.
-     * @param src_y The source Y coordinate.
-     * @param dst_x The destination X coordinate.
-     * @param dst_y The destination Y coordinate.
-     * @param width The width of the area to copy (in pixels).
-     * @param height The height of the area to copy (in pixels).
-     * @return A cookie
-     *
-     * Copies the specified rectangle from \a src_drawable to \a dst_drawable.
-     *
-     */
+    /// Sends a `CopyArea` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_copy_area(
         &self,
         c: *mut xcb_connection_t,
@@ -16310,17 +17974,14 @@ impl Xcb {
         has_sym!(self, xcb_copy_area)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CopyPlane` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_copy_plane_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16356,14 +18017,8 @@ impl Xcb {
         has_sym!(self, xcb_copy_plane_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `CopyPlane` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_copy_plane(
         &self,
         c: *mut xcb_connection_t,
@@ -16399,6 +18054,8 @@ impl Xcb {
         has_sym!(self, xcb_copy_plane)
     }
 
+    /// Computes the size of a `xcb_poly_point_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_point_sizeof(&self, _buffer: *const c_void, points_len: u32) -> c_int {
         sym!(self, xcb_poly_point_sizeof)(_buffer, points_len)
     }
@@ -16409,17 +18066,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_point_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyPoint` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_point_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16438,14 +18092,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_point_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `PolyPoint` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_point(
         &self,
         c: *mut xcb_connection_t,
@@ -16464,6 +18112,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_point)
     }
 
+    /// Returns a pointer to the `points` field of a `xcb_poly_point_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_point_points(
         &self,
         r: *const xcb_poly_point_request_t,
@@ -16477,6 +18127,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_point_points)
     }
 
+    /// Returns the number of elements of the `points` field of a `xcb_poly_point_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_point_points_length(&self, r: *const xcb_poly_point_request_t) -> c_int {
         sym!(self, xcb_poly_point_points_length)(r)
     }
@@ -16487,6 +18139,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_point_points_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `points` field of a `xcb_poly_point_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_point_points_iterator(
         &self,
         r: *const xcb_poly_point_request_t,
@@ -16500,6 +18155,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_point_points_iterator)
     }
 
+    /// Computes the size of a `xcb_poly_line_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_line_sizeof(&self, _buffer: *const c_void, points_len: u32) -> c_int {
         sym!(self, xcb_poly_line_sizeof)(_buffer, points_len)
     }
@@ -16510,31 +18167,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_line_sizeof)
     }
 
-    /**
-     * @brief draw lines
-     *
-     * @param c The connection
-     * @param coordinate_mode A bitmask of #xcb_coord_mode_t values.
-     * @param coordinate_mode \n
-     * @param drawable The drawable to draw the line(s) on.
-     * @param gc The graphics context to use.
-     * @param points_len The number of `xcb_point_t` structures in \a points.
-     * @param points An array of points.
-     * @return A cookie
-     *
-     * Draws \a points_len-1 lines between each pair of points (point[i], point[i+1])
-     * in the \a points array. The lines are drawn in the order listed in the array.
-     * They join correctly at all intermediate points, and if the first and last
-     * points coincide, the first and last lines also join correctly. For any given
-     * line, a pixel is not drawn more than once. If thin (zero line-width) lines
-     * intersect, the intersecting pixels are drawn multiple times. If wide lines
-     * intersect, the intersecting pixels are drawn only once, as though the entire
-     * request were a single, filled shape.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyLine` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_line_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16553,28 +18193,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_line_checked)
     }
 
-    /**
-     * @brief draw lines
-     *
-     * @param c The connection
-     * @param coordinate_mode A bitmask of #xcb_coord_mode_t values.
-     * @param coordinate_mode \n
-     * @param drawable The drawable to draw the line(s) on.
-     * @param gc The graphics context to use.
-     * @param points_len The number of `xcb_point_t` structures in \a points.
-     * @param points An array of points.
-     * @return A cookie
-     *
-     * Draws \a points_len-1 lines between each pair of points (point[i], point[i+1])
-     * in the \a points array. The lines are drawn in the order listed in the array.
-     * They join correctly at all intermediate points, and if the first and last
-     * points coincide, the first and last lines also join correctly. For any given
-     * line, a pixel is not drawn more than once. If thin (zero line-width) lines
-     * intersect, the intersecting pixels are drawn multiple times. If wide lines
-     * intersect, the intersecting pixels are drawn only once, as though the entire
-     * request were a single, filled shape.
-     *
-     */
+    /// Sends a `PolyLine` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_line(
         &self,
         c: *mut xcb_connection_t,
@@ -16593,6 +18213,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_line)
     }
 
+    /// Returns a pointer to the `points` field of a `xcb_poly_line_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_line_points(
         &self,
         r: *const xcb_poly_line_request_t,
@@ -16606,6 +18228,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_line_points)
     }
 
+    /// Returns the number of elements of the `points` field of a `xcb_poly_line_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_line_points_length(&self, r: *const xcb_poly_line_request_t) -> c_int {
         sym!(self, xcb_poly_line_points_length)(r)
     }
@@ -16616,6 +18240,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_line_points_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `points` field of a `xcb_poly_line_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_line_points_iterator(
         &self,
         r: *const xcb_poly_line_request_t,
@@ -16629,6 +18256,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_line_points_iterator)
     }
 
+    /// Advances a `xcb_segment_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_segment_next(&self, i: *mut xcb_segment_iterator_t) {
         sym!(self, xcb_segment_next)(i)
     }
@@ -16639,6 +18268,8 @@ impl Xcb {
         has_sym!(self, xcb_segment_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_segment_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_segment_end(&self, i: xcb_segment_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_segment_end)(i)
     }
@@ -16649,6 +18280,8 @@ impl Xcb {
         has_sym!(self, xcb_segment_end)
     }
 
+    /// Computes the size of a `xcb_poly_segment_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_segment_sizeof(
         &self,
         _buffer: *const c_void,
@@ -16663,32 +18296,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_segment_sizeof)
     }
 
-    /**
-     * @brief draw lines
-     *
-     * @param c The connection
-     * @param drawable A drawable (Window or Pixmap) to draw on.
-     * @param gc The graphics context to use.
-     * \n
-     * TODO: document which attributes of a gc are used
-     * @param segments_len The number of `xcb_segment_t` structures in \a segments.
-     * @param segments An array of `xcb_segment_t` structures.
-     * @return A cookie
-     *
-     * Draws multiple, unconnected lines. For each segment, a line is drawn between
-     * (x1, y1) and (x2, y2). The lines are drawn in the order listed in the array of
-     * `xcb_segment_t` structures and does not perform joining at coincident
-     * endpoints. For any given line, a pixel is not drawn more than once. If lines
-     * intersect, the intersecting pixels are drawn multiple times.
-     *
-     * TODO: include the xcb_segment_t data structure
-     *
-     * TODO: an example
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolySegment` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_segment_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16706,29 +18321,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_segment_checked)
     }
 
-    /**
-     * @brief draw lines
-     *
-     * @param c The connection
-     * @param drawable A drawable (Window or Pixmap) to draw on.
-     * @param gc The graphics context to use.
-     * \n
-     * TODO: document which attributes of a gc are used
-     * @param segments_len The number of `xcb_segment_t` structures in \a segments.
-     * @param segments An array of `xcb_segment_t` structures.
-     * @return A cookie
-     *
-     * Draws multiple, unconnected lines. For each segment, a line is drawn between
-     * (x1, y1) and (x2, y2). The lines are drawn in the order listed in the array of
-     * `xcb_segment_t` structures and does not perform joining at coincident
-     * endpoints. For any given line, a pixel is not drawn more than once. If lines
-     * intersect, the intersecting pixels are drawn multiple times.
-     *
-     * TODO: include the xcb_segment_t data structure
-     *
-     * TODO: an example
-     *
-     */
+    /// Sends a `PolySegment` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_segment(
         &self,
         c: *mut xcb_connection_t,
@@ -16746,6 +18340,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_segment)
     }
 
+    /// Returns a pointer to the `segments` field of a `xcb_poly_segment_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_segment_segments(
         &self,
         r: *const xcb_poly_segment_request_t,
@@ -16759,6 +18355,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_segment_segments)
     }
 
+    /// Returns the number of elements of the `segments` field of a `xcb_poly_segment_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_segment_segments_length(
         &self,
         r: *const xcb_poly_segment_request_t,
@@ -16772,6 +18370,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_segment_segments_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `segments` field of a `xcb_poly_segment_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_segment_segments_iterator(
         &self,
         r: *const xcb_poly_segment_request_t,
@@ -16785,6 +18386,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_segment_segments_iterator)
     }
 
+    /// Computes the size of a `xcb_poly_rectangle_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_rectangle_sizeof(
         &self,
         _buffer: *const c_void,
@@ -16799,17 +18402,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_rectangle_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyRectangle` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_rectangle_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16827,14 +18427,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_rectangle_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `PolyRectangle` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_rectangle(
         &self,
         c: *mut xcb_connection_t,
@@ -16852,6 +18446,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_rectangle)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_poly_rectangle_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_rectangle_rectangles(
         &self,
         r: *const xcb_poly_rectangle_request_t,
@@ -16865,6 +18461,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_rectangle_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_poly_rectangle_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_rectangle_rectangles_length(
         &self,
         r: *const xcb_poly_rectangle_request_t,
@@ -16878,6 +18476,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_rectangle_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_poly_rectangle_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_rectangle_rectangles_iterator(
         &self,
         r: *const xcb_poly_rectangle_request_t,
@@ -16891,6 +18492,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_rectangle_rectangles_iterator)
     }
 
+    /// Computes the size of a `xcb_poly_arc_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_arc_sizeof(&self, _buffer: *const c_void, arcs_len: u32) -> c_int {
         sym!(self, xcb_poly_arc_sizeof)(_buffer, arcs_len)
     }
@@ -16901,17 +18504,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_arc_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyArc` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_arc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -16929,14 +18529,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_arc_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `PolyArc` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_arc(
         &self,
         c: *mut xcb_connection_t,
@@ -16954,6 +18548,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_arc)
     }
 
+    /// Returns a pointer to the `arcs` field of a `xcb_poly_arc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_arc_arcs(&self, r: *const xcb_poly_arc_request_t) -> *mut xcb_arc_t {
         sym!(self, xcb_poly_arc_arcs)(r)
     }
@@ -16964,6 +18560,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_arc_arcs)
     }
 
+    /// Returns the number of elements of the `arcs` field of a `xcb_poly_arc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_arc_arcs_length(&self, r: *const xcb_poly_arc_request_t) -> c_int {
         sym!(self, xcb_poly_arc_arcs_length)(r)
     }
@@ -16974,6 +18572,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_arc_arcs_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `arcs` field of a `xcb_poly_arc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_arc_arcs_iterator(
         &self,
         r: *const xcb_poly_arc_request_t,
@@ -16987,6 +18588,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_arc_arcs_iterator)
     }
 
+    /// Computes the size of a `xcb_fill_poly_request_t` object.
+    #[inline]
     pub unsafe fn xcb_fill_poly_sizeof(&self, _buffer: *const c_void, points_len: u32) -> c_int {
         sym!(self, xcb_fill_poly_sizeof)(_buffer, points_len)
     }
@@ -16997,17 +18600,14 @@ impl Xcb {
         has_sym!(self, xcb_fill_poly_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `FillPoly` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_fill_poly_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17035,14 +18635,8 @@ impl Xcb {
         has_sym!(self, xcb_fill_poly_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `FillPoly` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_fill_poly(
         &self,
         c: *mut xcb_connection_t,
@@ -17062,6 +18656,8 @@ impl Xcb {
         has_sym!(self, xcb_fill_poly)
     }
 
+    /// Returns a pointer to the `points` field of a `xcb_fill_poly_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_fill_poly_points(
         &self,
         r: *const xcb_fill_poly_request_t,
@@ -17075,6 +18671,8 @@ impl Xcb {
         has_sym!(self, xcb_fill_poly_points)
     }
 
+    /// Returns the number of elements of the `points` field of a `xcb_fill_poly_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_fill_poly_points_length(&self, r: *const xcb_fill_poly_request_t) -> c_int {
         sym!(self, xcb_fill_poly_points_length)(r)
     }
@@ -17085,6 +18683,9 @@ impl Xcb {
         has_sym!(self, xcb_fill_poly_points_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `points` field of a `xcb_fill_poly_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_fill_poly_points_iterator(
         &self,
         r: *const xcb_fill_poly_request_t,
@@ -17098,6 +18699,8 @@ impl Xcb {
         has_sym!(self, xcb_fill_poly_points_iterator)
     }
 
+    /// Computes the size of a `xcb_poly_fill_rectangle_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_fill_rectangle_sizeof(
         &self,
         _buffer: *const c_void,
@@ -17112,31 +18715,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_rectangle_sizeof)
     }
 
-    /**
-     * @brief Fills rectangles
-     *
-     * @param c The connection
-     * @param drawable The drawable (Window or Pixmap) to draw on.
-     * @param gc The graphics context to use.
-     * \n
-     * The following graphics context components are used: function, plane-mask,
-     * fill-style, subwindow-mode, clip-x-origin, clip-y-origin, and clip-mask.
-     * \n
-     * The following graphics context mode-dependent components are used:
-     * foreground, background, tile, stipple, tile-stipple-x-origin, and
-     * tile-stipple-y-origin.
-     * @param rectangles_len The number of `xcb_rectangle_t` structures in \a rectangles.
-     * @param rectangles The rectangles to fill.
-     * @return A cookie
-     *
-     * Fills the specified rectangle(s) in the order listed in the array. For any
-     * given rectangle, each pixel is not drawn more than once. If rectangles
-     * intersect, the intersecting pixels are drawn multiple times.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyFillRectangle` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_fill_rectangle_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17154,28 +18740,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_rectangle_checked)
     }
 
-    /**
-     * @brief Fills rectangles
-     *
-     * @param c The connection
-     * @param drawable The drawable (Window or Pixmap) to draw on.
-     * @param gc The graphics context to use.
-     * \n
-     * The following graphics context components are used: function, plane-mask,
-     * fill-style, subwindow-mode, clip-x-origin, clip-y-origin, and clip-mask.
-     * \n
-     * The following graphics context mode-dependent components are used:
-     * foreground, background, tile, stipple, tile-stipple-x-origin, and
-     * tile-stipple-y-origin.
-     * @param rectangles_len The number of `xcb_rectangle_t` structures in \a rectangles.
-     * @param rectangles The rectangles to fill.
-     * @return A cookie
-     *
-     * Fills the specified rectangle(s) in the order listed in the array. For any
-     * given rectangle, each pixel is not drawn more than once. If rectangles
-     * intersect, the intersecting pixels are drawn multiple times.
-     *
-     */
+    /// Sends a `PolyFillRectangle` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_fill_rectangle(
         &self,
         c: *mut xcb_connection_t,
@@ -17193,6 +18759,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_rectangle)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_poly_fill_rectangle_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_fill_rectangle_rectangles(
         &self,
         r: *const xcb_poly_fill_rectangle_request_t,
@@ -17206,6 +18774,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_rectangle_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_poly_fill_rectangle_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_fill_rectangle_rectangles_length(
         &self,
         r: *const xcb_poly_fill_rectangle_request_t,
@@ -17219,6 +18789,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_rectangle_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_poly_fill_rectangle_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_fill_rectangle_rectangles_iterator(
         &self,
         r: *const xcb_poly_fill_rectangle_request_t,
@@ -17232,6 +18805,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_rectangle_rectangles_iterator)
     }
 
+    /// Computes the size of a `xcb_poly_fill_arc_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_fill_arc_sizeof(&self, _buffer: *const c_void, arcs_len: u32) -> c_int {
         sym!(self, xcb_poly_fill_arc_sizeof)(_buffer, arcs_len)
     }
@@ -17242,17 +18817,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_arc_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyFillArc` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_fill_arc_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17270,14 +18842,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_arc_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `PolyFillArc` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_fill_arc(
         &self,
         c: *mut xcb_connection_t,
@@ -17295,6 +18861,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_arc)
     }
 
+    /// Returns a pointer to the `arcs` field of a `xcb_poly_fill_arc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_fill_arc_arcs(
         &self,
         r: *const xcb_poly_fill_arc_request_t,
@@ -17308,6 +18876,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_arc_arcs)
     }
 
+    /// Returns the number of elements of the `arcs` field of a `xcb_poly_fill_arc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_fill_arc_arcs_length(
         &self,
         r: *const xcb_poly_fill_arc_request_t,
@@ -17321,6 +18891,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_arc_arcs_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `arcs` field of a `xcb_poly_fill_arc_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_fill_arc_arcs_iterator(
         &self,
         r: *const xcb_poly_fill_arc_request_t,
@@ -17334,6 +18907,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_fill_arc_arcs_iterator)
     }
 
+    /// Computes the size of a `xcb_put_image_request_t` object.
+    #[inline]
     pub unsafe fn xcb_put_image_sizeof(&self, _buffer: *const c_void, data_len: u32) -> c_int {
         sym!(self, xcb_put_image_sizeof)(_buffer, data_len)
     }
@@ -17344,17 +18919,14 @@ impl Xcb {
         has_sym!(self, xcb_put_image_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PutImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_put_image_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17381,14 +18953,8 @@ impl Xcb {
         has_sym!(self, xcb_put_image_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `PutImage` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_put_image(
         &self,
         c: *mut xcb_connection_t,
@@ -17415,6 +18981,8 @@ impl Xcb {
         has_sym!(self, xcb_put_image)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_put_image_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_put_image_data(&self, r: *const xcb_put_image_request_t) -> *mut u8 {
         sym!(self, xcb_put_image_data)(r)
     }
@@ -17425,6 +18993,8 @@ impl Xcb {
         has_sym!(self, xcb_put_image_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_put_image_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_put_image_data_length(&self, r: *const xcb_put_image_request_t) -> c_int {
         sym!(self, xcb_put_image_data_length)(r)
     }
@@ -17435,6 +19005,9 @@ impl Xcb {
         has_sym!(self, xcb_put_image_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_put_image_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_put_image_data_end(
         &self,
         r: *const xcb_put_image_request_t,
@@ -17448,6 +19021,8 @@ impl Xcb {
         has_sym!(self, xcb_put_image_data_end)
     }
 
+    /// Computes the size of a `xcb_get_image_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_image_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_image_sizeof)(_buffer)
     }
@@ -17458,14 +19033,14 @@ impl Xcb {
         has_sym!(self, xcb_get_image_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_image_reply`]: Self::xcb_get_image_reply
+    #[inline]
     pub unsafe fn xcb_get_image(
         &self,
         c: *mut xcb_connection_t,
@@ -17486,17 +19061,14 @@ impl Xcb {
         has_sym!(self, xcb_get_image)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetImage` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_image_reply`]: Self::xcb_get_image_reply
+    #[inline]
     pub unsafe fn xcb_get_image_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -17517,6 +19089,8 @@ impl Xcb {
         has_sym!(self, xcb_get_image_unchecked)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_get_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_image_data(&self, r: *const xcb_get_image_reply_t) -> *mut u8 {
         sym!(self, xcb_get_image_data)(r)
     }
@@ -17527,6 +19101,8 @@ impl Xcb {
         has_sym!(self, xcb_get_image_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_get_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_image_data_length(&self, r: *const xcb_get_image_reply_t) -> c_int {
         sym!(self, xcb_get_image_data_length)(r)
     }
@@ -17537,6 +19113,9 @@ impl Xcb {
         has_sym!(self, xcb_get_image_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_get_image_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_image_data_end(
         &self,
         r: *const xcb_get_image_reply_t,
@@ -17550,26 +19129,14 @@ impl Xcb {
         has_sym!(self, xcb_get_image_data_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_image_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetImage` request.
+    #[inline]
     pub unsafe fn xcb_get_image_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_image_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_image_reply_t {
+    ) -> *mut xcb_get_image_reply_t {
         sym!(self, xcb_get_image_reply)(c, cookie, e)
     }
 
@@ -17579,6 +19146,8 @@ impl Xcb {
         has_sym!(self, xcb_get_image_reply)
     }
 
+    /// Computes the size of a `xcb_poly_text_8_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_text_8_sizeof(&self, _buffer: *const c_void, items_len: u32) -> c_int {
         sym!(self, xcb_poly_text_8_sizeof)(_buffer, items_len)
     }
@@ -17589,17 +19158,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_8_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyText8` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_text_8_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17619,14 +19185,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_8_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `PolyText8` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_text_8(
         &self,
         c: *mut xcb_connection_t,
@@ -17646,6 +19206,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_8)
     }
 
+    /// Returns a pointer to the `items` field of a `xcb_poly_text_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_text_8_items(&self, r: *const xcb_poly_text_8_request_t) -> *mut u8 {
         sym!(self, xcb_poly_text_8_items)(r)
     }
@@ -17656,6 +19218,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_8_items)
     }
 
+    /// Returns the number of elements of the `items` field of a `xcb_poly_text_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_text_8_items_length(
         &self,
         r: *const xcb_poly_text_8_request_t,
@@ -17669,6 +19233,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_8_items_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `items` field of a `xcb_poly_text_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_text_8_items_end(
         &self,
         r: *const xcb_poly_text_8_request_t,
@@ -17682,6 +19249,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_8_items_end)
     }
 
+    /// Computes the size of a `xcb_poly_text_16_request_t` object.
+    #[inline]
     pub unsafe fn xcb_poly_text_16_sizeof(&self, _buffer: *const c_void, items_len: u32) -> c_int {
         sym!(self, xcb_poly_text_16_sizeof)(_buffer, items_len)
     }
@@ -17692,17 +19261,14 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_16_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `PolyText16` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_poly_text_16_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17722,14 +19288,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_16_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `PolyText16` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_poly_text_16(
         &self,
         c: *mut xcb_connection_t,
@@ -17749,6 +19309,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_16)
     }
 
+    /// Returns a pointer to the `items` field of a `xcb_poly_text_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_text_16_items(&self, r: *const xcb_poly_text_16_request_t) -> *mut u8 {
         sym!(self, xcb_poly_text_16_items)(r)
     }
@@ -17759,6 +19321,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_16_items)
     }
 
+    /// Returns the number of elements of the `items` field of a `xcb_poly_text_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_text_16_items_length(
         &self,
         r: *const xcb_poly_text_16_request_t,
@@ -17772,6 +19336,9 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_16_items_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `items` field of a `xcb_poly_text_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_poly_text_16_items_end(
         &self,
         r: *const xcb_poly_text_16_request_t,
@@ -17785,6 +19352,8 @@ impl Xcb {
         has_sym!(self, xcb_poly_text_16_items_end)
     }
 
+    /// Computes the size of a `xcb_image_text_8_request_t` object.
+    #[inline]
     pub unsafe fn xcb_image_text_8_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_image_text_8_sizeof)(_buffer)
     }
@@ -17795,36 +19364,14 @@ impl Xcb {
         has_sym!(self, xcb_image_text_8_sizeof)
     }
 
-    /**
-     * @brief Draws text
-     *
-     * @param c The connection
-     * @param string_len The length of the \a string. Note that this parameter limited by 255 due to
-     * using 8 bits!
-     * @param drawable The drawable (Window or Pixmap) to draw text on.
-     * @param gc The graphics context to use.
-     * \n
-     * The following graphics context components are used: plane-mask, foreground,
-     * background, font, subwindow-mode, clip-x-origin, clip-y-origin, and clip-mask.
-     * @param x The x coordinate of the first character, relative to the origin of \a drawable.
-     * @param y The y coordinate of the first character, relative to the origin of \a drawable.
-     * @param string The string to draw. Only the first 255 characters are relevant due to the data
-     * type of \a string_len.
-     * @return A cookie
-     *
-     * Fills the destination rectangle with the background pixel from \a gc, then
-     * paints the text with the foreground pixel from \a gc. The upper-left corner of
-     * the filled rectangle is at [x, y - font-ascent]. The width is overall-width,
-     * the height is font-ascent + font-descent. The overall-width, font-ascent and
-     * font-descent are as returned by `xcb_query_text_extents` (TODO).
-     *
-     * Note that using X core fonts is deprecated (but still supported) in favor of
-     * client-side rendering using Xft.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ImageText8` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_image_text_8_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17844,33 +19391,8 @@ impl Xcb {
         has_sym!(self, xcb_image_text_8_checked)
     }
 
-    /**
-     * @brief Draws text
-     *
-     * @param c The connection
-     * @param string_len The length of the \a string. Note that this parameter limited by 255 due to
-     * using 8 bits!
-     * @param drawable The drawable (Window or Pixmap) to draw text on.
-     * @param gc The graphics context to use.
-     * \n
-     * The following graphics context components are used: plane-mask, foreground,
-     * background, font, subwindow-mode, clip-x-origin, clip-y-origin, and clip-mask.
-     * @param x The x coordinate of the first character, relative to the origin of \a drawable.
-     * @param y The y coordinate of the first character, relative to the origin of \a drawable.
-     * @param string The string to draw. Only the first 255 characters are relevant due to the data
-     * type of \a string_len.
-     * @return A cookie
-     *
-     * Fills the destination rectangle with the background pixel from \a gc, then
-     * paints the text with the foreground pixel from \a gc. The upper-left corner of
-     * the filled rectangle is at [x, y - font-ascent]. The width is overall-width,
-     * the height is font-ascent + font-descent. The overall-width, font-ascent and
-     * font-descent are as returned by `xcb_query_text_extents` (TODO).
-     *
-     * Note that using X core fonts is deprecated (but still supported) in favor of
-     * client-side rendering using Xft.
-     *
-     */
+    /// Sends a `ImageText8` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_image_text_8(
         &self,
         c: *mut xcb_connection_t,
@@ -17890,6 +19412,8 @@ impl Xcb {
         has_sym!(self, xcb_image_text_8)
     }
 
+    /// Returns a pointer to the `string` field of a `xcb_image_text_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_image_text_8_string(
         &self,
         r: *const xcb_image_text_8_request_t,
@@ -17903,6 +19427,8 @@ impl Xcb {
         has_sym!(self, xcb_image_text_8_string)
     }
 
+    /// Returns the number of elements of the `string` field of a `xcb_image_text_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_image_text_8_string_length(
         &self,
         r: *const xcb_image_text_8_request_t,
@@ -17916,6 +19442,9 @@ impl Xcb {
         has_sym!(self, xcb_image_text_8_string_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `string` field of a `xcb_image_text_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_image_text_8_string_end(
         &self,
         r: *const xcb_image_text_8_request_t,
@@ -17929,6 +19458,8 @@ impl Xcb {
         has_sym!(self, xcb_image_text_8_string_end)
     }
 
+    /// Computes the size of a `xcb_image_text_16_request_t` object.
+    #[inline]
     pub unsafe fn xcb_image_text_16_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_image_text_16_sizeof)(_buffer)
     }
@@ -17939,37 +19470,14 @@ impl Xcb {
         has_sym!(self, xcb_image_text_16_sizeof)
     }
 
-    /**
-     * @brief Draws text
-     *
-     * @param c The connection
-     * @param string_len The length of the \a string in characters. Note that this parameter limited by
-     * 255 due to using 8 bits!
-     * @param drawable The drawable (Window or Pixmap) to draw text on.
-     * @param gc The graphics context to use.
-     * \n
-     * The following graphics context components are used: plane-mask, foreground,
-     * background, font, subwindow-mode, clip-x-origin, clip-y-origin, and clip-mask.
-     * @param x The x coordinate of the first character, relative to the origin of \a drawable.
-     * @param y The y coordinate of the first character, relative to the origin of \a drawable.
-     * @param string The string to draw. Only the first 255 characters are relevant due to the data
-     * type of \a string_len. Every character uses 2 bytes (hence the 16 in this
-     * request's name).
-     * @return A cookie
-     *
-     * Fills the destination rectangle with the background pixel from \a gc, then
-     * paints the text with the foreground pixel from \a gc. The upper-left corner of
-     * the filled rectangle is at [x, y - font-ascent]. The width is overall-width,
-     * the height is font-ascent + font-descent. The overall-width, font-ascent and
-     * font-descent are as returned by `xcb_query_text_extents` (TODO).
-     *
-     * Note that using X core fonts is deprecated (but still supported) in favor of
-     * client-side rendering using Xft.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ImageText16` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_image_text_16_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -17989,34 +19497,8 @@ impl Xcb {
         has_sym!(self, xcb_image_text_16_checked)
     }
 
-    /**
-     * @brief Draws text
-     *
-     * @param c The connection
-     * @param string_len The length of the \a string in characters. Note that this parameter limited by
-     * 255 due to using 8 bits!
-     * @param drawable The drawable (Window or Pixmap) to draw text on.
-     * @param gc The graphics context to use.
-     * \n
-     * The following graphics context components are used: plane-mask, foreground,
-     * background, font, subwindow-mode, clip-x-origin, clip-y-origin, and clip-mask.
-     * @param x The x coordinate of the first character, relative to the origin of \a drawable.
-     * @param y The y coordinate of the first character, relative to the origin of \a drawable.
-     * @param string The string to draw. Only the first 255 characters are relevant due to the data
-     * type of \a string_len. Every character uses 2 bytes (hence the 16 in this
-     * request's name).
-     * @return A cookie
-     *
-     * Fills the destination rectangle with the background pixel from \a gc, then
-     * paints the text with the foreground pixel from \a gc. The upper-left corner of
-     * the filled rectangle is at [x, y - font-ascent]. The width is overall-width,
-     * the height is font-ascent + font-descent. The overall-width, font-ascent and
-     * font-descent are as returned by `xcb_query_text_extents` (TODO).
-     *
-     * Note that using X core fonts is deprecated (but still supported) in favor of
-     * client-side rendering using Xft.
-     *
-     */
+    /// Sends a `ImageText16` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_image_text_16(
         &self,
         c: *mut xcb_connection_t,
@@ -18036,6 +19518,8 @@ impl Xcb {
         has_sym!(self, xcb_image_text_16)
     }
 
+    /// Returns a pointer to the `string` field of a `xcb_image_text_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_image_text_16_string(
         &self,
         r: *const xcb_image_text_16_request_t,
@@ -18049,6 +19533,8 @@ impl Xcb {
         has_sym!(self, xcb_image_text_16_string)
     }
 
+    /// Returns the number of elements of the `string` field of a `xcb_image_text_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_image_text_16_string_length(
         &self,
         r: *const xcb_image_text_16_request_t,
@@ -18062,6 +19548,9 @@ impl Xcb {
         has_sym!(self, xcb_image_text_16_string_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `string` field of a `xcb_image_text_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_image_text_16_string_iterator(
         &self,
         r: *const xcb_image_text_16_request_t,
@@ -18075,17 +19564,14 @@ impl Xcb {
         has_sym!(self, xcb_image_text_16_string_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreateColormap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_create_colormap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -18103,14 +19589,8 @@ impl Xcb {
         has_sym!(self, xcb_create_colormap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `CreateColormap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_create_colormap(
         &self,
         c: *mut xcb_connection_t,
@@ -18128,17 +19608,14 @@ impl Xcb {
         has_sym!(self, xcb_create_colormap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `FreeColormap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_free_colormap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -18153,14 +19630,8 @@ impl Xcb {
         has_sym!(self, xcb_free_colormap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `FreeColormap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_free_colormap(
         &self,
         c: *mut xcb_connection_t,
@@ -18175,17 +19646,14 @@ impl Xcb {
         has_sym!(self, xcb_free_colormap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CopyColormapAndFree` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_copy_colormap_and_free_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -18201,14 +19669,8 @@ impl Xcb {
         has_sym!(self, xcb_copy_colormap_and_free_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `CopyColormapAndFree` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_copy_colormap_and_free(
         &self,
         c: *mut xcb_connection_t,
@@ -18224,17 +19686,14 @@ impl Xcb {
         has_sym!(self, xcb_copy_colormap_and_free)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `InstallColormap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_install_colormap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -18249,14 +19708,8 @@ impl Xcb {
         has_sym!(self, xcb_install_colormap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `InstallColormap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_install_colormap(
         &self,
         c: *mut xcb_connection_t,
@@ -18271,17 +19724,14 @@ impl Xcb {
         has_sym!(self, xcb_install_colormap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `UninstallColormap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_uninstall_colormap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -18296,14 +19746,8 @@ impl Xcb {
         has_sym!(self, xcb_uninstall_colormap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `UninstallColormap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_uninstall_colormap(
         &self,
         c: *mut xcb_connection_t,
@@ -18318,6 +19762,8 @@ impl Xcb {
         has_sym!(self, xcb_uninstall_colormap)
     }
 
+    /// Computes the size of a `xcb_list_installed_colormaps_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_list_installed_colormaps_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_list_installed_colormaps_sizeof)(_buffer)
     }
@@ -18328,14 +19774,14 @@ impl Xcb {
         has_sym!(self, xcb_list_installed_colormaps_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ListInstalledColormaps` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_installed_colormaps_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_installed_colormaps_reply`]: Self::xcb_list_installed_colormaps_reply
+    #[inline]
     pub unsafe fn xcb_list_installed_colormaps(
         &self,
         c: *mut xcb_connection_t,
@@ -18350,17 +19796,14 @@ impl Xcb {
         has_sym!(self, xcb_list_installed_colormaps)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ListInstalledColormaps` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_installed_colormaps_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_installed_colormaps_reply`]: Self::xcb_list_installed_colormaps_reply
+    #[inline]
     pub unsafe fn xcb_list_installed_colormaps_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -18375,6 +19818,8 @@ impl Xcb {
         has_sym!(self, xcb_list_installed_colormaps_unchecked)
     }
 
+    /// Returns a pointer to the `cmaps` field of a `xcb_list_installed_colormaps_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_installed_colormaps_cmaps(
         &self,
         r: *const xcb_list_installed_colormaps_reply_t,
@@ -18388,6 +19833,8 @@ impl Xcb {
         has_sym!(self, xcb_list_installed_colormaps_cmaps)
     }
 
+    /// Returns the number of elements of the `cmaps` field of a `xcb_list_installed_colormaps_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_installed_colormaps_cmaps_length(
         &self,
         r: *const xcb_list_installed_colormaps_reply_t,
@@ -18401,6 +19848,9 @@ impl Xcb {
         has_sym!(self, xcb_list_installed_colormaps_cmaps_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `cmaps` field of a `xcb_list_installed_colormaps_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_installed_colormaps_cmaps_end(
         &self,
         r: *const xcb_list_installed_colormaps_reply_t,
@@ -18414,26 +19864,14 @@ impl Xcb {
         has_sym!(self, xcb_list_installed_colormaps_cmaps_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_list_installed_colormaps_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ListInstalledColormaps` request.
+    #[inline]
     pub unsafe fn xcb_list_installed_colormaps_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_list_installed_colormaps_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_list_installed_colormaps_reply_t {
+    ) -> *mut xcb_list_installed_colormaps_reply_t {
         sym!(self, xcb_list_installed_colormaps_reply)(c, cookie, e)
     }
 
@@ -18443,23 +19881,14 @@ impl Xcb {
         has_sym!(self, xcb_list_installed_colormaps_reply)
     }
 
-    /**
-     * @brief Allocate a color
-     *
-     * @param c The connection
-     * @param cmap TODO
-     * @param red The red value of your color.
-     * @param green The green value of your color.
-     * @param blue The blue value of your color.
-     * @return A cookie
-     *
-     * Allocates a read-only colormap entry corresponding to the closest RGB value
-     * supported by the hardware. If you are using TrueColor, you can take a shortcut
-     * and directly calculate the color pixel value to avoid the round trip. But, for
-     * example, on 16-bit color setups (VNC), you can easily get the closest supported
-     * RGB value to the RGB value you are specifying.
-     *
-     */
+    /// Sends a `AllocColor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_color_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_color_reply`]: Self::xcb_alloc_color_reply
+    #[inline]
     pub unsafe fn xcb_alloc_color(
         &self,
         c: *mut xcb_connection_t,
@@ -18477,26 +19906,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color)
     }
 
-    /**
-     * @brief Allocate a color
-     *
-     * @param c The connection
-     * @param cmap TODO
-     * @param red The red value of your color.
-     * @param green The green value of your color.
-     * @param blue The blue value of your color.
-     * @return A cookie
-     *
-     * Allocates a read-only colormap entry corresponding to the closest RGB value
-     * supported by the hardware. If you are using TrueColor, you can take a shortcut
-     * and directly calculate the color pixel value to avoid the round trip. But, for
-     * example, on 16-bit color setups (VNC), you can easily get the closest supported
-     * RGB value to the RGB value you are specifying.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `AllocColor` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_color_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_color_reply`]: Self::xcb_alloc_color_reply
+    #[inline]
     pub unsafe fn xcb_alloc_color_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -18514,26 +19931,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_alloc_color_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `AllocColor` request.
+    #[inline]
     pub unsafe fn xcb_alloc_color_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_alloc_color_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_alloc_color_reply_t {
+    ) -> *mut xcb_alloc_color_reply_t {
         sym!(self, xcb_alloc_color_reply)(c, cookie, e)
     }
 
@@ -18543,6 +19948,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_reply)
     }
 
+    /// Computes the size of a `xcb_alloc_named_color_request_t` object.
+    #[inline]
     pub unsafe fn xcb_alloc_named_color_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_alloc_named_color_sizeof)(_buffer)
     }
@@ -18553,14 +19960,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_named_color_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `AllocNamedColor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_named_color_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_named_color_reply`]: Self::xcb_alloc_named_color_reply
+    #[inline]
     pub unsafe fn xcb_alloc_named_color(
         &self,
         c: *mut xcb_connection_t,
@@ -18577,17 +19984,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_named_color)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `AllocNamedColor` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_named_color_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_named_color_reply`]: Self::xcb_alloc_named_color_reply
+    #[inline]
     pub unsafe fn xcb_alloc_named_color_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -18604,26 +20008,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_named_color_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_alloc_named_color_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `AllocNamedColor` request.
+    #[inline]
     pub unsafe fn xcb_alloc_named_color_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_alloc_named_color_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_alloc_named_color_reply_t {
+    ) -> *mut xcb_alloc_named_color_reply_t {
         sym!(self, xcb_alloc_named_color_reply)(c, cookie, e)
     }
 
@@ -18633,6 +20025,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_named_color_reply)
     }
 
+    /// Computes the size of a `xcb_alloc_color_cells_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_alloc_color_cells_sizeof)(_buffer)
     }
@@ -18643,14 +20037,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `AllocColorCells` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_color_cells_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_color_cells_reply`]: Self::xcb_alloc_color_cells_reply
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells(
         &self,
         c: *mut xcb_connection_t,
@@ -18668,17 +20062,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `AllocColorCells` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_color_cells_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_color_cells_reply`]: Self::xcb_alloc_color_cells_reply
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -18696,6 +20087,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_unchecked)
     }
 
+    /// Returns a pointer to the `pixels` field of a `xcb_alloc_color_cells_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_pixels(
         &self,
         r: *const xcb_alloc_color_cells_reply_t,
@@ -18709,6 +20102,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_pixels)
     }
 
+    /// Returns the number of elements of the `pixels` field of a `xcb_alloc_color_cells_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_pixels_length(
         &self,
         r: *const xcb_alloc_color_cells_reply_t,
@@ -18722,6 +20117,9 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_pixels_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `pixels` field of a `xcb_alloc_color_cells_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_pixels_end(
         &self,
         r: *const xcb_alloc_color_cells_reply_t,
@@ -18735,6 +20133,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_pixels_end)
     }
 
+    /// Returns a pointer to the `masks` field of a `xcb_alloc_color_cells_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_masks(
         &self,
         r: *const xcb_alloc_color_cells_reply_t,
@@ -18748,6 +20148,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_masks)
     }
 
+    /// Returns the number of elements of the `masks` field of a `xcb_alloc_color_cells_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_masks_length(
         &self,
         r: *const xcb_alloc_color_cells_reply_t,
@@ -18761,6 +20163,9 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_masks_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `masks` field of a `xcb_alloc_color_cells_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_masks_end(
         &self,
         r: *const xcb_alloc_color_cells_reply_t,
@@ -18774,26 +20179,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_masks_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_alloc_color_cells_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `AllocColorCells` request.
+    #[inline]
     pub unsafe fn xcb_alloc_color_cells_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_alloc_color_cells_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_alloc_color_cells_reply_t {
+    ) -> *mut xcb_alloc_color_cells_reply_t {
         sym!(self, xcb_alloc_color_cells_reply)(c, cookie, e)
     }
 
@@ -18803,6 +20196,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_cells_reply)
     }
 
+    /// Computes the size of a `xcb_alloc_color_planes_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_alloc_color_planes_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_alloc_color_planes_sizeof)(_buffer)
     }
@@ -18813,14 +20208,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_planes_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `AllocColorPlanes` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_color_planes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_color_planes_reply`]: Self::xcb_alloc_color_planes_reply
+    #[inline]
     pub unsafe fn xcb_alloc_color_planes(
         &self,
         c: *mut xcb_connection_t,
@@ -18840,17 +20235,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_planes)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `AllocColorPlanes` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_alloc_color_planes_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_alloc_color_planes_reply`]: Self::xcb_alloc_color_planes_reply
+    #[inline]
     pub unsafe fn xcb_alloc_color_planes_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -18872,6 +20264,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_planes_unchecked)
     }
 
+    /// Returns a pointer to the `pixels` field of a `xcb_alloc_color_planes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_planes_pixels(
         &self,
         r: *const xcb_alloc_color_planes_reply_t,
@@ -18885,6 +20279,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_planes_pixels)
     }
 
+    /// Returns the number of elements of the `pixels` field of a `xcb_alloc_color_planes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_planes_pixels_length(
         &self,
         r: *const xcb_alloc_color_planes_reply_t,
@@ -18898,6 +20294,9 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_planes_pixels_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `pixels` field of a `xcb_alloc_color_planes_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_alloc_color_planes_pixels_end(
         &self,
         r: *const xcb_alloc_color_planes_reply_t,
@@ -18911,26 +20310,14 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_planes_pixels_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_alloc_color_planes_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `AllocColorPlanes` request.
+    #[inline]
     pub unsafe fn xcb_alloc_color_planes_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_alloc_color_planes_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_alloc_color_planes_reply_t {
+    ) -> *mut xcb_alloc_color_planes_reply_t {
         sym!(self, xcb_alloc_color_planes_reply)(c, cookie, e)
     }
 
@@ -18940,6 +20327,8 @@ impl Xcb {
         has_sym!(self, xcb_alloc_color_planes_reply)
     }
 
+    /// Computes the size of a `xcb_free_colors_request_t` object.
+    #[inline]
     pub unsafe fn xcb_free_colors_sizeof(&self, _buffer: *const c_void, pixels_len: u32) -> c_int {
         sym!(self, xcb_free_colors_sizeof)(_buffer, pixels_len)
     }
@@ -18950,17 +20339,14 @@ impl Xcb {
         has_sym!(self, xcb_free_colors_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `FreeColors` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_free_colors_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -18978,14 +20364,8 @@ impl Xcb {
         has_sym!(self, xcb_free_colors_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `FreeColors` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_free_colors(
         &self,
         c: *mut xcb_connection_t,
@@ -19003,6 +20383,8 @@ impl Xcb {
         has_sym!(self, xcb_free_colors)
     }
 
+    /// Returns a pointer to the `pixels` field of a `xcb_free_colors_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_free_colors_pixels(&self, r: *const xcb_free_colors_request_t) -> *mut u32 {
         sym!(self, xcb_free_colors_pixels)(r)
     }
@@ -19013,6 +20395,8 @@ impl Xcb {
         has_sym!(self, xcb_free_colors_pixels)
     }
 
+    /// Returns the number of elements of the `pixels` field of a `xcb_free_colors_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_free_colors_pixels_length(
         &self,
         r: *const xcb_free_colors_request_t,
@@ -19026,6 +20410,9 @@ impl Xcb {
         has_sym!(self, xcb_free_colors_pixels_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `pixels` field of a `xcb_free_colors_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_free_colors_pixels_end(
         &self,
         r: *const xcb_free_colors_request_t,
@@ -19039,6 +20426,8 @@ impl Xcb {
         has_sym!(self, xcb_free_colors_pixels_end)
     }
 
+    /// Advances a `xcb_coloritem_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_coloritem_next(&self, i: *mut xcb_coloritem_iterator_t) {
         sym!(self, xcb_coloritem_next)(i)
     }
@@ -19049,6 +20438,8 @@ impl Xcb {
         has_sym!(self, xcb_coloritem_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_coloritem_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_coloritem_end(&self, i: xcb_coloritem_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_coloritem_end)(i)
     }
@@ -19059,6 +20450,8 @@ impl Xcb {
         has_sym!(self, xcb_coloritem_end)
     }
 
+    /// Computes the size of a `xcb_store_colors_request_t` object.
+    #[inline]
     pub unsafe fn xcb_store_colors_sizeof(&self, _buffer: *const c_void, items_len: u32) -> c_int {
         sym!(self, xcb_store_colors_sizeof)(_buffer, items_len)
     }
@@ -19069,17 +20462,14 @@ impl Xcb {
         has_sym!(self, xcb_store_colors_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `StoreColors` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_store_colors_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -19096,14 +20486,8 @@ impl Xcb {
         has_sym!(self, xcb_store_colors_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `StoreColors` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_store_colors(
         &self,
         c: *mut xcb_connection_t,
@@ -19120,6 +20504,8 @@ impl Xcb {
         has_sym!(self, xcb_store_colors)
     }
 
+    /// Returns a pointer to the `items` field of a `xcb_store_colors_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_store_colors_items(
         &self,
         r: *const xcb_store_colors_request_t,
@@ -19133,6 +20519,8 @@ impl Xcb {
         has_sym!(self, xcb_store_colors_items)
     }
 
+    /// Returns the number of elements of the `items` field of a `xcb_store_colors_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_store_colors_items_length(
         &self,
         r: *const xcb_store_colors_request_t,
@@ -19146,6 +20534,9 @@ impl Xcb {
         has_sym!(self, xcb_store_colors_items_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `items` field of a `xcb_store_colors_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_store_colors_items_iterator(
         &self,
         r: *const xcb_store_colors_request_t,
@@ -19159,6 +20550,8 @@ impl Xcb {
         has_sym!(self, xcb_store_colors_items_iterator)
     }
 
+    /// Computes the size of a `xcb_store_named_color_request_t` object.
+    #[inline]
     pub unsafe fn xcb_store_named_color_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_store_named_color_sizeof)(_buffer)
     }
@@ -19169,17 +20562,14 @@ impl Xcb {
         has_sym!(self, xcb_store_named_color_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `StoreNamedColor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_store_named_color_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -19198,14 +20588,8 @@ impl Xcb {
         has_sym!(self, xcb_store_named_color_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `StoreNamedColor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_store_named_color(
         &self,
         c: *mut xcb_connection_t,
@@ -19224,6 +20608,8 @@ impl Xcb {
         has_sym!(self, xcb_store_named_color)
     }
 
+    /// Returns a pointer to the `name` field of a `xcb_store_named_color_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_store_named_color_name(
         &self,
         r: *const xcb_store_named_color_request_t,
@@ -19237,6 +20623,8 @@ impl Xcb {
         has_sym!(self, xcb_store_named_color_name)
     }
 
+    /// Returns the number of elements of the `name` field of a `xcb_store_named_color_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_store_named_color_name_length(
         &self,
         r: *const xcb_store_named_color_request_t,
@@ -19250,6 +20638,9 @@ impl Xcb {
         has_sym!(self, xcb_store_named_color_name_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `name` field of a `xcb_store_named_color_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_store_named_color_name_end(
         &self,
         r: *const xcb_store_named_color_request_t,
@@ -19263,6 +20654,8 @@ impl Xcb {
         has_sym!(self, xcb_store_named_color_name_end)
     }
 
+    /// Advances a `xcb_rgb_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_rgb_next(&self, i: *mut xcb_rgb_iterator_t) {
         sym!(self, xcb_rgb_next)(i)
     }
@@ -19273,6 +20666,8 @@ impl Xcb {
         has_sym!(self, xcb_rgb_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_rgb_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_rgb_end(&self, i: xcb_rgb_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_rgb_end)(i)
     }
@@ -19283,6 +20678,8 @@ impl Xcb {
         has_sym!(self, xcb_rgb_end)
     }
 
+    /// Computes the size of a `xcb_query_colors_request_t` object.
+    #[inline]
     pub unsafe fn xcb_query_colors_sizeof(&self, _buffer: *const c_void, pixels_len: u32) -> c_int {
         sym!(self, xcb_query_colors_sizeof)(_buffer, pixels_len)
     }
@@ -19293,14 +20690,14 @@ impl Xcb {
         has_sym!(self, xcb_query_colors_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `QueryColors` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_colors_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_colors_reply`]: Self::xcb_query_colors_reply
+    #[inline]
     pub unsafe fn xcb_query_colors(
         &self,
         c: *mut xcb_connection_t,
@@ -19317,17 +20714,14 @@ impl Xcb {
         has_sym!(self, xcb_query_colors)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryColors` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_colors_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_colors_reply`]: Self::xcb_query_colors_reply
+    #[inline]
     pub unsafe fn xcb_query_colors_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -19344,6 +20738,8 @@ impl Xcb {
         has_sym!(self, xcb_query_colors_unchecked)
     }
 
+    /// Returns a pointer to the `colors` field of a `xcb_query_colors_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_colors_colors(
         &self,
         r: *const xcb_query_colors_reply_t,
@@ -19357,6 +20753,8 @@ impl Xcb {
         has_sym!(self, xcb_query_colors_colors)
     }
 
+    /// Returns the number of elements of the `colors` field of a `xcb_query_colors_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_colors_colors_length(
         &self,
         r: *const xcb_query_colors_reply_t,
@@ -19370,6 +20768,9 @@ impl Xcb {
         has_sym!(self, xcb_query_colors_colors_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `colors` field of a `xcb_query_colors_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_query_colors_colors_iterator(
         &self,
         r: *const xcb_query_colors_reply_t,
@@ -19383,26 +20784,14 @@ impl Xcb {
         has_sym!(self, xcb_query_colors_colors_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_colors_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryColors` request.
+    #[inline]
     pub unsafe fn xcb_query_colors_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_colors_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_colors_reply_t {
+    ) -> *mut xcb_query_colors_reply_t {
         sym!(self, xcb_query_colors_reply)(c, cookie, e)
     }
 
@@ -19412,6 +20801,8 @@ impl Xcb {
         has_sym!(self, xcb_query_colors_reply)
     }
 
+    /// Computes the size of a `xcb_lookup_color_request_t` object.
+    #[inline]
     pub unsafe fn xcb_lookup_color_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_lookup_color_sizeof)(_buffer)
     }
@@ -19422,14 +20813,14 @@ impl Xcb {
         has_sym!(self, xcb_lookup_color_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `LookupColor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_lookup_color_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_lookup_color_reply`]: Self::xcb_lookup_color_reply
+    #[inline]
     pub unsafe fn xcb_lookup_color(
         &self,
         c: *mut xcb_connection_t,
@@ -19446,17 +20837,14 @@ impl Xcb {
         has_sym!(self, xcb_lookup_color)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `LookupColor` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_lookup_color_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_lookup_color_reply`]: Self::xcb_lookup_color_reply
+    #[inline]
     pub unsafe fn xcb_lookup_color_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -19473,26 +20861,14 @@ impl Xcb {
         has_sym!(self, xcb_lookup_color_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_lookup_color_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `LookupColor` request.
+    #[inline]
     pub unsafe fn xcb_lookup_color_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_lookup_color_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_lookup_color_reply_t {
+    ) -> *mut xcb_lookup_color_reply_t {
         sym!(self, xcb_lookup_color_reply)(c, cookie, e)
     }
 
@@ -19502,17 +20878,14 @@ impl Xcb {
         has_sym!(self, xcb_lookup_color_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreateCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_create_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -19540,14 +20913,8 @@ impl Xcb {
         has_sym!(self, xcb_create_cursor_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `CreateCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_create_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -19575,39 +20942,14 @@ impl Xcb {
         has_sym!(self, xcb_create_cursor)
     }
 
-    /**
-     * @brief create cursor
-     *
-     * @param c The connection
-     * @param cid The ID with which you will refer to the cursor, created by `xcb_generate_id`.
-     * @param source_font In which font to look for the cursor glyph.
-     * @param mask_font In which font to look for the mask glyph.
-     * @param source_char The glyph of \a source_font to use.
-     * @param mask_char The glyph of \a mask_font to use as a mask: Pixels which are set to 1 define
-     * which source pixels are displayed. All pixels which are set to 0 are not
-     * displayed.
-     * @param fore_red The red value of the foreground color.
-     * @param fore_green The green value of the foreground color.
-     * @param fore_blue The blue value of the foreground color.
-     * @param back_red The red value of the background color.
-     * @param back_green The green value of the background color.
-     * @param back_blue The blue value of the background color.
-     * @return A cookie
-     *
-     * Creates a cursor from a font glyph. X provides a set of standard cursor shapes
-     * in a special font named cursor. Applications are encouraged to use this
-     * interface for their cursors because the font can be customized for the
-     * individual display type.
-     *
-     * All pixels which are set to 1 in the source will use the foreground color (as
-     * specified by \a fore_red, \a fore_green and \a fore_blue). All pixels set to 0
-     * will use the background color (as specified by \a back_red, \a back_green and
-     * \a back_blue).
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `CreateGlyphCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_create_glyph_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -19645,36 +20987,8 @@ impl Xcb {
         has_sym!(self, xcb_create_glyph_cursor_checked)
     }
 
-    /**
-     * @brief create cursor
-     *
-     * @param c The connection
-     * @param cid The ID with which you will refer to the cursor, created by `xcb_generate_id`.
-     * @param source_font In which font to look for the cursor glyph.
-     * @param mask_font In which font to look for the mask glyph.
-     * @param source_char The glyph of \a source_font to use.
-     * @param mask_char The glyph of \a mask_font to use as a mask: Pixels which are set to 1 define
-     * which source pixels are displayed. All pixels which are set to 0 are not
-     * displayed.
-     * @param fore_red The red value of the foreground color.
-     * @param fore_green The green value of the foreground color.
-     * @param fore_blue The blue value of the foreground color.
-     * @param back_red The red value of the background color.
-     * @param back_green The green value of the background color.
-     * @param back_blue The blue value of the background color.
-     * @return A cookie
-     *
-     * Creates a cursor from a font glyph. X provides a set of standard cursor shapes
-     * in a special font named cursor. Applications are encouraged to use this
-     * interface for their cursors because the font can be customized for the
-     * individual display type.
-     *
-     * All pixels which are set to 1 in the source will use the foreground color (as
-     * specified by \a fore_red, \a fore_green and \a fore_blue). All pixels set to 0
-     * will use the background color (as specified by \a back_red, \a back_green and
-     * \a back_blue).
-     *
-     */
+    /// Sends a `CreateGlyphCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_create_glyph_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -19712,20 +21026,14 @@ impl Xcb {
         has_sym!(self, xcb_create_glyph_cursor)
     }
 
-    /**
-     * @brief Deletes a cursor
-     *
-     * @param c The connection
-     * @param cursor The cursor to destroy.
-     * @return A cookie
-     *
-     * Deletes the association between the cursor resource ID and the specified
-     * cursor. The cursor is freed when no other resource references it.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `FreeCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_free_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -19740,17 +21048,8 @@ impl Xcb {
         has_sym!(self, xcb_free_cursor_checked)
     }
 
-    /**
-     * @brief Deletes a cursor
-     *
-     * @param c The connection
-     * @param cursor The cursor to destroy.
-     * @return A cookie
-     *
-     * Deletes the association between the cursor resource ID and the specified
-     * cursor. The cursor is freed when no other resource references it.
-     *
-     */
+    /// Sends a `FreeCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_free_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -19765,17 +21064,14 @@ impl Xcb {
         has_sym!(self, xcb_free_cursor)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `RecolorCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_recolor_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -19798,14 +21094,8 @@ impl Xcb {
         has_sym!(self, xcb_recolor_cursor_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `RecolorCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_recolor_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -19828,14 +21118,14 @@ impl Xcb {
         has_sym!(self, xcb_recolor_cursor)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `QueryBestSize` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_best_size_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_best_size_reply`]: Self::xcb_query_best_size_reply
+    #[inline]
     pub unsafe fn xcb_query_best_size(
         &self,
         c: *mut xcb_connection_t,
@@ -19853,17 +21143,14 @@ impl Xcb {
         has_sym!(self, xcb_query_best_size)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryBestSize` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_best_size_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_best_size_reply`]: Self::xcb_query_best_size_reply
+    #[inline]
     pub unsafe fn xcb_query_best_size_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -19881,26 +21168,14 @@ impl Xcb {
         has_sym!(self, xcb_query_best_size_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_best_size_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryBestSize` request.
+    #[inline]
     pub unsafe fn xcb_query_best_size_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_best_size_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_best_size_reply_t {
+    ) -> *mut xcb_query_best_size_reply_t {
         sym!(self, xcb_query_best_size_reply)(c, cookie, e)
     }
 
@@ -19910,6 +21185,8 @@ impl Xcb {
         has_sym!(self, xcb_query_best_size_reply)
     }
 
+    /// Computes the size of a `xcb_query_extension_request_t` object.
+    #[inline]
     pub unsafe fn xcb_query_extension_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_query_extension_sizeof)(_buffer)
     }
@@ -19920,26 +21197,14 @@ impl Xcb {
         has_sym!(self, xcb_query_extension_sizeof)
     }
 
-    /**
-     * @brief check if extension is present
-     *
-     * @param c The connection
-     * @param name_len The length of \a name in bytes.
-     * @param name The name of the extension to query, for example "RANDR". This is case
-     * sensitive!
-     * @return A cookie
-     *
-     * Determines if the specified extension is present on this X11 server.
-     *
-     * Every extension has a unique `major_opcode` to identify requests, the minor
-     * opcodes and request formats are extension-specific. If the extension provides
-     * events and errors, the `first_event` and `first_error` fields in the reply are
-     * set accordingly.
-     *
-     * There should rarely be a need to use this request directly, XCB provides the
-     * `xcb_get_extension_data` function instead.
-     *
-     */
+    /// Sends a `QueryExtension` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_extension_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_extension_reply`]: Self::xcb_query_extension_reply
+    #[inline]
     pub unsafe fn xcb_query_extension(
         &self,
         c: *mut xcb_connection_t,
@@ -19955,29 +21220,14 @@ impl Xcb {
         has_sym!(self, xcb_query_extension)
     }
 
-    /**
-     * @brief check if extension is present
-     *
-     * @param c The connection
-     * @param name_len The length of \a name in bytes.
-     * @param name The name of the extension to query, for example "RANDR". This is case
-     * sensitive!
-     * @return A cookie
-     *
-     * Determines if the specified extension is present on this X11 server.
-     *
-     * Every extension has a unique `major_opcode` to identify requests, the minor
-     * opcodes and request formats are extension-specific. If the extension provides
-     * events and errors, the `first_event` and `first_error` fields in the reply are
-     * set accordingly.
-     *
-     * There should rarely be a need to use this request directly, XCB provides the
-     * `xcb_get_extension_data` function instead.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `QueryExtension` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_query_extension_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_query_extension_reply`]: Self::xcb_query_extension_reply
+    #[inline]
     pub unsafe fn xcb_query_extension_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -19993,26 +21243,14 @@ impl Xcb {
         has_sym!(self, xcb_query_extension_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_query_extension_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `QueryExtension` request.
+    #[inline]
     pub unsafe fn xcb_query_extension_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_query_extension_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_query_extension_reply_t {
+    ) -> *mut xcb_query_extension_reply_t {
         sym!(self, xcb_query_extension_reply)(c, cookie, e)
     }
 
@@ -20022,6 +21260,8 @@ impl Xcb {
         has_sym!(self, xcb_query_extension_reply)
     }
 
+    /// Computes the size of a `xcb_list_extensions_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_list_extensions_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_list_extensions_sizeof)(_buffer)
     }
@@ -20032,14 +21272,14 @@ impl Xcb {
         has_sym!(self, xcb_list_extensions_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ListExtensions` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_extensions_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_extensions_reply`]: Self::xcb_list_extensions_reply
+    #[inline]
     pub unsafe fn xcb_list_extensions(
         &self,
         c: *mut xcb_connection_t,
@@ -20053,17 +21293,14 @@ impl Xcb {
         has_sym!(self, xcb_list_extensions)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ListExtensions` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_extensions_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_extensions_reply`]: Self::xcb_list_extensions_reply
+    #[inline]
     pub unsafe fn xcb_list_extensions_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -20077,6 +21314,8 @@ impl Xcb {
         has_sym!(self, xcb_list_extensions_unchecked)
     }
 
+    /// Returns the number of elements of the `names` field of a `xcb_list_extensions_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_extensions_names_length(
         &self,
         r: *const xcb_list_extensions_reply_t,
@@ -20090,6 +21329,9 @@ impl Xcb {
         has_sym!(self, xcb_list_extensions_names_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `names` field of a `xcb_list_extensions_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_extensions_names_iterator(
         &self,
         r: *const xcb_list_extensions_reply_t,
@@ -20103,26 +21345,14 @@ impl Xcb {
         has_sym!(self, xcb_list_extensions_names_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_list_extensions_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ListExtensions` request.
+    #[inline]
     pub unsafe fn xcb_list_extensions_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_list_extensions_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_list_extensions_reply_t {
+    ) -> *mut xcb_list_extensions_reply_t {
         sym!(self, xcb_list_extensions_reply)(c, cookie, e)
     }
 
@@ -20132,6 +21362,8 @@ impl Xcb {
         has_sym!(self, xcb_list_extensions_reply)
     }
 
+    /// Computes the size of a `xcb_change_keyboard_mapping_request_t` object.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_mapping_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_change_keyboard_mapping_sizeof)(_buffer)
     }
@@ -20142,17 +21374,14 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_mapping_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeKeyboardMapping` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_keyboard_mapping_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -20176,14 +21405,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_mapping_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ChangeKeyboardMapping` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_change_keyboard_mapping(
         &self,
         c: *mut xcb_connection_t,
@@ -20207,6 +21430,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_mapping)
     }
 
+    /// Returns a pointer to the `keysyms` field of a `xcb_change_keyboard_mapping_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_mapping_keysyms(
         &self,
         r: *const xcb_change_keyboard_mapping_request_t,
@@ -20220,6 +21445,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_mapping_keysyms)
     }
 
+    /// Returns the number of elements of the `keysyms` field of a `xcb_change_keyboard_mapping_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_mapping_keysyms_length(
         &self,
         r: *const xcb_change_keyboard_mapping_request_t,
@@ -20233,6 +21460,9 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_mapping_keysyms_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `keysyms` field of a `xcb_change_keyboard_mapping_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_mapping_keysyms_end(
         &self,
         r: *const xcb_change_keyboard_mapping_request_t,
@@ -20246,6 +21476,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_mapping_keysyms_end)
     }
 
+    /// Computes the size of a `xcb_get_keyboard_mapping_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_keyboard_mapping_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_keyboard_mapping_sizeof)(_buffer)
     }
@@ -20256,14 +21488,14 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_mapping_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetKeyboardMapping` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_keyboard_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_keyboard_mapping_reply`]: Self::xcb_get_keyboard_mapping_reply
+    #[inline]
     pub unsafe fn xcb_get_keyboard_mapping(
         &self,
         c: *mut xcb_connection_t,
@@ -20279,17 +21511,14 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_mapping)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetKeyboardMapping` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_keyboard_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_keyboard_mapping_reply`]: Self::xcb_get_keyboard_mapping_reply
+    #[inline]
     pub unsafe fn xcb_get_keyboard_mapping_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -20305,6 +21534,8 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_mapping_unchecked)
     }
 
+    /// Returns a pointer to the `keysyms` field of a `xcb_get_keyboard_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_keyboard_mapping_keysyms(
         &self,
         r: *const xcb_get_keyboard_mapping_reply_t,
@@ -20318,6 +21549,8 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_mapping_keysyms)
     }
 
+    /// Returns the number of elements of the `keysyms` field of a `xcb_get_keyboard_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_keyboard_mapping_keysyms_length(
         &self,
         r: *const xcb_get_keyboard_mapping_reply_t,
@@ -20331,6 +21564,9 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_mapping_keysyms_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `keysyms` field of a `xcb_get_keyboard_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_keyboard_mapping_keysyms_end(
         &self,
         r: *const xcb_get_keyboard_mapping_reply_t,
@@ -20344,26 +21580,14 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_mapping_keysyms_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_keyboard_mapping_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetKeyboardMapping` request.
+    #[inline]
     pub unsafe fn xcb_get_keyboard_mapping_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_keyboard_mapping_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_keyboard_mapping_reply_t {
+    ) -> *mut xcb_get_keyboard_mapping_reply_t {
         sym!(self, xcb_get_keyboard_mapping_reply)(c, cookie, e)
     }
 
@@ -20373,6 +21597,8 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_mapping_reply)
     }
 
+    /// Serializes a `xcb_change_keyboard_control_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -20388,6 +21614,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_change_keyboard_control_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -20403,6 +21631,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_change_keyboard_control_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -20417,6 +21647,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_change_keyboard_control_request_t` object.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_change_keyboard_control_sizeof)(_buffer)
     }
@@ -20427,17 +21659,18 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeKeyboardControl` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_change_keyboard_control_aux_checked`].
+    ///
+    /// [`xcb_change_keyboard_control_aux_checked`]: Self::xcb_change_keyboard_control_aux_checked
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -20453,14 +21686,12 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ChangeKeyboardControl` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_change_keyboard_control_aux`].
+    ///
+    /// [`xcb_change_keyboard_control_aux`]: Self::xcb_change_keyboard_control_aux
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control(
         &self,
         c: *mut xcb_connection_t,
@@ -20476,17 +21707,14 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeKeyboardControl` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -20502,14 +21730,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_aux_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ChangeKeyboardControl` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -20525,6 +21747,8 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_change_keyboard_control_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_keyboard_control_value_list(
         &self,
         r: *const xcb_change_keyboard_control_request_t,
@@ -20538,14 +21762,14 @@ impl Xcb {
         has_sym!(self, xcb_change_keyboard_control_value_list)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetKeyboardControl` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_keyboard_control_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_keyboard_control_reply`]: Self::xcb_get_keyboard_control_reply
+    #[inline]
     pub unsafe fn xcb_get_keyboard_control(
         &self,
         c: *mut xcb_connection_t,
@@ -20559,17 +21783,14 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_control)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetKeyboardControl` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_keyboard_control_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_keyboard_control_reply`]: Self::xcb_get_keyboard_control_reply
+    #[inline]
     pub unsafe fn xcb_get_keyboard_control_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -20583,26 +21804,14 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_control_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_keyboard_control_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetKeyboardControl` request.
+    #[inline]
     pub unsafe fn xcb_get_keyboard_control_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_keyboard_control_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_keyboard_control_reply_t {
+    ) -> *mut xcb_get_keyboard_control_reply_t {
         sym!(self, xcb_get_keyboard_control_reply)(c, cookie, e)
     }
 
@@ -20612,17 +21821,14 @@ impl Xcb {
         has_sym!(self, xcb_get_keyboard_control_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Bell` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_bell_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -20637,14 +21843,8 @@ impl Xcb {
         has_sym!(self, xcb_bell_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Bell` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_bell(&self, c: *mut xcb_connection_t, percent: i8) -> xcb_void_cookie_t {
         sym!(self, xcb_bell)(c, percent)
     }
@@ -20655,17 +21855,14 @@ impl Xcb {
         has_sym!(self, xcb_bell)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangePointerControl` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_pointer_control_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -20691,14 +21888,8 @@ impl Xcb {
         has_sym!(self, xcb_change_pointer_control_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ChangePointerControl` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_change_pointer_control(
         &self,
         c: *mut xcb_connection_t,
@@ -20724,14 +21915,14 @@ impl Xcb {
         has_sym!(self, xcb_change_pointer_control)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetPointerControl` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_pointer_control_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_pointer_control_reply`]: Self::xcb_get_pointer_control_reply
+    #[inline]
     pub unsafe fn xcb_get_pointer_control(
         &self,
         c: *mut xcb_connection_t,
@@ -20745,17 +21936,14 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_control)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetPointerControl` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_pointer_control_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_pointer_control_reply`]: Self::xcb_get_pointer_control_reply
+    #[inline]
     pub unsafe fn xcb_get_pointer_control_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -20769,26 +21957,14 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_control_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_pointer_control_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetPointerControl` request.
+    #[inline]
     pub unsafe fn xcb_get_pointer_control_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_pointer_control_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_pointer_control_reply_t {
+    ) -> *mut xcb_get_pointer_control_reply_t {
         sym!(self, xcb_get_pointer_control_reply)(c, cookie, e)
     }
 
@@ -20798,17 +21974,14 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_control_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetScreenSaver` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_screen_saver_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -20832,14 +22005,8 @@ impl Xcb {
         has_sym!(self, xcb_set_screen_saver_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetScreenSaver` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_screen_saver(
         &self,
         c: *mut xcb_connection_t,
@@ -20857,14 +22024,14 @@ impl Xcb {
         has_sym!(self, xcb_set_screen_saver)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetScreenSaver` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_screen_saver_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_screen_saver_reply`]: Self::xcb_get_screen_saver_reply
+    #[inline]
     pub unsafe fn xcb_get_screen_saver(
         &self,
         c: *mut xcb_connection_t,
@@ -20878,17 +22045,14 @@ impl Xcb {
         has_sym!(self, xcb_get_screen_saver)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetScreenSaver` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_screen_saver_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_screen_saver_reply`]: Self::xcb_get_screen_saver_reply
+    #[inline]
     pub unsafe fn xcb_get_screen_saver_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -20902,26 +22066,14 @@ impl Xcb {
         has_sym!(self, xcb_get_screen_saver_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_screen_saver_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetScreenSaver` request.
+    #[inline]
     pub unsafe fn xcb_get_screen_saver_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_screen_saver_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_screen_saver_reply_t {
+    ) -> *mut xcb_get_screen_saver_reply_t {
         sym!(self, xcb_get_screen_saver_reply)(c, cookie, e)
     }
 
@@ -20931,6 +22083,8 @@ impl Xcb {
         has_sym!(self, xcb_get_screen_saver_reply)
     }
 
+    /// Computes the size of a `xcb_change_hosts_request_t` object.
+    #[inline]
     pub unsafe fn xcb_change_hosts_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_change_hosts_sizeof)(_buffer)
     }
@@ -20941,17 +22095,14 @@ impl Xcb {
         has_sym!(self, xcb_change_hosts_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ChangeHosts` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_change_hosts_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -20969,14 +22120,8 @@ impl Xcb {
         has_sym!(self, xcb_change_hosts_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ChangeHosts` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_change_hosts(
         &self,
         c: *mut xcb_connection_t,
@@ -20994,6 +22139,8 @@ impl Xcb {
         has_sym!(self, xcb_change_hosts)
     }
 
+    /// Returns a pointer to the `address` field of a `xcb_change_hosts_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_hosts_address(&self, r: *const xcb_change_hosts_request_t) -> *mut u8 {
         sym!(self, xcb_change_hosts_address)(r)
     }
@@ -21004,6 +22151,8 @@ impl Xcb {
         has_sym!(self, xcb_change_hosts_address)
     }
 
+    /// Returns the number of elements of the `address` field of a `xcb_change_hosts_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_hosts_address_length(
         &self,
         r: *const xcb_change_hosts_request_t,
@@ -21017,6 +22166,9 @@ impl Xcb {
         has_sym!(self, xcb_change_hosts_address_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `address` field of a `xcb_change_hosts_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_change_hosts_address_end(
         &self,
         r: *const xcb_change_hosts_request_t,
@@ -21030,6 +22182,8 @@ impl Xcb {
         has_sym!(self, xcb_change_hosts_address_end)
     }
 
+    /// Computes the size of a `xcb_host_t` object.
+    #[inline]
     pub unsafe fn xcb_host_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_host_sizeof)(_buffer)
     }
@@ -21040,6 +22194,8 @@ impl Xcb {
         has_sym!(self, xcb_host_sizeof)
     }
 
+    /// Returns a pointer to the `address` field of a `xcb_host_t` struct.
+    #[inline]
     pub unsafe fn xcb_host_address(&self, r: *const xcb_host_t) -> *mut u8 {
         sym!(self, xcb_host_address)(r)
     }
@@ -21050,6 +22206,8 @@ impl Xcb {
         has_sym!(self, xcb_host_address)
     }
 
+    /// Returns the number of elements of the `address` field of a `xcb_host_t` struct.
+    #[inline]
     pub unsafe fn xcb_host_address_length(&self, r: *const xcb_host_t) -> c_int {
         sym!(self, xcb_host_address_length)(r)
     }
@@ -21060,6 +22218,9 @@ impl Xcb {
         has_sym!(self, xcb_host_address_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `address` field of a `xcb_host_t` struct.
+    #[inline]
     pub unsafe fn xcb_host_address_end(&self, r: *const xcb_host_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_host_address_end)(r)
     }
@@ -21070,6 +22231,8 @@ impl Xcb {
         has_sym!(self, xcb_host_address_end)
     }
 
+    /// Advances a `xcb_host_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_host_next(&self, i: *mut xcb_host_iterator_t) {
         sym!(self, xcb_host_next)(i)
     }
@@ -21080,6 +22243,8 @@ impl Xcb {
         has_sym!(self, xcb_host_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_host_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_host_end(&self, i: xcb_host_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_host_end)(i)
     }
@@ -21090,6 +22255,8 @@ impl Xcb {
         has_sym!(self, xcb_host_end)
     }
 
+    /// Computes the size of a `xcb_list_hosts_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_list_hosts_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_list_hosts_sizeof)(_buffer)
     }
@@ -21100,14 +22267,14 @@ impl Xcb {
         has_sym!(self, xcb_list_hosts_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ListHosts` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_hosts_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_hosts_reply`]: Self::xcb_list_hosts_reply
+    #[inline]
     pub unsafe fn xcb_list_hosts(&self, c: *mut xcb_connection_t) -> xcb_list_hosts_cookie_t {
         sym!(self, xcb_list_hosts)(c)
     }
@@ -21118,17 +22285,14 @@ impl Xcb {
         has_sym!(self, xcb_list_hosts)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `ListHosts` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_list_hosts_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_list_hosts_reply`]: Self::xcb_list_hosts_reply
+    #[inline]
     pub unsafe fn xcb_list_hosts_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -21142,6 +22306,8 @@ impl Xcb {
         has_sym!(self, xcb_list_hosts_unchecked)
     }
 
+    /// Returns the number of elements of the `hosts` field of a `xcb_list_hosts_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_hosts_hosts_length(&self, r: *const xcb_list_hosts_reply_t) -> c_int {
         sym!(self, xcb_list_hosts_hosts_length)(r)
     }
@@ -21152,6 +22318,9 @@ impl Xcb {
         has_sym!(self, xcb_list_hosts_hosts_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `hosts` field of a `xcb_list_hosts_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_list_hosts_hosts_iterator(
         &self,
         r: *const xcb_list_hosts_reply_t,
@@ -21165,26 +22334,14 @@ impl Xcb {
         has_sym!(self, xcb_list_hosts_hosts_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_list_hosts_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `ListHosts` request.
+    #[inline]
     pub unsafe fn xcb_list_hosts_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_list_hosts_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_list_hosts_reply_t {
+    ) -> *mut xcb_list_hosts_reply_t {
         sym!(self, xcb_list_hosts_reply)(c, cookie, e)
     }
 
@@ -21194,17 +22351,14 @@ impl Xcb {
         has_sym!(self, xcb_list_hosts_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetAccessControl` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_access_control_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -21219,14 +22373,8 @@ impl Xcb {
         has_sym!(self, xcb_set_access_control_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetAccessControl` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_access_control(
         &self,
         c: *mut xcb_connection_t,
@@ -21241,17 +22389,14 @@ impl Xcb {
         has_sym!(self, xcb_set_access_control)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `SetCloseDownMode` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_set_close_down_mode_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -21266,14 +22411,8 @@ impl Xcb {
         has_sym!(self, xcb_set_close_down_mode_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetCloseDownMode` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_set_close_down_mode(
         &self,
         c: *mut xcb_connection_t,
@@ -21288,23 +22427,14 @@ impl Xcb {
         has_sym!(self, xcb_set_close_down_mode)
     }
 
-    /**
-     * @brief kills a client
-     *
-     * @param c The connection
-     * @param resource Any resource belonging to the client (for example a Window), used to identify
-     * the client connection.
-     * \n
-     * The special value of `XCB_KILL_ALL_TEMPORARY`, the resources of all clients
-     * that have terminated in `RetainTemporary` (TODO) are destroyed.
-     * @return A cookie
-     *
-     * Forces a close down of the client that created the specified \a resource.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `KillClient` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_kill_client_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -21319,20 +22449,8 @@ impl Xcb {
         has_sym!(self, xcb_kill_client_checked)
     }
 
-    /**
-     * @brief kills a client
-     *
-     * @param c The connection
-     * @param resource Any resource belonging to the client (for example a Window), used to identify
-     * the client connection.
-     * \n
-     * The special value of `XCB_KILL_ALL_TEMPORARY`, the resources of all clients
-     * that have terminated in `RetainTemporary` (TODO) are destroyed.
-     * @return A cookie
-     *
-     * Forces a close down of the client that created the specified \a resource.
-     *
-     */
+    /// Sends a `KillClient` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_kill_client(
         &self,
         c: *mut xcb_connection_t,
@@ -21347,6 +22465,8 @@ impl Xcb {
         has_sym!(self, xcb_kill_client)
     }
 
+    /// Computes the size of a `xcb_rotate_properties_request_t` object.
+    #[inline]
     pub unsafe fn xcb_rotate_properties_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_rotate_properties_sizeof)(_buffer)
     }
@@ -21357,17 +22477,14 @@ impl Xcb {
         has_sym!(self, xcb_rotate_properties_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `RotateProperties` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_rotate_properties_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -21385,14 +22502,8 @@ impl Xcb {
         has_sym!(self, xcb_rotate_properties_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `RotateProperties` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_rotate_properties(
         &self,
         c: *mut xcb_connection_t,
@@ -21410,6 +22521,8 @@ impl Xcb {
         has_sym!(self, xcb_rotate_properties)
     }
 
+    /// Returns a pointer to the `atoms` field of a `xcb_rotate_properties_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_rotate_properties_atoms(
         &self,
         r: *const xcb_rotate_properties_request_t,
@@ -21423,6 +22536,8 @@ impl Xcb {
         has_sym!(self, xcb_rotate_properties_atoms)
     }
 
+    /// Returns the number of elements of the `atoms` field of a `xcb_rotate_properties_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_rotate_properties_atoms_length(
         &self,
         r: *const xcb_rotate_properties_request_t,
@@ -21436,6 +22551,9 @@ impl Xcb {
         has_sym!(self, xcb_rotate_properties_atoms_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `atoms` field of a `xcb_rotate_properties_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_rotate_properties_atoms_end(
         &self,
         r: *const xcb_rotate_properties_request_t,
@@ -21449,17 +22567,14 @@ impl Xcb {
         has_sym!(self, xcb_rotate_properties_atoms_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `ForceScreenSaver` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_force_screen_saver_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -21474,14 +22589,8 @@ impl Xcb {
         has_sym!(self, xcb_force_screen_saver_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `ForceScreenSaver` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_force_screen_saver(
         &self,
         c: *mut xcb_connection_t,
@@ -21496,6 +22605,8 @@ impl Xcb {
         has_sym!(self, xcb_force_screen_saver)
     }
 
+    /// Computes the size of a `xcb_set_pointer_mapping_request_t` object.
+    #[inline]
     pub unsafe fn xcb_set_pointer_mapping_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_set_pointer_mapping_sizeof)(_buffer)
     }
@@ -21506,14 +22617,14 @@ impl Xcb {
         has_sym!(self, xcb_set_pointer_mapping_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetPointerMapping` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_set_pointer_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_set_pointer_mapping_reply`]: Self::xcb_set_pointer_mapping_reply
+    #[inline]
     pub unsafe fn xcb_set_pointer_mapping(
         &self,
         c: *mut xcb_connection_t,
@@ -21529,17 +22640,14 @@ impl Xcb {
         has_sym!(self, xcb_set_pointer_mapping)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `SetPointerMapping` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_set_pointer_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_set_pointer_mapping_reply`]: Self::xcb_set_pointer_mapping_reply
+    #[inline]
     pub unsafe fn xcb_set_pointer_mapping_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -21555,26 +22663,14 @@ impl Xcb {
         has_sym!(self, xcb_set_pointer_mapping_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_set_pointer_mapping_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `SetPointerMapping` request.
+    #[inline]
     pub unsafe fn xcb_set_pointer_mapping_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_set_pointer_mapping_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_set_pointer_mapping_reply_t {
+    ) -> *mut xcb_set_pointer_mapping_reply_t {
         sym!(self, xcb_set_pointer_mapping_reply)(c, cookie, e)
     }
 
@@ -21584,6 +22680,8 @@ impl Xcb {
         has_sym!(self, xcb_set_pointer_mapping_reply)
     }
 
+    /// Computes the size of a `xcb_get_pointer_mapping_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_pointer_mapping_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_pointer_mapping_sizeof)(_buffer)
     }
@@ -21594,14 +22692,14 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_mapping_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetPointerMapping` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_pointer_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_pointer_mapping_reply`]: Self::xcb_get_pointer_mapping_reply
+    #[inline]
     pub unsafe fn xcb_get_pointer_mapping(
         &self,
         c: *mut xcb_connection_t,
@@ -21615,17 +22713,14 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_mapping)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetPointerMapping` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_pointer_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_pointer_mapping_reply`]: Self::xcb_get_pointer_mapping_reply
+    #[inline]
     pub unsafe fn xcb_get_pointer_mapping_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -21639,6 +22734,8 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_mapping_unchecked)
     }
 
+    /// Returns a pointer to the `map` field of a `xcb_get_pointer_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_pointer_mapping_map(
         &self,
         r: *const xcb_get_pointer_mapping_reply_t,
@@ -21652,6 +22749,8 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_mapping_map)
     }
 
+    /// Returns the number of elements of the `map` field of a `xcb_get_pointer_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_pointer_mapping_map_length(
         &self,
         r: *const xcb_get_pointer_mapping_reply_t,
@@ -21665,6 +22764,9 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_mapping_map_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `map` field of a `xcb_get_pointer_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_pointer_mapping_map_end(
         &self,
         r: *const xcb_get_pointer_mapping_reply_t,
@@ -21678,26 +22780,14 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_mapping_map_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_pointer_mapping_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetPointerMapping` request.
+    #[inline]
     pub unsafe fn xcb_get_pointer_mapping_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_pointer_mapping_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_pointer_mapping_reply_t {
+    ) -> *mut xcb_get_pointer_mapping_reply_t {
         sym!(self, xcb_get_pointer_mapping_reply)(c, cookie, e)
     }
 
@@ -21707,6 +22797,8 @@ impl Xcb {
         has_sym!(self, xcb_get_pointer_mapping_reply)
     }
 
+    /// Computes the size of a `xcb_set_modifier_mapping_request_t` object.
+    #[inline]
     pub unsafe fn xcb_set_modifier_mapping_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_set_modifier_mapping_sizeof)(_buffer)
     }
@@ -21717,14 +22809,14 @@ impl Xcb {
         has_sym!(self, xcb_set_modifier_mapping_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `SetModifierMapping` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_set_modifier_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_set_modifier_mapping_reply`]: Self::xcb_set_modifier_mapping_reply
+    #[inline]
     pub unsafe fn xcb_set_modifier_mapping(
         &self,
         c: *mut xcb_connection_t,
@@ -21740,17 +22832,14 @@ impl Xcb {
         has_sym!(self, xcb_set_modifier_mapping)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `SetModifierMapping` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_set_modifier_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_set_modifier_mapping_reply`]: Self::xcb_set_modifier_mapping_reply
+    #[inline]
     pub unsafe fn xcb_set_modifier_mapping_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -21766,26 +22855,14 @@ impl Xcb {
         has_sym!(self, xcb_set_modifier_mapping_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_set_modifier_mapping_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `SetModifierMapping` request.
+    #[inline]
     pub unsafe fn xcb_set_modifier_mapping_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_set_modifier_mapping_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_set_modifier_mapping_reply_t {
+    ) -> *mut xcb_set_modifier_mapping_reply_t {
         sym!(self, xcb_set_modifier_mapping_reply)(c, cookie, e)
     }
 
@@ -21795,6 +22872,8 @@ impl Xcb {
         has_sym!(self, xcb_set_modifier_mapping_reply)
     }
 
+    /// Computes the size of a `xcb_get_modifier_mapping_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_get_modifier_mapping_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_get_modifier_mapping_sizeof)(_buffer)
     }
@@ -21805,14 +22884,14 @@ impl Xcb {
         has_sym!(self, xcb_get_modifier_mapping_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GetModifierMapping` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_modifier_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_modifier_mapping_reply`]: Self::xcb_get_modifier_mapping_reply
+    #[inline]
     pub unsafe fn xcb_get_modifier_mapping(
         &self,
         c: *mut xcb_connection_t,
@@ -21826,17 +22905,14 @@ impl Xcb {
         has_sym!(self, xcb_get_modifier_mapping)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GetModifierMapping` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_get_modifier_mapping_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_get_modifier_mapping_reply`]: Self::xcb_get_modifier_mapping_reply
+    #[inline]
     pub unsafe fn xcb_get_modifier_mapping_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -21850,6 +22926,8 @@ impl Xcb {
         has_sym!(self, xcb_get_modifier_mapping_unchecked)
     }
 
+    /// Returns a pointer to the `keycodes` field of a `xcb_get_modifier_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_modifier_mapping_keycodes(
         &self,
         r: *const xcb_get_modifier_mapping_reply_t,
@@ -21863,6 +22941,8 @@ impl Xcb {
         has_sym!(self, xcb_get_modifier_mapping_keycodes)
     }
 
+    /// Returns the number of elements of the `keycodes` field of a `xcb_get_modifier_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_modifier_mapping_keycodes_length(
         &self,
         r: *const xcb_get_modifier_mapping_reply_t,
@@ -21876,6 +22956,9 @@ impl Xcb {
         has_sym!(self, xcb_get_modifier_mapping_keycodes_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `keycodes` field of a `xcb_get_modifier_mapping_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_get_modifier_mapping_keycodes_end(
         &self,
         r: *const xcb_get_modifier_mapping_reply_t,
@@ -21889,26 +22972,14 @@ impl Xcb {
         has_sym!(self, xcb_get_modifier_mapping_keycodes_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_get_modifier_mapping_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GetModifierMapping` request.
+    #[inline]
     pub unsafe fn xcb_get_modifier_mapping_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_get_modifier_mapping_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_get_modifier_mapping_reply_t {
+    ) -> *mut xcb_get_modifier_mapping_reply_t {
         sym!(self, xcb_get_modifier_mapping_reply)(c, cookie, e)
     }
 
@@ -21918,17 +22989,14 @@ impl Xcb {
         has_sym!(self, xcb_get_modifier_mapping_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `NoOperation` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_no_operation_checked(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_no_operation_checked)(c)
     }
@@ -21939,14 +23007,8 @@ impl Xcb {
         has_sym!(self, xcb_no_operation_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `NoOperation` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_no_operation(&self, c: *mut xcb_connection_t) -> xcb_void_cookie_t {
         sym!(self, xcb_no_operation)(c)
     }

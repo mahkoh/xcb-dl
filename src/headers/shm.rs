@@ -1,17 +1,23 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Shm::SEG` type.
 pub type xcb_shm_seg_t = u32;
 
+/// An iterator over `Shm::SEG` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_seg_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_shm_seg_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -21,9 +27,13 @@ impl Default for xcb_shm_seg_iterator_t {
     }
 }
 
-/// Opcode for xcb_shm_completion.
+/// The opcode for `Shm::Completion` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_shm_completion_event_t`].
 pub const XCB_SHM_COMPLETION: u8 = 0i32 as u8;
 
+/// The `Shm::Completion` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_completion_event_t {
@@ -44,14 +54,24 @@ impl Default for xcb_shm_completion_event_t {
     }
 }
 
-/// Opcode for xcb_shm_bad_seg.
+/// The opcode for `Shm::BadSeg` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_shm_bad_seg_error_t`].
 pub const XCB_SHM_BAD_SEG: u8 = 0i32 as u8;
 
+/// The `Shm::BadSeg` error.
 pub type xcb_shm_bad_seg_error_t = xcb_value_error_t;
 
+/// The cookie for the reply to a `Shm::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_shm_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_shm_query_version_reply`]: XcbShm::xcb_shm_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -61,9 +81,14 @@ impl Default for xcb_shm_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_shm_query_version.
+/// The opcode for `Shm::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_query_version_request_t`].
 pub const XCB_SHM_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `Shm::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_query_version_request_t {
@@ -78,6 +103,7 @@ impl Default for xcb_shm_query_version_request_t {
     }
 }
 
+/// The `Shm::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_query_version_reply_t {
@@ -99,9 +125,14 @@ impl Default for xcb_shm_query_version_reply_t {
     }
 }
 
-/// Opcode for xcb_shm_attach.
+/// The opcode for `Shm::Attach` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_attach_request_t`].
 pub const XCB_SHM_ATTACH: u8 = 1i32 as u8;
 
+/// The `Shm::Attach` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_attach_request_t {
@@ -120,9 +151,14 @@ impl Default for xcb_shm_attach_request_t {
     }
 }
 
-/// Opcode for xcb_shm_detach.
+/// The opcode for `Shm::Detach` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_detach_request_t`].
 pub const XCB_SHM_DETACH: u8 = 2i32 as u8;
 
+/// The `Shm::Detach` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_detach_request_t {
@@ -138,9 +174,14 @@ impl Default for xcb_shm_detach_request_t {
     }
 }
 
-/// Opcode for xcb_shm_put_image.
+/// The opcode for `Shm::PutImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_put_image_request_t`].
 pub const XCB_SHM_PUT_IMAGE: u8 = 3i32 as u8;
 
+/// The `Shm::PutImage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_put_image_request_t {
@@ -171,9 +212,15 @@ impl Default for xcb_shm_put_image_request_t {
     }
 }
 
+/// The cookie for the reply to a `Shm::GetImage` request.
+///
+/// Pass this cookie to [`xcb_shm_get_image_reply`] to retrieve the reply.
+///
+/// [`xcb_shm_get_image_reply`]: XcbShm::xcb_shm_get_image_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_get_image_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -183,9 +230,14 @@ impl Default for xcb_shm_get_image_cookie_t {
     }
 }
 
-/// Opcode for xcb_shm_get_image.
+/// The opcode for `Shm::GetImage` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_get_image_request_t`].
 pub const XCB_SHM_GET_IMAGE: u8 = 4i32 as u8;
 
+/// The `Shm::GetImage` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_get_image_request_t {
@@ -210,6 +262,7 @@ impl Default for xcb_shm_get_image_request_t {
     }
 }
 
+/// The `Shm::GetImage` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_get_image_reply_t {
@@ -227,9 +280,14 @@ impl Default for xcb_shm_get_image_reply_t {
     }
 }
 
-/// Opcode for xcb_shm_create_pixmap.
+/// The opcode for `Shm::CreatePixmap` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_create_pixmap_request_t`].
 pub const XCB_SHM_CREATE_PIXMAP: u8 = 5i32 as u8;
 
+/// The `Shm::CreatePixmap` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_create_pixmap_request_t {
@@ -252,9 +310,14 @@ impl Default for xcb_shm_create_pixmap_request_t {
     }
 }
 
-/// Opcode for xcb_shm_attach_fd.
+/// The opcode for `Shm::AttachFd` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_attach_fd_request_t`].
 pub const XCB_SHM_ATTACH_FD: u8 = 6i32 as u8;
 
+/// The `Shm::AttachFd` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_attach_fd_request_t {
@@ -272,9 +335,15 @@ impl Default for xcb_shm_attach_fd_request_t {
     }
 }
 
+/// The cookie for the reply to a `Shm::CreateSegment` request.
+///
+/// Pass this cookie to [`xcb_shm_create_segment_reply`] to retrieve the reply.
+///
+/// [`xcb_shm_create_segment_reply`]: XcbShm::xcb_shm_create_segment_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_create_segment_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -284,9 +353,14 @@ impl Default for xcb_shm_create_segment_cookie_t {
     }
 }
 
-/// Opcode for xcb_shm_create_segment.
+/// The opcode for `Shm::CreateSegment` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShm::xcb_shm_id()`], then the type of the request is
+/// [`xcb_shm_create_segment_request_t`].
 pub const XCB_SHM_CREATE_SEGMENT: u8 = 7i32 as u8;
 
+/// The `Shm::CreateSegment` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_create_segment_request_t {
@@ -305,6 +379,11 @@ impl Default for xcb_shm_create_segment_request_t {
     }
 }
 
+/// The `Shm::CreateSegment` reply.
+///
+/// This reply contains file descriptors that can be accessed with [`xcb_shm_create_segment_reply_fds`].
+///
+/// [`xcb_shm_create_segment_reply_fds`]: XcbShm::xcb_shm_create_segment_reply_fds
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shm_create_segment_reply_t {
@@ -335,7 +414,7 @@ pub(crate) struct XcbShmShm {
             c: *mut xcb_connection_t,
             cookie: xcb_shm_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_shm_query_version_reply_t,
+        ) -> *mut xcb_shm_query_version_reply_t,
     >,
     xcb_shm_attach_checked: LazySymbol<
         unsafe fn(
@@ -430,7 +509,7 @@ pub(crate) struct XcbShmShm {
             c: *mut xcb_connection_t,
             cookie: xcb_shm_get_image_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_shm_get_image_reply_t,
+        ) -> *mut xcb_shm_get_image_reply_t,
     >,
     xcb_shm_create_pixmap_checked: LazySymbol<
         unsafe fn(
@@ -493,7 +572,7 @@ pub(crate) struct XcbShmShm {
             c: *mut xcb_connection_t,
             cookie: xcb_shm_create_segment_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_shm_create_segment_reply_t,
+        ) -> *mut xcb_shm_create_segment_reply_t,
     >,
     xcb_shm_create_segment_reply_fds: LazySymbol<
         unsafe fn(
@@ -522,6 +601,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_shm")]
 impl XcbShm {
+    /// The libxcb identifier of the `Shm` extension.
+    #[inline]
     pub fn xcb_shm_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_shm_id) }
     }
@@ -532,6 +613,8 @@ impl XcbShm {
         has_sym!(self, xcb_shm_id)
     }
 
+    /// Advances a `xcb_shm_seg_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_shm_seg_next(&self, i: *mut xcb_shm_seg_iterator_t) {
         sym!(self, xcb_shm_seg_next)(i)
     }
@@ -542,6 +625,8 @@ impl XcbShm {
         has_sym!(self, xcb_shm_seg_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_shm_seg_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_shm_seg_end(&self, i: xcb_shm_seg_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_shm_seg_end)(i)
     }
@@ -552,14 +637,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_seg_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shm_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shm_query_version_reply`]: Self::xcb_shm_query_version_reply
+    #[inline]
     pub unsafe fn xcb_shm_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -573,17 +658,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Shm::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shm_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shm_query_version_reply`]: Self::xcb_shm_query_version_reply
+    #[inline]
     pub unsafe fn xcb_shm_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -597,26 +679,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_shm_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Shm::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_shm_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_shm_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_shm_query_version_reply_t {
+    ) -> *mut xcb_shm_query_version_reply_t {
         sym!(self, xcb_shm_query_version_reply)(c, cookie, e)
     }
 
@@ -626,17 +696,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_query_version_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shm::Attach` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shm_attach_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -653,14 +720,8 @@ impl XcbShm {
         has_sym!(self, xcb_shm_attach_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::Attach` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shm_attach(
         &self,
         c: *mut xcb_connection_t,
@@ -677,17 +738,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_attach)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shm::Detach` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shm_detach_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -702,14 +760,8 @@ impl XcbShm {
         has_sym!(self, xcb_shm_detach_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::Detach` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shm_detach(
         &self,
         c: *mut xcb_connection_t,
@@ -724,17 +776,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_detach)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shm::PutImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shm_put_image_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -780,14 +829,8 @@ impl XcbShm {
         has_sym!(self, xcb_shm_put_image_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::PutImage` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shm_put_image(
         &self,
         c: *mut xcb_connection_t,
@@ -833,14 +876,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_put_image)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::GetImage` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shm_get_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shm_get_image_reply`]: Self::xcb_shm_get_image_reply
+    #[inline]
     pub unsafe fn xcb_shm_get_image(
         &self,
         c: *mut xcb_connection_t,
@@ -865,17 +908,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_get_image)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Shm::GetImage` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shm_get_image_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shm_get_image_reply`]: Self::xcb_shm_get_image_reply
+    #[inline]
     pub unsafe fn xcb_shm_get_image_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -900,26 +940,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_get_image_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_shm_get_image_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Shm::GetImage` request.
+    #[inline]
     pub unsafe fn xcb_shm_get_image_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_shm_get_image_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_shm_get_image_reply_t {
+    ) -> *mut xcb_shm_get_image_reply_t {
         sym!(self, xcb_shm_get_image_reply)(c, cookie, e)
     }
 
@@ -929,17 +957,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_get_image_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shm::CreatePixmap` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shm_create_pixmap_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -962,14 +987,8 @@ impl XcbShm {
         has_sym!(self, xcb_shm_create_pixmap_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::CreatePixmap` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shm_create_pixmap(
         &self,
         c: *mut xcb_connection_t,
@@ -990,17 +1009,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_create_pixmap)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shm::AttachFd` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shm_attach_fd_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1017,14 +1033,8 @@ impl XcbShm {
         has_sym!(self, xcb_shm_attach_fd_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::AttachFd` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shm_attach_fd(
         &self,
         c: *mut xcb_connection_t,
@@ -1041,14 +1051,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_attach_fd)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shm::CreateSegment` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shm_create_segment_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shm_create_segment_reply`]: Self::xcb_shm_create_segment_reply
+    #[inline]
     pub unsafe fn xcb_shm_create_segment(
         &self,
         c: *mut xcb_connection_t,
@@ -1065,17 +1075,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_create_segment)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Shm::CreateSegment` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shm_create_segment_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shm_create_segment_reply`]: Self::xcb_shm_create_segment_reply
+    #[inline]
     pub unsafe fn xcb_shm_create_segment_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1092,26 +1099,14 @@ impl XcbShm {
         has_sym!(self, xcb_shm_create_segment_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_shm_create_segment_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Shm::CreateSegment` request.
+    #[inline]
     pub unsafe fn xcb_shm_create_segment_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_shm_create_segment_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_shm_create_segment_reply_t {
+    ) -> *mut xcb_shm_create_segment_reply_t {
         sym!(self, xcb_shm_create_segment_reply)(c, cookie, e)
     }
 
@@ -1120,6 +1115,9 @@ impl XcbShm {
     pub fn has_xcb_shm_create_segment_reply(&self) -> bool {
         has_sym!(self, xcb_shm_create_segment_reply)
     }
+
+    /// Retrieves the file descriptors from the reply to a `Shm::CreateSegment` request.
+    #[inline]
     pub unsafe fn xcb_shm_create_segment_reply_fds(
         &self,
         c: *mut xcb_connection_t,
@@ -1163,16 +1161,6 @@ mod test {
         assert!(lib.has_xcb_shm_create_segment());
         assert!(lib.has_xcb_shm_create_segment_unchecked());
         assert!(lib.has_xcb_shm_create_segment_reply());
-
-        /**
-         * Return the reply fds
-         * @param c      The connection
-         * @param reply  The reply
-         *
-         * Returns the array of reply fds of the request asked by
-         *
-         * The returned value must be freed by the caller using free().
-         */
         assert!(lib.has_xcb_shm_create_segment_reply_fds());
     }
 }

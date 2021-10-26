@@ -1,13 +1,20 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The cookie for the reply to a `BigRequests::Enable` request.
+///
+/// Pass this cookie to [`xcb_big_requests_enable_reply`] to retrieve the reply.
+///
+/// [`xcb_big_requests_enable_reply`]: Xcb::xcb_big_requests_enable_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_big_requests_enable_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -17,9 +24,14 @@ impl Default for xcb_big_requests_enable_cookie_t {
     }
 }
 
-/// Opcode for xcb_big_requests_enable.
+/// The opcode for `BigRequests::Enable` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`Xcb::xcb_big_requests_id()`], then the type of the request is
+/// [`xcb_big_requests_enable_request_t`].
 pub const XCB_BIG_REQUESTS_ENABLE: u8 = 0i32 as u8;
 
+/// The `BigRequests::Enable` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_big_requests_enable_request_t {
@@ -34,6 +46,7 @@ impl Default for xcb_big_requests_enable_request_t {
     }
 }
 
+/// The `BigRequests::Enable` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_big_requests_enable_reply_t {
@@ -61,7 +74,7 @@ pub(crate) struct XcbBigreq {
             c: *mut xcb_connection_t,
             cookie: xcb_big_requests_enable_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_big_requests_enable_reply_t,
+        ) -> *mut xcb_big_requests_enable_reply_t,
     >,
 }
 
@@ -86,6 +99,8 @@ macro_rules! has_sym {
 }
 
 impl Xcb {
+    /// The libxcb identifier of the `BigRequests` extension.
+    #[inline]
     pub fn xcb_big_requests_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_big_requests_id) }
     }
@@ -96,14 +111,14 @@ impl Xcb {
         has_sym!(self, xcb_big_requests_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `BigRequests::Enable` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_big_requests_enable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_big_requests_enable_reply`]: Self::xcb_big_requests_enable_reply
+    #[inline]
     pub unsafe fn xcb_big_requests_enable(
         &self,
         c: *mut xcb_connection_t,
@@ -117,17 +132,14 @@ impl Xcb {
         has_sym!(self, xcb_big_requests_enable)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `BigRequests::Enable` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_big_requests_enable_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_big_requests_enable_reply`]: Self::xcb_big_requests_enable_reply
+    #[inline]
     pub unsafe fn xcb_big_requests_enable_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -141,26 +153,14 @@ impl Xcb {
         has_sym!(self, xcb_big_requests_enable_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_big_requests_enable_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `BigRequests::Enable` request.
+    #[inline]
     pub unsafe fn xcb_big_requests_enable_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_big_requests_enable_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_big_requests_enable_reply_t {
+    ) -> *mut xcb_big_requests_enable_reply_t {
         sym!(self, xcb_big_requests_enable_reply)(c, cookie, e)
     }
 

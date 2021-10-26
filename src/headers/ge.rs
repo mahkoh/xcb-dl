@@ -1,13 +1,20 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The cookie for the reply to a `GenericEvent::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_genericevent_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_genericevent_query_version_reply`]: XcbGe::xcb_genericevent_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_genericevent_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -17,9 +24,14 @@ impl Default for xcb_genericevent_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_genericevent_query_version.
+/// The opcode for `GenericEvent::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbGe::xcb_genericevent_id()`], then the type of the request is
+/// [`xcb_genericevent_query_version_request_t`].
 pub const XCB_GENERICEVENT_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `GenericEvent::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_genericevent_query_version_request_t {
@@ -36,6 +48,7 @@ impl Default for xcb_genericevent_query_version_request_t {
     }
 }
 
+/// The `GenericEvent::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_genericevent_query_version_reply_t {
@@ -76,7 +89,7 @@ pub(crate) struct XcbGeGe {
             c: *mut xcb_connection_t,
             cookie: xcb_genericevent_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_genericevent_query_version_reply_t,
+        ) -> *mut xcb_genericevent_query_version_reply_t,
     >,
 }
 
@@ -99,6 +112,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_ge")]
 impl XcbGe {
+    /// The libxcb identifier of the `GenericEvent` extension.
+    #[inline]
     pub fn xcb_genericevent_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_genericevent_id) }
     }
@@ -109,14 +124,14 @@ impl XcbGe {
         has_sym!(self, xcb_genericevent_id)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `GenericEvent::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_genericevent_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_genericevent_query_version_reply`]: Self::xcb_genericevent_query_version_reply
+    #[inline]
     pub unsafe fn xcb_genericevent_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -132,17 +147,14 @@ impl XcbGe {
         has_sym!(self, xcb_genericevent_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `GenericEvent::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_genericevent_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_genericevent_query_version_reply`]: Self::xcb_genericevent_query_version_reply
+    #[inline]
     pub unsafe fn xcb_genericevent_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -162,26 +174,14 @@ impl XcbGe {
         has_sym!(self, xcb_genericevent_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_genericevent_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `GenericEvent::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_genericevent_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_genericevent_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_genericevent_query_version_reply_t {
+    ) -> *mut xcb_genericevent_query_version_reply_t {
         sym!(self, xcb_genericevent_query_version_reply)(c, cookie, e)
     }
 

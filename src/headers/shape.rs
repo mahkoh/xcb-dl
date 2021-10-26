@@ -1,17 +1,23 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Shape::OP` type.
 pub type xcb_shape_op_t = u8;
 
+/// An iterator over `Shape::OP` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_op_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_shape_op_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -21,13 +27,18 @@ impl Default for xcb_shape_op_iterator_t {
     }
 }
 
+/// The `Shape::KIND` type.
 pub type xcb_shape_kind_t = u8;
 
+/// An iterator over `Shape::KIND` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_kind_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_shape_kind_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -37,21 +48,65 @@ impl Default for xcb_shape_kind_iterator_t {
     }
 }
 
+/// The `Shape::SO` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Shape::SO::Set`](XCB_SHAPE_SO_SET)
+/// - [`Shape::SO::Union`](XCB_SHAPE_SO_UNION)
+/// - [`Shape::SO::Intersect`](XCB_SHAPE_SO_INTERSECT)
+/// - [`Shape::SO::Subtract`](XCB_SHAPE_SO_SUBTRACT)
+/// - [`Shape::SO::Invert`](XCB_SHAPE_SO_INVERT)
 pub type xcb_shape_so_t = u32;
+/// The `Shape::SO::Set` enum variant.
+///
+/// This is a variant of [`xcb_shape_so_t`].
 pub const XCB_SHAPE_SO_SET: xcb_shape_so_t = 0;
+/// The `Shape::SO::Union` enum variant.
+///
+/// This is a variant of [`xcb_shape_so_t`].
 pub const XCB_SHAPE_SO_UNION: xcb_shape_so_t = 1;
+/// The `Shape::SO::Intersect` enum variant.
+///
+/// This is a variant of [`xcb_shape_so_t`].
 pub const XCB_SHAPE_SO_INTERSECT: xcb_shape_so_t = 2;
+/// The `Shape::SO::Subtract` enum variant.
+///
+/// This is a variant of [`xcb_shape_so_t`].
 pub const XCB_SHAPE_SO_SUBTRACT: xcb_shape_so_t = 3;
+/// The `Shape::SO::Invert` enum variant.
+///
+/// This is a variant of [`xcb_shape_so_t`].
 pub const XCB_SHAPE_SO_INVERT: xcb_shape_so_t = 4;
 
+/// The `Shape::SK` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Shape::SK::Bounding`](XCB_SHAPE_SK_BOUNDING)
+/// - [`Shape::SK::Clip`](XCB_SHAPE_SK_CLIP)
+/// - [`Shape::SK::Input`](XCB_SHAPE_SK_INPUT)
 pub type xcb_shape_sk_t = u32;
+/// The `Shape::SK::Bounding` enum variant.
+///
+/// This is a variant of [`xcb_shape_sk_t`].
 pub const XCB_SHAPE_SK_BOUNDING: xcb_shape_sk_t = 0;
+/// The `Shape::SK::Clip` enum variant.
+///
+/// This is a variant of [`xcb_shape_sk_t`].
 pub const XCB_SHAPE_SK_CLIP: xcb_shape_sk_t = 1;
+/// The `Shape::SK::Input` enum variant.
+///
+/// This is a variant of [`xcb_shape_sk_t`].
 pub const XCB_SHAPE_SK_INPUT: xcb_shape_sk_t = 2;
 
-/// Opcode for xcb_shape_notify.
+/// The opcode for `Shape::Notify` events.
+///
+/// If this value plus the extension event base appears in [`xcb_generic_event_t::response_type`],
+/// then the type of the event is [`xcb_shape_notify_event_t`].
 pub const XCB_SHAPE_NOTIFY: u8 = 0i32 as u8;
 
+/// The `Shape::Notify` event.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_notify_event_t {
@@ -74,9 +129,15 @@ impl Default for xcb_shape_notify_event_t {
     }
 }
 
+/// The cookie for the reply to a `Shape::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_shape_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_shape_query_version_reply`]: XcbShape::xcb_shape_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -86,9 +147,14 @@ impl Default for xcb_shape_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_shape_query_version.
+/// The opcode for `Shape::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_query_version_request_t`].
 pub const XCB_SHAPE_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `Shape::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_query_version_request_t {
@@ -103,6 +169,7 @@ impl Default for xcb_shape_query_version_request_t {
     }
 }
 
+/// The `Shape::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_query_version_reply_t {
@@ -120,9 +187,18 @@ impl Default for xcb_shape_query_version_reply_t {
     }
 }
 
-/// Opcode for xcb_shape_rectangles.
+/// The opcode for `Shape::Rectangles` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_rectangles_request_t`].
 pub const XCB_SHAPE_RECTANGLES: u8 = 1i32 as u8;
 
+/// The `Shape::Rectangles` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_rectangles_request_t {
@@ -144,9 +220,14 @@ impl Default for xcb_shape_rectangles_request_t {
     }
 }
 
-/// Opcode for xcb_shape_mask.
+/// The opcode for `Shape::Mask` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_mask_request_t`].
 pub const XCB_SHAPE_MASK: u8 = 2i32 as u8;
 
+/// The `Shape::Mask` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_mask_request_t {
@@ -168,9 +249,14 @@ impl Default for xcb_shape_mask_request_t {
     }
 }
 
-/// Opcode for xcb_shape_combine.
+/// The opcode for `Shape::Combine` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_combine_request_t`].
 pub const XCB_SHAPE_COMBINE: u8 = 3i32 as u8;
 
+/// The `Shape::Combine` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_combine_request_t {
@@ -193,9 +279,14 @@ impl Default for xcb_shape_combine_request_t {
     }
 }
 
-/// Opcode for xcb_shape_offset.
+/// The opcode for `Shape::Offset` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_offset_request_t`].
 pub const XCB_SHAPE_OFFSET: u8 = 4i32 as u8;
 
+/// The `Shape::Offset` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_offset_request_t {
@@ -215,9 +306,15 @@ impl Default for xcb_shape_offset_request_t {
     }
 }
 
+/// The cookie for the reply to a `Shape::QueryExtents` request.
+///
+/// Pass this cookie to [`xcb_shape_query_extents_reply`] to retrieve the reply.
+///
+/// [`xcb_shape_query_extents_reply`]: XcbShape::xcb_shape_query_extents_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_query_extents_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -227,9 +324,14 @@ impl Default for xcb_shape_query_extents_cookie_t {
     }
 }
 
-/// Opcode for xcb_shape_query_extents.
+/// The opcode for `Shape::QueryExtents` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_query_extents_request_t`].
 pub const XCB_SHAPE_QUERY_EXTENTS: u8 = 5i32 as u8;
 
+/// The `Shape::QueryExtents` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_query_extents_request_t {
@@ -245,6 +347,7 @@ impl Default for xcb_shape_query_extents_request_t {
     }
 }
 
+/// The `Shape::QueryExtents` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_query_extents_reply_t {
@@ -271,9 +374,14 @@ impl Default for xcb_shape_query_extents_reply_t {
     }
 }
 
-/// Opcode for xcb_shape_select_input.
+/// The opcode for `Shape::SelectInput` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_select_input_request_t`].
 pub const XCB_SHAPE_SELECT_INPUT: u8 = 6i32 as u8;
 
+/// The `Shape::SelectInput` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_select_input_request_t {
@@ -291,9 +399,15 @@ impl Default for xcb_shape_select_input_request_t {
     }
 }
 
+/// The cookie for the reply to a `Shape::InputSelected` request.
+///
+/// Pass this cookie to [`xcb_shape_input_selected_reply`] to retrieve the reply.
+///
+/// [`xcb_shape_input_selected_reply`]: XcbShape::xcb_shape_input_selected_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_input_selected_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -303,9 +417,14 @@ impl Default for xcb_shape_input_selected_cookie_t {
     }
 }
 
-/// Opcode for xcb_shape_input_selected.
+/// The opcode for `Shape::InputSelected` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_input_selected_request_t`].
 pub const XCB_SHAPE_INPUT_SELECTED: u8 = 7i32 as u8;
 
+/// The `Shape::InputSelected` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_input_selected_request_t {
@@ -321,6 +440,7 @@ impl Default for xcb_shape_input_selected_request_t {
     }
 }
 
+/// The `Shape::InputSelected` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_input_selected_reply_t {
@@ -336,9 +456,15 @@ impl Default for xcb_shape_input_selected_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Shape::GetRectangles` request.
+///
+/// Pass this cookie to [`xcb_shape_get_rectangles_reply`] to retrieve the reply.
+///
+/// [`xcb_shape_get_rectangles_reply`]: XcbShape::xcb_shape_get_rectangles_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_get_rectangles_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -348,9 +474,14 @@ impl Default for xcb_shape_get_rectangles_cookie_t {
     }
 }
 
-/// Opcode for xcb_shape_get_rectangles.
+/// The opcode for `Shape::GetRectangles` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbShape::xcb_shape_id()`], then the type of the request is
+/// [`xcb_shape_get_rectangles_request_t`].
 pub const XCB_SHAPE_GET_RECTANGLES: u8 = 8i32 as u8;
 
+/// The `Shape::GetRectangles` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_get_rectangles_request_t {
@@ -368,6 +499,11 @@ impl Default for xcb_shape_get_rectangles_request_t {
     }
 }
 
+/// The `Shape::GetRectangles` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_shape_get_rectangles_reply_t {
@@ -402,7 +538,7 @@ pub(crate) struct XcbShapeShape {
             c: *mut xcb_connection_t,
             cookie: xcb_shape_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_shape_query_version_reply_t,
+        ) -> *mut xcb_shape_query_version_reply_t,
     >,
     xcb_shape_rectangles_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, rectangles_len: u32) -> c_int>,
@@ -519,7 +655,7 @@ pub(crate) struct XcbShapeShape {
             c: *mut xcb_connection_t,
             cookie: xcb_shape_query_extents_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_shape_query_extents_reply_t,
+        ) -> *mut xcb_shape_query_extents_reply_t,
     >,
     xcb_shape_select_input_checked: LazySymbol<
         unsafe fn(
@@ -552,7 +688,7 @@ pub(crate) struct XcbShapeShape {
             c: *mut xcb_connection_t,
             cookie: xcb_shape_input_selected_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_shape_input_selected_reply_t,
+        ) -> *mut xcb_shape_input_selected_reply_t,
     >,
     xcb_shape_get_rectangles_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_shape_get_rectangles: LazySymbol<
@@ -581,7 +717,7 @@ pub(crate) struct XcbShapeShape {
             c: *mut xcb_connection_t,
             cookie: xcb_shape_get_rectangles_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_shape_get_rectangles_reply_t,
+        ) -> *mut xcb_shape_get_rectangles_reply_t,
     >,
 }
 
@@ -607,6 +743,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_shape")]
 impl XcbShape {
+    /// The libxcb identifier of the `Shape` extension.
+    #[inline]
     pub fn xcb_shape_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_shape_id) }
     }
@@ -617,6 +755,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_id)
     }
 
+    /// Advances a `xcb_shape_op_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_shape_op_next(&self, i: *mut xcb_shape_op_iterator_t) {
         sym!(self, xcb_shape_op_next)(i)
     }
@@ -627,6 +767,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_op_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_shape_op_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_shape_op_end(&self, i: xcb_shape_op_iterator_t) -> xcb_generic_iterator_t {
         sym!(self, xcb_shape_op_end)(i)
     }
@@ -637,6 +779,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_op_end)
     }
 
+    /// Advances a `xcb_shape_kind_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_shape_kind_next(&self, i: *mut xcb_shape_kind_iterator_t) {
         sym!(self, xcb_shape_kind_next)(i)
     }
@@ -647,6 +791,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_kind_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_shape_kind_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_shape_kind_end(
         &self,
         i: xcb_shape_kind_iterator_t,
@@ -660,14 +806,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_kind_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_query_version_reply`]: Self::xcb_shape_query_version_reply
+    #[inline]
     pub unsafe fn xcb_shape_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -681,17 +827,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Shape::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_query_version_reply`]: Self::xcb_shape_query_version_reply
+    #[inline]
     pub unsafe fn xcb_shape_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -705,26 +848,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_shape_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Shape::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_shape_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_shape_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_shape_query_version_reply_t {
+    ) -> *mut xcb_shape_query_version_reply_t {
         sym!(self, xcb_shape_query_version_reply)(c, cookie, e)
     }
 
@@ -734,6 +865,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_query_version_reply)
     }
 
+    /// Computes the size of a `xcb_shape_rectangles_request_t` object.
+    #[inline]
     pub unsafe fn xcb_shape_rectangles_sizeof(
         &self,
         _buffer: *const c_void,
@@ -748,17 +881,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_rectangles_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shape::Rectangles` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shape_rectangles_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -790,14 +920,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_rectangles_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::Rectangles` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shape_rectangles(
         &self,
         c: *mut xcb_connection_t,
@@ -829,6 +953,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_rectangles)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_shape_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_shape_rectangles_rectangles(
         &self,
         r: *const xcb_shape_rectangles_request_t,
@@ -842,6 +968,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_rectangles_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_shape_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_shape_rectangles_rectangles_length(
         &self,
         r: *const xcb_shape_rectangles_request_t,
@@ -855,6 +983,9 @@ impl XcbShape {
         has_sym!(self, xcb_shape_rectangles_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_shape_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_shape_rectangles_rectangles_iterator(
         &self,
         r: *const xcb_shape_rectangles_request_t,
@@ -868,17 +999,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_rectangles_rectangles_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shape::Mask` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shape_mask_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -906,14 +1034,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_mask_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::Mask` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shape_mask(
         &self,
         c: *mut xcb_connection_t,
@@ -941,17 +1063,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_mask)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shape::Combine` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shape_combine_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -981,14 +1100,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_combine_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::Combine` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shape_combine(
         &self,
         c: *mut xcb_connection_t,
@@ -1018,17 +1131,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_combine)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shape::Offset` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shape_offset_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1052,14 +1162,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_offset_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::Offset` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shape_offset(
         &self,
         c: *mut xcb_connection_t,
@@ -1077,14 +1181,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_offset)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::QueryExtents` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_query_extents_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_query_extents_reply`]: Self::xcb_shape_query_extents_reply
+    #[inline]
     pub unsafe fn xcb_shape_query_extents(
         &self,
         c: *mut xcb_connection_t,
@@ -1099,17 +1203,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_query_extents)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Shape::QueryExtents` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_query_extents_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_query_extents_reply`]: Self::xcb_shape_query_extents_reply
+    #[inline]
     pub unsafe fn xcb_shape_query_extents_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1124,26 +1225,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_query_extents_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_shape_query_extents_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Shape::QueryExtents` request.
+    #[inline]
     pub unsafe fn xcb_shape_query_extents_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_shape_query_extents_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_shape_query_extents_reply_t {
+    ) -> *mut xcb_shape_query_extents_reply_t {
         sym!(self, xcb_shape_query_extents_reply)(c, cookie, e)
     }
 
@@ -1153,17 +1242,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_query_extents_reply)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Shape::SelectInput` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_shape_select_input_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -1179,14 +1265,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_select_input_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::SelectInput` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_shape_select_input(
         &self,
         c: *mut xcb_connection_t,
@@ -1202,14 +1282,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_select_input)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::InputSelected` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_input_selected_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_input_selected_reply`]: Self::xcb_shape_input_selected_reply
+    #[inline]
     pub unsafe fn xcb_shape_input_selected(
         &self,
         c: *mut xcb_connection_t,
@@ -1224,17 +1304,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_input_selected)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Shape::InputSelected` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_input_selected_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_input_selected_reply`]: Self::xcb_shape_input_selected_reply
+    #[inline]
     pub unsafe fn xcb_shape_input_selected_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1249,26 +1326,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_input_selected_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_shape_input_selected_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Shape::InputSelected` request.
+    #[inline]
     pub unsafe fn xcb_shape_input_selected_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_shape_input_selected_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_shape_input_selected_reply_t {
+    ) -> *mut xcb_shape_input_selected_reply_t {
         sym!(self, xcb_shape_input_selected_reply)(c, cookie, e)
     }
 
@@ -1278,6 +1343,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_input_selected_reply)
     }
 
+    /// Computes the size of a `xcb_shape_get_rectangles_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_shape_get_rectangles_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_shape_get_rectangles_sizeof)(_buffer)
     }
@@ -1288,14 +1355,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_get_rectangles_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Shape::GetRectangles` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_get_rectangles_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_get_rectangles_reply`]: Self::xcb_shape_get_rectangles_reply
+    #[inline]
     pub unsafe fn xcb_shape_get_rectangles(
         &self,
         c: *mut xcb_connection_t,
@@ -1311,17 +1378,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_get_rectangles)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Shape::GetRectangles` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_shape_get_rectangles_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_shape_get_rectangles_reply`]: Self::xcb_shape_get_rectangles_reply
+    #[inline]
     pub unsafe fn xcb_shape_get_rectangles_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -1337,6 +1401,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_get_rectangles_unchecked)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_shape_get_rectangles_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_shape_get_rectangles_rectangles(
         &self,
         r: *const xcb_shape_get_rectangles_reply_t,
@@ -1350,6 +1416,8 @@ impl XcbShape {
         has_sym!(self, xcb_shape_get_rectangles_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_shape_get_rectangles_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_shape_get_rectangles_rectangles_length(
         &self,
         r: *const xcb_shape_get_rectangles_reply_t,
@@ -1363,6 +1431,9 @@ impl XcbShape {
         has_sym!(self, xcb_shape_get_rectangles_rectangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_shape_get_rectangles_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_shape_get_rectangles_rectangles_iterator(
         &self,
         r: *const xcb_shape_get_rectangles_reply_t,
@@ -1376,26 +1447,14 @@ impl XcbShape {
         has_sym!(self, xcb_shape_get_rectangles_rectangles_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_shape_get_rectangles_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Shape::GetRectangles` request.
+    #[inline]
     pub unsafe fn xcb_shape_get_rectangles_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_shape_get_rectangles_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_shape_get_rectangles_reply_t {
+    ) -> *mut xcb_shape_get_rectangles_reply_t {
         sym!(self, xcb_shape_get_rectangles_reply)(c, cookie, e)
     }
 

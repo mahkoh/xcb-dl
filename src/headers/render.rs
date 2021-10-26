@@ -1,116 +1,486 @@
 // This file was generated using generate.py. Do not edit.
+#![allow(unused_macros)]
 
 use crate::ffi::*;
 use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The `Render::PictType` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::PictType::Indexed`](XCB_RENDER_PICT_TYPE_INDEXED)
+/// - [`Render::PictType::Direct`](XCB_RENDER_PICT_TYPE_DIRECT)
 pub type xcb_render_pict_type_t = u32;
+/// The `Render::PictType::Indexed` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_type_t`].
 pub const XCB_RENDER_PICT_TYPE_INDEXED: xcb_render_pict_type_t = 0;
+/// The `Render::PictType::Direct` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_type_t`].
 pub const XCB_RENDER_PICT_TYPE_DIRECT: xcb_render_pict_type_t = 1;
 
+/// The `Render::Picture` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::Picture::None`](XCB_RENDER_PICTURE_NONE)
 pub type xcb_render_picture_enum_t = u32;
+/// The `Render::Picture::None` enum variant.
+///
+/// This is a variant of [`xcb_render_picture_enum_t`].
 pub const XCB_RENDER_PICTURE_NONE: xcb_render_picture_enum_t = 0;
 
+/// The `Render::PictOp` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::PictOp::Clear`](XCB_RENDER_PICT_OP_CLEAR)
+/// - [`Render::PictOp::Src`](XCB_RENDER_PICT_OP_SRC)
+/// - [`Render::PictOp::Dst`](XCB_RENDER_PICT_OP_DST)
+/// - [`Render::PictOp::Over`](XCB_RENDER_PICT_OP_OVER)
+/// - [`Render::PictOp::OverReverse`](XCB_RENDER_PICT_OP_OVER_REVERSE)
+/// - [`Render::PictOp::In`](XCB_RENDER_PICT_OP_IN)
+/// - [`Render::PictOp::InReverse`](XCB_RENDER_PICT_OP_IN_REVERSE)
+/// - [`Render::PictOp::Out`](XCB_RENDER_PICT_OP_OUT)
+/// - [`Render::PictOp::OutReverse`](XCB_RENDER_PICT_OP_OUT_REVERSE)
+/// - [`Render::PictOp::Atop`](XCB_RENDER_PICT_OP_ATOP)
+/// - [`Render::PictOp::AtopReverse`](XCB_RENDER_PICT_OP_ATOP_REVERSE)
+/// - [`Render::PictOp::Xor`](XCB_RENDER_PICT_OP_XOR)
+/// - [`Render::PictOp::Add`](XCB_RENDER_PICT_OP_ADD)
+/// - [`Render::PictOp::Saturate`](XCB_RENDER_PICT_OP_SATURATE)
+/// - [`Render::PictOp::DisjointClear`](XCB_RENDER_PICT_OP_DISJOINT_CLEAR)
+/// - [`Render::PictOp::DisjointSrc`](XCB_RENDER_PICT_OP_DISJOINT_SRC)
+/// - [`Render::PictOp::DisjointDst`](XCB_RENDER_PICT_OP_DISJOINT_DST)
+/// - [`Render::PictOp::DisjointOver`](XCB_RENDER_PICT_OP_DISJOINT_OVER)
+/// - [`Render::PictOp::DisjointOverReverse`](XCB_RENDER_PICT_OP_DISJOINT_OVER_REVERSE)
+/// - [`Render::PictOp::DisjointIn`](XCB_RENDER_PICT_OP_DISJOINT_IN)
+/// - [`Render::PictOp::DisjointInReverse`](XCB_RENDER_PICT_OP_DISJOINT_IN_REVERSE)
+/// - [`Render::PictOp::DisjointOut`](XCB_RENDER_PICT_OP_DISJOINT_OUT)
+/// - [`Render::PictOp::DisjointOutReverse`](XCB_RENDER_PICT_OP_DISJOINT_OUT_REVERSE)
+/// - [`Render::PictOp::DisjointAtop`](XCB_RENDER_PICT_OP_DISJOINT_ATOP)
+/// - [`Render::PictOp::DisjointAtopReverse`](XCB_RENDER_PICT_OP_DISJOINT_ATOP_REVERSE)
+/// - [`Render::PictOp::DisjointXor`](XCB_RENDER_PICT_OP_DISJOINT_XOR)
+/// - [`Render::PictOp::ConjointClear`](XCB_RENDER_PICT_OP_CONJOINT_CLEAR)
+/// - [`Render::PictOp::ConjointSrc`](XCB_RENDER_PICT_OP_CONJOINT_SRC)
+/// - [`Render::PictOp::ConjointDst`](XCB_RENDER_PICT_OP_CONJOINT_DST)
+/// - [`Render::PictOp::ConjointOver`](XCB_RENDER_PICT_OP_CONJOINT_OVER)
+/// - [`Render::PictOp::ConjointOverReverse`](XCB_RENDER_PICT_OP_CONJOINT_OVER_REVERSE)
+/// - [`Render::PictOp::ConjointIn`](XCB_RENDER_PICT_OP_CONJOINT_IN)
+/// - [`Render::PictOp::ConjointInReverse`](XCB_RENDER_PICT_OP_CONJOINT_IN_REVERSE)
+/// - [`Render::PictOp::ConjointOut`](XCB_RENDER_PICT_OP_CONJOINT_OUT)
+/// - [`Render::PictOp::ConjointOutReverse`](XCB_RENDER_PICT_OP_CONJOINT_OUT_REVERSE)
+/// - [`Render::PictOp::ConjointAtop`](XCB_RENDER_PICT_OP_CONJOINT_ATOP)
+/// - [`Render::PictOp::ConjointAtopReverse`](XCB_RENDER_PICT_OP_CONJOINT_ATOP_REVERSE)
+/// - [`Render::PictOp::ConjointXor`](XCB_RENDER_PICT_OP_CONJOINT_XOR)
+/// - [`Render::PictOp::Multiply`](XCB_RENDER_PICT_OP_MULTIPLY)
+/// - [`Render::PictOp::Screen`](XCB_RENDER_PICT_OP_SCREEN)
+/// - [`Render::PictOp::Overlay`](XCB_RENDER_PICT_OP_OVERLAY)
+/// - [`Render::PictOp::Darken`](XCB_RENDER_PICT_OP_DARKEN)
+/// - [`Render::PictOp::Lighten`](XCB_RENDER_PICT_OP_LIGHTEN)
+/// - [`Render::PictOp::ColorDodge`](XCB_RENDER_PICT_OP_COLOR_DODGE)
+/// - [`Render::PictOp::ColorBurn`](XCB_RENDER_PICT_OP_COLOR_BURN)
+/// - [`Render::PictOp::HardLight`](XCB_RENDER_PICT_OP_HARD_LIGHT)
+/// - [`Render::PictOp::SoftLight`](XCB_RENDER_PICT_OP_SOFT_LIGHT)
+/// - [`Render::PictOp::Difference`](XCB_RENDER_PICT_OP_DIFFERENCE)
+/// - [`Render::PictOp::Exclusion`](XCB_RENDER_PICT_OP_EXCLUSION)
+/// - [`Render::PictOp::HSLHue`](XCB_RENDER_PICT_OP_HSL_HUE)
+/// - [`Render::PictOp::HSLSaturation`](XCB_RENDER_PICT_OP_HSL_SATURATION)
+/// - [`Render::PictOp::HSLColor`](XCB_RENDER_PICT_OP_HSL_COLOR)
+/// - [`Render::PictOp::HSLLuminosity`](XCB_RENDER_PICT_OP_HSL_LUMINOSITY)
 pub type xcb_render_pict_op_t = u32;
+/// The `Render::PictOp::Clear` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CLEAR: xcb_render_pict_op_t = 0;
+/// The `Render::PictOp::Src` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_SRC: xcb_render_pict_op_t = 1;
+/// The `Render::PictOp::Dst` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DST: xcb_render_pict_op_t = 2;
+/// The `Render::PictOp::Over` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_OVER: xcb_render_pict_op_t = 3;
+/// The `Render::PictOp::OverReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_OVER_REVERSE: xcb_render_pict_op_t = 4;
+/// The `Render::PictOp::In` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_IN: xcb_render_pict_op_t = 5;
+/// The `Render::PictOp::InReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_IN_REVERSE: xcb_render_pict_op_t = 6;
+/// The `Render::PictOp::Out` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_OUT: xcb_render_pict_op_t = 7;
+/// The `Render::PictOp::OutReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_OUT_REVERSE: xcb_render_pict_op_t = 8;
+/// The `Render::PictOp::Atop` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_ATOP: xcb_render_pict_op_t = 9;
+/// The `Render::PictOp::AtopReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_ATOP_REVERSE: xcb_render_pict_op_t = 10;
+/// The `Render::PictOp::Xor` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_XOR: xcb_render_pict_op_t = 11;
+/// The `Render::PictOp::Add` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_ADD: xcb_render_pict_op_t = 12;
+/// The `Render::PictOp::Saturate` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_SATURATE: xcb_render_pict_op_t = 13;
+/// The `Render::PictOp::DisjointClear` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_CLEAR: xcb_render_pict_op_t = 16;
+/// The `Render::PictOp::DisjointSrc` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_SRC: xcb_render_pict_op_t = 17;
+/// The `Render::PictOp::DisjointDst` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_DST: xcb_render_pict_op_t = 18;
+/// The `Render::PictOp::DisjointOver` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_OVER: xcb_render_pict_op_t = 19;
+/// The `Render::PictOp::DisjointOverReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_OVER_REVERSE: xcb_render_pict_op_t = 20;
+/// The `Render::PictOp::DisjointIn` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_IN: xcb_render_pict_op_t = 21;
+/// The `Render::PictOp::DisjointInReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_IN_REVERSE: xcb_render_pict_op_t = 22;
+/// The `Render::PictOp::DisjointOut` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_OUT: xcb_render_pict_op_t = 23;
+/// The `Render::PictOp::DisjointOutReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_OUT_REVERSE: xcb_render_pict_op_t = 24;
+/// The `Render::PictOp::DisjointAtop` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_ATOP: xcb_render_pict_op_t = 25;
+/// The `Render::PictOp::DisjointAtopReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_ATOP_REVERSE: xcb_render_pict_op_t = 26;
+/// The `Render::PictOp::DisjointXor` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DISJOINT_XOR: xcb_render_pict_op_t = 27;
+/// The `Render::PictOp::ConjointClear` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_CLEAR: xcb_render_pict_op_t = 32;
+/// The `Render::PictOp::ConjointSrc` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_SRC: xcb_render_pict_op_t = 33;
+/// The `Render::PictOp::ConjointDst` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_DST: xcb_render_pict_op_t = 34;
+/// The `Render::PictOp::ConjointOver` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_OVER: xcb_render_pict_op_t = 35;
+/// The `Render::PictOp::ConjointOverReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_OVER_REVERSE: xcb_render_pict_op_t = 36;
+/// The `Render::PictOp::ConjointIn` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_IN: xcb_render_pict_op_t = 37;
+/// The `Render::PictOp::ConjointInReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_IN_REVERSE: xcb_render_pict_op_t = 38;
+/// The `Render::PictOp::ConjointOut` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_OUT: xcb_render_pict_op_t = 39;
+/// The `Render::PictOp::ConjointOutReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_OUT_REVERSE: xcb_render_pict_op_t = 40;
+/// The `Render::PictOp::ConjointAtop` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_ATOP: xcb_render_pict_op_t = 41;
+/// The `Render::PictOp::ConjointAtopReverse` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_ATOP_REVERSE: xcb_render_pict_op_t = 42;
+/// The `Render::PictOp::ConjointXor` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_CONJOINT_XOR: xcb_render_pict_op_t = 43;
+/// The `Render::PictOp::Multiply` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_MULTIPLY: xcb_render_pict_op_t = 48;
+/// The `Render::PictOp::Screen` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_SCREEN: xcb_render_pict_op_t = 49;
+/// The `Render::PictOp::Overlay` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_OVERLAY: xcb_render_pict_op_t = 50;
+/// The `Render::PictOp::Darken` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DARKEN: xcb_render_pict_op_t = 51;
+/// The `Render::PictOp::Lighten` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_LIGHTEN: xcb_render_pict_op_t = 52;
+/// The `Render::PictOp::ColorDodge` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_COLOR_DODGE: xcb_render_pict_op_t = 53;
+/// The `Render::PictOp::ColorBurn` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_COLOR_BURN: xcb_render_pict_op_t = 54;
+/// The `Render::PictOp::HardLight` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_HARD_LIGHT: xcb_render_pict_op_t = 55;
+/// The `Render::PictOp::SoftLight` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_SOFT_LIGHT: xcb_render_pict_op_t = 56;
+/// The `Render::PictOp::Difference` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_DIFFERENCE: xcb_render_pict_op_t = 57;
+/// The `Render::PictOp::Exclusion` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_EXCLUSION: xcb_render_pict_op_t = 58;
+/// The `Render::PictOp::HSLHue` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_HSL_HUE: xcb_render_pict_op_t = 59;
+/// The `Render::PictOp::HSLSaturation` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_HSL_SATURATION: xcb_render_pict_op_t = 60;
+/// The `Render::PictOp::HSLColor` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_HSL_COLOR: xcb_render_pict_op_t = 61;
+/// The `Render::PictOp::HSLLuminosity` enum variant.
+///
+/// This is a variant of [`xcb_render_pict_op_t`].
 pub const XCB_RENDER_PICT_OP_HSL_LUMINOSITY: xcb_render_pict_op_t = 62;
 
+/// The `Render::PolyEdge` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::PolyEdge::Sharp`](XCB_RENDER_POLY_EDGE_SHARP)
+/// - [`Render::PolyEdge::Smooth`](XCB_RENDER_POLY_EDGE_SMOOTH)
 pub type xcb_render_poly_edge_t = u32;
+/// The `Render::PolyEdge::Sharp` enum variant.
+///
+/// This is a variant of [`xcb_render_poly_edge_t`].
 pub const XCB_RENDER_POLY_EDGE_SHARP: xcb_render_poly_edge_t = 0;
+/// The `Render::PolyEdge::Smooth` enum variant.
+///
+/// This is a variant of [`xcb_render_poly_edge_t`].
 pub const XCB_RENDER_POLY_EDGE_SMOOTH: xcb_render_poly_edge_t = 1;
 
+/// The `Render::PolyMode` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::PolyMode::Precise`](XCB_RENDER_POLY_MODE_PRECISE)
+/// - [`Render::PolyMode::Imprecise`](XCB_RENDER_POLY_MODE_IMPRECISE)
 pub type xcb_render_poly_mode_t = u32;
+/// The `Render::PolyMode::Precise` enum variant.
+///
+/// This is a variant of [`xcb_render_poly_mode_t`].
 pub const XCB_RENDER_POLY_MODE_PRECISE: xcb_render_poly_mode_t = 0;
+/// The `Render::PolyMode::Imprecise` enum variant.
+///
+/// This is a variant of [`xcb_render_poly_mode_t`].
 pub const XCB_RENDER_POLY_MODE_IMPRECISE: xcb_render_poly_mode_t = 1;
 
+/// The `Render::CP` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::CP::Repeat`](XCB_RENDER_CP_REPEAT)
+/// - [`Render::CP::AlphaMap`](XCB_RENDER_CP_ALPHA_MAP)
+/// - [`Render::CP::AlphaXOrigin`](XCB_RENDER_CP_ALPHA_X_ORIGIN)
+/// - [`Render::CP::AlphaYOrigin`](XCB_RENDER_CP_ALPHA_Y_ORIGIN)
+/// - [`Render::CP::ClipXOrigin`](XCB_RENDER_CP_CLIP_X_ORIGIN)
+/// - [`Render::CP::ClipYOrigin`](XCB_RENDER_CP_CLIP_Y_ORIGIN)
+/// - [`Render::CP::ClipMask`](XCB_RENDER_CP_CLIP_MASK)
+/// - [`Render::CP::GraphicsExposure`](XCB_RENDER_CP_GRAPHICS_EXPOSURE)
+/// - [`Render::CP::SubwindowMode`](XCB_RENDER_CP_SUBWINDOW_MODE)
+/// - [`Render::CP::PolyEdge`](XCB_RENDER_CP_POLY_EDGE)
+/// - [`Render::CP::PolyMode`](XCB_RENDER_CP_POLY_MODE)
+/// - [`Render::CP::Dither`](XCB_RENDER_CP_DITHER)
+/// - [`Render::CP::ComponentAlpha`](XCB_RENDER_CP_COMPONENT_ALPHA)
 pub type xcb_render_cp_t = u32;
+/// The `Render::CP::Repeat` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_REPEAT: xcb_render_cp_t = 1;
+/// The `Render::CP::AlphaMap` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_ALPHA_MAP: xcb_render_cp_t = 2;
+/// The `Render::CP::AlphaXOrigin` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_ALPHA_X_ORIGIN: xcb_render_cp_t = 4;
+/// The `Render::CP::AlphaYOrigin` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_ALPHA_Y_ORIGIN: xcb_render_cp_t = 8;
+/// The `Render::CP::ClipXOrigin` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_CLIP_X_ORIGIN: xcb_render_cp_t = 16;
+/// The `Render::CP::ClipYOrigin` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_CLIP_Y_ORIGIN: xcb_render_cp_t = 32;
+/// The `Render::CP::ClipMask` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_CLIP_MASK: xcb_render_cp_t = 64;
+/// The `Render::CP::GraphicsExposure` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_GRAPHICS_EXPOSURE: xcb_render_cp_t = 128;
+/// The `Render::CP::SubwindowMode` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_SUBWINDOW_MODE: xcb_render_cp_t = 256;
+/// The `Render::CP::PolyEdge` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_POLY_EDGE: xcb_render_cp_t = 512;
+/// The `Render::CP::PolyMode` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_POLY_MODE: xcb_render_cp_t = 1024;
+/// The `Render::CP::Dither` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_DITHER: xcb_render_cp_t = 2048;
+/// The `Render::CP::ComponentAlpha` enum variant.
+///
+/// This is a variant of [`xcb_render_cp_t`].
 pub const XCB_RENDER_CP_COMPONENT_ALPHA: xcb_render_cp_t = 4096;
 
+/// The `Render::SubPixel` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::SubPixel::Unknown`](XCB_RENDER_SUB_PIXEL_UNKNOWN)
+/// - [`Render::SubPixel::HorizontalRGB`](XCB_RENDER_SUB_PIXEL_HORIZONTAL_RGB)
+/// - [`Render::SubPixel::HorizontalBGR`](XCB_RENDER_SUB_PIXEL_HORIZONTAL_BGR)
+/// - [`Render::SubPixel::VerticalRGB`](XCB_RENDER_SUB_PIXEL_VERTICAL_RGB)
+/// - [`Render::SubPixel::VerticalBGR`](XCB_RENDER_SUB_PIXEL_VERTICAL_BGR)
+/// - [`Render::SubPixel::None`](XCB_RENDER_SUB_PIXEL_NONE)
 pub type xcb_render_sub_pixel_t = u32;
+/// The `Render::SubPixel::Unknown` enum variant.
+///
+/// This is a variant of [`xcb_render_sub_pixel_t`].
 pub const XCB_RENDER_SUB_PIXEL_UNKNOWN: xcb_render_sub_pixel_t = 0;
+/// The `Render::SubPixel::HorizontalRGB` enum variant.
+///
+/// This is a variant of [`xcb_render_sub_pixel_t`].
 pub const XCB_RENDER_SUB_PIXEL_HORIZONTAL_RGB: xcb_render_sub_pixel_t = 1;
+/// The `Render::SubPixel::HorizontalBGR` enum variant.
+///
+/// This is a variant of [`xcb_render_sub_pixel_t`].
 pub const XCB_RENDER_SUB_PIXEL_HORIZONTAL_BGR: xcb_render_sub_pixel_t = 2;
+/// The `Render::SubPixel::VerticalRGB` enum variant.
+///
+/// This is a variant of [`xcb_render_sub_pixel_t`].
 pub const XCB_RENDER_SUB_PIXEL_VERTICAL_RGB: xcb_render_sub_pixel_t = 3;
+/// The `Render::SubPixel::VerticalBGR` enum variant.
+///
+/// This is a variant of [`xcb_render_sub_pixel_t`].
 pub const XCB_RENDER_SUB_PIXEL_VERTICAL_BGR: xcb_render_sub_pixel_t = 4;
+/// The `Render::SubPixel::None` enum variant.
+///
+/// This is a variant of [`xcb_render_sub_pixel_t`].
 pub const XCB_RENDER_SUB_PIXEL_NONE: xcb_render_sub_pixel_t = 5;
 
+/// The `Render::Repeat` enum.
+///
+/// This enum has the following variants:
+///
+/// - [`Render::Repeat::None`](XCB_RENDER_REPEAT_NONE)
+/// - [`Render::Repeat::Normal`](XCB_RENDER_REPEAT_NORMAL)
+/// - [`Render::Repeat::Pad`](XCB_RENDER_REPEAT_PAD)
+/// - [`Render::Repeat::Reflect`](XCB_RENDER_REPEAT_REFLECT)
 pub type xcb_render_repeat_t = u32;
+/// The `Render::Repeat::None` enum variant.
+///
+/// This is a variant of [`xcb_render_repeat_t`].
 pub const XCB_RENDER_REPEAT_NONE: xcb_render_repeat_t = 0;
+/// The `Render::Repeat::Normal` enum variant.
+///
+/// This is a variant of [`xcb_render_repeat_t`].
 pub const XCB_RENDER_REPEAT_NORMAL: xcb_render_repeat_t = 1;
+/// The `Render::Repeat::Pad` enum variant.
+///
+/// This is a variant of [`xcb_render_repeat_t`].
 pub const XCB_RENDER_REPEAT_PAD: xcb_render_repeat_t = 2;
+/// The `Render::Repeat::Reflect` enum variant.
+///
+/// This is a variant of [`xcb_render_repeat_t`].
 pub const XCB_RENDER_REPEAT_REFLECT: xcb_render_repeat_t = 3;
 
+/// The `Render::GLYPH` type.
 pub type xcb_render_glyph_t = u32;
 
+/// An iterator over `Render::GLYPH` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_glyph_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_glyph_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -120,13 +490,18 @@ impl Default for xcb_render_glyph_iterator_t {
     }
 }
 
+/// The `Render::GLYPHSET` type.
 pub type xcb_render_glyphset_t = u32;
 
+/// An iterator over `Render::GLYPHSET` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_glyphset_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_glyphset_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -136,13 +511,18 @@ impl Default for xcb_render_glyphset_iterator_t {
     }
 }
 
+/// The `Render::PICTURE` type.
 pub type xcb_render_picture_t = u32;
 
+/// An iterator over `Render::PICTURE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_picture_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_picture_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -152,13 +532,18 @@ impl Default for xcb_render_picture_iterator_t {
     }
 }
 
+/// The `Render::PICTFORMAT` type.
 pub type xcb_render_pictformat_t = u32;
 
+/// An iterator over `Render::PICTFORMAT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictformat_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_pictformat_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -168,13 +553,18 @@ impl Default for xcb_render_pictformat_iterator_t {
     }
 }
 
+/// The `Render::FIXED` type.
 pub type xcb_render_fixed_t = i32;
 
+/// An iterator over `Render::FIXED` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_fixed_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_fixed_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -184,9 +574,13 @@ impl Default for xcb_render_fixed_iterator_t {
     }
 }
 
-/// Opcode for xcb_render_pict_format.
+/// The opcode for `Render::PictFormat` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_render_pict_format_error_t`].
 pub const XCB_RENDER_PICT_FORMAT: u8 = 0i32 as u8;
 
+/// The `Render::PictFormat` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pict_format_error_t {
@@ -201,9 +595,13 @@ impl Default for xcb_render_pict_format_error_t {
     }
 }
 
-/// Opcode for xcb_render_picture.
+/// The opcode for `Render::Picture` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_render_picture_error_t`].
 pub const XCB_RENDER_PICTURE: u8 = 1i32 as u8;
 
+/// The `Render::Picture` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_picture_error_t {
@@ -218,9 +616,13 @@ impl Default for xcb_render_picture_error_t {
     }
 }
 
-/// Opcode for xcb_render_pict_op.
+/// The opcode for `Render::PictOp` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_render_pict_op_error_t`].
 pub const XCB_RENDER_PICT_OP: u8 = 2i32 as u8;
 
+/// The `Render::PictOp` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pict_op_error_t {
@@ -235,9 +637,13 @@ impl Default for xcb_render_pict_op_error_t {
     }
 }
 
-/// Opcode for xcb_render_glyph_set.
+/// The opcode for `Render::GlyphSet` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_render_glyph_set_error_t`].
 pub const XCB_RENDER_GLYPH_SET: u8 = 3i32 as u8;
 
+/// The `Render::GlyphSet` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_glyph_set_error_t {
@@ -252,9 +658,13 @@ impl Default for xcb_render_glyph_set_error_t {
     }
 }
 
-/// Opcode for xcb_render_glyph.
+/// The opcode for `Render::Glyph` errors.
+///
+/// If this value plus the extension error base appears in [`xcb_generic_error_t::error_code`],
+/// then the type of the error is [`xcb_render_glyph_error_t`].
 pub const XCB_RENDER_GLYPH: u8 = 4i32 as u8;
 
+/// The `Render::Glyph` error.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_glyph_error_t {
@@ -269,6 +679,7 @@ impl Default for xcb_render_glyph_error_t {
     }
 }
 
+/// The `Render::DIRECTFORMAT` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_directformat_t {
@@ -288,11 +699,15 @@ impl Default for xcb_render_directformat_t {
     }
 }
 
+/// An iterator over `Render::DIRECTFORMAT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_directformat_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_directformat_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -302,6 +717,7 @@ impl Default for xcb_render_directformat_iterator_t {
     }
 }
 
+/// The `Render::PICTFORMINFO` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictforminfo_t {
@@ -319,11 +735,15 @@ impl Default for xcb_render_pictforminfo_t {
     }
 }
 
+/// An iterator over `Render::PICTFORMINFO` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictforminfo_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_pictforminfo_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -333,6 +753,7 @@ impl Default for xcb_render_pictforminfo_iterator_t {
     }
 }
 
+/// The `Render::PICTVISUAL` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictvisual_t {
@@ -346,11 +767,15 @@ impl Default for xcb_render_pictvisual_t {
     }
 }
 
+/// An iterator over `Render::PICTVISUAL` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictvisual_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_pictvisual_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -360,6 +785,11 @@ impl Default for xcb_render_pictvisual_iterator_t {
     }
 }
 
+/// The `Render::PICTDEPTH` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `visuals`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictdepth_t {
@@ -375,11 +805,15 @@ impl Default for xcb_render_pictdepth_t {
     }
 }
 
+/// An iterator over `Render::PICTDEPTH` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictdepth_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_pictdepth_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -389,6 +823,11 @@ impl Default for xcb_render_pictdepth_iterator_t {
     }
 }
 
+/// The `Render::PICTSCREEN` struct.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `depths`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictscreen_t {
@@ -402,11 +841,15 @@ impl Default for xcb_render_pictscreen_t {
     }
 }
 
+/// An iterator over `Render::PICTSCREEN` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pictscreen_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_pictscreen_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -416,6 +859,7 @@ impl Default for xcb_render_pictscreen_iterator_t {
     }
 }
 
+/// The `Render::INDEXVALUE` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_indexvalue_t {
@@ -432,11 +876,15 @@ impl Default for xcb_render_indexvalue_t {
     }
 }
 
+/// An iterator over `Render::INDEXVALUE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_indexvalue_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_indexvalue_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -446,6 +894,7 @@ impl Default for xcb_render_indexvalue_iterator_t {
     }
 }
 
+/// The `Render::COLOR` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_color_t {
@@ -461,11 +910,15 @@ impl Default for xcb_render_color_t {
     }
 }
 
+/// An iterator over `Render::COLOR` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_color_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_color_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -475,6 +928,7 @@ impl Default for xcb_render_color_iterator_t {
     }
 }
 
+/// The `Render::POINTFIX` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pointfix_t {
@@ -488,11 +942,15 @@ impl Default for xcb_render_pointfix_t {
     }
 }
 
+/// An iterator over `Render::POINTFIX` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_pointfix_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_pointfix_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -502,6 +960,7 @@ impl Default for xcb_render_pointfix_iterator_t {
     }
 }
 
+/// The `Render::LINEFIX` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_linefix_t {
@@ -515,11 +974,15 @@ impl Default for xcb_render_linefix_t {
     }
 }
 
+/// An iterator over `Render::LINEFIX` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_linefix_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_linefix_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -529,6 +992,7 @@ impl Default for xcb_render_linefix_iterator_t {
     }
 }
 
+/// The `Render::TRIANGLE` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_triangle_t {
@@ -543,11 +1007,15 @@ impl Default for xcb_render_triangle_t {
     }
 }
 
+/// An iterator over `Render::TRIANGLE` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_triangle_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_triangle_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -557,6 +1025,7 @@ impl Default for xcb_render_triangle_iterator_t {
     }
 }
 
+/// The `Render::TRAPEZOID` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_trapezoid_t {
@@ -572,11 +1041,15 @@ impl Default for xcb_render_trapezoid_t {
     }
 }
 
+/// An iterator over `Render::TRAPEZOID` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_trapezoid_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_trapezoid_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -586,6 +1059,7 @@ impl Default for xcb_render_trapezoid_iterator_t {
     }
 }
 
+/// The `Render::GLYPHINFO` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_glyphinfo_t {
@@ -603,11 +1077,15 @@ impl Default for xcb_render_glyphinfo_t {
     }
 }
 
+/// An iterator over `Render::GLYPHINFO` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_glyphinfo_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_glyphinfo_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -617,9 +1095,15 @@ impl Default for xcb_render_glyphinfo_iterator_t {
     }
 }
 
+/// The cookie for the reply to a `Render::QueryVersion` request.
+///
+/// Pass this cookie to [`xcb_render_query_version_reply`] to retrieve the reply.
+///
+/// [`xcb_render_query_version_reply`]: XcbRender::xcb_render_query_version_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_version_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -629,9 +1113,14 @@ impl Default for xcb_render_query_version_cookie_t {
     }
 }
 
-/// Opcode for xcb_render_query_version.
+/// The opcode for `Render::QueryVersion` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_query_version_request_t`].
 pub const XCB_RENDER_QUERY_VERSION: u8 = 0i32 as u8;
 
+/// The `Render::QueryVersion` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_version_request_t {
@@ -648,6 +1137,7 @@ impl Default for xcb_render_query_version_request_t {
     }
 }
 
+/// The `Render::QueryVersion` reply.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_version_reply_t {
@@ -666,9 +1156,15 @@ impl Default for xcb_render_query_version_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Render::QueryPictFormats` request.
+///
+/// Pass this cookie to [`xcb_render_query_pict_formats_reply`] to retrieve the reply.
+///
+/// [`xcb_render_query_pict_formats_reply`]: XcbRender::xcb_render_query_pict_formats_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_pict_formats_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -678,9 +1174,14 @@ impl Default for xcb_render_query_pict_formats_cookie_t {
     }
 }
 
-/// Opcode for xcb_render_query_pict_formats.
+/// The opcode for `Render::QueryPictFormats` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_query_pict_formats_request_t`].
 pub const XCB_RENDER_QUERY_PICT_FORMATS: u8 = 1i32 as u8;
 
+/// The `Render::QueryPictFormats` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_pict_formats_request_t {
@@ -695,6 +1196,13 @@ impl Default for xcb_render_query_pict_formats_request_t {
     }
 }
 
+/// The `Render::QueryPictFormats` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `formats`
+/// - `screens`
+/// - `subpixels`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_pict_formats_reply_t {
@@ -716,9 +1224,15 @@ impl Default for xcb_render_query_pict_formats_reply_t {
     }
 }
 
+/// The cookie for the reply to a `Render::QueryPictIndexValues` request.
+///
+/// Pass this cookie to [`xcb_render_query_pict_index_values_reply`] to retrieve the reply.
+///
+/// [`xcb_render_query_pict_index_values_reply`]: XcbRender::xcb_render_query_pict_index_values_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_pict_index_values_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -728,9 +1242,14 @@ impl Default for xcb_render_query_pict_index_values_cookie_t {
     }
 }
 
-/// Opcode for xcb_render_query_pict_index_values.
+/// The opcode for `Render::QueryPictIndexValues` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_query_pict_index_values_request_t`].
 pub const XCB_RENDER_QUERY_PICT_INDEX_VALUES: u8 = 2i32 as u8;
 
+/// The `Render::QueryPictIndexValues` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_pict_index_values_request_t {
@@ -746,6 +1265,11 @@ impl Default for xcb_render_query_pict_index_values_request_t {
     }
 }
 
+/// The `Render::QueryPictIndexValues` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `values`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_pict_index_values_reply_t {
@@ -763,6 +1287,7 @@ impl Default for xcb_render_query_pict_index_values_reply_t {
     }
 }
 
+/// The `Render::value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_picture_value_list_t {
@@ -787,9 +1312,18 @@ impl Default for xcb_render_create_picture_value_list_t {
     }
 }
 
-/// Opcode for xcb_render_create_picture.
+/// The opcode for `Render::CreatePicture` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_picture_request_t`].
 pub const XCB_RENDER_CREATE_PICTURE: u8 = 4i32 as u8;
 
+/// The `Render::CreatePicture` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_picture_request_t {
@@ -808,6 +1342,7 @@ impl Default for xcb_render_create_picture_request_t {
     }
 }
 
+/// The `Render::value_list` switch.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_change_picture_value_list_t {
@@ -832,9 +1367,18 @@ impl Default for xcb_render_change_picture_value_list_t {
     }
 }
 
-/// Opcode for xcb_render_change_picture.
+/// The opcode for `Render::ChangePicture` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_change_picture_request_t`].
 pub const XCB_RENDER_CHANGE_PICTURE: u8 = 5i32 as u8;
 
+/// The `Render::ChangePicture` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `value_list`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_change_picture_request_t {
@@ -851,9 +1395,18 @@ impl Default for xcb_render_change_picture_request_t {
     }
 }
 
-/// Opcode for xcb_render_set_picture_clip_rectangles.
+/// The opcode for `Render::SetPictureClipRectangles` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_set_picture_clip_rectangles_request_t`].
 pub const XCB_RENDER_SET_PICTURE_CLIP_RECTANGLES: u8 = 6i32 as u8;
 
+/// The `Render::SetPictureClipRectangles` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rectangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_set_picture_clip_rectangles_request_t {
@@ -871,9 +1424,14 @@ impl Default for xcb_render_set_picture_clip_rectangles_request_t {
     }
 }
 
-/// Opcode for xcb_render_free_picture.
+/// The opcode for `Render::FreePicture` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_free_picture_request_t`].
 pub const XCB_RENDER_FREE_PICTURE: u8 = 7i32 as u8;
 
+/// The `Render::FreePicture` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_free_picture_request_t {
@@ -889,9 +1447,14 @@ impl Default for xcb_render_free_picture_request_t {
     }
 }
 
-/// Opcode for xcb_render_composite.
+/// The opcode for `Render::Composite` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_composite_request_t`].
 pub const XCB_RENDER_COMPOSITE: u8 = 8i32 as u8;
 
+/// The `Render::Composite` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_composite_request_t {
@@ -919,9 +1482,18 @@ impl Default for xcb_render_composite_request_t {
     }
 }
 
-/// Opcode for xcb_render_trapezoids.
+/// The opcode for `Render::Trapezoids` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_trapezoids_request_t`].
 pub const XCB_RENDER_TRAPEZOIDS: u8 = 10i32 as u8;
 
+/// The `Render::Trapezoids` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `traps`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_trapezoids_request_t {
@@ -943,9 +1515,18 @@ impl Default for xcb_render_trapezoids_request_t {
     }
 }
 
-/// Opcode for xcb_render_triangles.
+/// The opcode for `Render::Triangles` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_triangles_request_t`].
 pub const XCB_RENDER_TRIANGLES: u8 = 11i32 as u8;
 
+/// The `Render::Triangles` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `triangles`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_triangles_request_t {
@@ -967,9 +1548,18 @@ impl Default for xcb_render_triangles_request_t {
     }
 }
 
-/// Opcode for xcb_render_tri_strip.
+/// The opcode for `Render::TriStrip` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_tri_strip_request_t`].
 pub const XCB_RENDER_TRI_STRIP: u8 = 12i32 as u8;
 
+/// The `Render::TriStrip` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `points`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_tri_strip_request_t {
@@ -991,9 +1581,18 @@ impl Default for xcb_render_tri_strip_request_t {
     }
 }
 
-/// Opcode for xcb_render_tri_fan.
+/// The opcode for `Render::TriFan` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_tri_fan_request_t`].
 pub const XCB_RENDER_TRI_FAN: u8 = 13i32 as u8;
 
+/// The `Render::TriFan` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `points`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_tri_fan_request_t {
@@ -1015,9 +1614,14 @@ impl Default for xcb_render_tri_fan_request_t {
     }
 }
 
-/// Opcode for xcb_render_create_glyph_set.
+/// The opcode for `Render::CreateGlyphSet` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_glyph_set_request_t`].
 pub const XCB_RENDER_CREATE_GLYPH_SET: u8 = 17i32 as u8;
 
+/// The `Render::CreateGlyphSet` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_glyph_set_request_t {
@@ -1034,9 +1638,14 @@ impl Default for xcb_render_create_glyph_set_request_t {
     }
 }
 
-/// Opcode for xcb_render_reference_glyph_set.
+/// The opcode for `Render::ReferenceGlyphSet` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_reference_glyph_set_request_t`].
 pub const XCB_RENDER_REFERENCE_GLYPH_SET: u8 = 18i32 as u8;
 
+/// The `Render::ReferenceGlyphSet` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_reference_glyph_set_request_t {
@@ -1053,9 +1662,14 @@ impl Default for xcb_render_reference_glyph_set_request_t {
     }
 }
 
-/// Opcode for xcb_render_free_glyph_set.
+/// The opcode for `Render::FreeGlyphSet` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_free_glyph_set_request_t`].
 pub const XCB_RENDER_FREE_GLYPH_SET: u8 = 19i32 as u8;
 
+/// The `Render::FreeGlyphSet` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_free_glyph_set_request_t {
@@ -1071,9 +1685,21 @@ impl Default for xcb_render_free_glyph_set_request_t {
     }
 }
 
-/// Opcode for xcb_render_add_glyphs.
+/// The opcode for `Render::AddGlyphs` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_add_glyphs_request_t`].
 pub const XCB_RENDER_ADD_GLYPHS: u8 = 20i32 as u8;
 
+/// The `Render::AddGlyphs` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `glyphids`
+/// - `glyphs`
+/// - `data_len`
+/// - `data`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_add_glyphs_request_t {
@@ -1090,9 +1716,18 @@ impl Default for xcb_render_add_glyphs_request_t {
     }
 }
 
-/// Opcode for xcb_render_free_glyphs.
+/// The opcode for `Render::FreeGlyphs` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_free_glyphs_request_t`].
 pub const XCB_RENDER_FREE_GLYPHS: u8 = 22i32 as u8;
 
+/// The `Render::FreeGlyphs` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `glyphs`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_free_glyphs_request_t {
@@ -1108,9 +1743,18 @@ impl Default for xcb_render_free_glyphs_request_t {
     }
 }
 
-/// Opcode for xcb_render_composite_glyphs_8.
+/// The opcode for `Render::CompositeGlyphs8` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_composite_glyphs_8_request_t`].
 pub const XCB_RENDER_COMPOSITE_GLYPHS_8: u8 = 23i32 as u8;
 
+/// The `Render::CompositeGlyphs8` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `glyphcmds`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_composite_glyphs_8_request_t {
@@ -1133,9 +1777,18 @@ impl Default for xcb_render_composite_glyphs_8_request_t {
     }
 }
 
-/// Opcode for xcb_render_composite_glyphs_16.
+/// The opcode for `Render::CompositeGlyphs16` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_composite_glyphs_16_request_t`].
 pub const XCB_RENDER_COMPOSITE_GLYPHS_16: u8 = 24i32 as u8;
 
+/// The `Render::CompositeGlyphs16` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `glyphcmds`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_composite_glyphs_16_request_t {
@@ -1158,9 +1811,18 @@ impl Default for xcb_render_composite_glyphs_16_request_t {
     }
 }
 
-/// Opcode for xcb_render_composite_glyphs_32.
+/// The opcode for `Render::CompositeGlyphs32` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_composite_glyphs_32_request_t`].
 pub const XCB_RENDER_COMPOSITE_GLYPHS_32: u8 = 25i32 as u8;
 
+/// The `Render::CompositeGlyphs32` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `glyphcmds`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_composite_glyphs_32_request_t {
@@ -1183,9 +1845,18 @@ impl Default for xcb_render_composite_glyphs_32_request_t {
     }
 }
 
-/// Opcode for xcb_render_fill_rectangles.
+/// The opcode for `Render::FillRectangles` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_fill_rectangles_request_t`].
 pub const XCB_RENDER_FILL_RECTANGLES: u8 = 26i32 as u8;
 
+/// The `Render::FillRectangles` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `rects`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_fill_rectangles_request_t {
@@ -1204,9 +1875,14 @@ impl Default for xcb_render_fill_rectangles_request_t {
     }
 }
 
-/// Opcode for xcb_render_create_cursor.
+/// The opcode for `Render::CreateCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_cursor_request_t`].
 pub const XCB_RENDER_CREATE_CURSOR: u8 = 27i32 as u8;
 
+/// The `Render::CreateCursor` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_cursor_request_t {
@@ -1225,6 +1901,7 @@ impl Default for xcb_render_create_cursor_request_t {
     }
 }
 
+/// The `Render::TRANSFORM` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_transform_t {
@@ -1245,11 +1922,15 @@ impl Default for xcb_render_transform_t {
     }
 }
 
+/// An iterator over `Render::TRANSFORM` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_transform_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_transform_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -1259,9 +1940,14 @@ impl Default for xcb_render_transform_iterator_t {
     }
 }
 
-/// Opcode for xcb_render_set_picture_transform.
+/// The opcode for `Render::SetPictureTransform` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_set_picture_transform_request_t`].
 pub const XCB_RENDER_SET_PICTURE_TRANSFORM: u8 = 28i32 as u8;
 
+/// The `Render::SetPictureTransform` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_set_picture_transform_request_t {
@@ -1278,9 +1964,15 @@ impl Default for xcb_render_set_picture_transform_request_t {
     }
 }
 
+/// The cookie for the reply to a `Render::QueryFilters` request.
+///
+/// Pass this cookie to [`xcb_render_query_filters_reply`] to retrieve the reply.
+///
+/// [`xcb_render_query_filters_reply`]: XcbRender::xcb_render_query_filters_reply
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_filters_cookie_t {
+    /// The sequence number of the request.
     pub sequence: c_uint,
 }
 
@@ -1290,9 +1982,14 @@ impl Default for xcb_render_query_filters_cookie_t {
     }
 }
 
-/// Opcode for xcb_render_query_filters.
+/// The opcode for `Render::QueryFilters` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_query_filters_request_t`].
 pub const XCB_RENDER_QUERY_FILTERS: u8 = 29i32 as u8;
 
+/// The `Render::QueryFilters` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_filters_request_t {
@@ -1308,6 +2005,12 @@ impl Default for xcb_render_query_filters_request_t {
     }
 }
 
+/// The `Render::QueryFilters` reply.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `aliases`
+/// - `filters`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_query_filters_reply_t {
@@ -1326,9 +2029,20 @@ impl Default for xcb_render_query_filters_reply_t {
     }
 }
 
-/// Opcode for xcb_render_set_picture_filter.
+/// The opcode for `Render::SetPictureFilter` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_set_picture_filter_request_t`].
 pub const XCB_RENDER_SET_PICTURE_FILTER: u8 = 30i32 as u8;
 
+/// The `Render::SetPictureFilter` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `filter`
+/// - `values_len`
+/// - `values`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_set_picture_filter_request_t {
@@ -1346,6 +2060,7 @@ impl Default for xcb_render_set_picture_filter_request_t {
     }
 }
 
+/// The `Render::ANIMCURSORELT` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_animcursorelt_t {
@@ -1359,11 +2074,15 @@ impl Default for xcb_render_animcursorelt_t {
     }
 }
 
+/// An iterator over `Render::ANIMCURSORELT` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_animcursorelt_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_animcursorelt_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -1373,9 +2092,18 @@ impl Default for xcb_render_animcursorelt_iterator_t {
     }
 }
 
-/// Opcode for xcb_render_create_anim_cursor.
+/// The opcode for `Render::CreateAnimCursor` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_anim_cursor_request_t`].
 pub const XCB_RENDER_CREATE_ANIM_CURSOR: u8 = 31i32 as u8;
 
+/// The `Render::CreateAnimCursor` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `cursors`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_anim_cursor_request_t {
@@ -1391,6 +2119,7 @@ impl Default for xcb_render_create_anim_cursor_request_t {
     }
 }
 
+/// The `Render::SPANFIX` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_spanfix_t {
@@ -1405,11 +2134,15 @@ impl Default for xcb_render_spanfix_t {
     }
 }
 
+/// An iterator over `Render::SPANFIX` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_spanfix_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_spanfix_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -1419,6 +2152,7 @@ impl Default for xcb_render_spanfix_iterator_t {
     }
 }
 
+/// The `Render::TRAP` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_trap_t {
@@ -1432,11 +2166,15 @@ impl Default for xcb_render_trap_t {
     }
 }
 
+/// An iterator over `Render::TRAP` objects.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_trap_iterator_t {
+    /// The value of the current iteration.
     pub data: *mut xcb_render_trap_t,
+    /// The number of elements remaining including this one.
     pub rem: c_int,
+    /// The offset of `data`, in bytes, from the start of the containing object.
     pub index: c_int,
 }
 
@@ -1446,9 +2184,18 @@ impl Default for xcb_render_trap_iterator_t {
     }
 }
 
-/// Opcode for xcb_render_add_traps.
+/// The opcode for `Render::AddTraps` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_add_traps_request_t`].
 pub const XCB_RENDER_ADD_TRAPS: u8 = 32i32 as u8;
 
+/// The `Render::AddTraps` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `traps`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_add_traps_request_t {
@@ -1466,9 +2213,14 @@ impl Default for xcb_render_add_traps_request_t {
     }
 }
 
-/// Opcode for xcb_render_create_solid_fill.
+/// The opcode for `Render::CreateSolidFill` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_solid_fill_request_t`].
 pub const XCB_RENDER_CREATE_SOLID_FILL: u8 = 33i32 as u8;
 
+/// The `Render::CreateSolidFill` request.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_solid_fill_request_t {
@@ -1485,9 +2237,19 @@ impl Default for xcb_render_create_solid_fill_request_t {
     }
 }
 
-/// Opcode for xcb_render_create_linear_gradient.
+/// The opcode for `Render::CreateLinearGradient` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_linear_gradient_request_t`].
 pub const XCB_RENDER_CREATE_LINEAR_GRADIENT: u8 = 34i32 as u8;
 
+/// The `Render::CreateLinearGradient` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `stops`
+/// - `colors`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_linear_gradient_request_t {
@@ -1506,9 +2268,19 @@ impl Default for xcb_render_create_linear_gradient_request_t {
     }
 }
 
-/// Opcode for xcb_render_create_radial_gradient.
+/// The opcode for `Render::CreateRadialGradient` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_radial_gradient_request_t`].
 pub const XCB_RENDER_CREATE_RADIAL_GRADIENT: u8 = 35i32 as u8;
 
+/// The `Render::CreateRadialGradient` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `stops`
+/// - `colors`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_radial_gradient_request_t {
@@ -1529,9 +2301,19 @@ impl Default for xcb_render_create_radial_gradient_request_t {
     }
 }
 
-/// Opcode for xcb_render_create_conical_gradient.
+/// The opcode for `Render::CreateConicalGradient` requests.
+///
+/// If this value appears in [`xcb_protocol_request_t::opcode`], and
+/// [`xcb_protocol_request_t::ext`] is [`XcbRender::xcb_render_id()`], then the type of the request is
+/// [`xcb_render_create_conical_gradient_request_t`].
 pub const XCB_RENDER_CREATE_CONICAL_GRADIENT: u8 = 36i32 as u8;
 
+/// The `Render::CreateConicalGradient` request.
+///
+/// The following fields can be accessed via accessor functions:
+///
+/// - `stops`
+/// - `colors`
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]
 pub struct xcb_render_create_conical_gradient_request_t {
@@ -1635,7 +2417,7 @@ pub(crate) struct XcbRenderRender {
             c: *mut xcb_connection_t,
             cookie: xcb_render_query_version_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_render_query_version_reply_t,
+        ) -> *mut xcb_render_query_version_reply_t,
     >,
     xcb_render_query_pict_formats_sizeof: LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
     xcb_render_query_pict_formats:
@@ -1673,7 +2455,7 @@ pub(crate) struct XcbRenderRender {
             c: *mut xcb_connection_t,
             cookie: xcb_render_query_pict_formats_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_render_query_pict_formats_reply_t,
+        ) -> *mut xcb_render_query_pict_formats_reply_t,
     >,
     xcb_render_query_pict_index_values_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void) -> c_int>,
@@ -1706,7 +2488,7 @@ pub(crate) struct XcbRenderRender {
             c: *mut xcb_connection_t,
             cookie: xcb_render_query_pict_index_values_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_render_query_pict_index_values_reply_t,
+        ) -> *mut xcb_render_query_pict_index_values_reply_t,
     >,
     xcb_render_create_picture_value_list_serialize: LazySymbol<
         unsafe fn(
@@ -2342,7 +3124,7 @@ pub(crate) struct XcbRenderRender {
             c: *mut xcb_connection_t,
             cookie: xcb_render_query_filters_cookie_t,
             e: *mut *mut xcb_generic_error_t,
-        ) -> xcb_render_query_filters_reply_t,
+        ) -> *mut xcb_render_query_filters_reply_t,
     >,
     xcb_render_set_picture_filter_sizeof:
         LazySymbol<unsafe fn(_buffer: *const c_void, values_len: u32) -> c_int>,
@@ -2622,6 +3404,8 @@ macro_rules! has_sym {
 
 #[cfg(feature = "xcb_render")]
 impl XcbRender {
+    /// The libxcb identifier of the `Render` extension.
+    #[inline]
     pub fn xcb_render_id(&self) -> *mut xcb_extension_t {
         unsafe { sym!(self, xcb_render_id) }
     }
@@ -2632,6 +3416,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_id)
     }
 
+    /// Advances a `xcb_render_glyph_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_glyph_next(&self, i: *mut xcb_render_glyph_iterator_t) {
         sym!(self, xcb_render_glyph_next)(i)
     }
@@ -2642,6 +3428,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_glyph_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_glyph_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_glyph_end(
         &self,
         i: xcb_render_glyph_iterator_t,
@@ -2655,6 +3443,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_glyph_end)
     }
 
+    /// Advances a `xcb_render_glyphset_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_glyphset_next(&self, i: *mut xcb_render_glyphset_iterator_t) {
         sym!(self, xcb_render_glyphset_next)(i)
     }
@@ -2665,6 +3455,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_glyphset_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_glyphset_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_glyphset_end(
         &self,
         i: xcb_render_glyphset_iterator_t,
@@ -2678,6 +3470,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_glyphset_end)
     }
 
+    /// Advances a `xcb_render_picture_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_picture_next(&self, i: *mut xcb_render_picture_iterator_t) {
         sym!(self, xcb_render_picture_next)(i)
     }
@@ -2688,6 +3482,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_picture_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_picture_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_picture_end(
         &self,
         i: xcb_render_picture_iterator_t,
@@ -2701,6 +3497,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_picture_end)
     }
 
+    /// Advances a `xcb_render_pictformat_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_pictformat_next(&self, i: *mut xcb_render_pictformat_iterator_t) {
         sym!(self, xcb_render_pictformat_next)(i)
     }
@@ -2711,6 +3509,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictformat_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_pictformat_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_pictformat_end(
         &self,
         i: xcb_render_pictformat_iterator_t,
@@ -2724,6 +3524,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictformat_end)
     }
 
+    /// Advances a `xcb_render_fixed_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_fixed_next(&self, i: *mut xcb_render_fixed_iterator_t) {
         sym!(self, xcb_render_fixed_next)(i)
     }
@@ -2734,6 +3536,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_fixed_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_fixed_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_fixed_end(
         &self,
         i: xcb_render_fixed_iterator_t,
@@ -2747,6 +3551,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_fixed_end)
     }
 
+    /// Advances a `xcb_render_directformat_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_directformat_next(&self, i: *mut xcb_render_directformat_iterator_t) {
         sym!(self, xcb_render_directformat_next)(i)
     }
@@ -2757,6 +3563,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_directformat_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_directformat_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_directformat_end(
         &self,
         i: xcb_render_directformat_iterator_t,
@@ -2770,6 +3578,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_directformat_end)
     }
 
+    /// Advances a `xcb_render_pictforminfo_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_pictforminfo_next(&self, i: *mut xcb_render_pictforminfo_iterator_t) {
         sym!(self, xcb_render_pictforminfo_next)(i)
     }
@@ -2780,6 +3590,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictforminfo_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_pictforminfo_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_pictforminfo_end(
         &self,
         i: xcb_render_pictforminfo_iterator_t,
@@ -2793,6 +3605,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictforminfo_end)
     }
 
+    /// Advances a `xcb_render_pictvisual_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_pictvisual_next(&self, i: *mut xcb_render_pictvisual_iterator_t) {
         sym!(self, xcb_render_pictvisual_next)(i)
     }
@@ -2803,6 +3617,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictvisual_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_pictvisual_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_pictvisual_end(
         &self,
         i: xcb_render_pictvisual_iterator_t,
@@ -2816,6 +3632,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictvisual_end)
     }
 
+    /// Computes the size of a `xcb_render_pictdepth_t` object.
+    #[inline]
     pub unsafe fn xcb_render_pictdepth_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_pictdepth_sizeof)(_buffer)
     }
@@ -2826,6 +3644,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictdepth_sizeof)
     }
 
+    /// Returns a pointer to the `visuals` field of a `xcb_render_pictdepth_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_pictdepth_visuals(
         &self,
         r: *const xcb_render_pictdepth_t,
@@ -2839,6 +3659,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictdepth_visuals)
     }
 
+    /// Returns the number of elements of the `visuals` field of a `xcb_render_pictdepth_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_pictdepth_visuals_length(
         &self,
         r: *const xcb_render_pictdepth_t,
@@ -2852,6 +3674,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictdepth_visuals_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `visuals` field of a `xcb_render_pictdepth_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_pictdepth_visuals_iterator(
         &self,
         r: *const xcb_render_pictdepth_t,
@@ -2865,6 +3690,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictdepth_visuals_iterator)
     }
 
+    /// Advances a `xcb_render_pictdepth_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_pictdepth_next(&self, i: *mut xcb_render_pictdepth_iterator_t) {
         sym!(self, xcb_render_pictdepth_next)(i)
     }
@@ -2875,6 +3702,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictdepth_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_pictdepth_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_pictdepth_end(
         &self,
         i: xcb_render_pictdepth_iterator_t,
@@ -2888,6 +3717,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictdepth_end)
     }
 
+    /// Computes the size of a `xcb_render_pictscreen_t` object.
+    #[inline]
     pub unsafe fn xcb_render_pictscreen_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_pictscreen_sizeof)(_buffer)
     }
@@ -2898,6 +3729,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictscreen_sizeof)
     }
 
+    /// Returns the number of elements of the `depths` field of a `xcb_render_pictscreen_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_pictscreen_depths_length(
         &self,
         r: *const xcb_render_pictscreen_t,
@@ -2911,6 +3744,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictscreen_depths_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `depths` field of a `xcb_render_pictscreen_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_pictscreen_depths_iterator(
         &self,
         r: *const xcb_render_pictscreen_t,
@@ -2924,6 +3760,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictscreen_depths_iterator)
     }
 
+    /// Advances a `xcb_render_pictscreen_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_pictscreen_next(&self, i: *mut xcb_render_pictscreen_iterator_t) {
         sym!(self, xcb_render_pictscreen_next)(i)
     }
@@ -2934,6 +3772,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictscreen_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_pictscreen_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_pictscreen_end(
         &self,
         i: xcb_render_pictscreen_iterator_t,
@@ -2947,6 +3787,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pictscreen_end)
     }
 
+    /// Advances a `xcb_render_indexvalue_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_indexvalue_next(&self, i: *mut xcb_render_indexvalue_iterator_t) {
         sym!(self, xcb_render_indexvalue_next)(i)
     }
@@ -2957,6 +3799,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_indexvalue_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_indexvalue_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_indexvalue_end(
         &self,
         i: xcb_render_indexvalue_iterator_t,
@@ -2970,6 +3814,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_indexvalue_end)
     }
 
+    /// Advances a `xcb_render_color_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_color_next(&self, i: *mut xcb_render_color_iterator_t) {
         sym!(self, xcb_render_color_next)(i)
     }
@@ -2980,6 +3826,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_color_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_color_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_color_end(
         &self,
         i: xcb_render_color_iterator_t,
@@ -2993,6 +3841,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_color_end)
     }
 
+    /// Advances a `xcb_render_pointfix_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_pointfix_next(&self, i: *mut xcb_render_pointfix_iterator_t) {
         sym!(self, xcb_render_pointfix_next)(i)
     }
@@ -3003,6 +3853,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pointfix_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_pointfix_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_pointfix_end(
         &self,
         i: xcb_render_pointfix_iterator_t,
@@ -3016,6 +3868,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_pointfix_end)
     }
 
+    /// Advances a `xcb_render_linefix_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_linefix_next(&self, i: *mut xcb_render_linefix_iterator_t) {
         sym!(self, xcb_render_linefix_next)(i)
     }
@@ -3026,6 +3880,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_linefix_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_linefix_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_linefix_end(
         &self,
         i: xcb_render_linefix_iterator_t,
@@ -3039,6 +3895,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_linefix_end)
     }
 
+    /// Advances a `xcb_render_triangle_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_triangle_next(&self, i: *mut xcb_render_triangle_iterator_t) {
         sym!(self, xcb_render_triangle_next)(i)
     }
@@ -3049,6 +3907,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangle_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_triangle_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_triangle_end(
         &self,
         i: xcb_render_triangle_iterator_t,
@@ -3062,6 +3922,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangle_end)
     }
 
+    /// Advances a `xcb_render_trapezoid_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_trapezoid_next(&self, i: *mut xcb_render_trapezoid_iterator_t) {
         sym!(self, xcb_render_trapezoid_next)(i)
     }
@@ -3072,6 +3934,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoid_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_trapezoid_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_trapezoid_end(
         &self,
         i: xcb_render_trapezoid_iterator_t,
@@ -3085,6 +3949,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoid_end)
     }
 
+    /// Advances a `xcb_render_glyphinfo_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_glyphinfo_next(&self, i: *mut xcb_render_glyphinfo_iterator_t) {
         sym!(self, xcb_render_glyphinfo_next)(i)
     }
@@ -3095,6 +3961,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_glyphinfo_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_glyphinfo_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_glyphinfo_end(
         &self,
         i: xcb_render_glyphinfo_iterator_t,
@@ -3108,14 +3976,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_glyphinfo_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::QueryVersion` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_version_reply`]: Self::xcb_render_query_version_reply
+    #[inline]
     pub unsafe fn xcb_render_query_version(
         &self,
         c: *mut xcb_connection_t,
@@ -3131,17 +3999,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_version)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Render::QueryVersion` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_version_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_version_reply`]: Self::xcb_render_query_version_reply
+    #[inline]
     pub unsafe fn xcb_render_query_version_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3161,26 +4026,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_version_unchecked)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_render_query_version_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Render::QueryVersion` request.
+    #[inline]
     pub unsafe fn xcb_render_query_version_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_render_query_version_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_render_query_version_reply_t {
+    ) -> *mut xcb_render_query_version_reply_t {
         sym!(self, xcb_render_query_version_reply)(c, cookie, e)
     }
 
@@ -3190,6 +4043,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_version_reply)
     }
 
+    /// Computes the size of a `xcb_render_query_pict_formats_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_query_pict_formats_sizeof)(_buffer)
     }
@@ -3200,14 +4055,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::QueryPictFormats` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_pict_formats_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_pict_formats_reply`]: Self::xcb_render_query_pict_formats_reply
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats(
         &self,
         c: *mut xcb_connection_t,
@@ -3221,17 +4076,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Render::QueryPictFormats` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_pict_formats_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_pict_formats_reply`]: Self::xcb_render_query_pict_formats_reply
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3245,6 +4097,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_unchecked)
     }
 
+    /// Returns a pointer to the `formats` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_formats(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3258,6 +4112,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_formats)
     }
 
+    /// Returns the number of elements of the `formats` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_formats_length(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3271,6 +4127,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_formats_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `formats` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_formats_iterator(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3284,6 +4143,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_formats_iterator)
     }
 
+    /// Returns the number of elements of the `screens` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_screens_length(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3297,6 +4158,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_screens_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `screens` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_screens_iterator(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3310,6 +4174,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_screens_iterator)
     }
 
+    /// Returns a pointer to the `subpixels` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_subpixels(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3323,6 +4189,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_subpixels)
     }
 
+    /// Returns the number of elements of the `subpixels` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_subpixels_length(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3336,6 +4204,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_subpixels_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `subpixels` field of a `xcb_render_query_pict_formats_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_subpixels_end(
         &self,
         r: *const xcb_render_query_pict_formats_reply_t,
@@ -3349,26 +4220,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_subpixels_end)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_render_query_pict_formats_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Render::QueryPictFormats` request.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_formats_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_render_query_pict_formats_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_render_query_pict_formats_reply_t {
+    ) -> *mut xcb_render_query_pict_formats_reply_t {
         sym!(self, xcb_render_query_pict_formats_reply)(c, cookie, e)
     }
 
@@ -3378,6 +4237,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_formats_reply)
     }
 
+    /// Computes the size of a `xcb_render_query_pict_index_values_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_index_values_sizeof(
         &self,
         _buffer: *const c_void,
@@ -3391,14 +4252,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_index_values_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::QueryPictIndexValues` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_pict_index_values_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_pict_index_values_reply`]: Self::xcb_render_query_pict_index_values_reply
+    #[inline]
     pub unsafe fn xcb_render_query_pict_index_values(
         &self,
         c: *mut xcb_connection_t,
@@ -3413,17 +4274,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_index_values)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Render::QueryPictIndexValues` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_pict_index_values_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_pict_index_values_reply`]: Self::xcb_render_query_pict_index_values_reply
+    #[inline]
     pub unsafe fn xcb_render_query_pict_index_values_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -3438,6 +4296,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_index_values_unchecked)
     }
 
+    /// Returns a pointer to the `values` field of a `xcb_render_query_pict_index_values_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_index_values_values(
         &self,
         r: *const xcb_render_query_pict_index_values_reply_t,
@@ -3451,6 +4311,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_index_values_values)
     }
 
+    /// Returns the number of elements of the `values` field of a `xcb_render_query_pict_index_values_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_index_values_values_length(
         &self,
         r: *const xcb_render_query_pict_index_values_reply_t,
@@ -3464,6 +4326,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_index_values_values_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `values` field of a `xcb_render_query_pict_index_values_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_index_values_values_iterator(
         &self,
         r: *const xcb_render_query_pict_index_values_reply_t,
@@ -3477,26 +4342,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_index_values_values_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_render_query_pict_index_values_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Render::QueryPictIndexValues` request.
+    #[inline]
     pub unsafe fn xcb_render_query_pict_index_values_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_render_query_pict_index_values_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_render_query_pict_index_values_reply_t {
+    ) -> *mut xcb_render_query_pict_index_values_reply_t {
         sym!(self, xcb_render_query_pict_index_values_reply)(c, cookie, e)
     }
 
@@ -3506,6 +4359,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_pict_index_values_reply)
     }
 
+    /// Serializes a `xcb_render_create_picture_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_picture_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -3521,6 +4376,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_render_create_picture_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_picture_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -3536,6 +4393,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_render_create_picture_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_picture_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -3550,6 +4409,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_render_create_picture_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_picture_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_create_picture_sizeof)(_buffer)
     }
@@ -3560,17 +4421,18 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreatePicture` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_render_create_picture_aux_checked`].
+    ///
+    /// [`xcb_render_create_picture_aux_checked`]: Self::xcb_render_create_picture_aux_checked
+    #[inline]
     pub unsafe fn xcb_render_create_picture_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3591,14 +4453,12 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreatePicture` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_render_create_picture_aux`].
+    ///
+    /// [`xcb_render_create_picture_aux`]: Self::xcb_render_create_picture_aux
+    #[inline]
     pub unsafe fn xcb_render_create_picture(
         &self,
         c: *mut xcb_connection_t,
@@ -3617,17 +4477,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreatePicture` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_picture_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3648,14 +4505,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_aux_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreatePicture` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_render_create_picture_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -3674,6 +4525,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_render_create_picture_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_picture_value_list(
         &self,
         r: *const xcb_render_create_picture_request_t,
@@ -3687,6 +4540,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_picture_value_list)
     }
 
+    /// Serializes a `xcb_render_change_picture_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_render_change_picture_value_list_serialize(
         &self,
         _buffer: *mut *mut c_void,
@@ -3702,6 +4557,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_value_list_serialize)
     }
 
+    /// Unpacks a `xcb_render_change_picture_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_render_change_picture_value_list_unpack(
         &self,
         _buffer: *const c_void,
@@ -3717,6 +4574,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_value_list_unpack)
     }
 
+    /// Computes the size of a `xcb_render_change_picture_value_list_t` object.
+    #[inline]
     pub unsafe fn xcb_render_change_picture_value_list_sizeof(
         &self,
         _buffer: *const c_void,
@@ -3731,6 +4590,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_value_list_sizeof)
     }
 
+    /// Computes the size of a `xcb_render_change_picture_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_change_picture_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_change_picture_sizeof)(_buffer)
     }
@@ -3741,17 +4602,18 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::ChangePicture` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    ///
+    /// There is an auxiliary version of this function: [`xcb_render_change_picture_aux_checked`].
+    ///
+    /// [`xcb_render_change_picture_aux_checked`]: Self::xcb_render_change_picture_aux_checked
+    #[inline]
     pub unsafe fn xcb_render_change_picture_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3768,14 +4630,12 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::ChangePicture` request (unchecked).
+    ///
+    /// There is an auxiliary version of this function: [`xcb_render_change_picture_aux`].
+    ///
+    /// [`xcb_render_change_picture_aux`]: Self::xcb_render_change_picture_aux
+    #[inline]
     pub unsafe fn xcb_render_change_picture(
         &self,
         c: *mut xcb_connection_t,
@@ -3792,17 +4652,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::ChangePicture` request (checked) (aux).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_change_picture_aux_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3819,14 +4676,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_aux_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::ChangePicture` request (unchecked) (aux).
+    #[inline]
     pub unsafe fn xcb_render_change_picture_aux(
         &self,
         c: *mut xcb_connection_t,
@@ -3843,6 +4694,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_aux)
     }
 
+    /// Returns a pointer to the `value_list` field of a `xcb_render_change_picture_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_change_picture_value_list(
         &self,
         r: *const xcb_render_change_picture_request_t,
@@ -3856,6 +4709,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_change_picture_value_list)
     }
 
+    /// Computes the size of a `xcb_render_set_picture_clip_rectangles_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_clip_rectangles_sizeof(
         &self,
         _buffer: *const c_void,
@@ -3870,17 +4725,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_clip_rectangles_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::SetPictureClipRectangles` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_set_picture_clip_rectangles_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -3906,14 +4758,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_clip_rectangles_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::SetPictureClipRectangles` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_set_picture_clip_rectangles(
         &self,
         c: *mut xcb_connection_t,
@@ -3939,6 +4785,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_clip_rectangles)
     }
 
+    /// Returns a pointer to the `rectangles` field of a `xcb_render_set_picture_clip_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_clip_rectangles_rectangles(
         &self,
         r: *const xcb_render_set_picture_clip_rectangles_request_t,
@@ -3952,6 +4800,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_clip_rectangles_rectangles)
     }
 
+    /// Returns the number of elements of the `rectangles` field of a `xcb_render_set_picture_clip_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_clip_rectangles_rectangles_length(
         &self,
         r: *const xcb_render_set_picture_clip_rectangles_request_t,
@@ -3971,6 +4821,9 @@ impl XcbRender {
         )
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rectangles` field of a `xcb_render_set_picture_clip_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_clip_rectangles_rectangles_iterator(
         &self,
         r: *const xcb_render_set_picture_clip_rectangles_request_t,
@@ -3990,17 +4843,14 @@ impl XcbRender {
         )
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::FreePicture` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_free_picture_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4015,14 +4865,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_picture_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::FreePicture` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_free_picture(
         &self,
         c: *mut xcb_connection_t,
@@ -4037,17 +4881,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_picture)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::Composite` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_composite_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4075,14 +4916,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::Composite` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_composite(
         &self,
         c: *mut xcb_connection_t,
@@ -4110,6 +4945,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite)
     }
 
+    /// Computes the size of a `xcb_render_trapezoids_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_trapezoids_sizeof(
         &self,
         _buffer: *const c_void,
@@ -4124,17 +4961,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoids_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::Trapezoids` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_trapezoids_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4166,14 +5000,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoids_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::Trapezoids` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_trapezoids(
         &self,
         c: *mut xcb_connection_t,
@@ -4205,6 +5033,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoids)
     }
 
+    /// Returns a pointer to the `traps` field of a `xcb_render_trapezoids_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_trapezoids_traps(
         &self,
         r: *const xcb_render_trapezoids_request_t,
@@ -4218,6 +5048,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoids_traps)
     }
 
+    /// Returns the number of elements of the `traps` field of a `xcb_render_trapezoids_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_trapezoids_traps_length(
         &self,
         r: *const xcb_render_trapezoids_request_t,
@@ -4231,6 +5063,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoids_traps_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `traps` field of a `xcb_render_trapezoids_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_trapezoids_traps_iterator(
         &self,
         r: *const xcb_render_trapezoids_request_t,
@@ -4244,6 +5079,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trapezoids_traps_iterator)
     }
 
+    /// Computes the size of a `xcb_render_triangles_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_triangles_sizeof(
         &self,
         _buffer: *const c_void,
@@ -4258,17 +5095,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangles_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::Triangles` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_triangles_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4300,14 +5134,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangles_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::Triangles` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_triangles(
         &self,
         c: *mut xcb_connection_t,
@@ -4339,6 +5167,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangles)
     }
 
+    /// Returns a pointer to the `triangles` field of a `xcb_render_triangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_triangles_triangles(
         &self,
         r: *const xcb_render_triangles_request_t,
@@ -4352,6 +5182,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangles_triangles)
     }
 
+    /// Returns the number of elements of the `triangles` field of a `xcb_render_triangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_triangles_triangles_length(
         &self,
         r: *const xcb_render_triangles_request_t,
@@ -4365,6 +5197,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangles_triangles_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `triangles` field of a `xcb_render_triangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_triangles_triangles_iterator(
         &self,
         r: *const xcb_render_triangles_request_t,
@@ -4378,6 +5213,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_triangles_triangles_iterator)
     }
 
+    /// Computes the size of a `xcb_render_tri_strip_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_tri_strip_sizeof(
         &self,
         _buffer: *const c_void,
@@ -4392,17 +5229,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_strip_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::TriStrip` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_tri_strip_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4434,14 +5268,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_strip_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::TriStrip` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_tri_strip(
         &self,
         c: *mut xcb_connection_t,
@@ -4473,6 +5301,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_strip)
     }
 
+    /// Returns a pointer to the `points` field of a `xcb_render_tri_strip_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_tri_strip_points(
         &self,
         r: *const xcb_render_tri_strip_request_t,
@@ -4486,6 +5316,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_strip_points)
     }
 
+    /// Returns the number of elements of the `points` field of a `xcb_render_tri_strip_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_tri_strip_points_length(
         &self,
         r: *const xcb_render_tri_strip_request_t,
@@ -4499,6 +5331,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_strip_points_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `points` field of a `xcb_render_tri_strip_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_tri_strip_points_iterator(
         &self,
         r: *const xcb_render_tri_strip_request_t,
@@ -4512,6 +5347,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_strip_points_iterator)
     }
 
+    /// Computes the size of a `xcb_render_tri_fan_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_tri_fan_sizeof(
         &self,
         _buffer: *const c_void,
@@ -4526,17 +5363,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_fan_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::TriFan` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_tri_fan_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4568,14 +5402,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_fan_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::TriFan` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_tri_fan(
         &self,
         c: *mut xcb_connection_t,
@@ -4607,6 +5435,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_fan)
     }
 
+    /// Returns a pointer to the `points` field of a `xcb_render_tri_fan_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_tri_fan_points(
         &self,
         r: *const xcb_render_tri_fan_request_t,
@@ -4620,6 +5450,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_fan_points)
     }
 
+    /// Returns the number of elements of the `points` field of a `xcb_render_tri_fan_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_tri_fan_points_length(
         &self,
         r: *const xcb_render_tri_fan_request_t,
@@ -4633,6 +5465,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_fan_points_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `points` field of a `xcb_render_tri_fan_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_tri_fan_points_iterator(
         &self,
         r: *const xcb_render_tri_fan_request_t,
@@ -4646,17 +5481,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_tri_fan_points_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreateGlyphSet` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_glyph_set_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4672,14 +5504,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_glyph_set_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreateGlyphSet` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_create_glyph_set(
         &self,
         c: *mut xcb_connection_t,
@@ -4695,17 +5521,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_glyph_set)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::ReferenceGlyphSet` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_reference_glyph_set_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4721,14 +5544,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_reference_glyph_set_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::ReferenceGlyphSet` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_reference_glyph_set(
         &self,
         c: *mut xcb_connection_t,
@@ -4744,17 +5561,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_reference_glyph_set)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::FreeGlyphSet` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_free_glyph_set_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4769,14 +5583,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyph_set_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::FreeGlyphSet` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_free_glyph_set(
         &self,
         c: *mut xcb_connection_t,
@@ -4791,6 +5599,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyph_set)
     }
 
+    /// Computes the size of a `xcb_render_add_glyphs_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_sizeof(
         &self,
         _buffer: *const c_void,
@@ -4805,17 +5615,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::AddGlyphs` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -4837,14 +5644,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::AddGlyphs` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs(
         &self,
         c: *mut xcb_connection_t,
@@ -4864,6 +5665,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs)
     }
 
+    /// Returns a pointer to the `glyphids` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_glyphids(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4877,6 +5680,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_glyphids)
     }
 
+    /// Returns the number of elements of the `glyphids` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_glyphids_length(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4890,6 +5695,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_glyphids_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `glyphids` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_glyphids_end(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4903,6 +5711,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_glyphids_end)
     }
 
+    /// Returns a pointer to the `glyphs` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_glyphs(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4916,6 +5726,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_glyphs)
     }
 
+    /// Returns the number of elements of the `glyphs` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_glyphs_length(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4929,6 +5741,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_glyphs_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `glyphs` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_glyphs_iterator(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4942,6 +5757,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_glyphs_iterator)
     }
 
+    /// Returns a pointer to the `data` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_data(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4955,6 +5772,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_data)
     }
 
+    /// Returns the number of elements of the `data` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_data_length(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4968,6 +5787,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_data_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `data` field of a `xcb_render_add_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_glyphs_data_end(
         &self,
         r: *const xcb_render_add_glyphs_request_t,
@@ -4981,6 +5803,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_glyphs_data_end)
     }
 
+    /// Computes the size of a `xcb_render_free_glyphs_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_free_glyphs_sizeof(
         &self,
         _buffer: *const c_void,
@@ -4995,17 +5819,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyphs_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::FreeGlyphs` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_free_glyphs_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5022,14 +5843,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyphs_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::FreeGlyphs` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_free_glyphs(
         &self,
         c: *mut xcb_connection_t,
@@ -5046,6 +5861,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyphs)
     }
 
+    /// Returns a pointer to the `glyphs` field of a `xcb_render_free_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_free_glyphs_glyphs(
         &self,
         r: *const xcb_render_free_glyphs_request_t,
@@ -5059,6 +5876,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyphs_glyphs)
     }
 
+    /// Returns the number of elements of the `glyphs` field of a `xcb_render_free_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_free_glyphs_glyphs_length(
         &self,
         r: *const xcb_render_free_glyphs_request_t,
@@ -5072,6 +5891,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyphs_glyphs_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `glyphs` field of a `xcb_render_free_glyphs_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_free_glyphs_glyphs_end(
         &self,
         r: *const xcb_render_free_glyphs_request_t,
@@ -5085,6 +5907,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_free_glyphs_glyphs_end)
     }
 
+    /// Computes the size of a `xcb_render_composite_glyphs_8_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_8_sizeof(
         &self,
         _buffer: *const c_void,
@@ -5099,17 +5923,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_8_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CompositeGlyphs8` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_8_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5143,14 +5964,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_8_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CompositeGlyphs8` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_8(
         &self,
         c: *mut xcb_connection_t,
@@ -5184,6 +5999,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_8)
     }
 
+    /// Returns a pointer to the `glyphcmds` field of a `xcb_render_composite_glyphs_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_8_glyphcmds(
         &self,
         r: *const xcb_render_composite_glyphs_8_request_t,
@@ -5197,6 +6014,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_8_glyphcmds)
     }
 
+    /// Returns the number of elements of the `glyphcmds` field of a `xcb_render_composite_glyphs_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_8_glyphcmds_length(
         &self,
         r: *const xcb_render_composite_glyphs_8_request_t,
@@ -5210,6 +6029,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_8_glyphcmds_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `glyphcmds` field of a `xcb_render_composite_glyphs_8_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_8_glyphcmds_end(
         &self,
         r: *const xcb_render_composite_glyphs_8_request_t,
@@ -5223,6 +6045,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_8_glyphcmds_end)
     }
 
+    /// Computes the size of a `xcb_render_composite_glyphs_16_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_16_sizeof(
         &self,
         _buffer: *const c_void,
@@ -5237,17 +6061,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_16_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CompositeGlyphs16` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_16_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5281,14 +6102,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_16_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CompositeGlyphs16` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_16(
         &self,
         c: *mut xcb_connection_t,
@@ -5322,6 +6137,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_16)
     }
 
+    /// Returns a pointer to the `glyphcmds` field of a `xcb_render_composite_glyphs_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_16_glyphcmds(
         &self,
         r: *const xcb_render_composite_glyphs_16_request_t,
@@ -5335,6 +6152,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_16_glyphcmds)
     }
 
+    /// Returns the number of elements of the `glyphcmds` field of a `xcb_render_composite_glyphs_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_16_glyphcmds_length(
         &self,
         r: *const xcb_render_composite_glyphs_16_request_t,
@@ -5348,6 +6167,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_16_glyphcmds_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `glyphcmds` field of a `xcb_render_composite_glyphs_16_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_16_glyphcmds_end(
         &self,
         r: *const xcb_render_composite_glyphs_16_request_t,
@@ -5361,6 +6183,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_16_glyphcmds_end)
     }
 
+    /// Computes the size of a `xcb_render_composite_glyphs_32_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_32_sizeof(
         &self,
         _buffer: *const c_void,
@@ -5375,17 +6199,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_32_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CompositeGlyphs32` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_32_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5419,14 +6240,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_32_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CompositeGlyphs32` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_32(
         &self,
         c: *mut xcb_connection_t,
@@ -5460,6 +6275,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_32)
     }
 
+    /// Returns a pointer to the `glyphcmds` field of a `xcb_render_composite_glyphs_32_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_32_glyphcmds(
         &self,
         r: *const xcb_render_composite_glyphs_32_request_t,
@@ -5473,6 +6290,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_32_glyphcmds)
     }
 
+    /// Returns the number of elements of the `glyphcmds` field of a `xcb_render_composite_glyphs_32_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_32_glyphcmds_length(
         &self,
         r: *const xcb_render_composite_glyphs_32_request_t,
@@ -5486,6 +6305,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_32_glyphcmds_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `glyphcmds` field of a `xcb_render_composite_glyphs_32_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_composite_glyphs_32_glyphcmds_end(
         &self,
         r: *const xcb_render_composite_glyphs_32_request_t,
@@ -5499,6 +6321,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_composite_glyphs_32_glyphcmds_end)
     }
 
+    /// Computes the size of a `xcb_render_fill_rectangles_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_fill_rectangles_sizeof(
         &self,
         _buffer: *const c_void,
@@ -5513,17 +6337,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_fill_rectangles_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::FillRectangles` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_fill_rectangles_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5542,14 +6363,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_fill_rectangles_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::FillRectangles` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_fill_rectangles(
         &self,
         c: *mut xcb_connection_t,
@@ -5568,6 +6383,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_fill_rectangles)
     }
 
+    /// Returns a pointer to the `rects` field of a `xcb_render_fill_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_fill_rectangles_rects(
         &self,
         r: *const xcb_render_fill_rectangles_request_t,
@@ -5581,6 +6398,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_fill_rectangles_rects)
     }
 
+    /// Returns the number of elements of the `rects` field of a `xcb_render_fill_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_fill_rectangles_rects_length(
         &self,
         r: *const xcb_render_fill_rectangles_request_t,
@@ -5594,6 +6413,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_fill_rectangles_rects_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `rects` field of a `xcb_render_fill_rectangles_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_fill_rectangles_rects_iterator(
         &self,
         r: *const xcb_render_fill_rectangles_request_t,
@@ -5607,17 +6429,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_fill_rectangles_rects_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreateCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5635,14 +6454,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_cursor_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreateCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_create_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -5660,6 +6473,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_cursor)
     }
 
+    /// Advances a `xcb_render_transform_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_transform_next(&self, i: *mut xcb_render_transform_iterator_t) {
         sym!(self, xcb_render_transform_next)(i)
     }
@@ -5670,6 +6485,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_transform_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_transform_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_transform_end(
         &self,
         i: xcb_render_transform_iterator_t,
@@ -5683,17 +6500,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_transform_end)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::SetPictureTransform` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_set_picture_transform_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5709,14 +6523,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_transform_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::SetPictureTransform` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_set_picture_transform(
         &self,
         c: *mut xcb_connection_t,
@@ -5732,6 +6540,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_transform)
     }
 
+    /// Computes the size of a `xcb_render_query_filters_reply_t` object.
+    #[inline]
     pub unsafe fn xcb_render_query_filters_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_query_filters_sizeof)(_buffer)
     }
@@ -5742,14 +6552,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::QueryFilters` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_filters_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_filters_reply`]: Self::xcb_render_query_filters_reply
+    #[inline]
     pub unsafe fn xcb_render_query_filters(
         &self,
         c: *mut xcb_connection_t,
@@ -5764,17 +6574,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will cause
-     * a reply to be generated. Any returned error will be
-     * placed in the event queue.
-     */
+    /// Sends a `Render::QueryFilters` request (unchecked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_render_query_filters_reply`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_render_query_filters_reply`]: Self::xcb_render_query_filters_reply
+    #[inline]
     pub unsafe fn xcb_render_query_filters_unchecked(
         &self,
         c: *mut xcb_connection_t,
@@ -5789,6 +6596,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_unchecked)
     }
 
+    /// Returns a pointer to the `aliases` field of a `xcb_render_query_filters_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_filters_aliases(
         &self,
         r: *const xcb_render_query_filters_reply_t,
@@ -5802,6 +6611,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_aliases)
     }
 
+    /// Returns the number of elements of the `aliases` field of a `xcb_render_query_filters_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_filters_aliases_length(
         &self,
         r: *const xcb_render_query_filters_reply_t,
@@ -5815,6 +6626,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_aliases_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `aliases` field of a `xcb_render_query_filters_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_filters_aliases_end(
         &self,
         r: *const xcb_render_query_filters_reply_t,
@@ -5828,6 +6642,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_aliases_end)
     }
 
+    /// Returns the number of elements of the `filters` field of a `xcb_render_query_filters_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_filters_filters_length(
         &self,
         r: *const xcb_render_query_filters_reply_t,
@@ -5841,6 +6657,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_filters_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `filters` field of a `xcb_render_query_filters_reply_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_query_filters_filters_iterator(
         &self,
         r: *const xcb_render_query_filters_reply_t,
@@ -5854,26 +6673,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_filters_iterator)
     }
 
-    /**
-     * Return the reply
-     * @param c      The connection
-     * @param cookie The cookie
-     * @param e      The xcb_generic_error_t supplied
-     *
-     * Returns the reply of the request asked by
-     *
-     * The parameter @p e supplied to this function must be NULL if
-     * xcb_render_query_filters_unchecked(). is used.
-     * Otherwise, it stores the error if any.
-     *
-     * The returned value must be freed by the caller using free().
-     */
+    /// Waits for the reply to a `Render::QueryFilters` request.
+    #[inline]
     pub unsafe fn xcb_render_query_filters_reply(
         &self,
         c: *mut xcb_connection_t,
         cookie: xcb_render_query_filters_cookie_t,
         e: *mut *mut xcb_generic_error_t,
-    ) -> xcb_render_query_filters_reply_t {
+    ) -> *mut xcb_render_query_filters_reply_t {
         sym!(self, xcb_render_query_filters_reply)(c, cookie, e)
     }
 
@@ -5883,6 +6690,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_query_filters_reply)
     }
 
+    /// Computes the size of a `xcb_render_set_picture_filter_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_sizeof(
         &self,
         _buffer: *const c_void,
@@ -5897,17 +6706,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::SetPictureFilter` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -5928,14 +6734,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::SetPictureFilter` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter(
         &self,
         c: *mut xcb_connection_t,
@@ -5956,6 +6756,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter)
     }
 
+    /// Returns a pointer to the `filter` field of a `xcb_render_set_picture_filter_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_filter(
         &self,
         r: *const xcb_render_set_picture_filter_request_t,
@@ -5969,6 +6771,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_filter)
     }
 
+    /// Returns the number of elements of the `filter` field of a `xcb_render_set_picture_filter_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_filter_length(
         &self,
         r: *const xcb_render_set_picture_filter_request_t,
@@ -5982,6 +6786,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_filter_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `filter` field of a `xcb_render_set_picture_filter_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_filter_end(
         &self,
         r: *const xcb_render_set_picture_filter_request_t,
@@ -5995,6 +6802,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_filter_end)
     }
 
+    /// Returns a pointer to the `values` field of a `xcb_render_set_picture_filter_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_values(
         &self,
         r: *const xcb_render_set_picture_filter_request_t,
@@ -6008,6 +6817,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_values)
     }
 
+    /// Returns the number of elements of the `values` field of a `xcb_render_set_picture_filter_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_values_length(
         &self,
         r: *const xcb_render_set_picture_filter_request_t,
@@ -6021,6 +6832,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_values_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `values` field of a `xcb_render_set_picture_filter_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_set_picture_filter_values_end(
         &self,
         r: *const xcb_render_set_picture_filter_request_t,
@@ -6034,6 +6848,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_set_picture_filter_values_end)
     }
 
+    /// Advances a `xcb_render_animcursorelt_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_animcursorelt_next(
         &self,
         i: *mut xcb_render_animcursorelt_iterator_t,
@@ -6047,6 +6863,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_animcursorelt_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_animcursorelt_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_animcursorelt_end(
         &self,
         i: xcb_render_animcursorelt_iterator_t,
@@ -6060,6 +6878,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_animcursorelt_end)
     }
 
+    /// Computes the size of a `xcb_render_create_anim_cursor_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_anim_cursor_sizeof(
         &self,
         _buffer: *const c_void,
@@ -6074,17 +6894,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_anim_cursor_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreateAnimCursor` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_anim_cursor_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -6101,14 +6918,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_anim_cursor_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreateAnimCursor` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_create_anim_cursor(
         &self,
         c: *mut xcb_connection_t,
@@ -6125,6 +6936,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_anim_cursor)
     }
 
+    /// Returns a pointer to the `cursors` field of a `xcb_render_create_anim_cursor_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_anim_cursor_cursors(
         &self,
         r: *const xcb_render_create_anim_cursor_request_t,
@@ -6138,6 +6951,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_anim_cursor_cursors)
     }
 
+    /// Returns the number of elements of the `cursors` field of a `xcb_render_create_anim_cursor_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_anim_cursor_cursors_length(
         &self,
         r: *const xcb_render_create_anim_cursor_request_t,
@@ -6151,6 +6966,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_anim_cursor_cursors_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `cursors` field of a `xcb_render_create_anim_cursor_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_anim_cursor_cursors_iterator(
         &self,
         r: *const xcb_render_create_anim_cursor_request_t,
@@ -6164,6 +6982,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_anim_cursor_cursors_iterator)
     }
 
+    /// Advances a `xcb_render_spanfix_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_spanfix_next(&self, i: *mut xcb_render_spanfix_iterator_t) {
         sym!(self, xcb_render_spanfix_next)(i)
     }
@@ -6174,6 +6994,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_spanfix_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_spanfix_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_spanfix_end(
         &self,
         i: xcb_render_spanfix_iterator_t,
@@ -6187,6 +7009,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_spanfix_end)
     }
 
+    /// Advances a `xcb_render_trap_iterator_t` iterator by 1 element.
+    #[inline]
     pub unsafe fn xcb_render_trap_next(&self, i: *mut xcb_render_trap_iterator_t) {
         sym!(self, xcb_render_trap_next)(i)
     }
@@ -6197,6 +7021,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trap_next)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of a `xcb_render_trap_iterator_t`.
+    #[inline]
     pub unsafe fn xcb_render_trap_end(
         &self,
         i: xcb_render_trap_iterator_t,
@@ -6210,6 +7036,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_trap_end)
     }
 
+    /// Computes the size of a `xcb_render_add_traps_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_add_traps_sizeof(
         &self,
         _buffer: *const c_void,
@@ -6224,17 +7052,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_traps_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::AddTraps` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_add_traps_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -6253,14 +7078,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_traps_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::AddTraps` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_add_traps(
         &self,
         c: *mut xcb_connection_t,
@@ -6279,6 +7098,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_traps)
     }
 
+    /// Returns a pointer to the `traps` field of a `xcb_render_add_traps_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_traps_traps(
         &self,
         r: *const xcb_render_add_traps_request_t,
@@ -6292,6 +7113,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_traps_traps)
     }
 
+    /// Returns the number of elements of the `traps` field of a `xcb_render_add_traps_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_traps_traps_length(
         &self,
         r: *const xcb_render_add_traps_request_t,
@@ -6305,6 +7128,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_traps_traps_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `traps` field of a `xcb_render_add_traps_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_add_traps_traps_iterator(
         &self,
         r: *const xcb_render_add_traps_request_t,
@@ -6318,17 +7144,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_add_traps_traps_iterator)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreateSolidFill` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_solid_fill_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -6344,14 +7167,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_solid_fill_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreateSolidFill` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_create_solid_fill(
         &self,
         c: *mut xcb_connection_t,
@@ -6367,6 +7184,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_solid_fill)
     }
 
+    /// Computes the size of a `xcb_render_create_linear_gradient_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_create_linear_gradient_sizeof)(_buffer)
     }
@@ -6377,17 +7196,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreateLinearGradient` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -6409,14 +7225,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreateLinearGradient` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient(
         &self,
         c: *mut xcb_connection_t,
@@ -6436,6 +7246,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient)
     }
 
+    /// Returns a pointer to the `stops` field of a `xcb_render_create_linear_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_stops(
         &self,
         r: *const xcb_render_create_linear_gradient_request_t,
@@ -6449,6 +7261,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_stops)
     }
 
+    /// Returns the number of elements of the `stops` field of a `xcb_render_create_linear_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_stops_length(
         &self,
         r: *const xcb_render_create_linear_gradient_request_t,
@@ -6462,6 +7276,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_stops_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `stops` field of a `xcb_render_create_linear_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_stops_end(
         &self,
         r: *const xcb_render_create_linear_gradient_request_t,
@@ -6475,6 +7292,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_stops_end)
     }
 
+    /// Returns a pointer to the `colors` field of a `xcb_render_create_linear_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_colors(
         &self,
         r: *const xcb_render_create_linear_gradient_request_t,
@@ -6488,6 +7307,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_colors)
     }
 
+    /// Returns the number of elements of the `colors` field of a `xcb_render_create_linear_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_colors_length(
         &self,
         r: *const xcb_render_create_linear_gradient_request_t,
@@ -6501,6 +7322,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_colors_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `colors` field of a `xcb_render_create_linear_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_linear_gradient_colors_iterator(
         &self,
         r: *const xcb_render_create_linear_gradient_request_t,
@@ -6514,6 +7338,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_linear_gradient_colors_iterator)
     }
 
+    /// Computes the size of a `xcb_render_create_radial_gradient_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_sizeof(&self, _buffer: *const c_void) -> c_int {
         sym!(self, xcb_render_create_radial_gradient_sizeof)(_buffer)
     }
@@ -6524,17 +7350,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreateRadialGradient` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -6566,14 +7389,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreateRadialGradient` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient(
         &self,
         c: *mut xcb_connection_t,
@@ -6605,6 +7422,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient)
     }
 
+    /// Returns a pointer to the `stops` field of a `xcb_render_create_radial_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_stops(
         &self,
         r: *const xcb_render_create_radial_gradient_request_t,
@@ -6618,6 +7437,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_stops)
     }
 
+    /// Returns the number of elements of the `stops` field of a `xcb_render_create_radial_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_stops_length(
         &self,
         r: *const xcb_render_create_radial_gradient_request_t,
@@ -6631,6 +7452,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_stops_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `stops` field of a `xcb_render_create_radial_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_stops_end(
         &self,
         r: *const xcb_render_create_radial_gradient_request_t,
@@ -6644,6 +7468,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_stops_end)
     }
 
+    /// Returns a pointer to the `colors` field of a `xcb_render_create_radial_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_colors(
         &self,
         r: *const xcb_render_create_radial_gradient_request_t,
@@ -6657,6 +7483,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_colors)
     }
 
+    /// Returns the number of elements of the `colors` field of a `xcb_render_create_radial_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_colors_length(
         &self,
         r: *const xcb_render_create_radial_gradient_request_t,
@@ -6670,6 +7498,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_colors_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `colors` field of a `xcb_render_create_radial_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_radial_gradient_colors_iterator(
         &self,
         r: *const xcb_render_create_radial_gradient_request_t,
@@ -6683,6 +7514,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_radial_gradient_colors_iterator)
     }
 
+    /// Computes the size of a `xcb_render_create_conical_gradient_request_t` object.
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_sizeof(
         &self,
         _buffer: *const c_void,
@@ -6696,17 +7529,14 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient_sizeof)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     * This form can be used only if the request will not cause
-     * a reply to be generated. Any returned error will be
-     * saved for handling by xcb_request_check().
-     */
+    /// Sends a `Render::CreateConicalGradient` request (checked).
+    ///
+    /// This request generates a reply. You must either discard it with
+    /// [`discard_reply`] or retrieve it with [`xcb_request_check`].
+    ///
+    /// [`discard_reply`]: crate::Xcb::xcb_discard_reply
+    /// [`xcb_request_check`]: crate::Xcb::xcb_request_check
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_checked(
         &self,
         c: *mut xcb_connection_t,
@@ -6728,14 +7558,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient_checked)
     }
 
-    /**
-     *
-     * @param c The connection
-     * @return A cookie
-     *
-     * Delivers a request to the X server.
-     *
-     */
+    /// Sends a `Render::CreateConicalGradient` request (unchecked).
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient(
         &self,
         c: *mut xcb_connection_t,
@@ -6757,6 +7581,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient)
     }
 
+    /// Returns a pointer to the `stops` field of a `xcb_render_create_conical_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_stops(
         &self,
         r: *const xcb_render_create_conical_gradient_request_t,
@@ -6770,6 +7596,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient_stops)
     }
 
+    /// Returns the number of elements of the `stops` field of a `xcb_render_create_conical_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_stops_length(
         &self,
         r: *const xcb_render_create_conical_gradient_request_t,
@@ -6783,6 +7611,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient_stops_length)
     }
 
+    /// Returns a `xcb_generic_iterator_t` pointing just past the end of the
+    /// `stops` field of a `xcb_render_create_conical_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_stops_end(
         &self,
         r: *const xcb_render_create_conical_gradient_request_t,
@@ -6796,6 +7627,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient_stops_end)
     }
 
+    /// Returns a pointer to the `colors` field of a `xcb_render_create_conical_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_colors(
         &self,
         r: *const xcb_render_create_conical_gradient_request_t,
@@ -6809,6 +7642,8 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient_colors)
     }
 
+    /// Returns the number of elements of the `colors` field of a `xcb_render_create_conical_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_colors_length(
         &self,
         r: *const xcb_render_create_conical_gradient_request_t,
@@ -6822,6 +7657,9 @@ impl XcbRender {
         has_sym!(self, xcb_render_create_conical_gradient_colors_length)
     }
 
+    /// Returns an iterator over the elements of the
+    /// `colors` field of a `xcb_render_create_conical_gradient_request_t` struct.
+    #[inline]
     pub unsafe fn xcb_render_create_conical_gradient_colors_iterator(
         &self,
         r: *const xcb_render_create_conical_gradient_request_t,
