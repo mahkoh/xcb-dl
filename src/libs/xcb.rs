@@ -1,6 +1,7 @@
 use crate::ffi::*;
 use crate::lazy::*;
 
+/// A dynamically loaded `libxcb`.
 pub struct Xcb {
     pub(crate) lib: NamedLibrary,
     pub(crate) xcb: XcbXcb,
@@ -10,4 +11,4 @@ pub struct Xcb {
     pub(crate) xc_misc: XcbXc_Misc,
 }
 
-lib_entry!(Xcb, "libxcb.so.1");
+lib_entry!(Xcb, "libxcb.so.1", "libxcb.so");

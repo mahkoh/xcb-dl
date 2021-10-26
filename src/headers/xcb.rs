@@ -1,3 +1,5 @@
+#![allow(unused_macros)]
+
 use crate::ffi::*;
 use crate::lazy::LazySymbol;
 use crate::*;

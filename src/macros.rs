@@ -1,10 +1,19 @@
 macro_rules! lib_entry {
-    ($name:ident, $path:expr) => {
+    ($name:ident, $path:expr, $loose:expr) => {
         impl $name {
             /// Loads the library from the default location.
             #[inline]
             pub unsafe fn load() -> Result<Self, libloading::Error> {
                 Self::load_from($path)
+            }
+
+            /// Loads the library from the default location, potentially loading an incompatible SO version.
+            ///
+            /// For example, this function first tries to load `libxcb.so.1`. If this fails, it tries
+            /// to load `libxcb.so`.
+            #[inline]
+            pub unsafe fn load_loose() -> Result<Self, libloading::Error> {
+                Self::load().or_else(|_| Self::load_from($loose))
             }
 
             /// Loads the library from the specified path.
