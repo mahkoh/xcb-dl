@@ -1117,6 +1117,8 @@ impl XcbShm {
     }
 
     /// Retrieves the file descriptors from the reply to a `Shm::CreateSegment` request.
+    ///
+    /// The returned pointer must be freed with `libc::free`.
     #[inline]
     pub unsafe fn xcb_shm_create_segment_reply_fds(
         &self,

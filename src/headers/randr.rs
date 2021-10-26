@@ -10259,6 +10259,8 @@ impl XcbRandr {
     }
 
     /// Retrieves the file descriptors from the reply to a `RandR::CreateLease` request.
+    ///
+    /// The returned pointer must be freed with `libc::free`.
     #[inline]
     pub unsafe fn xcb_randr_create_lease_reply_fds(
         &self,

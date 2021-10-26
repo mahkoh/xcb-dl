@@ -938,6 +938,8 @@ impl XcbDri3 {
     }
 
     /// Retrieves the file descriptors from the reply to a `DRI3::Open` request.
+    ///
+    /// The returned pointer must be freed with `libc::free`.
     #[inline]
     pub unsafe fn xcb_dri3_open_reply_fds(
         &self,
@@ -1073,6 +1075,8 @@ impl XcbDri3 {
     }
 
     /// Retrieves the file descriptors from the reply to a `DRI3::BufferFromPixmap` request.
+    ///
+    /// The returned pointer must be freed with `libc::free`.
     #[inline]
     pub unsafe fn xcb_dri3_buffer_from_pixmap_reply_fds(
         &self,
@@ -1202,6 +1206,8 @@ impl XcbDri3 {
     }
 
     /// Retrieves the file descriptors from the reply to a `DRI3::FDFromFence` request.
+    ///
+    /// The returned pointer must be freed with `libc::free`.
     #[inline]
     pub unsafe fn xcb_dri3_fd_from_fence_reply_fds(
         &self,
@@ -1722,6 +1728,8 @@ impl XcbDri3 {
     }
 
     /// Retrieves the file descriptors from the reply to a `DRI3::BuffersFromPixmap` request.
+    ///
+    /// The returned pointer must be freed with `libc::free`.
     #[inline]
     pub unsafe fn xcb_dri3_buffers_from_pixmap_reply_fds(
         &self,

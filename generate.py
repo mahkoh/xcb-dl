@@ -1279,6 +1279,8 @@ def _c_reply_fds(self, name):
     _h_setlevel(2)
     _h('')
     _h(f'/// Retrieves the file descriptors from the reply to a `{_opcode_name(name)}` request.')
+    _h(f'///')
+    _h(f'/// The returned pointer must be freed with `libc::free`.')
     params = [
         ('c', '*mut xcb_connection_t'),
         ('reply', f'*mut {self.c_reply_type}'),
