@@ -64,6 +64,9 @@
 //! - **error replies**: An error sent in response to a request.
 //! - **events**: An event such as a key press.
 //!
+//! The code that sends a request can specify that replies should automatically be discarded by calling
+//!     `xcb_discard_reply`.
+//!
 //! libxcb maintains two queues for incoming messages:
 //!
 //! - the **event queue**: Contains messages that can be retrieved via `xcb_poll_for_event` etc.
@@ -71,38 +74,31 @@
 //!
 //! Events are always placed in the event queue.
 //!
-//! Value replies are placed in the reply queue unless the code that sent the request specified that
-//!     the reply should be discarded.
-//! In this case the reply is discarded.
+//! Value replies are placed in the reply queue unless they are being discarded.
 //!
-//! Error replies are placed in the reply queue unless the code that sent the request specified that
-//!     the reply should be discarded.
-//! **In this case the error reply is placed in the event queue.**
+//! Each request has two variants:
+//!
+//! - **checked**: Error replies are placed in the reply queue unless they are being discarded.
+//! - **unchecked**: Error replies are placed in the event queue unless they are being discarded.
 //!
 //! There are two types of requests:
 //!
 //! - **void requests**: These do not generate value replies but can generate error replies.
 //! - **value requests**: These can generate either value replies or error replies.
 //!
-//! By default, replies to void requests are discarded.
-//! That is, error replies are placed in the event queue.
-//! For every void request, libxcb provides a function with the suffix `_checked` that causes error
-//!     replies to be placed in the reply queue.
+//! The default variant of void requests is unchecked.
+//! For each such request libxcb provides a function with the suffix `_checked` that uses the checked variant.
 //!
-//! By default, replies to value requests are not discarded.
-//! That is, both value replies and error replies are placed in the reply queue.
-//! For every value request, libxcb provides a function with the suffix `_unchecked` that causes
-//!     value replies to be discarded and error replies to the placed in the event queue.
+//! The default variant of value requests is checked.
+//! For each such request libxcb provides a function with the suffix `_unchecked` that uses the unchecked variant.
 //!
-//! Messages placed in the reply queue must be handled by the user.
+//! Messages placed in the reply queue must be retrieved by the user.
 //! Otherwise they will never be discarded.
-//!
-//! Messages in the reply queue can be discarded by calling `xcb_discard_reply`.
 //!
 //! For void requests, error replies can be retrieved by calling `xcb_request_check`.
 //!
-//! For every value request, libxcb provides a function with the suffix `_reply` that can
-//!     be used to retrieve the reply if it was placed in the reply queue.
+//! For every value request libxcb provides a function with the suffix `_reply` that can
+//!     be used to retrieve the value or error reply.
 //!
 //! ## Memory Management
 //!
