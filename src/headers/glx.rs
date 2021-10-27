@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Glx` extension.
+pub const XCB_GLX_NAME: &[u8] = b"GLX";
+
+/// The name of the `Glx` extension.
+pub const XCB_GLX_NAME_STR: &str = "GLX";
+
 /// The `Glx::PIXMAP` type.
 pub type xcb_glx_pixmap_t = u32;
 

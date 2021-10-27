@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `ScreenSaver` extension.
+pub const XCB_SCREENSAVER_NAME: &[u8] = b"MIT-SCREEN-SAVER";
+
+/// The name of the `ScreenSaver` extension.
+pub const XCB_SCREENSAVER_NAME_STR: &str = "MIT-SCREEN-SAVER";
+
 /// The `ScreenSaver::Kind` enum.
 ///
 /// This enum has the following variants:

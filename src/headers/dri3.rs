@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `DRI3` extension.
+pub const XCB_DRI3_NAME: &[u8] = b"DRI3";
+
+/// The name of the `DRI3` extension.
+pub const XCB_DRI3_NAME_STR: &str = "DRI3";
+
 /// The cookie for the reply to a `DRI3::QueryVersion` request.
 ///
 /// Pass this cookie to [`xcb_dri3_query_version_reply`] to retrieve the reply.

@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Shape` extension.
+pub const XCB_SHAPE_NAME: &[u8] = b"SHAPE";
+
+/// The name of the `Shape` extension.
+pub const XCB_SHAPE_NAME_STR: &str = "SHAPE";
+
 /// The `Shape::OP` type.
 pub type xcb_shape_op_t = u8;
 

@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Test` extension.
+pub const XCB_TEST_NAME: &[u8] = b"XTEST";
+
+/// The name of the `Test` extension.
+pub const XCB_TEST_NAME_STR: &str = "XTEST";
+
 /// The cookie for the reply to a `Test::GetVersion` request.
 ///
 /// Pass this cookie to [`xcb_test_get_version_reply`] to retrieve the reply.

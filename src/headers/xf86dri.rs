@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `XF86Dri` extension.
+pub const XCB_XF86DRI_NAME: &[u8] = b"XFree86-DRI";
+
+/// The name of the `XF86Dri` extension.
+pub const XCB_XF86DRI_NAME_STR: &str = "XFree86-DRI";
+
 /// The `XF86Dri::DrmClipRect` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]

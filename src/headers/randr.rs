@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `RandR` extension.
+pub const XCB_RANDR_NAME: &[u8] = b"RANDR";
+
+/// The name of the `RandR` extension.
+pub const XCB_RANDR_NAME_STR: &str = "RANDR";
+
 /// The `RandR::MODE` type.
 pub type xcb_randr_mode_t = u32;
 

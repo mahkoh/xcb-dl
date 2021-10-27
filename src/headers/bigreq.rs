@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `BigRequests` extension.
+pub const XCB_BIG_REQUESTS_NAME: &[u8] = b"BIG-REQUESTS";
+
+/// The name of the `BigRequests` extension.
+pub const XCB_BIG_REQUESTS_NAME_STR: &str = "BIG-REQUESTS";
+
 /// The cookie for the reply to a `BigRequests::Enable` request.
 ///
 /// Pass this cookie to [`xcb_big_requests_enable_reply`] to retrieve the reply.

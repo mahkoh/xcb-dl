@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Render` extension.
+pub const XCB_RENDER_NAME: &[u8] = b"RENDER";
+
+/// The name of the `Render` extension.
+pub const XCB_RENDER_NAME_STR: &str = "RENDER";
+
 /// The `Render::PictType` enum.
 ///
 /// This enum has the following variants:

@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Present` extension.
+pub const XCB_PRESENT_NAME: &[u8] = b"Present";
+
+/// The name of the `Present` extension.
+pub const XCB_PRESENT_NAME_STR: &str = "Present";
+
 /// The `Present::Event` enum.
 ///
 /// This enum has the following variants:

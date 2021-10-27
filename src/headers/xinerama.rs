@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Xinerama` extension.
+pub const XCB_XINERAMA_NAME: &[u8] = b"XINERAMA";
+
+/// The name of the `Xinerama` extension.
+pub const XCB_XINERAMA_NAME_STR: &str = "XINERAMA";
+
 /// The `Xinerama::ScreenInfo` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]

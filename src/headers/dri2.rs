@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `DRI2` extension.
+pub const XCB_DRI2_NAME: &[u8] = b"DRI2";
+
+/// The name of the `DRI2` extension.
+pub const XCB_DRI2_NAME_STR: &str = "DRI2";
+
 /// The `DRI2::Attachment` enum.
 ///
 /// This enum has the following variants:

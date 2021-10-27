@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Shm` extension.
+pub const XCB_SHM_NAME: &[u8] = b"MIT-SHM";
+
+/// The name of the `Shm` extension.
+pub const XCB_SHM_NAME_STR: &str = "MIT-SHM";
+
 /// The `Shm::SEG` type.
 pub type xcb_shm_seg_t = u32;
 

@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `xkb` extension.
+pub const XCB_XKB_NAME: &[u8] = b"XKEYBOARD";
+
+/// The name of the `xkb` extension.
+pub const XCB_XKB_NAME_STR: &str = "XKEYBOARD";
+
 /// The `xkb::Const` enum.
 ///
 /// This enum has the following variants:

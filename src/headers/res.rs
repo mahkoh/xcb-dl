@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Res` extension.
+pub const XCB_RES_NAME: &[u8] = b"X-Resource";
+
+/// The name of the `Res` extension.
+pub const XCB_RES_NAME_STR: &str = "X-Resource";
+
 /// The `Res::Client` struct.
 #[derive(Copy, Clone, Debug)]
 #[repr(C)]

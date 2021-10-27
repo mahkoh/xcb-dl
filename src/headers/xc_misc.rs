@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `XCMisc` extension.
+pub const XCB_XC_MISC_NAME: &[u8] = b"XC-MISC";
+
+/// The name of the `XCMisc` extension.
+pub const XCB_XC_MISC_NAME_STR: &str = "XC-MISC";
+
 /// The cookie for the reply to a `XCMisc::GetVersion` request.
 ///
 /// Pass this cookie to [`xcb_xc_misc_get_version_reply`] to retrieve the reply.

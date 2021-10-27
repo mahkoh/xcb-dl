@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Record` extension.
+pub const XCB_RECORD_NAME: &[u8] = b"RECORD";
+
+/// The name of the `Record` extension.
+pub const XCB_RECORD_NAME_STR: &str = "RECORD";
+
 /// The `Record::CONTEXT` type.
 pub type xcb_record_context_t = u32;
 

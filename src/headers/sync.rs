@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Sync` extension.
+pub const XCB_SYNC_NAME: &[u8] = b"SYNC";
+
+/// The name of the `Sync` extension.
+pub const XCB_SYNC_NAME_STR: &str = "SYNC";
+
 /// The `Sync::ALARM` type.
 pub type xcb_sync_alarm_t = u32;
 

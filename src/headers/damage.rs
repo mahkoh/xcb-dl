@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Damage` extension.
+pub const XCB_DAMAGE_NAME: &[u8] = b"DAMAGE";
+
+/// The name of the `Damage` extension.
+pub const XCB_DAMAGE_NAME_STR: &str = "DAMAGE";
+
 /// The `Damage::DAMAGE` type.
 pub type xcb_damage_damage_t = u32;
 

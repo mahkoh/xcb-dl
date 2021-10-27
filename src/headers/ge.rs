@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `GenericEvent` extension.
+pub const XCB_GENERICEVENT_NAME: &[u8] = b"Generic Event Extension";
+
+/// The name of the `GenericEvent` extension.
+pub const XCB_GENERICEVENT_NAME_STR: &str = "Generic Event Extension";
+
 /// The cookie for the reply to a `GenericEvent::QueryVersion` request.
 ///
 /// Pass this cookie to [`xcb_genericevent_query_version_reply`] to retrieve the reply.

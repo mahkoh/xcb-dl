@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `DPMS` extension.
+pub const XCB_DPMS_NAME: &[u8] = b"DPMS";
+
+/// The name of the `DPMS` extension.
+pub const XCB_DPMS_NAME_STR: &str = "DPMS";
+
 /// The cookie for the reply to a `DPMS::GetVersion` request.
 ///
 /// Pass this cookie to [`xcb_dpms_get_version_reply`] to retrieve the reply.

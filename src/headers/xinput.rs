@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Input` extension.
+pub const XCB_INPUT_NAME: &[u8] = b"XInputExtension";
+
+/// The name of the `Input` extension.
+pub const XCB_INPUT_NAME_STR: &str = "XInputExtension";
+
 /// The `Input::EventClass` type.
 pub type xcb_input_event_class_t = u32;
 

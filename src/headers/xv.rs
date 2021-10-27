@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Xv` extension.
+pub const XCB_XV_NAME: &[u8] = b"XVideo";
+
+/// The name of the `Xv` extension.
+pub const XCB_XV_NAME_STR: &str = "XVideo";
+
 /// The `Xv::PORT` type.
 pub type xcb_xv_port_t = u32;
 

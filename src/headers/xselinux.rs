@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `SELinux` extension.
+pub const XCB_SELINUX_NAME: &[u8] = b"SELinux";
+
+/// The name of the `SELinux` extension.
+pub const XCB_SELINUX_NAME_STR: &str = "SELinux";
+
 /// The cookie for the reply to a `SELinux::QueryVersion` request.
 ///
 /// Pass this cookie to [`xcb_selinux_query_version_reply`] to retrieve the reply.

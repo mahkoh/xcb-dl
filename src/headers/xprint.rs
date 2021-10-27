@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `XPrint` extension.
+pub const XCB_X_PRINT_NAME: &[u8] = b"XpExtension";
+
+/// The name of the `XPrint` extension.
+pub const XCB_X_PRINT_NAME_STR: &str = "XpExtension";
+
 /// The `XPrint::STRING8` type.
 pub type xcb_x_print_string8_t = c_char;
 

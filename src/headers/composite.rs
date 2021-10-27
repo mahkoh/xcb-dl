@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Composite` extension.
+pub const XCB_COMPOSITE_NAME: &[u8] = b"Composite";
+
+/// The name of the `Composite` extension.
+pub const XCB_COMPOSITE_NAME_STR: &str = "Composite";
+
 /// The `Composite::Redirect` enum.
 ///
 /// This enum has the following variants:

@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `XFixes` extension.
+pub const XCB_XFIXES_NAME: &[u8] = b"XFIXES";
+
+/// The name of the `XFixes` extension.
+pub const XCB_XFIXES_NAME_STR: &str = "XFIXES";
+
 /// The cookie for the reply to a `XFixes::QueryVersion` request.
 ///
 /// Pass this cookie to [`xcb_xfixes_query_version_reply`] to retrieve the reply.

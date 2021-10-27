@@ -261,6 +261,13 @@ def c_open(self):
     _h(f'        let lib = unsafe {{ crate::{_ns.rust_obj_name}::load().unwrap() }};')
 
     if _ns.is_ext:
+        _h_setlevel(0)
+        _h(f'/// The name of the `{_ns.ext_name}` extension.')
+        _h(f'pub const {_n(_ns.prefix + ("name",)).upper()}: &[u8] = b"{_ns.ext_xname}";')
+        _h(f'')
+        _h(f'/// The name of the `{_ns.ext_name}` extension.')
+        _h(f'pub const {_n(_ns.prefix + ("name", "str")).upper()}: &str = "{_ns.ext_xname}";')
+        _h(f'')
         _h_setlevel(2)
         _h(f'/// The libxcb identifier of the `{_ns.ext_name}` extension.')
         add_sym(_ns.c_ext_global_name, [], rv='*mut xcb_extension_t', fn=False)

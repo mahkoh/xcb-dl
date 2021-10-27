@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `XvMC` extension.
+pub const XCB_XVMC_NAME: &[u8] = b"XVideo-MotionCompensation";
+
+/// The name of the `XvMC` extension.
+pub const XCB_XVMC_NAME_STR: &str = "XVideo-MotionCompensation";
+
 /// The `XvMC::CONTEXT` type.
 pub type xcb_xvmc_context_t = u32;
 

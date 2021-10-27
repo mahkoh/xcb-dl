@@ -6,6 +6,12 @@ use crate::lazy::*;
 use crate::*;
 use std::os::raw::*;
 
+/// The name of the `Xevie` extension.
+pub const XCB_XEVIE_NAME: &[u8] = b"XEVIE";
+
+/// The name of the `Xevie` extension.
+pub const XCB_XEVIE_NAME_STR: &str = "XEVIE";
+
 /// The cookie for the reply to a `Xevie::QueryVersion` request.
 ///
 /// Pass this cookie to [`xcb_xevie_query_version_reply`] to retrieve the reply.
