@@ -9,7 +9,7 @@ import re
 _cname_re = re.compile('([A-Z0-9][a-z]+|[A-Z0-9]+(?![a-z])|[a-z]+)')
 _cname_special_cases = {'DECnet': 'decnet'}
 
-_to_snake_case_re = re.compile(r'(?<!^)(?=[A-Z])')
+_to_snake_case_re = re.compile(r'(?<![\^A-Z])(?=[A-Z])')
 
 _extension_special_cases = ['XPrint', 'XCMisc', 'BigRequests']
 
